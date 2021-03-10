@@ -60,6 +60,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Menu
         when (item.itemId) {
