@@ -47,6 +47,7 @@ dependencies {
 
     //misc
     implementation 'com.dmitrymalkovich.android:material-design-dimens:1.4'
+    implementation 'com.michalsvec:single-row-calednar:1.0.0'
     implementation ('com.thebluealliance:spectrum:0.7.1') {
         exclude group: 'com.android.support'
         exclude module: 'appcompat-v7'

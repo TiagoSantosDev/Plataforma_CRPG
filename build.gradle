@@ -5,7 +5,9 @@ buildscript {
     ext.versions = [
             'compileSdk'    : 28,
             'buildTools'    : '28.0.3',
-            'minSdk'        : 15,
+            //tive que mudar o min SDK porque o Horizontal Scroller nao aceitava 15
+            //'minSdk'        : 15,
+            'minSdk'        : 21,
             'targetSdk'     : 28,
             'kotlin': [
                     'stdlib': '1.3.50',
