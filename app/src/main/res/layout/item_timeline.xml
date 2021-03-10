@@ -29,11 +29,13 @@
         android:layout_marginBottom="15dp">
 
         <TextView
+            android:id="@+id/text_timeline_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="12H00" />
 
         <TextView
+            android:id="@+id/text_timeline_end_time"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

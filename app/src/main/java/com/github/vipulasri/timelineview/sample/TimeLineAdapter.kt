@@ -67,6 +67,10 @@ class TimeLineAdapter(private val mFeedList: List<TimeLineModel>, private var mA
 
         holder.title.text = timeLineModel.title
         holder.info.text = timeLineModel.info
+        holder.start_time.text = timeLineModel.start_time
+        holder.end_time.text= timeLineModel.end_time
+
+
     }
 
     override fun getItemCount() = mFeedList.size
@@ -76,6 +80,8 @@ class TimeLineAdapter(private val mFeedList: List<TimeLineModel>, private var mA
         val date = itemView.text_timeline_date
         val title = itemView.text_timeline_title
         val info = itemView.text_timeline_info
+        val start_time = itemView.text_timeline_start_time
+        val end_time = itemView.text_timeline_end_time
         val timeline = itemView.timeline
 
         init {

@@ -70,15 +70,15 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setDataListItems() {
-        mDataList.add(TimeLineModel("Item successfully delivered", "a","2017-02-12 08:00", OrderStatus.INACTIVE))
-        mDataList.add(TimeLineModel("Courier is out to delivery your order","a", "2017-02-12 08:00", OrderStatus.ACTIVE))
-        mDataList.add(TimeLineModel("Item has reached courier facility at New Delhi","a", "2017-02-11 21:00", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Item has been given to the courier", "a","2017-02-11 18:00", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Item is packed and will dispatch soon", "a","2017-02-11 09:30", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Order is being readied for dispatch", "a","2017-02-11 08:00", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Order processing initiated","a", "2017-02-10 15:00", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Order confirmed by seller", "a","2017-02-10 14:30", OrderStatus.COMPLETED))
-        mDataList.add(TimeLineModel("Order placed successfully","a", "2017-02-10 14:00", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Item successfully delivered", "a", "11:00","12:00","2017-02-12 08:00", OrderStatus.INACTIVE))
+        mDataList.add(TimeLineModel("Courier is out to delivery your order","a","11:00","12:00", "2017-02-12 08:00", OrderStatus.ACTIVE))
+        mDataList.add(TimeLineModel("Item has reached courier facility at New Delhi","a","11:00","12:00", "2017-02-11 21:00", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Item has been given to the courier", "a","11:00","12:00","2017-02-11 18:00", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Item is packed and will dispatch soon", "a","11:00","12:00","2017-02-11 09:30", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Order is being readied for dispatch", "a","11:00","12:00","2017-02-11 08:00", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Order processing initiated","a","11:00","12:00", "2017-02-10 15:00", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Order confirmed by seller", "a","11:00","12:00","2017-02-10 14:30", OrderStatus.COMPLETED))
+        mDataList.add(TimeLineModel("Order placed successfully","a", "11:00","12:00","2017-02-10 14:00", OrderStatus.COMPLETED))
     }
 
     private fun initRecyclerView() {
