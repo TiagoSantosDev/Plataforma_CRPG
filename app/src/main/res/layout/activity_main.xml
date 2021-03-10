@@ -50,12 +50,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhite"
-        android:clipToPadding="false"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="@dimen/bottom_padding_recycler_view"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_timeline" />
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_timeline"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <View
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
         android:paddingLeft="18dp"
         android:paddingRight="18dp"
         android:paddingEnd="18dp"
-        android:layout_gravity="bottom|center"
+        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:text="Options"
         android:textColor="@android:color/white"
@@ -83,6 +83,10 @@
         app:fontFamily="sans-serif-condensed"
         app:backgroundTint="?attr/colorAccent"
         app:rippleColor="@color/tertiaryText"
-        app:cornerRadius="32dp" />
+        app:cornerRadius="32dp"
+        app:icon="@drawable/ic_settings"
+        app:iconPadding="8dp"
+        app:iconSize="18dp"
+        app:iconTint="@android:color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
