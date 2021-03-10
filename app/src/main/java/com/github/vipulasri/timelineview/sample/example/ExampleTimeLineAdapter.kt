@@ -59,7 +59,7 @@ class ExampleTimeLineAdapter(private val mFeedList: List<TimeLineModel>) : Recyc
         } else
             holder.date.setGone()
 
-        holder.message.text = timeLineModel.message
+        holder.message.text = timeLineModel.title
     }
 
     private fun setMarker(holder: TimeLineViewHolder, drawableResId: Int, colorFilter: Int) {
