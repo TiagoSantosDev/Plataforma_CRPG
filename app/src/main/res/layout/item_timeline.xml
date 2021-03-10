@@ -20,22 +20,45 @@
         app:strokeColor="@color/material_amber_600"
         app:strokeWidth="5dp"/>
 
+    <RelativeLayout
+        android:layout_width="56dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="12H00" />
+
+
+        <TextView
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:text="11H00" />
+
+    </RelativeLayout>
+
+
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="244dp"
         android:layout_height="205dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="15dp"
         app:cardBackgroundColor="@color/colorGrey50"
-        app:contentPadding="15dp"
         app:strokeColor="#F9B401"
         app:strokeWidth="3dp">
 
         <RelativeLayout
-            android:layout_width="205dp"
-            android:layout_height="181dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:layout_width="47dp"
