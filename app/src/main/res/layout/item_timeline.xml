@@ -54,7 +54,10 @@
         android:layout_marginBottom="15dp"
         app:cardBackgroundColor="@color/colorGrey50"
         app:strokeColor="#F9B401"
-        app:strokeWidth="3dp">
+        app:strokeWidth="3dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="5dp"
+        app:contentPadding="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
