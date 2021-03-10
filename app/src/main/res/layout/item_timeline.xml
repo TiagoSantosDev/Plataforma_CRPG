@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             tools:text="12H00" />
 
-
         <TextView
             android:layout_width="56dp"
             android:layout_height="wrap_content"
