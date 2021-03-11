@@ -3,36 +3,61 @@ package com.github.vipulasri.timelineview.sample
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.preference.PreferenceManager
+import android.util.DisplayMetrics
+import android.view.ContextThemeWrapper
 import android.widget.Button
+import com.github.vipulasri.timelineview.sample.DatePickerActivity.Companion.dLocale
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import kotlinx.android.synthetic.main.activity_date_picker.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import java.util.*
+
 
 class DatePickerActivity : BaseActivity() {
 
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
 
+    companion object {
+        public var dLocale: Locale? = null
+    }
+
+    init {
+        updateConfig(this)
+    }
+
+    fun updateConfig(wrapper: ContextThemeWrapper) {
+
+        dLocale=Locale("pt")
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        wrapper.applyOverrideConfiguration(configuration)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_date_picker)
 
-        /*
-        companion object {
-            public var dLocale: Locale? = es
+        var change = ""
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val language = sharedPreferences.getString("language", "bak")
+        if (language=="English" ) {
+            change = "pt"
+        }else {
+            change =""
         }
 
-        Locale.setDefault(dLocale)
-        val configuration = Configuration()
-        configuration.setLocale(dLocale)
-        wrapper.applyOverrideConfiguration(configuration)*/
+        change = "pt"
+
+        dLocale = Locale(change) //set any locale you want here
 
         // set current date to calendar and current month to currentMonth variable
         calendar.time = Date()
@@ -94,7 +119,8 @@ class DatePickerActivity : BaseActivity() {
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
-            // you can override more methods, in this example we need only this one
+            // esta a receber nomes dos meses e dias em ingles;
+            //alterar para portugues
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
                 tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
                 tvDay.text = DateUtils.getDayName(date)
@@ -119,7 +145,8 @@ class DatePickerActivity : BaseActivity() {
             }
         }
 
-        // here we init our calendar, also you can set more properties if you haven't specified in XML layout
+        // here we init our calendar, also you can set more properties if you haven't
+        // specified in XML layout
         val singleRowCalendar = main_single_row_calendar.apply {
             calendarViewManager = myCalendarViewManager
             calendarChangesObserver = myCalendarChangesObserver
