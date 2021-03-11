@@ -52,14 +52,10 @@ class DatePickerActivity : BaseActivity() {
         if (language=="English" ) {
             change = "pt"
         }else {
-            change =""
+            change ="pt"
         }
 
-        change = "pt"
-
-        dLocale = Locale(change) //set any locale you want here
-
-        // set current date to calendar and current month to currentMonth variable
+        dLocale = Locale(change)
         calendar.time = Date()
 
         val button = findViewById<Button>(R.id.button_escolher)
