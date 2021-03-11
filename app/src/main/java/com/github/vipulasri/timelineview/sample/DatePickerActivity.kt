@@ -1,23 +1,9 @@
 package com.github.vipulasri.timelineview.sample
 
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.github.vipulasri.timelineview.TimelineView
-import com.github.vipulasri.timelineview.sample.example.ExampleActivity
-import com.github.vipulasri.timelineview.sample.extentions.dpToPx
-import com.github.vipulasri.timelineview.sample.extentions.getColorCompat
-import com.github.vipulasri.timelineview.sample.extentions.setGone
-import com.github.vipulasri.timelineview.sample.extentions.setVisible
-import com.github.vipulasri.timelineview.sample.model.OrderStatus
-import com.github.vipulasri.timelineview.sample.model.Orientation
-import com.github.vipulasri.timelineview.sample.model.TimeLineModel
-import com.github.vipulasri.timelineview.sample.model.TimelineAttributes
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
@@ -28,9 +14,15 @@ import java.util.*
 
 class DatePickerActivity : BaseActivity() {
 
+    private val calendar = Calendar.getInstance()
+    private val currentMonth = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentViewWithoutInject(R.layout.activity_date_picker)
+        setContentView(R.layout.activity_date_picker)
+
+        // set current date to calendar and current month to currentMonth variable
+        calendar.time = Date()
 
         val button = findViewById<Button>(R.id.button_escolher)
         button.setOnClickListener {
@@ -38,15 +30,35 @@ class DatePickerActivity : BaseActivity() {
             startActivity(intent)
         }
 
+        // calendar view manager is responsible for our displaying logic
         val myCalendarViewManager = object : CalendarViewManager {
             override fun setCalendarViewResourceId(
                     position: Int,
                     date: Date,
                     isSelected: Boolean
             ): Int {
-                // return item layout files, which you have created
-                return 1;
+                // set date to calendar according to position where we are
+                val cal = Calendar.getInstance()
+                cal.time = date
+                // if item is selected we return this layout items
+                // in this example monday, wednesday and friday will have special item views and other days
+                // will be using basic item view
+                return if (isSelected)
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        //R.layout.selected_calendar_item
+
+                    }
+                else
+                // here we return items which are not selected
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        //R.layout.calendar_item
+                    }
+
+                // NOTE: if we don't want to do it this way, we can simply change color of background
+                // in bindDataToCalendarView method
             }
+
+
 
             override fun bindDataToCalendarView(
                     holder: SingleRowCalendarAdapter.CalendarViewHolder,
@@ -55,6 +67,7 @@ class DatePickerActivity : BaseActivity() {
                     isSelected: Boolean
             ) {
                 // bind data to calendar item views
+
             }
 
         }
@@ -101,6 +114,20 @@ class DatePickerActivity : BaseActivity() {
         }
 
 
+    }
+
+    private fun getDates(list: MutableList<Date>): List<Date> {
+        // load dates of whole month
+        calendar.set(Calendar.MONTH, currentMonth)
+        calendar.set(Calendar.DAY_OF_MONTH, 1)
+        list.add(calendar.time)
+        while (currentMonth == calendar[Calendar.MONTH]) {
+            calendar.add(Calendar.DATE, +1)
+            if (calendar[Calendar.MONTH] == currentMonth)
+                list.add(calendar.time)
+        }
+        calendar.add(Calendar.DATE, -1)
+        return list
     }
 
 }
