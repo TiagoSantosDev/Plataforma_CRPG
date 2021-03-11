@@ -21,7 +21,7 @@ class DatePickerActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_date_picker)
+        setContentViewWithoutInject(R.layout.activity_date_picker)
 
         // set current date to calendar and current month to currentMonth variable
         calendar.time = Date()
@@ -32,7 +32,9 @@ class DatePickerActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        val myCalendarViewManager = object : CalendarViewManager {
+        // calendar view manager is responsible for our displaying logic
+        val myCalendarViewManager = object :
+                CalendarViewManager {
             override fun setCalendarViewResourceId(
                     position: Int,
                     date: Date,
@@ -42,7 +44,7 @@ class DatePickerActivity : BaseActivity() {
                 val cal = Calendar.getInstance()
                 cal.time = date
                 // if item is selected we return this layout items
-                // in this example monday, wednesday and friday will have special item views and other days
+                // in this example. monday, wednesday and friday will have special item views and other days
                 // will be using basic item view
                 return if (isSelected)
                     when (cal[Calendar.DAY_OF_WEEK]) {
@@ -78,15 +80,17 @@ class DatePickerActivity : BaseActivity() {
             }
         }
 
-
         // using calendar changes observer we can track changes in calendar
-        val myCalendarChangesObserver = object : CalendarChangesObserver {
+        val myCalendarChangesObserver = object :
+                CalendarChangesObserver {
             // you can override more methods, in this example we need only this one
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
                 tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
                 tvDay.text = DateUtils.getDayName(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
+
+
         }
 
         // selection manager is responsible for managing selection
@@ -95,7 +99,7 @@ class DatePickerActivity : BaseActivity() {
                 // set date to calendar according to position
                 val cal = Calendar.getInstance()
                 cal.time = date
-                //in this example sunday and saturday can't be selected, other item can be selected
+                // in this example sunday and saturday can't be selected, others can
                 return when (cal[Calendar.DAY_OF_WEEK]) {
                     Calendar.SATURDAY -> false
                     Calendar.SUNDAY -> false
@@ -104,12 +108,12 @@ class DatePickerActivity : BaseActivity() {
             }
         }
 
+        // here we init our calendar, also you can set more properties if you haven't specified in XML layout
         val singleRowCalendar = main_single_row_calendar.apply {
             calendarViewManager = myCalendarViewManager
             calendarChangesObserver = myCalendarChangesObserver
             calendarSelectionManager = mySelectionManager
-            futureDaysCount = 30
-            includeCurrentDate = true
+            setDates(getFutureDatesOfCurrentMonth())
             init()
         }
 
@@ -156,6 +160,4 @@ class DatePickerActivity : BaseActivity() {
         calendar.add(Calendar.DATE, -1)
         return list
     }
-
 }
-
