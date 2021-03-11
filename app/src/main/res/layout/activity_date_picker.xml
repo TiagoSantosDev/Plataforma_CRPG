@@ -44,15 +44,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="@dimen/bottom_padding_recycler_view"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
 
     <View
         android:layout_width="match_parent"
@@ -60,18 +52,6 @@
         android:id="@+id/dropshadow"
         android:layout_marginTop="?actionBarSize"
         android:background="@drawable/dropshadow"/>
-
-    <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
-        android:id="@+id/main_single_row_calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:deselection="false"
-        app:longPress="false"
-        app:multiSelection="false"
-        tools:overrideLibrary="com.michalsvec.singlerowcalendar" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_escolher"
@@ -94,5 +74,28 @@
         app:rippleColor="@color/tertiaryText"
         app:cornerRadius="32dp"
       />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+            android:id="@+id/main_single_row_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:deselection="false"
+            app:longPress="false"
+            app:multiSelection="false" />
+
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
