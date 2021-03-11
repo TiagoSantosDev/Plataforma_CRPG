@@ -25,7 +25,9 @@
     <color name="PrimaryOrange">#F9B401</color>
     <color name="PrimaryBlue">#002345</color>
     <color name="SecondaryBlue">#00BBF2</color>
+    <color name="GreyedBlue">#C41E2637</color>
     <color name="PrimaryGreen">#87B700</color>
+
 
     <array name="colors">
         <item>@color/material_red_500</item>

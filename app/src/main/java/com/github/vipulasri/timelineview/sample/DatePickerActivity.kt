@@ -79,17 +79,17 @@ class DatePickerActivity : BaseActivity() {
                 // will be using basic item view
                 return if (isSelected)
                     when (cal[Calendar.DAY_OF_WEEK]) {
-                        Calendar.MONDAY -> R.layout.first_special_selected_calendar_item
-                        Calendar.WEDNESDAY -> R.layout.second_special_selected_calendar_item
-                        Calendar.FRIDAY -> R.layout.third_special_selected_calendar_item
+//                        Calendar.MONDAY -> R.layout.first_special_selected_calendar_item
+//                        Calendar.WEDNESDAY -> R.layout.second_special_selected_calendar_item
+//                        Calendar.FRIDAY -> R.layout.third_special_selected_calendar_item
                         else -> R.layout.selected_calendar_item
                     }
                 else
                 // here we return items which are not selected
                     when (cal[Calendar.DAY_OF_WEEK]) {
-                        Calendar.MONDAY -> R.layout.first_special_calendar_item
-                        Calendar.WEDNESDAY -> R.layout.second_special_calendar_item
-                        Calendar.FRIDAY -> R.layout.third_special_calendar_item
+//                        Calendar.MONDAY -> R.layout.first_special_calendar_item
+//                        Calendar.WEDNESDAY -> R.layout.second_special_calendar_item
+//                        Calendar.FRIDAY -> R.layout.third_special_calendar_item
                         else -> R.layout.calendar_item
                     }
 
