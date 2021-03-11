@@ -2,4 +2,6 @@
 <resources>
     <item name="toolbar2" type="id" />
     <item name="button_escolher" type="id" />
+    <item name="frameLayout" type="id" />
+    <item name="main_single_row_calendar" type="id" />
 </resources>
