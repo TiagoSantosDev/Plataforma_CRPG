@@ -50,8 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/appbarLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
-        android:src="@drawable/ic_marker_active" />
+        android:layout_marginTop="49dp" />
 
     <TextView
         android:id="@+id/tvDate"
@@ -91,28 +90,33 @@
         app:multiSelection="false" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_height="56dp"
-        android:layout_width="wrap_content"
-        android:elevation="4dp"
         android:id="@+id/button_escolher"
-        android:textColor="@android:color/white"
-        android:text="Options"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:textSize="12sp"
+        android:layout_width="156dp"
+        android:layout_height="72dp"
         android:layout_below="@+id/main_single_row_calendar"
-        android:paddingRight="18dp"
-        android:paddingLeft="18dp"
-        app:iconTint="@android:color/white"
-        app:iconSize="18dp"
-        app:iconPadding="8dp"
-        app:icon="@drawable/ic_settings"
-        app:cornerRadius="32dp"
-        app:rippleColor="@color/tertiaryText"
-        app:backgroundTint="?attr/colorAccent"
-        app:fontFamily="sans-serif-condensed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:elevation="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:layout_margin="@dimen/fab_margin"
+        android:paddingStart="18sp"
+        android:paddingLeft="18dp"
         android:paddingEnd="18dp"
-        android:paddingStart="18sp"/>
+        android:paddingRight="18dp"
+        android:text="@string/escolher"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:backgroundTint="?attr/colorAccent"
+        app:cornerRadius="32dp"
+        app:fontFamily="sans-serif-condensed"
+        app:iconPadding="8dp"
+        app:iconSize="18dp"
+        app:iconTint="@android:color/white"
+        app:rippleColor="@color/tertiaryText" />
+
+
 
 </RelativeLayout>

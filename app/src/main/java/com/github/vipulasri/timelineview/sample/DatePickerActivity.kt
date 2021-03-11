@@ -34,7 +34,6 @@ class DatePickerActivity : BaseActivity() {
     }
 
     fun updateConfig(wrapper: ContextThemeWrapper) {
-
         dLocale=Locale("pt")
         Locale.setDefault(dLocale)
         val configuration = Configuration()
@@ -115,8 +114,6 @@ class DatePickerActivity : BaseActivity() {
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
-            // esta a receber nomes dos meses e dias em ingles;
-            //alterar para portugues
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
                 tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
                 tvDay.text = DateUtils.getDayName(date)
@@ -132,7 +129,7 @@ class DatePickerActivity : BaseActivity() {
                 // set date to calendar according to position
                 val cal = Calendar.getInstance()
                 cal.time = date
-                // in this example sunday and saturday can't be selected, others can
+                // saturday and sunday are disabled as CRPG is not open on these days
                 return when (cal[Calendar.DAY_OF_WEEK]) {
                     Calendar.SATURDAY -> false
                     Calendar.SUNDAY -> false
@@ -141,8 +138,6 @@ class DatePickerActivity : BaseActivity() {
             }
         }
 
-        // here we init our calendar, also you can set more properties if you haven't
-        // specified in XML layout
         val singleRowCalendar = main_single_row_calendar.apply {
             calendarViewManager = myCalendarViewManager
             calendarChangesObserver = myCalendarChangesObserver
