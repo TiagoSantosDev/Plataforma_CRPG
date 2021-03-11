@@ -60,7 +60,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
         android:text="SELECT A DATE"
-        android:textColor="@color/grey"
+        android:textColor="@color/colorGrey50"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:fontFamily="sans-serif-medium"
-        android:textColor="@color/lightGrey"
+        android:textColor="@color/colorGrey100"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvDate"
         app:layout_constraintStart_toEndOf="@+id/tvDate"
