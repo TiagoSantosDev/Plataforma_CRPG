@@ -2,6 +2,7 @@ package com.github.vipulasri.timelineview.sample
 
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
@@ -22,6 +23,16 @@ class DatePickerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_date_picker)
+
+        /*
+        companion object {
+            public var dLocale: Locale? = es
+        }
+
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        wrapper.applyOverrideConfiguration(configuration)*/
 
         // set current date to calendar and current month to currentMonth variable
         calendar.time = Date()
