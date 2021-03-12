@@ -101,7 +101,7 @@ class MainActivity : BaseActivity() {
 
         recyclerView.apply {
             layoutManager = mLayoutManager
-            adapter =  TimeLineAdapter(mDataList, mAttributes)
+            adapter = TimeLineAdapter(mDataList, mAttributes)
         }
     }
 

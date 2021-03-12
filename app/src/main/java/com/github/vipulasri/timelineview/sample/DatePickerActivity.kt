@@ -1,15 +1,11 @@
 package com.github.vipulasri.timelineview.sample
 
-
 import android.content.Intent
 import android.content.res.Configuration
-import android.content.res.Resources
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.DisplayMetrics
 import android.view.ContextThemeWrapper
 import android.widget.Button
-import com.github.vipulasri.timelineview.sample.DatePickerActivity.Companion.dLocale
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
@@ -48,9 +44,9 @@ class DatePickerActivity : BaseActivity() {
         var change = ""
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val language = sharedPreferences.getString("language", "bak")
-        if (language=="English" ) {
+        if (language=="English") {
             change = "pt"
-        }else {
+        } else {
             change ="pt"
         }
 
@@ -65,11 +61,11 @@ class DatePickerActivity : BaseActivity() {
 
         // calendar view manager is responsible for our displaying logic
         val myCalendarViewManager = object :
-                CalendarViewManager {
+            CalendarViewManager {
             override fun setCalendarViewResourceId(
-                    position: Int,
-                    date: Date,
-                    isSelected: Boolean
+                position: Int,
+                date: Date,
+                isSelected: Boolean
             ): Int {
                 // set date to calendar according to position where we are
                 val cal = Calendar.getInstance()
@@ -98,10 +94,10 @@ class DatePickerActivity : BaseActivity() {
             }
 
             override fun bindDataToCalendarView(
-                    holder: SingleRowCalendarAdapter.CalendarViewHolder,
-                    date: Date,
-                    position: Int,
-                    isSelected: Boolean
+                holder: SingleRowCalendarAdapter.CalendarViewHolder,
+                date: Date,
+                position: Int,
+                isSelected: Boolean
             ) {
                 // using this method we can bind data to calendar view
                 // good practice is if all views in layout have same IDs in all item views
@@ -119,8 +115,6 @@ class DatePickerActivity : BaseActivity() {
                 tvDay.text = DateUtils.getDayName(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
-
-
         }
 
         // selection manager is responsible for managing selection
@@ -145,8 +139,6 @@ class DatePickerActivity : BaseActivity() {
             setDates(getFutureDatesOfCurrentMonth())
             init()
         }
-
-
     }
 
     private fun getDatesOfNextMonth(): List<Date> {
@@ -174,7 +166,6 @@ class DatePickerActivity : BaseActivity() {
         currentMonth = calendar[Calendar.MONTH]
         return getDates(mutableListOf())
     }
-
 
     private fun getDates(list: MutableList<Date>): List<Date> {
         // load dates of whole month

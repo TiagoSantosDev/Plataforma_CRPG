@@ -8,10 +8,10 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 class TimeLineModel(
-        var title: String,
-        var info: String,
-        var start_time: String,
-        var end_time: String,
-        var date: String,
-        var status: OrderStatus
+    var title: String,
+    var info: String,
+    var start_time: String,
+    var end_time: String,
+    var date: String,
+    var status: OrderStatus
 ) : Parcelable

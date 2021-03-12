@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.item_bottom_sheet_marker.*
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
+class TimelineAttributesBottomSheet : RoundedCornerBottomSheet() {
 
     interface Callbacks {
         fun onAttributesChanged(attributes: TimelineAttributes)
@@ -36,7 +36,7 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         fun showDialog(fragmentManager: FragmentManager, attributes: TimelineAttributes, callbacks: Callbacks) {
             val dialog = TimelineAttributesBottomSheet()
             dialog.arguments = bundleOf(
-                    EXTRA_ATTRIBUTES to attributes
+                EXTRA_ATTRIBUTES to attributes
             )
             dialog.setCallback(callbacks)
             dialog.show(fragmentManager, "[TIMELINE_ATTRIBUTES_BOTTOM_SHEET]")
@@ -77,9 +77,9 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
 
         text_attributes_heading.setOnClickListener { dismiss() }
 
-        //orientation
+        // orientation
         rg_orientation.setOnCheckedChangeListener { group, checkedId ->
-            when(checkedId) {
+            when (checkedId) {
                 R.id.rb_horizontal -> {
                     mAttributes.orientation = Orientation.HORIZONTAL
                 }
@@ -88,9 +88,9 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
                 }
             }
         }
-        rg_orientation.check(if(mAttributes.orientation == Orientation.VERTICAL) R.id.rb_vertical else R.id.rb_horizontal)
+        rg_orientation.check(if (mAttributes.orientation == Orientation.VERTICAL) R.id.rb_vertical else R.id.rb_horizontal)
 
-        //marker
+        // marker
         seek_marker_size.progress = mAttributes.markerSize
         image_marker_color.mFillColor = mAttributes.markerColor
         checkbox_marker_in_center.isChecked = mAttributes.markerInCenter
@@ -113,7 +113,7 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         seek_marker_bottom_padding.setOnProgressChangeListener(progressChangeListener)
         seek_marker_line_padding.setOnProgressChangeListener(progressChangeListener)
 
-        //line
+        // line
         Log.e(" mAttributes.lineWidth", "${ mAttributes.lineWidth}")
 
         seek_line_width.progress = mAttributes.lineWidth
@@ -123,7 +123,7 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         image_start_line_color.setOnClickListener { showColorPicker(mAttributes.startLineColor, image_start_line_color) }
         image_end_line_color.setOnClickListener { showColorPicker(mAttributes.endLineColor, image_end_line_color) }
 
-        when(mAttributes.lineStyle) {
+        when (mAttributes.lineStyle) {
             TimelineView.LineStyle.NORMAL -> spinner_line_type.setSelection(0)
             TimelineView.LineStyle.DASHED -> spinner_line_type.setSelection(1)
         }
@@ -141,7 +141,6 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-
             }
         }
 
@@ -158,27 +157,26 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         }
     }
 
-    private fun showColorPicker(selectedColor : Int, colorView: BorderedCircle) {
+    private fun showColorPicker(selectedColor: Int, colorView: BorderedCircle) {
         SpectrumDialog.Builder(requireContext())
-                .setColors(R.array.colors)
-                .setSelectedColor(selectedColor)
-                .setDismissOnColorSelected(true)
-                .setOutlineWidth(1)
-                .setOnColorSelectedListener { positiveResult, color ->
-                    if (positiveResult) {
-                        colorView.mFillColor = color
+            .setColors(R.array.colors)
+            .setSelectedColor(selectedColor)
+            .setDismissOnColorSelected(true)
+            .setOutlineWidth(1)
+            .setOnColorSelectedListener { positiveResult, color ->
+                if (positiveResult) {
+                    colorView.mFillColor = color
 
-                        when(colorView.id) {
-                            R.id.image_marker_color ->  { mAttributes.markerColor = color }
-                            R.id.image_start_line_color -> { mAttributes.startLineColor = color }
-                            R.id.image_end_line_color -> { mAttributes.endLineColor = color }
-                            else -> {
-                                //do nothing
-                            }
+                    when (colorView.id) {
+                        R.id.image_marker_color -> { mAttributes.markerColor = color }
+                        R.id.image_start_line_color -> { mAttributes.startLineColor = color }
+                        R.id.image_end_line_color -> { mAttributes.endLineColor = color }
+                        else -> {
+                            // do nothing
                         }
-
                     }
-                }.build().show(childFragmentManager, "ColorPicker")
+                }
+            }.build().show(childFragmentManager, "ColorPicker")
     }
 
     private var progressChangeListener: DiscreteSeekBar.OnProgressChangeListener = object : DiscreteSeekBar.OnProgressChangeListener {
@@ -186,13 +184,13 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         override fun onProgressChanged(discreteSeekBar: DiscreteSeekBar, value: Int, b: Boolean) {
 
             Log.d("onProgressChanged", "value->$value")
-            when(discreteSeekBar.id) {
-                R.id.seek_marker_size ->  { mAttributes.markerSize = value }
-                R.id.seek_marker_left_padding ->  { mAttributes.markerLeftPadding = value }
-                R.id.seek_marker_top_padding ->  { mAttributes.markerTopPadding = value }
-                R.id.seek_marker_right_padding ->  { mAttributes.markerRightPadding = value }
-                R.id.seek_marker_bottom_padding ->  { mAttributes.markerBottomPadding = value }
-                R.id.seek_marker_line_padding ->  { mAttributes.linePadding = value }
+            when (discreteSeekBar.id) {
+                R.id.seek_marker_size -> { mAttributes.markerSize = value }
+                R.id.seek_marker_left_padding -> { mAttributes.markerLeftPadding = value }
+                R.id.seek_marker_top_padding -> { mAttributes.markerTopPadding = value }
+                R.id.seek_marker_right_padding -> { mAttributes.markerRightPadding = value }
+                R.id.seek_marker_bottom_padding -> { mAttributes.markerBottomPadding = value }
+                R.id.seek_marker_line_padding -> { mAttributes.linePadding = value }
                 R.id.seek_line_width -> { mAttributes.lineWidth = value }
                 R.id.seek_line_dash_width -> { mAttributes.lineDashWidth = value }
                 R.id.seek_line_dash_gap -> { mAttributes.lineDashGap = value }
@@ -200,16 +198,13 @@ class TimelineAttributesBottomSheet: RoundedCornerBottomSheet() {
         }
 
         override fun onStartTrackingTouch(discreteSeekBar: DiscreteSeekBar) {
-
         }
 
         override fun onStopTrackingTouch(discreteSeekBar: DiscreteSeekBar) {
-
         }
     }
 
     private fun setCallback(callbacks: Callbacks) {
         mCallbacks = callbacks
     }
-
 }

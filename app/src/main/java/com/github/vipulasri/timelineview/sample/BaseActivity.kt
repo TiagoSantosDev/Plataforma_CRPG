@@ -10,14 +10,13 @@ open class BaseActivity : AppCompatActivity() {
 
     var toolbar: Toolbar? = null
 
-    //If back button is displayed in action bar, return false
+    // If back button is displayed in action bar, return false
     protected var isDisplayHomeAsUpEnabled: Boolean
         get() = false
         set(value) {
             whenNotNull(supportActionBar) {
                 it.setDisplayHomeAsUpEnabled(value)
             }
-
         }
 
     override fun setContentView(layoutResID: Int) {
@@ -25,7 +24,7 @@ open class BaseActivity : AppCompatActivity() {
 
         injectViews()
 
-        //Displaying the back button in the action bar
+        // Displaying the back button in the action bar
         if (isDisplayHomeAsUpEnabled) {
             whenNotNull(supportActionBar) {
                 it.setDisplayHomeAsUpEnabled(true)
@@ -60,11 +59,10 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        //Menu
+        // Menu
         when (item.itemId) {
-        //When home is clicked
+            // When home is clicked
             android.R.id.home -> {
                 onActionBarHomeIconClicked()
                 return true
@@ -79,7 +77,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    //Method for when home button is clicked
+    // Method for when home button is clicked
     private fun onActionBarHomeIconClicked() {
         if (isDisplayHomeAsUpEnabled) {
             onBackPressed()
