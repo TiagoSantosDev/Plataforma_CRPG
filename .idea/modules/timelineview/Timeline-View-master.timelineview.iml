@@ -34,9 +34,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../timelineview/src/main/res" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../../timelineview/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../timelineview/build" />
     </content>

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.dmitrymalkovich.android:material-design-dimens:1.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e38e006dfdb3490b97404ef562b1fc69/jetified-material-design-dimens-1.4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e38e006dfdb3490b97404ef562b1fc69/jetified-material-design-dimens-1.4/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e38e006dfdb3490b97404ef562b1fc69/jetified-material-design-dimens-1.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02efd5ef9f44cf46937e6fc2a2ed9864/jetified-material-design-dimens-1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02efd5ef9f44cf46937e6fc2a2ed9864/jetified-material-design-dimens-1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02efd5ef9f44cf46937e6fc2a2ed9864/jetified-material-design-dimens-1.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dmitrymalkovich.android/material-design-dimens/1.4/83614872090a5aa7d139cd0a00983b17255d8929/material-design-dimens-1.4-javadoc.jar!/" />

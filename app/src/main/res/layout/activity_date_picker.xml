@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.vipulasri.timelineview.sample.MainActivity">
+    tools:context=".DatePickerActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -40,48 +40,83 @@
                 android:text="@string/example"
                 android:textColor="@color/primaryText"
                 android:textSize="14sp"/>
-
         </FrameLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="@dimen/bottom_padding_recycler_view"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:id="@+id/dropshadow"
-        android:layout_marginTop="?actionBarSize"
-        android:background="@drawable/dropshadow"/>
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="SELECT A DATE"
+        android:textColor="@color/colorGrey50"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/colorGrey100"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/tvDate"
+        app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+    <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+        android:id="@+id/main_single_row_calendar"
+        android:layout_width="388dp"
+        android:layout_height="161dp"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="16dp"
+        app:deselection="false"
+        app:longPress="false"
+        app:multiSelection="false" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_escolher"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
+        android:layout_width="156dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/main_single_row_calendar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:elevation="4dp"
+        android:fontFamily="sans-serif-condensed"
         android:paddingStart="18sp"
         android:paddingLeft="18dp"
-        android:paddingRight="18dp"
         android:paddingEnd="18dp"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="@dimen/fab_margin"
+        android:paddingRight="18dp"
         android:text="@string/escolher"
         android:textColor="@android:color/white"
-        android:textSize="12sp"
-        android:fontFamily="sans-serif-condensed"
-        app:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
         app:backgroundTint="?attr/colorAccent"
-        app:rippleColor="@color/tertiaryText"
         app:cornerRadius="32dp"
-      />
+        app:fontFamily="sans-serif-condensed"
+        app:iconPadding="8dp"
+        app:iconSize="18dp"
+        app:iconTint="@android:color/white"
+        app:rippleColor="@color/tertiaryText" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>
