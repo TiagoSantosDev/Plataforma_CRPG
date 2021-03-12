@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_date_picker.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import java.util.*
 
-
 class DatePickerActivity : BaseActivity() {
 
     private val calendar = Calendar.getInstance()
@@ -103,7 +102,6 @@ class DatePickerActivity : BaseActivity() {
                 // good practice is if all views in layout have same IDs in all item views
                 holder.itemView.tv_date_calendar_item.text = DateUtils.getDayNumber(date)
                 holder.itemView.tv_day_calendar_item.text = DateUtils.getDay3LettersName(date)
-
             }
         }
 
