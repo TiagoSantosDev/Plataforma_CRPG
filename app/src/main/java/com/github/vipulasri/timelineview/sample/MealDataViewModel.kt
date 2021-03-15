@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.github.vipulasri.timelineview.sample.model.Meal
 import com.google.gson.Gson
 
-class JSONMealParser : ViewModel() {
+class MealDataViewModel : ViewModel() {
     val TAG = "JSONParser"
 
     val m = Meal("a", "b", "c", "d")

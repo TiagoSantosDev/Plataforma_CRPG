@@ -3,6 +3,7 @@ package com.github.vipulasri.timelineview.sample
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.vipulasri.timelineview.TimelineView
@@ -22,12 +23,13 @@ class MainActivity : BaseActivity() {
     private var mDataList = ArrayList<EventModel>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
+    private lateinit var eventDataViewModelModel: EventDataViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
 
-
+        //eventDataViewModelModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
 
         // default values
         mAttributes = TimelineAttributes(
@@ -73,8 +75,8 @@ class MainActivity : BaseActivity() {
 
     private fun setDataListItems() {
 
-        val eventP = JSONEventParser()
-        mDataList = eventP.setDataListItems()
+        //val eventP = JSONEventParser()
+        mDataList = eventDataViewModelModel.setDataListItems()
         println(mDataList)
     /*
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))

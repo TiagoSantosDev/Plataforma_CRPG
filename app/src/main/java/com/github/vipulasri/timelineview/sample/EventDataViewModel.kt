@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.github.vipulasri.timelineview.sample.model.EventModel
 import java.util.ArrayList
 
-class JSONEventParser : ViewModel() {
+class EventDataViewModel : ViewModel() {
 
     private val mDataList = ArrayList<EventModel>()
 
