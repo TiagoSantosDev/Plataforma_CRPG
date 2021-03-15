@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import com.github.vipulasri.timelineview.sample.model.OrderStatus
 import com.github.vipulasri.timelineview.sample.model.Orientation
-import com.github.vipulasri.timelineview.sample.model.TimeLineModel
+import com.github.vipulasri.timelineview.sample.model.EventModel
 import com.github.vipulasri.timelineview.sample.utils.VectorDrawableUtils
 import com.github.vipulasri.timelineview.TimelineView
 import com.github.vipulasri.timelineview.sample.extentions.formatDateTime
@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
  * Created by Vipul Asri on 05-12-2015.
  */
 
-class TimeLineAdapter(private val mFeedList: List<TimeLineModel>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
+class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
     private lateinit var mLayoutInflater: LayoutInflater
 
@@ -46,7 +46,7 @@ class TimeLineAdapter(private val mFeedList: List<TimeLineModel>, private var mA
     override fun onBindViewHolder(holder: TimeLineViewHolder, position: Int) {
 
         val timeLineModel = mFeedList[position]
-
+/*
         when {
             timeLineModel.status == OrderStatus.INACTIVE -> {
                 holder.timeline.marker = VectorDrawableUtils.getDrawable(holder.itemView.context, R.drawable.ic_marker_inactive, mAttributes.markerColor)
@@ -57,7 +57,9 @@ class TimeLineAdapter(private val mFeedList: List<TimeLineModel>, private var mA
             else -> {
                 holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker), mAttributes.markerColor)
             }
-        }
+        }*/
+
+        holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
 
         if (timeLineModel.date.isNotEmpty()) {
             holder.date.setVisible()
