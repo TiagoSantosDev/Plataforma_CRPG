@@ -54,7 +54,8 @@ class ExampleTimeLineAdapter(private val mFeedList: List<EventModel>) : Recycler
         setMarker(holder, R.drawable.ic_marker, R.color.material_grey_500)
         if (timeLineModel.date.isNotEmpty()) {
             holder.date.setVisible()
-            holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd HH:mm", "hh:mm a, dd-MMM-yyyy")
+            //holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd HH:mm", "hh:mm a, dd-MMM-yyyy")
+            holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd", "dd-MMM-yyyy")
         } else
             holder.date.setGone()
 

@@ -25,9 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Event" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONEventParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONMealParser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ktlint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -38,21 +36,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/Meal" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/Meal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONEventParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONEventParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONMealParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONMealParser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimeLineAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleTimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleTimeLineAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Meal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Meal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/TimeLineModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/EventModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/DateTimeExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/DateTimeExtentions.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -69,6 +66,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -77,16 +75,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.github.vipulasri.timelineview.sample" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\assets" />
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\drawable" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
     </key>
   </component>
@@ -194,26 +192,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="690" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1615567707298" />
+    <state x="358" y="132" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1615812002897">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="358" y="132" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1615812002897" />
     <state x="528" y="188" key="FileChooserDialogImpl" timestamp="1615804664137">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="528" y="188" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1615804664137" />
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1615568079934">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1615818586889">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615568079934" />
-    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1615568079934">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615818586889" />
+    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1615818586889">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615568079934" />
-    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1615568079933">
+    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615818586889" />
+    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1615818586889">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615568079933" />
-    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1615568079934">
+    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615818586889" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1615818586889">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615568079934" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615818586889" />
     <state x="66" y="0" key="SettingsEditor" timestamp="1615570048354">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

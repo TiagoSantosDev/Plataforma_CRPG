@@ -20,13 +20,15 @@ import java.util.ArrayList
 
 class MainActivity : BaseActivity() {
 
-    private val mDataList = ArrayList<EventModel>()
+    private var mDataList = ArrayList<EventModel>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
+
+
 
         // default values
         mAttributes = TimelineAttributes(
@@ -71,6 +73,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setDataListItems() {
+
+        val eventP = JSONEventParser()
+        mDataList = eventP.setDataListItems()
+        println(mDataList)
     /*
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))

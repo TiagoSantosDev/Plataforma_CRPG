@@ -63,7 +63,8 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
 
         if (timeLineModel.date.isNotEmpty()) {
             holder.date.setVisible()
-            holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd HH:mm", "hh:mm a, dd-MMM-yyyy")
+            //holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd HH:mm", "hh:mm a, dd-MMM-yyyy")
+            holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd", "dd-MMM-yyyy")
         } else
             holder.date.setGone()
 
