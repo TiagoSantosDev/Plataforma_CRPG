@@ -25,24 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ktlint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONEventParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONEventParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONMealParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/JSONMealParser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimeLineAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleTimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleTimeLineAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/DateTimeExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/DateTimeExtentions.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

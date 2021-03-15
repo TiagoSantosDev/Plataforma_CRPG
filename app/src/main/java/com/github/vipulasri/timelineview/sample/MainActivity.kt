@@ -11,7 +11,6 @@ import com.github.vipulasri.timelineview.sample.extentions.dpToPx
 import com.github.vipulasri.timelineview.sample.extentions.getColorCompat
 import com.github.vipulasri.timelineview.sample.extentions.setGone
 import com.github.vipulasri.timelineview.sample.extentions.setVisible
-import com.github.vipulasri.timelineview.sample.model.OrderStatus
 import com.github.vipulasri.timelineview.sample.model.Orientation
 import com.github.vipulasri.timelineview.sample.model.EventModel
 import com.github.vipulasri.timelineview.sample.model.TimelineAttributes
