@@ -8,6 +8,7 @@ import com.github.vipulasri.timelineview.sample.model.Meal
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileOutputStream
 
 @SuppressLint("StaticFieldLeak")
@@ -28,12 +29,27 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
         val filename = "myfile.json"
         val fileContents = "Hello world!"
 
+        val file = File(context.filesDir, filename)
+
        /* fileOutputStream = openFileOutput(filename, Context.MODE_PRIVATE).use {
             it.write(fileContents.toByteArray())
         }*/
 
         val fos: FileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE)
         fos.write(fileContents.toByteArray())
+
+        println("escreveu no ficheiro")
+
+        context.openFileInput(filename).bufferedReader().useLines { lines ->
+            lines.fold("") { some, text ->
+                "$some\n$text"
+            }
+            println(lines)
+        }
+
+        println("leu o ficheiro")
+
+
 
         // View list of files
         // var files: Array<String> = context.fileList()
