@@ -26,7 +26,7 @@ class MainActivity : BaseActivity() {
     private var mDataList = ArrayList<EventModel>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
-    public lateinit var eventDataViewModel: EventDataViewModel
+
 
     //class MealDataViewModel(application: Application) : AndroidViewModel(application)
 
@@ -92,8 +92,12 @@ class MainActivity : BaseActivity() {
 
         val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
 
+        val test = ViewModelProvider.AndroidViewModelFactory(application).create(Test::class.java)
+
+        test
+
         //mealViewModel.testJSON()
-        mealViewModel.testJSON_Extract()
+        //mealViewModel.testJSON_Extract()
         //mealViewModel.convertMealsToJSON()
 
     /*
