@@ -94,7 +94,7 @@ class MainActivity : BaseActivity() {
 
         val test = ViewModelProvider.AndroidViewModelFactory(application).create(Test::class.java)
 
-        test.a()
+        test.b()
 
         //mealViewModel.testJSON()
         //mealViewModel.testJSON_Extract()

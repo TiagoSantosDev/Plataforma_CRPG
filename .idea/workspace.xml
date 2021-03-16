@@ -25,7 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Tutorial.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Person.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -35,7 +36,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/Meal" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/Meal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/Test.kt" afterDir="false" />
     </list>
@@ -75,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/Pixel_3a_API_30_x86 [emulator-5554]/data/user/0/com.github.vipulasri.timelineview.sample/files" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -196,10 +199,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="158" y="87" key="#PSD/0.0.1280.680@0.0.1280.680" timestamp="1615566576173" />
-    <state x="511" y="160" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615822660366">
+    <state x="511" y="160" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615910549202">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="511" y="160" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1615822660366" />
+    <state x="511" y="160" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1615910549202" />
     <state x="182" y="265" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1615823041260">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -216,26 +219,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="358" y="132" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1615812002897" />
-    <state x="528" y="188" key="FileChooserDialogImpl" timestamp="1615804664137">
+    <state x="528" y="161" key="FileChooserDialogImpl" timestamp="1615913788017">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="528" y="188" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1615804664137" />
-    <state width="1236" height="226" key="GridCell.Tab.0.bottom" timestamp="1615909979786">
+    <state x="528" y="161" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1615913788017" />
+    <state width="1236" height="155" key="GridCell.Tab.0.bottom" timestamp="1615913569908">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="226" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615909979786" />
-    <state width="1236" height="226" key="GridCell.Tab.0.center" timestamp="1615909979786">
+    <state width="1236" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1615913569908" />
+    <state width="1236" height="155" key="GridCell.Tab.0.center" timestamp="1615913569908">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="226" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615909979786" />
-    <state width="1236" height="226" key="GridCell.Tab.0.left" timestamp="1615909979786">
+    <state width="1236" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1615913569908" />
+    <state width="1236" height="155" key="GridCell.Tab.0.left" timestamp="1615913569907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="226" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615909979786" />
-    <state width="1236" height="226" key="GridCell.Tab.0.right" timestamp="1615909979786">
+    <state width="1236" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1615913569907" />
+    <state width="1236" height="155" key="GridCell.Tab.0.right" timestamp="1615913569908">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="226" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615909979786" />
+    <state width="1236" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615913569908" />
     <state x="224" y="0" key="SettingsEditor" timestamp="1615894870986">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
