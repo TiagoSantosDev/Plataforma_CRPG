@@ -15,25 +15,47 @@ import java.io.FileOutputStream
 class MealDataViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context = application.applicationContext
-
-    val TAG = "JSONParser"
-
     val m = Meal("a", "b", "c", "d")
 
-    //val a = application.getApplicationContext()
+    fun testJSON() {
+
+        val gson = Gson()
+        val json = gson.toJson(m)
+
+        println(json)
+
+        val gsonPretty = GsonBuilder().setPrettyPrinting().create()
+        val prettyJson: String  = gsonPretty.toJson(json)
+
+        val filename = "meals.json"
+        val file = File(context.filesDir, filename)
+
+        file.writeText(prettyJson)
+
+    }
+
+    fun getMealsFromJSON() {
+
+        val filename = "meals.json"
+        val file = File(context.filesDir, filename)
+
+        context.openFileInput(filename).bufferedReader().useLines { lines ->
+            lines.fold("") { some, text ->
+                "$some\n$text"
+            }
+            println(lines)
+        }
+
+    }
 
     fun convertMealsToJSON() {
 
         val gson = Gson()
         val json = gson.toJson(m)
-        val filename = "myfile.json"
+        val filename = "meals.json"
         val fileContents = "Hello world!"
 
         val file = File(context.filesDir, filename)
-
-       /* fileOutputStream = openFileOutput(filename, Context.MODE_PRIVATE).use {
-            it.write(fileContents.toByteArray())
-        }*/
 
         val fos: FileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE)
         fos.write(fileContents.toByteArray())
@@ -50,16 +72,11 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
         println("leu o ficheiro")
 
 
-
-        // View list of files
-        // var files: Array<String> = context.fileList()
-
         //val gsonPretty = GsonBuilder().setPrettyPrinting().create()
 
         //val jsonTutsListPretty: String = gsonPretty.toJson(json)
         //File("testPretty.json").writeText(jsonTutsListPretty)
     }
 
-    private fun getMealsFromJSON() {
-    }
+
 }

@@ -91,7 +91,9 @@ class MainActivity : BaseActivity() {
         // println(mDataList)
 
         val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
-        mealViewModel.convertMealsToJSON()
+
+        mealViewModel.testJSON()
+        //mealViewModel.convertMealsToJSON()
 
     /*
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
