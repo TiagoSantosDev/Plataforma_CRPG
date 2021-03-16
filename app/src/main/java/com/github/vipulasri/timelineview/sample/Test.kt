@@ -35,22 +35,13 @@ class Test(application: Application) : AndroidViewModel(application) {
         val gson = Gson()
         val filename = "test.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
-        val fileContent = "{\n" +
-                "\t\t\"title\": \"Kotlin Tutorial #2\",\n" +
-                "\t\t\"author\": \"bezkoder\",\n" +
-                "\t\t\"categories\": [\n" +
-                "\t\t\t\"Kotlin\",\n" +
-                "\t\t\t\"Basic\"\n" +
-                "\t\t],\n" +
-                "\t\t\"dummy\": \"dummy text\"\n" +
-                "\t}"
+
+        val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
         File(fullFilename).writeText(fileContent)
         //val file = File(context.filesDir, filename)
 
-        println(fullFilename)
-        //ficheiro esta actualmente vazio e nao pode ser editado manualmente
-        val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
-        println("> From JSON Tutorial String:\n" + tutorial_1)
+        val meal_1: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
+        println("> From JSON Meal String:\n" + meal_1)
 
     }
 
@@ -65,6 +56,28 @@ class Test(application: Application) : AndroidViewModel(application) {
         var persons: List<Person> = gson.fromJson(jsonFileString, listPersonType)
         persons.forEachIndexed { idx, person -> Log.i("data", "> Item $idx:\n$person") }*/
 
+    }
+
+    fun insertData(){
+        val gson = Gson()
+        val filename = "test.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+        val fileContent = "{\n" +
+                 "\t\t\"title\": \"Kotlin Tutorial #2\",\n" +
+                 "\t\t\"author\": \"bezkoder\",\n" +
+                 "\t\t\"categories\": [\n" +
+                 "\t\t\t\"Kotlin\",\n" +
+                 "\t\t\t\"Basic\"\n" +
+                 "\t\t],\n" +
+                 "\t\t\"dummy\": \"dummy text\"\n" +
+                 "\t}"
+         File(fullFilename).writeText(fileContent)
+         //val file = File(context.filesDir, filename)
+
+         println(fullFilename)
+         //ficheiro esta actualmente vazio e nao pode ser editado manualmente
+         val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
+         println("> From JSON Tutorial String:\n" + tutorial_1)
     }
 
 
