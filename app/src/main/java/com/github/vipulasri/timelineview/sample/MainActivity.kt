@@ -92,7 +92,8 @@ class MainActivity : BaseActivity() {
 
         val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
 
-        mealViewModel.testJSON()
+        //mealViewModel.testJSON()
+        mealViewModel.testJSON_Extract()
         //mealViewModel.convertMealsToJSON()
 
     /*

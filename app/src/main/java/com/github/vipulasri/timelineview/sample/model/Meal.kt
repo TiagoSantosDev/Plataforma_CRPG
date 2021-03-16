@@ -5,4 +5,9 @@ data class Meal(
     val peixe: String,
     val dieta: String,
     val vegetariano: String
-)
+){
+    override fun toString(): String {
+        return "carne: ${this.carne}, peixe: ${this.peixe}, dieta: ${this.dieta}, " +
+                "vegetariano: ${this.vegetariano}"
+    }
+}
