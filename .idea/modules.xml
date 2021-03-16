@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Timeline-View-master.iml" filepath="$PROJECT_DIR$/.idea/modules/Timeline-View-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Timeline-View-master.iml" filepath="$PROJECT_DIR$/.idea/Timeline-View-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timeline-View-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timeline-View-master.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/timelineview/Timeline-View-master.timelineview.iml" filepath="$PROJECT_DIR$/.idea/modules/timelineview/Timeline-View-master.timelineview.iml" />
     </modules>

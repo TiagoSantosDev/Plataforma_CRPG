@@ -1,8 +1,11 @@
 package com.github.vipulasri.timelineview.sample
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,8 +15,8 @@ import com.github.vipulasri.timelineview.sample.extentions.dpToPx
 import com.github.vipulasri.timelineview.sample.extentions.getColorCompat
 import com.github.vipulasri.timelineview.sample.extentions.setGone
 import com.github.vipulasri.timelineview.sample.extentions.setVisible
-import com.github.vipulasri.timelineview.sample.model.Orientation
 import com.github.vipulasri.timelineview.sample.model.EventModel
+import com.github.vipulasri.timelineview.sample.model.Orientation
 import com.github.vipulasri.timelineview.sample.model.TimelineAttributes
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
@@ -23,13 +26,21 @@ class MainActivity : BaseActivity() {
     private var mDataList = ArrayList<EventModel>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
-    private lateinit var eventDataViewModelModel: EventDataViewModel
+    public lateinit var eventDataViewModel: EventDataViewModel
+
+    //class MealDataViewModel(application: Application) : AndroidViewModel(application)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
+        //val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
 
-        //eventDataViewModelModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
+        // eventDataViewModel = ViewModelProvider(this,
+        //        ViewModelProvider.AndroidViewModelFactory.getInstance(getAppli
+        //        cation()).get(EventDataViewModel.class));
+
+        // eventDataViewModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
 
         // default values
         mAttributes = TimelineAttributes(
@@ -75,9 +86,13 @@ class MainActivity : BaseActivity() {
 
     private fun setDataListItems() {
 
-        //val eventP = JSONEventParser()
-        mDataList = eventDataViewModelModel.setDataListItems()
-        println(mDataList)
+        // val eventP = JSONEventParser()
+        // mDataList = eventDataViewModel.setDataListItems()
+        // println(mDataList)
+
+        val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
+        mealViewModel.convertMealsToJSON()
+
     /*
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))

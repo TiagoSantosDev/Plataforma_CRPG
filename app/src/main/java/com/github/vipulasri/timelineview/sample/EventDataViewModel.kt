@@ -1,12 +1,13 @@
 package com.github.vipulasri.timelineview.sample
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import com.github.vipulasri.timelineview.sample.model.EventModel
 import java.util.ArrayList
 
-class EventDataViewModel : ViewModel() {
+class EventDataViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val mDataList = ArrayList<EventModel>()
+    val mDataList = ArrayList<EventModel>()
 
     private fun getDataFromJson() {
     }
