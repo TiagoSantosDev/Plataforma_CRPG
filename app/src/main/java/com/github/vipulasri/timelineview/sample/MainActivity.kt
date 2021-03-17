@@ -16,6 +16,7 @@ import com.github.vipulasri.timelineview.sample.extentions.getColorCompat
 import com.github.vipulasri.timelineview.sample.extentions.setGone
 import com.github.vipulasri.timelineview.sample.extentions.setVisible
 import com.github.vipulasri.timelineview.sample.model.EventModel
+import com.github.vipulasri.timelineview.sample.model.Meal
 import com.github.vipulasri.timelineview.sample.model.Orientation
 import com.github.vipulasri.timelineview.sample.model.TimelineAttributes
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +25,7 @@ import java.util.ArrayList
 class MainActivity : BaseActivity() {
 
     private var mDataList = ArrayList<EventModel>()
+    private var mMealList = ArrayList<Meal>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
 
@@ -88,17 +90,22 @@ class MainActivity : BaseActivity() {
 
         // val eventP = JSONEventParser()
         // mDataList = eventDataViewModel.setDataListItems()
-        // println(mDataList)
-
-        val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
-
-        val test = ViewModelProvider.AndroidViewModelFactory(application).create(Test::class.java)
-
-        test.b()
-
+        //println(mDataList)
+        //val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
+        //val test = ViewModelProvider.AndroidViewModelFactory(application).create(Test::class.java)
+        //test.b()
         //mealViewModel.testJSON()
         //mealViewModel.testJSON_Extract()
         //mealViewModel.convertMealsToJSON()
+
+        val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
+        mDataList = eventViewModel.getDataFromJson()
+        //mMealList = eventViewModel.getMealFromJson()
+        println("Main activity data list index 0: " + mDataList.get(0))
+
+
+
+
 
     /*
         mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))

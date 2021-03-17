@@ -13,20 +13,26 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
 
     private val context = application.applicationContext
     val mDataList = ArrayList<EventModel>()
+    val mMealList = ArrayList<Meal>()
 
-    private fun getDataFromJson() {
-/*
+    fun getDataFromJson(): ArrayList<EventModel> {
+
         val gson = Gson()
         val filename = "event.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
 
-        val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
+        val fileContent = """{"title": "sessao","info":"test","start_time": "1130","end_time": "1230","date": "2021-03-17"}"""
         File(fullFilename).writeText(fileContent)
         //val file = File(context.filesDir, filename)
 
         val event: EventModel = gson.fromJson(FileReader(fullFilename), EventModel::class.java)
-        println("> From JSON Meal String:\n" + event)*/
+        println("> From JSON Meal String:\n" + event)
+
+        mDataList.add(event)
+        return mDataList
     }
+
+
 
     fun setDataListItems(): ArrayList<EventModel> {
 
@@ -74,5 +80,22 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
         )
 
         return mDataList
+    }
+
+    fun getMealFromJson(): ArrayList<Meal> {
+
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
+        File(fullFilename).writeText(fileContent)
+        //val file = File(context.filesDir, filename)
+
+        val event: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
+        println("> From JSON Meal String:\n" + event)
+
+        mMealList.add(event)
+        return mMealList
     }
 }

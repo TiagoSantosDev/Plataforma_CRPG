@@ -1,8 +1,2 @@
-{
-  "title": "sessao",
-  "content":"test",
-  "type": "reuniao",
-  "start_time": "1130",
-  "end_time": "1230"
-}
+{"title": "sessao","info": "test","start_time": "1130","end_time": "1230","date": "27012021"}
 
