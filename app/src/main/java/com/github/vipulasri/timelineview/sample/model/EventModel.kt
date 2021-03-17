@@ -27,3 +27,16 @@ data class EventModel(
                 "end_time: ${this.end_time}, date: ${this.date}"
     }
 }
+
+/*
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 21:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 18:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 09:30"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 08:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 15:00"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 14:30"))
+    mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 14:00"))
+
+ */

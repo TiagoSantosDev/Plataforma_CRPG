@@ -36,14 +36,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
-        //val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
-
-        // eventDataViewModel = ViewModelProvider(this,
-        //        ViewModelProvider.AndroidViewModelFactory.getInstance(getAppli
-        //        cation()).get(EventDataViewModel.class));
-
-        // eventDataViewModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
-
+        
         // default values
         mAttributes = TimelineAttributes(
             markerSize = dpToPx(20f),
@@ -88,37 +81,10 @@ class MainActivity : BaseActivity() {
 
     private fun setDataListItems() {
 
-        // val eventP = JSONEventParser()
-        // mDataList = eventDataViewModel.setDataListItems()
-        //println(mDataList)
-        //val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
-        //val test = ViewModelProvider.AndroidViewModelFactory(application).create(Test::class.java)
-        //test.b()
-        //mealViewModel.testJSON()
-        //mealViewModel.testJSON_Extract()
-        //mealViewModel.convertMealsToJSON()
-
         val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
-        //mMealList = eventViewModel.getMealFromJson()
         println("Main activity data list index 0: " + mDataList.get(0))
 
-
-
-
-
-    /*
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-12 08:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 21:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 18:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 09:30"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-11 08:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 15:00"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 14:30"))
-        mDataList.add(EventModel("evento1", "a", "11:00", "12:00", "2017-02-10 14:00"))
-
-     */
     }
 
     private fun initRecyclerView() {
@@ -145,3 +111,10 @@ class MainActivity : BaseActivity() {
         }
     }
 }
+//val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
+
+// eventDataViewModel = ViewModelProvider(this,
+//        ViewModelProvider.AndroidViewModelFactory.getInstance(getAppli
+//        cation()).get(EventDataViewModel.class));
+
+// eventDataViewModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
