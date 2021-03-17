@@ -1,11 +1,8 @@
 package com.github.vipulasri.timelineview.sample
 
 import android.annotation.SuppressLint
-import android.app.Application
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +22,7 @@ import java.util.ArrayList
 class MainActivity : BaseActivity() {
 
     private var mDataList = ArrayList<EventModel>()
-    private var mMealList = ArrayList<Meal>()
+    //private var mMealList = ArrayList<Meal>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
     //class MealDataViewModel(application: Application) : AndroidViewModel(application)
@@ -80,11 +77,11 @@ class MainActivity : BaseActivity() {
 
         val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
-        //guarantee that all events are sorted by the starting time
+        //guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }
         println("Main activity data list index 0: " + mDataList.get(0))
         println("Main activity data list index 0: " + mDataList.get(1))
-        
+
     }
 
     private fun initRecyclerView() {
@@ -111,6 +108,8 @@ class MainActivity : BaseActivity() {
         }
     }
 }
+
+
 //val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
 
 // eventDataViewModel = ViewModelProvider(this,
