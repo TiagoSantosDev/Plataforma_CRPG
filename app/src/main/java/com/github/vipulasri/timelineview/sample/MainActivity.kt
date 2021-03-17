@@ -99,7 +99,7 @@ class MainActivity : BaseActivity() {
         //mealViewModel.convertMealsToJSON()
 
         val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
-        mDataList = eventViewModel.getDataFromJson()
+        mDataList = eventViewModel.getEventCollectionFromJSON()
         //mMealList = eventViewModel.getMealFromJson()
         println("Main activity data list index 0: " + mDataList.get(0))
 
