@@ -68,10 +68,28 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
         } else
             holder.date.setGone()
 
+        if (timeLineModel.start_time.isNotEmpty()) {
+            holder.start_time.setVisible()
+            var newStartTime: String
+            newStartTime = timeLineModel.start_time
+            newStartTime = newStartTime.substring(0,2) + ":" + newStartTime.substring(2,4)
+            holder.start_time.text = newStartTime
+        } else
+            holder.start_time.setGone()
+
+        if (timeLineModel.end_time.isNotEmpty()) {
+            holder.end_time.setVisible()
+            var newEndTime: String
+            newEndTime = timeLineModel.end_time
+            newEndTime = newEndTime.substring(0,2) + ":" + newEndTime.substring(2,4)
+            holder.end_time.text = newEndTime
+        } else
+            holder.start_time.setGone()
+
         holder.title.text = timeLineModel.title
         holder.info.text = timeLineModel.info
-        holder.start_time.text = timeLineModel.start_time
-        holder.end_time.text = timeLineModel.end_time
+        //holder.start_time.text = timeLineModel.start_time
+        //holder.end_time.text = timeLineModel.end_time
     }
 
     override fun getItemCount() = mFeedList.size

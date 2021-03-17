@@ -32,18 +32,15 @@
             android:id="@+id/text_timeline_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="12H00" />
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/text_timeline_end_time"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            tools:text="11H00" />
-
+            android:textSize="15sp"/>
     </RelativeLayout>
-
-
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="244dp"
@@ -60,16 +57,15 @@
         app:cardElevation="5dp"
         app:contentPadding="0dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="47dp"
-                android:layout_height="44dp"
-                android:layout_alignParentRight="true"
-                app:srcCompat="@drawable/ic_marker_active" />
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:src="@drawable/classy_man" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,45 +74,45 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_timeline_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="12sp"
-                tools:text="24 JAN" />
-
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="50dp"
-                android:layout_height="43dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="65dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_marker" />
+                android:src="@drawable/maos" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_timeline_title"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:gravity="center"
+                android:maxLength="25"
                 android:textColor="@android:color/black"
-                android:textSize="15dp"
-                android:maxLength="30"
-                tools:text="Order Successfully Completed" />
+                android:textSize="30sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_timeline_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:textSize="10dp"
+                android:textSize="20sp"
                 android:maxLength="30"
-                android:textColor="@android:color/black"
-                tools:text="Order Successfully Completed" />
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_timeline_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:maxLength="30"
+            android:textColor="@android:color/black" />
+
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
