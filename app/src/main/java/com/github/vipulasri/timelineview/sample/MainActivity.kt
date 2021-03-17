@@ -84,11 +84,7 @@ class MainActivity : BaseActivity() {
         mDataList.sortBy { it.start_time }
         println("Main activity data list index 0: " + mDataList.get(0))
         println("Main activity data list index 0: " + mDataList.get(1))
-
-
-
-
-
+        
     }
 
     private fun initRecyclerView() {

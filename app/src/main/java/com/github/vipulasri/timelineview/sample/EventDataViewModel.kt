@@ -1,9 +1,9 @@
 package com.github.vipulasri.timelineview.sample
 
+import android.annotation.SuppressLint
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.github.vipulasri.timelineview.sample.model.EventModel
-import com.github.vipulasri.timelineview.sample.model.Meal
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -11,12 +11,11 @@ import java.io.FileReader
 import java.lang.reflect.Type
 import java.util.*
 
-
 class EventDataViewModel(application: Application) : AndroidViewModel(application) {
 
+    @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
     val mDataList = ArrayList<EventModel>()
-    val mMealList = ArrayList<Meal>()
 
     fun populateFile() {
 
@@ -25,9 +24,7 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
         val fileContent = """[{"title": "sessao","info":"test","start_time": "1130","end_time": "1230","date": "2021-03-17"},{"title": "sessao","info":"test","start_time": "0930","end_time": "1330","date": "2021-03-17"}]"""
 
         File(fullFilename).writeText(fileContent)
-
     }
-
 
     fun getSingleObjectFromJSON(): ArrayList<EventModel> {
 
@@ -63,41 +60,24 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
     fun setDataListItems(): ArrayList<EventModel> {
 
         mDataList.add(
-                EventModel(
-                        "evento1", "a", "11:00", "12:00",
-                        "2017-02-12"
-                )
+            EventModel(
+                "evento1", "a", "11:00", "12:00",
+                "2017-02-12"
+            )
         )
         mDataList.add(
-                EventModel(
-                        "evento1", "a", "11:00", "12:00",
-                        "2017-02-12"
-                )
+            EventModel(
+                "evento1", "a", "11:00", "12:00",
+                "2017-02-12"
+            )
         )
         mDataList.add(
-                EventModel(
-                        "evento2", "a", "11:00", "12:00",
-                        "2017-02-11"
-                )
+            EventModel(
+                "evento2", "a", "11:00", "12:00",
+                "2017-02-11"
+            )
         )
 
         return mDataList
-    }
-
-    fun getMealFromJson(): ArrayList<Meal> {
-
-        val gson = Gson()
-        val filename = "event.json"
-        val fullFilename = context.filesDir.toString() + "/" + filename
-
-        val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
-        File(fullFilename).writeText(fileContent)
-        //val file = File(context.filesDir, filename)
-
-        val event: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
-        println("> From JSON Meal String:\n" + event)
-
-        mMealList.add(event)
-        return mMealList
     }
 }

@@ -11,11 +11,13 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.FileReader
+import java.util.ArrayList
 
 @SuppressLint("StaticFieldLeak")
 class Test(application: Application) : AndroidViewModel(application) {
 
     public val context = application.applicationContext
+    val mMealList = ArrayList<Meal>()
 
     fun a(){
         val json = """{"title": "Kotlin Tutorial #1", "author": "bezkoder", "categories" : ["Kotlin","Basic"]}"""
@@ -78,6 +80,23 @@ class Test(application: Application) : AndroidViewModel(application) {
          //ficheiro esta actualmente vazio e nao pode ser editado manualmente
          val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
          println("> From JSON Tutorial String:\n" + tutorial_1)
+    }
+
+    fun getSingleMealFromJson(): ArrayList<Meal> {
+
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
+        File(fullFilename).writeText(fileContent)
+        //val file = File(context.filesDir, filename)
+
+        val event: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
+        println("> From JSON Meal String:\n" + event)
+
+        mMealList.add(event)
+        return mMealList
     }
 
 
