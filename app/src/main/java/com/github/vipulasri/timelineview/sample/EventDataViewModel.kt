@@ -32,8 +32,6 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
         return mDataList
     }
 
-
-
     fun setDataListItems(): ArrayList<EventModel> {
 
         mDataList.add(
