@@ -28,15 +28,12 @@ class MainActivity : BaseActivity() {
     private var mMealList = ArrayList<Meal>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
-
-
     //class MealDataViewModel(application: Application) : AndroidViewModel(application)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
-        
+
         // default values
         mAttributes = TimelineAttributes(
             markerSize = dpToPx(20f),
@@ -83,7 +80,14 @@ class MainActivity : BaseActivity() {
 
         val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
+        //guarantee that all events are sorted by the starting time
+        mDataList.sortBy { it.start_time }
         println("Main activity data list index 0: " + mDataList.get(0))
+        println("Main activity data list index 0: " + mDataList.get(1))
+
+
+
+
 
     }
 
