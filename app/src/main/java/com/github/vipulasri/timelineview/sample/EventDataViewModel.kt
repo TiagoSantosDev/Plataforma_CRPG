@@ -15,6 +15,17 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
     val mDataList = ArrayList<EventModel>()
     val mMealList = ArrayList<Meal>()
 
+    fun populateFile() {
+
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+        val fileContent = """{"title": "sessao","info":"test","start_time": "1130","end_time": "1230","date": "2021-03-17"}"""
+
+        File(fullFilename).writeText(fileContent)
+
+    }
+
+
     fun getDataFromJson(): ArrayList<EventModel> {
 
         val gson = Gson()
