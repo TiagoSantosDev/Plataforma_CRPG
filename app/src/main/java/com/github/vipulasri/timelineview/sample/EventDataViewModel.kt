@@ -22,7 +22,7 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
 
         val filename = "event.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
-        val fileContent = """[{"title": "sessao","info":"test","start_time": "1130","end_time": "1230","date": "2021-03-17"}]"""
+        val fileContent = """[{"title": "sessao","info":"test","start_time": "1130","end_time": "1230","date": "2021-03-17"},{"title": "sessao","info":"test","start_time": "0930","end_time": "1330","date": "2021-03-17"}]"""
 
         File(fullFilename).writeText(fileContent)
 
