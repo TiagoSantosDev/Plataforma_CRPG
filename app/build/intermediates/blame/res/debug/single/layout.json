@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_example.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_example.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_date_picker.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_date_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_line.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_line.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bottom_sheet_options.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\bottom_sheet_options.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline_horizontal.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_horizontal.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_marker.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_marker.xml"
+    }
+]

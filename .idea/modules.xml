@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Timeline-View-master.iml" filepath="$PROJECT_DIR$/.idea/Timeline-View-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Timeline-View-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Timeline-View-master.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/timelineview/Timeline-View-master.timelineview.iml" filepath="$PROJECT_DIR$/.idea/modules/timelineview/Timeline-View-master.timelineview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Plataforma_CRPG.iml" filepath="$PROJECT_DIR$/.idea/modules/Plataforma_CRPG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/timelineview/Plataforma_CRPG.timelineview.iml" filepath="$PROJECT_DIR$/.idea/modules/timelineview/Plataforma_CRPG.timelineview.iml" />
     </modules>
   </component>
 </project>

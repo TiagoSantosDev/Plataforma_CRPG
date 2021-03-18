@@ -24,29 +24,94 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:rename_package" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Plataforma_CRPG.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/timelineview/Plataforma_CRPG.timelineview.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Timeline-View-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Timeline-View-master.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/timelineview/Timeline-View-master.timelineview.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/SourceSansPro-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/sourcesanspro-bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/SourceSansPro-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/sourcesanspro_bolditalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/SourceSansPro-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/sourcesanspro_regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/SourceSansPro-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/sourcesanspro_semibold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/SourceSansPro-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/sourcesanspro-semibolditalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/DatePickerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/DatePickerActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/EventDataViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/EventDataViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/MealDataViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/MealDataViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/TimeLineAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimelineApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/TimelineApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/TimelineAttributesBottomSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/TimelineAttributesBottomSheet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/example/ExampleActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ExampleTimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/example/ExampleTimeLineAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/example/ViewExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/example/ViewExtentions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/DateTimeExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/extentions/DateTimeExtentions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/extentions/ViewExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/extentions/ViewExtentions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Event.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Event.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/EventModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/EventModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Meal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Meal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/OrderStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/OrderStatus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Orientation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Orientation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Person.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Person.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/TimelineAttributes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/TimelineAttributes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Transport.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Transport.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/model/Tutorial.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Tutorial.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/utils/VectorDrawableUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/utils/VectorDrawableUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/widgets/BorderedCircle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/vipulasri/timelineview/sample/widgets/RoundedCornerBottomSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/widgets/RoundedCornerBottomSheet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/Source_Sans_Pro/SourceSansPro-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_example.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_example.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_sheet_line.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_sheet_line.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_sheet_marker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_sheet_marker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline_horizontal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline_horizontal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timelineview/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/timelineview/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java" beforeDir="false" afterPath="$PROJECT_DIR$/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timelineview/src/main/java/com/github/vipulasri/timelineview/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/timelineview/src/main/java/com/plataforma/crpg/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -65,6 +130,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="GSON_Serializer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pfFpsZNPXXB6m6tnGnPAK6XnN3" />
@@ -77,12 +147,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/org.adw.library/discrete-seekbar/1.0.1/5f1321108d9934ddde101a41dd485a479f730674/discrete-seekbar-1.0.1-sources.jar!/org/adw/library/widgets/discreteseekbar/DiscreteSeekBar.java_SELECTED" value="DiscreteSeekBar" />
+    <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt_SELECTED" value="BorderedCircle" />
+    <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_SELECTED" value="TimelineView" />
+    <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/font" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/org.adw.library/discrete-seekbar/1.0.1/5f1321108d9934ddde101a41dd485a479f730674/discrete-seekbar-1.0.1-sources.jar!/org/adw/library/widgets/discreteseekbar/DiscreteSeekBar.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
+    <property name="settings.editor.selected.configurable" value="experimental" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
@@ -90,10 +171,11 @@
       <recent name="com.github.vipulasri.timelineview.sample" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\timelineview\src\main\java\com\plataforma\crpg" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Timeline-View-master\app\src\main\java\com\plataforma\crpg" />
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\assets" />
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\drawable" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
@@ -110,7 +192,7 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="Timeline-View-master.app" />
+      <module name="Plataforma_CRPG.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -185,7 +267,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="rename_package" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -197,10 +291,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="438" y="50" width="551" height="581" key="#JSON/0.0.1280.680@0.0.1280.680" timestamp="1615897782630" />
-    <state x="158" y="87" key="#PSD" timestamp="1615566576173">
+    <state x="158" y="87" key="#PSD" timestamp="1615993694639">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="158" y="87" key="#PSD/0.0.1280.680@0.0.1280.680" timestamp="1615566576173" />
+    <state x="158" y="87" key="#PSD/0.0.1280.680@0.0.1280.680" timestamp="1615993694639" />
     <state x="511" y="160" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615910549202">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -217,6 +311,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="690" y="91" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1615567707298" />
+    <state x="243" y="0" key="#com.plataforma.crpg_in_Timeline-View-master.app" timestamp="1615994329992">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="243" y="0" key="#com.plataforma.crpg_in_Timeline-View-master.app/0.0.1280.680@0.0.1280.680" timestamp="1615994329992" />
     <state x="358" y="132" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1615812002897">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -225,10 +323,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="224" y="97" key="AndroidCreateResourceDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1615992374351" />
-    <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1615984381986">
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1615995953465">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1615984381986" />
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1615995953465" />
+    <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1615993711428">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1615993711428" />
     <state width="1236" height="155" key="GridCell.Tab.0.bottom" timestamp="1615985823641">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -245,14 +347,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1615985823641" />
-    <state x="224" y="0" key="SettingsEditor" timestamp="1615894870986">
+    <state x="224" y="0" key="SettingsEditor" timestamp="1615993747358">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="224" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1615894870986" />
+    <state x="224" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1615993747358" />
     <state width="498" height="457" key="SwitcherDM" timestamp="1615909501980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="498" height="457" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1615909501980" />
+    <state x="452" y="119" key="chooseDestDirectoryDialog" timestamp="1615995687933">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="452" y="119" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1615995687933" />
     <state x="298" y="151" key="run.anything.popup" timestamp="1615569832301">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
