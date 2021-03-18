@@ -42,19 +42,6 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
     override fun onBindViewHolder(holder: TimeLineViewHolder, position: Int) {
 
         val timeLineModel = mFeedList[position]
-/*
-        when {
-            timeLineModel.status == OrderStatus.INACTIVE -> {
-                holder.timeline.marker = VectorDrawableUtils.getDrawable(holder.itemView.context, R.drawable.ic_marker_inactive, mAttributes.markerColor)
-            }
-            timeLineModel.status == OrderStatus.ACTIVE -> {
-                holder.timeline.marker = VectorDrawableUtils.getDrawable(holder.itemView.context, R.drawable.ic_marker_active,  mAttributes.markerColor)
-            }
-            else -> {
-                holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker), mAttributes.markerColor)
-            }
-        }*/
-
         holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
 
         if (timeLineModel.date.isNotEmpty()) {
@@ -66,8 +53,7 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
 
         if (timeLineModel.start_time.isNotEmpty()) {
             holder.start_time.setVisible()
-            var newStartTime: String
-            newStartTime = timeLineModel.start_time
+            var newStartTime: String = timeLineModel.start_time
             newStartTime = newStartTime.substring(0, 2) + ":" + newStartTime.substring(2, 4)
             holder.start_time.text = newStartTime
         } else
@@ -84,8 +70,6 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
 
         holder.title.text = timeLineModel.title
         holder.info.text = timeLineModel.info
-        // holder.start_time.text = timeLineModel.start_time
-        // holder.end_time.text = timeLineModel.end_time
     }
 
     override fun getItemCount() = mFeedList.size
