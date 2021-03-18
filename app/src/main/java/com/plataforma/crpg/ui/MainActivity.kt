@@ -4,10 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.example.ExampleActivity
@@ -20,7 +18,6 @@ import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
 import com.plataforma.crpg.ui.agenda.EventDataViewModel
 import com.plataforma.crpg.ui.agenda.TimeLineAdapter
-import com.plataforma.crpg.ui.agenda.TimelineAttributesBottomSheet
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
