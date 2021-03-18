@@ -4,8 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.example.ExampleActivity
 import com.plataforma.crpg.extentions.dpToPx
 import com.plataforma.crpg.extentions.getColorCompat
@@ -20,14 +25,24 @@ import java.util.ArrayList
 class MainActivity : BaseActivity() {
 
     private var mDataList = ArrayList<EventModel>()
-    //private var mMealList = ArrayList<Meal>()
+    // private var mMealList = ArrayList<Meal>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
-    //class MealDataViewModel(application: Application) : AndroidViewModel(application)
+    // class MealDataViewModel(application: Application) : AndroidViewModel(application)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_agenda
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
 
         // default values
         mAttributes = TimelineAttributes(
@@ -47,6 +62,7 @@ class MainActivity : BaseActivity() {
             lineDashGap = dpToPx(2f)
         )
 
+        println("> call da funcao no onCreate")
         setDataListItems()
         initRecyclerView()
 
@@ -73,13 +89,14 @@ class MainActivity : BaseActivity() {
 
     private fun setDataListItems() {
 
+
+        println("> log dentro do setData")
         val eventViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(EventDataViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
-        //guarantee that all events are sorted by their starting time
+        // guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }
         println("Main activity data list index 0: " + mDataList.get(0))
-        println("Main activity data list index 0: " + mDataList.get(1))
-
+        println("Main activity data list index 1: " + mDataList.get(1))
     }
 
     private fun initRecyclerView() {
@@ -107,8 +124,7 @@ class MainActivity : BaseActivity() {
     }
 }
 
-
-//val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
+// val mealViewModel = ViewModelProvider.AndroidViewModelFactory(application).create(MealDataViewModel::class.java)
 
 // eventDataViewModel = ViewModelProvider(this,
 //        ViewModelProvider.AndroidViewModelFactory.getInstance(getAppli

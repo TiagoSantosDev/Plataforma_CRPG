@@ -50,9 +50,7 @@
             android:id="@+id/card_edge_image2"
             android:layout_width="184dp"
             android:layout_height="205dp"
-            android:layout_below="@+id/card_layout"
-            android:src="@drawable/red_dot"
-            android:background="@+id/card_layout"/>
+            android:src="@drawable/red_dot" />
 
 
         <com.google.android.material.card.MaterialCardView
@@ -73,8 +71,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/card_layout">
+            android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/background_image"
@@ -136,8 +133,7 @@
             android:id="@+id/card_edge_image"
             android:layout_width="184dp"
             android:layout_height="205dp"
-            android:src="@drawable/red_dot"
-            android:background="@+id/card"/>
+            android:src="@drawable/red_dot" />
 
     </FrameLayout>
 

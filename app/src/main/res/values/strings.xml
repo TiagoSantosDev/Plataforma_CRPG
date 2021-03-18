@@ -35,6 +35,7 @@
     <string name="marker_padding_message">When orientation is vertical then only top and bottom padding is applied, orientation is horizontal then only left and right padding is applied.</string>
     <string name="date_pick">Escolher dia </string>
     <string name="escolher"> Escolher </string>
+    <string name="title_agenda"> AGENDA </string>
 
     <string-array name="line_type">
         <item>Normal</item>

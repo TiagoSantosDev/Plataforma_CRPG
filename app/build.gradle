@@ -8,6 +8,13 @@ android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.platform.crpg"
@@ -48,6 +55,10 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${versions.androidx.appCompat}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.androidx.constraintLayout}"
     implementation "com.google.android.material:material:${versions.android.material}"
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
 
     //misc
     //implementation "org.jmailen.gradle:kotlinter-gradle:3.3.0"
