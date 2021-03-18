@@ -34,7 +34,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/org.adw.library/discrete-seekbar/1.0.1/5f1321108d9934ddde101a41dd485a479f730674/discrete-seekbar-1.0.1-sources.jar!/org/adw/library/widgets/discreteseekbar/DiscreteSeekBar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_selected" value="Custom views" />
@@ -96,26 +98,26 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.plataforma.crpg.ui.agenda" />
       <recent name="com.github.vipulasri.timelineview.sample.model" />
       <recent name="com.github.vipulasri.timelineview.sample" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\res\navigation" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\res\menu" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\timelineview\src\main\java\com\plataforma\crpg" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Timeline-View-master\app\src\main\java\com\plataforma\crpg" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.plataforma.crpg.ui.agenda" />
       <recent name="com.plataforma.crpg.ui" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\layout" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\res\layout" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\res\navigation" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\res\menu" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\timelineview\src\main\java\com\plataforma\crpg" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_V2\Timeline-View-master\app\src\main\java\com\plataforma\crpg" />
     </key>
   </component>
   <component name="RunManager">
@@ -258,18 +260,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="224" y="97" key="AndroidCreateResourceDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1615992374351" />
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1616062259205">
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog" timestamp="1616080318337">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1616062259205" />
+    <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1616080318337" />
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog" timestamp="1616062269682">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1616062269682" />
-    <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1616061443020">
+    <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1616080124028">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1616061443020" />
+    <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1616080124028" />
     <state width="1236" height="161" key="GridCell.Tab.0.bottom" timestamp="1616076565358">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_agenda">
 
-    <activity
+    <fragment
         android:id="@+id/navigation_agenda"
-        android:name="com.plataforma.crpg.ui.MainActivity"
-        android:label="@string/title_agenda" />
+        android:name="com.plataforma.crpg.ui.agenda.AgendaFragment"
+        android:label="@string/title_agenda"
+        tools:layout="@layout/activity_date_picker"/>
 
 </navigation>
