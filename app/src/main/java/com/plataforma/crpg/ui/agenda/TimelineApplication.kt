@@ -3,7 +3,7 @@ package com.plataforma.crpg.ui.agenda
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 
-class TimelineApplication: Application() {
+class TimelineApplication : Application() {
 
     companion object {
         lateinit var instance: TimelineApplication

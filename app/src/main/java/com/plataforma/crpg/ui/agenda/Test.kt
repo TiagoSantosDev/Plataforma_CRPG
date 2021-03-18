@@ -16,9 +16,9 @@ class Test(application: Application) : AndroidViewModel(application) {
     public val context = application.applicationContext
     val mMealList = ArrayList<Meal>()
 
-    fun a(){
+    fun a() {
         val json = """{"title": "Kotlin Tutorial #1", "author": "bezkoder", "categories" : ["Kotlin","Basic"]}"""
-        val jsonMeal =  """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
+        val jsonMeal = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
         val gson = Gson()
 
         val tutorial_1: Tutorial = gson.fromJson(json, Tutorial::class.java)
@@ -26,10 +26,9 @@ class Test(application: Application) : AndroidViewModel(application) {
 
         val tutorial_2: Meal = gson.fromJson(jsonMeal, Meal::class.java)
         println("> From JSON Meal String:\n" + tutorial_2)
-
     }
 
-    fun b(){
+    fun b() {
 
         val gson = Gson()
         val filename = "test.json"
@@ -37,14 +36,13 @@ class Test(application: Application) : AndroidViewModel(application) {
 
         val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
         File(fullFilename).writeText(fileContent)
-        //val file = File(context.filesDir, filename)
+        // val file = File(context.filesDir, filename)
 
         val meal_1: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
         println("> From JSON Meal String:\n" + meal_1)
-
     }
 
-    fun c(){
+    fun c() {
         /*
         val jsonFileString = getJsonDataFromAsset(context, "bezkoder.json")
         Log.i("data", jsonFileString)
@@ -54,29 +52,28 @@ class Test(application: Application) : AndroidViewModel(application) {
 
         var persons: List<Person> = gson.fromJson(jsonFileString, listPersonType)
         persons.forEachIndexed { idx, person -> Log.i("data", "> Item $idx:\n$person") }*/
-
     }
 
-    fun insertData(){
+    fun insertData() {
         val gson = Gson()
         val filename = "test.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
         val fileContent = "{\n" +
-                 "\t\t\"title\": \"Kotlin Tutorial #2\",\n" +
-                 "\t\t\"author\": \"bezkoder\",\n" +
-                 "\t\t\"categories\": [\n" +
-                 "\t\t\t\"Kotlin\",\n" +
-                 "\t\t\t\"Basic\"\n" +
-                 "\t\t],\n" +
-                 "\t\t\"dummy\": \"dummy text\"\n" +
-                 "\t}"
-         File(fullFilename).writeText(fileContent)
-         //val file = File(context.filesDir, filename)
+            "\t\t\"title\": \"Kotlin Tutorial #2\",\n" +
+            "\t\t\"author\": \"bezkoder\",\n" +
+            "\t\t\"categories\": [\n" +
+            "\t\t\t\"Kotlin\",\n" +
+            "\t\t\t\"Basic\"\n" +
+            "\t\t],\n" +
+            "\t\t\"dummy\": \"dummy text\"\n" +
+            "\t}"
+        File(fullFilename).writeText(fileContent)
+        // val file = File(context.filesDir, filename)
 
-         println(fullFilename)
-         //ficheiro esta actualmente vazio e nao pode ser editado manualmente
-         val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
-         println("> From JSON Tutorial String:\n" + tutorial_1)
+        println(fullFilename)
+        // ficheiro esta actualmente vazio e nao pode ser editado manualmente
+        val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
+        println("> From JSON Tutorial String:\n" + tutorial_1)
     }
 
     fun getSingleMealFromJson(): ArrayList<Meal> {
@@ -87,7 +84,7 @@ class Test(application: Application) : AndroidViewModel(application) {
 
         val fileContent = """{"carne": "a", "peixe": "b", "dieta" : "c", "vegetariano": "d"}"""
         File(fullFilename).writeText(fileContent)
-        //val file = File(context.filesDir, filename)
+        // val file = File(context.filesDir, filename)
 
         val event: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
         println("> From JSON Meal String:\n" + event)
@@ -95,6 +92,4 @@ class Test(application: Application) : AndroidViewModel(application) {
         mMealList.add(event)
         return mMealList
     }
-
-
 }

@@ -24,7 +24,7 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
         println(json)
 
         val gsonPretty = GsonBuilder().setPrettyPrinting().create()
-        val prettyJson: String  = gsonPretty.toJson(json)
+        val prettyJson: String = gsonPretty.toJson(json)
 
         println(prettyJson)
 
@@ -34,18 +34,16 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
         file.writeText(prettyJson)
     }
 
-
     fun testJSON_Extract() {
 
-        //val json = """{"title": "Kotlin Tutorial",
+        // val json = """{"title": "Kotlin Tutorial",
         //    |"author": "bezkoder", "categories" : ["Kotlin","Basic"]}""".trimMargin()
-
 
         val gson = Gson()
         val filename = "meals.json"
         val file = File(context.filesDir, filename)
 
-        //val meal_1: Meal = gson.fromJson(json, Tutorial::class.java)
+        // val meal_1: Meal = gson.fromJson(json, Tutorial::class.java)
 
         /*
         var jsonString: String = ""
@@ -56,26 +54,6 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
         }
 
         println(jsonString)*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         /*
         val objects: Meal = gson.fromJson(jsonString, Meal::class.java)
@@ -89,7 +67,6 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
                     tutorialMap.forEach { println(it) }
                     println(tutorialMap)
         }catch (e: JsonSyntaxException) {}*/
-
     }
 
     fun getMealsFromJSON() {
@@ -103,7 +80,6 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
             }
             println(lines)
         }
-
     }
 
     fun convertMealsToJSON() {
@@ -129,12 +105,9 @@ class MealDataViewModel(application: Application) : AndroidViewModel(application
 
         println("leu o ficheiro")
 
+        // val gsonPretty = GsonBuilder().setPrettyPrinting().create()
 
-        //val gsonPretty = GsonBuilder().setPrettyPrinting().create()
-
-        //val jsonTutsListPretty: String = gsonPretty.toJson(json)
-        //File("testPretty.json").writeText(jsonTutsListPretty)
+        // val jsonTutsListPretty: String = gsonPretty.toJson(json)
+        // File("testPretty.json").writeText(jsonTutsListPretty)
     }
-
-
 }

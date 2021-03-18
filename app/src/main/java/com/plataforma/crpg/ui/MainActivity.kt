@@ -30,7 +30,6 @@ class MainActivity : BaseActivity() {
     // class MealDataViewModel(application: Application) : AndroidViewModel(application)
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        println("estou aqui")
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
 
@@ -65,14 +64,12 @@ class MainActivity : BaseActivity() {
             lineDashGap = dpToPx(2f)
         )
 
-        println("> call da funcao no onCreate")
         setDataListItems()
         println("> init da recycler view")
         initRecyclerView()
 
         action_example_activity.setOnClickListener { startActivity(Intent(this, ExampleActivity::class.java)) }
 
-        println("> init da example view")
 /*
         fab_options.setOnClickListener {
             TimelineAttributesBottomSheet.showDialog(
