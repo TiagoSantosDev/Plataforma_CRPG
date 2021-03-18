@@ -6,7 +6,7 @@
 
     <activity
         android:id="@+id/navigation_agenda"
-        android:name="com.plataforma.crpg.MainActivity"
+        android:name="com.plataforma.crpg.ui.MainActivity"
         android:label="@string/title_agenda" />
 
 </navigation>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DatePickerActivity">
+    tools:context=".ui.agenda.DatePickerActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -116,7 +116,5 @@
         app:iconSize="18dp"
         app:iconTint="@android:color/white"
         app:rippleColor="@color/tertiaryText" />
-
-
 
 </RelativeLayout>

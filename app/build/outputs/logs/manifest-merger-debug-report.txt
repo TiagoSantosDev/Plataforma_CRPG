@@ -116,15 +116,15 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\lt
 	android:theme
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:9-40
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:9-44
-activity#com.plataforma.crpg.DatePickerActivity
+		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:9-54
+activity#com.plataforma.crpg.ui.agenda.DatePickerActivity
 ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-23:20
 	android:label
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:13-45
 	android:theme
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:13-56
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:13-47
+		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:13-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
@@ -135,14 +135,14 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:27-74
-activity#com.plataforma.crpg.MainActivity
+activity#com.plataforma.crpg.ui.MainActivity
 ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:9-29:20
 	android:label
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:13-45
 	android:theme
 		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:13-41
+		ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:13-44
 activity#com.plataforma.crpg.example.ExampleActivity
 ADDED from C:\Users\ltiag\Desktop\Timeline_V2\Plataforma_CRPG\app\src\main\AndroidManifest.xml:31:9-33:58
 	android:theme

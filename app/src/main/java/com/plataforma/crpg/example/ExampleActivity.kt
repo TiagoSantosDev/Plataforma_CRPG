@@ -3,7 +3,7 @@ package com.plataforma.crpg.example
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.plataforma.crpg.BaseActivity
+import com.plataforma.crpg.ui.BaseActivity
 import com.plataforma.crpg.R
 import com.plataforma.crpg.model.EventModel
 import kotlinx.android.synthetic.main.activity_example.*

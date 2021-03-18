@@ -4,7 +4,7 @@ import android.content.res.Resources
 import android.util.TypedValue
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.plataforma.crpg.TimelineApplication
+import com.plataforma.crpg.ui.agenda.TimelineApplication
 
 fun dpToPx(dp: Float): Int {
     return dpToPx(dp, TimelineApplication.instance.resources)
