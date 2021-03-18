@@ -24,8 +24,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@+id/activity_name"
-                android:textColor="@color/primaryText"/>
+                android:text="AGENDA"
+                android:textSize="30sp"
+                android:textColor="@color/colorWhite"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TextAppearance.AppCompat.Body1"

@@ -4209,7 +4209,7 @@
         
         <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
         <item name="fontFamily">@font/sourcesanspro_semibold</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/PrimaryOrange</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>

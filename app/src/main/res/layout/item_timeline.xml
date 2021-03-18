@@ -32,33 +32,26 @@
             android:id="@+id/text_timeline_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"/>
+            android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/text_timeline_end_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="15sp" />
+            android:textSize="22sp" />
     </RelativeLayout>
 
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/card_edge_image2"
-            android:layout_width="184dp"
-            android:layout_height="205dp"
-            android:src="@drawable/red_dot" />
-
-
         <com.google.android.material.card.MaterialCardView
         android:layout_width="244dp"
         android:layout_height="205dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="15dp"
         android:id="@+id/card"
@@ -125,15 +118,10 @@
             android:gravity="center"
             android:textSize="20dp"
             android:maxLength="30"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/transparent" />
 
     </com.google.android.material.card.MaterialCardView>
 
-        <ImageView
-            android:id="@+id/card_edge_image"
-            android:layout_width="184dp"
-            android:layout_height="205dp"
-            android:src="@drawable/red_dot" />
 
     </FrameLayout>
 

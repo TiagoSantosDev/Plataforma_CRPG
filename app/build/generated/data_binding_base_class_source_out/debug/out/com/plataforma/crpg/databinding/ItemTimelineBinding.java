@@ -29,12 +29,6 @@ public final class ItemTimelineBinding implements ViewBinding {
   public final MaterialCardView card;
 
   @NonNull
-  public final ImageView cardEdgeImage;
-
-  @NonNull
-  public final ImageView cardEdgeImage2;
-
-  @NonNull
   public final ImageView imageView1;
 
   @NonNull
@@ -56,16 +50,13 @@ public final class ItemTimelineBinding implements ViewBinding {
   public final TimelineView timeline;
 
   private ItemTimelineBinding(@NonNull LinearLayout rootView, @NonNull ImageView backgroundImage,
-      @NonNull MaterialCardView card, @NonNull ImageView cardEdgeImage,
-      @NonNull ImageView cardEdgeImage2, @NonNull ImageView imageView1,
+      @NonNull MaterialCardView card, @NonNull ImageView imageView1,
       @NonNull AppCompatTextView textTimelineDate, @NonNull TextView textTimelineEndTime,
       @NonNull AppCompatTextView textTimelineInfo, @NonNull TextView textTimelineStartTime,
       @NonNull AppCompatTextView textTimelineTitle, @NonNull TimelineView timeline) {
     this.rootView = rootView;
     this.backgroundImage = backgroundImage;
     this.card = card;
-    this.cardEdgeImage = cardEdgeImage;
-    this.cardEdgeImage2 = cardEdgeImage2;
     this.imageView1 = imageView1;
     this.textTimelineDate = textTimelineDate;
     this.textTimelineEndTime = textTimelineEndTime;
@@ -112,16 +103,6 @@ public final class ItemTimelineBinding implements ViewBinding {
         missingId = "card";
         break missingId;
       }
-      ImageView cardEdgeImage = rootView.findViewById(R.id.card_edge_image);
-      if (cardEdgeImage == null) {
-        missingId = "cardEdgeImage";
-        break missingId;
-      }
-      ImageView cardEdgeImage2 = rootView.findViewById(R.id.card_edge_image2);
-      if (cardEdgeImage2 == null) {
-        missingId = "cardEdgeImage2";
-        break missingId;
-      }
       ImageView imageView1 = rootView.findViewById(R.id.imageView1);
       if (imageView1 == null) {
         missingId = "imageView1";
@@ -157,9 +138,9 @@ public final class ItemTimelineBinding implements ViewBinding {
         missingId = "timeline";
         break missingId;
       }
-      return new ItemTimelineBinding((LinearLayout) rootView, backgroundImage, card, cardEdgeImage,
-          cardEdgeImage2, imageView1, textTimelineDate, textTimelineEndTime, textTimelineInfo,
-          textTimelineStartTime, textTimelineTitle, timeline);
+      return new ItemTimelineBinding((LinearLayout) rootView, backgroundImage, card, imageView1,
+          textTimelineDate, textTimelineEndTime, textTimelineInfo, textTimelineStartTime,
+          textTimelineTitle, timeline);
     }
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }

@@ -1713,8 +1713,6 @@ id button_apply
 id button_escolher
 id cancel_action
 id card
-id card_edge_image
-id card_edge_image2
 id center
 id center_horizontal
 id center_vertical
