@@ -30,28 +30,28 @@ class AgendaFragment : Fragment() {
     private lateinit var mAttributes: TimelineAttributes
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.activity_main, container, false)
 
         // default values
         mAttributes = TimelineAttributes(
-                markerSize = dpToPx(20f),
-                markerColor = getColorCompat(R.color.material_grey_500),
-                markerInCenter = true,
-                markerLeftPadding = dpToPx(0f),
-                markerTopPadding = dpToPx(0f),
-                markerRightPadding = dpToPx(0f),
-                markerBottomPadding = dpToPx(0f),
-                linePadding = dpToPx(2f),
-                startLineColor = getColorCompat(R.color.colorAccent),
-                endLineColor = getColorCompat(R.color.colorAccent),
-                lineStyle = TimelineView.LineStyle.NORMAL,
-                lineWidth = dpToPx(2f),
-                lineDashWidth = dpToPx(4f),
-                lineDashGap = dpToPx(2f)
+            markerSize = dpToPx(20f),
+            markerColor = getColorCompat(R.color.material_grey_500),
+            markerInCenter = true,
+            markerLeftPadding = dpToPx(0f),
+            markerTopPadding = dpToPx(0f),
+            markerRightPadding = dpToPx(0f),
+            markerBottomPadding = dpToPx(0f),
+            linePadding = dpToPx(2f),
+            startLineColor = getColorCompat(R.color.colorAccent),
+            endLineColor = getColorCompat(R.color.colorAccent),
+            lineStyle = TimelineView.LineStyle.NORMAL,
+            lineWidth = dpToPx(2f),
+            lineDashWidth = dpToPx(4f),
+            lineDashGap = dpToPx(2f)
         )
 
         setDataListItems()
@@ -61,25 +61,24 @@ class AgendaFragment : Fragment() {
             val intent = Intent(activity, ExampleActivity::class.java)
             startActivity(intent)
         }
-
+/*
         fab_options.setOnClickListener {
             TimelineAttributesBottomSheet.showDialog(
-                    parentFragmentManager, mAttributes,
-                    object : TimelineAttributesBottomSheet.Callbacks {
-                        override fun onAttributesChanged(attributes: TimelineAttributes) {
-                            mAttributes = attributes
-                            initAdapter()
-                        }
+                parentFragmentManager, mAttributes,
+                object : TimelineAttributesBottomSheet.Callbacks {
+                    override fun onAttributesChanged(attributes: TimelineAttributes) {
+                        mAttributes = attributes
+                        initAdapter()
                     }
+                }
             )
-        }
+        }*/
 
         mAttributes.onOrientationChanged = { oldValue, newValue ->
             if (oldValue != newValue) initRecyclerView()
         }
 
         mAttributes.orientation = Orientation.VERTICAL
-
 
         return root
     }
@@ -118,7 +117,4 @@ class AgendaFragment : Fragment() {
             adapter = TimeLineAdapter(mDataList, mAttributes)
         }
     }
-
-
-
 }

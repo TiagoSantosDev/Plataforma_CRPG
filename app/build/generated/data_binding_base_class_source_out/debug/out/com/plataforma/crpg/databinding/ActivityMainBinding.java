@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.button.MaterialButton;
 import com.plataforma.crpg.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -33,9 +32,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final View dropshadow;
 
   @NonNull
-  public final MaterialButton fabOptions;
-
-  @NonNull
   public final BottomNavigationView navView;
 
   @NonNull
@@ -46,14 +42,12 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
       @NonNull AppCompatTextView actionExampleActivity, @NonNull AppBarLayout appbarLayout,
-      @NonNull View dropshadow, @NonNull MaterialButton fabOptions,
-      @NonNull BottomNavigationView navView, @NonNull RecyclerView recyclerView,
-      @NonNull FrameLayout toolbar) {
+      @NonNull View dropshadow, @NonNull BottomNavigationView navView,
+      @NonNull RecyclerView recyclerView, @NonNull FrameLayout toolbar) {
     this.rootView = rootView;
     this.actionExampleActivity = actionExampleActivity;
     this.appbarLayout = appbarLayout;
     this.dropshadow = dropshadow;
-    this.fabOptions = fabOptions;
     this.navView = navView;
     this.recyclerView = recyclerView;
     this.toolbar = toolbar;
@@ -101,11 +95,6 @@ public final class ActivityMainBinding implements ViewBinding {
         missingId = "dropshadow";
         break missingId;
       }
-      MaterialButton fabOptions = rootView.findViewById(R.id.fab_options);
-      if (fabOptions == null) {
-        missingId = "fabOptions";
-        break missingId;
-      }
       BottomNavigationView navView = rootView.findViewById(R.id.nav_view);
       if (navView == null) {
         missingId = "navView";
@@ -122,7 +111,7 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
       return new ActivityMainBinding((CoordinatorLayout) rootView, actionExampleActivity,
-          appbarLayout, dropshadow, fabOptions, navView, recyclerView, toolbar);
+          appbarLayout, dropshadow, navView, recyclerView, toolbar);
     }
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }

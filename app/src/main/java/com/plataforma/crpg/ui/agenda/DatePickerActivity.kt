@@ -42,6 +42,8 @@ class DatePickerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_date_picker)
+        //ele aqui so esta a entrar uma vez
+        println("> DatePickerActivity")
 
         var change = ""
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)

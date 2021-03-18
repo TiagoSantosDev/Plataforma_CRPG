@@ -33,10 +33,14 @@ class MainActivity : BaseActivity() {
     // class MealDataViewModel(application: Application) : AndroidViewModel(application)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        println("estou aqui")
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment)
+
+        println(">inicio onCreate")
+
+        //val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        //val navController = findNavController(R.id.nav_host_fragment)
 /*
         val appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -66,10 +70,13 @@ class MainActivity : BaseActivity() {
 
         println("> call da funcao no onCreate")
         setDataListItems()
+        println("> init da recycler view")
         initRecyclerView()
 
         action_example_activity.setOnClickListener { startActivity(Intent(this, ExampleActivity::class.java)) }
 
+        println("> init da example view")
+/*
         fab_options.setOnClickListener {
             TimelineAttributesBottomSheet.showDialog(
                 supportFragmentManager, mAttributes,
@@ -80,7 +87,7 @@ class MainActivity : BaseActivity() {
                     }
                 }
             )
-        }
+        }*/
 
         mAttributes.onOrientationChanged = { oldValue, newValue ->
             if (oldValue != newValue) initRecyclerView()
