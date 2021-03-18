@@ -2052,6 +2052,7 @@ layout dialog_color_picker
 layout expand_button
 layout first_special_calendar_item
 layout first_special_selected_calendar_item
+layout fragment_agenda
 layout item_bottom_sheet_line
 layout item_bottom_sheet_marker
 layout item_timeline

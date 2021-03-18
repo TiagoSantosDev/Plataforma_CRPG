@@ -32,7 +32,7 @@ class DatePickerActivity : BaseActivity() {
     }
 
     fun updateConfig(wrapper: ContextThemeWrapper) {
-        dLocale =Locale("pt")
+        dLocale = Locale("pt")
         Locale.setDefault(dLocale)
         val configuration = Configuration()
         configuration.setLocale(dLocale)
@@ -42,16 +42,14 @@ class DatePickerActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_date_picker)
-        //ele aqui so esta a entrar uma vez
-        println("> DatePickerActivity")
 
         var change = ""
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val language = sharedPreferences.getString("language", "bak")
-        if (language=="English") {
+        if (language == "English") {
             change = "pt"
         } else {
-            change ="pt"
+            change = "pt"
         }
 
         dLocale = Locale(change)
@@ -59,10 +57,12 @@ class DatePickerActivity : BaseActivity() {
 
         val button = findViewById<Button>(R.id.button_escolher)
         button.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+          /*  val intent = Intent(this, MainActivity::class.java)
             println("> Botao de escolha pressionado")
             startActivity(intent)
-            println("> Intent started")
+            println("> Intent started")*/
+
+
         }
 
         // calendar view manager is responsible for our displaying logic

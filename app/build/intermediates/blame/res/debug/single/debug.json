@@ -112,6 +112,10 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_selected_calendar_item.xml"
     },
     {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_agenda.xml.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_agenda.xml"
+    },
+    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_foto.png.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\foto.png"
     },
@@ -124,12 +128,12 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\font\\sourcesanspro_semibold.ttf"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_calendar_item.xml.flat",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\calendar_item.xml"
-    },
-    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_calendar_item.xml.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\calendar_item.xml"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
