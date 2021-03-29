@@ -9,6 +9,6 @@
         android:id="@+id/navigation_agenda"
         android:name="com.plataforma.crpg.ui.agenda.AgendaFragment"
         android:label="@string/title_agenda"
-        tools:layout="@layout/activity_date_picker"/>
+        tools:layout="@layout/fragment_agenda"/>
 
 </navigation>

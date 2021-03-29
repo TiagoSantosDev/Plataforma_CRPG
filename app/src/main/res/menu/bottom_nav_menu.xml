@@ -3,7 +3,19 @@
 
     <item
         android:id="@+id/navigation_agenda"
-        android:icon="@drawable/ic_arrow_left_24dp"
+        android:icon="@drawable/dia"
         android:title="@string/title_agenda" />
+
+    <item
+        android:icon="@drawable/medicacao"
+        android:title="@string/title_lembretes" />
+
+    <item
+        android:icon="@drawable/medicacao"
+        android:title="@string/title_meditacao" />
+
+    <item
+        android:icon="@drawable/medicacao"
+        android:title="@string/title_notas" />
 
 </menu>

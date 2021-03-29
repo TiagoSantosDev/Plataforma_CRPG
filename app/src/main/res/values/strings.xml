@@ -36,6 +36,9 @@
     <string name="date_pick">Escolher dia </string>
     <string name="escolher"> Escolher </string>
     <string name="title_agenda"> AGENDA </string>
+    <string name="title_lembretes"> LEMBRETES </string>
+    <string name="title_meditacao"> MEDITACAO </string>
+    <string name="title_notas"> NOTAS </string>
 
     <string-array name="line_type">
         <item>Normal</item>

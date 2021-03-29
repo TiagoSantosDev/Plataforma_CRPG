@@ -2180,6 +2180,9 @@ string style
 string summary_collapsed_preference_list
 string timeline_attributes
 string title_agenda
+string title_lembretes
+string title_meditacao
+string title_notas
 string top_padding
 string type
 string v7_preference_off

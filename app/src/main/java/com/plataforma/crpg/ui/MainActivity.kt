@@ -21,6 +21,10 @@ import com.plataforma.crpg.ui.agenda.TimeLineAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
+// Main Activity neste momento e a Timeline Activity
+// Nao faz sentido isto ser a Main Activity
+// Main Activity deve ser conter apenas os layout principais, e garantir que a top bar e a barra
+// de navegacao funcionam em conficoes
 class MainActivity : BaseActivity() {
 
     private var mDataList = ArrayList<EventModel>()
@@ -35,8 +39,8 @@ class MainActivity : BaseActivity() {
 
         println(">inicio onCreate")
 
-        //val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        //val navController = findNavController(R.id.nav_host_fragment)
+        // val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        // val navController = findNavController(R.id.nav_host_fragment)
 /*
         val appBarConfiguration = AppBarConfiguration(
             setOf(

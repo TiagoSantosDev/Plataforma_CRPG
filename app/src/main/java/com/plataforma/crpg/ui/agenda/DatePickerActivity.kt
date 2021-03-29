@@ -1,11 +1,12 @@
 package com.plataforma.crpg.ui.agenda
 
-import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.ContextThemeWrapper
 import android.widget.Button
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
@@ -13,7 +14,6 @@ import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.BaseActivity
-import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_date_picker.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import java.util.*
@@ -57,12 +57,16 @@ class DatePickerActivity : BaseActivity() {
 
         val button = findViewById<Button>(R.id.button_escolher)
         button.setOnClickListener {
-          /*  val intent = Intent(this, MainActivity::class.java)
+            /*  val intent = Intent(this, MainActivity::class.java)
             println("> Botao de escolha pressionado")
             startActivity(intent)
             println("> Intent started")*/
-
-
+            if (savedInstanceState == null) {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    add<AgendaFragment>(R.id.recyclerView)
+                }
+            }
         }
 
         // calendar view manager is responsible for our displaying logic
@@ -108,7 +112,7 @@ class DatePickerActivity : BaseActivity() {
 
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
-                CalendarChangesObserver {
+            CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
                 tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
                 tvDay.text = DateUtils.getDayName(date)

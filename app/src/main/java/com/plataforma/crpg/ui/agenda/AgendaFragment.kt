@@ -34,7 +34,7 @@ class AgendaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.activity_main, container, false)
+        val root = inflater.inflate(R.layout.fragment_agenda, container, false)
 
         // default values
         mAttributes = TimelineAttributes(
@@ -90,8 +90,6 @@ class AgendaFragment : Fragment() {
         mDataList = eventViewModel.getEventCollectionFromJSON()
         // guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }
-        println("Main activity data list index 0: " + mDataList.get(0))
-        println("Main activity data list index 1: " + mDataList.get(1))
     }
 
     private fun initRecyclerView() {
