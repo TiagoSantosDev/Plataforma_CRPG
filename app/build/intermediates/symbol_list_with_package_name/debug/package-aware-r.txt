@@ -2967,7 +2967,6 @@ layout first_special_calendar_item
 layout first_special_selected_calendar_item
 layout fragment_agenda
 layout fragment_date_picker
-layout fragment_meals
 layout item_bottom_sheet_line
 layout item_bottom_sheet_marker
 layout item_row
