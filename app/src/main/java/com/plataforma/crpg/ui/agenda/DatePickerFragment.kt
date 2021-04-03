@@ -16,13 +16,10 @@ import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
-import kotlinx.android.synthetic.main.activity_date_picker.*
 import kotlinx.android.synthetic.main.activity_date_picker.main_single_row_calendar
 import kotlinx.android.synthetic.main.activity_date_picker.tvDate
 import kotlinx.android.synthetic.main.activity_date_picker.tvDay
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
-import kotlinx.android.synthetic.main.fragment_agenda.*
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import java.util.*
 

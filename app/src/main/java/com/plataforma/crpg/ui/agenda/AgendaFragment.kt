@@ -18,8 +18,6 @@ import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.EventModel
 import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
-import com.plataforma.crpg.ui.agenda.EventDataViewModel
-import com.plataforma.crpg.ui.agenda.TimeLineAdapter
 import kotlinx.android.synthetic.main.fragment_agenda.*
 import java.util.ArrayList
 
@@ -96,7 +94,7 @@ class AgendaFragment : Fragment() {
     private fun setDataListItems() {
 
         println("> log dentro do setData")
-        val eventViewModel = ViewModelProvider(this).get(EventDataViewModel::class.java)
+        val eventViewModel = ViewModelProvider(this).get(AgendaViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
         // guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }

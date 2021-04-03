@@ -11,7 +11,7 @@ import java.io.FileReader
 import java.lang.reflect.Type
 import java.util.*
 
-class EventDataViewModel(application: Application) : AndroidViewModel(application) {
+class AgendaViewModel(application: Application) : AndroidViewModel(application) {
 
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
