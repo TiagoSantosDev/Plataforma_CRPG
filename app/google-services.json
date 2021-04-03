@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "70523228677",
+    "firebase_url": "https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "crpg-1a3d5",
+    "storage_bucket": "crpg-1a3d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70523228677:android:e2a1df694748718f83826c",
+        "android_client_info": {
+          "package_name": "com.example.platform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70523228677:android:af327478a3423f8c83826c",
+        "android_client_info": {
+          "package_name": "com.platform.crpg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

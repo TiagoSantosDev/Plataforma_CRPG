@@ -35,7 +35,7 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
         populateFile()
 
         val event: EventModel = gson.fromJson(FileReader(fullFilename), EventModel::class.java)
-        println("> From JSON Meal String:\n" + event)
+        println("> From JSON Meal String Single Object:\n" + event)
 
         mDataList.add(event)
         return mDataList
@@ -52,32 +52,9 @@ class EventDataViewModel(application: Application) : AndroidViewModel(applicatio
         val type: Type = object : TypeToken<ArrayList<EventModel>>() {}.type
         val mDataList: ArrayList<EventModel> = gson.fromJson(FileReader(fullFilename), type)
 
-        println("> From JSON Meal String:\n" + mDataList)
+        println("> From JSON Meal String Event Collection:\n" + mDataList)
 
         return mDataList
     }
 
-    fun setDataListItems(): ArrayList<EventModel> {
-
-        mDataList.add(
-            EventModel(
-                "evento1", "a", "11:00", "12:00",
-                "2017-02-12"
-            )
-        )
-        mDataList.add(
-            EventModel(
-                "evento1", "a", "11:00", "12:00",
-                "2017-02-12"
-            )
-        )
-        mDataList.add(
-            EventModel(
-                "evento2", "a", "11:00", "12:00",
-                "2017-02-11"
-            )
-        )
-
-        return mDataList
-    }
 }

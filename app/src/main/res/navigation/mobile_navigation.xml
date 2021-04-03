@@ -7,8 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_agenda"
-        android:name="com.plataforma.crpg.ui.agenda.AgendaFragment"
+        android:name="com.plataforma.crpg.ui.agenda.DatePickerFragment"
         android:label="@string/title_agenda"
         tools:layout="@layout/fragment_agenda"/>
+
+    <fragment
+        android:id="@+id/navigation_reminders"
+        android:name="com.plataforma.crpg.ui.reminders.ReminderFragment"
+        android:label="DATE PICKER"
+        tools:layout="@layout/fragment_date_picker" />
+
+    <fragment
+        android:id="@+id/navigation_meals"
+        android:name="com.plataforma.crpg.ui.meals.MealsFragment"
+        android:label="DATE PICKER"
+        tools:layout="@layout/fragment_meals" />
 
 </navigation>

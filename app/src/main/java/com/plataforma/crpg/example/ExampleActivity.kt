@@ -30,6 +30,7 @@ class ExampleActivity : BaseActivity() {
     }
 
     private fun setDataListItems() {
+        /*
         mDataList.add(EventModel("Item successfully delivered", "a", "11:00", "12:00", "2017-02-12"))
         mDataList.add(EventModel("Courier is out to delivery your order", "a", "11:00", "12:00", "2017-02-12"))
         mDataList.add(EventModel("Item has reached courier facility at New Delhi", "a", "11:00", "12:00", "2017-02-11"))
@@ -39,6 +40,8 @@ class ExampleActivity : BaseActivity() {
         mDataList.add(EventModel("Order processing initiated", "a", "11:00", "12:00", "2017-02-10"))
         mDataList.add(EventModel("Order confirmed by seller", "a", "11:00", "12:00", "2017-02-10"))
         mDataList.add(EventModel("Order placed successfully", "a", "11:00", "12:00", "2017-02-10"))
+
+         */
     }
 
     private fun initRecyclerView() {

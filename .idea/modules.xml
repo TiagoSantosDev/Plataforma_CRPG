@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Plataforma_CRPG.iml" filepath="$PROJECT_DIR$/.idea/modules/Plataforma_CRPG.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandablelayout/Plataforma_CRPG.expandablelayout.iml" filepath="$PROJECT_DIR$/.idea/modules/expandablelayout/Plataforma_CRPG.expandablelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/timelineview/Plataforma_CRPG.timelineview.iml" filepath="$PROJECT_DIR$/.idea/modules/timelineview/Plataforma_CRPG.timelineview.iml" />
     </modules>
   </component>

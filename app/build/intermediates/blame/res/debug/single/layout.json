@@ -1,70 +1,154 @@
 [
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_agenda.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_agenda.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_calendar_item.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_section_child.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_section_child.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_selected_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_selected_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_parent_lembrar.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_parent_lembrar.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\reminder_activity.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\reminder_activity.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_example.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_example.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_selected_calendar_item.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_custom.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_custom.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_agenda.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_agenda.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_section.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_section.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_date_picker.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_date_picker.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_date_picker.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_date_picker.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_parent_horas.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_parent_horas.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_selected_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_selected_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_second_alerta.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_second_alerta.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\selected_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\selected_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_parent_alerta.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_parent_alerta.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_selected_calendar_item.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_selected_calendar_item.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_calendar_item.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_line.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_line.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_row.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_row.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bottom_sheet_options.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\bottom_sheet_options.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\calendar_item.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline_horizontal.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_horizontal.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_marker.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_marker.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_marker.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Timeline_V2\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_marker.xml"
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline_horizontal.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_horizontal.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\reminder_activity_success.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\reminder_activity_success.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_line.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_line.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_section_parent.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_section_parent.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\meals_fragment.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\meals_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_date_picker.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_date_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_second_dia.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_second_dia.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_example.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_example.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_parent_dia.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_parent_dia.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_meals.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_meals.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\second_special_selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\second_special_selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_parent_notas.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_parent_notas.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_second_notas.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_second_notas.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\selected_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\selected_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_second_lembrar.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_second_lembrar.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_second_horas.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\layout_second_horas.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\reminder_activity_intro.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\reminder_activity_intro.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bottom_sheet_options.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\bottom_sheet_options.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\third_special_calendar_item.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_calendar_item.xml"
     }
 ]

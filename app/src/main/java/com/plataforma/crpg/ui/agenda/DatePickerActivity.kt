@@ -61,12 +61,12 @@ class DatePickerActivity : BaseActivity() {
             println("> Botao de escolha pressionado")
             startActivity(intent)
             println("> Intent started")*/
-            if (savedInstanceState == null) {
+            /*if (savedInstanceState == null) {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     add<AgendaFragment>(R.id.recyclerView)
                 }
-            }
+            }*/
         }
 
         // calendar view manager is responsible for our displaying logic
