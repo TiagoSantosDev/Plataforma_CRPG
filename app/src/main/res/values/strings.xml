@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Timeline View</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Opções</string>
 
     <string name="horizontal_timeline">Horizontal Timeline</string>
     <string name="vertical_timeline">Vertical Timeline</string>
@@ -39,6 +39,32 @@
     <string name="title_lembretes"> LEMBRETES </string>
     <string name="title_meditacao"> MEDITACAO </string>
     <string name="title_notas"> NOTAS </string>
+    <string name="escolher_data">ESCOLHER A DATA</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tomar_medicacao">Tomar medicação</string>
+    <string name="apanhar_bus">Apanhar bus do CRPG</string>
+    <string name="escolher_almoco">Escolher almoço</string>
+    <string name="personalizado">Personalizado</string>
+    <string name="hoje">Hoje</string>
+    <string name="amanha">Amanhã</string>
+    <string name="green_check">✔</string>
+    <string name="ok">OK</string>
+    <string name="criado_c_sucesso">Lembrete criado com sucesso!</string>
+    <string name="som">SOM</string>
+    <string name="vibrar">VIBRAR</string>
+    <string name="aviso_campos_obrigatorios">AVISO: CAMPOS OBRIGATÓRIOS EM FALTA.</string>
+    <string name="adicionar_lembrete">Adicione lembretes para não se esquecer do que é realmente importante!</string>
+    <string name="clique_icone_lapis">Clique no icone com o lapis para criar um novo lembrete</string>
+    <string name="selecionar_dias">Selecionar dias da semana</string>
+    <string name="escolha_a_sua_refeicao">Escolha a sua refeição:</string>
+    <string name="opcao_carne">Opção Carne</string>
+    <string name="opcao_peixe">Opção Peixe</string>
+    <string name="opcao_dieta">Opção Dieta</string>
+    <string name="opcao_veg">Opção Vegetariana</string>
 
     <string-array name="line_type">
         <item>Normal</item>

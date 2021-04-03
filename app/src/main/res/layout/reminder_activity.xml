@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/parentLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white_93"
+  android:orientation="vertical">
+
+  <include layout="@layout/reminder_activity_intro"
+      android:visibility="gone"/>
+
+  <include layout="@layout/reminder_activity_success"
+      android:visibility="gone"/>
+
+  <com.skydoves.expandablelayout.ExpandableLayout
+    android:id="@+id/expandable_lembrar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:expandable_spinner_gravity="start"
+    app:expandable_duration="300"
+    app:expandable_isExpanded="false"
+    app:expandable_parentLayout="@layout/layout_parent_lembrar"
+    app:expandable_secondLayout="@layout/layout_second_lembrar" />
+
+  <View android:id="@+id/separator"
+      android:background="@color/greySeparator"
+      android:layout_width = "fill_parent"
+      android:layout_height="1dip" />
+
+  <com.skydoves.expandablelayout.ExpandableLayout
+      android:id="@+id/expandable_horas"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:expandable_spinner_gravity="start"
+      app:expandable_duration="300"
+      app:expandable_isExpanded="false"
+      app:expandable_parentLayout="@layout/layout_parent_horas"
+      app:expandable_secondLayout="@layout/layout_second_horas" />
+
+  <View android:id="@+id/separator2"
+      android:background="@color/greySeparator"
+      android:layout_width = "fill_parent"
+      android:layout_height="1dip" />
+
+  <com.skydoves.expandablelayout.ExpandableLayout
+      android:id="@+id/expandable_dia"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:expandable_spinner_gravity="start"
+      app:expandable_duration="300"
+      app:expandable_isExpanded="false"
+      app:expandable_parentLayout="@layout/layout_parent_dia"
+      app:expandable_secondLayout="@layout/layout_second_dia" />
+
+  <View android:id="@+id/separator3"
+      android:background="@color/greySeparator"
+      android:layout_width = "fill_parent"
+      android:layout_height="1dip" />
+
+  <com.skydoves.expandablelayout.ExpandableLayout
+      android:id="@+id/expandable_alerta"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:expandable_spinner_gravity="start"
+      app:expandable_duration="300"
+      app:expandable_isExpanded="false"
+      app:expandable_parentLayout="@layout/layout_parent_alerta"
+      app:expandable_secondLayout="@layout/layout_second_alerta" />
+
+  <View android:id="@+id/separator4"
+      android:background="@color/greySeparator"
+      android:layout_width = "fill_parent"
+      android:layout_height="1dip" />
+
+  <com.skydoves.expandablelayout.ExpandableLayout
+      android:id="@+id/expandable_notas"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:expandable_spinner_gravity="start"
+      app:expandable_duration="300"
+      app:expandable_isExpanded="false"
+      app:expandable_parentLayout="@layout/layout_parent_notas"
+      app:expandable_secondLayout="@layout/layout_second_notas" />
+
+  <View android:id="@+id/separator5"
+      android:background="@color/greySeparator"
+      android:layout_width = "fill_parent"
+      android:layout_height="1dip" />
+
+  <LinearLayout
+      android:id="@+id/parentLayout2"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="@color/white_93"
+      android:orientation="horizontal"
+      android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/aviso_campos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/parentLayout3"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent">
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="180dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/cancelar"
+        android:textColor="@color/md_blue_100"
+        android:textSize="25sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_cancel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/md_blue_100"
+        app:strokeColor="@color/md_blue_100"
+        app:strokeWidth="5dp" />
+
+    <Button
+        android:id="@+id/button_confirm"
+        android:layout_width="180dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/guardar"
+        android:textSize="25sp"
+        app:cornerRadius="8dp"
+        app:backgroundTint="@color/md_blue_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp" />
+
+</LinearLayout>
+
+</LinearLayout>

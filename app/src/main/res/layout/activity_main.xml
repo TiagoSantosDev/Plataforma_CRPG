@@ -24,9 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="ola"
-                android:textSize="30sp"
-                android:textColor="@color/colorWhite"/>
+                android:text="@string/app_name"
+                android:textColor="@color/primaryText"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TextAppearance.AppCompat.Body1"
@@ -46,25 +45,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite"
+        android:layout_height="675dp"
+        android:clipToPadding="false"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:paddingTop="10dp"
         android:paddingBottom="@dimen/bottom_padding_recycler_view"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_timeline"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:id="@+id/dropshadow"
-        android:layout_marginTop="?actionBarSize"
-        android:background="@drawable/dropshadow"/>
-
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/mobile_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
