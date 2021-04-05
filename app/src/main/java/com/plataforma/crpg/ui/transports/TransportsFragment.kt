@@ -52,6 +52,8 @@ class TransportsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
 
+        transportsViewModel.nome_motorista = "Jorge"
+
 
 
     }

@@ -65,8 +65,10 @@
     <string name="opcao_peixe">Opção Peixe</string>
     <string name="opcao_dieta">Opção Dieta</string>
     <string name="opcao_veg">Opção Vegetariana</string>
-    <string name="escolha_local">Escolha de onde quer partir/voltar do CRPG:</string>
+    <string name="escolha_local">Escolha a paragem do transporte:</string>
     <string name="transportes">TRANSPORTES</string>
+    <string name="motorista">Motorista:</string>
+    <string name="ligar_ao_motorista">LIGAR AO MOTORISTA</string>
 
     <string-array name="line_type">
         <item>Normal</item>
