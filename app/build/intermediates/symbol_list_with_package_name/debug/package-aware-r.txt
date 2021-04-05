@@ -2161,6 +2161,7 @@ drawable background_carne
 drawable background_dieta
 drawable background_peixe
 drawable background_veg
+drawable baseline_call_white_24dp
 drawable bg_bottom_sheet
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2401,6 +2402,7 @@ id button_apply
 id button_cancel
 id button_confirm
 id button_confirm_meal
+id button_confirm_transport
 id button_escolher
 id button_hoje
 id button_ok
@@ -2637,6 +2639,7 @@ id navigation_transports
 id nestedScrollView
 id never
 id noScroll
+id nome_motorista
 id none
 id normal
 id notification_background
@@ -2795,6 +2798,8 @@ id textView_som
 id textView_vibrar
 id textWatcher
 id text_attributes_heading
+id text_driver
+id text_driver_name
 id text_end_line_color
 id text_input_end_icon
 id text_input_start_icon
@@ -3200,6 +3205,7 @@ string horizontal_timeline_w_padding
 string icon_content_description
 string item_view_role_description
 string left_padding
+string ligar_ao_motorista
 string line
 string line_padding
 string marker
@@ -3219,6 +3225,7 @@ string material_timepicker_hour
 string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
+string motorista
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -4048,6 +4055,8 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style spinnerDropDownItemStyle
+style spinnerItemStyle
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

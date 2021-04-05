@@ -6522,7 +6522,7 @@
         <item>Porto</item>
         <item>Casa</item>
         <item>Gaia</item>
-    </string-array><string name="escolha_local">Escolha de onde quer partir/voltar do CRPG:</string></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
+    </string-array><string name="escolha_local">Escolha a paragem do transporte:</string><string name="ligar_ao_motorista">LIGAR AO MOTORISTA</string><string name="motorista">Motorista:</string></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
         
         <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
         <item name="fontFamily">@font/sourcesanspro_semibold</item>
@@ -6530,9 +6530,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar" ns2:targetApi="m">true</item>
+
+        
+        <item name="android:spinnerItemStyle">
+            @style/spinnerItemStyle
+        </item>
+
+        
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
     </style><style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        
+        <item name="android:spinnerItemStyle">
+            @style/spinnerItemStyle
+        </item>
+
+        
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
     </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Dark"/><style name="Heading" parent="Base.TextAppearance.AppCompat.Body2">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -6558,12 +6578,22 @@
         <item name="android:layout_height">25dp</item>
         <item name="borderWidth">0.8dp</item>
         <item name="borderColor">@color/colorGrey500</item>
+    </style><style name="spinnerItemStyle">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/md_blue_100</item>
+    </style><style name="spinnerDropDownItemStyle">
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/md_blue_100</item>
     </style></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values-v21\styles.xml" qualifiers="v21"><style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-    </style></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values-w820dp\dimens.xml" qualifiers="w820dp-v13"><dimen name="activity_horizontal_margin">64dp</dimen></file><file name="activity_custom" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\activity_custom.xml" qualifiers="" type="layout"/><file name="transports_fragment" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\transports_fragment.xml" qualifiers="" type="layout"/><file name="item_timeline_transports_from_location" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\item_timeline_transports_from_location.xml" qualifiers="" type="layout"/><file name="item_timeline_transports_to_location" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\item_timeline_transports_to_location.xml" qualifiers="" type="layout"/></source><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\rs\debug"/><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\resValues\debug"/><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\google-services\debug"><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\google-services\debug\values\values.xml" qualifiers=""><string name="default_web_client_id" translatable="false">70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com</string><string name="firebase_database_url" translatable="false">https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app</string><string name="gcm_defaultSenderId" translatable="false">70523228677</string><string name="google_api_key" translatable="false">AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA</string><string name="google_app_id" translatable="false">1:70523228677:android:af327478a3423f8c83826c</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA</string><string name="google_storage_bucket" translatable="false">crpg-1a3d5.appspot.com</string><string name="project_id" translatable="false">crpg-1a3d5</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values-w820dp\dimens.xml" qualifiers="w820dp-v13"><dimen name="activity_horizontal_margin">64dp</dimen></file><file name="activity_custom" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\activity_custom.xml" qualifiers="" type="layout"/><file name="transports_fragment" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\transports_fragment.xml" qualifiers="" type="layout"/><file name="item_timeline_transports_from_location" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\item_timeline_transports_from_location.xml" qualifiers="" type="layout"/><file name="item_timeline_transports_to_location" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout\item_timeline_transports_to_location.xml" qualifiers="" type="layout"/><file name="baseline_call_white_24dp" path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\drawable\baseline_call_white_24dp.png" qualifiers="" type="drawable"/></source><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\rs\debug"/><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\resValues\debug"/><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\google-services\debug"><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\build\generated\res\google-services\debug\values\values.xml" qualifiers=""><string name="default_web_client_id" translatable="false">70523228677-illhise1hgo5rt0p2a7ovtjo7u7c64r5.apps.googleusercontent.com</string><string name="firebase_database_url" translatable="false">https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app</string><string name="gcm_defaultSenderId" translatable="false">70523228677</string><string name="google_api_key" translatable="false">AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA</string><string name="google_app_id" translatable="false">1:70523228677:android:af327478a3423f8c83826c</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyD8uRs-z7rwkTixf3DUSXkskLf2ok0sNJA</string><string name="google_storage_bucket" translatable="false">crpg-1a3d5.appspot.com</string><string name="project_id" translatable="false">crpg-1a3d5</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>
