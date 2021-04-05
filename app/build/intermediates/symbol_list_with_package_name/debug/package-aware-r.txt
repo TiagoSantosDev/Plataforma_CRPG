@@ -66,6 +66,7 @@ animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
 array colors
 array line_type
+array location_array
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -2408,6 +2409,8 @@ id button_selecionar_dias
 id cancel_action
 id cancel_button
 id card
+id card_transports
+id card_transports_to
 id center
 id center_horizontal
 id center_vertical
@@ -2487,6 +2490,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id escolha_paragem
 id escolha_refeicao
 id exitUntilCollapsed
 id expand_activities_button
@@ -2565,6 +2569,7 @@ id line3
 id linear
 id listMode
 id list_item
+id locations_spinner
 id main_single_row_calendar
 id masked
 id material_clock_display
@@ -2628,6 +2633,7 @@ id navigation_agenda
 id navigation_header_container
 id navigation_meals
 id navigation_reminders
+id navigation_transports
 id nestedScrollView
 id never
 id noScroll
@@ -2814,9 +2820,13 @@ id text_opcao_peixe
 id text_opcao_vegetariano
 id text_orientation_heading
 id text_start_line_color
+id text_time_CRPG_to_location
+id text_time_location_to_CRPG
+id text_timeline_CRPG_to_location
 id text_timeline_date
 id text_timeline_end_time
 id text_timeline_info
+id text_timeline_location_to_CRPG
 id text_timeline_start_time
 id text_timeline_title
 id text_titulo_carne
@@ -2831,6 +2841,8 @@ id textinput_prefix_text
 id textinput_suffix_text
 id time
 id timeline
+id timeline_transports_from_location
+id timeline_transports_to_location
 id title
 id titleDividerNoCustom
 id title_template
@@ -2975,6 +2987,8 @@ layout item_section_child
 layout item_section_parent
 layout item_timeline
 layout item_timeline_horizontal
+layout item_timeline_transports_from_location
+layout item_timeline_transports_to_location
 layout layout_parent_alerta
 layout layout_parent_dia
 layout layout_parent_horas
@@ -3081,6 +3095,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout transports_fragment
 menu bottom_nav_menu
 menu menu_main
 mipmap ic_launcher
@@ -3160,6 +3175,7 @@ string elevation
 string end_line_color
 string error_icon_content_description
 string escolha_a_sua_refeicao
+string escolha_local
 string escolher
 string escolher_almoco
 string escolher_data
@@ -3272,6 +3288,7 @@ string title_notas
 string title_notifications
 string tomar_medicacao
 string top_padding
+string transportes
 string type
 string v7_preference_off
 string v7_preference_on

@@ -17,7 +17,8 @@
         android:title="@string/title_meditacao" />
 
     <item
+        android:id="@+id/navigation_transports"
         android:icon="@drawable/medicacao"
-        android:title="@string/title_notas" />
+        android:title="@string/transportes" />
 
 </menu>

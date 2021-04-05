@@ -23,4 +23,10 @@
         android:label="MEALS"
         tools:layout="@layout/meals_fragment" />
 
+    <fragment
+        android:id="@+id/navigation_transports"
+        android:name="com.plataforma.crpg.ui.transports.TransportsFragment"
+        android:label="TRANSPORTS"
+        tools:layout="@layout/transports_fragment" />
+
 </navigation>

@@ -65,10 +65,18 @@
     <string name="opcao_peixe">Opção Peixe</string>
     <string name="opcao_dieta">Opção Dieta</string>
     <string name="opcao_veg">Opção Vegetariana</string>
+    <string name="escolha_local">Escolha de onde quer partir/voltar do CRPG:</string>
+    <string name="transportes">TRANSPORTES</string>
 
     <string-array name="line_type">
         <item>Normal</item>
         <item>Dashed</item>
     </string-array>
 
+
+    <string-array name="location_array">
+        <item>Porto</item>
+        <item>Casa</item>
+        <item>Gaia</item>
+    </string-array>
 </resources>
