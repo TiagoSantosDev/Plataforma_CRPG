@@ -29,6 +29,7 @@
         android:id="@+id/locations_spinner"
         android:layout_width="235dp"
         android:layout_height="42dp"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -75,9 +76,8 @@
                 <TextView
                     android:id="@+id/text_time_location_to_CRPG"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:textSize="22sp" />
-
             </RelativeLayout>
 
             <FrameLayout
@@ -93,8 +93,6 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="15dp"
-                    android:clickable="true"
-                    android:focusable="true"
                     app:cardBackgroundColor="@color/colorGrey50"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="5dp"
@@ -105,9 +103,9 @@
                     <TextView
                         android:id="@+id/text_timeline_location_to_CRPG"
                         android:layout_width="228dp"
-                        android:layout_marginTop="20dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
                         android:textAlignment="center"
                         android:textColor="@color/md_blue_100"
                         android:textSize="22sp" />
@@ -116,8 +114,8 @@
                         android:id="@+id/text_driver"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
                         android:text="@string/motorista"
                         android:textColor="@color/md_blue_100"
                         android:textSize="22sp" />
@@ -141,7 +139,7 @@
                         app:backgroundTint="@color/md_blue_100"
                         app:cornerRadius="8dp"
                         app:icon="@drawable/baseline_call_white_24dp"
-                        app:iconSize="20dp"/>
+                        app:iconSize="20dp" />
 
 
                 </com.google.android.material.card.MaterialCardView>

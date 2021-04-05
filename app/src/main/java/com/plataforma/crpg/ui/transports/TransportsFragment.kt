@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
@@ -40,9 +39,6 @@ class TransportsFragment : Fragment() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-
-
-
 
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)

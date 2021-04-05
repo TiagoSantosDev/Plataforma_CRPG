@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -8,13 +9,24 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import com.plataforma.crpg.R
+import com.plataforma.crpg.ui.agenda.DatePickerFragment
+import java.util.*
 
 
 class MainActivity : BaseActivity() {
 
+    lateinit var dLocale: Locale
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
+
+        /*
+        dLocale = Locale("pt")
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(DatePickerFragment.dLocale)
+        this.applyOverrideConfiguration(configuration)*/
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)

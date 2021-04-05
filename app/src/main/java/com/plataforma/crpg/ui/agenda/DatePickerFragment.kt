@@ -35,6 +35,7 @@ class DatePickerFragment : Fragment() {
 
     init {
         activity?.let { updateConfig(it) }
+        //updateConfig(requireActivity().baseContext)
     }
 
      fun updateConfig(wrapper: ContextThemeWrapper) {
