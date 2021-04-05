@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <com.plataforma.crpg.TimelineView
+        android:id="@+id/timeline_transports_to_location"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:endLineColor="@color/colorAccent"
+        app:lineStyle="dash"
+        app:lineWidth="3dp"
+        app:markerSize="20dp"
+        app:startLineColor="@color/colorAccent"
+        app:strokeColor="@color/material_amber_600"
+        app:strokeWidth="5dp" />
+
+    <RelativeLayout
+        android:layout_width="56dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/text_time_CRPG_to_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_transports_to"
+            android:layout_width="261dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorGrey50"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="5dp"
+            app:contentPadding="0dp"
+            app:strokeColor="#F9B401"
+            app:strokeWidth="3dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/text_timeline_CRPG_to_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/md_blue_100"
+                android:textSize="22sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+
+</LinearLayout>
