@@ -70,6 +70,7 @@
     <string name="motorista">Motorista:</string>
     <string name="ligar_ao_motorista">CONTACTAR MOTORISTA</string>
     <string name="ver_transportes_publicos">CONSULTAR TRANSPORTES PÚBLICOS </string>
+    <string name="regressar">REGRESSAR </string>
 
     <string-array name="line_type">
         <item>Normal</item>
@@ -82,4 +83,13 @@
         <item>Casa</item>
         <item>Gaia</item>
     </string-array>
+
+    <string-array name="linha_autocarro_array">
+        <item>901(STCP)</item>
+        <item>ZF(STCP)</item>
+        <item>35(ES)</item>
+        <item>45(ES)</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="escolha_linha">ESCOLHA LINHA</string>
 </resources>

@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.core.widget.TextViewCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
+import com.plataforma.crpg.ui.agenda.AgendaFragment
+import kotlinx.android.synthetic.main.fragment_date_picker.*
+import kotlinx.android.synthetic.main.fragment_public_transports.*
+import kotlinx.android.synthetic.main.transports_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.view.*
 
 
@@ -53,11 +56,19 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
+        var publicTransportButton = view?.rootView?.findViewById<Button>(R.id.button_consult_transport)
 
         transportsViewModel.nome_motorista = "Jorge"
 
-
-
+        button_consult_transport.setOnClickListener {
+            val fragment: Fragment = PublicTransportsFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+            fragmentManager.popBackStack()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
 
 
     }
@@ -66,11 +77,17 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         val selItem: String = p0?.getItemAtPosition(p2).toString()
         var textFromLocation = view?.rootView?.findViewById<TextView>(R.id.location_to_CRPG_title)
+        var textToLocation = view?.rootView?.findViewById<TextView>(R.id.CRPG_to_location_title)
 
         when(selItem){
-            "Porto" -> textFromLocation!!.text= "Do Porto para o CRPG"
+            "Porto" -> textFromLocation!!.text= "Do Porto para o CRPG";
+            textToLocation!!.text="Do CRPG para o Porto"
+
             "Gaia" -> textFromLocation!!.text = "De Gaia para o CRPG"
+            textToLocation!!.text="Do CRPG para Gaia"
+
             "Casa" -> textFromLocation!!.text = "De Casa para o CRPG"
+            textToLocation!!.text="Do CRPG para Casa"
         }
 
         println("Item selecionado: $selItem")

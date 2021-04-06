@@ -96,6 +96,10 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\layout_button_round_top.xml"
     },
     {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_public_transports.xml.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_public_transports.xml"
+    },
+    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_red_dot.xml.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\red_dot.xml"
     },
@@ -114,6 +118,10 @@
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_right_24dp.xml.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\ic_arrow_right_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blue_right_arrow_icon.png.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\blue_right_arrow_icon.png"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_reminder_activity_intro.xml.flat",

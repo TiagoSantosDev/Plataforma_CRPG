@@ -4,12 +4,12 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_agenda.xml"
     },
     {
-        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline_transports_to_location.xml",
-        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_transports_to_location.xml"
-    },
-    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\first_special_calendar_item.xml",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\first_special_calendar_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_timeline_transports_to_location.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_transports_to_location.xml"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_section_child.xml",
@@ -82,6 +82,10 @@
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_bottom_sheet_line.xml",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_bottom_sheet_line.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_public_transports.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\fragment_public_transports.xml"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_section_parent.xml",
