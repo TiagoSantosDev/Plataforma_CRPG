@@ -66,6 +66,7 @@ animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
 array colors
 array line_type
+array linha_autocarro_array
 array location_array
 attr action
 attr actionBarDivider
@@ -2163,6 +2164,7 @@ drawable background_peixe
 drawable background_veg
 drawable baseline_call_white_24dp
 drawable bg_bottom_sheet
+drawable blue_right_arrow_icon
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2282,6 +2284,7 @@ font sourcesanspro_semibolditalic
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id CRPG_to_location_title
 id CTRL
 id FUNCTION
 id ImageButtonAmbos
@@ -2384,6 +2387,7 @@ id bidirectional
 id blocking
 id bottom
 id bounce
+id bus_lines_spinner
 id button
 id button0
 id button1
@@ -2402,17 +2406,18 @@ id button_apply
 id button_cancel
 id button_confirm
 id button_confirm_meal
-id button_confirm_transport
+id button_consult_transport
 id button_escolher
 id button_hoje
 id button_ok
 id button_personalizado
+id button_return_transports
 id button_selecionar_dias
 id cancel_action
 id cancel_button
 id card
 id card_transports
-id card_transports_2
+id card_transports_CRPG_to_location
 id card_transports_to
 id center
 id center_horizontal
@@ -2493,6 +2498,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id escolha_linha
 id escolha_paragem
 id escolha_refeicao
 id exitUntilCollapsed
@@ -2545,6 +2551,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView1
+id imageView_BlueArrow
 id image_end_line_color
 id image_marker_color
 id image_start_line_color
@@ -2573,7 +2580,6 @@ id line3
 id linear
 id listMode
 id list_item
-id location_from_CRPG_title
 id location_to_CRPG_title
 id locations_spinner
 id main_single_row_calendar
@@ -2803,9 +2809,9 @@ id textView_vibrar
 id textWatcher
 id text_attributes_heading
 id text_driver
-id text_driver_2
+id text_driver_CRPG_to_location
 id text_driver_name
-id text_driver_name_2
+id text_driver_name_CRPG_to_location
 id text_end_line_color
 id text_input_end_icon
 id text_input_start_icon
@@ -2832,7 +2838,6 @@ id text_opcao_vegetariano
 id text_orientation_heading
 id text_start_line_color
 id text_time_CRPG_to_location
-id text_time_location_from_CRPG
 id text_time_location_to_CRPG
 id text_timeline_CRPG_to_location
 id text_timeline_date
@@ -2845,6 +2850,8 @@ id text_titulo_carne
 id text_titulo_dieta
 id text_titulo_peixe
 id text_titulo_vegetariano
+id text_to_from_1
+id text_to_from_2
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2991,6 +2998,7 @@ layout first_special_calendar_item
 layout first_special_selected_calendar_item
 layout fragment_agenda
 layout fragment_date_picker
+layout fragment_public_transports
 layout item_bottom_sheet_line
 layout item_bottom_sheet_marker
 layout item_row
@@ -3187,6 +3195,7 @@ string elevation
 string end_line_color
 string error_icon_content_description
 string escolha_a_sua_refeicao
+string escolha_linha
 string escolha_local
 string escolher
 string escolher_almoco
@@ -3283,6 +3292,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string personalizado
 string project_id
+string regressar
 string right_padding
 string search_menu_title
 string selecionar_dias
@@ -3306,6 +3316,7 @@ string transportes
 string type
 string v7_preference_off
 string v7_preference_on
+string ver_transportes_publicos
 string vertical
 string vertical_timeline
 string vertical_timeline_w_padding

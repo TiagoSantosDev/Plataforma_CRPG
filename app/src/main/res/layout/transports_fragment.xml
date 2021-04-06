@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.plataforma.crpg.ui.transports.TransportsFragment">
 
     <TextView
         android:id="@+id/escolha_paragem"
-        android:layout_width="392dp"
-        android:layout_height="46dp"
+        android:layout_width="394dp"
+        android:layout_height="37dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif"
         android:text="@string/escolha_local"
@@ -23,7 +24,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <Spinner
         android:id="@+id/locations_spinner"
@@ -36,14 +37,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/escolha_paragem"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <FrameLayout
         android:layout_width="379dp"
         android:layout_height="452dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frame_card_to_CRPG" >
+            app:layout_constraintTop_toBottomOf="@+id/frame_card_to_CRPG">
 
             <com.plataforma.crpg.TimelineView
                 android:id="@+id/timeline_transports_to_location"
@@ -178,7 +178,7 @@
                 android:layout_marginBottom="15dp">
 
                 <TextView
-                    android:id="@+id/text_time_location_from_CRPG"
+                    android:id="@+id/text_time_CRPG_to_location"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="22sp" />
@@ -189,7 +189,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_transports_2"
+                    android:id="@+id/card_transports_CRPG_to_location"
                     android:layout_width="261dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center_vertical"
@@ -205,7 +205,7 @@
                     app:strokeWidth="3dp">
 
                     <TextView
-                        android:id="@+id/location_from_CRPG_title"
+                        android:id="@+id/CRPG_to_location_title"
                         android:layout_width="228dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -216,7 +216,7 @@
                         android:textSize="22sp" />
 
                     <TextView
-                        android:id="@+id/text_driver_2"
+                        android:id="@+id/text_driver_CRPG_to_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -226,7 +226,7 @@
                         android:textSize="22sp" />
 
                     <TextView
-                        android:id="@+id/text_driver_name_2"
+                        android:id="@+id/text_driver_name_CRPG_to_location"
                         android:layout_width="148dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
@@ -251,11 +251,11 @@
             </FrameLayout>
         </FrameLayout>
 
-
         <Button
-            android:id="@+id/button_confirm_transport"
+            android:id="@+id/button_consult_transport"
             android:layout_width="331dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center|bottom"
             android:text="@string/ver_transportes_publicos"
             android:textSize="20sp"

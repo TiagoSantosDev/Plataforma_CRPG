@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.transports.PublicTransportsFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/escolha_linha"
+        android:layout_width="392dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif"
+        android:text="@string/escolha_linha"
+        android:textAlignment="center"
+        android:textColor="@color/md_blue_100"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <Spinner
+        android:id="@+id/bus_lines_spinner"
+        android:layout_width="246dp"
+        android:layout_height="54dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/escolha_linha"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <FrameLayout
+        android:layout_width="361dp"
+        android:layout_height="366dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/escolha_linha">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/text_to_from_1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:fontFamily="sans-serif"
+                android:text="@string/escolha_linha"
+                android:textColor="@color/md_blue_100"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView_BlueArrow"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/blue_right_arrow_icon"
+                app:layout_constraintRight_toLeftOf="@+id/text_to_from_2"
+                app:layout_constraintStart_toStartOf="@+id/text_to_from_1" />
+
+            <TextView
+                android:id="@+id/text_to_from_2"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:text="@string/escolha_linha"
+                android:textColor="@color/md_blue_100"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_return_transports"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="76dp"
+        android:text="@string/regressar"
+        android:textSize="20sp"
+        app:backgroundTint="@color/md_blue_100"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
