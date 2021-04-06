@@ -68,7 +68,8 @@
     <string name="escolha_local">Escolha a paragem do transporte:</string>
     <string name="transportes">TRANSPORTES</string>
     <string name="motorista">Motorista:</string>
-    <string name="ligar_ao_motorista">LIGAR AO MOTORISTA</string>
+    <string name="ligar_ao_motorista">CONTACTAR MOTORISTA</string>
+    <string name="ver_transportes_publicos">CONSULTAR TRANSPORTES PÚBLICOS </string>
 
     <string-array name="line_type">
         <item>Normal</item>

@@ -6522,7 +6522,7 @@
         <item>Porto</item>
         <item>Casa</item>
         <item>Gaia</item>
-    </string-array><string name="escolha_local">Escolha a paragem do transporte:</string><string name="ligar_ao_motorista">LIGAR AO MOTORISTA</string><string name="motorista">Motorista:</string></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
+    </string-array><string name="escolha_local">Escolha a paragem do transporte:</string><string name="ligar_ao_motorista">CONTACTAR MOTORISTA</string><string name="motorista">Motorista:</string></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
         
         <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
         <item name="fontFamily">@font/sourcesanspro_semibold</item>

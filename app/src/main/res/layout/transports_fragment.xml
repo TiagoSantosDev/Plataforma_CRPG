@@ -13,17 +13,17 @@
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif"
         android:text="@string/escolha_local"
+        android:textAlignment="center"
         android:textColor="@color/md_blue_100"
         android:textSize="25sp"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <Spinner
         android:id="@+id/locations_spinner"
@@ -39,8 +39,8 @@
         app:layout_constraintVertical_bias="0.029" />
 
     <FrameLayout
-        android:layout_width="368dp"
-        android:layout_height="410dp"
+        android:layout_width="379dp"
+        android:layout_height="452dp"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -81,6 +81,7 @@
             </RelativeLayout>
 
             <FrameLayout
+                android:id="@+id/frame_card_to_CRPG"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -101,11 +102,12 @@
                     app:strokeWidth="3dp">
 
                     <TextView
-                        android:id="@+id/text_timeline_location_to_CRPG"
+                        android:id="@+id/location_to_CRPG_title"
                         android:layout_width="228dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
+                        android:text="@+id/text_timeline_location_to_CRPG"
                         android:textAlignment="center"
                         android:textColor="@color/md_blue_100"
                         android:textSize="22sp" />
@@ -146,16 +148,117 @@
             </FrameLayout>
         </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_card_to_CRPG" >
+
+            <com.plataforma.crpg.TimelineView
+                android:id="@+id/timeline_transports_to_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:endLineColor="@color/colorAccent"
+                app:lineStyle="dash"
+                app:lineWidth="3dp"
+                app:markerSize="20dp"
+                app:startLineColor="@color/colorAccent"
+                app:strokeColor="@color/material_amber_600"
+                app:strokeWidth="5dp" />
+
+            <RelativeLayout
+                android:layout_width="56dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/text_time_location_from_CRPG"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_transports_2"
+                    android:layout_width="261dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardBackgroundColor="@color/colorGrey50"
+                    app:cardCornerRadius="40dp"
+                    app:cardElevation="5dp"
+                    app:contentPadding="0dp"
+                    app:strokeColor="#F9B401"
+                    app:strokeWidth="3dp">
+
+                    <TextView
+                        android:id="@+id/location_from_CRPG_title"
+                        android:layout_width="228dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:text="@+id/text_timeline_location_to_CRPG"
+                        android:textAlignment="center"
+                        android:textColor="@color/md_blue_100"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text_driver_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/motorista"
+                        android:textColor="@color/md_blue_100"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text_driver_name_2"
+                        android:layout_width="148dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="@+id/nome_motorista"
+                        android:textColor="@color/md_blue_100"
+                        android:textSize="22sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/ligar_ao_motorista"
+                        android:textSize="15sp"
+                        app:backgroundTint="@color/md_blue_100"
+                        app:cornerRadius="8dp"
+                        app:icon="@drawable/baseline_call_white_24dp"
+                        app:iconSize="20dp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+        </FrameLayout>
+
 
         <Button
             android:id="@+id/button_confirm_transport"
-            android:layout_width="180dp"
-            android:layout_height="75dp"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/guardar"
-            android:textSize="25sp"
+            android:layout_width="331dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:text="@string/ver_transportes_publicos"
+            android:textSize="20sp"
             app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"

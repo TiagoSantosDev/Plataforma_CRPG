@@ -25,7 +25,7 @@ class MainActivity : BaseActivity() {
         dLocale = Locale("pt")
         Locale.setDefault(dLocale)
         val configuration = Configuration()
-        configuration.setLocale(DatePickerFragment.dLocale)
+        configuration.setLocale(dLocale)
         this.applyOverrideConfiguration(configuration)*/
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
