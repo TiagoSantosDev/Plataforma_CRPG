@@ -6527,7 +6527,7 @@
         <item>ZF(STCP)</item>
         <item>35(ES)</item>
         <item>45(ES)</item>
-    </string-array></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
+    </string-array><string name="ver_horarios">VER HORÁRIOS</string></file><file path="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.Light">
         
         <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
         <item name="fontFamily">@font/sourcesanspro_semibold</item>
