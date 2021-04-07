@@ -2413,6 +2413,8 @@ id button_ok
 id button_personalizado
 id button_return_transports
 id button_selecionar_dias
+id button_view_timetable_1
+id button_view_timetable_2
 id cancel_action
 id cancel_button
 id card
@@ -2523,6 +2525,8 @@ id floating
 id forever
 id fragment_container_view_tag
 id frame_card_to_CRPG
+id frame_de_para_1
+id frame_de_para_2
 id frame_opcao_carne
 id frame_opcao_dieta
 id frame_opcao_peixe
@@ -2552,6 +2556,7 @@ id ignoreRequest
 id image
 id imageView1
 id imageView_BlueArrow
+id imageView_BlueArrow2
 id image_end_line_color
 id image_marker_color
 id image_start_line_color
@@ -2810,8 +2815,8 @@ id textWatcher
 id text_attributes_heading
 id text_driver
 id text_driver_CRPG_to_location
-id text_driver_name
 id text_driver_name_CRPG_to_location
+id text_driver_name_location_to_CRPG
 id text_end_line_color
 id text_input_end_icon
 id text_input_start_icon
@@ -2852,6 +2857,8 @@ id text_titulo_peixe
 id text_titulo_vegetariano
 id text_to_from_1
 id text_to_from_2
+id text_to_from_3
+id text_to_from_4
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2889,6 +2896,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id ver_horarios
 id vertical
 id view
 id view_bottom_sheet_attributes
@@ -3316,6 +3324,7 @@ string transportes
 string type
 string v7_preference_off
 string v7_preference_on
+string ver_horarios
 string ver_transportes_publicos
 string vertical
 string vertical_timeline
