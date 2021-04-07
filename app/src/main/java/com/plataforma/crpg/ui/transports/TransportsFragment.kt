@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -56,9 +57,6 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
-        var publicTransportButton = view?.rootView?.findViewById<Button>(R.id.button_consult_transport)
-
-        transportsViewModel.nome_motorista = "Jorge"
 
         button_consult_transport.setOnClickListener {
             val fragment: Fragment = PublicTransportsFragment()
@@ -73,21 +71,27 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
         val selItem: String = p0?.getItemAtPosition(p2).toString()
         var textFromLocation = view?.rootView?.findViewById<TextView>(R.id.location_to_CRPG_title)
         var textToLocation = view?.rootView?.findViewById<TextView>(R.id.CRPG_to_location_title)
+        var driverFromLocation = view?.rootView?.findViewById<TextView>(R.id.text_driver_name_location_to_CRPG)
+        var driverToLocation = view?.rootView?.findViewById<TextView>(R.id.text_driver_name_CRPG_to_location)
 
         when(selItem){
-            "Porto" -> textFromLocation!!.text= "Do Porto para o CRPG";
-            textToLocation!!.text="Do CRPG para o Porto"
+            "Porto" ->  {textFromLocation!!.text= "Do Porto para o CRPG"
+                textToLocation!!.text="Do CRPG para o Porto"
+                driverFromLocation?.text = transportsViewModel.nome_motorista_de_CRPG
+                driverToLocation?.text = transportsViewModel.nome_motorista_para_CRPG
+            }
 
-            "Gaia" -> textFromLocation!!.text = "De Gaia para o CRPG"
-            textToLocation!!.text="Do CRPG para Gaia"
+            "Gaia" -> {textFromLocation!!.text = "De Gaia para o CRPG"
+            textToLocation!!.text="Do CRPG para Gaia"}
 
-            "Casa" -> textFromLocation!!.text = "De Casa para o CRPG"
-            textToLocation!!.text="Do CRPG para Casa"
+            "Casa" -> {textFromLocation!!.text = "De Casa para o CRPG"
+            textToLocation!!.text="Do CRPG para Casa"}
         }
 
         println("Item selecionado: $selItem")

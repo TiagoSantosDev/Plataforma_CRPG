@@ -30,20 +30,16 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     ): View? {
 
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
-        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
                 context,
-                R.array.location_array,
+                R.array.linha_autocarro_array,
                 android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
             linesSpinner?.adapter = adapter
         }
 
         linesSpinner?.onItemSelectedListener = this
-
         return inflater.inflate(R.layout.fragment_public_transports, container, false)
     }
 
@@ -67,7 +63,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
                 PublicTransportsFragment().apply {
-
                 }
     }
 
