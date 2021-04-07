@@ -132,6 +132,7 @@
                         android:textSize="22sp" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/call_button_1"
                         android:layout_width="wrap_content"
                         android:layout_height="44dp"
                         android:layout_gravity="center_horizontal|bottom"
@@ -235,6 +236,7 @@
                         android:textSize="22sp" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/call_button_2"
                         android:layout_width="wrap_content"
                         android:layout_height="44dp"
                         android:layout_gravity="center_horizontal|bottom"

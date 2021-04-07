@@ -2231,6 +2231,10 @@ drawable image
 drawable layout_bg
 drawable layout_button_round_bottom
 drawable layout_button_round_top
+drawable linha35_crpg_joaodedeus
+drawable linha35_joaodedeus_crpg
+drawable linha45_joaodedeus_miramar
+drawable linha45_miramar_joaodedeus
 drawable maos
 drawable marker
 drawable material_ic_calendar_black_24dp
@@ -2415,6 +2419,8 @@ id button_return_transports
 id button_selecionar_dias
 id button_view_timetable_1
 id button_view_timetable_2
+id call_button_1
+id call_button_2
 id cancel_action
 id cancel_button
 id card

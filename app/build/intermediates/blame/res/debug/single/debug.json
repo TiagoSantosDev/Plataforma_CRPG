@@ -4,6 +4,10 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_linha35_joaodedeus_crpg.PNG.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\linha35_joaodedeus_crpg.PNG"
+    },
+    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_vibrar.PNG.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\vibrar.PNG"
     },
@@ -252,12 +256,24 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\menu\\menu_main.xml"
     },
     {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_linha35_crpg_joaodedeus.PNG.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\linha35_crpg_joaodedeus.PNG"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_linha45_joaodedeus_miramar.PNG.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\linha45_joaodedeus_miramar.PNG"
+    },
+    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_timeline_transports_to_location.xml.flat",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\item_timeline_transports_to_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\drawable_linha45_miramar_joaodedeus.PNG.flat",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\drawable\\linha45_miramar_joaodedeus.PNG"
     },
     {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_bottom_sheet_line.xml.flat",

@@ -39,6 +39,8 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             linesSpinner?.adapter = adapter
         }
 
+
+
         linesSpinner?.onItemSelectedListener = this
         return inflater.inflate(R.layout.fragment_public_transports, container, false)
     }
@@ -46,6 +48,18 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
+        button_view_timetable_1.setOnClickListener {
+
+
+        }
+
+
+        button_view_timetable_2.setOnClickListener {
+
+
+        }
 
         button_return_transports.setOnClickListener {
             val fragment: Fragment = TransportsFragment()
@@ -56,6 +70,8 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+
+
 
     }
 
