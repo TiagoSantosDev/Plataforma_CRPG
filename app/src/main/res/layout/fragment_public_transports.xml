@@ -7,6 +7,8 @@
     tools:context=".ui.transports.PublicTransportsFragment"
     android:background="@color/white">
 
+    <include layout="@layout/timetable_layout"
+        android:visibility="visible"/>
 
     <TextView
         android:id="@+id/ver_horarios"
