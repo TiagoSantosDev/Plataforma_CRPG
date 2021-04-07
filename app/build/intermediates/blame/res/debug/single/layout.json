@@ -32,6 +32,10 @@
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\third_special_selected_calendar_item.xml"
     },
     {
+        "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\timetable_layout.xml",
+        "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\timetable_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_custom.xml",
         "source": "C:\\Users\\ltiag\\Desktop\\Plataforma_CRPG_Update_Firebase_Git\\Plataforma_CRPG\\app\\src\\main\\res\\layout\\activity_custom.xml"
     },
