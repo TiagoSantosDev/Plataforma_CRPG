@@ -1,7 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +8,17 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
 import kotlinx.android.synthetic.main.fragment_public_transports.*
 
 
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var opSelected = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +39,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             linesSpinner?.adapter = adapter
         }
 
-
-
         linesSpinner?.onItemSelectedListener = this
         return inflater.inflate(R.layout.fragment_public_transports, container, false)
     }
@@ -50,15 +48,36 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         super.onActivityCreated(savedInstanceState)
 
 
+        val photoView = view?.findViewById(R.id.photo_view) as PhotoView
+
         button_view_timetable_1.setOnClickListener {
-
-
+            when(opSelected){
+                0 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+                layoutInflater.inflate(R.layout.timetable_layout, null) }
+                1 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+                        layoutInflater.inflate(R.layout.timetable_layout, null) }
+                2 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+            }
         }
 
-
         button_view_timetable_2.setOnClickListener {
-
-
+            when(opSelected){
+                0 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                1 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                2 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+            }
         }
 
         button_return_transports.setOnClickListener {
@@ -70,9 +89,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
-
-
+        
     }
 
     companion object {
@@ -88,9 +105,21 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.bus_lines_spinner)
 
         when(pos){
-            1 -> textFromBusLines!!.text= "Do Porto para o CRPG"
-            2 -> textFromBusLines!!.text = "De Gaia para o CRPG"
-            3 -> textFromBusLines!!.text = "De Casa para o CRPG"
+            1 -> {
+                text_to_from_1.text = "CRPG"
+                text_to_from_2.text = "S. João de Deus"
+                text_to_from_3.text = "S. João de Deus"
+                text_to_from_4.text = "CRPG"
+                opSelected = 1
+            }
+            2 -> {
+                textFromBusLines!!.text = "De Gaia para o CRPG"
+                opSelected = 2
+            }
+            3 -> {
+                textFromBusLines!!.text = "De Casa para o CRPG"
+                opSelected = 3
+            }
         }
     }
 

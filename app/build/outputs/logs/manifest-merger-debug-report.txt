@@ -29,6 +29,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\ltiag\.g
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.6.0-alpha01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c4b55c9af7594ba05c116c3b3c6d6f14\jetified-core-ktx-1.6.0-alpha01\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta7] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\adc1f28c709a984c2f863cc61dd4d149\constraintlayout-2.0.0-beta7\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\77d2b1ff484cc6261597a05da2e991d0\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\75634f29298a9b691eeb96bd0e59a124\navigation-fragment-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -246,6 +247,8 @@ MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gr
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.6.0-alpha01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c4b55c9af7594ba05c116c3b3c6d6f14\jetified-core-ktx-1.6.0-alpha01\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.6.0-alpha01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c4b55c9af7594ba05c116c3b3c6d6f14\jetified-core-ktx-1.6.0-alpha01\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta7] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\adc1f28c709a984c2f863cc61dd4d149\constraintlayout-2.0.0-beta7\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta7] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\adc1f28c709a984c2f863cc61dd4d149\constraintlayout-2.0.0-beta7\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\77d2b1ff484cc6261597a05da2e991d0\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
