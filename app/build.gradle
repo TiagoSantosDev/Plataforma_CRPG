@@ -70,7 +70,7 @@ dependencies {
 
     //misc
     //implementation "org.jmailen.gradle:kotlinter-gradle:3.3.0"
-    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.2.0'
     implementation 'com.dmitrymalkovich.android:material-design-dimens:1.4'
     implementation 'com.michalsvec:single-row-calednar:1.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
