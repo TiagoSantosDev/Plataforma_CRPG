@@ -103,4 +103,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="nova_nota_de_texto">NOVA NOTA DE TEXTO</string>
+    <string name="titulo_da_nota">Título da nota:</string>
+    <string name="conteudo">Conteúdo:</string>
 </resources>
