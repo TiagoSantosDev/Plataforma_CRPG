@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:visibility="visible"
-    tools:context="com.plataforma.crpg.ui.notes.NotesFragment">
+    tools:context="com.plataforma.crpg.ui.notes.NewTextNoteFragment">
 
     <TextView
-        android:id="@+id/escolha_paragem"
+        android:id="@+id/title_nova_nota_texto"
         android:layout_width="394dp"
         android:layout_height="37dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif"
-        android:text="@string/escolha_local"
+        android:text="@string/nova_nota_de_texto"
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
         android:textSize="25sp"
@@ -26,9 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113" />
-
-
-
+    
     <FrameLayout
         android:layout_width="379dp"
         android:layout_height="452dp"
@@ -37,7 +35,30 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/escolha_paragem">
+        app:layout_constraintTop_toBottomOf="@id/title_nova_nota_texto">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Título da nota:"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+
+        </EditText>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_new_text_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="76dp"
+            app:srcCompat="@drawable/outline_create_black_24dp" />
 
     </FrameLayout>
 
@@ -68,19 +89,6 @@
         app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_new_text_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/outline_create_black_24dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
