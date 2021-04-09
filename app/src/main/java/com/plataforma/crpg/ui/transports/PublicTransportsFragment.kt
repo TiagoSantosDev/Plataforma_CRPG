@@ -47,10 +47,10 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
         val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
         button_view_timetable_1.setOnClickListener {
+
             when(opSelected){
                 0 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
                 layoutInflater.inflate(R.layout.timetable_layout, null) }
