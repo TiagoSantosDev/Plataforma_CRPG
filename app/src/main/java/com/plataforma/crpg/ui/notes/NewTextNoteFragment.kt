@@ -33,12 +33,17 @@ class NewTextNoteFragment : Fragment() {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
 
         return view
-        //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+
+        button_confirmar_nota.setOnClickListener {
+
+        }
+
+        val textFromLocation = view?.rootView?.findViewById<EditText>(R.id.note_content).text
 
 
     }

@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import kotlinx.android.synthetic.main.fragment_date_picker.*
+import kotlinx.android.synthetic.main.notes_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 
 
@@ -49,7 +50,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_new_text_note.setOnClickListener {
-            val fragment: Fragment = NewTextNoteFragmentFragment()
+            val fragment: Fragment = NewTextNoteFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -57,7 +58,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
 
     }
 
