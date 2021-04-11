@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.databinding.NotesFragmentBinding
+import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.*
@@ -41,15 +42,18 @@ class NewTextNoteFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
-        val textFromLocation = view?.rootView?.findViewById<EditText>(R.id.note_content).text
+        val titleText = view?.rootView?.findViewById<EditText>(R.id.title_nova_nota_texto)?.text
+        val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
+        val imagePath : String
 
         button_save_text_note.setOnClickListener {
+            notesViewModel.newNote.tipo = NoteType.TEXT
+            notesViewModel.newNote.titulo = titleText.toString()
+            notesViewModel.newNote.info = contentText.toString()
+            //notesViewModel.newNote.imagePath = imagePath
+
 
         }
-
-
-
-
 
     }
 

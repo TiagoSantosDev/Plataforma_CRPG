@@ -89,6 +89,7 @@
                 android:textSize="25sp" />
 
             <EditText
+                android:id="@+id/conteudo_nota"
                 android:layout_width="202dp"
                 android:layout_height="61dp"
                 android:layout_gravity="center_horizontal"
