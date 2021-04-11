@@ -33,7 +33,7 @@ class MainActivity : BaseActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.navigation_agenda, R.id.navigation_reminders, R.id.navigation_meals
+                        R.id.navigation_agenda, R.id.navigation_reminders, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

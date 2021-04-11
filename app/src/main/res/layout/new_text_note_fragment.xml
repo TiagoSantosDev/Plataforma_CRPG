@@ -20,17 +20,17 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <FrameLayout
         android:layout_width="379dp"
         android:layout_height="452dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -50,27 +50,28 @@
                 android:id="@+id/titulo_nova_nota"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/titulo_da_nota"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif"
+                android:text="@string/titulo_da_nota"
                 android:textAlignment="center"
                 android:textColor="@color/md_blue_100"
-                android:textSize="25sp"/>
+                android:textSize="25sp" />
 
             <EditText
-                android:layout_width="202dp"
+                android:id="@+id/titulo_edit_text"
+                android:layout_width="224dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
+                android:maxLength="50"
                 app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
         </FrameLayout>
-
 
         <FrameLayout
             android:id="@+id/frame_conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -90,11 +91,12 @@
 
             <EditText
                 android:id="@+id/conteudo_nota"
-                android:layout_width="202dp"
-                android:layout_height="61dp"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:inputType="textMultiLine"
+                android:maxLength="300"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -110,7 +112,6 @@
             android:layout_margin="16dp"
             android:layout_marginBottom="76dp"
             app:srcCompat="@drawable/outline_create_black_24dp" />
-
     </FrameLayout>
 
     <Button
@@ -127,19 +128,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_new_voice_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

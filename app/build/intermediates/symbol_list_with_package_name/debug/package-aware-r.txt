@@ -2671,6 +2671,7 @@ id nav_view
 id navigation_agenda
 id navigation_header_container
 id navigation_meals
+id navigation_notes
 id navigation_reminders
 id navigation_transports
 id nestedScrollView
@@ -2896,6 +2897,7 @@ id title
 id titleDividerNoCustom
 id title_nova_nota_texto
 id title_template
+id titulo_edit_text
 id titulo_nova_nota
 id toggle
 id toggleButtonGroup
@@ -3323,6 +3325,7 @@ string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string next
+string notas
 string nova_nota_de_texto
 string nova_nota_de_voz
 string ok

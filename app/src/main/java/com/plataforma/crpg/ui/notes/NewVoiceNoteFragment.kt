@@ -37,6 +37,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             savedInstanceState: Bundle?,
     ): View? {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
+        val view = binding.root
 
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)

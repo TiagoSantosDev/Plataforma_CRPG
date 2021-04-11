@@ -21,4 +21,9 @@
         android:icon="@drawable/medicacao"
         android:title="@string/transportes" />
 
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/medicacao"
+        android:title="@string/notas" />
+
 </menu>

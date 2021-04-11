@@ -14,19 +14,25 @@
     <fragment
         android:id="@+id/navigation_reminders"
         android:name="com.plataforma.crpg.ui.reminders.ReminderFragment"
-        android:label="DATE PICKER"
+        android:label="ESCOLHA DE DATA"
         tools:layout="@layout/fragment_date_picker" />
 
     <fragment
         android:id="@+id/navigation_meals"
         android:name="com.plataforma.crpg.ui.meals.MealsFragment"
-        android:label="MEALS"
+        android:label="REFEIÇÕES"
         tools:layout="@layout/meals_fragment" />
 
     <fragment
         android:id="@+id/navigation_transports"
         android:name="com.plataforma.crpg.ui.transports.TransportsFragment"
-        android:label="TRANSPORTS"
+        android:label="TRANSPORTES"
         tools:layout="@layout/transports_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_notes"
+        android:name="com.plataforma.crpg.ui.notes.NotesFragment"
+        android:label="NOTAS"
+        tools:layout="@layout/notes_fragment" />
 
 </navigation>

@@ -12,9 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
-import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.notes_fragment.*
-import kotlinx.android.synthetic.main.transports_fragment.*
 
 
 class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -31,7 +29,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
 
-        return view
+        return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
 
