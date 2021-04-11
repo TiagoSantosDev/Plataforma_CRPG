@@ -1,8 +1,6 @@
 package com.plataforma.crpg.ui.notes
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
@@ -13,8 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
@@ -22,6 +18,7 @@ import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import kotlinx.android.synthetic.main.fragment_date_picker.*
+import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 import java.io.File
 
@@ -71,9 +68,10 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
 
-        button_play_recording.setOnClickListener {
+        button_replay_recording.setOnClickListener {
 
-            val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
+            val myUri = Uri.parse(destFile.absolutePath)
+            //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
             val mediaPlayer = MediaPlayer().apply {
                 setAudioAttributes(
                         AudioAttributes.Builder()
