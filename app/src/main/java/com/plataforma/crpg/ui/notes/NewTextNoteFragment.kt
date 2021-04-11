@@ -1,6 +1,8 @@
 package com.plataforma.crpg.ui.notes
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
@@ -15,6 +17,8 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
+import java.lang.Boolean.FALSE
+import java.lang.Boolean.TRUE
 
 
 class NewTextNoteFragment : Fragment() {
@@ -24,6 +28,7 @@ class NewTextNoteFragment : Fragment() {
     }
 
     val RESULT_GALLERY = 0
+    var IMAGE_PICKED = FALSE
     var imageUri = ""
     private lateinit var notesViewModel: NotesViewModel
 
@@ -45,6 +50,10 @@ class NewTextNoteFragment : Fragment() {
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
         val imagePath : String
 
+        /*
+        val imageUri: Uri = data.getData()
+        val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri)
+        */
         button_get_image_from_gallery.setOnClickListener {
 
             val galleryIntent = Intent(
@@ -79,6 +88,7 @@ class NewTextNoteFragment : Fragment() {
         when (requestCode) {
             RESULT_GALLERY -> if (null != data) {
                 imageUri = data.data.toString()
+                IMAGE_PICKED = TRUE
                 println("Image Uri: " + imageUri)
                 //Do whatever that you desire here. or leave this blank
             }
