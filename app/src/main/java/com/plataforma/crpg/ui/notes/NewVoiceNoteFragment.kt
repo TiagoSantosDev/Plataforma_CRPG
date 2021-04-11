@@ -17,6 +17,7 @@ import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
+import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.*
@@ -46,7 +47,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
         val audioRecorder = NaraeAudioRecorder()
-        val destFile = File(Environment.getExternalStorageDirectory(), "/NaraeAudioRecorder/$fileName$extensions")
+        val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
         audioRecorder.create() {
             this.destFile = destFile
         }
@@ -85,6 +86,18 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }
 
         }
+
+        button_save_voice_note.setOnClickListener{
+
+            notesViewModel.newNote.tipo = NoteType.VOICE
+            notesViewModel.newNote.titulo = ""
+            notesViewModel.newNote.voiceNotePath = destFile.absolutePath
+            notesViewModel.newNote.tipo =
+            notesViewModel.newNote.tipo
+
+
+        }
+
 
 
 

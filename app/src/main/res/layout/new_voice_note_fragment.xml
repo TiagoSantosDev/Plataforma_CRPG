@@ -138,12 +138,10 @@
 
     </FrameLayout>
 
-
-
     </FrameLayout>
 
     <Button
-        android:id="@+id/button_save_text_note"
+        android:id="@+id/button_save_voice_note"
         android:layout_width="240dp"
         android:layout_height="45dp"
         android:layout_gravity="center|bottom"
@@ -157,18 +155,6 @@
         app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_new_voice_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
