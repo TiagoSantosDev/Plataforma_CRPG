@@ -6,8 +6,6 @@ import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View.OnClickListener
 import android.view.ViewGroup
@@ -102,7 +100,7 @@ class AudioRecordTest : AppCompatActivity() {
         recorder = null
     }
 
-    internal inner class RecordButton(ctx: Context) : Button(ctx) {
+    internal inner class RecordButton(ctx: Context) : androidx.appcompat.widget.AppCompatButton(ctx) {
 
         var mStartRecording = true
 
@@ -121,7 +119,7 @@ class AudioRecordTest : AppCompatActivity() {
         }
     }
 
-    internal inner class PlayButton(ctx: Context) : Button(ctx) {
+    internal inner class PlayButton(ctx: Context) : androidx.appcompat.widget.AppCompatButton(ctx) {
         var mStartPlaying = true
         var clicker: OnClickListener = OnClickListener {
             onPlay(mStartPlaying)

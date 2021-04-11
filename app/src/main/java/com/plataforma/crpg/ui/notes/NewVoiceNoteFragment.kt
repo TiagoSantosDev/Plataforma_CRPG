@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
@@ -18,9 +20,7 @@ import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.NoteType
-import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
-import kotlinx.android.synthetic.main.transports_fragment.*
 import java.io.File
 
 
@@ -95,9 +95,15 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             notesViewModel.newNote.voiceNotePath = destFile.absolutePath
             notesViewModel.newNote.tipo =
             notesViewModel.newNote.tipo
+
+            val fragment: Fragment = NotesFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+            fragmentManager.popBackStack()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
-
-
 
 
     }
