@@ -51,6 +51,7 @@ class DatePickerFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
         return root
     }

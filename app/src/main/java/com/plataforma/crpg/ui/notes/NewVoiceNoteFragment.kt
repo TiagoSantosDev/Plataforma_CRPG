@@ -46,6 +46,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onActivityCreated(savedInstanceState)
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
+        val fileName = "one"
+        val extensions = ".pcm"
         val audioRecorder = NaraeAudioRecorder()
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
         audioRecorder.create() {
@@ -88,14 +90,11 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-
             notesViewModel.newNote.tipo = NoteType.VOICE
             notesViewModel.newNote.titulo = ""
             notesViewModel.newNote.voiceNotePath = destFile.absolutePath
             notesViewModel.newNote.tipo =
             notesViewModel.newNote.tipo
-
-
         }
 
 
