@@ -32,6 +32,7 @@ class NewTextNoteFragment : Fragment() {
             savedInstanceState: Bundle?,
     ): View? {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
+        val view = binding.root
 
         return view
     }
@@ -40,7 +41,7 @@ class NewTextNoteFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
-        val titleText = view?.rootView?.findViewById<EditText>(R.id.title_nova_nota_texto)?.text
+        val titleText = view?.rootView?.findViewById<EditText>(R.id.titulo_edit_text)?.text
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
         val imagePath : String
 
