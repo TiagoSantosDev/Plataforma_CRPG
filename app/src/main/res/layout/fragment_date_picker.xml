@@ -7,35 +7,83 @@
     android:background="@color/white"
     tools:context="com.plataforma.crpg.ui.agenda.DatePickerFragment">
 
+
         <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="193dp"
-            android:layout_height="45dp"
+            android:id="@+id/title_selecionar_data"
+            android:layout_width="290dp"
+            android:layout_height="42dp"
             android:layout_marginStart="109dp"
-            android:layout_marginTop="207dp"
+            android:layout_marginTop="170dp"
             android:layout_marginEnd="108dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/escolher_data"
+            android:gravity="center_horizontal"
+            android:text="@string/selecionar_data"
             android:textColor="@color/SecondaryBlue"
-            android:textSize="24sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="290dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="109dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="108dp"
+            android:gravity="center_horizontal"
+            android:text="@+id/tvDate"
+            android:textColor="@color/SecondaryBlue"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="58dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="183dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+            android:id="@+id/main_single_row_calendar"
+            android:layout_width="402dp"
+            android:layout_height="193dp"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginTop="266dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="133dp"
+            app:deselection="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.096"
+            app:longPress="false"
+            app:multiSelection="false" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_selecionar"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-            android:layout_width="221dp"
-            android:layout_height="83dp"
+            android:layout_width="230dp"
+            android:layout_height="65dp"
             android:layout_below="@+id/main_single_row_calendar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="44dp"
-            android:elevation="4dp"
+            android:elevation="10dp"
             android:gravity="center_horizontal"
             android:text="@string/selecionar"
+            android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="32dp"
             app:iconPadding="8dp"
@@ -46,37 +94,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_single_row_calendar"
             app:rippleColor="@color/tertiaryText" />
-
-        <TextView
-            android:id="@+id/tvDay"
-            android:layout_width="58dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="183dp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@color/colorGrey100"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvDate"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
-            android:id="@+id/main_single_row_calendar"
-            android:layout_width="370dp"
-            android:layout_height="151dp"
-            android:layout_below="@+id/imageView1"
-            android:layout_marginTop="266dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="133dp"
-            app:deselection="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.127"
-            app:longPress="false"
-            app:multiSelection="false" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

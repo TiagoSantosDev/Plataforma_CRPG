@@ -56,17 +56,28 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityDatePickerBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityDatePickerBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityExampleBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityExampleBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityMainBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/ActivityMainBinding.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/BottomSheetOptionsBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/BottomSheetOptionsBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/CalendarItemBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/CalendarItemBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/FirstSpecialCalendarItemBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/FirstSpecialCalendarItemBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/FirstSpecialSelectedCalendarItemBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/FirstSpecialSelectedCalendarItemBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityDatePickerBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityDatePickerBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityExampleBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityExampleBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityMainBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ActivityMainBinding.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/BottomSheetOptionsBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/BottomSheetOptionsBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/CalendarItemBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/CalendarItemBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/FirstSpecialCalendarItemBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/FirstSpecialCalendarItemBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/FirstSpecialSelectedCalendarItemBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/FirstSpecialSelectedCalendarItemBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/DatePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/DatePickerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_date_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_date_picker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meals_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meals_fragment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -331,35 +342,35 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1617809815191" />
-    <state x="463" y="131" key="AndroidCreateXmlResourceDialog" timestamp="1618244382234">
+    <state x="463" y="131" key="AndroidCreateXmlResourceDialog" timestamp="1618245617098">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178845156" />
-    <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1618244382234" />
+    <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1618245617098" />
     <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1618244019951">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1618244019951" />
-    <state width="1236" height="217" key="GridCell.Tab.0.bottom" timestamp="1618238861224">
+    <state width="1236" height="222" key="GridCell.Tab.0.bottom" timestamp="1618246021913">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1618238861224" />
-    <state width="1236" height="217" key="GridCell.Tab.0.center" timestamp="1618238861223">
+    <state width="1236" height="222" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1618246021913" />
+    <state width="1236" height="222" key="GridCell.Tab.0.center" timestamp="1618246021913">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="217" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1618238861223" />
-    <state width="1236" height="217" key="GridCell.Tab.0.left" timestamp="1618238861223">
+    <state width="1236" height="222" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1618246021913" />
+    <state width="1236" height="222" key="GridCell.Tab.0.left" timestamp="1618246021913">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="217" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1618238861223" />
-    <state width="1236" height="217" key="GridCell.Tab.0.right" timestamp="1618238861224">
+    <state width="1236" height="222" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1618246021913" />
+    <state width="1236" height="222" key="GridCell.Tab.0.right" timestamp="1618246021913">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="217" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1618238861224" />
+    <state width="1236" height="222" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1618246021913" />
     <state x="221" y="84" key="IDE.errors.dialog" timestamp="1618242626021">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
