@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:databinding-adapters:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\efb581d8bb37a0e2fbbdc168f8b2031f\databinding-adapters-3.6.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\11ae98c7bf808573c4a1d4eabafe0f39\databinding-runtime-3.6.1\AndroidManifest.xml:17:1-24:12
@@ -85,22 +85,22 @@ MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ltiag\.gradle\caches
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e8928ded7961009200fd65033d3ec21a\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f3a9841a3f00e6e1ae3e4bfc9adbc8c0\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:11-69
@@ -120,12 +120,12 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE 
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-11:6
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-11:6
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:22-78
 application
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:5-36:19
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:5-38:19
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:11:5-19:19
@@ -159,53 +159,65 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\lt
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0-alpha01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\44fcd1a1437bf7c3a304710ace6b2ae2\core-1.6.0-alpha01\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-41
 	tools:ignore
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-48
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:19:9-48
 	android:icon
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:19:9-40
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-40
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:9-54
 activity#com.plataforma.crpg.ui.MainActivity
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:9-32:20
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-34:20
 	android:label
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-45
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-45
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-44
-intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.SET_ALARM+action:name:android.intent.action.SHOW_ALARMS+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:13-31:29
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:13-44
+intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.READ_EXTERNAL_STORAGE+action:name:android.intent.action.RECORD_AUDIO+action:name:android.intent.action.SET_ALARM+action:name:android.intent.action.SHOW_ALARMS+action:name:android.intent.action.WRITE_EXTERNAL_STORAGE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:25-66
 action#android.intent.action.SET_ALARM
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-74
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-74
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-71
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-71
 action#android.intent.action.SHOW_ALARMS
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-76
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-76
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-73
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-73
+action#android.intent.action.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-87
+	android:name
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-84
+action#android.intent.action.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:17-86
+	android:name
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:25-83
+action#android.intent.action.RECORD_AUDIO
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:25-74
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-76
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:31:17-76
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:27-73
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:31:27-73
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.plataforma.crpg.example.ExampleActivity
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:9-35:59
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:9-37:59
 	android:theme
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:37:13-56
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:34:13-52
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:36:13-52
 uses-sdk
 INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
