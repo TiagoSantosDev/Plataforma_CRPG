@@ -45,9 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.plataforma.crpg.example.ExampleActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
