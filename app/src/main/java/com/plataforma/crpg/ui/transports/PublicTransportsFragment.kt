@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
-import kotlinx.android.synthetic.main.fragment_public_transports.*
+//import kotlinx.android.synthetic.main.fragment_public_transports.*
 
 
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -40,7 +40,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         }
 
         linesSpinner?.onItemSelectedListener = this
-        return inflater.inflate(R.layout.fragment_public_transports, container, false)
+        return inflater.inflate(R.layout.fragment_public_transports_old, container, false)
     }
 
 
@@ -49,6 +49,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
         val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
+        /*
         button_view_timetable_1.setOnClickListener {
 
             when(opSelected){
@@ -89,7 +90,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-        
+        */
     }
 
     companion object {
@@ -103,7 +104,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val selItem: String = p0?.getItemAtPosition(p2).toString()
         val pos = p2
         var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.bus_lines_spinner)
-
+        /*
         when(pos){
             1 -> {
                 text_to_from_1.text = "CRPG"
@@ -120,7 +121,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
                 textFromBusLines!!.text = "De Casa para o CRPG"
                 opSelected = 3
             }
-        }
+        }*/
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
