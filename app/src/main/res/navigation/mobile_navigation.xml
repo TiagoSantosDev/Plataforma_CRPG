@@ -35,7 +35,7 @@
         android:name="com.plataforma.crpg.ui.transports.PublicTransportsFragment"
         android:label="TRANSPORTES PUBLICOS"
         app:defaultNavHost="true"
-        tools:layout="@layout/transports_fragment" >
+        tools:layout="@layout/fragment_public_transport" >
         <action
             android:id="@+id/action_navigation_public_transports_to_navigation_transports"
             app:popUpTo="@id/navigation_transports" />
@@ -46,7 +46,7 @@
         android:name="com.plataforma.crpg.ui.transports.CustomTransportsFragment"
         android:label="TRANSPORTES PERSONALIZADOS"
         app:defaultNavHost="true"
-        tools:layout="@layout/transports_fragment" >
+        tools:layout="@layout/fragment_custom_transport" >
         <action
             android:id="@+id/action_navigation_custom_transports_to_navigation_transports"
             app:popUpTo="@id/navigation_transports" />
