@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.ui.MainActivity
 
 //import kotlinx.android.synthetic.main.fragment_public_transports.*
 
@@ -27,6 +30,20 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+
+        showBackButton()
+        // This callback will only be called when MyFragment is at least Started.
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
+            override fun handleOnBackPressed() {
+                val a = Intent(Intent.ACTION_MAIN)
+                a.addCategory(Intent.CATEGORY_HOME)
+                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(a)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+        // The callback can be enabled or disabled here or in handleOnBackPressed()
 
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
@@ -125,6 +142,12 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
+    }
+
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
     }
     
 }
