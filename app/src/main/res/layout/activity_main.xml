@@ -6,45 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.plataforma.crpg.ui.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/appbarLayout"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/toolbar"
-            android:background="@color/PrimaryOrange">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextAppearance.MaterialComponents.Headline6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="@color/primaryText"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/action_example_activity"
-                android:layout_gravity="center|end"
-                android:gravity="center"
-                android:padding="@dimen/padding"
-                android:clickable="true"
-                android:background="?attr/selectableItemBackground"
-                android:text="@string/example"
-                android:textColor="@color/primaryText"
-                android:textSize="14sp"/>
-
-        </FrameLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"

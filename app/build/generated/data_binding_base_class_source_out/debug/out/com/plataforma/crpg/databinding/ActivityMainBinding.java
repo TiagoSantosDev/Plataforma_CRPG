@@ -4,13 +4,10 @@ package com.plataforma.crpg.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.plataforma.crpg.R;
 import java.lang.NullPointerException;
@@ -22,25 +19,12 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final AppCompatTextView actionExampleActivity;
-
-  @NonNull
-  public final AppBarLayout appbarLayout;
-
-  @NonNull
   public final BottomNavigationView navView;
 
-  @NonNull
-  public final FrameLayout toolbar;
-
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull AppCompatTextView actionExampleActivity, @NonNull AppBarLayout appbarLayout,
-      @NonNull BottomNavigationView navView, @NonNull FrameLayout toolbar) {
+      @NonNull BottomNavigationView navView) {
     this.rootView = rootView;
-    this.actionExampleActivity = actionExampleActivity;
-    this.appbarLayout = appbarLayout;
     this.navView = navView;
-    this.toolbar = toolbar;
   }
 
   @Override
@@ -70,28 +54,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     String missingId;
     missingId: {
-      AppCompatTextView actionExampleActivity = rootView.findViewById(R.id.action_example_activity);
-      if (actionExampleActivity == null) {
-        missingId = "actionExampleActivity";
-        break missingId;
-      }
-      AppBarLayout appbarLayout = rootView.findViewById(R.id.appbarLayout);
-      if (appbarLayout == null) {
-        missingId = "appbarLayout";
-        break missingId;
-      }
       BottomNavigationView navView = rootView.findViewById(R.id.nav_view);
       if (navView == null) {
         missingId = "navView";
         break missingId;
       }
-      FrameLayout toolbar = rootView.findViewById(R.id.toolbar);
-      if (toolbar == null) {
-        missingId = "toolbar";
-        break missingId;
-      }
-      return new ActivityMainBinding((CoordinatorLayout) rootView, actionExampleActivity,
-          appbarLayout, navView, toolbar);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, navView);
     }
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
