@@ -75,7 +75,7 @@ class DatePickerFragment : Fragment() {
         dLocale = Locale(change)
         calendar.time = Date()
 
-        button.setOnClickListener {
+        button_selecionar.setOnClickListener {
             val fragment: Fragment = AgendaFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
