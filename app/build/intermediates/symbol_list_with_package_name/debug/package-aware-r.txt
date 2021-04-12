@@ -2358,6 +2358,8 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_navigation_custom_transports_to_navigation_transports
+id action_navigation_public_transports_to_navigation_transports
 id action_settings
 id action_text
 id actions

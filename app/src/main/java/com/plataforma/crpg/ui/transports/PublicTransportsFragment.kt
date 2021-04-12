@@ -11,9 +11,12 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
+import kotlinx.android.synthetic.main.fragment_custom_transport.*
 
 //import kotlinx.android.synthetic.main.fragment_public_transports.*
 
@@ -96,7 +99,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
                     layoutInflater.inflate(R.layout.timetable_layout, null) }
             }
         }
-
+        */
         button_return_transports.setOnClickListener {
             val fragment: Fragment = TransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -106,7 +109,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-        */
+
     }
 
     companion object {
