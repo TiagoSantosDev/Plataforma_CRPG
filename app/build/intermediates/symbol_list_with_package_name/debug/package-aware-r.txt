@@ -2906,6 +2906,7 @@ id timeline_transports_to_location
 id title
 id titleDividerNoCustom
 id title_nova_nota_texto
+id title_selecionar_data
 id title_template
 id titulo_edit_text
 id titulo_nova_nota
@@ -3367,6 +3368,7 @@ string right_padding
 string search_menu_title
 string second_fragment_label
 string selecionar
+string selecionar_data
 string selecionar_dias
 string size
 string som

@@ -115,4 +115,5 @@
     <string name="contacto_b">CONTACTO_B</string>
     <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
     <string name="selecionar">SELECIONAR</string>
+    <string name="selecionar_data">SELECIONAR DATA</string>
 </resources>
