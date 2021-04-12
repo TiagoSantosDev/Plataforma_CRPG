@@ -2395,7 +2395,6 @@ id blocking
 id bottom
 id bounce
 id bus_lines_spinner
-id button
 id button0
 id button1
 id button2
@@ -2427,6 +2426,7 @@ id button_replay_recording
 id button_return_transports
 id button_save_text_note
 id button_save_voice_note
+id button_selecionar
 id button_selecionar_dias
 id button_start_recording
 id button_stop_recording
@@ -3366,6 +3366,7 @@ string regressar
 string right_padding
 string search_menu_title
 string second_fragment_label
+string selecionar
 string selecionar_dias
 string size
 string som

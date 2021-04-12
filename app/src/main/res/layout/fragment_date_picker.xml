@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="56dp"
     android:background="@color/white"
     tools:context="com.plataforma.crpg.ui.agenda.DatePickerFragment">
-
 
         <TextView
             android:id="@+id/tvDate"
@@ -26,32 +24,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button"
+            android:id="@+id/button_selecionar"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-            android:layout_width="156dp"
-            android:layout_height="72dp"
+            android:layout_width="221dp"
+            android:layout_height="83dp"
             android:layout_below="@+id/main_single_row_calendar"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="61dp"
-            android:layout_marginEnd="134dp"
+            android:layout_marginTop="44dp"
             android:elevation="4dp"
-            android:fontFamily="sans-serif-condensed"
-            android:paddingStart="18sp"
-            android:paddingLeft="18dp"
-            android:paddingEnd="18dp"
-            android:paddingRight="18dp"
-            android:text="@string/escolher"
+            android:gravity="center_horizontal"
+            android:text="@string/selecionar"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            app:backgroundTint="?attr/colorAccent"
+            app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="32dp"
-            app:fontFamily="sans-serif-condensed"
             app:iconPadding="8dp"
             app:iconSize="18dp"
             app:iconTint="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_single_row_calendar"
             app:rippleColor="@color/tertiaryText" />
