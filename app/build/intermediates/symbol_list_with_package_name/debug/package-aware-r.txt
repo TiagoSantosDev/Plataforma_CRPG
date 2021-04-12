@@ -3045,7 +3045,8 @@ layout first_special_selected_calendar_item
 layout fragment_agenda
 layout fragment_custom_transport
 layout fragment_date_picker
-layout fragment_public_transports
+layout fragment_public_transport
+layout fragment_public_transports_old
 layout item_bottom_sheet_line
 layout item_bottom_sheet_marker
 layout item_row

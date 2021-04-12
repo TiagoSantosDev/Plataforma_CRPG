@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
-import kotlinx.android.synthetic.main.fragment_public_transports.*
+import kotlinx.android.synthetic.main.fragment_custom_transport.*
 
 
 class CustomTransportsFragment : Fragment() {
