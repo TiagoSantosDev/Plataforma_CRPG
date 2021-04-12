@@ -1,15 +1,12 @@
 package com.plataforma.crpg.ui
 
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 import com.plataforma.crpg.R
-import com.plataforma.crpg.ui.agenda.DatePickerFragment
 import java.util.*
 
 
@@ -33,7 +30,7 @@ class MainActivity : BaseActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.navigation_agenda, R.id.navigation_reminders, R.id.navigation_meals, R.id.navigation_notes
+                        R.id.navigation_agenda, R.id.navigation_reminders, R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -66,6 +63,14 @@ class MainActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
+    }
+
+    fun showUpButton() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+
+    fun hideUpButton() {
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
     }
 
 
