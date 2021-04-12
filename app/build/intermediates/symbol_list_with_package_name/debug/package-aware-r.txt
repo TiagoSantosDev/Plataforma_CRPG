@@ -2412,6 +2412,8 @@ id button_apply
 id button_cancel
 id button_confirm
 id button_confirm_meal
+id button_consult_custom_transport
+id button_consult_public_transport
 id button_consult_transport
 id button_escolher
 id button_get_image_from_gallery
@@ -2476,6 +2478,7 @@ id cover
 id createReminderActionButton
 id custom
 id customPanel
+id custom_transports_text
 id cut
 id dark
 id dash
@@ -2548,6 +2551,8 @@ id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
 id frame_de_para_2
+id frame_motorista_1
+id frame_motorista_2
 id frame_note_image
 id frame_opcao_carne
 id frame_opcao_dieta
@@ -2863,6 +2868,7 @@ id text_marker_padding_note
 id text_marker_right_padding
 id text_marker_size
 id text_marker_top_padding
+id text_motoristas
 id text_opcao_carne
 id text_opcao_dieta
 id text_opcao_peixe
@@ -3037,6 +3043,7 @@ layout expandable_layout_frame
 layout first_special_calendar_item
 layout first_special_selected_calendar_item
 layout fragment_agenda
+layout fragment_custom_transport
 layout fragment_date_picker
 layout fragment_public_transports
 layout item_bottom_sheet_line
@@ -3229,6 +3236,8 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string contacto_a
+string contacto_b
 string conteudo
 string criado_c_sucesso
 string dash_gap
@@ -3267,6 +3276,7 @@ string horizontal
 string horizontal_timeline
 string horizontal_timeline_w_padding
 string icon_content_description
+string informacao
 string item_view_role_description
 string left_padding
 string ligar_ao_motorista
@@ -3290,6 +3300,9 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string motorista
+string motorista_a
+string motorista_b
+string motoristas
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -3368,6 +3381,7 @@ string title_notifications
 string titulo_da_nota
 string tomar_medicacao
 string top_padding
+string transporte_personalizado
 string transportes
 string type
 string v7_preference_off

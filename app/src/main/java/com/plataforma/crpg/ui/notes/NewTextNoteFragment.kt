@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.notes
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Build
@@ -11,13 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
@@ -26,6 +24,7 @@ import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
+import java.util.jar.Manifest
 import kotlin.properties.Delegates
 
 
@@ -117,6 +116,7 @@ class NewTextNoteFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+
         when (requestCode) {
             RESULT_GALLERY -> if (null != data) {
                 imageUri = data.data.toString()
@@ -127,27 +127,22 @@ class NewTextNoteFragment : Fragment() {
             else -> {
             }
         }
-    }
-
-    fun onChange(IMAGE_PICKED: Boolean) {
 
 
     }
+
 
     private var IMAGE_PICKED: Boolean by Delegates.observable(FALSE) { property, oldValue, newValue ->
         println("New Value $newValue")
         println("Old Value $oldValue")
 
-        println("IMAGE_PICKED FOI SET A TRUE")
 
         //Path da imagem: /data/media/0/Pictures/IMG_20210411_215349.jpg
+        //var imageNewPath = "/data/media/0/Pictures/IMG_20210411_215349.jpg"
 
 
-        var imageNewPath = "/data/media/0/Pictures/IMG_20210411_215349.jpg"
 
-        //var file = File(imageNewPath)
-
-        //val imgFile = File(imageUri)
+        var imageNewPath = "/storage/emulated/0/Pictures/IMG_20210411_215347.jpg"
         val imgFile = File(imageNewPath)
         //val imgFileToPatch = imgFile.toPath()
 
@@ -163,5 +158,51 @@ class NewTextNoteFragment : Fragment() {
             myImage.setImageBitmap(myBitmap)
         }
     }
+/*
+    private fun checkPermissionForImage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if ((checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED)
+                    && (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED)
+            ) {
+                val permission = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                val permissionCoarse = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
+                requestPermissions(permission, PERMISSION_CODE_READ) // GIVE AN INTEGER VALUE FOR PERMISSION_CODE_READ LIKE 1001
+                requestPermissions(permissionCoarse, PERMISSION_CODE_WRITE) // GIVE AN INTEGER VALUE FOR PERMISSION_CODE_WRITE LIKE 1002
+            } else {
+                pickImageFromGallery()
+            }
+        }
+    }
+
+*/
 
 }
+/*
+when (requestCode) {
+    val targetUri: Uri = data!!.data
+    textTargetUri.setText(targetUri.toString())
+    val bitmap: Bitmap
+    try {
+        bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri))
+        targetImage.setImageBitmap(bitmap)
+    } catch (e: FileNotFoundException) {
+        // TODO Auto-generated catch block
+        e.printStackTrace()
+    }
+}
+        if (Build.VERSION.SDK_INT >= 23 && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((context as BaseActivity?)!!, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE),
+                    MY_PERMISSIONS_REQUEST_READ_AND_WRITE_SDK)
+        } else {
+
+
+        }
+
+        //var file = File(imageNewPath)
+        ///storage/emulated/0/Pictures/IMG_20210411_215347.jpg
+        //var getExtDir = requireActivity().getExternalFilesDir(null)
+        //println(getExtDir)
+        //val imgFile = File(imageUri)
+
+*/
