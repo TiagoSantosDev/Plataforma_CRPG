@@ -73,6 +73,13 @@ class MainActivity : BaseActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
     }
 
+    override fun onBackPressed() {
+        if (fragmentManager.backStackEntryCount > 0) {
+            fragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
+    }
 
 
 }
