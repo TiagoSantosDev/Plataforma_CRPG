@@ -9,10 +9,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+
 //import kotlinx.android.synthetic.main.fragment_public_transports.*
 
 
@@ -127,4 +126,5 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
+    
 }
