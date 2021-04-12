@@ -2548,11 +2548,13 @@ id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
 id frame_de_para_2
+id frame_note_image
 id frame_opcao_carne
 id frame_opcao_dieta
 id frame_opcao_peixe
 id frame_opcao_vegetariano
 id frame_parent
+id frame_titulo
 id frame_titulo_nota
 id ghost_view
 id ghost_view_holder
@@ -2680,6 +2682,7 @@ id noScroll
 id nome_motorista
 id none
 id normal
+id note_image
 id notification_background
 id notification_main_column
 id notification_main_column_container
