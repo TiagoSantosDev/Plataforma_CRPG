@@ -2677,9 +2677,11 @@ id nav_host_fragment
 id nav_host_fragment_container
 id nav_view
 id navigation_agenda
+id navigation_custom_transports
 id navigation_header_container
 id navigation_meals
 id navigation_notes
+id navigation_public_transports
 id navigation_reminders
 id navigation_transports
 id nestedScrollView

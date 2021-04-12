@@ -27,6 +27,21 @@
         android:id="@+id/navigation_transports"
         android:name="com.plataforma.crpg.ui.transports.TransportsFragment"
         android:label="TRANSPORTES"
+        app:defaultNavHost="true"
+        tools:layout="@layout/transports_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_public_transports"
+        android:name="com.plataforma.crpg.ui.transports.PublicTransportsFragment"
+        android:label="TRANSPORTES PUBLICOS"
+        app:defaultNavHost="true"
+        tools:layout="@layout/transports_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_custom_transports"
+        android:name="com.plataforma.crpg.ui.transports.CustomTransportsFragment"
+        android:label="TRANSPORTES PERSONALIZADOS"
+        app:defaultNavHost="true"
         tools:layout="@layout/transports_fragment" />
 
     <fragment
