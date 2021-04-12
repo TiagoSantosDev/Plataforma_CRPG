@@ -140,14 +140,24 @@ class NewTextNoteFragment : Fragment() {
 
         println("IMAGE_PICKED FOI SET A TRUE")
 
-        val imgFile = File(imageUri)
+        //Path da imagem: /data/media/0/Pictures/IMG_20210411_215349.jpg
+
+
+        var imageNewPath = "/data/media/0/Pictures/IMG_20210411_215349.jpg"
+
+        //var file = File(imageNewPath)
+
+        //val imgFile = File(imageUri)
+        val imgFile = File(imageNewPath)
         //val imgFileToPatch = imgFile.toPath()
 
-        println("Can read:" + imgFile.canRead())
-        println("Path " + imgFile.absolutePath)
-        //println("Can " + imgFile.toPath())
+        println("Exists: " + imgFile.exists())
+        println("Can read: " + imgFile.canRead())
+        println("Absolute Path: " + imgFile.absolutePath)
+
 
         if (imgFile.exists()) {
+            println("Imagem existe!")
             val myBitmap: Bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
             val myImage: ImageView = view?.findViewById(R.id.note_image) as ImageView
             myImage.setImageBitmap(myBitmap)
