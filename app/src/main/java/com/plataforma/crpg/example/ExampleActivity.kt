@@ -22,8 +22,8 @@ class ExampleActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_example)
 
-        setActivityTitle(getString(R.string.activity_example_label))
-        isDisplayHomeAsUpEnabled = true
+        //setActivityTitle(getString(R.string.activity_example_label))
+        //isDisplayHomeAsUpEnabled = true
 
         setDataListItems()
         initRecyclerView()
