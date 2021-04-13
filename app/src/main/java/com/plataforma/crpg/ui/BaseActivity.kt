@@ -41,7 +41,7 @@ open class BaseActivity : AppCompatActivity() {
     fun setContentViewWithoutInject(layoutResId: Int) {
         super.setContentView(layoutResId)
     }
-
+    /*
     protected fun setupToolbar() {
         whenNotNull(toolbar) {
             setSupportActionBar(it)
@@ -86,4 +86,6 @@ open class BaseActivity : AppCompatActivity() {
             finish()
         }
     }
+
+     */
 }
