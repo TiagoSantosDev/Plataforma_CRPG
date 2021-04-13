@@ -34,8 +34,8 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     protected fun injectViews() {
-        toolbar = findViewById(R.id.toolbar)
-        setupToolbar()
+        //toolbar = findViewById(R.id.toolbar)
+        //setupToolbar()
     }
 
     fun setContentViewWithoutInject(layoutResId: Int) {
