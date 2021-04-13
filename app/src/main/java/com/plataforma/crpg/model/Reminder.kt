@@ -1,5 +1,7 @@
 package com.plataforma.crpg.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Reminder(
         var title: String,
         val info: String,
@@ -17,9 +19,21 @@ data class Reminder(
 }
 
 enum class AlarmType {
-    SOM, VIBRAR, AMBOS
+    @SerializedName("SOM")
+    SOM,
+    @SerializedName("VIBRAR")
+    VIBRAR,
+    @SerializedName("AMBOS")
+    AMBOS
 }
 
 enum class AlarmFrequency {
-    HOJE, AMANHA, TODOS_OS_DIAS, PERSONALIZADO
+    @SerializedName("HOJE")
+    HOJE,
+    @SerializedName("AMANHA")
+    AMANHA,
+    @SerializedName("TODOS_OS_DIAS")
+    TODOS_OS_DIAS,
+    @SerializedName("PERSONALIZADO")
+    PERSONALIZADO
 }

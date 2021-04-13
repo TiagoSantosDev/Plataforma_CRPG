@@ -1,5 +1,7 @@
 package com.plataforma.crpg.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Note(
         var tipo: NoteType,
         var data: String,
@@ -16,5 +18,8 @@ data class Note(
 
 enum class NoteType
 {
-    VOICE, TEXT
+    @SerializedName("VOICE")
+    VOICE,
+    @SerializedName("TEXT")
+    TEXT
 }
