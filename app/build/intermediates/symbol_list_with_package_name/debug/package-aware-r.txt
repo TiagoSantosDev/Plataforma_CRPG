@@ -2384,6 +2384,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id aviso_campos
+id aviso_nenhuma_refeicao_checked
 id background_image
 id background_image_carne
 id background_image_dieta
@@ -2555,6 +2556,7 @@ id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
 id frame_de_para_2
+id frame_meals
 id frame_motorista_1
 id frame_motorista_2
 id frame_note_image
@@ -3351,6 +3353,7 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nenhuma_refei_o_selecionada
 string next
 string notas
 string nova_nota_de_texto

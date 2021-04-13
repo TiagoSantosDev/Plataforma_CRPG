@@ -116,4 +116,5 @@
     <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
     <string name="selecionar">SELECIONAR</string>
     <string name="selecionar_data">SELECIONAR DATA</string>
+    <string name="nenhuma_refei_o_selecionada">NENHUMA REFEIÇÃO SELECIONADA!</string>
 </resources>
