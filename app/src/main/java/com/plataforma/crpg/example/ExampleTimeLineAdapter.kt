@@ -10,7 +10,7 @@ import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.extentions.formatDateTime
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
-import com.plataforma.crpg.model.EventModel
+import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.utils.VectorDrawableUtils
 import kotlinx.android.synthetic.main.item_timeline.view.*
 
@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
  * Created by Vipul Asri on 13-12-2018.
  */
 
-class ExampleTimeLineAdapter(private val mFeedList: List<EventModel>) : RecyclerView.Adapter<ExampleTimeLineAdapter.TimeLineViewHolder>() {
+class ExampleTimeLineAdapter(private val mFeedList: List<Event>) : RecyclerView.Adapter<ExampleTimeLineAdapter.TimeLineViewHolder>() {
 
     private lateinit var mLayoutInflater: LayoutInflater
 

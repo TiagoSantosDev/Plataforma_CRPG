@@ -163,5 +163,14 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
+
+    /*
+    @Override
+    public fun boolean onOptionsItemSelected() {
+        /*
+            ADD WHAT YOU WANT TO DO WHEN ARROW IS PRESSED
+        */
+        return super.onOptionsItemSelected(item);
+    }*/
     
 }

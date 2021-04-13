@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.ContextThemeWrapper
 import android.widget.Button
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter

@@ -1,14 +1,13 @@
 package com.plataforma.crpg.model
 
-data class EventModel(
+data class Event(
         var title: String,
         val info: String,
+        var type: EventType,
         var start_time: String,
         val end_time: String,
         var date: String,
-        val notas: String,
-        var alarm_type: AlarmType,
-        var alarm_freq: AlarmFrequency
+        val notes: String,
 ){
     override fun toString(): String {
         return "title: ${this.title}, info: ${this.info}, start_time: ${this.start_time}, " +
@@ -16,10 +15,6 @@ data class EventModel(
     }
 }
 
-enum class AlarmType {
-    SOM, VIBRAR, AMBOS
-}
-
-enum class AlarmFrequency {
-    HOJE, AMANHA, TODOS_OS_DIAS, PERSONALIZADO
+enum class EventType {
+    ACTIVITY, MEAL, TRANSPORTS
 }

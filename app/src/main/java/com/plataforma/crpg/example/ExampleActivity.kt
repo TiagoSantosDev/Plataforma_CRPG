@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.plataforma.crpg.ui.BaseActivity
 import com.plataforma.crpg.R
-import com.plataforma.crpg.model.EventModel
+import com.plataforma.crpg.model.Event
 import kotlinx.android.synthetic.main.activity_example.*
 import java.util.ArrayList
 
@@ -15,7 +15,7 @@ import java.util.ArrayList
 class ExampleActivity : BaseActivity() {
 
     private lateinit var mAdapter: ExampleTimeLineAdapter
-    private val mDataList = ArrayList<EventModel>()
+    private val mDataList = ArrayList<Event>()
     private lateinit var mLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
