@@ -7,6 +7,9 @@
     android:background="@color/white"
     tools:context="com.plataforma.crpg.ui.meals.MealsFragment">
 
+    <include layout="@layout/reminder_activity_success"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/escolha_refeicao"
         android:layout_width="wrap_content"
