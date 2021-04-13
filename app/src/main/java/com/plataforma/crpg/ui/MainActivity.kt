@@ -30,34 +30,12 @@ class MainActivity : BaseActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.navigation_agenda, R.id.navigation_reminders, R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
+                        R.id.navigation_agenda, R.id.navigation_reminders,
+                            R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-
-        //Teste a base de dados
-        /*
-        val database = FirebaseDatabase.getInstance("https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app/")
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello, World!")
-
-        // Read from the database
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value = dataSnapshot.getValue(String::class.java)
-                println("Value is: $value")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w("Failed to read value.", error.toException())
-            }
-        })*/
 
     }
 
@@ -83,3 +61,24 @@ class MainActivity : BaseActivity() {
 
 
 }
+//Teste a base de dados
+/*
+val database = FirebaseDatabase.getInstance("https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app/")
+val myRef = database.getReference("message")
+
+myRef.setValue("Hello, World!")
+
+// Read from the database
+myRef.addValueEventListener(object : ValueEventListener {
+    override fun onDataChange(dataSnapshot: DataSnapshot) {
+        // This method is called once with the initial value and again
+        // whenever data at this location is updated.
+        val value = dataSnapshot.getValue(String::class.java)
+        println("Value is: $value")
+    }
+
+    override fun onCancelled(error: DatabaseError) {
+        // Failed to read value
+        Log.w("Failed to read value.", error.toException())
+    }
+})*/
