@@ -1,5 +1,7 @@
 package com.plataforma.crpg.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Event(
         var title: String,
         val info: String,
@@ -10,11 +12,16 @@ data class Event(
         val notes: String,
 ){
     override fun toString(): String {
-        return "title: ${this.title}, info: ${this.info}, start_time: ${this.start_time}, " +
+        return "title: ${this.title}, info: ${this.info}, type: ${this.type},  start_time: ${this.start_time}, " +
                 "end_time: ${this.end_time}, date: ${this.date}"
     }
 }
 
 enum class EventType {
-    ACTIVITY, MEAL, TRANSPORTS
+    @SerializedName("ACTIVITY")
+    ACTIVITY,
+    @SerializedName("MEAL")
+    MEAL,
+    @SerializedName("TRANSPORT")
+    TRANSPORTS
 }
