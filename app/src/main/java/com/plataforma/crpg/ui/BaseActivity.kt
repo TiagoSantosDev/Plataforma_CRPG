@@ -23,7 +23,7 @@ open class BaseActivity : AppCompatActivity() {
     override fun setContentView(layoutResID: Int) {
         super.setContentView(layoutResID)
 
-        injectViews()
+        //injectViews()
 
         // Displaying the back button in the action bar
         if (isDisplayHomeAsUpEnabled) {

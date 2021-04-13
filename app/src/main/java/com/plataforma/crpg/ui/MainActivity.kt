@@ -51,13 +51,12 @@ class MainActivity : BaseActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
     }
 
-    override fun onBackPressed() {
-        if (fragmentManager.backStackEntryCount > 0) {
-            fragmentManager.popBackStack()
-        } else {
-            super.onBackPressed()
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
+
 
 
 }
@@ -81,4 +80,13 @@ myRef.addValueEventListener(object : ValueEventListener {
         // Failed to read value
         Log.w("Failed to read value.", error.toException())
     }
-})*/
+})
+
+
+ override fun onBackPressed() {
+    if (fragmentManager.backStackEntryCount > 0) {
+        fragmentManager.popBackStack()
+    } else {
+        super.onBackPressed()
+    }
+}*/

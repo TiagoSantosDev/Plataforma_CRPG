@@ -38,10 +38,21 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         // This callback will only be called when MyFragment is at least Started.
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
             override fun handleOnBackPressed() {
+                /*
                 val a = Intent(Intent.ACTION_MAIN)
                 a.addCategory(Intent.CATEGORY_HOME)
                 a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(a)
+                startActivity(a)*/
+
+                println("> handleOnBackPressed")
+
+                val fragment: Fragment = TransportsFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
