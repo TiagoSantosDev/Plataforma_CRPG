@@ -15,7 +15,7 @@ import com.plataforma.crpg.extentions.dpToPx
 import com.plataforma.crpg.extentions.getColorCompat
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
-import com.plataforma.crpg.model.EventModel
+import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
 import kotlinx.android.synthetic.main.fragment_agenda.*
@@ -23,7 +23,7 @@ import java.util.ArrayList
 
 class AgendaFragment : Fragment() {
 
-    private var mDataList = ArrayList<EventModel>()
+    private var mDataList = ArrayList<Event>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
 
@@ -58,30 +58,8 @@ class AgendaFragment : Fragment() {
         )
 
         setDataListItems()
-        //esta a ter problemas aqui
         initRecyclerView()
 
-        println("passou do recycler view")
-
-        /*
-        action_example_activity.setOnClickListener {
-            println(">Activity: " + activity)
-            val intent = Intent(activity, ExampleActivity::class.java)
-            startActivity(intent)
-        }*/
-/*
-        fab_options.setOnClickListener {
-            TimelineAttributesBottomSheet.showDialog(
-                parentFragmentManager, mAttributes,
-                object : TimelineAttributesBottomSheet.Callbacks {
-                    override fun onAttributesChanged(attributes: TimelineAttributes) {
-                        mAttributes = attributes
-                        initAdapter()
-                    }
-                }
-            )
-        }
-*/
         mAttributes.onOrientationChanged = { oldValue, newValue ->
             if (oldValue != newValue) initRecyclerView()
         }
@@ -89,11 +67,10 @@ class AgendaFragment : Fragment() {
         mAttributes.orientation = Orientation.VERTICAL
 
 
+
     }
 
     private fun setDataListItems() {
-
-        println("> log dentro do setData")
         val eventViewModel = ViewModelProvider(this).get(AgendaViewModel::class.java)
         mDataList = eventViewModel.getEventCollectionFromJSON()
         // guarantee that all events are sorted by their starting time
@@ -102,7 +79,6 @@ class AgendaFragment : Fragment() {
 
     private fun initRecyclerView() {
         initAdapter()
-        println(">Passou do init Adapter")
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             @SuppressLint("LongLogTag")
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -125,8 +101,28 @@ class AgendaFragment : Fragment() {
 
         recyclerView.apply {
             layoutManager = mLayoutManager
-            println(">entrou no apply")
             adapter = TimeLineAdapter(mDataList, mAttributes)
         }
     }
 }
+
+
+/*
+        action_example_activity.setOnClickListener {
+            println(">Activity: " + activity)
+            val intent = Intent(activity, ExampleActivity::class.java)
+            startActivity(intent)
+        }*/
+/*
+        fab_options.setOnClickListener {
+            TimelineAttributesBottomSheet.showDialog(
+                parentFragmentManager, mAttributes,
+                object : TimelineAttributesBottomSheet.Callbacks {
+                    override fun onAttributesChanged(attributes: TimelineAttributes) {
+                        mAttributes = attributes
+                        initAdapter()
+                    }
+                }
+            )
+        }
+*/

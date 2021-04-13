@@ -10,7 +10,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
-import com.plataforma.crpg.model.EventModel
+import com.plataforma.crpg.model.Event
+import com.plataforma.crpg.model.Reminder
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 import java.sql.DriverManager.println
@@ -23,11 +24,11 @@ public class ReminderViewModel(application: Application) : AndroidViewModel(appl
     @SuppressLint("StaticFieldLeak")
     public val context = application.applicationContext
     // a lista de Reminders contem todos os reminders criados pelo utilizador que ainda vao acontecer no futuro
-    var mReminderList = ArrayList<EventModel>()
+    var mReminderList = ArrayList<Reminder>()
     //for each day of the week, a boolean indicates if the alarm is set for that day
     val weekDaysBoolean: BooleanArray = booleanArrayOf(false, false, false,
             false, false, false, false)
-    var newReminder = EventModel("", "", "", "", "",
+    var newReminder = Reminder("", "", "", "", "",
             "", AlarmType.SOM, AlarmFrequency.HOJE)
     var startTimeHours : String = ""
     var startTimeMin: String = ""

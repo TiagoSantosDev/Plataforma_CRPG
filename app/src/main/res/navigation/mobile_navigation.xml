@@ -16,7 +16,6 @@
         android:id="@+id/navigation_agenda"
         android:name="com.plataforma.crpg.ui.agenda.AgendaFragment"
         android:label="@string/title_agenda"
-        app:defaultNavHost="true"
         tools:layout="@layout/fragment_agenda">
     <action
         android:id="@+id/action_navigation_agenda_to_date_picker"
@@ -46,7 +45,6 @@
         android:id="@+id/navigation_public_transports"
         android:name="com.plataforma.crpg.ui.transports.PublicTransportsFragment"
         android:label="TRANSPORTES PUBLICOS"
-        app:defaultNavHost="true"
         tools:layout="@layout/fragment_public_transport" >
         <action
             android:id="@+id/action_navigation_public_transports_to_navigation_transports"
@@ -58,7 +56,6 @@
         android:id="@+id/navigation_custom_transports"
         android:name="com.plataforma.crpg.ui.transports.CustomTransportsFragment"
         android:label="TRANSPORTES PERSONALIZADOS"
-        app:defaultNavHost="true"
         tools:layout="@layout/fragment_custom_transport" >
         <action
             android:id="@+id/action_navigation_custom_transports_to_navigation_transports"

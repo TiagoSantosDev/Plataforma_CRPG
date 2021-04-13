@@ -3,23 +3,30 @@ package com.plataforma.crpg.ui.agenda
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.extentions.formatDateTime
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
-import com.plataforma.crpg.model.EventModel
+import com.plataforma.crpg.model.Event
+import com.plataforma.crpg.model.EventType
 import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
+import com.plataforma.crpg.ui.meals.MealsFragment
+import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.item_timeline.view.*
 
 /**
  * Created by Vipul Asri on 05-12-2015.
  */
 
-class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
+class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
     private lateinit var mLayoutInflater: LayoutInflater
 
@@ -69,6 +76,38 @@ class TimeLineAdapter(private val mFeedList: List<EventModel>, private var mAttr
             holder.end_time.text = newEndTime
         } else
             holder.start_time.setGone()
+
+
+        holder.itemView.setOnClickListener {
+            println("Entrou aqui")
+            val id: String = mFeedList[position].title
+            val tipo: EventType = mFeedList[position].type
+            println("ID do cartao: $id")
+
+            when(tipo){
+                EventType.ACTIVITY -> Toast.makeText(null, "Actividade", Toast.LENGTH_SHORT).show()
+                EventType.TRANSPORTS ->
+                {
+                    val fragment: Fragment = TransportsFragment()
+                    val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+                EventType.MEAL ->
+                {
+                    val fragment: Fragment = MealsFragment()
+                    val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+
+
+            }
+        }
 
         holder.title.text = timeLineModel.title
         holder.info.text = timeLineModel.info

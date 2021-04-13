@@ -10,7 +10,6 @@
         android:id="@+id/recyclerView"
         android:layout_width="419dp"
         android:layout_height="660dp"
-
         android:background="@color/colorWhite"
         android:clipToPadding="false"
         android:paddingLeft="10dp"
