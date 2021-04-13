@@ -20,6 +20,7 @@ import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.EventType
 import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
+import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.item_timeline.view.*
@@ -32,7 +33,10 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
 class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
     private val context: Context? = null
+    private val contextMeal: MealsFragment.Companion = MealsFragment
+    private val contextTransport: TransportsFragment.Companion = TransportsFragment
     private lateinit var mLayoutInflater: LayoutInflater
+    //val Context mContext = getActivity();
 
     override fun getItemViewType(position: Int): Int {
         return TimelineView.getTimeLineViewType(position, itemCount)
@@ -81,7 +85,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         } else
             holder.start_time.setGone()
 
-        //onCLick on a card open pop up or go to Meal or Transport Fragment
+        //onClick on a card open pop up or go to Meal or Transport Fragment
         holder.itemView.setOnClickListener {
             val id: String = mFeedList[position].title
             val tipo: EventType = mFeedList[position].type
@@ -89,22 +93,24 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             println("Tipo do cartao: $tipo")
 
             when(tipo){
-                EventType.ACTIVITY -> Toast.makeText(context, "Actividade", Toast.LENGTH_SHORT).show()
-                EventType.TRANSPORTS -> {
-                    Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
+                EventType.ACTIVITY -> println("Entrou na actividade") //Toast.makeText(context, "Actividade", Toast.LENGTH_SHORT).show()
+                EventType.TRANSPORTS -> {//Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = TransportsFragment()
                     //val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    val fragmentManager: FragmentManager? = (context as AppCompatActivity?)?.supportFragmentManager
-                    val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                    fragmentTransaction.addToBackStack(null)
-                    fragmentTransaction.commit()
+                    //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+                    val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+                    val fragmentTransaction: FragmentTransaction? = fragmentManager?.beginTransaction()
+                    println("Fragment Manager: "  + fragmentManager.toString())
+                    println("Fragment Transaction: "  + fragmentTransaction.toString())
+                    fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
+                    fragmentTransaction?.addToBackStack(null)
+                    fragmentTransaction?.commit()
                 }
                 EventType.MEAL -> {
-                    Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = MealsFragment()
                     //val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    val fragmentManager: FragmentManager? = (context as AppCompatActivity?)?.supportFragmentManager
+                    val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction.addToBackStack(null)
