@@ -16,6 +16,7 @@ import com.plataforma.crpg.R.color.material_blue_200
 import com.plataforma.crpg.databinding.MealsFragmentBinding
 import com.plataforma.crpg.model.Meal
 import kotlinx.android.synthetic.main.meals_fragment.*
+import kotlinx.android.synthetic.main.reminder_activity_success.*
 
 
 class MealsFragment : Fragment() {
@@ -58,7 +59,7 @@ class MealsFragment : Fragment() {
         val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
         card_carne?.setOnLongClickListener {
-            if(!card_carne.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
+            if(!card_carne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
             card_carne.isChecked = !card_carne.isChecked
             card_peixe?.isChecked = false
             card_dieta?.isChecked = false
@@ -76,6 +77,7 @@ class MealsFragment : Fragment() {
             card_dieta?.isChecked = false
             card_veg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
@@ -86,6 +88,7 @@ class MealsFragment : Fragment() {
             card_peixe?.isChecked = false
             card_veg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
@@ -96,13 +99,17 @@ class MealsFragment : Fragment() {
             card_peixe?.isChecked = false
             card_dieta?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
         button_confirm_meal.setOnClickListener(){
-            if (FLAG_MEAL_CHOSEN) {
+            if (mealsViewModel.selectedOption != 0) {
                 view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
                 view?.findViewById<View>(R.id.successLayout)?.visibility = View.VISIBLE
+                button_ok.setOnClickListener(){
+                    view?.findViewById<View>(R.id.successLayout)?.visibility = View.INVISIBLE
+                }
             } else {
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.VISIBLE
             }
