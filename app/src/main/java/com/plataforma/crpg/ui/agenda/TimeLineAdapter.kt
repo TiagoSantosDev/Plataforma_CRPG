@@ -134,7 +134,11 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }else if(timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito != 0){
             when(currentDateMealOrder.pedido_feito){
-                //1-> holder.info.text = currentDateMeal.
+                //1-> holder.info.text = currentDateMeal.prato_carne
+                //2-> holder.info.text = currentDateMeal.prato_peixe
+                //3-> holder.info.text = currentDateMeal.prato_dieta
+                //4-> holder.info.text = currentDateMeal.prato_vegetariano
+
 
 
             }
