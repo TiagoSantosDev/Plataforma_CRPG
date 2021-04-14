@@ -58,44 +58,49 @@ class MealsFragment : Fragment() {
         val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
         card_carne?.setOnLongClickListener {
+            if(!card_carne.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
             card_carne.isChecked = !card_carne.isChecked
             card_peixe?.isChecked = false
             card_dieta?.isChecked = false
             card_veg?.isChecked = false
-            mealsViewModel.selectedOption = 1
+            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
 
         card_peixe?.setOnLongClickListener {
+            if(!card_peixe.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
             card_peixe.isChecked = !card_peixe.isChecked
             card_carne?.isChecked = false
             card_dieta?.isChecked = false
             card_veg?.isChecked = false
-            mealsViewModel.selectedOption = 2
+            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             true
         }
 
         card_dieta?.setOnLongClickListener {
+            if(!card_dieta.isChecked){ mealsViewModel.selectedOption = 3}else{mealsViewModel.selectedOption = 0}
             card_dieta.isChecked = !card_dieta.isChecked
             card_carne?.isChecked = false
             card_peixe?.isChecked = false
             card_veg?.isChecked = false
-            mealsViewModel.selectedOption = 3
+            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             true
         }
 
         card_veg?.setOnLongClickListener {
+            if(!card_veg.isChecked){ mealsViewModel.selectedOption = 4 }else{mealsViewModel.selectedOption = 0}
             card_veg.isChecked = !card_veg.isChecked
             card_carne?.isChecked = false
             card_peixe?.isChecked = false
             card_dieta?.isChecked = false
-            mealsViewModel.selectedOption = 4
+            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             true
         }
 
         button_confirm_meal.setOnClickListener(){
-            if (mealsViewModel.selectedOption != 0) {
+            if (FLAG_MEAL_CHOSEN) {
                 view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
                 view?.findViewById<View>(R.id.successLayout)?.visibility = View.VISIBLE
             } else {
