@@ -3223,6 +3223,7 @@ string apply
 string aviso_campos_obrigatorios
 string bottom_padding
 string bottom_sheet_behavior
+string campos_obrigatorios_falta
 string cancelar
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -3285,6 +3286,7 @@ string hello_first_fragment
 string hello_second_fragment
 string hide_bottom_view_on_scroll_behavior
 string hoje
+string hora_minutos_invalido
 string horizontal
 string horizontal_timeline
 string horizontal_timeline_w_padding

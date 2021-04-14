@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.reminder_activity_success.*
 class MealsFragment : Fragment() {
 
     var FLAG_MEAL_CHOSEN = false
+    var SELECTED_DATE = ""
 
     companion object {
         fun newInstance() = MealsFragment()
@@ -50,13 +51,13 @@ class MealsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
-
         mealsViewModel.testDB()
 
         val card_carne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
         val card_peixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
         val card_dieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
+
 
         card_carne?.setOnLongClickListener {
             if(!card_carne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
@@ -108,7 +109,7 @@ class MealsFragment : Fragment() {
                 view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
                 view?.findViewById<View>(R.id.successLayout)?.visibility = View.VISIBLE
                 button_ok.setOnClickListener(){
-                    view?.findViewById<View>(R.id.successLayout)?.visibility = View.INVISIBLE
+                    view?.findViewById<View>(R.id.successLayout)?.visibility = View.GONE
                 }
             } else {
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.VISIBLE
