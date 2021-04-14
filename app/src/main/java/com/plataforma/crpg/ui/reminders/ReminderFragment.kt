@@ -147,6 +147,7 @@ class ReminderFragment : Fragment() {
 
                 var hoursInt = 24
                 var minsInt = 24
+                val avisoCampos = root.findViewById<TextView>(R.id.aviso_campos)
 
                 if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2 && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {
                     newViewModel.startTimeHours = expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString()
@@ -156,7 +157,7 @@ class ReminderFragment : Fragment() {
                     hoursInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                     minsInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                 } else {
-                    root.findViewById<TextView>(R.id.aviso_campos).text = "Valor das horas ou minutos em falta!"
+                    avisoCampos.text = "Valor das horas ou minutos em falta!"
                     root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
                 }
 
@@ -173,6 +174,7 @@ class ReminderFragment : Fragment() {
                 }
 
                 val materialButtonToggleGroup = expandableDia.secondLayout.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup)
+
                 val ids: List<Int> = materialButtonToggleGroup.checkedButtonIds
                 for (id in ids) {
                     val materialButton: MaterialButton = materialButtonToggleGroup.findViewById(id)
@@ -211,7 +213,7 @@ class ReminderFragment : Fragment() {
 
 
                 if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0 && lembrarButtonPressed != 0 && hoursInt <= 23 && minsInt <= 59 ) {
-                    root.findViewById<TextView>(R.id.aviso_campos).visibility = View.GONE
+                    avisoCampos.visibility = View.GONE
                     root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                     root.findViewById<Button>(R.id.button_ok).setOnClickListener {
                         root.findViewById<View>(R.id.successLayout).visibility = View.GONE
@@ -225,10 +227,10 @@ class ReminderFragment : Fragment() {
 
 
                 } else if (hoursInt > 23 || minsInt > 59) {
-                    root.findViewById<TextView>(R.id.aviso_campos).text = "Valor de Hora ou minutos inválido!"
+                    avisoCampos.text = getString(R.string.hora_minutos_invalido)
                     root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
                 } else {
-                    root.findViewById<TextView>(R.id.aviso_campos).text = "Campos obrigatórios em falta."
+                    avisoCampos.text = getString(R.string.campos_obrigatorios_falta)
                     root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
                 }
             }

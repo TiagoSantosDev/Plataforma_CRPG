@@ -117,4 +117,6 @@
     <string name="selecionar">SELECIONAR</string>
     <string name="selecionar_data">SELECIONAR DATA</string>
     <string name="nenhuma_refei_o_selecionada">NENHUMA REFEIÇÃO SELECIONADA!</string>
+    <string name="hora_minutos_invalido">Valor de Hora ou minutos inválido!</string>
+    <string name="campos_obrigatorios_falta">Campos obrigatórios em falta.</string>
 </resources>
