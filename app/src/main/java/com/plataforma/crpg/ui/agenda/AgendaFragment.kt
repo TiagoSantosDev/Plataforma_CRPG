@@ -35,8 +35,7 @@ class AgendaFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val ctx = context
-        println("CONTEXT IS NULL onCreateView:" + ctx.toString())
+
 
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
@@ -72,13 +71,10 @@ class AgendaFragment : Fragment() {
         }
 
         mAttributes.onOrientationChanged = { oldValue, newValue ->
-            //se der erro verificar aqui os !!
             if (oldValue != newValue) initRecyclerView(ctx!!)
         }
 
         mAttributes.orientation = Orientation.VERTICAL
-
-
 
     }
 
@@ -138,3 +134,5 @@ class AgendaFragment : Fragment() {
             )
         }
 */
+//val ctx = context
+//println("CONTEXT IS NULL onCreateView:" + ctx.toString())
