@@ -16,10 +16,7 @@ import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.extentions.formatDateTime
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
-import com.plataforma.crpg.model.Event
-import com.plataforma.crpg.model.EventType
-import com.plataforma.crpg.model.Orientation
-import com.plataforma.crpg.model.TimelineAttributes
+import com.plataforma.crpg.model.*
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
@@ -32,6 +29,8 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
 
 class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
+    private var currentDateMealOrder = MealOrder("14042021",0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
+    lateinit var currentDateMeal: Meal
     private val context: Context? = null
     private val contextMeal: MealsFragment.Companion = MealsFragment
     private val contextTransport: TransportsFragment.Companion = TransportsFragment
@@ -120,8 +119,30 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
-        holder.title.text = timeLineModel.title
-        holder.info.text = timeLineModel.info
+        //se almoço nao estiver escolhido
+        //card informa que pode ser clicado para escolher almoço
+        if (timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito == 0) {
+            when(timeLineModel.title){
+                "ALMOÇO" -> {holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para selecionar almoço!" }
+                "JANTAR" -> {holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para selecionar jantar!" }
+                "TRANSPORTE" -> {holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para horários dos transportes!" }
+                else -> {holder.title.text = timeLineModel.title
+                holder.info.text = timeLineModel.info}
+            }
+        }else if(timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito != 0){
+            when(currentDateMealOrder.pedido_feito){
+                //1-> holder.info.text = currentDateMeal.
+
+
+            }
+
+
+
+
+        }
     }
 
     override fun getItemCount() = mFeedList.size
