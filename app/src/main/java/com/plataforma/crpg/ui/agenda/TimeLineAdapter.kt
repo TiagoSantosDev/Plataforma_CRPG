@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -17,7 +16,6 @@ import com.plataforma.crpg.extentions.formatDateTime
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.*
-import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.item_timeline.view.*
@@ -27,13 +25,11 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
  * Created by Vipul Asri on 05-12-2015.
  */
 
-class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
+class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes, val ctx: Context) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
-    private var currentDateMealOrder = MealOrder("14042021",0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
+    private var currentDateMealOrder = MealOrder("14042021", 0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
     lateinit var currentDateMeal: Meal
-    private val context: Context? = null
-    private val contextMeal: MealsFragment.Companion = MealsFragment
-    private val contextTransport: TransportsFragment.Companion = TransportsFragment
+
     private lateinit var mLayoutInflater: LayoutInflater
     //val Context mContext = getActivity();
 
@@ -92,28 +88,34 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             println("Tipo do cartao: $tipo")
 
             when(tipo){
-                EventType.ACTIVITY -> println("Entrou na actividade") //Toast.makeText(context, "Actividade", Toast.LENGTH_SHORT).show()
-                EventType.TRANSPORTS -> {//Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
+                EventType.ACTIVITY ->
+                    println("Entrou na actividade") //Toast.makeText(context, "Actividade", Toast.LENGTH_SHORT).show()
+
+                EventType.TRANSPORTS -> {
+
+                    //Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = TransportsFragment()
-                    //val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
-                    val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
-                    val fragmentTransaction: FragmentTransaction? = fragmentManager?.beginTransaction()
-                    println("Fragment Manager: "  + fragmentManager.toString())
-                    println("Fragment Transaction: "  + fragmentTransaction.toString())
+                    val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                    println("Fragment Manager: " + fragmentManager.toString())
+                    println("Fragment Transaction: " + fragmentTransaction.toString())
                     fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction?.addToBackStack(null)
                     fragmentTransaction?.commit()
+
                 }
+
                 EventType.MEAL -> {
+
                     //Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = MealsFragment()
                     //val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                    val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+                    val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
+
                 }
 
             }
@@ -123,12 +125,18 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         //card informa que pode ser clicado para escolher almoço
         if (timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito == 0) {
             when(timeLineModel.title){
-                "ALMOÇO" -> {holder.title.text = timeLineModel.title
-                    holder.info.text = "Clicar para selecionar almoço!" }
-                "JANTAR" -> {holder.title.text = timeLineModel.title
-                    holder.info.text = "Clicar para selecionar jantar!" }
-                "TRANSPORTE" -> {holder.title.text = timeLineModel.title
-                    holder.info.text = "Clicar para horários dos transportes!" }
+                "ALMOÇO" -> {
+                    holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para selecionar almoço!"
+                }
+                "JANTAR" -> {
+                    holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para selecionar jantar!"
+                }
+                "TRANSPORTE" -> {
+                    holder.title.text = timeLineModel.title
+                    holder.info.text = "Clicar para horários dos transportes!"
+                }
                 else -> {holder.title.text = timeLineModel.title
                 holder.info.text = timeLineModel.info}
             }
@@ -138,9 +146,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 //2-> holder.info.text = currentDateMeal.prato_peixe
                 //3-> holder.info.text = currentDateMeal.prato_dieta
                 //4-> holder.info.text = currentDateMeal.prato_vegetariano
-
-
-
             }
 
 
@@ -180,3 +185,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         }
     }
 }
+//val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+//val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+// val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
+// private val contextMeal: MealsFragment.Companion = MealsFragment
+////private val contextTransport: TransportsFragment.Companion = TransportsFragment

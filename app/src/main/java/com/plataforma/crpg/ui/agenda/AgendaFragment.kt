@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.agenda
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,19 +27,23 @@ class AgendaFragment : Fragment() {
     private var mDataList = ArrayList<Event>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
+    //val ctx = context
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        val ctx = context
+        println("CONTEXT IS NULL onCreateView:" + ctx.toString())
+
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         // default values
         mAttributes = TimelineAttributes(
                 markerSize = dpToPx(20f),
@@ -56,12 +61,19 @@ class AgendaFragment : Fragment() {
                 lineDashWidth = dpToPx(4f),
                 lineDashGap = dpToPx(2f)
         )
+        val ctx = context
+
+        println("CONTEXT IS NULL onViewCreated:" + ctx.toString())
 
         setDataListItems()
-        initRecyclerView()
+        if (ctx != null) {
+            println("CTX NAO E NULL")
+            initRecyclerView(ctx)
+        }
 
         mAttributes.onOrientationChanged = { oldValue, newValue ->
-            if (oldValue != newValue) initRecyclerView()
+            //se der erro verificar aqui os !!
+            if (oldValue != newValue) initRecyclerView(ctx!!)
         }
 
         mAttributes.orientation = Orientation.VERTICAL
@@ -77,8 +89,8 @@ class AgendaFragment : Fragment() {
         mDataList.sortBy { it.start_time }
     }
 
-    private fun initRecyclerView() {
-        initAdapter()
+    private fun initRecyclerView(ctx: Context) {
+        initAdapter(ctx)
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             @SuppressLint("LongLogTag")
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -88,7 +100,7 @@ class AgendaFragment : Fragment() {
         })
     }
 
-    private fun initAdapter() {
+    private fun initAdapter(ctx: Context) {
         mLayoutManager = if (mAttributes.orientation == Orientation.HORIZONTAL) {
             LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
 
@@ -101,7 +113,7 @@ class AgendaFragment : Fragment() {
 
         recyclerView.apply {
             layoutManager = mLayoutManager
-            adapter = TimeLineAdapter(mDataList, mAttributes)
+            adapter = TimeLineAdapter(mDataList, mAttributes, ctx)
         }
     }
 }
