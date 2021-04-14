@@ -1,9 +1,11 @@
 package com.plataforma.crpg.ui.agenda
 
+import android.app.ProgressDialog.show
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -89,11 +91,10 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             when(tipo){
                 EventType.ACTIVITY ->
-                    println("Entrou na actividade") //Toast.makeText(context, "Actividade", Toast.LENGTH_SHORT).show()
+                    println("Entrou na actividade")
 
                 EventType.TRANSPORTS -> {
 
-                    //Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = TransportsFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -107,9 +108,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
                 EventType.MEAL -> {
 
-                    //Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
                     val fragment: Fragment = MealsFragment()
-                    //val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -147,9 +146,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 //3-> holder.info.text = currentDateMeal.prato_dieta
                 //4-> holder.info.text = currentDateMeal.prato_vegetariano
             }
-
-
-
 
         }
     }
@@ -190,3 +186,5 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 // val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 // private val contextMeal: MealsFragment.Companion = MealsFragment
 ////private val contextTransport: TransportsFragment.Companion = TransportsFragment
+// val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+// Toast.makeText(context, "Transports", Toast.LENGTH_SHORT).show()
