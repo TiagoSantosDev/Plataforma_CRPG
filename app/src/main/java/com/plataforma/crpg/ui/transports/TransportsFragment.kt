@@ -34,6 +34,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val view = binding.root
 
         val spinner: Spinner = view.findViewById(R.id.locations_spinner)
+        println("Context:" + context.toString())
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
                 context,
