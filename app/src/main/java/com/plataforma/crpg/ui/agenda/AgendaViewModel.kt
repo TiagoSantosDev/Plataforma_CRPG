@@ -21,9 +21,9 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
     var mDataList = ArrayList<Event>()
 
     //create 2 fixed events for lunch and dinner
-    var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "12h00", "13h00",
+    var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
             "","")
-    var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "", "",
+    var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "2000", "2100",
             "","")
 
 
@@ -33,7 +33,7 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
         val filename = "event.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
         //val fileContent = """[{"title": "sessao","info":"test","type": "ACTIVITY", "start_time": "1130","end_time": "1230","date": "2021-03-17"},{"title": "sessao","info":"test","type":"MEAL", "start_time": "0930","end_time": "1330","date": "2021-03-17"},{"title": "actividade_2","info":"test","type": "TRANSPORT", "start_time": "0830","end_time": "1330","date": "2021-03-17"}]"""
-        val fileContent = """[{"title": "ALMOÇO","info":"test","type": "ACTIVITY", "start_time": "1130","end_time": "1230","date": "2021-03-17"},{"title": "JANTAR","info":"test","type":"MEAL", "start_time": "0930","end_time": "1330","date": "2021-03-17"},{"title": "TRANSPORTE","info":"test","type": "TRANSPORT", "start_time": "0830","end_time": "1330","date": "2021-03-17"}]"""
+        val fileContent = """[{"title": "ALMOÇO","info":"test","type": "MEAL", "start_time": "1130","end_time": "1230","date": "2021-03-17"},{"title": "JANTAR","info":"test","type":"MEAL", "start_time": "2000","end_time": "2100","date": "2021-03-17"},{"title": "TRANSPORTE","info":"test","type": "TRANSPORT", "start_time": "0830","end_time": "1330","date": "2021-03-17"},{"title": "Actividade","info":"test","type": "ACTIVITY", "start_time": "0830","end_time": "1330","date": "2021-03-17"}]"""
 
         File(fullFilename).writeText(fileContent)
     }
