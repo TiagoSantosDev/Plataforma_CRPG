@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.agenda
 
+import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -34,7 +35,7 @@ class DatePickerFragment : Fragment() {
     }
 
     init {
-        activity?.let { updateConfig(it) }
+        //activity?.let { updateConfig(it) }
         //updateConfig(requireActivity().baseContext)
     }
 
@@ -46,10 +47,20 @@ class DatePickerFragment : Fragment() {
         wrapper.applyOverrideConfiguration(configuration)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val locale = Locale("pt")
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        context.resources.updateConfiguration(config,
+                context.resources.displayMetrics)
+    }
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
-            savedInstanceState: Bundle?
+            savedInstanceState: Bundle?,
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
@@ -62,17 +73,7 @@ class DatePickerFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
         super.onActivityCreated(savedInstanceType)
-        // set current date to calendar and current month to currentMonth variable
-        var change = ""
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
-        val language = sharedPreferences.getString("language", "bak")
-        if (language == "English") {
-            change = "pt"
-        } else {
-            change = "pt"
-        }
 
-        dLocale = Locale(change)
         calendar.time = Date()
 
         button_selecionar.setOnClickListener {
@@ -90,7 +91,7 @@ class DatePickerFragment : Fragment() {
             override fun setCalendarViewResourceId(
                     position: Int,
                     date: Date,
-                    isSelected: Boolean
+                    isSelected: Boolean,
             ): Int {
                 // set date to calendar according to position where we are
                 val cal = Calendar.getInstance()
@@ -116,7 +117,7 @@ class DatePickerFragment : Fragment() {
                     holder: SingleRowCalendarAdapter.CalendarViewHolder,
                     date: Date,
                     position: Int,
-                    isSelected: Boolean
+                    isSelected: Boolean,
             ) {
                 // using this method we can bind data to calendar view
                 // good practice is if all views in layout have same IDs in all item views
@@ -201,3 +202,14 @@ class DatePickerFragment : Fragment() {
 
 
 }
+// set current date to calendar and current month to currentMonth variable
+/*var change = ""
+val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
+val language = sharedPreferences.getString("language", "bak")
+if (language == "English") {
+    change = "pt"
+} else {
+    change = "pt"
+}
+
+dLocale = Locale(change)*/
