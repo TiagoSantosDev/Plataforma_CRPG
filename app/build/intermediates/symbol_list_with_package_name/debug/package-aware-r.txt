@@ -2195,6 +2195,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable crpg_background
 drawable crpg_launcher_v2
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -2278,6 +2279,7 @@ drawable red_dot
 drawable selected_calendar_item_background
 drawable selection_band_overlay
 drawable som
+drawable stcp_background
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2385,7 +2387,6 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id aviso_campos
 id aviso_nenhuma_refeicao_checked
-id background_image
 id background_image_carne
 id background_image_dieta
 id background_image_peixe
@@ -2441,6 +2442,7 @@ id call_button_2
 id cancel_action
 id cancel_button
 id card
+id card_background_image
 id card_transports
 id card_transports_CRPG_to_location
 id card_transports_to

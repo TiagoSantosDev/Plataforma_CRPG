@@ -86,7 +86,12 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             println("clicou na carta")
         }
 
-        //when(holder.){
+        when(timeLineModel.type){
+            EventType.ACTIVITY -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.crpg_background)
+            EventType.MEAL -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.background_dieta)
+            EventType.TRANSPORTS -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.stcp_background)
+        }
+
 
         //onClick on a card open pop up or go to Meal or Transport Fragment
         holder.itemView.card.setOnClickListener {
