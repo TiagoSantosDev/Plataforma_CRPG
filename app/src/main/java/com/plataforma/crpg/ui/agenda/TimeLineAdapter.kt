@@ -82,8 +82,14 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         } else
             holder.start_time.setGone()
 
+        holder.itemView.card.setOnClickListener{
+            println("clicou na carta")
+        }
+
+        //when(holder.){
+
         //onClick on a card open pop up or go to Meal or Transport Fragment
-        holder.itemView.setOnClickListener {
+        holder.itemView.card.setOnClickListener {
             val id: String = mFeedList[position].title
             val tipo: EventType = mFeedList[position].type
             println("ID do cartao: $id")
