@@ -64,7 +64,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         concatTime = timeLineModel.start_time + timeLineModel.end_time
 
         if (overlapArray.contains(concatTime)){
-            //holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, null), R.color.)
+            holder.timeline.marker.setVisible(false,false)
         }else{
             overlapArray.add(concatTime)
             holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
