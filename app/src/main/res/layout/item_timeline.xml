@@ -69,10 +69,9 @@
             android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/background_image"
+            android:id="@+id/card_background_image"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:src="@drawable/classy_man" />
+            android:layout_height="95dp" />
 
         <LinearLayout
             android:layout_width="match_parent"

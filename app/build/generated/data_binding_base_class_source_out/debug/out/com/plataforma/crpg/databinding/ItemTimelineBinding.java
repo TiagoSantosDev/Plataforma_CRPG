@@ -23,10 +23,10 @@ public final class ItemTimelineBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView backgroundImage;
+  public final MaterialCardView card;
 
   @NonNull
-  public final MaterialCardView card;
+  public final ImageView cardBackgroundImage;
 
   @NonNull
   public final ImageView imageView1;
@@ -49,14 +49,14 @@ public final class ItemTimelineBinding implements ViewBinding {
   @NonNull
   public final TimelineView timeline;
 
-  private ItemTimelineBinding(@NonNull LinearLayout rootView, @NonNull ImageView backgroundImage,
-      @NonNull MaterialCardView card, @NonNull ImageView imageView1,
+  private ItemTimelineBinding(@NonNull LinearLayout rootView, @NonNull MaterialCardView card,
+      @NonNull ImageView cardBackgroundImage, @NonNull ImageView imageView1,
       @NonNull AppCompatTextView textTimelineDate, @NonNull TextView textTimelineEndTime,
       @NonNull AppCompatTextView textTimelineInfo, @NonNull TextView textTimelineStartTime,
       @NonNull AppCompatTextView textTimelineTitle, @NonNull TimelineView timeline) {
     this.rootView = rootView;
-    this.backgroundImage = backgroundImage;
     this.card = card;
+    this.cardBackgroundImage = cardBackgroundImage;
     this.imageView1 = imageView1;
     this.textTimelineDate = textTimelineDate;
     this.textTimelineEndTime = textTimelineEndTime;
@@ -93,14 +93,14 @@ public final class ItemTimelineBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     String missingId;
     missingId: {
-      ImageView backgroundImage = rootView.findViewById(R.id.background_image);
-      if (backgroundImage == null) {
-        missingId = "backgroundImage";
-        break missingId;
-      }
       MaterialCardView card = rootView.findViewById(R.id.card);
       if (card == null) {
         missingId = "card";
+        break missingId;
+      }
+      ImageView cardBackgroundImage = rootView.findViewById(R.id.card_background_image);
+      if (cardBackgroundImage == null) {
+        missingId = "cardBackgroundImage";
         break missingId;
       }
       ImageView imageView1 = rootView.findViewById(R.id.imageView1);
@@ -138,7 +138,7 @@ public final class ItemTimelineBinding implements ViewBinding {
         missingId = "timeline";
         break missingId;
       }
-      return new ItemTimelineBinding((LinearLayout) rootView, backgroundImage, card, imageView1,
+      return new ItemTimelineBinding((LinearLayout) rootView, card, cardBackgroundImage, imageView1,
           textTimelineDate, textTimelineEndTime, textTimelineInfo, textTimelineStartTime,
           textTimelineTitle, timeline);
     }
