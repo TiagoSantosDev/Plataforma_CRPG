@@ -31,6 +31,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
     private var currentDateMealOrder = MealOrder("14042021", 0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
     lateinit var currentDateMeal: Meal
+    var overlapArray = mutableListOf("")
+    var concatTime = ""
+
 
     private lateinit var mLayoutInflater: LayoutInflater
     //val Context mContext = getActivity();
@@ -56,7 +59,17 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
     override fun onBindViewHolder(holder: TimeLineViewHolder, position: Int) {
 
         val timeLineModel = mFeedList[position]
-        holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
+        //holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
+
+        concatTime = timeLineModel.start_time + timeLineModel.end_time
+
+        if (overlapArray.contains(concatTime)){
+            //holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, null), R.color.)
+        }else{
+            overlapArray.add(concatTime)
+            holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
+        }
+
 
         if (timeLineModel.date.isNotEmpty()) {
             holder.date.setVisible()
