@@ -36,7 +36,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +108,7 @@
     <property name="android-custom-viewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.michalsvec/single-row-calednar/1.0.0/bd2d82e2a5e0058192bcd6e9828eb94a11fcf54b/single-row-calednar-1.0.0-sources.jar!/com/michalsvec/singlerowcalendar/calendar/SingleRowCalendar.kt_SELECTED" value="SingleRowCalendar" />
     <property name="android-custom-viewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/org.adw.library/discrete-seekbar/1.0.1/5f1321108d9934ddde101a41dd485a479f730674/discrete-seekbar-1.0.1-sources.jar!/org/adw/library/widgets/discreteseekbar/DiscreteSeekBar.java_SELECTED" value="DiscreteSeekBar" />
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Plataforma_CRPG/Plataforma_CRPG/expandablelayout/src/main/java/com/skydoves/expandablelayout/ExpandableLayout.kt_SELECTED" value="ExpandableLayout" />
+    <property name="android-custom-viewC:/Users/ltiag/Desktop/Plataforma_CRPG_Update_Firebase_Git/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt_SELECTED" value="BorderedCircle" />
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
@@ -108,6 +121,7 @@
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.michalsvec/single-row-calednar/1.0.0/bd2d82e2a5e0058192bcd6e9828eb94a11fcf54b/single-row-calednar-1.0.0-sources.jar!/com/michalsvec/singlerowcalendar/calendar/SingleRowCalendar.kt_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/org.adw.library/discrete-seekbar/1.0.1/5f1321108d9934ddde101a41dd485a479f730674/discrete-seekbar-1.0.1-sources.jar!/org/adw/library/widgets/discreteseekbar/DiscreteSeekBar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Plataforma_CRPG/Plataforma_CRPG/expandablelayout/src/main/java/com/skydoves/expandablelayout/ExpandableLayout.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/ltiag/Desktop/Plataforma_CRPG_Update_Firebase_Git/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/app/src/main/java/com/plataforma/crpg/widgets/BorderedCircle.kt_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/github/vipulasri/timelineview/TimelineView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_selected" value="Custom views" />
