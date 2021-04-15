@@ -130,7 +130,7 @@ class DatePickerFragment : Fragment() {
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-                tvDate.text = "${DateUtils.getMonthName(date)}, ${DateUtils.getDayNumber(date)} "
+                tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
