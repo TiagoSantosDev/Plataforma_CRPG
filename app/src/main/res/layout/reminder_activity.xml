@@ -15,7 +15,7 @@
 
   <ScrollView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_height="550dp"
       android:fillViewport="true">
 
     <LinearLayout
@@ -124,7 +124,8 @@
       android:id="@+id/parentLayout3"
       android:layout_height="wrap_content"
       android:layout_width="match_parent"
-      android:layout_marginBottom="70dp">
+      android:layout_gravity="bottom|center_horizontal"
+      android:layout_marginBottom="40dp">
 
     <Button
         android:id="@+id/button_cancel"
@@ -148,14 +149,13 @@
         android:id="@+id/button_confirm"
         android:layout_width="160dp"
         android:layout_height="65dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/guardar"
         android:textSize="25sp"
         app:backgroundTint="@color/md_blue_100"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent" />
 
   </LinearLayout>
