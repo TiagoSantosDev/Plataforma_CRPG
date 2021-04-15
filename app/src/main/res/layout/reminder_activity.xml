@@ -13,6 +13,16 @@
   <include layout="@layout/reminder_activity_success"
       android:visibility="gone"/>
 
+  <ScrollView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
   <com.skydoves.expandablelayout.ExpandableLayout
     android:id="@+id/expandable_lembrar"
     android:layout_width="match_parent"
@@ -106,6 +116,10 @@
         android:visibility="gone" />
   </LinearLayout>
 
+    </LinearLayout>
+
+  </ScrollView>
+
   <LinearLayout
       android:id="@+id/parentLayout3"
       android:layout_height="wrap_content"
@@ -144,6 +158,6 @@
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+  </LinearLayout>
 
 </LinearLayout>
