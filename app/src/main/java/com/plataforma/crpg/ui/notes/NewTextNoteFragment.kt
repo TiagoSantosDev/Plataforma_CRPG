@@ -13,11 +13,14 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
+import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
+import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
 import kotlin.properties.Delegates
@@ -38,6 +41,16 @@ class NewTextNoteFragment : Fragment() {
     val listen : MutableLiveData<Boolean> =  MutableLiveData<Boolean>()
     private lateinit var notesViewModel: NotesViewModel
 
+    private val noteList = listOf(
+            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
+                    "a","",""),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
+                    "b","",""),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
+                    "c","",""),
+    )
+
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -46,6 +59,14 @@ class NewTextNoteFragment : Fragment() {
         val view = binding.root
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        list_recycler_view.apply {
+            val layoutManager = LinearLayoutManager(activity)
+            val adapter = ListAdapter(noteList)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

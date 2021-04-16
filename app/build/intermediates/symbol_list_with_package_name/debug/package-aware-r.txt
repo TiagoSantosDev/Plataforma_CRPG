@@ -2722,7 +2722,10 @@ id line1
 id line3
 id linear
 id listMode
+id list_description
 id list_item
+id list_recycler_view
+id list_title
 id location_to_CRPG_title
 id locations_spinner
 id lytCameraPick
@@ -3248,6 +3251,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout new_text_note_fragment
 layout new_voice_note_fragment
+layout note_list_item
 layout notes_fragment
 layout notification_action
 layout notification_action_tombstone

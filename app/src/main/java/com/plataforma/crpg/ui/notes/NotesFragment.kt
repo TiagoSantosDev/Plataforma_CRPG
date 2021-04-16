@@ -10,8 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
+import com.plataforma.crpg.model.Note
+import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.notes_fragment.*
 
 
@@ -23,6 +26,15 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var notesViewModel: NotesViewModel
 
+    private val noteList = listOf(
+            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
+                    "a","",""),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
+                    "b","",""),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
+                    "c","",""),
+    )
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -31,6 +43,14 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        list_recycler_view.apply {
+            val layoutManager = LinearLayoutManager(activity)
+            val adapter = ListAdapter(noteList)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

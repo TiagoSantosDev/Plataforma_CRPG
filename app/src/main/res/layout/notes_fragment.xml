@@ -9,6 +9,12 @@
     tools:context="com.plataforma.crpg.ui.notes.NotesFragment">
 
 
+    <FrameLayout
+        android:id="@+id/list_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
     <TextView
         android:id="@+id/escolha_paragem"
         android:layout_width="394dp"
