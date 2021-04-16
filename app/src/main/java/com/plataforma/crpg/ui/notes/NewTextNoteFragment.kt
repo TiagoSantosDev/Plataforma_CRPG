@@ -1,37 +1,35 @@
 package com.plataforma.crpg.ui.notes
 
+import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
-import java.lang.Boolean.TRUE
-import java.util.jar.Manifest
 import kotlin.properties.Delegates
-
 
 class NewTextNoteFragment : Fragment() {
 
     companion object {
         fun newInstance() = NewTextNoteFragment()
+        //image pick code
+         val IMAGE_PICK_CODE = 1000;
+        //Permission code
+         val PERMISSION_CODE = 1001;
     }
 
     val RESULT_GALLERY = 0
@@ -58,40 +56,13 @@ class NewTextNoteFragment : Fragment() {
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
         val imagePath : String
 
-        /*
-        val imageUri: Uri = data.getData()
-        val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri)
-        */
-        button_get_image_from_gallery.setOnClickListener {
-
-            val galleryIntent = Intent(
-                    Intent.ACTION_PICK,
-                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(galleryIntent, RESULT_GALLERY)
-
+        button_get_image_from_gallery.setOnClickListener{
+            ImagePicker.with(this)
+                    .crop()	    			//Crop image(Optional), Check Customization for more option
+                    .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                    .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                    .start()
         }
-
-    /*
-        listen.value = IMAGE_PICKED
-        listen.observe(requireActivity(), Observer {
-
-            println("IMAGE_PICKED FOI SET A TRUE")
-
-            val imgFile = File(imageUri)
-            //val imgFileToPatch = imgFile.toPath()
-
-            println("Can read:" + imgFile.canRead())
-            println("Path " + imgFile.absolutePath)
-            //println("Can " + imgFile.toPath())
-
-            if (imgFile.exists()) {
-                val myBitmap: Bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
-                val myImage: ImageView = view?.findViewById(R.id.note_image) as ImageView
-                myImage.setImageBitmap(myBitmap)
-            }
-
-        })
-    */
 
 
         button_save_text_note.setOnClickListener {
@@ -112,20 +83,33 @@ class NewTextNoteFragment : Fragment() {
 
     }
 
+    private fun pickImageFromGallery() {
+        //Intent to pick image
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
+    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
+            val fileUri = data?.data
+            note_image.setImageURI(fileUri)
 
-        when (requestCode) {
-            RESULT_GALLERY -> if (null != data) {
-                imageUri = data.data.toString()
-                IMAGE_PICKED = TRUE
-                println("Image Uri: " + imageUri)
-                //Do whatever that you desire here. or leave this blank
-            }
-            else -> {
-            }
+            //You can get File object from intent
+            val file: File = ImagePicker.getFile(data)!!
+
+            //You can also get File Path from intent
+            val filePath:String = ImagePicker.getFilePath(data)!!
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            //Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+            println(">Erro a apresentar a foto")
+        } else {
+            //Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
+            println(">Escolha de foto cancelada")
         }
 
 
@@ -137,11 +121,26 @@ class NewTextNoteFragment : Fragment() {
         println("Old Value $oldValue")
 
 
-        //Path da imagem: /data/media/0/Pictures/IMG_20210411_215349.jpg
-        //var imageNewPath = "/data/media/0/Pictures/IMG_20210411_215349.jpg"
+
+
+    }
+
+}
 
 
 
+/*
+
+        when (requestCode) {
+            RESULT_GALLERY -> if (null != data) {
+                imageUri = data.data.toString()
+                IMAGE_PICKED = TRUE
+                println("Image Uri: " + imageUri)
+                //Do whatever that you desire here. or leave this blank
+            }
+            else -> {
+            }
+        }
         var imageNewPath = "/storage/emulated/0/Pictures/IMG_20210411_215347.jpg"
         val imgFile = File(imageNewPath)
         //val imgFileToPatch = imgFile.toPath()
@@ -157,8 +156,6 @@ class NewTextNoteFragment : Fragment() {
             val myImage: ImageView = view?.findViewById(R.id.note_image) as ImageView
             myImage.setImageBitmap(myBitmap)
         }
-    }
-/*
     private fun checkPermissionForImage() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if ((checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED)
@@ -175,10 +172,8 @@ class NewTextNoteFragment : Fragment() {
         }
     }
 
-*/
 
-}
-/*
+
 when (requestCode) {
     val targetUri: Uri = data!!.data
     textTargetUri.setText(targetUri.toString())
@@ -205,4 +200,36 @@ when (requestCode) {
         //println(getExtDir)
         //val imgFile = File(imageUri)
 
-*/
+
+        val imageUri: Uri = data.getData()
+        val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri)
+
+button_get_image_from_gallery.setOnClickListener {
+
+    val galleryIntent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+    startActivityForResult(galleryIntent, RESULT_GALLERY)
+
+}
+
+
+    listen.value = IMAGE_PICKED
+    listen.observe(requireActivity(), Observer {
+
+        println("IMAGE_PICKED FOI SET A TRUE")
+
+        val imgFile = File(imageUri)
+        //val imgFileToPatch = imgFile.toPath()
+
+        println("Can read:" + imgFile.canRead())
+        println("Path " + imgFile.absolutePath)
+        //println("Can " + imgFile.toPath())
+
+        if (imgFile.exists()) {
+            val myBitmap: Bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
+            val myImage: ImageView = view?.findViewById(R.id.note_image) as ImageView
+            myImage.setImageBitmap(myBitmap)
+        }
+
+    })*/

@@ -42,7 +42,7 @@
 24        android:allowBackup="true"
 24-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.6.0-alpha01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\44fcd1a1437bf7c3a304710ace6b2ae2\core-1.6.0-alpha01\AndroidManifest.xml:24:18-86
+25-->[androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:icon="@mipmap/ic_launcher"
@@ -91,73 +91,107 @@
 46-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:27-74
 47            </intent-filter>
 48        </activity>
-49
-50        <service
-50-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
-51            android:name="com.google.firebase.components.ComponentDiscoveryService"
-51-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:13:13-84
-52            android:directBootAware="true"
-52-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
-53            android:exported="false" >
-53-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:14:13-37
-54            <meta-data
-54-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
-55                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-55-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:16:17-124
-56                android:value="com.google.firebase.components.ComponentRegistrar" />
-56-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:17:17-82
-57            <meta-data
-57-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
-58                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-58-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:16:17-113
-59                android:value="com.google.firebase.components.ComponentRegistrar" />
-59-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:17:17-82
-60            <meta-data
-60-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
-61                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-61-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:33:17-109
-62                android:value="com.google.firebase.components.ComponentRegistrar" />
-62-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:34:17-82
-63            <!--
-64                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-65                clients to use it as well, by defining this registrar in their own core/common library.
-66            -->
-67            <meta-data
-67-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
-68                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-68-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
-69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
-70        </service>
-71
-72        <provider
-72-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
-73            android:name="com.google.firebase.provider.FirebaseInitProvider"
-73-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
-74            android:authorities="com.platform.crpg.firebaseinitprovider"
-74-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
-75            android:directBootAware="true"
-75-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
-76            android:exported="false"
-76-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
-77            android:initOrder="100" />
-77-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
-78
-79        <activity
-79-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-80            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-81            android:exported="false"
-81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-83
-84        <meta-data
-84-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-85            android:name="com.google.android.gms.version"
-85-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-86            android:value="@integer/google_play_services_version" />
-86-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-87    </application>
-88
-89</manifest>
+49        <activity
+49-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:15:9-18:68
+50            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+50-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:16:13-81
+51            android:screenOrientation="unspecified"
+51-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:17:13-52
+52            android:theme="@style/Theme.Transparent.ImagePicker" />
+52-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:18:13-65
+53        <activity
+53-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:19:9-22:72
+54            android:name="com.yalantis.ucrop.UCropActivity"
+54-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:20:13-60
+55            android:screenOrientation="portrait"
+55-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:21:13-49
+56            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+56-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:22:13-69
+57
+58        <provider
+58-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:24:9-32:20
+59            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+59-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:25:13-85
+60            android:authorities="com.platform.crpg.imagepicker.provider"
+60-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:26:13-72
+61            android:exported="false"
+61-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:27:13-37
+62            android:grantUriPermissions="true" >
+62-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:28:13-47
+63            <meta-data
+63-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:29:13-31:71
+64                android:name="android.support.FILE_PROVIDER_PATHS"
+64-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:30:17-67
+65                android:resource="@xml/image_picker_provider_paths" />
+65-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:31:17-68
+66        </provider>
+67
+68        <service
+68-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
+69            android:name="com.google.firebase.components.ComponentDiscoveryService"
+69-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:13:13-84
+70            android:directBootAware="true"
+70-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+71            android:exported="false" >
+71-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:14:13-37
+72            <meta-data
+72-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
+73                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+73-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:16:17-124
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:17:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
+76                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+76-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:16:17-113
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:17:17-82
+78            <meta-data
+78-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
+79                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+79-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:33:17-109
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:34:17-82
+81            <!--
+82                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+83                clients to use it as well, by defining this registrar in their own core/common library.
+84            -->
+85            <meta-data
+85-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+86                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+86-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+88        </service>
+89
+90        <provider
+90-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+91            android:name="com.google.firebase.provider.FirebaseInitProvider"
+91-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+92            android:authorities="com.platform.crpg.firebaseinitprovider"
+92-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+93            android:directBootAware="true"
+93-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+94            android:exported="false"
+94-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+95            android:initOrder="100" />
+95-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+96
+97        <activity
+97-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+98            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+98-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+99            android:exported="false"
+99-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+100-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+101
+102        <meta-data
+102-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+103            android:name="com.google.android.gms.version"
+103-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+104            android:value="@integer/google_play_services_version" />
+104-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+105    </application>
+106
+107</manifest>
