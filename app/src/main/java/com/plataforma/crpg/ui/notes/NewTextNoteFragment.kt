@@ -98,6 +98,7 @@ class NewTextNoteFragment : Fragment() {
             //Image Uri will not be null for RESULT_OK
             val fileUri = data?.data
             note_image.setImageURI(fileUri)
+            imageUri = fileUri.toString()
 
             //You can get File object from intent
             val file: File = ImagePicker.getFile(data)!!
@@ -115,14 +116,9 @@ class NewTextNoteFragment : Fragment() {
 
     }
 
-
     private var IMAGE_PICKED: Boolean by Delegates.observable(FALSE) { property, oldValue, newValue ->
         println("New Value $newValue")
         println("Old Value $oldValue")
-
-
-
-
     }
 
 }
