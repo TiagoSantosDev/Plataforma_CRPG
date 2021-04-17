@@ -40,8 +40,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             savedInstanceState: Bundle?,
     ): View? {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
-
-
         return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
@@ -91,3 +89,20 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
 }
+
+/*
+
+<Button
+android:id="@+id/button_consult_transport"
+android:layout_width="331dp"
+android:layout_height="wrap_content"
+android:layout_gravity="center|bottom"
+android:layout_marginBottom="28dp"
+android:text="@string/ver_transportes_publicos"
+android:textSize="20sp"
+app:backgroundTint="@color/md_blue_100"
+app:cornerRadius="8dp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent" />
+ */

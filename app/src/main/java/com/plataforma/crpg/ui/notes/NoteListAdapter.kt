@@ -45,9 +45,6 @@ class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         mImageView?.setImageURI(note.imagePath.toUri())
         //mImageView?.setImageURI(note.imagePath.toUri())
         //val inputStream = getContentResolver().openInputStream(note.imagePath.toUri())
-
-
-
     }
 }
 //mImageView.setIma
