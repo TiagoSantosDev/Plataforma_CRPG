@@ -9,7 +9,7 @@
     tools:context="com.plataforma.crpg.ui.notes.NotesFragment">
 
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
