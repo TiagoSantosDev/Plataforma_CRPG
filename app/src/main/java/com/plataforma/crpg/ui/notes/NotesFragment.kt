@@ -32,7 +32,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             Note(NoteType.TEXT, "16042021", "1200","Nota 2",
                     "b","",""),
             Note(NoteType.TEXT, "16042021", "1200","Nota 3",
-                    "c","",""),
+                    "c","","")
     )
 
     override fun onCreateView(
@@ -41,6 +41,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
 
+
         return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
@@ -48,8 +49,8 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         list_recycler_view.apply {
-            val layoutManager = LinearLayoutManager(activity)
-            val adapter = ListAdapter(noteList)
+            layoutManager = LinearLayoutManager(activity)
+            adapter = ListAdapter(noteList)
         }
     }
 

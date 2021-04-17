@@ -43,11 +43,11 @@ class NewTextNoteFragment : Fragment() {
 
     private val noteList = listOf(
             Note(NoteType.TEXT, "16042021","1200", "Nota 1",
-                    "a","",""),
+                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
             Note(NoteType.TEXT, "16042021", "1200","Nota 2",
-                    "b","",""),
+                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
             Note(NoteType.TEXT, "16042021", "1200","Nota 3",
-                    "c","",""),
+                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
     )
 
 
@@ -120,6 +120,7 @@ class NewTextNoteFragment : Fragment() {
             val fileUri = data?.data
             note_image.setImageURI(fileUri)
             imageUri = fileUri.toString()
+            println("Uri: " + imageUri)
 
             //You can get File object from intent
             val file: File = ImagePicker.getFile(data)!!
