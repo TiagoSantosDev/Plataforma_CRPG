@@ -26,15 +26,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var notesViewModel: NotesViewModel
 
-    private val noteList = listOf(
-            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
-                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
-                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
-                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg")
-    )
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -46,15 +37,15 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ListAdapter(noteList)
+            adapter = ListAdapter(notesViewModel.noteList)
         }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
 
         button_new_voice_note.setOnClickListener {
             val fragment: Fragment = NewVoiceNoteFragment()
@@ -105,4 +96,13 @@ app:cornerRadius="8dp"
 app:layout_constraintBottom_toBottomOf="parent"
 app:layout_constraintEnd_toEndOf="parent"
 app:layout_constraintStart_toStartOf="parent" />
- */
+
+
+private val noteList = listOf(
+            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
+                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
+                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
+                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg")
+    ) */
