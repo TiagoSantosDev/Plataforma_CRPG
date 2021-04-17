@@ -2510,7 +2510,6 @@ id button_confirm
 id button_confirm_meal
 id button_consult_custom_transport
 id button_consult_public_transport
-id button_consult_transport
 id button_escolher
 id button_get_image_from_gallery
 id button_hoje
