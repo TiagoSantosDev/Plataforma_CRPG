@@ -9,16 +9,17 @@ import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.model.Note
+import java.io.InputStream
 
 class ListAdapter(private val list: List<Note>) :
-    RecyclerView.Adapter<MovieViewHolder>() {
+    RecyclerView.Adapter<NoteViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return MovieViewHolder(inflater, parent)
+        return NoteViewHolder(inflater, parent)
     }
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note: Note = list[position]
         holder.bind(note)
     }
@@ -26,7 +27,7 @@ class ListAdapter(private val list: List<Note>) :
     override fun getItemCount(): Int = list.size
 }
 
-class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
+class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.note_list_item, parent, false)) {
     private var mTitleView: TextView? = null
     private var mYearView: TextView? = null
@@ -41,7 +42,12 @@ class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(note: Note) {
         mTitleView?.text = note.titulo
         mYearView?.text = note.info
+        mImageView?.setImageURI(note.imagePath.toUri())
         //mImageView?.setImageURI(note.imagePath.toUri())
-        mImageView.setIma
+        //val inputStream = getContentResolver().openInputStream(note.imagePath.toUri())
+
+
+
     }
 }
+//mImageView.setIma
