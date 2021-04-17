@@ -41,16 +41,6 @@ class NewTextNoteFragment : Fragment() {
     val listen : MutableLiveData<Boolean> =  MutableLiveData<Boolean>()
     private lateinit var notesViewModel: NotesViewModel
 
-    private val noteList = listOf(
-            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
-                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
-                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
-                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
-    )
-
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -63,10 +53,7 @@ class NewTextNoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        list_recycler_view.apply {
-            val layoutManager = LinearLayoutManager(activity)
-            val adapter = ListAdapter(noteList)
-        }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -251,3 +238,16 @@ button_get_image_from_gallery.setOnClickListener {
         }
 
     })*/
+
+/*
+    private val noteList = listOf(
+            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
+                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
+                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
+            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
+                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_184527541.jpg"),
+    ) list_recycler_view.apply {
+    val layoutManager = LinearLayoutManager(activity)
+    val adapter = ListAdapter(noteList)
+}*/

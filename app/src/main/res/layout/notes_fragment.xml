@@ -48,9 +48,9 @@
             android:id="@+id/button_new_voice_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="bottom|center_horizontal"
             android:layout_marginRight="50dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.887"
@@ -61,8 +61,8 @@
             android:id="@+id/button_new_text_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="56dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,20 +70,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/outline_create_black_24dp" />
     </FrameLayout>
-
-    <Button
-        android:id="@+id/button_consult_transport"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="28dp"
-        android:text="@string/ver_transportes_publicos"
-        android:textSize="20sp"
-        app:backgroundTint="@color/md_blue_100"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
