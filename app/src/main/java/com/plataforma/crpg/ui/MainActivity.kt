@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -24,11 +25,13 @@ class MainActivity : BaseActivity() {
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
                         R.id.navigation_agenda, R.id.navigation_reminders,
-                            R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
+                        R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
@@ -36,7 +39,34 @@ class MainActivity : BaseActivity() {
         super.onStart()
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.getItemId() === android.R.id.home) {
+            //Title bar back press triggers onBackPressed()
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    //Both navigation bar back press and title bar back press will trigger this method
+    override fun onBackPressed() {
+        if (fragmentManager.backStackEntryCount > 0) {
+            fragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    fun setActionBarTitle(title: String){
+        supportActionBar?.title = title
+    }
+
 }
+
+
+
+
+
 //Teste a base de dados
 /*
 val database = FirebaseDatabase.getInstance("https://crpg-1a3d5-default-rtdb.europe-west1.firebasedatabase.app/")
