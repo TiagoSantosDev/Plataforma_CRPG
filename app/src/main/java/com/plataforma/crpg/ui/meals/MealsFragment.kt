@@ -3,18 +3,16 @@ package com.plataforma.crpg.ui.meals
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.card.MaterialCardView
 import com.plataforma.crpg.R
-import com.plataforma.crpg.R.color.material_blue_200
 import com.plataforma.crpg.databinding.MealsFragmentBinding
-import com.plataforma.crpg.model.Meal
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
 
@@ -27,6 +25,8 @@ class MealsFragment : Fragment() {
     companion object {
         fun newInstance() = MealsFragment()
     }
+
+
 
     private lateinit var mealsViewModel: MealsViewModel
 
@@ -108,6 +108,7 @@ class MealsFragment : Fragment() {
             if (mealsViewModel.selectedOption != 0) {
                 view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
                 view?.findViewById<View>(R.id.successLayout)?.visibility = View.VISIBLE
+                view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
                 button_ok.setOnClickListener(){
                     view?.findViewById<View>(R.id.successLayout)?.visibility = View.GONE
                 }
@@ -116,8 +117,18 @@ class MealsFragment : Fragment() {
             }
         }
 
-
-
     }
 
+
+
 }
+
+/*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.getItemId()) {
+        android.R.id.home -> {
+            onBackPressed()
+            return true
+        }
+    }
+    return super.onOptionsItemSelected(item)
+}*/

@@ -18,13 +18,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentViewWithoutInject(R.layout.activity_main)
 
-        /*
-        dLocale = Locale("pt")
-        Locale.setDefault(dLocale)
-        val configuration = Configuration()
-        configuration.setLocale(dLocale)
-        this.applyOverrideConfiguration(configuration)*/
-
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
@@ -42,22 +35,6 @@ class MainActivity : BaseActivity() {
     override fun onStart() {
         super.onStart()
     }
-
-    fun showUpButton() {
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-    }
-
-    fun hideUpButton() {
-        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-
-
 
 }
 //Teste a base de dados
@@ -90,3 +67,21 @@ myRef.addValueEventListener(object : ValueEventListener {
         super.onBackPressed()
     }
 }*/
+/*
+fun showUpButton() {
+    supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+}
+
+fun hideUpButton() {
+    supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+}
+
+override fun onSupportNavigateUp(): Boolean {
+    val navController = findNavController(R.id.nav_host_fragment)
+    return navController.navigateUp() || super.onSupportNavigateUp()
+}
+        dLocale = Locale("pt")
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        this.applyOverrideConfiguration(configuration)*/

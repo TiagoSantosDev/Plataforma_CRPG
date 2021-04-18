@@ -27,6 +27,8 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //(MainActivity getActivity()).setActionBarTitle("TRANSPORTES PUBLICOS")
     }
 
     override fun onCreateView(
