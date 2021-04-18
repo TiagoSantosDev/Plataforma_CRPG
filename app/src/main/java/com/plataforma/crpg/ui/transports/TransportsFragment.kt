@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -51,6 +52,11 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTES"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

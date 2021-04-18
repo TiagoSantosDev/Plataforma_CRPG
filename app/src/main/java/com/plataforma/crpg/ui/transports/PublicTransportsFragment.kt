@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -27,6 +28,8 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //activity?.setActionBarTitle("TRANSPORTES PUBLICOS")
 
         //(MainActivity getActivity()).setActionBarTitle("TRANSPORTES PUBLICOS")
     }
@@ -73,6 +76,11 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
         linesSpinner?.onItemSelectedListener = this
         return inflater.inflate(R.layout.fragment_public_transports_old, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTES PUBLICOS"
     }
 
 
@@ -165,7 +173,11 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
-
+/*
+    fun ActionBar getActionBar(){
+        return ((ActionBarActivity() activity?.getSupport
+    }
+*/
     /*
     @Override
     public fun boolean onOptionsItemSelected() {
