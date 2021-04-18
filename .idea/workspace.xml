@@ -36,10 +36,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/delete_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/note_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/note_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,10 +324,10 @@
     </state>
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178845156" />
     <state x="840" y="123" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1618411679417" />
-    <state x="509" y="111" key="FileChooserDialogImpl" timestamp="1618582099166">
+    <state x="479" y="109" key="FileChooserDialogImpl" timestamp="1618767819013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="509" y="111" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1618582099166" />
+    <state x="479" y="109" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1618767819013" />
     <state width="1236" height="211" key="GridCell.Tab.0.bottom" timestamp="1618745914933">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
