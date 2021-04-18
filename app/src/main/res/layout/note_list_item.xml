@@ -7,16 +7,19 @@
         android:padding="16dp"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:elevation="5dp"
-        android:padding="20dp">
+        android:layout_height="80dp"
+        android:elevation="10dp"
+        android:padding="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        style="@style/Widget.App.CardView">
 
         <FrameLayout
-            android:layout_width="69dp"
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:layout_gravity="left">
+            android:layout_gravity="start">
 
             <ImageView
                 android:id="@+id/note_image"
@@ -28,26 +31,24 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="100dp">
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:id="@+id/list_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="@string/amanha"
-                android:textStyle="bold" />
+                android:paddingStart="16dp"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/list_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:paddingLeft="16dp"
-                android:text="@string/hoje" />
-
+                android:paddingStart="16dp"
+                android:textSize="16sp"/>
         </FrameLayout>
-
-
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
