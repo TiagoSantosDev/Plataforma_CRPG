@@ -2795,6 +2795,8 @@ id navigation_custom_transports
 id navigation_escolha_data
 id navigation_header_container
 id navigation_meals
+id navigation_new_text_note
+id navigation_new_voice_note
 id navigation_notes
 id navigation_public_transports
 id navigation_reminders

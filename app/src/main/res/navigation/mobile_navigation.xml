@@ -69,4 +69,16 @@
         android:label="NOTAS"
         tools:layout="@layout/notes_fragment" />
 
+    <fragment
+        android:id="@+id/navigation_new_text_note"
+        android:name="com.plataforma.crpg.ui.notes.NewTextNoteFragment"
+        android:label="NOVA NOTA DE TEXTO"
+        tools:layout="@layout/new_text_note_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_new_voice_note"
+        android:name="com.plataforma.crpg.ui.notes.NewVoiceNoteFragment"
+        android:label="NOVA NOTA DE VOZ"
+        tools:layout="@layout/new_voice_note_fragment" />
+
 </navigation>
