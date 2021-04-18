@@ -29,8 +29,8 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="15dp">
 
@@ -39,8 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/list_description"
@@ -48,7 +48,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:paddingStart="16dp"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="20dp">
+
+            <ImageView
+                android:id="@+id/note_delete_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete_icon" />
+
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
