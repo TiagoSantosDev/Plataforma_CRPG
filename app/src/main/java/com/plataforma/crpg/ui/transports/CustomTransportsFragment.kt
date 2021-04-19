@@ -28,7 +28,7 @@ class CustomTransportsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        showBackButton()
+        //showBackButton()
         return inflater.inflate(R.layout.fragment_custom_transport, container, false)
     }
 

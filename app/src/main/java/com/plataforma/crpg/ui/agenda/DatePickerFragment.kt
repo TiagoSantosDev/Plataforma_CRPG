@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
@@ -60,8 +61,8 @@ class DatePickerFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
-        (activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        //(activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
     }
 
@@ -71,19 +72,23 @@ class DatePickerFragment : Fragment() {
             savedInstanceState: Bundle?,
     ): View? {
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
-        dontShowBackButton()
-        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+
+
+
+        //dontShowBackButton()
+        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        //var BottomNavigationView navBar = require.findviewById(R.id.nav_view)
+        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
         super.onActivityCreated(savedInstanceType)
-        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         calendar.time = Date()
 
         button_selecionar.setOnClickListener {
@@ -210,13 +215,13 @@ class DatePickerFragment : Fragment() {
         calendar.add(Calendar.DATE, -1)
         return list
     }
-
+/*
     fun dontShowBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         }
     }
-
+*/
 
 }
 // set current date to calendar and current month to currentMonth variable

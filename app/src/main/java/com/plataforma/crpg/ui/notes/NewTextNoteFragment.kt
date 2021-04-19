@@ -50,7 +50,7 @@ class NewTextNoteFragment : Fragment() {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        showBackButton()
+        //showBackButton()
 
         return view
     }

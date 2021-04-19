@@ -27,8 +27,6 @@ class MealsFragment : Fragment() {
         fun newInstance() = MealsFragment()
     }
 
-
-
     private lateinit var mealsViewModel: MealsViewModel
 
     override fun onCreateView(
@@ -37,7 +35,7 @@ class MealsFragment : Fragment() {
     ): View? {
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-        showBackButton()
+        //showBackButton()
 
 
         //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne

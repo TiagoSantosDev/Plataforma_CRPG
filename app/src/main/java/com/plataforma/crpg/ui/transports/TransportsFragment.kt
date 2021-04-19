@@ -34,7 +34,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = TransportsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-        showBackButton()
+        //showBackButton()
 
         val spinner: Spinner = view.findViewById(R.id.locations_spinner)
         println("Context:" + context.toString())

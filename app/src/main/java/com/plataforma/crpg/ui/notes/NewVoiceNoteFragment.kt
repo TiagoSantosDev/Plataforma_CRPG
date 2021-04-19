@@ -41,7 +41,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        showBackButton()
+        //showBackButton()
 
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
@@ -131,10 +131,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         TODO("Not yet implemented")
     }
 
+}
+
+/*
     fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
-
-}
+*/

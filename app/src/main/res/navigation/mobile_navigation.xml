@@ -9,7 +9,6 @@
         android:id="@+id/navigation_escolha_data"
         android:name="com.plataforma.crpg.ui.agenda.DatePickerFragment"
         android:label="ESCOLHA DE DATA"
-        app:defaultNavHost="true"
         tools:layout="@layout/fragment_date_picker"/>
 
     <fragment
@@ -17,9 +16,6 @@
         android:name="com.plataforma.crpg.ui.agenda.AgendaFragment"
         android:label="@string/title_agenda"
         tools:layout="@layout/fragment_agenda">
-    <action
-        android:id="@+id/action_navigation_agenda_to_date_picker"
-        app:popUpTo="@id/navigation_escolha_data" />
     </fragment>
 
     <fragment
@@ -38,7 +34,6 @@
         android:id="@+id/navigation_transports"
         android:name="com.plataforma.crpg.ui.transports.TransportsFragment"
         android:label="TRANSPORTES"
-        app:defaultNavHost="true"
         tools:layout="@layout/transports_fragment" />
 
     <fragment
@@ -48,8 +43,9 @@
         tools:layout="@layout/fragment_public_transport" >
         <action
             android:id="@+id/action_navigation_public_transports_to_navigation_transports"
+            app:destination="@id/navigation_transports"
             app:popUpTo="@id/navigation_transports"
-            app:destination="@id/navigation_transports" />
+            app:popUpToInclusive="false" />
     </fragment>
 
     <fragment
@@ -57,10 +53,6 @@
         android:name="com.plataforma.crpg.ui.transports.CustomTransportsFragment"
         android:label="TRANSPORTES PERSONALIZADOS"
         tools:layout="@layout/fragment_custom_transport" >
-        <action
-            android:id="@+id/action_navigation_custom_transports_to_navigation_transports"
-            app:popUpTo="@id/navigation_transports"
-            app:destination="@id/navigation_transports" />
     </fragment>
 
     <fragment
