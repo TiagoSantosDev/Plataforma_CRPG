@@ -34,8 +34,17 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        println(">OnSupportNavigate called")
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home ->{ println("e que")
+                onSupportNavigateUp()}// click on 'up' button in the action bar, handle it here
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }
