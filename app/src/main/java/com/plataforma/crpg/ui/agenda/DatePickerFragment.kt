@@ -96,6 +96,7 @@ class DatePickerFragment : Fragment() {
                 // set date to calendar according to position where we are
                 val cal = Calendar.getInstance()
                 cal.time = date
+                if (!isSelected) tvDate.text = "Nenhum dia selecionado"
                 // if item is selected we return this layout items
                 // in this example. monday, wednesday and friday will have special item views and other days
                 // will be using basic item view
