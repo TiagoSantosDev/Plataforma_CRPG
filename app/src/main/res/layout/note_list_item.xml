@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:paddingStart="16dp"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
         </FrameLayout>
 
         <FrameLayout

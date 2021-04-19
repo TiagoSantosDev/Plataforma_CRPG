@@ -2267,6 +2267,7 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable crpg_background
 drawable crpg_launcher_v2
+drawable delete_icon
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -2807,6 +2808,7 @@ id noScroll
 id nome_motorista
 id none
 id normal
+id note_delete_icon
 id note_image
 id notification_background
 id notification_main_column
