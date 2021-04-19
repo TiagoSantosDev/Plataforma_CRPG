@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_custom_transport.*
 
 
@@ -27,7 +28,7 @@ class CustomTransportsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-
+        showBackButton()
         return inflater.inflate(R.layout.fragment_custom_transport, container, false)
     }
 
@@ -52,4 +53,9 @@ class CustomTransportsFragment : Fragment() {
         
     }
 
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+    }
 }

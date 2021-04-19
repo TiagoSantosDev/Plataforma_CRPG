@@ -3,11 +3,11 @@ package com.plataforma.crpg.ui.agenda
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -17,6 +17,7 @@ import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_date_picker.main_single_row_calendar
 import kotlinx.android.synthetic.main.activity_date_picker.tvDate
 import kotlinx.android.synthetic.main.activity_date_picker.tvDay
@@ -57,23 +58,32 @@ class DatePickerFragment : Fragment() {
                 context.resources.displayMetrics)
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        (activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+    }
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
+        dontShowBackButton()
+        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
         super.onActivityCreated(savedInstanceType)
-
+        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         calendar.time = Date()
 
         button_selecionar.setOnClickListener {
@@ -199,6 +209,12 @@ class DatePickerFragment : Fragment() {
         }
         calendar.add(Calendar.DATE, -1)
         return list
+    }
+
+    fun dontShowBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        }
     }
 
 

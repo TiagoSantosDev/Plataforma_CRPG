@@ -29,9 +29,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //activity?.setActionBarTitle("TRANSPORTES PUBLICOS")
 
-        //(MainActivity getActivity()).setActionBarTitle("TRANSPORTES PUBLICOS")
     }
 
     override fun onCreateView(
@@ -41,16 +39,9 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
         showBackButton()
         // This callback will only be called when MyFragment is at least Started.
+        /*
         val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
             override fun handleOnBackPressed() {
-                /*
-                val a = Intent(Intent.ACTION_MAIN)
-                a.addCategory(Intent.CATEGORY_HOME)
-                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(a)*/
-
-                println("> handleOnBackPressed")
-
                 val fragment: Fragment = TransportsFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -60,7 +51,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
                 fragmentTransaction.commit()
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
 
         // The callback can be enabled or disabled here or in handleOnBackPressed()
 
@@ -173,18 +164,23 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
+}
+
+
 /*
     fun ActionBar getActionBar(){
         return ((ActionBarActivity() activity?.getSupport
     }
 */
+/*
+@Override
+public fun boolean onOptionsItemSelected() {
     /*
-    @Override
-    public fun boolean onOptionsItemSelected() {
-        /*
-            ADD WHAT YOU WANT TO DO WHEN ARROW IS PRESSED
-        */
-        return super.onOptionsItemSelected(item);
-    }*/
-    
-}
+        ADD WHAT YOU WANT TO DO WHEN ARROW IS PRESSED
+    */
+    return super.onOptionsItemSelected(item);
+}*/
+
+//activity?.setActionBarTitle("TRANSPORTES PUBLICOS")
+
+//(MainActivity getActivity()).setActionBarTitle("TRANSPORTES PUBLICOS")

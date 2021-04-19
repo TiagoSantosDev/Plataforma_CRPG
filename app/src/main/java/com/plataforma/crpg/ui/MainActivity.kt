@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.navigation_agenda, R.id.navigation_reminders,
+                        R.id.navigation_escolha_data, R.id.navigation_reminders,
                         R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
@@ -54,6 +54,7 @@ class MainActivity : BaseActivity() {
             fragmentManager.popBackStack()
         } else {
             super.onBackPressed()
+            //supportActionBar?.setDisplayHomeAsUpEnabled(false)
         }
     }
 
