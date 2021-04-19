@@ -20,6 +20,7 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
@@ -48,6 +49,8 @@ class NewTextNoteFragment : Fragment() {
     ): View? {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        showBackButton()
 
         return view
     }
@@ -129,6 +132,12 @@ class NewTextNoteFragment : Fragment() {
     private var IMAGE_PICKED: Boolean by Delegates.observable(FALSE) { property, oldValue, newValue ->
         println("New Value $newValue")
         println("Old Value $oldValue")
+    }
+
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
     }
 
 }

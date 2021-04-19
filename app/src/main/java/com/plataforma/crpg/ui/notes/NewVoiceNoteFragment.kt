@@ -21,6 +21,7 @@ import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.NoteType
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
 
@@ -39,6 +40,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = NotesFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        showBackButton()
 
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
@@ -126,6 +129,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
+    }
+
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
     }
 
 }

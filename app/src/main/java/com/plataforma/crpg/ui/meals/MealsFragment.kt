@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.card.MaterialCardView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.MealsFragmentBinding
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
 
@@ -36,6 +37,7 @@ class MealsFragment : Fragment() {
     ): View? {
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+        showBackButton()
 
 
         //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne
@@ -119,7 +121,11 @@ class MealsFragment : Fragment() {
 
     }
 
-
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+    }
 
 }
 

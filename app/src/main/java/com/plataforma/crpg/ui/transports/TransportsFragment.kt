@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 
@@ -33,6 +34,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = TransportsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+        showBackButton()
 
         val spinner: Spinner = view.findViewById(R.id.locations_spinner)
         println("Context:" + context.toString())
@@ -142,4 +144,9 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
         TODO("Not yet implemented")
     }
 
+    fun showBackButton() {
+        if (activity is MainActivity) {
+            (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+    }
 }
