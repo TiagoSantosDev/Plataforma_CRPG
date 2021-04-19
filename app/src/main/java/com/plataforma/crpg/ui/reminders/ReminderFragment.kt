@@ -51,6 +51,7 @@ class ReminderFragment : Fragment() {
                 expandableLembrar.toggleLayout() }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button0)
                     .setOnClickListener {
+                        //expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundColor() = "@color/white"
                         lembrarButtonPressed = 1
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button1)
