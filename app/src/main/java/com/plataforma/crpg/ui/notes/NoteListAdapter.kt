@@ -10,22 +10,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.model.Note
 import kotlinx.android.synthetic.main.note_list_item.view.*
+import javax.security.auth.callback.Callback
 
-class ListAdapter(private val list: List<Note>) :
+class ListAdapter(private val list: List<Note>, private val onChange: (List<Note>) -> Unit) :
     RecyclerView.Adapter<NoteViewHolder>() {
 
-    private var listData: MutableList<Note> = list.toMutableList()
+    var listData: MutableList<Note> = list.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return NoteViewHolder(inflater, parent)
     }
+
     //substitui position por holder.adapterPosition
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note: Note = listData[holder.adapterPosition]
-        holder.bind(note)
 
+        holder.bind(note)
         println("> List Data: $listData")
+        println("> List Data: $position")
+        println("> List Data: " + listData.size)
 
         var removedPosition : Int ? = null
 
@@ -33,10 +37,11 @@ class ListAdapter(private val list: List<Note>) :
             listData.removeAt(holder.adapterPosition)
             removedPosition = holder.adapterPosition
             notifyDataSetChanged()
+            onChange(listData)
         }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = listData.size
     /*
     fun deleteSelectedItem() {
         if(selectedList.isNotEmpty()){

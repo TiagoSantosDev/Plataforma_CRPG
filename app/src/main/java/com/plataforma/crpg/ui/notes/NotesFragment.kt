@@ -17,6 +17,7 @@ import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.notes_fragment.*
+import java.util.ArrayList
 
 
 class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -42,7 +43,8 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ListAdapter(notesViewModel.noteList)
+            adapter = ListAdapter(notesViewModel.noteList,
+                    {newList -> notesViewModel.mNoteList = newList as ArrayList<Note>})
         }
     }
 
