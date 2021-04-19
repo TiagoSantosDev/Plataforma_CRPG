@@ -1,8 +1,8 @@
 package com.plataforma.crpg.ui.transports
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -28,7 +28,14 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        showBackButton()
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                println(">botao esta a ser premido")
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
     }
 
@@ -36,25 +43,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-
-        showBackButton()
-        // This callback will only be called when MyFragment is at least Started.
-
-        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
-            override fun handleOnBackPressed() {
-                val fragment: Fragment = TransportsFragment()
-                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentManager.popBackStack()
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
-
-        // The callback can be enabled or disabled here or in handleOnBackPressed()
-
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
                 context,
@@ -164,6 +152,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
+
 }
 
 
@@ -184,3 +173,21 @@ public fun boolean onOptionsItemSelected() {
 //activity?.setActionBarTitle("TRANSPORTES PUBLICOS")
 
 //(MainActivity getActivity()).setActionBarTitle("TRANSPORTES PUBLICOS")
+//
+// showBackButton()
+//        // This callback will only be called when MyFragment is at least Started.
+//        /*
+//        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
+//            override fun handleOnBackPressed() {
+//                val fragment: Fragment = TransportsFragment()
+//                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+//                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+//                fragmentManager.popBackStack()
+//                fragmentTransaction.addToBackStack(null)
+//                fragmentTransaction.commit()
+//            }
+//        }
+//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+//
+//        // The callback can be enabled or disabled here or in handleOnBackPressed()

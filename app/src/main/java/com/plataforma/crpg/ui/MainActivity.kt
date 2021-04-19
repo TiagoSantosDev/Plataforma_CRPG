@@ -24,17 +24,27 @@ class MainActivity : BaseActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.navigation_escolha_data, R.id.navigation_reminders,
+                        R.id.navigation_escolha_data, R.id.navigation_agenda, R.id.navigation_reminders,
                         R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+}
+
+
+
+
+
+/*//supportActionBar?.setDisplayHomeAsUpEnabled(true)
     override fun onStart() {
         super.onStart()
     }
@@ -61,10 +71,7 @@ class MainActivity : BaseActivity() {
     fun setActionBarTitle(title: String){
         supportActionBar?.title = title
     }
-
-}
-
-
+*/
 
 
 

@@ -26,11 +26,12 @@ open class BaseActivity : AppCompatActivity() {
         //injectViews()
 
         // Displaying the back button in the action bar
+        /*
         if (isDisplayHomeAsUpEnabled) {
             whenNotNull(supportActionBar) {
                 it.setDisplayHomeAsUpEnabled(true)
             }
-        }
+        }*/
     }
 
     protected fun injectViews() {
