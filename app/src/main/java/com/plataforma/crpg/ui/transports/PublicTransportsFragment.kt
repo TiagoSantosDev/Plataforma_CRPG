@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -38,7 +40,20 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
     }
+/*
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
 
+        //enable menu
+        setHasOptionsMenu(true)
+
+        requireActivity()
+                .onBackPressedDispatcher
+                .addCallback(this) {
+                    println("ola")
+                }
+    }
+*/
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
