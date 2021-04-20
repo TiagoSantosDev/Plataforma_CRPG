@@ -44,8 +44,7 @@
         <action
             android:id="@+id/action_navigation_public_transports_to_navigation_transports"
             app:destination="@id/navigation_transports"
-            app:popUpTo="@id/navigation_transports"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/navigation_transports" />
     </fragment>
 
     <fragment
