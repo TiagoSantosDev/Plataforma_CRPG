@@ -1,6 +1,8 @@
 package com.plataforma.crpg.ui.notes
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
@@ -15,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
@@ -23,6 +26,7 @@ import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
+import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
 
@@ -34,6 +38,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private lateinit var notesViewModel: NotesViewModel
+    var imageUri = ""
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -100,12 +105,19 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         }
 
+        button_new_voice_note_image.setOnClickListener{
+            ImagePicker.with(this)
+                    .crop()	    			//Crop image(Optional), Check Customization for more option
+                    .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                    .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                    .start()
+        }
+
         button_save_voice_note.setOnClickListener{
             notesViewModel.newNote.tipo = NoteType.VOICE
             notesViewModel.newNote.titulo = ""
             notesViewModel.newNote.voiceNotePath = destFile.absolutePath
-            notesViewModel.newNote.tipo =
-            notesViewModel.newNote.tipo
+            notesViewModel.newNote.imagePath = imageUri
 
             val fragment: Fragment = NotesFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -114,6 +126,26 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             fragmentManager.popBackStack()
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == Activity.RESULT_OK) {
+            val fileUri = data?.data
+            voice_note_image.setImageURI(fileUri)
+            imageUri = fileUri.toString()
+            println("Uri: $imageUri")
+
+            val file: File = ImagePicker.getFile(data)!!
+            val filePath:String = ImagePicker.getFilePath(data)!!
+
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            println(">Erro a apresentar a foto")
+        } else {
+            println(">Escolha de foto cancelada")
         }
 
 

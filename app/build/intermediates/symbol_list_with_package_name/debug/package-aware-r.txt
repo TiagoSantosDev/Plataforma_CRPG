@@ -2515,6 +2515,7 @@ id button_get_image_from_gallery
 id button_hoje
 id button_new_text_note
 id button_new_voice_note
+id button_new_voice_note_image
 id button_ok
 id button_personalizado
 id button_replay_recording
@@ -3087,6 +3088,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id voice_note_image
 id wide
 id withText
 id withinBounds

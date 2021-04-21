@@ -48,16 +48,16 @@
             app:layout_constraintBottom_toTopOf="@id/frame_titulo_nota">
 
             <ImageView
-                android:id="@+id/note_image"
+                android:id="@+id/voice_note_image"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"  />
-
+                android:layout_height="106dp" />
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/frame_titulo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -84,12 +84,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
         </FrameLayout>
 
-
         <FrameLayout
             android:id="@+id/frame_conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="250dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -99,7 +98,7 @@
             <TextView
                 android:id="@+id/conteudo_nova_nota"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="119dp"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif"
                 android:text="@string/conteudo"
@@ -128,7 +127,7 @@
         </FrameLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_new_text_note"
+            android:id="@+id/button_new_voice_note_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -136,43 +135,37 @@
             android:layout_marginBottom="76dp"
             app:srcCompat="@drawable/outline_create_black_24dp" />
 
-    <FrameLayout
-        android:id="@+id/frame_button_replay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/frame_conteudo_nota">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_replay_recording"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:id="@+id/frame_button_replay"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            app:srcCompat="@drawable/outline_create_black_24dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="340dp"
+            app:layout_constraintBottom_toTopOf="@+id/frame_conteudo_nota"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_replay_recording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                app:srcCompat="@drawable/outline_create_black_24dp" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/button_save_voice_note"
+            android:layout_width="240dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/guardar"
+            android:textSize="20sp"
+            app:backgroundTint="@color/md_blue_100"
+            app:cornerRadius="8dp" />
     </FrameLayout>
-
-    </FrameLayout>
-
-    <Button
-        android:id="@+id/button_save_voice_note"
-        android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="120dp"
-        android:text="@string/guardar"
-        android:textSize="20sp"
-        app:backgroundTint="@color/md_blue_100"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.612"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
