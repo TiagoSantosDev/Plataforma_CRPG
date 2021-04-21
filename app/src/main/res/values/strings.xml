@@ -100,6 +100,8 @@
     <string name="nenhuma_refei_o_selecionada">NENHUMA REFEIÇÃO SELECIONADA!</string>
     <string name="hora_minutos_invalido">Valor de Hora ou minutos inválido!</string>
     <string name="campos_obrigatorios_falta">Campos obrigatórios em falta.</string>
+    <string name="about">ABOUT</string>
+    <string name="app_uses_libraries">This app uses the following libraries:</string>
 
     <string-array name="line_type">
         <item>Normal</item>
