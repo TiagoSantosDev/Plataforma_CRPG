@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.vipulasri.ticketview", appContext.getPackageName());
+        assertEquals("com.plataforma.crpg", appContext.getPackageName());
     }
 }

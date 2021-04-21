@@ -38,7 +38,6 @@ class NewTextNoteFragment : Fragment() {
     }
 
     val RESULT_GALLERY = 0
-    //var IMAGE_PICKED = FALSE
     var imageUri = ""
     val listen : MutableLiveData<Boolean> =  MutableLiveData<Boolean>()
     private lateinit var notesViewModel: NotesViewModel
