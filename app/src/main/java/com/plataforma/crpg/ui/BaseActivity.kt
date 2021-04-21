@@ -12,6 +12,7 @@ open class BaseActivity : AppCompatActivity() {
     var toolbar: Toolbar? = null
 
     // If back button is displayed in action bar, return false
+    /*
     protected var isDisplayHomeAsUpEnabled: Boolean
         get() = false
         set(value) {
@@ -33,7 +34,7 @@ open class BaseActivity : AppCompatActivity() {
             }
         }*/
     }
-
+/*
     protected fun injectViews() {
         //toolbar = findViewById(R.id.toolbar)
         //setupToolbar()
@@ -42,7 +43,7 @@ open class BaseActivity : AppCompatActivity() {
     fun setContentViewWithoutInject(layoutResId: Int) {
         super.setContentView(layoutResId)
     }
-    /*
+
     protected fun setupToolbar() {
         whenNotNull(toolbar) {
             setSupportActionBar(it)
@@ -87,6 +88,8 @@ open class BaseActivity : AppCompatActivity() {
             finish()
         }
     }
+
+     */
 
      */
 }

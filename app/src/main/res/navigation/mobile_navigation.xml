@@ -40,7 +40,7 @@
         android:id="@+id/navigation_public_transports"
         android:name="com.plataforma.crpg.ui.transports.PublicTransportsFragment"
         android:label="TRANSPORTES PUBLICOS"
-        tools:layout="@layout/fragment_public_transport" >
+        tools:layout="@layout/fragment_public_transport">
         <action
             android:id="@+id/action_navigation_public_transports_to_navigation_transports"
             app:destination="@id/navigation_transports"

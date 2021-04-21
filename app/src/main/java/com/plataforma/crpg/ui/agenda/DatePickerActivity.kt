@@ -12,6 +12,7 @@ import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.BaseActivity
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_date_picker.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import java.util.*
@@ -28,6 +29,11 @@ class DatePickerActivity : BaseActivity() {
     init {
         updateConfig(this)
     }
+    /*
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+    }*/
 
     fun updateConfig(wrapper: ContextThemeWrapper) {
         dLocale = Locale("pt")
@@ -39,7 +45,8 @@ class DatePickerActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentViewWithoutInject(R.layout.activity_date_picker)
+        //setContentViewWithoutInject(R.layout.activity_date_picker)
+        setContentView(R.layout.activity_date_picker)
 
         var change = ""
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
