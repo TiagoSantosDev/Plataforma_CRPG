@@ -70,7 +70,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
         }
 
-
         if (timeLineModel.date.isNotEmpty()) {
             holder.date.setVisible()
             // holder.date.text = timeLineModel.date.formatDateTime("yyyy-MM-dd HH:mm", "hh:mm a, dd-MMM-yyyy")
@@ -100,9 +99,18 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         }
 
         when(timeLineModel.type){
-            EventType.ACTIVITY -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.crpg_background)
-            EventType.MEAL -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.background_dieta)
-            EventType.TRANSPORTS -> holder.itemView.card_background_image.setBackgroundResource(R.drawable.stcp_background)
+            EventType.ACTIVITY -> {
+                holder.itemView.card_background_image.setBackgroundResource(R.drawable.crpg_background)
+                holder.itemView.card_center_icon.setBackgroundResource(R.drawable.maos)
+            }
+            EventType.MEAL -> {
+                holder.itemView.card_background_image.setBackgroundResource(R.drawable.background_dieta)
+                holder.itemView.card_center_icon.setBackgroundResource(R.drawable.meal_icon)
+            }
+            EventType.TRANSPORTS -> {
+                holder.itemView.card_background_image.setBackgroundResource(R.drawable.stcp_background)
+                holder.itemView.card_center_icon.setBackgroundResource(R.drawable.bus_icon)
+            }
         }
 
 

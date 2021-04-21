@@ -102,6 +102,14 @@
     <string name="campos_obrigatorios_falta">Campos obrigatórios em falta.</string>
     <string name="about">ABOUT</string>
     <string name="app_uses_libraries">This app uses the following libraries:</string>
+    <string name="meditacao">MEDITAÇÃO</string>
+    <string name="como_gostaria_de_se_sentir">Como gostaria de se sentir?</string>
+    <string name="querido">QUERIDO</string>
+    <string name="mente_s">MENTE SÃ</string>
+    <string name="confiante">CONFIANTE</string>
+    <string name="com_sono">COM SONO</string>
+    <string name="feliz">FELIZ</string>
+    <string name="relaxado">RELAXADO</string>
 
     <string-array name="line_type">
         <item>Normal</item>

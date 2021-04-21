@@ -2243,6 +2243,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable bus_icon
+drawable calendar_icon
 drawable calendar_item_background
 drawable classy_man
 drawable clock
@@ -2281,6 +2283,7 @@ drawable foto
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable green_dot
+drawable group_70_1x
 drawable ic_arrow_down
 drawable ic_arrow_down_24dp
 drawable ic_arrow_left_24dp
@@ -2312,6 +2315,7 @@ drawable linha45_joaodedeus_miramar
 drawable linha45_miramar_joaodedeus
 drawable maos
 drawable marker
+drawable mask_group_4_1x
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -2319,8 +2323,11 @@ drawable material_ic_keyboard_arrow_left_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable meal_icon
 drawable medicacao
+drawable meditation_icon
 drawable menu
+drawable month_view_icon_1x
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2331,6 +2338,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable notes
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -2349,11 +2357,13 @@ drawable outline_replay_black_36
 drawable outline_stop_black_24dp
 drawable path_130_1x
 drawable path_143_1x
+drawable postit_edge
 drawable preference_list_divider_material
 drawable red_dot
 drawable selected_calendar_item_background
 drawable selection_band_overlay
 drawable som
+drawable sound_only_unchecked
 drawable stcp_background
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -2378,6 +2388,8 @@ drawable ucrop_vector_loader
 drawable ucrop_vector_loader_animated
 drawable ucrop_wrapper_controls_shape
 drawable vibrar
+drawable vibrate_only_checked
+drawable view_menu_1x
 drawable yellow_dot
 font sourcesanspro_bold
 font sourcesanspro_bolditalic
@@ -2521,6 +2533,7 @@ id button_new_voice_note_image
 id button_ok
 id button_personalizado
 id button_replay_recording
+id button_return_meditation
 id button_return_transports
 id button_save_text_note
 id button_save_voice_note
@@ -2536,6 +2549,7 @@ id cancel_action
 id cancel_button
 id card
 id card_background_image
+id card_center_icon
 id card_transports
 id card_transports_CRPG_to_location
 id card_transports_to
@@ -2803,6 +2817,8 @@ id navigation_custom_transports
 id navigation_escolha_data
 id navigation_header_container
 id navigation_meals
+id navigation_meditation
+id navigation_meditation_media_player
 id navigation_new_text_note
 id navigation_new_voice_note
 id navigation_notes
@@ -3201,6 +3217,8 @@ layout fragment_about
 layout fragment_agenda
 layout fragment_custom_transport
 layout fragment_date_picker
+layout fragment_meditation
+layout fragment_meditation_media_player
 layout fragment_public_transport
 layout fragment_public_transports_old
 layout item_bottom_sheet_line
@@ -3479,6 +3497,7 @@ string material_timepicker_hour
 string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
+string meditacao
 string message_camera_permission_denied
 string message_gallery_permission_denied
 string motorista

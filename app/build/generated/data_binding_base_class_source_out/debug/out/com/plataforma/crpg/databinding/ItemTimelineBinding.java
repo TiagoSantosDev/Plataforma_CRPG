@@ -29,7 +29,7 @@ public final class ItemTimelineBinding implements ViewBinding {
   public final ImageView cardBackgroundImage;
 
   @NonNull
-  public final ImageView imageView1;
+  public final ImageView cardCenterIcon;
 
   @NonNull
   public final AppCompatTextView textTimelineDate;
@@ -50,14 +50,14 @@ public final class ItemTimelineBinding implements ViewBinding {
   public final TimelineView timeline;
 
   private ItemTimelineBinding(@NonNull LinearLayout rootView, @NonNull MaterialCardView card,
-      @NonNull ImageView cardBackgroundImage, @NonNull ImageView imageView1,
+      @NonNull ImageView cardBackgroundImage, @NonNull ImageView cardCenterIcon,
       @NonNull AppCompatTextView textTimelineDate, @NonNull TextView textTimelineEndTime,
       @NonNull AppCompatTextView textTimelineInfo, @NonNull TextView textTimelineStartTime,
       @NonNull AppCompatTextView textTimelineTitle, @NonNull TimelineView timeline) {
     this.rootView = rootView;
     this.card = card;
     this.cardBackgroundImage = cardBackgroundImage;
-    this.imageView1 = imageView1;
+    this.cardCenterIcon = cardCenterIcon;
     this.textTimelineDate = textTimelineDate;
     this.textTimelineEndTime = textTimelineEndTime;
     this.textTimelineInfo = textTimelineInfo;
@@ -103,9 +103,9 @@ public final class ItemTimelineBinding implements ViewBinding {
         missingId = "cardBackgroundImage";
         break missingId;
       }
-      ImageView imageView1 = rootView.findViewById(R.id.imageView1);
-      if (imageView1 == null) {
-        missingId = "imageView1";
+      ImageView cardCenterIcon = rootView.findViewById(R.id.card_center_icon);
+      if (cardCenterIcon == null) {
+        missingId = "cardCenterIcon";
         break missingId;
       }
       AppCompatTextView textTimelineDate = rootView.findViewById(R.id.text_timeline_date);
@@ -138,9 +138,9 @@ public final class ItemTimelineBinding implements ViewBinding {
         missingId = "timeline";
         break missingId;
       }
-      return new ItemTimelineBinding((LinearLayout) rootView, card, cardBackgroundImage, imageView1,
-          textTimelineDate, textTimelineEndTime, textTimelineInfo, textTimelineStartTime,
-          textTimelineTitle, timeline);
+      return new ItemTimelineBinding((LinearLayout) rootView, card, cardBackgroundImage,
+          cardCenterIcon, textTimelineDate, textTimelineEndTime, textTimelineInfo,
+          textTimelineStartTime, textTimelineTitle, timeline);
     }
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }

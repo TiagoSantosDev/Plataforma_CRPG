@@ -12,18 +12,13 @@
         android:title="@string/title_lembretes" />
 
     <item
-        android:id="@+id/navigation_meals"
-        android:icon="@drawable/medicacao"
-        android:title="@string/title_meditacao" />
-
-    <item
-        android:id="@+id/navigation_transports"
-        android:icon="@drawable/medicacao"
-        android:title="@string/transportes" />
-
-    <item
         android:id="@+id/navigation_notes"
-        android:icon="@drawable/medicacao"
+        android:icon="@drawable/notes"
         android:title="@string/notas" />
+
+    <item
+        android:id="@+id/navigation_meditation"
+        android:icon="@drawable/meditation_icon"
+        android:title="@string/meditacao" />
 
 </menu>
