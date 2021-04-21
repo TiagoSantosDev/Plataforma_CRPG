@@ -19,6 +19,7 @@ import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
+import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
@@ -38,7 +39,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val binding = NotesFragmentBinding.inflate(layoutInflater)
+        val binding = NewVoiceNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
         //showBackButton()
@@ -67,7 +68,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val recordConfig = AudioRecordConfig.defaultConfig()
         val audioSource = NoiseAudioSource(recordConfig)
         audioRecorder.create() {
-            this.destFile = this.destFile
+            this.destFile = destFile
             this.recordConfig = recordConfig
             this.audioSource = audioSource
         }
