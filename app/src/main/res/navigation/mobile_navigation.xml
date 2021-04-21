@@ -72,4 +72,16 @@
         android:label="NOVA NOTA DE VOZ"
         tools:layout="@layout/new_voice_note_fragment" />
 
+    <fragment
+        android:id="@+id/navigation_meditation"
+        android:name="com.plataforma.crpg.ui.meditation.MeditationFragment"
+        android:label="MEDITAÇÃO"
+        tools:layout="@layout/fragment_meditation" />
+
+    <fragment
+        android:id="@+id/navigation_meditation_media_player"
+        android:name="com.plataforma.crpg.ui.meditation.MeditationMediaPlayerFragment"
+        android:label="MEDITAÇÃO"
+        tools:layout="@layout/fragment_meditation_media_player" />
+
 </navigation>
