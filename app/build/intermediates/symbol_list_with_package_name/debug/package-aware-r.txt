@@ -2400,6 +2400,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id about_title
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2649,6 +2650,10 @@ id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
 id frame_de_para_2
+id frame_lib_1
+id frame_lib_2
+id frame_lib_3
+id frame_lib_4
 id frame_meals
 id frame_motorista_1
 id frame_motorista_2
@@ -2977,6 +2982,10 @@ id text_driver_name_location_to_CRPG
 id text_end_line_color
 id text_input_end_icon
 id text_input_start_icon
+id text_lib_1
+id text_lib_2
+id text_lib_3
+id text_lib_4
 id text_line_dash_gap
 id text_line_dash_width
 id text_line_heading
@@ -3035,6 +3044,7 @@ id titleDividerNoCustom
 id title_nova_nota_texto
 id title_selecionar_data
 id title_template
+id title_used_libs
 id titulo_edit_text
 id titulo_nova_nota
 id toggle
@@ -3182,6 +3192,7 @@ layout expandable_layout_child
 layout expandable_layout_frame
 layout first_special_calendar_item
 layout first_special_selected_calendar_item
+layout fragment_about
 layout fragment_agenda
 layout fragment_custom_transport
 layout fragment_date_picker
@@ -3351,6 +3362,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string about
 string action_cancel
 string action_settings
 string activity_example_label
@@ -3358,6 +3370,7 @@ string adicionar_lembrete
 string amanha
 string apanhar_bus
 string app_name
+string app_uses_libraries
 string appbar_scrolling_view_behavior
 string apply
 string aviso_campos_obrigatorios
