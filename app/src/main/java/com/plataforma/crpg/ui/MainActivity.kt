@@ -42,7 +42,7 @@ class MainActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home ->{ onBackPressedDispatcher.onBackPressed()
-                println("e que")
+                println(">Back button pressed")
                 onSupportNavigateUp()}// click on 'up' button in the action bar, handle it here
             else -> super.onOptionsItemSelected(item)
         }
