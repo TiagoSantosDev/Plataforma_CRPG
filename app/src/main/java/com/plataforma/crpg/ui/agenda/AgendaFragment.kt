@@ -20,6 +20,7 @@ import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
+import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_agenda.*
 import java.util.ArrayList
 
@@ -28,11 +29,11 @@ class AgendaFragment : Fragment() {
     private var mDataList = ArrayList<Event>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
-    //val ctx = context
 
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "AGENDA"
+        (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
     override fun onCreateView(
@@ -40,8 +41,6 @@ class AgendaFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
-
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
     }

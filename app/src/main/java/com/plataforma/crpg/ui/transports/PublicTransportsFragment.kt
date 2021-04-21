@@ -34,26 +34,19 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 // Handle the back button event
-                println(">botao esta a ser premido")
+                val fragment: Fragment = TransportsFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
     }
-/*
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
 
-        //enable menu
-        setHasOptionsMenu(true)
-
-        requireActivity()
-                .onBackPressedDispatcher
-                .addCallback(this) {
-                    println("ola")
-                }
-    }
-*/
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -80,7 +73,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
         /*
@@ -124,7 +116,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
     }
 
     companion object {
@@ -167,7 +158,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
-
 }
 
 
@@ -206,3 +196,18 @@ public fun boolean onOptionsItemSelected() {
 //        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
 //
 //        // The callback can be enabled or disabled here or in handleOnBackPressed()
+//
+//        /*
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//
+//        //enable menu
+//        setHasOptionsMenu(true)
+//
+//        requireActivity()
+//                .onBackPressedDispatcher
+//                .addCallback(this) {
+//                    println("ola")
+//                }
+//    }
+//*/

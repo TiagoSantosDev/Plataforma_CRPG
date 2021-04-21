@@ -41,6 +41,7 @@ class DatePickerFragment : Fragment() {
         //updateConfig(requireActivity().baseContext)
     }
 
+
      fun updateConfig(wrapper: ContextThemeWrapper) {
         dLocale = Locale("pt")
         Locale.setDefault(dLocale)
@@ -61,8 +62,8 @@ class DatePickerFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
-        //(activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        (activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
     }
 
@@ -72,8 +73,6 @@ class DatePickerFragment : Fragment() {
             savedInstanceState: Bundle?,
     ): View? {
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
-
-
 
         //dontShowBackButton()
         //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"

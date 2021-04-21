@@ -2,6 +2,7 @@ package com.plataforma.crpg.ui
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -11,13 +12,14 @@ import com.plataforma.crpg.R
 import java.util.*
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
 
     lateinit var dLocale: Locale
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentViewWithoutInject(R.layout.activity_main)
+       //setContentViewWithoutInject(R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -36,22 +38,19 @@ class MainActivity : BaseActivity() {
     override fun onSupportNavigateUp(): Boolean {
         println(">OnSupportNavigate called")
         val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp() || super.onSupportNavigateUp()
+        return navController.navigateUp() /*|| super.onSupportNavigateUp()*/
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home ->{ onBackPressedDispatcher.onBackPressed()
                 println(">Back button pressed")
-                onSupportNavigateUp()}// click on 'up' button in the action bar, handle it here
+                onSupportNavigateUp()} // click on 'up' button in the action bar, handle it here
             else -> super.onOptionsItemSelected(item)
         }
     }
 
 }
-
-
-
 
 
 /*//supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
+import com.plataforma.crpg.ui.agenda.AgendaFragment
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 
@@ -34,7 +36,21 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     ): View? {
         val binding = TransportsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-        //showBackButton()
+
+        showBackButton()
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val fragment: Fragment = AgendaFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
 
         val spinner: Spinner = view.findViewById(R.id.locations_spinner)
         println("Context:" + context.toString())

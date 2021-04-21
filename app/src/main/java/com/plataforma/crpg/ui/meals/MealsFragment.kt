@@ -7,13 +7,17 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.card.MaterialCardView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.MealsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
+import com.plataforma.crpg.ui.agenda.AgendaFragment
+import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
 
@@ -35,7 +39,20 @@ class MealsFragment : Fragment() {
     ): View? {
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-        //showBackButton()
+        showBackButton()
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val fragment: Fragment = AgendaFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
 
 
         //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne
@@ -119,7 +136,7 @@ class MealsFragment : Fragment() {
 
     }
 
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
