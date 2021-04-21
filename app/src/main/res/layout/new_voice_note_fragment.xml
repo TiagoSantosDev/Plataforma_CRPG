@@ -123,7 +123,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="40dp"
                 app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
-                app:srcCompat="@drawable/outline_create_black_24dp" />
+                app:srcCompat="@drawable/outline_stop_black_24dp" />
         </FrameLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -152,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
-                app:srcCompat="@drawable/outline_create_black_24dp" />
+                app:srcCompat="@drawable/outline_replay_black_36" />
 
         </FrameLayout>
 
