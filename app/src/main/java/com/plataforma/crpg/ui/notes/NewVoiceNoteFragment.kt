@@ -153,11 +153,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     @SuppressLint("SetTextI18n")
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-
         val selItem: String = p0?.getItemAtPosition(p2).toString()
         val textFromLocation = view?.rootView?.findViewById<TextView>(R.id.location_to_CRPG_title)
-
-
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

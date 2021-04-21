@@ -2345,6 +2345,8 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable outline_create_black_24dp
 drawable outline_record_voice_over_black_24dp
+drawable outline_replay_black_36
+drawable outline_stop_black_24dp
 drawable path_130_1x
 drawable path_143_1x
 drawable preference_list_divider_material
