@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -32,6 +33,11 @@ class MealsFragment : Fragment() {
     }
 
     private lateinit var mealsViewModel: MealsViewModel
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "REFEIÇÕES"
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
