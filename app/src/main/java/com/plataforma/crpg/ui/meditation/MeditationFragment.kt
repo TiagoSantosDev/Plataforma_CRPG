@@ -22,8 +22,9 @@ class MeditationFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val binding = MeditationFragment.inflate(layoutInflater)
-        return binding.root
+        //val binding = MeditationFragment.inflate(layoutInflater)
+        //return binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

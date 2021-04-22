@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_meditation.*
+import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 
 
@@ -25,8 +26,9 @@ class MeditationMediaPlayerFragment : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val binding = MeditationMediaPlayerFragment.inflate(layoutInflater)
-        return binding.root
+        //val binding = MeditationMediaPlayerFragment.inflate(layoutInflater)
+        //return binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,7 +49,7 @@ class MeditationMediaPlayerFragment : Fragment(){
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 // Handle the back button event
-                val fragment: Fragment = TransportsFragment()
+                val fragment: Fragment = MeditationFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
