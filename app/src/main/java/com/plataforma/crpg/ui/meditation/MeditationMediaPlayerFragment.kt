@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
-import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 

@@ -15,11 +15,11 @@
 
 
   <ImageView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_width="28dp"
+      android:layout_height="30dp"
       android:layout_gravity="center_vertical"
       android:scaleType="fitXY"
-      android:src="@drawable/medicacao" />
+      android:src="@drawable/view_menu_1x" />
 
   <TextView
       android:layout_width="wrap_content"

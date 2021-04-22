@@ -2527,6 +2527,12 @@ id button_consult_public_transport
 id button_escolher
 id button_get_image_from_gallery
 id button_hoje
+id button_mood_confident
+id button_mood_happy
+id button_mood_loved
+id button_mood_mindful
+id button_mood_relaxed
+id button_mood_sleepy
 id button_new_text_note
 id button_new_voice_note
 id button_new_voice_note_image
@@ -2673,6 +2679,9 @@ id frame_lib_2
 id frame_lib_3
 id frame_lib_4
 id frame_meals
+id frame_meditation_1
+id frame_meditation_2
+id frame_meditation_3
 id frame_motorista_1
 id frame_motorista_2
 id frame_note_image
@@ -2785,6 +2794,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id mood_image_frame
 id motion_base
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3028,6 +3038,7 @@ id text_opcao_dieta
 id text_opcao_peixe
 id text_opcao_vegetariano
 id text_orientation_heading
+id text_selected_mood
 id text_start_line_color
 id text_time_CRPG_to_location
 id text_time_location_to_CRPG
@@ -3408,6 +3419,7 @@ string chip_text
 string clear_text_end_icon_content_description
 string clique_icone_lapis
 string color
+string com_sono
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -3426,6 +3438,8 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string como_gostaria_de_se_sentir
+string confiante
 string contacto_a
 string contacto_b
 string conteudo
@@ -3455,6 +3469,7 @@ string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string feliz
 string firebase_database_url
 string first_fragment_label
 string gcm_defaultSenderId
@@ -3498,6 +3513,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string meditacao
+string mente_s
 string message_camera_permission_denied
 string message_gallery_permission_denied
 string motorista
@@ -3563,7 +3579,9 @@ string permission_gallery_denied
 string personalizado
 string previous
 string project_id
+string querido
 string regressar
+string relaxado
 string right_padding
 string search_menu_title
 string second_fragment_label
