@@ -20,7 +20,7 @@
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
-        android:src="@drawable/som" />
+        android:src="@drawable/sound_only_unchecked" />
 
     <ImageButton
         android:id="@+id/ImageButtonVibrar"
