@@ -27,12 +27,10 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
-            android:text="@string/relaxado"
             android:textAlignment="center"
             android:background="@color/md_blue_100"
             android:textColor="@color/white"
             android:textSize="30sp" />
-
         <ImageView
             android:id="@+id/mood_color"
             android:layout_width="match_parent"
@@ -59,7 +57,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             app:show_buffering="when_playing"
-            app:show_shuffle_button="true" />
+            app:show_shuffle_button="true"
+            app:show_timeout="0"
+            app:hide_on_touch="false"/>
     </FrameLayout>
 
     <Button
@@ -67,11 +67,11 @@
         android:layout_width="327dp"
         android:layout_height="63dp"
         android:layout_gravity="center|bottom"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="@android:color/transparent"
         android:text="@string/regressar"
         android:textColor="@color/md_blue_100"
         android:textSize="25sp"
-        android:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
