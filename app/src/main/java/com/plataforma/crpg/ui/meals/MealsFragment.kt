@@ -18,7 +18,6 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.MealsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
-import com.plataforma.crpg.ui.transports.TransportsFragment
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
 

@@ -29,17 +29,23 @@
         android:layout_width="381dp"
         android:layout_height="545dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="114dp">
+        app:layout_constraintTop_toBottomOf="@+id/ver_horarios">
 
         <FrameLayout
             android:id="@+id/frame_meditation_1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/frame_meditation_2">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_mood_relaxed"
@@ -77,8 +83,12 @@
             android:id="@+id/frame_meditation_2"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="200dp"
-            app:layout_constraintTop_toBottomOf="@id/frame_meditation_1">
+            android:layout_marginTop="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_meditation_1">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_mood_sleepy"
@@ -117,8 +127,12 @@
             android:id="@+id/frame_meditation_3"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="370dp"
-            app:layout_constraintTop_toBottomOf="@id/frame_meditation_1">
+            android:layout_marginTop="280dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_meditation_2">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_mood_loved"
