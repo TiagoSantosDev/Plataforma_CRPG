@@ -83,7 +83,7 @@
             android:id="@+id/frame_meditation_2"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="145dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
