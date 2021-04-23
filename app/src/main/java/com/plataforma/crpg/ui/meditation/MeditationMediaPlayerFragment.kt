@@ -7,18 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.SimpleExoPlayer
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationMediaPlayerBinding
 import com.plataforma.crpg.ui.MainActivity
-import com.plataforma.crpg.ui.notes.NotesViewModel
-import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
-import kotlinx.android.synthetic.main.notes_fragment.*
 
 
 class MeditationMediaPlayerFragment : Fragment(){
@@ -46,15 +44,35 @@ class MeditationMediaPlayerFragment : Fragment(){
         text_selected_mood.text = medViewModel.selectedMood
 
         when(medViewModel.selectedMood){
-            "RELAXED" -> { mood_color.setColorFilter(ContextCompat.getColor((activity as AppCompatActivity).applicationContext, R.color.material_blue_200))}
-            "HAPPY" ->  {}
-            "SLEEPY" ->{}
-            "CONFIDENT" ->{}
-            "LOVED" ->{}
-            "MINDFUL" ->{}
+            "RELAXADO" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#00BBF2"))
+            }
+            "FELIZ" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#87B700"))
+            }
+            "SONOLENTO" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#FBC02D"))
+            }
+            "CONFIANTE" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#57A8D8"))
+            }
+            "QUERIDO" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#AA00FF"))
+            }
+            "MENTE SÃ" -> {
+                mood_color.setBackgroundColor(Color.parseColor("#57A8D8"))
+            }
         }
 
-        
+        val filePath = "/mnt/sdcard/Alarms/assobia_para_o_lado.mp3"
+
+        val player = SimpleExoPlayer.Builder(requireContext()).build()
+        player_view.player = player;
+        val mediaItem: MediaItem = MediaItem.fromUri(filePath)
+        player.setMediaItem(mediaItem)
+        player.prepare()
+        player.play()
+
 
         button_return_meditation.setOnClickListener {
             val fragment: Fragment = MeditationFragment()
@@ -84,8 +102,6 @@ class MeditationMediaPlayerFragment : Fragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
     }
 
     fun showBackButton() {

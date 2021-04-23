@@ -15,11 +15,5 @@ class MeditationViewModel(application: Application) : AndroidViewModel(applicati
     fun getValue(){
         println(">Selected mood no VM:$selectedMood")
     }
-    
-    
-
-
-
-
 
 }

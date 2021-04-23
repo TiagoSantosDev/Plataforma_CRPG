@@ -37,34 +37,35 @@ class MeditationFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = "MEDITAÇÃO"
         val medViewModel = ViewModelProvider(activity as AppCompatActivity).get(MeditationViewModel::class.java)
 
+
         button_mood_relaxed.setOnClickListener{
-            medViewModel.selectedMood = "RELAXED"
+            medViewModel.selectedMood = "RELAXADO"
             medViewModel.getValue()
             goToMeditationMediaPlayer()
         }
 
         button_mood_happy.setOnClickListener{
-            medViewModel.selectedMood = "HAPPY"
+            medViewModel.selectedMood = "FELIZ"
             goToMeditationMediaPlayer()
         }
 
         button_mood_sleepy.setOnClickListener{
-            medViewModel.selectedMood = "SLEEPY"
+            medViewModel.selectedMood = "SONOLENTO"
             goToMeditationMediaPlayer()
         }
 
         button_mood_confident.setOnClickListener{
-            medViewModel.selectedMood = "CONFIDENT"
+            medViewModel.selectedMood = "CONFIANTE"
             goToMeditationMediaPlayer()
         }
 
         button_mood_loved.setOnClickListener{
-            medViewModel.selectedMood = "LOVED"
+            medViewModel.selectedMood = "QUERIDO"
             goToMeditationMediaPlayer()
         }
 
         button_mood_mindful.setOnClickListener{
-            medViewModel.selectedMood = "MINDFUL"
+            medViewModel.selectedMood = "MENTE SÃ"
             goToMeditationMediaPlayer()
         }
 
@@ -84,8 +85,6 @@ class MeditationFragment : Fragment() {
         fragmentTransaction.commit()
     }
 }
-
-
 
 
 /*

@@ -13,6 +13,7 @@ MERGED from [com.michalsvec:single-row-calednar:1.0.0] C:\Users\ltiag\.gradle\ca
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9eb22925206477e89a86e8560fda225\navigation-ui-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a43d75258139134ccc2c087f7a1820a8\navigation-ui-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c92e485468dee8a4d34f9aa52c156db8\jetified-exoplayer-ui-2.13.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b9eaae3b447b3b208fac32aec04596cb\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview-selection:1.1.0-alpha06] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\84437b727f4d1a5c8baf0cbfcc9403f2\recyclerview-selection-1.1.0-alpha06\AndroidManifest.xml:17:1-24:12
 MERGED from [com.thebluealliance:spectrum:0.7.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\cd7f6d9af44c948338f20ffca3a98032\jetified-spectrum-0.7.1\AndroidManifest.xml:2:1-12:12
@@ -37,13 +38,13 @@ MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\ltiag\.gradle\caches\t
 MERGED from [androidx.navigation:navigation-fragment:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\75634f29298a9b691eeb96bd0e59a124\navigation-fragment-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.WindSekirun.NaraeAudioRecorder:core:1.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\5026e62070a0c4f09f6936c49b08cad7\jetified-core-1.3.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.dmitrymalkovich.android:material-design-dimens:1.4] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6c0b344ff0e482466382eaf302db2371\jetified-material-design-dimens-1.4\AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:17:1-26:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8f9fd02239cb5b75523fbe0734705697\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:15:1-49:12
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f775f07146fa665469cd827705c2b284\jetified-firebase-components-16.1.0\AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.media:media:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\26fa9e9b77dfffda8b3ade32a197d62d\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7824c0c2e423df1a33ad63e170959d8c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\84a60c205cfeca7f1946b62f3f43be61\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\654683e330a02fb6c9f07710faad129e\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -69,7 +70,10 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\ltiag\
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8627fc1640178da492af8db4106fea64\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\213a90db2c217b3e7b2f9c6b1c9401b8\transition-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.exifinterface:exifinterface:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8506f16c5ce4f6a1e8253b4bfa2056fe\exifinterface-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\07d0f14ab80b38946f2ed9ee306d636e\jetified-exoplayer-extractor-2.13.3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2f3a7f9e64c159c74105c99d8f9c1460\jetified-exoplayer-common-2.13.3\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\589112f53284d40e038e40f1da122fff\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\28d4dbf6b615aaf8839c3effc0ce04cd\media-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9e70ff09da3912c14d3b2032d726717\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -245,6 +249,8 @@ MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ltiag\.gradle\cac
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a43d75258139134ccc2c087f7a1820a8\navigation-ui-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c92e485468dee8a4d34f9aa52c156db8\jetified-exoplayer-ui-2.13.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\c92e485468dee8a4d34f9aa52c156db8\jetified-exoplayer-ui-2.13.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b9eaae3b447b3b208fac32aec04596cb\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b9eaae3b447b3b208fac32aec04596cb\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview-selection:1.1.0-alpha06] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\84437b727f4d1a5c8baf0cbfcc9403f2\recyclerview-selection-1.1.0-alpha06\AndroidManifest.xml:20:5-22:41
@@ -293,6 +299,8 @@ MERGED from [com.github.WindSekirun.NaraeAudioRecorder:core:1.3.0] C:\Users\ltia
 MERGED from [com.github.WindSekirun.NaraeAudioRecorder:core:1.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\5026e62070a0c4f09f6936c49b08cad7\jetified-core-1.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.dmitrymalkovich.android:material-design-dimens:1.4] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6c0b344ff0e482466382eaf302db2371\jetified-material-design-dimens-1.4\AndroidManifest.xml:8:5-10:41
 MERGED from [com.dmitrymalkovich.android:material-design-dimens:1.4] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6c0b344ff0e482466382eaf302db2371\jetified-material-design-dimens-1.4\AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:5:5-44
 MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -305,8 +313,6 @@ MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f775f07146fa665469cd827705c2b284\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f775f07146fa665469cd827705c2b284\jetified-firebase-components-16.1.0\AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.media:media:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\26fa9e9b77dfffda8b3ade32a197d62d\media-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\26fa9e9b77dfffda8b3ade32a197d62d\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7824c0c2e423df1a33ad63e170959d8c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7824c0c2e423df1a33ad63e170959d8c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\84a60c205cfeca7f1946b62f3f43be61\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
@@ -357,8 +363,14 @@ MERGED from [androidx.transition:transition:1.3.0] C:\Users\ltiag\.gradle\caches
 MERGED from [androidx.transition:transition:1.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\213a90db2c217b3e7b2f9c6b1c9401b8\transition-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8506f16c5ce4f6a1e8253b4bfa2056fe\exifinterface-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8506f16c5ce4f6a1e8253b4bfa2056fe\exifinterface-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\07d0f14ab80b38946f2ed9ee306d636e\jetified-exoplayer-extractor-2.13.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\07d0f14ab80b38946f2ed9ee306d636e\jetified-exoplayer-extractor-2.13.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2f3a7f9e64c159c74105c99d8f9c1460\jetified-exoplayer-common-2.13.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2f3a7f9e64c159c74105c99d8f9c1460\jetified-exoplayer-common-2.13.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\589112f53284d40e038e40f1da122fff\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\589112f53284d40e038e40f1da122fff\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\28d4dbf6b615aaf8839c3effc0ce04cd\media-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\28d4dbf6b615aaf8839c3effc0ce04cd\media-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9e70ff09da3912c14d3b2032d726717\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9e70ff09da3912c14d3b2032d726717\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
@@ -466,9 +478,13 @@ ADDED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.grad
 	android:name
 		ADDED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:16:17-113
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+ADDED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2f3a7f9e64c159c74105c99d8f9c1460\jetified-exoplayer-common-2.13.3\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2f3a7f9e64c159c74105c99d8f9c1460\jetified-exoplayer-common-2.13.3\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:22-76
+		ADDED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:26:5-67
 	android:name
