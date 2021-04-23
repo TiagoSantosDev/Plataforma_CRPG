@@ -10,9 +10,13 @@ import java.util.ArrayList
 class MeditationViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context = getApplication<Application>().applicationContext
-    var mNoteList = ArrayList<Note>()
-
     var selectedMood = ""
+    
+    fun getValue(){
+        println(">Selected mood no VM:$selectedMood")
+    }
+    
+    
 
 
 
