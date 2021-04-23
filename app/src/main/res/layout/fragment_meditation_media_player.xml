@@ -34,10 +34,10 @@
             android:textSize="30sp" />
 
         <ImageView
+            android:id="@+id/mood_color"
             android:layout_width="match_parent"
             android:layout_height="212dp"
-            android:layout_marginTop="36dp"
-            android:src="#68AA6A"/>
+            android:layout_marginTop="36dp" />
 
     </FrameLayout>
 
@@ -53,13 +53,13 @@
         tools:layout_editor_absoluteY="342dp">
 
         <FrameLayout
-            android:id="@+id/frame_motorista_1"
+            android:id="@+id/frame_seek_bar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="60dp"/>
 
         <FrameLayout
-            android:id="@+id/frame_motorista_2"
+            android:id="@+id/frame_media_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"

@@ -1,11 +1,13 @@
 package com.plataforma.crpg.ui.meditation
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -29,7 +31,6 @@ class MeditationMediaPlayerFragment : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-
         val binding = FragmentMeditationMediaPlayerBinding.inflate(layoutInflater)
         return binding.root
         //return view
@@ -38,7 +39,23 @@ class MeditationMediaPlayerFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "REPRODUZIR ÁUDIO"
-        val medViewModel = ViewModelProvider(this).get(MeditationViewModel::class.java)
+        val medViewModel = ViewModelProvider(activity as AppCompatActivity).get(MeditationViewModel::class.java)
+
+        println(">Sel mood: " + medViewModel.selectedMood)
+        medViewModel.getValue()
+        text_selected_mood.text = medViewModel.selectedMood
+
+        when(medViewModel.selectedMood){
+            "RELAXED" -> { mood_color.setColorFilter(ContextCompat.getColor((activity as AppCompatActivity).applicationContext, R.color.material_blue_200))}
+            "HAPPY" ->  {}
+            "SLEEPY" ->{}
+            "CONFIDENT" ->{}
+            "LOVED" ->{}
+            "MINDFUL" ->{}
+        }
+
+        
+
         button_return_meditation.setOnClickListener {
             val fragment: Fragment = MeditationFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -78,3 +95,4 @@ class MeditationMediaPlayerFragment : Fragment(){
     }
 
 }
+//context?.resources?.getColor(R.color.material_blue_200)?.let { mood_color.setColorFilter(it) }

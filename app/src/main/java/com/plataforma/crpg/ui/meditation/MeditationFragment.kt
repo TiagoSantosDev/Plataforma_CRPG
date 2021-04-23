@@ -35,9 +35,11 @@ class MeditationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "MEDITAÇÃO"
-        val medViewModel = ViewModelProvider(this).get(MeditationViewModel::class.java)
+        val medViewModel = ViewModelProvider(activity as AppCompatActivity).get(MeditationViewModel::class.java)
+
         button_mood_relaxed.setOnClickListener{
             medViewModel.selectedMood = "RELAXED"
+            medViewModel.getValue()
             goToMeditationMediaPlayer()
         }
 
@@ -47,7 +49,7 @@ class MeditationFragment : Fragment() {
         }
 
         button_mood_sleepy.setOnClickListener{
-            medViewModel.selectedMood = "CONFIDENT"
+            medViewModel.selectedMood = "SLEEPY"
             goToMeditationMediaPlayer()
         }
 
@@ -57,12 +59,12 @@ class MeditationFragment : Fragment() {
         }
 
         button_mood_loved.setOnClickListener{
-            medViewModel.selectedMood = "CONFIDENT"
+            medViewModel.selectedMood = "LOVED"
             goToMeditationMediaPlayer()
         }
 
         button_mood_mindful.setOnClickListener{
-            medViewModel.selectedMood = "CONFIDENT"
+            medViewModel.selectedMood = "MINDFUL"
             goToMeditationMediaPlayer()
         }
 
@@ -72,7 +74,7 @@ class MeditationFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
     }
 
-    fun goToMeditationMediaPlayer(){
+    private fun goToMeditationMediaPlayer(){
         val fragment: Fragment = MeditationMediaPlayerFragment()
         val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -82,6 +84,10 @@ class MeditationFragment : Fragment() {
         fragmentTransaction.commit()
     }
 }
+
+
+
+
 /*
       button.setOnClickListener {
           val fragment: Fragment = MeditationMediaPlayerFragment()

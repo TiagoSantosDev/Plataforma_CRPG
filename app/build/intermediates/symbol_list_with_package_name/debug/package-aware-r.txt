@@ -2679,6 +2679,7 @@ id frame_lib_2
 id frame_lib_3
 id frame_lib_4
 id frame_meals
+id frame_media_buttons
 id frame_meditation_1
 id frame_meditation_2
 id frame_meditation_3
@@ -2690,6 +2691,7 @@ id frame_opcao_dieta
 id frame_opcao_peixe
 id frame_opcao_vegetariano
 id frame_parent
+id frame_seek_bar
 id frame_titulo
 id frame_titulo_nota
 id ghost_view
@@ -2794,6 +2796,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id mood_color
 id mood_image_frame
 id motion_base
 id mtrl_calendar_day_selector_frame
