@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationBinding
 import kotlinx.android.synthetic.main.fragment_meditation.*
@@ -26,20 +27,60 @@ class MeditationFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+
         val binding = FragmentMeditationBinding.inflate(layoutInflater)
         return binding.root
-        //return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "MEDITAÇÃO"
+        val medViewModel = ViewModelProvider(this).get(MeditationViewModel::class.java)
+        button_mood_relaxed.setOnClickListener{
+            medViewModel.selectedMood = "RELAXED"
+            goToMeditationMediaPlayer()
+        }
+
+        button_mood_happy.setOnClickListener{
+            medViewModel.selectedMood = "HAPPY"
+            goToMeditationMediaPlayer()
+        }
+
+        button_mood_sleepy.setOnClickListener{
+            medViewModel.selectedMood = "CONFIDENT"
+            goToMeditationMediaPlayer()
+        }
+
+        button_mood_confident.setOnClickListener{
+            medViewModel.selectedMood = "CONFIDENT"
+            goToMeditationMediaPlayer()
+        }
+
+        button_mood_loved.setOnClickListener{
+            medViewModel.selectedMood = "CONFIDENT"
+            goToMeditationMediaPlayer()
+        }
+
+        button_mood_mindful.setOnClickListener{
+            medViewModel.selectedMood = "CONFIDENT"
+            goToMeditationMediaPlayer()
+        }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
     }
 
+    fun goToMeditationMediaPlayer(){
+        val fragment: Fragment = MeditationMediaPlayerFragment()
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+        fragmentManager.popBackStack()
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
 }
 /*
       button.setOnClickListener {
@@ -82,3 +123,12 @@ class MeditationFragment : Fragment() {
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }*/
+
+/*
+        view.findViewById<Button>(R.id.button_mood_relaxed).setOnClickListener(mListener);
+        view.findViewById<Button>(R.id.button_mood_happy).setOnClickListener(mListener);
+        view.findViewById<Button>(R.id.button_mood_sleepy).setOnClickListener(mListener);
+        view.findViewById<Button>(R.id.button_mood_confident).setOnClickListener(mListener);
+        view.findViewById<Button>(R.id.button_mood_loved).setOnClickListener(mListener);
+        view.findViewById<Button>(R.id.button_mood_mindful).setOnClickListener(mListener);
+        */

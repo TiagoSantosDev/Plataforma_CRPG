@@ -9,9 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationMediaPlayerBinding
 import com.plataforma.crpg.ui.MainActivity
+import com.plataforma.crpg.ui.notes.NotesViewModel
 import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
 import kotlinx.android.synthetic.main.notes_fragment.*
@@ -27,6 +29,7 @@ class MeditationMediaPlayerFragment : Fragment(){
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+
         val binding = FragmentMeditationMediaPlayerBinding.inflate(layoutInflater)
         return binding.root
         //return view
@@ -35,7 +38,7 @@ class MeditationMediaPlayerFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "REPRODUZIR ÁUDIO"
-
+        val medViewModel = ViewModelProvider(this).get(MeditationViewModel::class.java)
         button_return_meditation.setOnClickListener {
             val fragment: Fragment = MeditationFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
