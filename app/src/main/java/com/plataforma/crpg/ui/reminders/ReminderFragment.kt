@@ -5,6 +5,8 @@ import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,7 @@ import androidx.appcompat.widget.AppCompatImageButton
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.core.utilities.Utilities
 import com.plataforma.crpg.R
 
 import com.plataforma.crpg.databinding.ReminderActivityBinding
@@ -37,6 +40,7 @@ class ReminderFragment : Fragment() {
     var startTimeString = ""
 
     private lateinit var newViewModel: ReminderViewModel
+    private lateinit var inputFilter: InputFilter
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreateView(
@@ -128,10 +132,11 @@ class ReminderFragment : Fragment() {
             expandableNotas.parentLayout.setOnClickListener { expandableNotas.toggleLayout() }
 
             //--------------------- CANCELAR ---------------------------------------
+            val avisoCampos = root.findViewById<TextView>(R.id.aviso_campos)
 
             root.findViewById<Button>(R.id.button_cancel).setOnClickListener {
 
-                root.findViewById<TextView>(R.id.aviso_campos).visibility = View.GONE
+                avisoCampos.visibility = View.GONE
 
                 lembrarButtonPressed = 0
 
@@ -156,7 +161,7 @@ class ReminderFragment : Fragment() {
 
                 var hoursInt = 24
                 var minsInt = 24
-                val avisoCampos = root.findViewById<TextView>(R.id.aviso_campos)
+
 
                 if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2 && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {
                     newViewModel.startTimeHours = expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString()
@@ -166,8 +171,8 @@ class ReminderFragment : Fragment() {
                     hoursInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                     minsInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                 } else {
-                    avisoCampos.text = "Valor das horas ou minutos em falta!"
-                    root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
+                    avisoCampos.text = getString(R.string.valor_horas_minutos_falta)
+                    avisoCampos.visibility = View.VISIBLE
                 }
 
                 newViewModel.newReminder.start_time = startTimeString
@@ -237,16 +242,18 @@ class ReminderFragment : Fragment() {
 
                 } else if (hoursInt > 23 || minsInt > 59) {
                     avisoCampos.text = getString(R.string.hora_minutos_invalido)
-                    root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
+                    avisoCampos.visibility = View.VISIBLE
                 } else {
                     avisoCampos.text = getString(R.string.campos_obrigatorios_falta)
-                    root.findViewById<TextView>(R.id.aviso_campos).visibility = View.VISIBLE
+                    avisoCampos.visibility = View.VISIBLE
                 }
             }
 
         }
 
         return view
+
+    }
 
     }
 
@@ -258,5 +265,34 @@ class ReminderFragment : Fragment() {
         // TODO: Use the ViewModel
 
     }
+
+    class InputFilterMinMax: InputFilter {
+        private var min:Int = 0
+        private var max:Int = 0
+        constructor(min:Int, max:Int) {
+            this.min = min
+            this.max = max
+        }
+        constructor(min:String, max:String) {
+            this.min = Integer.parseInt(min)
+            this.max = Integer.parseInt(max)
+        }
+        override fun filter(source:CharSequence, start:Int, end:Int, dest: Spanned, dstart:Int, dend:Int): CharSequence? {
+            try
+            {
+                val input = Integer.parseInt(dest.toString() + source.toString())
+                if (isInRange(min, max, input))
+                    return null
+            }
+            catch (nfe:NumberFormatException) {}
+            return ""
+        }
+        private fun isInRange(a:Int, b:Int, c:Int):Boolean {
+            return if (b > a) c in a..b else c in b..a
+        }
+
+    }
+
+
 
 }
