@@ -16,11 +16,13 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageButton
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.plataforma.crpg.R
 
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
+import kotlinx.android.synthetic.main.reminder_activity_intro.*
 
 
 class ReminderFragment : Fragment() {
@@ -44,9 +46,15 @@ class ReminderFragment : Fragment() {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
 
+
         newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
 
         with(binding){
+            root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.VISIBLE
+            root.findViewById<FloatingActionButton>(R.id.createReminderActionButton).setOnClickListener{
+                root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.GONE
+            }
+
             expandableLembrar.parentLayout.setOnClickListener {
                 expandableLembrar.toggleLayout() }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button0)
