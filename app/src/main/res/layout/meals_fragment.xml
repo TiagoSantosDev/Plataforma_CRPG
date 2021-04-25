@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:backgroundTint="@color/white"
     tools:context="com.plataforma.crpg.ui.meals.MealsFragment">
 
-    <include layout="@layout/reminder_activity_success"
+    <include layout="@layout/meal_choice_success"
         android:visibility="gone"/>
 
     <TextView

@@ -3503,6 +3503,7 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
+layout meal_choice_success
 layout meals_fragment
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -3870,6 +3871,7 @@ string personalizado
 string previous
 string project_id
 string querido
+string refeicao_escolhida_com_sucesso
 string regressar
 string relaxado
 string right_padding
