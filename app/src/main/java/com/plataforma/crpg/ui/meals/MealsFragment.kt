@@ -128,11 +128,11 @@ class MealsFragment : Fragment() {
 
         button_confirm_meal.setOnClickListener(){
             if (mealsViewModel.selectedOption != 0) {
-                view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
-                view?.findViewById<View>(R.id.successLayout)?.visibility = View.VISIBLE
+                //view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
+                view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
                 button_ok.setOnClickListener(){
-                    view?.findViewById<View>(R.id.successLayout)?.visibility = View.GONE
+                    view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.GONE
                 }
             } else {
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.VISIBLE

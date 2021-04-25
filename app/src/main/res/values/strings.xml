@@ -111,6 +111,7 @@
     <string name="feliz">FELIZ</string>
     <string name="relaxado">RELAXADO</string>
     <string name="valor_horas_minutos_falta">Valor das horas ou minutos em falta!</string>
+    <string name="refeicao_escolhida_com_sucesso">Refeição escolhida com sucesso!</string>
 
     <string-array name="line_type">
         <item>Normal</item>
