@@ -3912,6 +3912,7 @@ string ucrop_rotate
 string ucrop_scale
 string v7_preference_off
 string v7_preference_on
+string valor_horas_minutos_falta
 string ver_horarios
 string ver_transportes_publicos
 string vertical
