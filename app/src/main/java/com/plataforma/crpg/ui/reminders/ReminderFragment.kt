@@ -2,11 +2,8 @@ package com.plataforma.crpg.ui.reminders
 
 
 import android.os.Build
-import androidx.lifecycle.ViewModelProvider
-import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.text.InputFilter
-import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,12 +13,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageButton
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.database.core.utilities.Utilities
 import com.plataforma.crpg.R
-
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
@@ -40,12 +37,11 @@ class ReminderFragment : Fragment() {
     var startTimeString = ""
 
     private lateinit var newViewModel: ReminderViewModel
-    private lateinit var inputFilter: InputFilter
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+            savedInstanceState: Bundle?,
     ): View? {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
@@ -80,6 +76,12 @@ class ReminderFragment : Fragment() {
                     }
 
             expandableHoras.parentLayout.setOnClickListener { expandableHoras.toggleLayout() }
+
+            val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
+            et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
+
+            val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
+            et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
 
             expandableDia.parentLayout.setOnClickListener { expandableDia.toggleLayout() }
             expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje)
@@ -159,21 +161,28 @@ class ReminderFragment : Fragment() {
 
             root.findViewById<Button>(R.id.button_confirm).setOnClickListener {
 
-                var hoursInt = 24
-                var minsInt = 24
+                var hoursInt = 1
+                var minsInt = 1
+
+                val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
+                et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
+
+                val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
+                et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
 
 
-                if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2 && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {
+               /* if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2
+                       && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {
                     newViewModel.startTimeHours = expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString()
                     newViewModel.startTimeMin = expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString()
                     startTimeString = newViewModel.startTimeHours.plus(newViewModel.startTimeMin)
-                    //As horas nao podem ser null, tem que ser preenchidas
                     hoursInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                     minsInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
+
                 } else {
                     avisoCampos.text = getString(R.string.valor_horas_minutos_falta)
                     avisoCampos.visibility = View.VISIBLE
-                }
+                }*/
 
                 newViewModel.newReminder.start_time = startTimeString
 
@@ -187,12 +196,14 @@ class ReminderFragment : Fragment() {
                     }
                 }
 
-                val materialButtonToggleGroup = expandableDia.secondLayout.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup)
+                val materialButtonToggleGroup =
+                        expandableDia.secondLayout.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup)
 
                 val ids: List<Int> = materialButtonToggleGroup.checkedButtonIds
                 for (id in ids) {
                     val materialButton: MaterialButton = materialButtonToggleGroup.findViewById(id)
-                    val resourceName: String = expandableDia.secondLayout.resources.getResourceName(materialButton.id).takeLast(3)
+                    val resourceName: String =
+                            expandableDia.secondLayout.resources.getResourceName(materialButton.id).takeLast(3)
 
                     when (resourceName) {
                         "Seg" -> newViewModel.weekDaysBoolean[0] = true
@@ -226,7 +237,8 @@ class ReminderFragment : Fragment() {
                 }
 
 
-                if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0 && lembrarButtonPressed != 0 && hoursInt <= 23 && minsInt <= 59 ) {
+                if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0 &&
+                        lembrarButtonPressed != 0 && hoursInt <= 23 && minsInt <= 59 ) {
                     avisoCampos.visibility = View.GONE
                     root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                     root.findViewById<Button>(R.id.button_ok).setOnClickListener {
@@ -255,7 +267,6 @@ class ReminderFragment : Fragment() {
 
     }
 
-    }
 
     //binding must be done on onCreateView, not on onActivityCreated
     @RequiresApi(Build.VERSION_CODES.KITKAT)
@@ -266,33 +277,29 @@ class ReminderFragment : Fragment() {
 
     }
 
-    class InputFilterMinMax: InputFilter {
-        private var min:Int = 0
-        private var max:Int = 0
-        constructor(min:Int, max:Int) {
-            this.min = min
-            this.max = max
-        }
-        constructor(min:String, max:String) {
-            this.min = Integer.parseInt(min)
-            this.max = Integer.parseInt(max)
-        }
-        override fun filter(source:CharSequence, start:Int, end:Int, dest: Spanned, dstart:Int, dend:Int): CharSequence? {
-            try
-            {
-                val input = Integer.parseInt(dest.toString() + source.toString())
-                if (isInRange(min, max, input))
-                    return null
-            }
-            catch (nfe:NumberFormatException) {}
-            return ""
-        }
-        private fun isInRange(a:Int, b:Int, c:Int):Boolean {
-            return if (b > a) c in a..b else c in b..a
-        }
-
-    }
-
-
-
 }
+/*
+private var min:Int = 1
+private var max:Int = 24
+constructor(min:Int, max:Int) {
+    this.min = min
+    this.max = max
+}
+constructor(min:String, max:String) {
+    this.min = Integer.parseInt(min)
+    this.max = Integer.parseInt(max)
+}
+fun filter(source:CharSequence, start:Int, end:Int, dest: Spanned, dstart:Int, dend:Int): CharSequence? {
+    try
+    {
+        val input = Integer.parseInt(dest.toString() + source.toString())
+        if (isInRange(min, max, input))
+            return null
+    }
+    catch (nfe:NumberFormatException) {}
+    return ""
+}
+private fun isInRange(a:Int, b:Int, c:Int):Boolean {
+    return if (b > a) c in a..b else c in b..a
+}
+*/
