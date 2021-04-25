@@ -16,10 +16,9 @@
 
 
     <FrameLayout
-        android:layout_width="385dp"
-        android:layout_height="618dp"
+        android:layout_width="381dp"
+        android:layout_height="584dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +32,11 @@
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
             app:fabCustomSize="80dp"
-            app:maxImageSize="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.887"
             app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="60dp"
             app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -48,11 +47,11 @@
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="20dp"
             app:fabCustomSize="80dp"
-            app:maxImageSize="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.728"
             app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="60dp"
             app:srcCompat="@drawable/outline_create_black_24dp" />
     </FrameLayout>
 

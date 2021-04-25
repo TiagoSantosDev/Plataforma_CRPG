@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/escolha_paragem"
-        android:layout_width="394dp"
-        android:layout_height="37dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif"
         android:text="@string/escolha_local"
@@ -20,7 +20,6 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +28,8 @@
 
     <Spinner
         android:id="@+id/locations_spinner"
-        android:layout_width="235dp"
-        android:layout_height="42dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,10 +40,11 @@
         app:layout_constraintVertical_bias="0.012" />
 
     <FrameLayout
-        android:layout_width="378dp"
-        android:layout_height="525dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="368dp"
+        android:layout_height="471dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,6 +152,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/frame_transports_from_crpg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
@@ -249,39 +250,38 @@
                         app:cornerRadius="8dp"
                         app:icon="@drawable/baseline_call_white_24dp"
                         app:iconSize="20dp" />
-
-
                 </com.google.android.material.card.MaterialCardView>
             </FrameLayout>
         </FrameLayout>
 
         <Button
             android:id="@+id/button_consult_custom_transport"
-            android:layout_width="331dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="80dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/md_blue_100"
             android:text="@string/transporte_personalizado"
             android:textSize="20sp"
-            app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_consult_public_transport"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_transports_from_crpg" />
 
         <Button
             android:id="@+id/button_consult_public_transport"
-            android:layout_width="331dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/md_blue_100"
             android:text="@string/ver_transportes_publicos"
             android:textSize="20sp"
-            app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_consult_custom_transport" />
     </FrameLayout>
 
 

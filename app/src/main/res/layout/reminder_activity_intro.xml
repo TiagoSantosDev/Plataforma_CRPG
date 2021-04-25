@@ -8,67 +8,45 @@
   android:background="@color/white_93"
   android:orientation="vertical">
 
-
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_alignParentStart="true"
-      android:layout_alignParentTop="true"
-      android:layout_alignParentLeft="true">
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="267dp"
-        android:layout_height="517dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginLeft="71dp"
-        android:layout_marginTop="83dp"
-        android:background="@color/white_93"
-        android:radius="50dp" />
+      android:layout_alignParentTop="true">
 
     <TextView
         android:id="@+id/adicione_lembretes_hint"
         android:layout_width="268dp"
         android:layout_height="154dp"
+        android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginRight="73dp"
         android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:text="@string/adicionar_lembrete"
         android:textAlignment="center"
         android:textColor="@color/md_blue_200"
-        android:textSize="25sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/clique_icone_lapis_hint"
         android:layout_width="271dp"
         android:layout_height="150dp"
         android:layout_below="@id/adicione_lembretes_hint"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text="@string/clique_icone_lapis"
         android:textAlignment="center"
         android:textColor="@color/md_blue_200"
-        android:textSize="25sp" />
+        android:textSize="30sp" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/createReminderActionButton"
-        android:layout_width="155dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/clique_icone_lapis_hint"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:background="@color/PrimaryGreen"
         android:clickable="true"
