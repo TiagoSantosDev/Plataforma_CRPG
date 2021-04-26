@@ -19,13 +19,13 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
     var publicEventList = ArrayList<Event>()
     var privateEventList = ArrayList<Event>()
     var mDataList = ArrayList<Event>()
+    var mealsAdded = false
 
     //create 2 fixed events for lunch and dinner
     var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
-            "","")
+            "","","")
     var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "2000", "2100",
-            "","")
-
+            "","","")
 
 
     private fun populateFile() {
@@ -65,31 +65,33 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
         val privateList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
 
         println("> From JSON Meal String Event Collection:\n" + privateList)
-
         println("Primeira privateList size: " + privateList.size)
 
         //addMealsToPrivateEvents()
-        concatenatePublicPrivateEvents()
+        //verifyMealsNotAdded()
+        //concatenatePublicPrivateEvents()
 
         return privateList
     }
 
-    fun addMealsToPrivateEvents(): ArrayList<Event>{
-        println("Size do privateList a entrada do addMeals:" + privateEventList.size)
-        privateEventList.add(lunchEvent)
-        privateEventList.add(dinnerEvent)
-        return privateEventList
+    fun verifyMealsNotAdded() {
+
+        fun addMealsToPrivateEvents(): ArrayList<Event> {
+            println("Size do privateList a entrada do addMeals:" + privateEventList.size)
+            privateEventList.add(lunchEvent)
+            privateEventList.add(dinnerEvent)
+            return privateEventList
+        }
+
+        fun concatenatePublicPrivateEvents(): ArrayList<Event> {
+            addMealsToPrivateEvents()
+            println(">Private  list size: " + privateEventList.size)
+            println("Public list size " + publicEventList.size)
+            mDataList.plusAssign((privateEventList + publicEventList) as ArrayList<Event>)
+            println(">mDataList size: " + mDataList.size)
+            println(">mDataList: " + mDataList)
+            return mDataList
+        }
+
     }
-
-    fun concatenatePublicPrivateEvents(): ArrayList<Event>{
-        addMealsToPrivateEvents()
-        mDataList.plusAssign((privateEventList + publicEventList) as ArrayList<Event>)
-        println(">Private  list: " + mDataList.size)
-        println(">mDataList size: " + mDataList.size)
-        println(">mDataList: " + mDataList)
-        return mDataList
-
-
-    }
-
 }
