@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/title_nova_nota_texto"
-        android:layout_width="394dp"
-        android:layout_height="37dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="sans-serif"
         android:text="@string/nova_nota_de_texto"
@@ -26,7 +26,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <FrameLayout
         android:id="@+id/frame_titulo"
@@ -43,7 +43,6 @@
             android:id="@+id/frame_note_image"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:layout_constraintBottom_toTopOf="@id/frame_titulo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -66,7 +65,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_note_image">
 
             <TextView
                 android:id="@+id/titulo_nova_nota"
@@ -93,7 +93,7 @@
             android:id="@+id/frame_conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="250dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -136,7 +136,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></ImageView>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button_save_text_note"
@@ -145,7 +145,7 @@
             android:layout_gravity="center|bottom"
             android:text="@string/guardar"
             android:textSize="20sp"
-            app:backgroundTint="@color/md_blue_100"
+            android:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
