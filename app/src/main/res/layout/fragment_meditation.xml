@@ -16,6 +16,7 @@
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
         android:textSize="30sp"
+        android:paddingTop="@dimen/material_layout_app_bar_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"

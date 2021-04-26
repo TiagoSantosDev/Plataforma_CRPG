@@ -24,7 +24,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <Spinner
         android:id="@+id/locations_spinner"
@@ -33,22 +33,22 @@
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/escolha_paragem"
-        app:layout_constraintVertical_bias="0.012" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <FrameLayout
         android:layout_width="368dp"
         android:layout_height="471dp"
-        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/escolha_paragem">
+        app:layout_constraintTop_toBottomOf="@id/locations_spinner"
+        app:layout_constraintVertical_bias="0.5">
 
 
         <FrameLayout
@@ -256,7 +256,7 @@
 
         <Button
             android:id="@+id/button_consult_custom_transport"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_marginBottom="50dp"
@@ -271,7 +271,7 @@
 
         <Button
             android:id="@+id/button_consult_public_transport"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:backgroundTint="@color/md_blue_100"

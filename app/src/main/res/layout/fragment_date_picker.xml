@@ -7,18 +7,17 @@
     android:background="@color/white"
     tools:context="com.plataforma.crpg.ui.agenda.DatePickerFragment">
 
-
         <TextView
             android:id="@+id/title_selecionar_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:paddingTop="@dimen/material_layout_app_bar_height"
             android:gravity="center_horizontal"
             android:text="@string/selecionar_data"
             android:textColor="@color/SecondaryBlue"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +25,7 @@
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="132dp"
             android:gravity="center_horizontal"
             android:text="@+id/tvDate"
             android:textColor="@color/SecondaryBlue"
@@ -52,7 +51,7 @@
             android:id="@+id/main_single_row_calendar"
             android:layout_width="match_parent"
             android:layout_height="192dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="50dp"
             app:deselection="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
