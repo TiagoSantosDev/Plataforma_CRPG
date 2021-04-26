@@ -2748,6 +2748,7 @@ id clip_vertical
 id clique_icone_lapis_hint
 id collapseActionView
 id color_preference_widget
+id como_gostaria_sentir
 id confirm_button
 id container
 id content

@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="sans-serif"
         android:text="@string/escolha_local"
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
@@ -33,22 +32,21 @@
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/escolha_paragem"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <FrameLayout
-        android:layout_width="368dp"
-        android:layout_height="471dp"
+        android:layout_width="363dp"
+        android:layout_height="438dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/locations_spinner"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toBottomOf="@id/locations_spinner">
 
 
         <FrameLayout
@@ -58,7 +56,7 @@
             <com.plataforma.crpg.TimelineView
                 android:id="@+id/timeline_transports_from_location"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="165dp"
                 app:endLineColor="@color/colorAccent"
                 app:lineStyle="dash"
                 app:lineWidth="3dp"
@@ -72,7 +70,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp">
 
                 <TextView
@@ -93,7 +91,7 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="100dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="15dp"
                     app:cardBackgroundColor="@color/colorGrey50"
@@ -145,8 +143,6 @@
                         app:cornerRadius="8dp"
                         app:icon="@drawable/baseline_call_white_24dp"
                         app:iconSize="20dp" />
-
-
                 </com.google.android.material.card.MaterialCardView>
             </FrameLayout>
         </FrameLayout>
@@ -155,7 +151,7 @@
             android:id="@+id/frame_transports_from_crpg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="155dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +174,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp">
 
                 <TextView
@@ -190,7 +186,7 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="171dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_transports_CRPG_to_location"
@@ -259,7 +255,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="60dp"
             android:backgroundTint="@color/md_blue_100"
             android:text="@string/transporte_personalizado"
             android:textSize="20sp"
@@ -277,6 +273,7 @@
             android:backgroundTint="@color/md_blue_100"
             android:text="@string/ver_transportes_publicos"
             android:textSize="20sp"
+            android:layout_marginBottom="10dp"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
