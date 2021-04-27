@@ -75,10 +75,10 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_titulo_carne"
-                        android:layout_width="210dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:maxLength="25"
+                        android:maxLength="15"
                         android:text="@string/opcao_carne"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
@@ -87,8 +87,9 @@
                         android:id="@+id/text_opcao_carne"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLength="20"
                         android:gravity="center"
-                        android:maxLength="30"
+                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
 
@@ -137,7 +138,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_titulo_peixe"
-                        android:layout_width="210dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="25"
@@ -199,7 +200,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_titulo_dieta"
-                        android:layout_width="210dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="25"
@@ -260,7 +261,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_titulo_vegetariano"
-                        android:layout_width="210dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="25"

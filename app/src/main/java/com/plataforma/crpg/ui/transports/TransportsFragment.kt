@@ -18,6 +18,7 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
+import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 
@@ -29,6 +30,8 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private lateinit var transportsViewModel: TransportsViewModel
+    private lateinit var sharedViewModel: SharedViewModel
+    var phone = "00351912193034"
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -79,9 +82,8 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
-
-        var phone = "00351912193034"
 
         call_button_1.setOnClickListener{
             val intent = Intent(Intent.ACTION_DIAL)
@@ -152,7 +154,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }
         }
 
-        println("Item selecionado: $selItem")
+
 
     }
 
@@ -166,3 +168,4 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
     }
 }
+//println("Item selecionado: $selItem")

@@ -18,9 +18,6 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
     var selectedDate = ""
-    val mDataList = ArrayList<Event>()
-
-    lateinit var event: Event
 
 }
 

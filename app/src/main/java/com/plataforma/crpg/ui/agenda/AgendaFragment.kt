@@ -42,12 +42,18 @@ class AgendaFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
-        val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
+        println("Selected date: " + sharedViewModel.selectedDate)
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        //println("Selected date: " + sharedViewModel.selectedDate)
+
         // default values
         (activity as AppCompatActivity).supportActionBar?.title = "AGENDA"
         mAttributes = TimelineAttributes(
@@ -67,6 +73,9 @@ class AgendaFragment : Fragment() {
                 lineDashGap = dpToPx(2f)
         )
         val ctx = context
+
+        //ir buscar os dados para um determinado dia
+
         setDataListItems()
         if (ctx != null) {
             initRecyclerView(ctx)

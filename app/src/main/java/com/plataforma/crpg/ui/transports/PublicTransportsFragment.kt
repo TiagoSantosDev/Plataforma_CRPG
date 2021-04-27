@@ -16,9 +16,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
+import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.*
 
 //import kotlinx.android.synthetic.main.fragment_public_transports.*
@@ -27,6 +29,7 @@ import kotlinx.android.synthetic.main.fragment_custom_transport.*
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private var opSelected = 0
+    private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +54,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
                 context,

@@ -52,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:layout_marginBottom="50dp"
+            android:layout_below="@id/tvDate"
             app:deselection="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,9 +64,9 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_selecionar"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-            android:layout_width="230dp"
-            android:layout_height="65dp"
-            android:layout_below="@+id/main_single_row_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_single_row_calendar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:elevation="10dp"
@@ -80,8 +81,26 @@
             app:iconSize="18dp"
             app:iconTint="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_single_row_calendar"
             app:rippleColor="@color/tertiaryText" />
+
+
+        <TextView
+            android:id="@+id/no_date_selected_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_selecionar"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/nenhum_dia_selecionado_warning"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_selecionar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

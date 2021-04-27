@@ -3057,6 +3057,7 @@ id navigation_transports
 id nestedScrollView
 id never
 id noScroll
+id no_date_selected_warning
 id nome_motorista
 id none
 id normal
@@ -3851,6 +3852,8 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nenhum_dia_selecionado_msg
+string nenhum_dia_selecionado_warning
 string nenhuma_refei_o_selecionada
 string next
 string notas

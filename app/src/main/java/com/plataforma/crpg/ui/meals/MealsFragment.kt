@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -32,8 +33,6 @@ class MealsFragment : Fragment() {
         fun newInstance() = MealsFragment()
     }
 
-    private lateinit var mealsViewModel: MealsViewModel
-
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "REFEIÇÕES"
@@ -43,9 +42,21 @@ class MealsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+        val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
+
+        println("Meal selected date: " + sharedViewModel.selectedDate)
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        println("On Create View foods: " +  mealsViewModel.meal.carne + mealsViewModel.meal.peixe +
+                mealsViewModel.meal.dieta + mealsViewModel.meal.vegetariano)
+
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.meal.peixe
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.meal.dieta
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.meal.vegetariano
+
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -61,11 +72,6 @@ class MealsFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
 
-        //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne
-        //view?.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.meal.peixe
-        //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.dieta
-        //view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.vegetariano
-
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
@@ -73,13 +79,16 @@ class MealsFragment : Fragment() {
     @SuppressLint("SetTextI18n", "ResourceAsColor")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
+        val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         mealsViewModel.testDB()
 
         val card_carne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
         val card_peixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
         val card_dieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
+
+        println("Prato carne:" + mealsViewModel.meal.carne)
+
 
         card_carne?.setOnLongClickListener {
             if(!card_carne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
@@ -128,7 +137,6 @@ class MealsFragment : Fragment() {
 
         button_confirm_meal.setOnClickListener(){
             if (mealsViewModel.selectedOption != 0) {
-                //view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
                 view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
                 button_ok.setOnClickListener(){
@@ -157,4 +165,7 @@ class MealsFragment : Fragment() {
         }
     }
     return super.onOptionsItemSelected(item)
-}*/
+}
+//val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+ //view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
+*/
