@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
@@ -73,9 +74,6 @@ class DatePickerFragment : Fragment() {
             savedInstanceState: Bundle?,
     ): View? {
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
-
-        //dontShowBackButton()
-        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         return root
     }
 
@@ -89,7 +87,7 @@ class DatePickerFragment : Fragment() {
         super.onActivityCreated(savedInstanceType)
         //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         calendar.time = Date()
-
+        val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
         button_selecionar.setOnClickListener {
             val fragment: Fragment = AgendaFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -141,12 +139,16 @@ class DatePickerFragment : Fragment() {
             }
         }
 
+
+
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
+                sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
+                println("Selected date: " + sharedViewModel.selectedDate)
                 super.whenSelectionChanged(isSelected, position, date)
             }
         }
@@ -214,6 +216,13 @@ class DatePickerFragment : Fragment() {
         calendar.add(Calendar.DATE, -1)
         return list
     }
+
+}
+
+
+
+
+
 /*
     fun dontShowBackButton() {
         if (activity is MainActivity) {
@@ -222,7 +231,7 @@ class DatePickerFragment : Fragment() {
     }
 */
 
-}
+
 // set current date to calendar and current month to currentMonth variable
 /*var change = ""
 val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
@@ -232,5 +241,6 @@ if (language == "English") {
 } else {
     change = "pt"
 }
-
+//dontShowBackButton()
+//(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
 dLocale = Locale(change)*/

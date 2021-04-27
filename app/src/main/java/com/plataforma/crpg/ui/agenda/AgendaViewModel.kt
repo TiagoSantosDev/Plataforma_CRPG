@@ -38,21 +38,6 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
         File(fullFilename).writeText(fileContent)
     }
 
-    fun getSingleObjectFromJSON(): ArrayList<Event> {
-
-        val gson = Gson()
-        val filename = "event.json"
-        val fullFilename = context.filesDir.toString() + "/" + filename
-
-        populateFile()
-
-        val event: Event = gson.fromJson(FileReader(fullFilename), Event::class.java)
-        println("> From JSON Meal String Single Object:\n" + event)
-
-        privateEventList.add(event)
-        return privateEventList
-    }
-
     fun getEventCollectionFromJSON(): ArrayList<Event> {
 
         val gson = Gson()
@@ -69,29 +54,50 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
 
         //addMealsToPrivateEvents()
         //verifyMealsNotAdded()
-        //concatenatePublicPrivateEvents()
+        concatenatePublicPrivateEvents()
 
         return privateList
     }
 
-    fun verifyMealsNotAdded() {
-
-        fun addMealsToPrivateEvents(): ArrayList<Event> {
-            println("Size do privateList a entrada do addMeals:" + privateEventList.size)
-            privateEventList.add(lunchEvent)
-            privateEventList.add(dinnerEvent)
-            return privateEventList
-        }
-
-        fun concatenatePublicPrivateEvents(): ArrayList<Event> {
-            addMealsToPrivateEvents()
-            println(">Private  list size: " + privateEventList.size)
-            println("Public list size " + publicEventList.size)
-            mDataList.plusAssign((privateEventList + publicEventList) as ArrayList<Event>)
-            println(">mDataList size: " + mDataList.size)
-            println(">mDataList: " + mDataList)
-            return mDataList
-        }
-
+    fun addMealsToPrivateEvents(): ArrayList<Event> {
+        println("Size do privateList a entrada do addMeals:" + privateEventList.size)
+        privateEventList.add(lunchEvent)
+        privateEventList.add(dinnerEvent)
+        return privateEventList
     }
+
+    fun addMealsToPublicEvents(): ArrayList<Event> {
+        println("Size do privateList a entrada do addMeals:" + privateEventList.size)
+        publicEventList.add(lunchEvent)
+        publicEventList.add(dinnerEvent)
+        return publicEventList
+    }
+
+    fun concatenatePublicPrivateEvents(): ArrayList<Event> {
+        addMealsToPrivateEvents()
+        addMealsToPublicEvents()
+        println(">Private list size: " + privateEventList.size)
+        println("Public list size " + publicEventList.size)
+        mDataList.plusAssign((privateEventList + publicEventList) as ArrayList<Event>)
+        println("Size mDataList: " + mDataList.size)
+        return mDataList
+    }
+
 }
+
+/*
+    fun getSingleObjectFromJSON(): ArrayList<Event> {
+
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        populateFile()
+
+        val event: Event = gson.fromJson(FileReader(fullFilename), Event::class.java)
+        println("> From JSON Meal String Single Object:\n" + event)
+
+        privateEventList.add(event)
+        return privateEventList
+    }
+*/
