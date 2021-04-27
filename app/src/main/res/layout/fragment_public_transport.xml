@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ver_horarios">
 
         <TextView
-            android:id="@+id/custom_transports_text"
+            android:id="@+id/public_transports_text"
             android:layout_width="394dp"
             android:layout_height="136dp" />
     </FrameLayout>

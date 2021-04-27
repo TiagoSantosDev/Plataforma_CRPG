@@ -3095,6 +3095,7 @@ id position
 id postLayout
 id progress_circular
 id progress_horizontal
+id public_transports_text
 id radio
 id ratio
 id rb_horizontal

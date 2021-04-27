@@ -23,13 +23,14 @@ import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.*
 
-//import kotlinx.android.synthetic.main.fragment_public_transports.*
+
 
 
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private var opSelected = 0
     private lateinit var sharedViewModel: SharedViewModel
+    private lateinit var transportsViewModel: TransportsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +55,12 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+        transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+        val selectedDate = sharedViewModel.selectedDate
+        val customText = transportsViewModel.getPublicTransportText(selectedDate)
+        view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
+
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
                 context,
@@ -214,4 +220,5 @@ public fun boolean onOptionsItemSelected() {
 //                    println("ola")
 //                }
 //    }
+// import kotlinx.android.synthetic.main.fragment_public_transports.*
 //*/
