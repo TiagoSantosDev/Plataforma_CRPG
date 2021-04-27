@@ -139,8 +139,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                     val fragment: Fragment = TransportsFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                    println("Fragment Manager: " + fragmentManager.toString())
-                    println("Fragment Transaction: " + fragmentTransaction.toString())
+                    //println("Fragment Manager: " + fragmentManager.toString())
+                    //println("Fragment Transaction: " + fragmentTransaction.toString())
                     fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction?.addToBackStack(null)
                     fragmentTransaction?.commit()
@@ -218,6 +218,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         }
     }
 }
+
+
+
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 // val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager

@@ -42,6 +42,7 @@ class AgendaFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
+        val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
         return root
     }
 
@@ -66,12 +67,8 @@ class AgendaFragment : Fragment() {
                 lineDashGap = dpToPx(2f)
         )
         val ctx = context
-
-        println("CONTEXT IS NULL onViewCreated:" + ctx.toString())
-
         setDataListItems()
         if (ctx != null) {
-            println("CTX NAO E NULL")
             initRecyclerView(ctx)
         }
 
@@ -80,11 +77,11 @@ class AgendaFragment : Fragment() {
         }
 
         mAttributes.orientation = Orientation.VERTICAL
-
     }
 
     private fun setDataListItems() {
         val eventViewModel = ViewModelProvider(this).get(AgendaViewModel::class.java)
+
         mDataList = eventViewModel.getEventCollectionFromJSON()
         // guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }
@@ -104,13 +101,9 @@ class AgendaFragment : Fragment() {
     private fun initAdapter(ctx: Context) {
         mLayoutManager = if (mAttributes.orientation == Orientation.HORIZONTAL) {
             LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-
         } else {
             LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         }
-
-        println("Activity:" + activity)
-        println("Recycler View:" + recyclerView)
 
         recyclerView.apply {
             layoutManager = mLayoutManager
@@ -141,3 +134,7 @@ class AgendaFragment : Fragment() {
 */
 //val ctx = context
 //println("CONTEXT IS NULL onCreateView:" + ctx.toString())
+// println("CONTEXT IS NULL onViewCreated:" + ctx.toString())
+////println("CTX NAO E NULL")
+// println("Activity:" + activity)
+//        //println("Recycler View:" + recyclerView)
