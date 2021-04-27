@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -32,6 +34,7 @@ class DatePickerFragment : Fragment() {
 
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
+    private var selected = false
 
     companion object {
         public var dLocale: Locale? = null
@@ -129,6 +132,7 @@ class DatePickerFragment : Fragment() {
             }
         }
 
+
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
@@ -138,8 +142,8 @@ class DatePickerFragment : Fragment() {
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
                 //println("Selected date: " + sharedViewModel.selectedDate)
                 super.whenSelectionChanged(isSelected, position, date)
+                selected = isSelected
             }
-
         }
 
         // selection manager is responsible for managing selection
@@ -167,13 +171,16 @@ class DatePickerFragment : Fragment() {
         }
 
         button_selecionar.setOnClickListener {
-            if(isSelected) {
+            if(selected) {
+                no_date_selected_warning.visibility = GONE
                 val fragment: Fragment = AgendaFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
+            }else{
+                no_date_selected_warning.visibility = VISIBLE
             }
         }
     }
