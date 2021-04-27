@@ -15,9 +15,23 @@ import kotlin.collections.ArrayList
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
 
+
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
     var selectedDate = ""
+
+
+
+
+
+
+    fun getCustomText(selectedDate: String): String {
+        val custom_text: String
+
+        custom_text = "Horários para o dia X:"
+
+        return custom_text
+    }
 
 }
 
