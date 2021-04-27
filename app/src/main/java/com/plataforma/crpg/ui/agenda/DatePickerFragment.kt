@@ -42,7 +42,6 @@ class DatePickerFragment : Fragment() {
         //updateConfig(requireActivity().baseContext)
     }
 
-
      fun updateConfig(wrapper: ContextThemeWrapper) {
         dLocale = Locale("pt")
         Locale.setDefault(dLocale)
@@ -65,7 +64,6 @@ class DatePickerFragment : Fragment() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         (activity as AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
     }
 
     override fun onCreateView(
@@ -79,23 +77,15 @@ class DatePickerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //var BottomNavigationView navBar = require.findviewById(R.id.nav_view)
-        //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
         super.onActivityCreated(savedInstanceType)
         //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
         calendar.time = Date()
-        val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        button_selecionar.setOnClickListener {
-            val fragment: Fragment = AgendaFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
 
         // calendar view manager is responsible for our displaying logic
         val myCalendarViewManager = object :
@@ -108,7 +98,7 @@ class DatePickerFragment : Fragment() {
                 // set date to calendar according to position where we are
                 val cal = Calendar.getInstance()
                 cal.time = date
-                if (!isSelected) tvDate.text = "Nenhum dia selecionado"
+                if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
                 // if item is selected we return this layout items
                 // in this example. monday, wednesday and friday will have special item views and other days
                 // will be using basic item view
@@ -139,8 +129,6 @@ class DatePickerFragment : Fragment() {
             }
         }
 
-
-
         // using calendar changes observer we can track changes in calendar
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
@@ -148,9 +136,10 @@ class DatePickerFragment : Fragment() {
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
-                println("Selected date: " + sharedViewModel.selectedDate)
+                //println("Selected date: " + sharedViewModel.selectedDate)
                 super.whenSelectionChanged(isSelected, position, date)
             }
+
         }
 
         // selection manager is responsible for managing selection
@@ -166,6 +155,7 @@ class DatePickerFragment : Fragment() {
                     else -> true
                 }
             }
+
         }
 
         val singleRowCalendar = main_single_row_calendar.apply {
@@ -174,6 +164,17 @@ class DatePickerFragment : Fragment() {
             calendarSelectionManager = mySelectionManager
             setDates(getFutureDatesOfCurrentMonth())
             init()
+        }
+
+        button_selecionar.setOnClickListener {
+            if(isSelected) {
+                val fragment: Fragment = AgendaFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
         }
     }
 
@@ -220,9 +221,6 @@ class DatePickerFragment : Fragment() {
 }
 
 
-
-
-
 /*
     fun dontShowBackButton() {
         if (activity is MainActivity) {
@@ -244,3 +242,5 @@ if (language == "English") {
 //dontShowBackButton()
 //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
 dLocale = Locale(change)*/
+//var BottomNavigationView navBar = require.findviewById(R.id.nav_view)
+//(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
