@@ -62,6 +62,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         concatTime = timeLineModel.start_time + timeLineModel.end_time
 
+        println()
+
         if (overlapArray.contains(concatTime)){
             holder.timeline.marker.setVisible(false,false)
         }else{
@@ -128,6 +130,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         holder.itemView.card.setOnClickListener {
             val id: String = mFeedList[position].title
             val tipo: EventType = mFeedList[position].type
+            val title: String =  mFeedList[position].title
             println("ID do cartao: $id")
             println("Tipo do cartao: $tipo")
 
@@ -139,17 +142,19 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                     val fragment: Fragment = TransportsFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                    //println("Fragment Manager: " + fragmentManager.toString())
-                    //println("Fragment Transaction: " + fragmentTransaction.toString())
                     fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction?.addToBackStack(null)
                     fragmentTransaction?.commit()
                 }
 
                 EventType.MEAL -> {
+                    /*when(title){
+                        "Almoço" -> AgendaFragment.
+                    }*/
                     val fragment: Fragment = MealsFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+                    fragmentManager.findFragmentByTag("Agenda")?.let { it1 -> fragmentTransaction.remove(it1) };
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
@@ -157,6 +162,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             }
         }
+
+        println(">TimeLine Model chosen Meal: " + timeLineModel.chosen_meal)
 
         //se almoço nao estiver escolhido
         //card informa que pode ser clicado para escolher almoço
@@ -233,3 +240,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 //        holder.itemView.card.setOnClickListener{
 //            println("clicou na carta")
 //        }*/
+//
+// println("Fragment Manager: " + fragmentManager.toString())
+//                    //println("Fragment Transaction: " + fragmentTransaction.toString())

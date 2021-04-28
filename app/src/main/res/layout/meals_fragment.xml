@@ -87,8 +87,8 @@
                         android:id="@+id/text_opcao_carne"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="20"
                         android:gravity="center"
+                        android:maxLength="20"
                         android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
@@ -142,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="25"
-                        android:text="@string/opcao_peixe"
+                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
@@ -152,9 +152,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="30"
+                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp" />
-
+                        android:textSize="12sp" />
                 </LinearLayout>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -215,7 +215,8 @@
                         android:gravity="center"
                         android:maxLength="30"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp" />
+                        android:text="@string/adicionar_lembrete"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </FrameLayout>
@@ -275,8 +276,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLength="30"
+                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>

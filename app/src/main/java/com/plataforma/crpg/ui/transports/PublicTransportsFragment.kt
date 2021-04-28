@@ -59,6 +59,8 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         val selectedDate = sharedViewModel.selectedDate
         val customText = transportsViewModel.getPublicTransportText(selectedDate)
+        println("Custom text: $customText")
+
         view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
 
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)

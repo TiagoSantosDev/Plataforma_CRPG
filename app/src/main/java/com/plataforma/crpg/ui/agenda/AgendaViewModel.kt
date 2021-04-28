@@ -49,13 +49,23 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
         val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
         val privateList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
 
-        println("> From JSON Meal String Event Collection:\n" + privateList)
-        println("Primeira privateList size: " + privateList.size)
+        //println("> From JSON Meal String Event Collection:\n" + privateList)
+        //println("Primeira privateList size: " + privateList.size)
 
         //addMealsToPrivateEvents()
         //verifyMealsNotAdded()
         concatenatePublicPrivateEvents()
 
+        return privateList
+    }
+
+    fun getEventCollectionFromJSONWithoutPopulate(): ArrayList<Event> {
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+        val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
+        val privateList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+        println("Private List from Without Populate: $privateList")
         return privateList
     }
 

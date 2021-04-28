@@ -2,22 +2,24 @@ package com.plataforma.crpg.ui.meals
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.app.PendingIntent.getActivity
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
+import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.Meal
 import java.io.File
 import java.io.FileOutputStream
+import java.io.FileReader
+import java.lang.reflect.Type
 
 @SuppressLint("StaticFieldLeak")
 class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
-    val m = Meal("01042021","a", "b", "c", "d")
+    val m = Meal("01042021", "a", "b", "c", "d")
     var selectedOption = 0
-    var meal = Meal("01042021","Lasanha", "Sardinhas", "Massa", "Tofu")
+    var retrievedMeal = Meal("01042021", "Lasanha", "Sardinhas", "Massa", "Tofu")
     private val context = getApplication<Application>().applicationContext
 
 
@@ -86,6 +88,39 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
 
     }
+
+    fun updateMealChoiceOnLocalStorage(selectedDate: String, isLunch: Boolean) {
+
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
+        var eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+
+        /*
+        if(eventsList.any { it.date == selectedDate }){
+            indexOf.
+        }*/
+
+        when(selectedOption){
+            1 -> eventsList[1].chosen_meal = retrievedMeal.carne
+            2 -> eventsList[1].chosen_meal = retrievedMeal.peixe
+            3 -> eventsList[1].chosen_meal = retrievedMeal.dieta
+            4 -> eventsList[1].chosen_meal = retrievedMeal.vegetariano
+        }
+
+        println(eventsList[1].chosen_meal)
+
+        val newMealJSON = gson.toJson(eventsList)
+        File(fullFilename).writeText(newMealJSON)
+        println(File(fullFilename).canRead())
+        println(File(fullFilename).readText())
+
+
+    }
+
+
 }
 
 

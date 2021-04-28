@@ -38,6 +38,7 @@ class CustomTransportsFragment : Fragment() {
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         val selectedDate = sharedViewModel.selectedDate
         val customText = transportsViewModel.getCustomText(selectedDate)
+        println("Custom text: $customText")
         view?.findViewById<TextView>(R.id.custom_transports_text)?.text = customText
 
         showBackButton()

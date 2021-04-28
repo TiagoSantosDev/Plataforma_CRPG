@@ -30,7 +30,6 @@ class MeditationFragment : Fragment() {
         (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
