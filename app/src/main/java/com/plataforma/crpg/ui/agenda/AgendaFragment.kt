@@ -34,6 +34,18 @@ class AgendaFragment : Fragment() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "AGENDA"
         (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        //setDataListItems()
+
+        setDataListItemsWithoutPopulate()
+        val ctx = context
+        if (ctx != null) {
+            initRecyclerView(ctx)
+        }
+
+        mAttributes.onOrientationChanged = { oldValue, newValue ->
+            if (oldValue != newValue) initRecyclerView(ctx!!)
+        }
+        mAttributes.orientation = Orientation.VERTICAL
     }
 
     override fun onCreateView(
@@ -45,7 +57,7 @@ class AgendaFragment : Fragment() {
         //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
 
-        println("Selected date: " + sharedViewModel.selectedDate)
+        //println("Selected date: " + sharedViewModel.selectedDate)
         return root
     }
 
@@ -76,7 +88,8 @@ class AgendaFragment : Fragment() {
 
         //ir buscar os dados para um determinado dia
 
-        setDataListItems()
+        //setDataListItems()
+        setDataListItemsWithoutPopulate()
         if (ctx != null) {
             initRecyclerView(ctx)
         }
@@ -94,6 +107,16 @@ class AgendaFragment : Fragment() {
         mDataList = eventViewModel.getEventCollectionFromJSON()
         // guarantee that all events are sorted by their starting time
         mDataList.sortBy { it.start_time }
+    }
+
+    private fun setDataListItemsWithoutPopulate() {
+        val eventViewModel = ViewModelProvider(this).get(AgendaViewModel::class.java)
+
+        mDataList = eventViewModel.getEventCollectionFromJSONWithoutPopulate()
+        // guarantee that all events are sorted by their starting time
+        mDataList.sortBy { it.start_time }
+
+        println(mDataList)
     }
 
     private fun initRecyclerView(ctx: Context) {

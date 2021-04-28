@@ -3,10 +3,8 @@ package com.plataforma.crpg.ui.meals
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
@@ -42,20 +40,20 @@ class MealsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
 
-        println("Meal selected date: " + sharedViewModel.selectedDate)
+
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        println("On Create View foods: " +  mealsViewModel.meal.carne + mealsViewModel.meal.peixe +
-                mealsViewModel.meal.dieta + mealsViewModel.meal.vegetariano)
+        println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe}, 
+            |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
 
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.meal.carne
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.meal.peixe
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.meal.dieta
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.meal.vegetariano
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
+        view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
 
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
@@ -80,15 +78,16 @@ class MealsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
-        mealsViewModel.testDB()
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
 
+        mealsViewModel.testDB()
         val card_carne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
         val card_peixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
         val card_dieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
-        println("Prato carne:" + mealsViewModel.meal.carne)
-
+        println("Prato carne:" + mealsViewModel.retrievedMeal.carne)
+        println("Meal selected date: " + sharedViewModel.selectedDate)
 
         card_carne?.setOnLongClickListener {
             if(!card_carne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
@@ -139,6 +138,7 @@ class MealsFragment : Fragment() {
             if (mealsViewModel.selectedOption != 0) {
                 view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
+                mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, true)
                 button_ok.setOnClickListener(){
                     view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.GONE
                 }
