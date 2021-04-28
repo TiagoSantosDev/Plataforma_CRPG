@@ -114,6 +114,9 @@
     <string name="refeicao_escolhida_com_sucesso">Refeição escolhida com sucesso!</string>
     <string name="nenhum_dia_selecionado_warning">Nenhum dia selecionado! Clique num dia para o selecionar.</string>
     <string name="nenhum_dia_selecionado_msg">Nenhum dia selecionado</string>
+    <string name="clock_separator">:</string>
+    <string name="horas">horas</string>
+    <string name="minutos">minutos</string>
 
     <string-array name="line_type">
         <item>Normal</item>

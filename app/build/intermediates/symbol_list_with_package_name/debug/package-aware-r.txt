@@ -3663,6 +3663,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string clique_icone_lapis
+string clock_separator
 string color
 string com_sono
 string common_google_play_services_enable_button
@@ -3780,6 +3781,7 @@ string hello_second_fragment
 string hide_bottom_view_on_scroll_behavior
 string hoje
 string hora_minutos_invalido
+string horas
 string horizontal
 string horizontal_timeline
 string horizontal_timeline_w_padding
@@ -3812,6 +3814,7 @@ string meditacao
 string mente_s
 string message_camera_permission_denied
 string message_gallery_permission_denied
+string minutos
 string motorista
 string motorista_a
 string motorista_b

@@ -35,6 +35,7 @@ class ReminderFragment : Fragment() {
     var alarmTypeButtonPressed = 0
     var alarmFreqButtonPressed = 0
     var startTimeString = ""
+    var hoursMinutesFlag = false
 
     private lateinit var newViewModel: ReminderViewModel
 
@@ -78,22 +79,22 @@ class ReminderFragment : Fragment() {
             expandableHoras.parentLayout.setOnClickListener { expandableHoras.toggleLayout() }
 
             val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
-            et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
+            et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
 
             val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
-            et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
+            et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
+
+
 
             expandableDia.parentLayout.setOnClickListener { expandableDia.toggleLayout() }
             expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje)
                     .setOnClickListener {
-
                         alarmFreqButtonPressed = 1
                         root.findViewById<TextView>(R.id.button_selecionar_dias).visibility = View.INVISIBLE
                         root.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup).visibility = View.INVISIBLE
                     }
             expandableDia.secondLayout.findViewById<Button>(R.id.button_amanha)
                     .setOnClickListener {
-
                         alarmFreqButtonPressed = 2
                         root.findViewById<TextView>(R.id.button_selecionar_dias).visibility = View.INVISIBLE
                         root.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup).visibility = View.INVISIBLE
@@ -108,7 +109,6 @@ class ReminderFragment : Fragment() {
             expandableAlerta.parentLayout.setOnClickListener { expandableAlerta.toggleLayout() }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonSom)
                     .setOnClickListener {
-
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som).visibility = View.VISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar).visibility = View.INVISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos).visibility = View.INVISIBLE
@@ -116,7 +116,6 @@ class ReminderFragment : Fragment() {
                     }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonVibrar)
                     .setOnClickListener {
-
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som).visibility = View.INVISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar).visibility = View.VISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos).visibility = View.INVISIBLE
@@ -124,7 +123,6 @@ class ReminderFragment : Fragment() {
                     }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonAmbos)
                     .setOnClickListener {
-
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som).visibility = View.INVISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar).visibility = View.INVISIBLE
                         expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos).visibility = View.VISIBLE
@@ -164,12 +162,6 @@ class ReminderFragment : Fragment() {
                 var hoursInt = 1
                 var minsInt = 1
 
-                val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
-                et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
-
-                val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
-                et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
-
 
                /* if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2
                        && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {
@@ -183,6 +175,18 @@ class ReminderFragment : Fragment() {
                     avisoCampos.text = getString(R.string.valor_horas_minutos_falta)
                     avisoCampos.visibility = View.VISIBLE
                 }*/
+
+                if (et.text.toString().length == 2 && et_min.text.toString().length == 2) {
+                    newViewModel.startTimeHours = et.text.toString()
+                    newViewModel.startTimeMin = et_min.text.toString()
+                    startTimeString = newViewModel.startTimeHours.plus(newViewModel.startTimeMin)
+                    hoursInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
+                    minsInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
+                    hoursMinutesFlag = true
+                } else {
+                    avisoCampos.text = getString(R.string.valor_horas_minutos_falta)
+                    avisoCampos.visibility = View.VISIBLE
+                }
 
                 newViewModel.newReminder.start_time = startTimeString
 
@@ -237,8 +241,8 @@ class ReminderFragment : Fragment() {
                 }
 
 
-                if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0 &&
-                        lembrarButtonPressed != 0 && hoursInt <= 23 && minsInt <= 59 ) {
+                if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0
+                        && lembrarButtonPressed != 0 && hoursMinutesFlag) {
                     avisoCampos.visibility = View.GONE
                     root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                     root.findViewById<Button>(R.id.button_ok).setOnClickListener {
@@ -278,6 +282,10 @@ class ReminderFragment : Fragment() {
     }
 
 }
+
+
+
+
 /*
 private var min:Int = 1
 private var max:Int = 24
@@ -303,3 +311,10 @@ private fun isInRange(a:Int, b:Int, c:Int):Boolean {
     return if (b > a) c in a..b else c in b..a
 }
 */
+//et.filters = arrayOf(InputFilter.LengthFilter(2))
+//et_min.filters = arrayOf(InputFilter.LengthFilter(2))
+// val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
+//                //et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
+//
+//                //val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
+//                //et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
