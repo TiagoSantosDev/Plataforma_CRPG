@@ -103,9 +103,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 val idx = eventsList.indexOfFirst {
                     it.title == "ALMOÇO"
                 }
-
-                println(">isLunch idx:$idx")
-
+                
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
                     2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
@@ -113,7 +111,6 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
                 }
 
-                println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
             }
 
             false -> {
@@ -122,32 +119,31 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     it.title == "JANTAR"
                 }
 
-                println(">isDinner idx:$idx")
-
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
                     2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
                     3 -> eventsList[idx].chosen_meal = retrievedMeal.dieta
                     4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
                 }
-
-                println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
-
             }
 
         }
 
-        println("Events list debug: $eventsList")
-
         val newMealJSON = gson.toJson(eventsList)
         File(fullFilename).writeText(newMealJSON)
-        println(File(fullFilename).canRead())
-        println(File(fullFilename).readText())
+
     }
 
 }
 
 
+//println(">isLunch idx:$idx")
+//println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
+//println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
+//println(">isDinner idx:$idx")
+//println("Events list debug: $eventsList")
+//println(File(fullFilename).canRead())
+//println(File(fullFilename).readText())
 
 // val gsonPretty = GsonBuilder().setPrettyPrinting().create()
 // val jsonTutsListPretty: String = gsonPretty.toJson(json)
