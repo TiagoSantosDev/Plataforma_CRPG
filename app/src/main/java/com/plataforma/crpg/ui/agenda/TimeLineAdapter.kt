@@ -1,11 +1,10 @@
 package com.plataforma.crpg.ui.agenda
 
-import android.app.ProgressDialog.show
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -65,7 +64,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         println()
 
         if (overlapArray.contains(concatTime)){
-            holder.timeline.marker.setVisible(false,false)
+            holder.timeline.marker.setVisible(false, false)
         }else{
             overlapArray.add(concatTime)
             holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
@@ -104,16 +103,16 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.background_dieta)
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.meal_icon)
 
-                when(timeLineModel.title){
-                    "ALMOÇO" -> if(timeLineModel.chosen_meal == null){
+                when (timeLineModel.title) {
+                    "ALMOÇO" -> if (timeLineModel.chosen_meal == null) {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR ALMOÇO"
-                    }else{
+                    } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
 
-                    "JANTAR" -> if(timeLineModel.chosen_meal == null){
+                    "JANTAR" -> if (timeLineModel.chosen_meal == null) {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR JANTAR"
-                    }else{
+                    } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
                 }
@@ -130,7 +129,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         holder.itemView.card.setOnClickListener {
             val id: String = mFeedList[position].title
             val tipo: EventType = mFeedList[position].type
-            val title: String =  mFeedList[position].title
+            //val title: String =  mFeedList[position].title
             println("ID do cartao: $id")
             println("Tipo do cartao: $tipo")
 
@@ -148,10 +147,22 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 }
 
                 EventType.MEAL -> {
-                    /*when(title){
-                        "Almoço" -> AgendaFragment.
-                    }*/
+                    val bundle = Bundle()
+
+                    when (id) {
+                        "ALMOÇO" -> {
+                            println(">title is lunch")
+                            bundle.putBoolean("isLunch", true)
+
+                        }
+                        "JANTAR" -> {
+                            println(">title is dinner")
+                            bundle.putBoolean("isLunch", false)
+                        }
+                    }
+
                     val fragment: Fragment = MealsFragment()
+                    fragment.arguments = bundle
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
                     fragmentManager.findFragmentByTag("Agenda")?.let { it1 -> fragmentTransaction.remove(it1) };
@@ -243,3 +254,11 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 //
 // println("Fragment Manager: " + fragmentManager.toString())
 //                    //println("Fragment Transaction: " + fragmentTransaction.toString())
+//
+// fragment.arguments(bundle)
+// /*val storeDetails = StoreDetails()
+//                            storeDetails.setArguments(bundle)
+//                            getActivity().getSupportFragmentManager()
+//                                    .beginTransaction()
+//                                    .replace(R.id.content_frame, StoreDetails())
+//                                    .commit()*/
