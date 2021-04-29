@@ -134,7 +134,7 @@ class MealsFragment : Fragment() {
             if (mealsViewModel.selectedOption != 0) {
                 view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
-                mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, isLunch)
+                mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, mealsViewModel.selectedOption, isLunch)
                 button_ok.setOnClickListener(){
                     view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.GONE
                 }
