@@ -40,16 +40,12 @@ class MealsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
         val isLunch = requireArguments().getBoolean("isLunch")
         println("> Bundle isLunch: $isLunch")
-
-        println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe}, 
-            |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
 
         view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
         view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
@@ -87,8 +83,6 @@ class MealsFragment : Fragment() {
         val cardDieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val cardVeg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
-        println("Prato carne:" + mealsViewModel.retrievedMeal.carne)
-        println("Meal selected date: " + sharedViewModel.selectedDate)
 
         cardCarne?.setOnLongClickListener {
             if(!cardCarne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
@@ -170,3 +164,10 @@ class MealsFragment : Fragment() {
 //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
  //view?.findViewById<TextView>(R.id.success_text)?.text = "Refeição registada com sucesso!"
 */
+
+//println("Prato carne:" + mealsViewModel.retrievedMeal.carne)
+//println("Meal selected date: " + sharedViewModel.selectedDate)
+//println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe},
+//    |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
+// println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe},
+//        //    |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())

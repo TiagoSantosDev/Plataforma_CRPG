@@ -98,26 +98,46 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
         val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
         var eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
 
-        /*
-        if(eventsList.any { it.date == selectedDate }){
-            indexOf.
-        }*/
+        when (isLunch) {
+            true -> {
 
-        when(selectedOption){
-            1 -> eventsList[1].chosen_meal = retrievedMeal.carne
-            2 -> eventsList[1].chosen_meal = retrievedMeal.peixe
-            3 -> eventsList[1].chosen_meal = retrievedMeal.dieta
-            4 -> eventsList[1].chosen_meal = retrievedMeal.vegetariano
+                val idx = eventsList.indexOfFirst {
+                    it.title == "ALMOÇO"
+                }
+
+                println(">isLunch idx:$idx")
+
+                when (idx) {
+                    1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
+                    2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
+                    3 -> eventsList[idx].chosen_meal = retrievedMeal.dieta
+                    4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
+                }
+            }
+
+            false -> {
+
+                val idx = eventsList.indexOfFirst {
+                    it.title == "JANTAR"
+                }
+
+                println(">isLunch idx:$idx")
+
+                when (idx) {
+                    1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
+                    2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
+                    3 -> eventsList[idx].chosen_meal = retrievedMeal.dieta
+                    4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
+                }
+
+            }
+
         }
-
-        println(eventsList[1].chosen_meal)
 
         val newMealJSON = gson.toJson(eventsList)
         File(fullFilename).writeText(newMealJSON)
         println(File(fullFilename).canRead())
         println(File(fullFilename).readText())
-
-
     }
 
 
@@ -162,3 +182,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 //                    println(tutorialMap)
 //        }catch (e: JsonSyntaxException) {}*/
 //    }
+//    /*
+//        if(eventsList.any { it.date == selectedDate }){
+//            indexOf.
+//        }*/

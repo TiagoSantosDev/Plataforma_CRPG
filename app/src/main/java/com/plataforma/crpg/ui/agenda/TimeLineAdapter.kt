@@ -174,7 +174,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
-        println(">TimeLine Model chosen Meal: " + timeLineModel.chosen_meal)
+
 
         //se almoço nao estiver escolhido
         //card informa que pode ser clicado para escolher almoço
@@ -262,3 +262,4 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 //                                    .beginTransaction()
 //                                    .replace(R.id.content_frame, StoreDetails())
 //                                    .commit()*/
+// println(">TimeLine Model chosen Meal: " + timeLineModel.chosen_meal)
