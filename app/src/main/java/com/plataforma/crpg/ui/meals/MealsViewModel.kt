@@ -121,7 +121,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     it.title == "JANTAR"
                 }
 
-                println(">isLunch idx:$idx")
+                println(">isDinner idx:$idx")
 
                 when (idx) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
