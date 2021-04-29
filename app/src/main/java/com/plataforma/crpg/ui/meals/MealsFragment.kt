@@ -44,8 +44,7 @@ class MealsFragment : Fragment() {
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val isLunch = requireArguments().getBoolean("isLunch")
-        println("> Bundle isLunch: $isLunch")
+
 
         view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
         view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
@@ -83,6 +82,8 @@ class MealsFragment : Fragment() {
         val cardDieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val cardVeg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
+        val isLunch = requireArguments().getBoolean("isLunch")
+        println("> Bundle isLunch: $isLunch")
 
         cardCarne?.setOnLongClickListener {
             if(!cardCarne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
@@ -133,7 +134,7 @@ class MealsFragment : Fragment() {
             if (mealsViewModel.selectedOption != 0) {
                 view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
                 view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
-                mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, true)
+                mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, isLunch)
                 button_ok.setOnClickListener(){
                     view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.GONE
                 }
