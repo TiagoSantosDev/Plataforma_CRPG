@@ -78,7 +78,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
         val fos: FileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE)
         fos.write(fileContents.toByteArray())
 
-        println("escreveu no ficheiro")
+        //println("escreveu no ficheiro")
 
         context.openFileInput(filename).bufferedReader().useLines { lines ->
             lines.fold("") { some, text ->
@@ -103,7 +103,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 val idx = eventsList.indexOfFirst {
                     it.title == "ALMOÇO"
                 }
-                
+
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
                     2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
