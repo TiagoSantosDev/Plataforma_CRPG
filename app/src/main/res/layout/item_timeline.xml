@@ -108,7 +108,6 @@
                         android:textSize="20sp" />
 
                 </LinearLayout>
-
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
