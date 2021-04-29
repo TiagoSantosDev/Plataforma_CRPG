@@ -130,16 +130,23 @@ class MealsFragment : Fragment() {
             true
         }
 
-        button_confirm_meal.setOnClickListener(){
+        val meal_success_view = view?.findViewById<View>(R.id.meal_choice_success)
+        val nenhuma_refeicao_checked = view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)
+
+
+
+        button_confirm_meal.setOnClickListener {
             if (mealsViewModel.selectedOption != 0) {
-                view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.VISIBLE
-                view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.GONE
+                meal_success_view?.visibility = View.VISIBLE
+                meal_success_view?.bringToFront()
+                nenhuma_refeicao_checked?.visibility = View.GONE
                 mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, mealsViewModel.selectedOption, isLunch)
-                button_ok.setOnClickListener(){
-                    view?.findViewById<View>(R.id.meal_choice_success)?.visibility = View.GONE
+                button_ok.setOnClickListener() {
+                    meal_success_view?.visibility = View.GONE
+
                 }
             } else {
-                view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)?.visibility = View.VISIBLE
+                nenhuma_refeicao_checked?.visibility = View.VISIBLE
             }
         }
 
@@ -153,6 +160,10 @@ class MealsFragment : Fragment() {
 
 }
 
+
+
+//view?.findViewById<View>(R.id.frag)?.visibility = View.GONE
+//view?.visibility = View.VISIBLE
 /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.getItemId()) {
         android.R.id.home -> {
