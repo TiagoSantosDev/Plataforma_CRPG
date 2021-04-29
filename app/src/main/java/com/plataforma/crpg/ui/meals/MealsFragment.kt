@@ -42,10 +42,11 @@ class MealsFragment : Fragment() {
     ): View? {
 
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
-
-
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        val isLunch = requireArguments().getBoolean("isLunch")
+        println("> Bundle isLunch: $isLunch")
 
         println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe}, 
             |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
@@ -81,54 +82,54 @@ class MealsFragment : Fragment() {
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
 
         mealsViewModel.testDB()
-        val card_carne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
-        val card_peixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
-        val card_dieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
-        val card_veg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
+        val cardCarne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
+        val cardPeixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
+        val cardDieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
+        val cardVeg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
         println("Prato carne:" + mealsViewModel.retrievedMeal.carne)
         println("Meal selected date: " + sharedViewModel.selectedDate)
 
-        card_carne?.setOnLongClickListener {
-            if(!card_carne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
-            card_carne.isChecked = !card_carne.isChecked
-            card_peixe?.isChecked = false
-            card_dieta?.isChecked = false
-            card_veg?.isChecked = false
+        cardCarne?.setOnLongClickListener {
+            if(!cardCarne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
+            cardCarne.isChecked = !cardCarne.isChecked
+            cardPeixe?.isChecked = false
+            cardDieta?.isChecked = false
+            cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
 
-        card_peixe?.setOnLongClickListener {
-            if(!card_peixe.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
-            card_peixe.isChecked = !card_peixe.isChecked
-            card_carne?.isChecked = false
-            card_dieta?.isChecked = false
-            card_veg?.isChecked = false
+        cardPeixe?.setOnLongClickListener {
+            if(!cardPeixe.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
+            cardPeixe.isChecked = !cardPeixe.isChecked
+            cardCarne?.isChecked = false
+            cardDieta?.isChecked = false
+            cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
-        card_dieta?.setOnLongClickListener {
-            if(!card_dieta.isChecked){ mealsViewModel.selectedOption = 3}else{mealsViewModel.selectedOption = 0}
-            card_dieta.isChecked = !card_dieta.isChecked
-            card_carne?.isChecked = false
-            card_peixe?.isChecked = false
-            card_veg?.isChecked = false
+        cardDieta?.setOnLongClickListener {
+            if(!cardDieta.isChecked){ mealsViewModel.selectedOption = 3}else{mealsViewModel.selectedOption = 0}
+            cardDieta.isChecked = !cardDieta.isChecked
+            cardCarne?.isChecked = false
+            cardPeixe?.isChecked = false
+            cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
-        card_veg?.setOnLongClickListener {
-            if(!card_veg.isChecked){ mealsViewModel.selectedOption = 4 }else{mealsViewModel.selectedOption = 0}
-            card_veg.isChecked = !card_veg.isChecked
-            card_carne?.isChecked = false
-            card_peixe?.isChecked = false
-            card_dieta?.isChecked = false
+        cardVeg?.setOnLongClickListener {
+            if(!cardVeg.isChecked){ mealsViewModel.selectedOption = 4 }else{mealsViewModel.selectedOption = 0}
+            cardVeg.isChecked = !cardVeg.isChecked
+            cardCarne?.isChecked = false
+            cardPeixe?.isChecked = false
+            cardDieta?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
             println("Selected option: " + mealsViewModel.selectedOption)
             true
