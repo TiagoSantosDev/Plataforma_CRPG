@@ -84,9 +84,9 @@ class ReminderFragment : Fragment() {
             val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
             et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
 
-            val cb_som = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som)
-            val cb_vib = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar)
-            val cb_ambos = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos)
+            val cbSom = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som)
+            val cbVib = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar)
+            val cbAmbos = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos)
 
             expandableDia.parentLayout.setOnClickListener { expandableDia.toggleLayout() }
             expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje)
@@ -111,23 +111,23 @@ class ReminderFragment : Fragment() {
             expandableAlerta.parentLayout.setOnClickListener { expandableAlerta.toggleLayout() }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonSom)
                     .setOnClickListener {
-                        cb_som.visibility = View.VISIBLE
-                        cb_vib.visibility = View.INVISIBLE
-                        cb_ambos.visibility = View.INVISIBLE
+                        cbSom.visibility = View.VISIBLE
+                        cbVib.visibility = View.INVISIBLE
+                        cbAmbos.visibility = View.INVISIBLE
                         alarmTypeButtonPressed = 1
                     }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonVibrar)
                     .setOnClickListener {
-                        cb_som.visibility = View.INVISIBLE
-                        cb_vib.visibility = View.VISIBLE
-                        cb_ambos.visibility = View.INVISIBLE
+                        cbSom.visibility = View.INVISIBLE
+                        cbVib.visibility = View.VISIBLE
+                        cbAmbos.visibility = View.INVISIBLE
                         alarmTypeButtonPressed = 2
                     }
             expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonAmbos)
                     .setOnClickListener {
-                        cb_som.visibility = View.INVISIBLE
-                        cb_vib.visibility = View.INVISIBLE
-                        cb_ambos.visibility = View.VISIBLE
+                        cbSom.visibility = View.INVISIBLE
+                        cbVib.visibility = View.INVISIBLE
+                        cbAmbos.visibility = View.VISIBLE
                         alarmTypeButtonPressed = 3
                     }
 
@@ -149,9 +149,9 @@ class ReminderFragment : Fragment() {
                 expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).setText("")
 
                 // reset alarmType section
-                expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som).visibility = View.INVISIBLE
-                cb_vib.visibility = View.INVISIBLE
-                expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_ambos).visibility = View.INVISIBLE
+                cbSom.visibility = View.INVISIBLE
+                cbVib.visibility = View.INVISIBLE
+                cbAmbos.visibility = View.INVISIBLE
 
                 expandableNotas.secondLayout.findViewById<EditText>(R.id.editTextTextPersonName).setText("")
             }
