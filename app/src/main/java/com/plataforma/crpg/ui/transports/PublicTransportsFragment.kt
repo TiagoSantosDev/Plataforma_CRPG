@@ -16,9 +16,13 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.databinding.FragmentPublicTransportBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.*
+import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_transports
+import kotlinx.android.synthetic.main.fragment_public_transport.*
+import kotlinx.android.synthetic.main.timetable_layout.*
 
 
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -29,6 +33,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -43,20 +48,14 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-
     }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
-        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
-        val selectedDate = sharedViewModel.selectedDate
-        val customText = transportsViewModel.getPublicTransportText(selectedDate)
-        println("Custom text: $customText")
-
-        view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
+        val binding = FragmentPublicTransportBinding.inflate(layoutInflater)
+        val view = binding.root
 
         val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
@@ -69,19 +68,29 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         }
 
         linesSpinner?.onItemSelectedListener = this
-        return inflater.inflate(R.layout.fragment_public_transports_old, container, false)
+        return view
+        //return inflater.inflate(R.layout.fragment_public_transports_old, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTES PUBLICOS"
+
+        transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
+        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+        val selectedDate = sharedViewModel.selectedDate
+        val publicText = transportsViewModel.getPublicTransportText(selectedDate)
+        println("Custom text: $publicText")
+
+        public_transports_text.text= publicText
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val photoView = view?.findViewById(R.id.photo_view) as PhotoView
+        //val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
+        //val photoView = photo_view as PhotoView
         /*
         button_view_timetable_1.setOnClickListener {
 
@@ -219,3 +228,4 @@ public fun boolean onOptionsItemSelected() {
 //    }
 // import kotlinx.android.synthetic.main.fragment_public_transports.*
 //*/
+// view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
