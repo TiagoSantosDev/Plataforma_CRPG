@@ -3,16 +3,16 @@ package com.plataforma.crpg.ui.transports
 import android.annotation.SuppressLint
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import com.plataforma.crpg.model.CustomInfoPublicTransport
 import java.util.ArrayList
 
 @SuppressLint("StaticFieldLeak")
 class TransportsViewModel(application: Application) : AndroidViewModel(application) {
 
-    var nome_motorista_para_CRPG = "Jorge"
-    var nome_motorista_de_CRPG = "Eliseu"
+    var nome_motorista_para_CRPG = "João"
+    var nome_motorista_de_CRPG = "Maria"
     private val context = getApplication<Application>().applicationContext
     lateinit var custom_transports_text: String
-    lateinit var public_transports_text: String
 
 
     fun extractDataFromTransportModel(): ArrayList<String> {
@@ -28,10 +28,21 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
         return customText
     }
 
-    fun getPublicTransportText(selectedDate: String): String {
-        val publicText: String
+    fun getPublicTransportText(selectedDate: String): HashMap<String,String> {
 
-        publicText = "Horários da linha 401: 09h30 CRPG \n 10h30 Afurada \n De hora a hora até às 17h00"
+        val listaDados = ArrayList<CustomInfoPublicTransport>()
+
+        val idx = listaDados.indexOfFirst {
+            it.data == selectedDate
+        }
+
+        val publicText = hashMapOf<String,String>()
+
+        publicText["Linha 401"] = "Horários para a linha 401"
+        publicText["Linha ZF"] = "Horários para a linha 401"
+        publicText["Linha 35"] = "Horários para a linha 401"
+        publicText["Linha 45"] = "Horários para a linha 401"
+
 
         return publicText
     }

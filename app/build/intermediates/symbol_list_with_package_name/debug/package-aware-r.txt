@@ -2711,6 +2711,7 @@ id button_start_recording
 id button_stop_recording
 id button_view_timetable_1
 id button_view_timetable_2
+id button_view_timetables_layout
 id call_button_1
 id call_button_2
 id cancel_action
@@ -3693,6 +3694,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string como_gostaria_de_se_sentir
 string confiante
+string consultar_horarios
 string contacto_a
 string contacto_b
 string contacto_c

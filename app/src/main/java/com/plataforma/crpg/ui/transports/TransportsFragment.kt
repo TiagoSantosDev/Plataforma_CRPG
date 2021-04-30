@@ -19,7 +19,6 @@ import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
-import kotlinx.android.synthetic.main.fragment_date_picker.*
 import kotlinx.android.synthetic.main.transports_fragment.*
 
 
