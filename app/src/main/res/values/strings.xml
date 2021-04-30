@@ -89,11 +89,13 @@
     <string name="nova_nota_de_voz">NOVA NOTA DE VOZ</string>
     <string name="notas">NOTAS</string>
     <string name="informacao">INFORMAÇÃO</string>
-    <string name="motorista_a">MOTORISTA A</string>
-    <string name="contacto_a">CONTACTO A</string>
+    <string name="motorista_a">JOÃO</string>
+    <string name="contacto_a">901234567</string>
     <string name="motoristas">MOTORISTAS</string>
-    <string name="motorista_b">MOTORISTA B</string>
-    <string name="contacto_b">CONTACTO_B</string>
+    <string name="motorista_b">ANA</string>
+    <string name="contacto_b">977654321</string>
+    <string name="motorista_c">RUI</string>
+    <string name="contacto_c">941112223</string>
     <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
     <string name="selecionar">SELECIONAR</string>
     <string name="selecionar_data">SELECIONAR DATA</string>

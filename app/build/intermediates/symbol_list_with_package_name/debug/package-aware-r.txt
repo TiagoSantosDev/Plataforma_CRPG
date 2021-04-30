@@ -2899,6 +2899,7 @@ id frame_meditation_2
 id frame_meditation_3
 id frame_motorista_1
 id frame_motorista_2
+id frame_motorista_3
 id frame_note_image
 id frame_opcao_carne
 id frame_opcao_dieta
@@ -3230,6 +3231,9 @@ id textView_som
 id textView_vibrar
 id textWatcher
 id text_attributes_heading
+id text_contacto_a
+id text_contacto_b
+id text_contacto_c
 id text_driver
 id text_driver_CRPG_to_location
 id text_driver_name_CRPG_to_location
@@ -3257,6 +3261,9 @@ id text_marker_padding_note
 id text_marker_right_padding
 id text_marker_size
 id text_marker_top_padding
+id text_motorista_2
+id text_motorista_3
+id text_motorista_a
 id text_motoristas
 id text_opcao_carne
 id text_opcao_dieta
@@ -3688,6 +3695,7 @@ string como_gostaria_de_se_sentir
 string confiante
 string contacto_a
 string contacto_b
+string contacto_c
 string conteudo
 string criado_c_sucesso
 string dash_gap
@@ -3818,6 +3826,7 @@ string minutos
 string motorista
 string motorista_a
 string motorista_b
+string motorista_c
 string motoristas
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
