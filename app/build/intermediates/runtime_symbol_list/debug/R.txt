@@ -3857,7 +3857,7 @@ int string nav_app_bar_navigate_up_description 0x7f1200f0
 int string nav_app_bar_open_drawer_description 0x7f1200f1
 int string nenhum_dia_selecionado_msg 0x7f1200f2
 int string nenhum_dia_selecionado_warning 0x7f1200f3
-int string nenhuma_refei_o_selecionada 0x7f1200f4
+int string nenhuma_refeicao_selecionada 0x7f1200f4
 int string next 0x7f1200f5
 int string notas 0x7f1200f6
 int string nova_nota_de_texto 0x7f1200f7

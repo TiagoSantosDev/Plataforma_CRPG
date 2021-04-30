@@ -47,7 +47,6 @@ class ReminderFragment : Fragment() {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
 
-
         newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
 
         with(binding){
@@ -240,7 +239,6 @@ class ReminderFragment : Fragment() {
                     if (activity?.packageManager?.let { it1 -> newViewModel.alarmIntent.resolveActivity(it1) } != null) {
                         startActivity(newViewModel.alarmIntent)
                     }
-
 
                 } else if (hoursInt > 23 || minsInt > 59) {
                     avisoCampos.text = getString(R.string.hora_minutos_invalido)
