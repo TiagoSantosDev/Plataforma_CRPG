@@ -99,7 +99,6 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
         when (isLunch) {
             true -> {
-
                 val idx = eventsList.indexOfFirst {
                     it.title == "ALMOÇO"
                 }
@@ -114,7 +113,6 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
             }
 
             false -> {
-
                 val idx = eventsList.indexOfFirst {
                     it.title == "JANTAR"
                 }
@@ -126,12 +124,10 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
                 }
             }
-
         }
 
         val newMealJSON = gson.toJson(eventsList)
         File(fullFilename).writeText(newMealJSON)
-
     }
 
 }

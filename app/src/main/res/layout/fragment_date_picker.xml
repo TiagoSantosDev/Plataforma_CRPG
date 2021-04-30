@@ -25,12 +25,13 @@
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="100dp"
             android:gravity="center_horizontal"
             android:text="@+id/tvDate"
             android:textColor="@color/SecondaryBlue"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +51,7 @@
         <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
             android:id="@+id/main_single_row_calendar"
             android:layout_width="match_parent"
-            android:layout_height="192dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:layout_below="@id/tvDate"
             app:deselection="false"
@@ -61,20 +62,34 @@
             app:longPress="false"
             app:multiSelection="false" />
 
+        <TextView
+            android:id="@+id/selecionar_dia_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/PrimaryOrange"
+            android:textSize="20sp"
+            android:text="@string/selecionar_data_hint"
+            android:layout_below="@id/main_single_row_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_single_row_calendar"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_selecionar"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_single_row_calendar"
+            android:layout_below="@id/selecionar_dia_hint"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:elevation="10dp"
             android:gravity="center_horizontal"
             android:text="@string/selecionar"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="30sp"
+            android:textSize="40sp"
             app:backgroundTint="@color/md_blue_100"
             app:cornerRadius="32dp"
             app:iconPadding="8dp"
@@ -82,7 +97,7 @@
             app:iconTint="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_single_row_calendar"
+            app:layout_constraintTop_toBottomOf="@+id/selecionar_dia_hint"
             app:rippleColor="@color/tertiaryText" />
 
 
