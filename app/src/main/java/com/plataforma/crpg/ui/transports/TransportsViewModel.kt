@@ -32,7 +32,7 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
     fun getPublicTransportText(selectedDate: String): String {
         val publicText: String
 
-        publicText = "Horários para o dia X:"
+        publicText = "Horários da linha 401: 09h30 CRPG \n"
 
         return publicText
     }
