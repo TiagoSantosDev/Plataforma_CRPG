@@ -3480,7 +3480,7 @@ layout fragment_date_picker
 layout fragment_meditation
 layout fragment_meditation_media_player
 layout fragment_public_transport
-layout fragment_public_transports_old
+layout fragment_public_transports_timetables
 layout item_bottom_sheet_line
 layout item_bottom_sheet_marker
 layout item_row

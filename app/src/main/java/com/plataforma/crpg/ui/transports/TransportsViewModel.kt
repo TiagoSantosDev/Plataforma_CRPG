@@ -8,7 +8,6 @@ import java.util.ArrayList
 @SuppressLint("StaticFieldLeak")
 class TransportsViewModel(application: Application) : AndroidViewModel(application) {
 
-
     var nome_motorista_para_CRPG = "Jorge"
     var nome_motorista_de_CRPG = "Eliseu"
     private val context = getApplication<Application>().applicationContext
@@ -32,7 +31,7 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
     fun getPublicTransportText(selectedDate: String): String {
         val publicText: String
 
-        publicText = "Horários da linha 401: 09h30 CRPG \n"
+        publicText = "Horários da linha 401: 09h30 CRPG \n 10h30 Afurada \n De hora a hora até às 17h00"
 
         return publicText
     }

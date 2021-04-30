@@ -3479,7 +3479,7 @@ int layout fragment_date_picker 0x7f0d004b
 int layout fragment_meditation 0x7f0d004c
 int layout fragment_meditation_media_player 0x7f0d004d
 int layout fragment_public_transport 0x7f0d004e
-int layout fragment_public_transports_old 0x7f0d004f
+int layout fragment_public_transports_timetables 0x7f0d004f
 int layout item_bottom_sheet_line 0x7f0d0050
 int layout item_bottom_sheet_marker 0x7f0d0051
 int layout item_row 0x7f0d0052
