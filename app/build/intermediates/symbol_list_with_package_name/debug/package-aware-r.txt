@@ -3148,6 +3148,7 @@ id seek_marker_size
 id seek_marker_top_padding
 id seekbar
 id seekbar_value
+id selecionar_dia_hint
 id select_dialog_listview
 id selected
 id selected_checkmark
@@ -3900,6 +3901,7 @@ string search_menu_title
 string second_fragment_label
 string selecionar
 string selecionar_data
+string selecionar_data_hint
 string selecionar_dias
 string size
 string som

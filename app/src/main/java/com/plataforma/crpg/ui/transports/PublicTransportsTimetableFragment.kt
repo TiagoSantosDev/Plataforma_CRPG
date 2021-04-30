@@ -80,9 +80,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         val selectedDate = sharedViewModel.selectedDate
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
-        println("Custom text: $publicText")
-
-        public_transports_text.text= publicText
+        println("Public custom text: $publicText")
     }
 
 
@@ -231,3 +229,5 @@ public fun boolean onOptionsItemSelected() {
 // import kotlinx.android.synthetic.main.fragment_public_transports.*
 //*/
 // view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
+//
+// public_transports_text.text= publicText

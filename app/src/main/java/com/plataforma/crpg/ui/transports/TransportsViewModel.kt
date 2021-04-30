@@ -30,19 +30,35 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
     fun getPublicTransportText(selectedDate: String): HashMap<String,String> {
 
-        val listaDados = ArrayList<CustomInfoPublicTransport>()
+        println("Selected date: $selectedDate")
 
-        val idx = listaDados.indexOfFirst {
+        val listaDados = ArrayList<CustomInfoPublicTransport>()
+        val placeHolderData = CustomInfoPublicTransport("01042021","sde","deded","dede","deded")
+
+        listaDados.add(placeHolderData)
+
+        var idx = listaDados.indexOfFirst {
             it.data == selectedDate
         }
 
-        val publicText = hashMapOf<String,String>()
+        if(idx == -1){
+            idx = listaDados.indexOfFirst {
+                it.data > selectedDate
+            }
+        }
 
-        publicText["Linha 401"] = "Horários para a linha 401"
-        publicText["Linha ZF"] = "Horários para a linha 401"
-        publicText["Linha 35"] = "Horários para a linha 401"
-        publicText["Linha 45"] = "Horários para a linha 401"
 
+        println("Idx value: " + idx)
+        val publicText = hashMapOf<String, String>()
+
+        if (idx > -1) {
+
+            val fetchedCustomInfo = listaDados[idx]
+            publicText["Linha 405"] = fetchedCustomInfo.linha405
+            publicText["Linha ZF"] = fetchedCustomInfo.linhaZF
+            publicText["Linha 35"] = fetchedCustomInfo.linha35
+            publicText["Linha 45"] = fetchedCustomInfo.linha45
+        }
 
         return publicText
     }
