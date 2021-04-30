@@ -67,12 +67,13 @@ class MeditationMediaPlayerFragment : Fragment(){
         val filePath = "/mnt/sdcard/Alarms/assobia_para_o_lado.mp3"
 
         val player = SimpleExoPlayer.Builder(requireContext()).build()
+        player.setVideoSurface(null)
         player_view.player = player;
         val mediaItem: MediaItem = MediaItem.fromUri(filePath)
         player.setMediaItem(mediaItem)
+        player.clearVideoSurface()
         player.prepare()
         player.play()
-
 
         button_return_meditation.setOnClickListener {
             val fragment: Fragment = MeditationFragment()
