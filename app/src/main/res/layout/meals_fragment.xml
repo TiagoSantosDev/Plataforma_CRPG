@@ -85,18 +85,15 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_opcao_carne"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:gravity="center_horizontal"
                         android:maxLength="20"
-                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
-
                 </LinearLayout>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
-
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/frame_opcao_peixe"
@@ -140,21 +137,20 @@
                         android:id="@+id/text_titulo_peixe"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="center_horizontal"
                         android:maxLength="25"
-                        android:text="@string/adicionar_lembrete"
+                        android:text="@string/opcao_peixe"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_opcao_peixe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:gravity="center_horizontal"
                         android:maxLength="30"
-                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
-                        android:textSize="12sp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -210,13 +206,12 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_opcao_dieta"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:gravity="center_horizontal"
                         android:maxLength="30"
                         android:textColor="@android:color/black"
-                        android:text="@string/adicionar_lembrete"
-                        android:textSize="16sp" />
+                        android:textSize="20sp" />
 
                 </LinearLayout>
             </FrameLayout>
@@ -272,13 +267,12 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/text_opcao_vegetariano"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:gravity="center_horizontal"
                         android:maxLength="30"
-                        android:text="@string/adicionar_lembrete"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -312,7 +306,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/design_default_color_error"
-        android:text="@string/nenhuma_refei_o_selecionada"
+        android:text="@string/nenhuma_refeicao_selecionada"
         android:textSize="25sp"
         android:visibility="gone" />
     </FrameLayout>

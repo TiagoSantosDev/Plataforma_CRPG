@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -40,16 +39,9 @@ class MealsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
+        //val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-
-
-
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
-        view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
 
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
@@ -70,83 +62,115 @@ class MealsFragment : Fragment() {
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
+
+        text_opcao_carne.text = mealsViewModel.retrievedMeal.carne
+        println("Opcao carne text: " + text_opcao_carne.text)
+        text_opcao_carne.bringToFront()
+        text_opcao_peixe.text = mealsViewModel.retrievedMeal.peixe
+        text_opcao_dieta.text = mealsViewModel.retrievedMeal.dieta
+        text_opcao_vegetariano.text = mealsViewModel.retrievedMeal.vegetariano
+
+    }
+
     @SuppressLint("SetTextI18n", "ResourceAsColor")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+/*
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
 
-        mealsViewModel.testDB()
+        println("Opcao carne text: " + view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text)
+
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.bringToFront()
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
+*/
+
+        //mealsViewModel.testDB()
         val cardCarne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
         val cardPeixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
         val cardDieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
         val cardVeg: MaterialCardView? = view?.findViewById(R.id.frame_opcao_vegetariano)
 
         val isLunch = requireArguments().getBoolean("isLunch")
-        println("> Bundle isLunch: $isLunch")
 
         cardCarne?.setOnLongClickListener {
-            if(!cardCarne.isChecked){ mealsViewModel.selectedOption = 1}else{mealsViewModel.selectedOption = 0}
+            if (!cardCarne.isChecked) {
+                mealsViewModel.selectedOption = 1
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
             cardCarne.isChecked = !cardCarne.isChecked
             cardPeixe?.isChecked = false
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
-            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
 
         cardPeixe?.setOnLongClickListener {
-            if(!cardPeixe.isChecked){ mealsViewModel.selectedOption = 2}else{mealsViewModel.selectedOption = 0}
+            if (!cardPeixe.isChecked) {
+                mealsViewModel.selectedOption = 2
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
             cardPeixe.isChecked = !cardPeixe.isChecked
             cardCarne?.isChecked = false
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
-            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
         cardDieta?.setOnLongClickListener {
-            if(!cardDieta.isChecked){ mealsViewModel.selectedOption = 3}else{mealsViewModel.selectedOption = 0}
+            if (!cardDieta.isChecked) {
+                mealsViewModel.selectedOption = 3
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
             cardDieta.isChecked = !cardDieta.isChecked
             cardCarne?.isChecked = false
             cardPeixe?.isChecked = false
             cardVeg?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
-            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
         cardVeg?.setOnLongClickListener {
-            if(!cardVeg.isChecked){ mealsViewModel.selectedOption = 4 }else{mealsViewModel.selectedOption = 0}
+            if (!cardVeg.isChecked) {
+                mealsViewModel.selectedOption = 4
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
             cardVeg.isChecked = !cardVeg.isChecked
             cardCarne?.isChecked = false
             cardPeixe?.isChecked = false
             cardDieta?.isChecked = false
             FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
-            println("Selected option: " + mealsViewModel.selectedOption)
             true
         }
 
-        val meal_success_view = view?.findViewById<View>(R.id.meal_choice_success)
-        val nenhuma_refeicao_checked = view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)
-
-
+        val mealSuccessView = view?.findViewById<View>(R.id.meal_choice_success)
+        val nothingCheckedWarning = view?.findViewById<View>(R.id.aviso_nenhuma_refeicao_checked)
 
         button_confirm_meal.setOnClickListener {
             if (mealsViewModel.selectedOption != 0) {
-                meal_success_view?.visibility = View.VISIBLE
-                meal_success_view?.bringToFront()
-                nenhuma_refeicao_checked?.visibility = View.GONE
+                println("Selected option: " + mealsViewModel.selectedOption)
+                mealSuccessView?.visibility = View.VISIBLE
+                mealSuccessView?.bringToFront()
+                nothingCheckedWarning?.visibility = View.GONE
                 mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, mealsViewModel.selectedOption, isLunch)
                 button_ok.setOnClickListener() {
-                    meal_success_view?.visibility = View.GONE
-
+                    mealSuccessView?.visibility = View.GONE
                 }
             } else {
-                nenhuma_refeicao_checked?.visibility = View.VISIBLE
+                nothingCheckedWarning?.visibility = View.VISIBLE
             }
         }
 
@@ -162,6 +186,10 @@ class MealsFragment : Fragment() {
 
 
 
+//println("Selected option: " + mealsViewModel.selectedOption)
+//println("Selected option: " + mealsViewModel.selectedOption)
+//println("Selected option: " + mealsViewModel.selectedOption)
+//println("> Bundle isLunch: $isLunch")
 //view?.findViewById<View>(R.id.frag)?.visibility = View.GONE
 //view?.visibility = View.VISIBLE
 /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -183,3 +211,19 @@ class MealsFragment : Fragment() {
 //    |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
 // println("""On Create View foods: ${mealsViewModel.retrievedMeal.carne}, ${mealsViewModel.retrievedMeal.peixe},
 //        //    |${mealsViewModel.retrievedMeal.dieta}, ${mealsViewModel.retrievedMeal.vegetariano}""".trimMargin())
+//
+// println("IHDIDHIDHID: " + mealsViewModel.retrievedMeal.carne)
+//
+//       //error here
+//        /*
+//       view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
+//        text_opcao_carne.text = mealsViewModel.retrievedMeal.carne
+//
+//        println("Opcao carne text: " + view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text)
+//
+//        text_opcao_carne.bringToFront()
+//        view.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.bringToFront()
+//
+//       view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
+//       view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
+//       view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
