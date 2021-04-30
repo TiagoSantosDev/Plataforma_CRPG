@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment"
     android:background="@color/white">
 
     <include layout="@layout/timetable_layout"
@@ -113,13 +114,13 @@
 
         <Button
             android:id="@+id/button_view_timetable_1"
-            android:layout_width="361dp"
-            android:layout_height="76dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
             android:text="VER HORARIOS"
-            android:textSize="25sp"
-            app:backgroundTint="@color/md_blue_100"
+            android:textSize="30sp"
+            android:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintBottom_toTopOf="@id/frame_de_para_2"
@@ -170,13 +171,13 @@
 
         <Button
             android:id="@+id/button_view_timetable_2"
-            android:layout_width="361dp"
-            android:layout_height="74dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:text="VER HORARIOS"
-            android:textSize="25sp"
-            app:backgroundTint="@color/md_blue_100"
+            android:textSize="30sp"
+            android:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +195,7 @@
         android:text="@string/regressar"
         android:textColor="@color/md_blue_100"
         android:textSize="25sp"
-        app:backgroundTint="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
         app:rippleColor="@color/md_blue_100"
         app:strokeColor="@color/md_blue_100"

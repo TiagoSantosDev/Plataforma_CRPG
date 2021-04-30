@@ -104,13 +104,13 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.meal_icon)
 
                 when (timeLineModel.title) {
-                    "ALMOÇO" -> if (timeLineModel.chosen_meal == null) {
+                    "ALMOÇO" -> if (timeLineModel.chosen_meal == "") {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR ALMOÇO"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
 
-                    "JANTAR" -> if (timeLineModel.chosen_meal == null) {
+                    "JANTAR" -> if (timeLineModel.chosen_meal == "") {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR JANTAR"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
@@ -129,9 +129,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         holder.itemView.card.setOnClickListener {
             val id: String = mFeedList[position].title
             val tipo: EventType = mFeedList[position].type
-            //val title: String =  mFeedList[position].title
-            println("ID do cartao: $id")
-            println("Tipo do cartao: $tipo")
+
 
             when(tipo){
                 EventType.ACTIVITY -> {
@@ -141,9 +139,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                     val fragment: Fragment = TransportsFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                    fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
-                    fragmentTransaction?.addToBackStack(null)
-                    fragmentTransaction?.commit()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
                 }
 
                 EventType.MEAL -> {
@@ -164,7 +162,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                     val fragment: Fragment = MealsFragment()
                     fragment.arguments = bundle
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
-                    val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+                    val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                     fragmentManager.findFragmentByTag("Agenda")?.let { it1 -> fragmentTransaction.remove(it1) };
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction.addToBackStack(null)
@@ -263,3 +261,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 //                                    .replace(R.id.content_frame, StoreDetails())
 //                                    .commit()*/
 // println(">TimeLine Model chosen Meal: " + timeLineModel.chosen_meal)
+//
+// val title: String =  mFeedList[position].title
+//            //println("ID do cartao: $id")
+//            //println("Tipo do cartao: $tipo")

@@ -119,6 +119,7 @@
     <string name="clock_separator">:</string>
     <string name="horas">horas</string>
     <string name="minutos">minutos</string>
+    <string name="consultar_horarios">CONSULTAR HORÁRIOS</string>
 
     <string-array name="line_type">
         <item>Normal</item>

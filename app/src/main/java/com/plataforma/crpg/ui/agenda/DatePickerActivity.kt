@@ -48,7 +48,7 @@ class DatePickerActivity : BaseActivity() {
         //setContentViewWithoutInject(R.layout.activity_date_picker)
         setContentView(R.layout.activity_date_picker)
 
-        var change = ""
+        var change: String
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val language = sharedPreferences.getString("language", "bak")
         if (language == "English") {

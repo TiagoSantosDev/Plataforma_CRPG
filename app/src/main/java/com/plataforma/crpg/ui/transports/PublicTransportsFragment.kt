@@ -82,47 +82,24 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
         println("Custom text: $publicText")
 
-        public_transports_text.text= publicText
+        //public_transports_text.text= publicText.
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
-        //val photoView = photo_view as PhotoView
-        /*
-        button_view_timetable_1.setOnClickListener {
 
-            when(opSelected){
-                0 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
-                layoutInflater.inflate(R.layout.timetable_layout, null) }
-                1 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
-                        layoutInflater.inflate(R.layout.timetable_layout, null) }
-                2 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-            }
+        button_view_timetables_layout.setOnClickListener{
+            val fragment: Fragment = PublicTransportsTimetableFragment()
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+            fragmentManager.popBackStack()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
 
-        button_view_timetable_2.setOnClickListener {
-            when(opSelected){
-                0 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                1 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                2 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-            }
-        }
-        */
         button_return_transports.setOnClickListener {
             val fragment: Fragment = TransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -142,27 +119,18 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        val selItem: String = p0?.getItemAtPosition(p2).toString()
+
         val pos = p2
-        var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.bus_lines_spinner)
-        /*
+        val selectedDate = sharedViewModel.selectedDate
+        val publicText = transportsViewModel.getPublicTransportText(selectedDate)
+        println("Custom text: $publicText")
+
         when(pos){
-            1 -> {
-                text_to_from_1.text = "CRPG"
-                text_to_from_2.text = "S. João de Deus"
-                text_to_from_3.text = "S. João de Deus"
-                text_to_from_4.text = "CRPG"
-                opSelected = 1
-            }
-            2 -> {
-                textFromBusLines!!.text = "De Gaia para o CRPG"
-                opSelected = 2
-            }
-            3 -> {
-                textFromBusLines!!.text = "De Casa para o CRPG"
-                opSelected = 3
-            }
-        }*/
+            1 -> public_transports_text.text = publicText.get(0)
+            2 -> public_transports_text.text = publicText.get(1)
+            3 -> public_transports_text.text = publicText.get(2)
+            4 -> public_transports_text.text = publicText.get(3)
+        }
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -229,3 +197,59 @@ public fun boolean onOptionsItemSelected() {
 // import kotlinx.android.synthetic.main.fragment_public_transports.*
 //*/
 // view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
+//
+// val photoView = view?.findViewById(R.id.photo_view) as PhotoView
+//
+//        //val photoView = photo_view as PhotoView
+//        /*
+//        button_view_timetable_1.setOnClickListener {
+//
+//            when(opSelected){
+//                0 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+//                layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                1 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+//                        layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                2 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//            }
+//        }
+//
+//        button_view_timetable_2.setOnClickListener {
+//            when(opSelected){
+//                0 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                1 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                2 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
+//                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+//            }
+//        }
+//        */
+//
+//        /*
+//        when(pos){
+//            1 -> {
+//                text_to_from_1.text = "CRPG"
+//                text_to_from_2.text = "S. João de Deus"
+//                text_to_from_3.text = "S. João de Deus"
+//                text_to_from_4.text = "CRPG"
+//                opSelected = 1
+//            }
+//            2 -> {
+//                textFromBusLines!!.text = "De Gaia para o CRPG"
+//                opSelected = 2
+//            }
+//            3 -> {
+//                textFromBusLines!!.text = "De Casa para o CRPG"
+//                opSelected = 3
+//            }
+//        }
+// val selItem: String = p0?.getItemAtPosition(p2).toString()*/
