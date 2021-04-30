@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.databinding.FragmentCustomTransportBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.*
@@ -34,18 +35,13 @@ class CustomTransportsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
-        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
-        val selectedDate = sharedViewModel.selectedDate
-        val customText = transportsViewModel.getCustomText(selectedDate)
-        println("Custom text: $customText")
-        view?.findViewById<TextView>(R.id.custom_transports_text)?.text = customText
+        val binding = FragmentCustomTransportBinding.inflate(layoutInflater)
+        val view = binding.root
 
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                // Handle the back button event
-                println(">HandleonBackButtonPressed")
+
                 val fragment: Fragment = TransportsFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -56,12 +52,25 @@ class CustomTransportsFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
-        return inflater.inflate(R.layout.fragment_custom_transport, container, false)
+        //return inflater.inflate(R.layout.fragment_custom_transport, container, false)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTE PERSONALIZADO"
+
+        transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
+        sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+        val selectedDate = sharedViewModel.selectedDate
+        val customText = transportsViewModel.getCustomText(selectedDate)
+        println("Custom text: $customText")
+
+        //view?.findViewById<TextView>(R.id.custom_transports_text)?.text = customText
+        //println("Custom text view: " + view?.findViewById<TextView>(R.id.custom_transports_text))
+
+        custom_transports_text.text = customText
+
     }
 
 
@@ -86,3 +95,7 @@ class CustomTransportsFragment : Fragment() {
         }
     }
 }
+
+
+// Handle the back button event
+//println(">HandleonBackButtonPressed")

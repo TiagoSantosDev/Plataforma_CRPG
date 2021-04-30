@@ -56,11 +56,8 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/CustomTransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/CustomTransportsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_transport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_transport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,26 +372,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="589" y="134" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619195273224" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619777422032">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619782120571">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619777422032" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619777422032">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619782120571" />
+    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619782120571">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619777422032" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619777422032">
+    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619782120571" />
+    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619782120571">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619777422032" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619777422032">
+    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619782120571" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619782120571">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619777422032" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619782120571" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1619777140284">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
