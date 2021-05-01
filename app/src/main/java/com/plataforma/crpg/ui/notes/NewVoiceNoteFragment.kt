@@ -11,7 +11,8 @@ import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -23,10 +24,7 @@ import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
-import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.NoteType
-import com.plataforma.crpg.ui.MainActivity
-import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
 

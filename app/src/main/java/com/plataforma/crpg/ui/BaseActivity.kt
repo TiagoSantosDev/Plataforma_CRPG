@@ -1,11 +1,7 @@
 package com.plataforma.crpg.ui
 
-import android.graphics.drawable.Drawable
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.plataforma.crpg.R
-import com.plataforma.crpg.example.whenNotNull
 
 open class BaseActivity : AppCompatActivity() {
 

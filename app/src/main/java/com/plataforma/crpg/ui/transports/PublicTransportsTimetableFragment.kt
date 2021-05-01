@@ -80,7 +80,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
+        //val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val photoView = photo_view as PhotoView
 
         fun imageViewerController(){
@@ -89,6 +89,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             view?.findViewById<View>(R.id.photo_view)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = INVISIBLE
             view?.findViewById<View>(R.id.photo_view)?.setOnClickListener {
+                println("> Onclick photo view")
                 view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
@@ -176,8 +177,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-            frame_de_para_1.visibility = GONE
-            frame_de_para_2.visibility = GONE
+            //frame_de_para_1.visibility = GONE
+            //frame_de_para_2.visibility = GONE
     }
 
     private fun showBackButton() {
