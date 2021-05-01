@@ -32,10 +32,10 @@ class NewTextNoteFragment : Fragment() {
     companion object {
         fun newInstance() = NewTextNoteFragment()
         //image pick code
-         val IMAGE_PICK_CODE = 1000
+        const val IMAGE_PICK_CODE = 1000
 
         //Permission code
-         val PERMISSION_CODE = 1001
+        const val PERMISSION_CODE = 1001
     }
 
     val RESULT_GALLERY = 0
