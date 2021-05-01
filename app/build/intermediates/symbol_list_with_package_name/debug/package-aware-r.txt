@@ -2667,6 +2667,7 @@ id blocking
 id bottom
 id bounce
 id bus_lines_spinner
+id bus_lines_spinner_2
 id button0
 id button1
 id button2
@@ -2890,6 +2891,7 @@ id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
 id frame_de_para_2
+id frame_layout_timetables
 id frame_lib_1
 id frame_lib_2
 id frame_lib_3
@@ -2907,6 +2909,7 @@ id frame_opcao_dieta
 id frame_opcao_peixe
 id frame_opcao_vegetariano
 id frame_parent
+id frame_public_transports_timetable
 id frame_titulo
 id frame_titulo_nota
 id frame_transports_from_crpg
@@ -3091,6 +3094,7 @@ id pathRelative
 id peekHeight
 id percent
 id photo_view
+id photo_view_hint
 id pin
 id player_view
 id position
@@ -3342,6 +3346,7 @@ id unlabeled
 id up
 id useLogo
 id ver_horarios
+id ver_horarios_frame
 id vertical
 id video_decoder_gl_surface_view
 id view
@@ -3891,6 +3896,7 @@ string permission_camera_denied
 string permission_camera_extended_denied
 string permission_gallery_denied
 string personalizado
+string photo_viewer_hint
 string previous
 string project_id
 string querido
