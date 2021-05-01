@@ -121,6 +121,7 @@
     <string name="horas">horas</string>
     <string name="minutos">minutos</string>
     <string name="consultar_horarios">CONSULTAR HORÁRIOS</string>
+    <string name="photo_viewer_hint">Um clique para fechar foto, duplo clique para fazer zoom!</string>
 
     <string-array name="line_type">
         <item>Normal</item>

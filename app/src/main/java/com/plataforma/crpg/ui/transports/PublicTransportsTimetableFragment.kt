@@ -3,6 +3,7 @@ package com.plataforma.crpg.ui.transports
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.*
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -19,7 +20,6 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_transports
-import kotlinx.android.synthetic.main.fragment_public_transport.*
 import kotlinx.android.synthetic.main.timetable_layout.*
 import com.plataforma.crpg.databinding.FragmentPublicTransportsTimetablesBinding
 import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
@@ -57,7 +57,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
+        val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner_2)
         ArrayAdapter.createFromResource(
                 context,
                 R.array.linha_autocarro_array,
@@ -88,39 +88,47 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         super.onActivityCreated(savedInstanceState)
         //val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 
+        val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val photoView = photo_view as PhotoView
+
+        fun imageViewerController(){
+            view?.findViewById<View>(R.id.photo_view_hint)?.visibility = VISIBLE
+            view?.findViewById<View>(R.id.photo_view)?.visibility = VISIBLE
+            view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = INVISIBLE
+            view?.findViewById<View>(R.id.photo_view)?.setOnClickListener(){
+                view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
+                view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
+                view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
+            }
+        }
+
         button_view_timetable_1.setOnClickListener {
 
             when(opSelected){
-                0 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
-                layoutInflater.inflate(R.layout.timetable_layout, null) }
                 1 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
-                        layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController()}
                 2 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
                 3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
-                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
+                4 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
+                    imageViewerController() }
             }
         }
 
         button_view_timetable_2.setOnClickListener {
             when(opSelected){
-                0 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
                 1 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
                 2 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
                 3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
                 4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    layoutInflater.inflate(R.layout.timetable_layout, null) }
+                    imageViewerController() }
             }
         }
-
-
+        
         button_return_transports.setOnClickListener {
             val fragment: Fragment = TransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -140,24 +148,39 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        val selItem: String = p0?.getItemAtPosition(p2).toString()
-        val pos = p2
-        var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.bus_lines_spinner)
+        //val selItem: String = p0?.getItemAtPosition(p2).toString()
+        //var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.)
 
-        when(pos){
+        when(p2){
             1 -> {
                 text_to_from_1.text = "CRPG"
-                text_to_from_2.text = "S. João de Deus"
-                text_to_from_3.text = "S. João de Deus"
+                text_to_from_2.text = "CRPG"
+                text_to_from_3.text = "CRPG"
                 text_to_from_4.text = "CRPG"
                 opSelected = 1
             }
             2 -> {
-                textFromBusLines!!.text = "De Gaia para o CRPG"
+                text_to_from_1.text = "CRPG"
+                text_to_from_2.text = "CRPG"
+                text_to_from_3.text = "CRPG"
+                text_to_from_4.text = "CRPG"
+                //textFromBusLines!!.text = "De Gaia para o CRPG"
                 opSelected = 2
             }
             3 -> {
-                textFromBusLines!!.text = "De Casa para o CRPG"
+                text_to_from_1.text = "S. João de Deus"
+                text_to_from_2.text = "CRPG"
+                text_to_from_3.text = "CRPG"
+                text_to_from_4.text = "CRPG"
+                //textFromBusLines!!.text = "De Casa para o CRPG"
+                opSelected = 3
+            }
+            4 -> {
+                text_to_from_1.text = "CRPG"
+                text_to_from_2.text = "CRPG"
+                text_to_from_3.text = "CRPG"
+                text_to_from_4.text = "CRPG"
+                //textFromBusLines!!.text = "De Casa para o CRPG"
                 opSelected = 3
             }
         }
@@ -231,3 +254,8 @@ public fun boolean onOptionsItemSelected() {
 // view?.findViewById<TextView>(R.id.public_transports_text)?.text = customText
 //
 // public_transports_text.text= publicText
+//
+// layoutInflater.inflate(R.layout.timetable_layout, null).bringToFront()
+//                    //view?.findViewById<View>(R.id.timetable
+//
+// layoutInflater.inflate(R.layout.timetable_layout, null)

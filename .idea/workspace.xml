@@ -44,8 +44,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exo_styled_player_control_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exo_styled_player_view_backup.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -80,15 +78,15 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ItemTimelineBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ItemTimelineBinding.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ItemTimelineHorizontalBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/ItemTimelineHorizontalBinding.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/databinding/SelectedCalendarItemBinding.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/example/ExampleTimeLineAdapter.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/example/ExampleTimeLineAdapter.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ExampleTimeLineAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ExampleTimeLineAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationMediaPlayerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationMediaPlayerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/exo_styled_player_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/exo_styled_player_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_meditation_media_player.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_meditation_media_player.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transports_timetables.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transports_timetables.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/timetable_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/timetable_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,11 +384,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1619196844052" />
-    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog" timestamp="1619790648155">
+    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog" timestamp="1619878717281">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178845156" />
-    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1619790648155" />
+    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1619878717281" />
     <state x="438" y="87" key="AndroidProcessChooserDialog" timestamp="1619191475237">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -403,26 +401,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="589" y="134" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619195273224" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619800875653">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619885106429">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619800875653" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619800875653">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619885106429" />
+    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619885106428">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619800875653" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619800875652">
+    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619885106428" />
+    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619885106428">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619800875652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619800875653">
+    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619885106428" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619885106428">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619800875653" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619885106428" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1619777140284">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
