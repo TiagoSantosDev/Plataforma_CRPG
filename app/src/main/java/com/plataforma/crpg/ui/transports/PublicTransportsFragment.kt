@@ -7,22 +7,18 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentPublicTransportBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
-import kotlinx.android.synthetic.main.fragment_custom_transport.*
 import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_transports
 import kotlinx.android.synthetic.main.fragment_public_transport.*
-import kotlinx.android.synthetic.main.timetable_layout.*
 
 
 class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -57,7 +53,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val binding = FragmentPublicTransportBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner)
+        val linesSpinner: Spinner? = view.findViewById(R.id.bus_lines_spinner)
         ArrayAdapter.createFromResource(
                 context,
                 R.array.linha_autocarro_array,
@@ -126,10 +122,10 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         println("Item clicked: " + p2)
 
         when(pos){
-            0 -> public_transports_text.text = publicText.get("Linha 905")
-            1 -> public_transports_text.text = publicText.get("Linha ZF")
-            2 -> public_transports_text.text = publicText.get("Linha 35")
-            3 -> public_transports_text.text = publicText.get("Linha 45")
+            0 -> public_transports_text.text = publicText["Linha 905"]
+            1 -> public_transports_text.text = publicText["Linha ZF"]
+            2 -> public_transports_text.text = publicText["Linha 35"]
+            3 -> public_transports_text.text = publicText["Linha 45"]
         }
     }
 

@@ -22,7 +22,6 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
-import kotlinx.android.synthetic.main.reminder_activity_intro.*
 
 
 class ReminderFragment : Fragment() {
@@ -78,10 +77,12 @@ class ReminderFragment : Fragment() {
             expandableHoras.parentLayout.setOnClickListener { expandableHoras.toggleLayout() }
 
             val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
-            et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
+            //et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
+            et.filters = arrayOf(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
 
             val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
-            et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
+            //et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
+            et_min.filters = arrayOf(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2))
 
             val cbSom = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som)
             val cbVib = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar)

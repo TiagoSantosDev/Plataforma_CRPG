@@ -14,14 +14,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
-import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_date_picker.main_single_row_calendar
 import kotlinx.android.synthetic.main.activity_date_picker.tvDate
 import kotlinx.android.synthetic.main.activity_date_picker.tvDay

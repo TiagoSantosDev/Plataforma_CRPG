@@ -162,7 +162,7 @@
             android:layout_gravity="bottom|center_horizontal"
             android:text="@string/guardar"
             android:textSize="20sp"
-            app:backgroundTint="@color/md_blue_100"
+            android:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp" />
     </FrameLayout>
 
