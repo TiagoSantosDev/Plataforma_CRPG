@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -85,6 +84,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         val photoView = photo_view as PhotoView
 
         fun imageViewerController(){
+            println(">Entrou no controller")
             view?.findViewById<View>(R.id.photo_view_hint)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.photo_view)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = INVISIBLE
@@ -100,7 +100,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             when(opSelected){
                 1 ->  { photoView.setImageResource(R.drawable.stcp_901_trindade_valadares)
                     imageViewerController()}
-                2 ->  { photoView.setImageResource(R.drawable.zf_francelos_valadares)
+                2 ->  { photoView.setImageResource(R.drawable.zf_valadares_francelos)
                     imageViewerController() }
                 3 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
                     imageViewerController() }
@@ -113,7 +113,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             when(opSelected){
                 1 ->  { photoView.setImageResource(R.drawable.stcp_901_valadares_trindade)
                     imageViewerController() }
-                2 ->  { photoView.setImageResource(R.drawable.zf_valadares_francelos)
+                2 ->  { photoView.setImageResource(R.drawable.zf_francelos_valadares)
                     imageViewerController() }
                 3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
                     imageViewerController() }
@@ -159,17 +159,17 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 opSelected = 2
             }
             2 -> {
-                text_to_from_1.text = "S. João de Deus"
+                text_to_from_1.text = "João de Deus"
                 text_to_from_2.text = "CRPG"
                 text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "S.João de Deus"
+                text_to_from_4.text = "João de Deus"
                 opSelected = 3
             }
             3 -> {
-                text_to_from_1.text = "S. João de Deus"
+                text_to_from_1.text = "João de Deus"
                 text_to_from_2.text = "Miramar"
                 text_to_from_3.text = "Miaramar"
-                text_to_from_4.text = "S.João de Deus"
+                text_to_from_4.text = "João de Deus"
                 opSelected = 4
             }
         }
