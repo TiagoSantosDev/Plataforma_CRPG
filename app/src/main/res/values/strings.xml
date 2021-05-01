@@ -73,7 +73,7 @@
 
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="escolha_linha">ESCOLHA LINHA</string>
+    <string name="escolha_linha">SELECIONE UMA LINHA:</string>
     <string name="ver_horarios">VER HORÁRIOS</string>
     <string name="title_activity_record_audio">RecordAudioActivity</string>
     <!-- Strings used for fragments for navigation -->

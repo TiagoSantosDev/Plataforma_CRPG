@@ -123,12 +123,13 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val selectedDate = sharedViewModel.selectedDate
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
         println("Custom text: $publicText")
+        println("Item clicked: " + p2)
 
         when(pos){
-            1 -> public_transports_text.text = publicText.get("Linha 905")
-            2 -> public_transports_text.text = publicText.get("Linha ZF")
-            3 -> public_transports_text.text = publicText.get("Linha 35")
-            4 -> public_transports_text.text = publicText.get("Linha 45")
+            0 -> public_transports_text.text = publicText.get("Linha 905")
+            1 -> public_transports_text.text = publicText.get("Linha ZF")
+            2 -> public_transports_text.text = publicText.get("Linha 35")
+            3 -> public_transports_text.text = publicText.get("Linha 45")
         }
     }
 
