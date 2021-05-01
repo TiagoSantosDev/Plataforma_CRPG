@@ -15,7 +15,7 @@ import javax.security.auth.callback.Callback
 class ListAdapter(private val list: List<Note>, private val onChange: (List<Note>) -> Unit) :
     RecyclerView.Adapter<NoteViewHolder>() {
 
-    var listData: MutableList<Note> = list.toMutableList()
+    private var listData: MutableList<Note> = list.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val inflater = LayoutInflater.from(parent.context)

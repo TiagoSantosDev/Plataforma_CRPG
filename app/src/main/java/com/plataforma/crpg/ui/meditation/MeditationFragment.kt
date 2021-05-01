@@ -33,7 +33,7 @@ class MeditationFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentMeditationBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -73,10 +73,6 @@ class MeditationFragment : Fragment() {
             goToMeditationMediaPlayer()
         }
 
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
 
     private fun goToMeditationMediaPlayer(){

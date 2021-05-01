@@ -32,20 +32,21 @@ class NewTextNoteFragment : Fragment() {
     companion object {
         fun newInstance() = NewTextNoteFragment()
         //image pick code
-         val IMAGE_PICK_CODE = 1000;
+         val IMAGE_PICK_CODE = 1000
+
         //Permission code
-         val PERMISSION_CODE = 1001;
+         val PERMISSION_CODE = 1001
     }
 
     val RESULT_GALLERY = 0
-    var imageUri = ""
+    private var imageUri = ""
     val listen : MutableLiveData<Boolean> =  MutableLiveData<Boolean>()
     private lateinit var notesViewModel: NotesViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -110,7 +111,7 @@ class NewTextNoteFragment : Fragment() {
             val fileUri = data?.data
             note_image.setImageURI(fileUri)
             imageUri = fileUri.toString()
-            println("Uri: " + imageUri)
+            println("Uri: $imageUri")
 
             //You can get File object from intent
             val file: File = ImagePicker.getFile(data)!!

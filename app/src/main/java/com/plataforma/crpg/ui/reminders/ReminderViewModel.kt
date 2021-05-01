@@ -18,12 +18,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 //Reminders sao eventos criados pelo utilizador e que so sao acedidos pelo proprio
-public class ReminderViewModel(application: Application) : AndroidViewModel(application) {
+class ReminderViewModel(application: Application) : AndroidViewModel(application) {
 
     @SuppressLint("StaticFieldLeak")
-    public val context = application.applicationContext
+    val context = application.applicationContext
     // a lista de Reminders contem todos os reminders criados pelo utilizador que ainda vao acontecer no futuro
-    var mReminderList = ArrayList<Reminder>()
+    private var mReminderList = ArrayList<Reminder>()
     //for each day of the week, a boolean indicates if the alarm is set for that day
     val weekDaysBoolean: BooleanArray = booleanArrayOf(false, false, false,
             false, false, false, false)
@@ -32,7 +32,7 @@ public class ReminderViewModel(application: Application) : AndroidViewModel(appl
     var startTimeHours : String = ""
     var startTimeMin: String = ""
     private var reminder: MutableLiveData<String>? = null
-    lateinit var alarmIntent: Intent;
+    lateinit var alarmIntent: Intent
 
     fun retrieveListReminders(){
     }
@@ -105,7 +105,7 @@ public class ReminderViewModel(application: Application) : AndroidViewModel(appl
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    public fun setAlarmVibrateOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
+    fun setAlarmVibrateOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
 
         when (newReminder.alarm_freq) {
             //so vibracao
@@ -147,8 +147,8 @@ public class ReminderViewModel(application: Application) : AndroidViewModel(appl
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    public fun setAlarmBoth(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
-        lateinit var alarmIntent: Intent;
+    fun setAlarmBoth(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
+        lateinit var alarmIntent: Intent
 
         println("> Entrou em setAlarmBoth")
 
@@ -186,8 +186,8 @@ public class ReminderViewModel(application: Application) : AndroidViewModel(appl
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    public fun setAlarmSoundOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
-        lateinit var alarmIntent: Intent;
+    fun setAlarmSoundOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
+        lateinit var alarmIntent: Intent
 
         when (newReminder.alarm_freq) {
             //sem vibracao

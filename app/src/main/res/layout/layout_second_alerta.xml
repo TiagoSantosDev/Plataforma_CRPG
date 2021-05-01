@@ -92,7 +92,7 @@
         android:layout_weight="0.01"
         android:gravity="center"
         android:text="AMBOS"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="@color/md_blue_100"/>
 
     <ImageView

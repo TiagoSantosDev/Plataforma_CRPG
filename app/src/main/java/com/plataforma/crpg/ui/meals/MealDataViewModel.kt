@@ -14,7 +14,7 @@ import java.io.FileOutputStream
 class MealDataViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context = application.applicationContext
-    val m = Meal("01042021","a", "b", "c", "d")
+    private val m = Meal("01042021","a", "b", "c", "d")
 
     fun testJSON() {
 

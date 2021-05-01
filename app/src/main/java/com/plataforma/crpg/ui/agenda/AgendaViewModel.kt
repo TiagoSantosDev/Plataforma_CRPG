@@ -16,15 +16,15 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
 
     @SuppressLint("StaticFieldLeak")
     private val context = application.applicationContext
-    var publicEventList = ArrayList<Event>()
-    var privateEventList = ArrayList<Event>()
-    var mDataList = ArrayList<Event>()
+    private var publicEventList = ArrayList<Event>()
+    private var privateEventList = ArrayList<Event>()
+    private var mDataList = ArrayList<Event>()
     var mealsAdded = false
 
     //create 2 fixed events for lunch and dinner
-    var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
+    private var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
             "","","")
-    var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "2000", "2100",
+    private var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "2000", "2100",
             "","","")
 
 
@@ -69,21 +69,21 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
         return privateList
     }
 
-    fun addMealsToPrivateEvents(): ArrayList<Event> {
+    private fun addMealsToPrivateEvents(): ArrayList<Event> {
         println("Size do privateList a entrada do addMeals:" + privateEventList.size)
         privateEventList.add(lunchEvent)
         privateEventList.add(dinnerEvent)
         return privateEventList
     }
 
-    fun addMealsToPublicEvents(): ArrayList<Event> {
+    private fun addMealsToPublicEvents(): ArrayList<Event> {
         println("Size do privateList a entrada do addMeals:" + privateEventList.size)
         publicEventList.add(lunchEvent)
         publicEventList.add(dinnerEvent)
         return publicEventList
     }
 
-    fun concatenatePublicPrivateEvents(): ArrayList<Event> {
+    private fun concatenatePublicPrivateEvents(): ArrayList<Event> {
         addMealsToPrivateEvents()
         addMealsToPublicEvents()
         println(">Private list size: " + privateEventList.size)

@@ -49,7 +49,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentPublicTransportBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -119,7 +119,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val selectedDate = sharedViewModel.selectedDate
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
         println("Custom text: $publicText")
-        println("Item clicked: " + p2)
+        println("Item clicked: $p2")
 
         when(pos){
             0 -> public_transports_text.text = publicText["Linha 905"]
@@ -133,7 +133,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         TODO("Not yet implemented")
     }
 
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }

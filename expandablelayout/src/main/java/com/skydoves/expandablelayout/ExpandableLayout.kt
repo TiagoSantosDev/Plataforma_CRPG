@@ -72,7 +72,7 @@ class ExpandableLayout @JvmOverloads constructor(
 
   private var _showSpinner: Boolean = true
 
-  var isExpanded: Boolean
+  private var isExpanded: Boolean
     get() = _isExpanded
     private set(value) {
       _isExpanded = value
@@ -113,14 +113,14 @@ class ExpandableLayout @JvmOverloads constructor(
       updateSpinner()
     }
 
-  var spinnerColor: Int
+  private var spinnerColor: Int
     @ColorInt get() = _spinnerColor
     set(@ColorInt value) {
       _spinnerColor = value
       updateSpinner()
     }
 
-  var spinnerGravity: SpinnerGravity
+  private var spinnerGravity: SpinnerGravity
     get() = _spinnerGravity
     set(value) {
       _spinnerGravity = value
@@ -332,7 +332,7 @@ class ExpandableLayout @JvmOverloads constructor(
   }
 
   /** Collapse the second layout with indicator animation. */
-  fun collapse() {
+  private fun collapse() {
     post {
       if (isExpanded) {
         ValueAnimator.ofFloat(1f, 0f).apply {

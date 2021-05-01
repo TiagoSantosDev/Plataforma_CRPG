@@ -47,7 +47,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -88,7 +88,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             view?.findViewById<View>(R.id.photo_view_hint)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.photo_view)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = INVISIBLE
-            view?.findViewById<View>(R.id.photo_view)?.setOnClickListener(){
+            view?.findViewById<View>(R.id.photo_view)?.setOnClickListener {
                 view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
@@ -142,7 +142,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-        println("Item clicked: " + p2)
+        println("Item clicked: $p2")
         when(p2){
             0 -> {
                 text_to_from_1.text = "Trindade"
@@ -180,7 +180,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             frame_de_para_2.visibility = GONE
     }
 
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }

@@ -26,12 +26,12 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
  * Created by Vipul Asri on 05-12-2015.
  */
 
-class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes, val ctx: Context) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
+class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes, private val ctx: Context) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
     private var currentDateMealOrder = MealOrder("14042021", 0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
     lateinit var currentDateMeal: Meal
-    var overlapArray = mutableListOf("")
-    var concatTime = ""
+    private var overlapArray = mutableListOf("")
+    private var concatTime = ""
 
     private lateinit var mLayoutInflater: LayoutInflater
     //val Context mContext = getActivity();
@@ -87,8 +87,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         if (timeLineModel.end_time.isNotEmpty()) {
             holder.end_time.setVisible()
-            var newEndTime: String
-            newEndTime = timeLineModel.end_time
+            var newEndTime: String = timeLineModel.end_time
             newEndTime = newEndTime.substring(0, 2) + ":" + newEndTime.substring(2, 4)
             holder.end_time.text = newEndTime
         } else
@@ -163,7 +162,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                     fragment.arguments = bundle
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                    fragmentManager.findFragmentByTag("Agenda")?.let { it1 -> fragmentTransaction.remove(it1) };
+                    fragmentManager.findFragmentByTag("Agenda")?.let { it1 -> fragmentTransaction.remove(it1) }
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()

@@ -13,8 +13,8 @@ import java.util.ArrayList
 @SuppressLint("StaticFieldLeak")
 class Test(application: Application) : AndroidViewModel(application) {
 
-    public val context = application.applicationContext
-    val mMealList = ArrayList<Meal>()
+    val context = application.applicationContext
+    private val mMealList = ArrayList<Meal>()
 
     fun a() {
         val json = """{"title": "Kotlin Tutorial #1", "author": "bezkoder", "categories" : ["Kotlin","Basic"]}"""
@@ -22,10 +22,10 @@ class Test(application: Application) : AndroidViewModel(application) {
         val gson = Gson()
 
         val tutorial_1: Tutorial = gson.fromJson(json, Tutorial::class.java)
-        println("> From JSON String:\n" + tutorial_1)
+        println("> From JSON String:\n$tutorial_1")
 
         val tutorial_2: Meal = gson.fromJson(jsonMeal, Meal::class.java)
-        println("> From JSON Meal String:\n" + tutorial_2)
+        println("> From JSON Meal String:\n$tutorial_2")
     }
 
     fun b() {
@@ -39,7 +39,7 @@ class Test(application: Application) : AndroidViewModel(application) {
         // val file = File(context.filesDir, filename)
 
         val meal_1: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
-        println("> From JSON Meal String:\n" + meal_1)
+        println("> From JSON Meal String:\n$meal_1")
     }
 
     fun c() {
@@ -73,7 +73,7 @@ class Test(application: Application) : AndroidViewModel(application) {
         println(fullFilename)
         // ficheiro esta actualmente vazio e nao pode ser editado manualmente
         val tutorial_1: Tutorial = gson.fromJson(FileReader(fullFilename), Tutorial::class.java)
-        println("> From JSON Tutorial String:\n" + tutorial_1)
+        println("> From JSON Tutorial String:\n$tutorial_1")
     }
 
     fun getSingleMealFromJson(): ArrayList<Meal> {
@@ -87,7 +87,7 @@ class Test(application: Application) : AndroidViewModel(application) {
         // val file = File(context.filesDir, filename)
 
         val event: Meal = gson.fromJson(FileReader(fullFilename), Meal::class.java)
-        println("> From JSON Meal String:\n" + event)
+        println("> From JSON Meal String:\n$event")
 
         mMealList.add(event)
         return mMealList
