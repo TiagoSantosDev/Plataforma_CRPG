@@ -2525,6 +2525,8 @@ drawable selected_calendar_item_background
 drawable selection_band_overlay
 drawable som
 drawable sound_only_unchecked
+drawable stcp_901_trindade_valadares
+drawable stcp_901_valadares_trindade
 drawable stcp_background
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -2552,6 +2554,8 @@ drawable vibrar
 drawable vibrate_only_checked
 drawable view_menu_1x
 drawable yellow_dot
+drawable zf_francelos_valadares
+drawable zf_valadares_francelos
 font roboto_medium_numbers
 font sourcesanspro_bold
 font sourcesanspro_bolditalic
