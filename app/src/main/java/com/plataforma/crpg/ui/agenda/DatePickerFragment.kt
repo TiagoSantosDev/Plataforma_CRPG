@@ -35,7 +35,7 @@ class DatePickerFragment : Fragment() {
     private var selected = false
 
     companion object {
-        public var dLocale: Locale? = null
+        var dLocale: Locale? = null
     }
 
     init {
@@ -74,11 +74,6 @@ class DatePickerFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
         return root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {

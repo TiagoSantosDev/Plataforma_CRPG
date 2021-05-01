@@ -30,12 +30,12 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var transportsViewModel: TransportsViewModel
     private lateinit var sharedViewModel: SharedViewModel
-    var phone = "00351912193034"
+    private var phone = "00351912193034"
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = TransportsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -161,7 +161,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
         TODO("Not yet implemented")
     }
 
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }

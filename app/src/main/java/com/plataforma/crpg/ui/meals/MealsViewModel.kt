@@ -17,7 +17,7 @@ import java.lang.reflect.Type
 @SuppressLint("StaticFieldLeak")
 class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
-    val m = Meal("01042021", "a", "b", "c", "d")
+    private val m = Meal("01042021", "a", "b", "c", "d")
     var selectedOption = 0
     var retrievedMeal = Meal("01042021", "Lasanha", "Sardinhas", "Massa", "Tofu")
     private val context = getApplication<Application>().applicationContext

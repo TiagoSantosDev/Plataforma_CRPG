@@ -30,11 +30,11 @@ class ReminderFragment : Fragment() {
         fun newInstance() = ReminderFragment()
     }
 
-    var lembrarButtonPressed = 0
-    var alarmTypeButtonPressed = 0
-    var alarmFreqButtonPressed = 0
-    var startTimeString = ""
-    var hoursMinutesFlag = false
+    private var lembrarButtonPressed = 0
+    private var alarmTypeButtonPressed = 0
+    private var alarmFreqButtonPressed = 0
+    private var startTimeString = ""
+    private var hoursMinutesFlag = false
 
     private lateinit var newViewModel: ReminderViewModel
 
@@ -42,7 +42,7 @@ class ReminderFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -208,7 +208,7 @@ class ReminderFragment : Fragment() {
                 }
 
                 when (alarmTypeButtonPressed) {
-                    1 -> newViewModel.newReminder.alarm_type = AlarmType.SOM;
+                    1 -> newViewModel.newReminder.alarm_type = AlarmType.SOM
                     2 -> newViewModel.newReminder.alarm_type = AlarmType.VIBRAR
                     3 -> newViewModel.newReminder.alarm_type = AlarmType.AMBOS
                     else -> { // Note the block

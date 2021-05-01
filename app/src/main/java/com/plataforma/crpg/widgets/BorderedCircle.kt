@@ -18,13 +18,13 @@ class BorderedCircle : View {
             initPaint()
             invalidate()
         }
-    var mBorderColor: Int = 0
+    private var mBorderColor: Int = 0
         set(borderColor) {
             field = borderColor
             initPaint()
             invalidate()
         }
-    var mBorderWidth: Float = 0f
+    private var mBorderWidth: Float = 0f
         set(borderWidth) {
             field = borderWidth
             initPaint()

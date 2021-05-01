@@ -23,7 +23,7 @@ class DatePickerActivity : BaseActivity() {
     private var currentMonth = 0
 
     companion object {
-        public var dLocale: Locale? = null
+        var dLocale: Locale? = null
     }
 
     init {
@@ -35,7 +35,7 @@ class DatePickerActivity : BaseActivity() {
         (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }*/
 
-    fun updateConfig(wrapper: ContextThemeWrapper) {
+    private fun updateConfig(wrapper: ContextThemeWrapper) {
         dLocale = Locale("pt")
         Locale.setDefault(dLocale)
         val configuration = Configuration()

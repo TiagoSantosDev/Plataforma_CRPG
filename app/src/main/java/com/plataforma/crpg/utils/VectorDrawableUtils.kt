@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 
 object VectorDrawableUtils {
 
-    fun getDrawable(context: Context, drawableResId: Int): Drawable? {
+    private fun getDrawable(context: Context, drawableResId: Int): Drawable? {
         return VectorDrawableCompat.create(context.resources, drawableResId, context.theme)
     }
 

@@ -27,14 +27,10 @@ class CustomTransportsFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var transportsViewModel: TransportsViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentCustomTransportBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -89,7 +85,7 @@ class CustomTransportsFragment : Fragment() {
         
     }
 
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }

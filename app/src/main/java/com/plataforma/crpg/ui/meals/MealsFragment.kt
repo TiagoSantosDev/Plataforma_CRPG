@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.reminder_activity_success.*
 
 class MealsFragment : Fragment() {
 
-    var FLAG_MEAL_CHOSEN = false
+    private var FLAG_MEAL_CHOSEN = false
     var SELECTED_DATE = ""
 
     companion object {
@@ -38,7 +38,7 @@ class MealsFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         //val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
@@ -166,7 +166,7 @@ class MealsFragment : Fragment() {
                 mealSuccessView?.bringToFront()
                 nothingCheckedWarning?.visibility = View.GONE
                 mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, mealsViewModel.selectedOption, isLunch)
-                button_ok.setOnClickListener() {
+                button_ok.setOnClickListener {
                     mealSuccessView?.visibility = View.GONE
                 }
             } else {

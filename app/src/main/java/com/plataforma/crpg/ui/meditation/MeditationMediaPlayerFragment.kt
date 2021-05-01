@@ -28,7 +28,7 @@ class MeditationMediaPlayerFragment : Fragment(){
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentMeditationMediaPlayerBinding.inflate(layoutInflater)
         return binding.root
         //return view
@@ -68,7 +68,7 @@ class MeditationMediaPlayerFragment : Fragment(){
 
         val player = SimpleExoPlayer.Builder(requireContext()).build()
         player.setVideoSurface(null)
-        player_view.player = player;
+        player_view.player = player
         val mediaItem: MediaItem = MediaItem.fromUri(filePath)
         player.setMediaItem(mediaItem)
         player.clearVideoSurface()
@@ -101,11 +101,7 @@ class MeditationMediaPlayerFragment : Fragment(){
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
-    fun showBackButton() {
+    private fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }

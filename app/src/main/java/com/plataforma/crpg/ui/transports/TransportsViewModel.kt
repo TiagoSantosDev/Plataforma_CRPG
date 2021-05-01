@@ -21,9 +21,8 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun getCustomText(selectedDate: String): String {
-        val customText: String
 
-        customText = "Horários para o dia X:"
+        val customText: String = "Horários para o dia X:"
 
         return customText
     }
@@ -69,7 +68,7 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
             }
         }
 
-        println("Idx value: " + idx)
+        println("Idx value: $idx")
         val publicText = hashMapOf<String, String>()
 
         if (idx > -1) {

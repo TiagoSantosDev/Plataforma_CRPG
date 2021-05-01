@@ -38,12 +38,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private lateinit var notesViewModel: NotesViewModel
-    var imageUri = ""
+    private var imageUri = ""
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = NewVoiceNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -66,13 +66,13 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val extensions = ".pcm"
         val audioRecorder = NaraeAudioRecorder()
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
-        audioRecorder.create() {
+        audioRecorder.create {
             this.destFile = destFile
         }
 
         val recordConfig = AudioRecordConfig.defaultConfig()
         val audioSource = NoiseAudioSource(recordConfig)
-        audioRecorder.create() {
+        audioRecorder.create {
             this.destFile = destFile
             this.recordConfig = recordConfig
             this.audioSource = audioSource
