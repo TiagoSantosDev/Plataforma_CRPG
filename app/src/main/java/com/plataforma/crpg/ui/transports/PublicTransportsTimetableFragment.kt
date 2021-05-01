@@ -142,6 +142,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
+
+        println("Item clicked: " + p2)
         when(p2){
             1 -> {
                 text_to_from_1.text = "Trindade"

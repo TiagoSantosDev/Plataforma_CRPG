@@ -2814,6 +2814,7 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id escolha_linha
+id escolha_linha_2
 id escolha_paragem
 id escolha_refeicao
 id exitUntilCollapsed
