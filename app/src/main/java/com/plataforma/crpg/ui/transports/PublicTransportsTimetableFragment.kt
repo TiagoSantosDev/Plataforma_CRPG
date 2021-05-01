@@ -142,31 +142,30 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-
         println("Item clicked: " + p2)
         when(p2){
-            1 -> {
+            0 -> {
                 text_to_from_1.text = "Trindade"
                 text_to_from_2.text = "Valadares"
                 text_to_from_3.text = "Valadares"
                 text_to_from_4.text = "Trindade"
                 opSelected = 1
             }
-            2 -> {
+            1 -> {
                 text_to_from_1.text = "Valadares"
                 text_to_from_2.text = "Francelos"
                 text_to_from_3.text = "Francelos"
                 text_to_from_4.text = "Valadares"
                 opSelected = 2
             }
-            3 -> {
+            2 -> {
                 text_to_from_1.text = "S. João de Deus"
                 text_to_from_2.text = "CRPG"
                 text_to_from_3.text = "CRPG"
                 text_to_from_4.text = "S.João de Deus"
                 opSelected = 3
             }
-            4 -> {
+            3 -> {
                 text_to_from_1.text = "S. João de Deus"
                 text_to_from_2.text = "Miramar"
                 text_to_from_3.text = "Miaramar"
@@ -177,7 +176,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+            frame_de_para_1.visibility = GONE
+            frame_de_para_2.visibility = GONE
     }
 
     fun showBackButton() {
