@@ -33,7 +33,9 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
         println("Selected date: $selectedDate")
 
         val listaDados = ArrayList<CustomInfoPublicTransport>()
-        val placeHolderData = CustomInfoPublicTransport("01042021","sde","deded","dede","deded")
+        val placeHolderData = CustomInfoPublicTransport("03052021",
+                "Horário Linha 901: ...","Horário Linha ZF: ...",
+                    ">Horário linha 35: ...","Horário Linha 45: ...")
 
         listaDados.add(placeHolderData)
 
@@ -47,14 +49,12 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
             }
         }
 
-
         println("Idx value: " + idx)
         val publicText = hashMapOf<String, String>()
 
         if (idx > -1) {
-
             val fetchedCustomInfo = listaDados[idx]
-            publicText["Linha 405"] = fetchedCustomInfo.linha405
+            publicText["Linha 905"] = fetchedCustomInfo.linha901
             publicText["Linha ZF"] = fetchedCustomInfo.linhaZF
             publicText["Linha 35"] = fetchedCustomInfo.linha35
             publicText["Linha 45"] = fetchedCustomInfo.linha45

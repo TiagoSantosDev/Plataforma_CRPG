@@ -52,7 +52,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val linesSpinner: Spinner? = view?.findViewById(R.id.bus_lines_spinner_2)
+        val linesSpinner: Spinner? = view.findViewById(R.id.bus_lines_spinner_2)
         ArrayAdapter.createFromResource(
                 context,
                 R.array.linha_autocarro_array,
@@ -81,8 +81,6 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //val photoView = view?.findViewById(R.id.photo_view) as PhotoView
-
         val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val photoView = photo_view as PhotoView
 
@@ -125,7 +123,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         }
 
         button_return_transports.setOnClickListener {
-            val fragment: Fragment = TransportsFragment()
+            val fragment: Fragment = PublicTransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -143,8 +141,6 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        //val selItem: String = p0?.getItemAtPosition(p2).toString()
-        //var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.)
 
         when(p2){
             1 -> {
@@ -173,8 +169,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 text_to_from_2.text = "Miramar"
                 text_to_from_3.text = "Miaramar"
                 text_to_from_4.text = "S.João de Deus"
-                //textFromBusLines!!.text = "De Casa para o CRPG"
-                opSelected = 3
+                opSelected = 4
             }
         }
     }
@@ -192,7 +187,10 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
 
 
-
+//val photoView = view?.findViewById(R.id.photo_view) as PhotoView
+//textFromBusLines!!.text = "De Casa para o CRPG"
+//val selItem: String = p0?.getItemAtPosition(p2).toString()
+//var textFromBusLines = view?.rootView?.findViewById<TextView>(R.id.)
 /*
     fun ActionBar getActionBar(){
         return ((ActionBarActivity() activity?.getSupport
