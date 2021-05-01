@@ -16,7 +16,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="40sp" />
+        android:textSize="60sp" />
 
     <TextView
         android:id="@+id/tv_day_calendar_item"
@@ -24,6 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
-        android:textSize="35sp" />
+        android:textSize="55sp" />
 
 </LinearLayout>

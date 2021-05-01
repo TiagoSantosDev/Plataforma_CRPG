@@ -89,7 +89,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
         button_view_timetables_layout.setOnClickListener{
             val fragment: Fragment = PublicTransportsTimetableFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -126,10 +125,10 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         println("Custom text: $publicText")
 
         when(pos){
-            1 -> public_transports_text.text = publicText.get(0)
-            2 -> public_transports_text.text = publicText.get(1)
-            3 -> public_transports_text.text = publicText.get(2)
-            4 -> public_transports_text.text = publicText.get(3)
+            1 -> public_transports_text.text = publicText.get("Linha 905")
+            2 -> public_transports_text.text = publicText.get("Linha ZF")
+            3 -> public_transports_text.text = publicText.get("Linha 35")
+            4 -> public_transports_text.text = publicText.get("Linha 45")
         }
     }
 
