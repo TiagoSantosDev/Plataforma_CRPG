@@ -37,14 +37,9 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                // Handle the back button event
-                val fragment: Fragment = TransportsFragment()
-                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentManager.popBackStack()
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
+                view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
+                view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
+                view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
@@ -74,7 +69,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTES PUBLICOS"
+        (activity as AppCompatActivity).supportActionBar?.title = "VER HORÁRIO"
 
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
@@ -105,9 +100,22 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         button_view_timetable_1.setOnClickListener {
 
             when(opSelected){
-                1 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+                1 ->  { photoView.setImageResource(R.drawable.stcp_901_trindade_valadares)
                     imageViewerController()}
-                2 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
+                2 ->  { photoView.setImageResource(R.drawable.zf_francelos_valadares)
+                    imageViewerController() }
+                3 ->  { photoView.setImageResource(R.drawable.linha35_joaodedeus_crpg)
+                    imageViewerController() }
+                4 ->  { photoView.setImageResource(R.drawable.linha45_joaodedeus_miramar)
+                    imageViewerController() }
+            }
+        }
+
+        button_view_timetable_2.setOnClickListener {
+            when(opSelected){
+                1 ->  { photoView.setImageResource(R.drawable.stcp_901_valadares_trindade)
+                    imageViewerController() }
+                2 ->  { photoView.setImageResource(R.drawable.zf_valadares_francelos)
                     imageViewerController() }
                 3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
                     imageViewerController() }
@@ -116,19 +124,6 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             }
         }
 
-        button_view_timetable_2.setOnClickListener {
-            when(opSelected){
-                1 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    imageViewerController() }
-                2 ->  { photoView.setImageResource(R.drawable.linha45_miramar_joaodedeus)
-                    imageViewerController() }
-                3 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    imageViewerController() }
-                4 ->  { photoView.setImageResource(R.drawable.linha35_crpg_joaodedeus)
-                    imageViewerController() }
-            }
-        }
-        
         button_return_transports.setOnClickListener {
             val fragment: Fragment = TransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -153,33 +148,31 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
         when(p2){
             1 -> {
-                text_to_from_1.text = "CRPG"
-                text_to_from_2.text = "CRPG"
-                text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "CRPG"
+                text_to_from_1.text = "Trindade"
+                text_to_from_2.text = "Valadares"
+                text_to_from_3.text = "Valadares"
+                text_to_from_4.text = "Trindade"
                 opSelected = 1
             }
             2 -> {
-                text_to_from_1.text = "CRPG"
-                text_to_from_2.text = "CRPG"
-                text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "CRPG"
-                //textFromBusLines!!.text = "De Gaia para o CRPG"
+                text_to_from_1.text = "Valadares"
+                text_to_from_2.text = "Francelos"
+                text_to_from_3.text = "Francelos"
+                text_to_from_4.text = "Valadares"
                 opSelected = 2
             }
             3 -> {
                 text_to_from_1.text = "S. João de Deus"
                 text_to_from_2.text = "CRPG"
                 text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "CRPG"
-                //textFromBusLines!!.text = "De Casa para o CRPG"
+                text_to_from_4.text = "S.João de Deus"
                 opSelected = 3
             }
             4 -> {
-                text_to_from_1.text = "CRPG"
-                text_to_from_2.text = "CRPG"
-                text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "CRPG"
+                text_to_from_1.text = "S. João de Deus"
+                text_to_from_2.text = "Miramar"
+                text_to_from_3.text = "Miaramar"
+                text_to_from_4.text = "S.João de Deus"
                 //textFromBusLines!!.text = "De Casa para o CRPG"
                 opSelected = 3
             }
