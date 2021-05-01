@@ -10,7 +10,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
-import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.Reminder
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
