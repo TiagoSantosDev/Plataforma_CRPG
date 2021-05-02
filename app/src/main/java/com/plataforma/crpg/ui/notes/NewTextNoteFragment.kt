@@ -83,6 +83,8 @@ class NewTextNoteFragment : Fragment() {
             notesViewModel.newNote.info = contentText.toString()
             notesViewModel.newNote.imagePath = imageUri
 
+            notesViewModel.addNewTextNote()
+
 
             val fragment: Fragment = NotesFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager

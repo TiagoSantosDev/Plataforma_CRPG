@@ -41,6 +41,9 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+
+
+
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ListAdapter(notesViewModel.noteList
