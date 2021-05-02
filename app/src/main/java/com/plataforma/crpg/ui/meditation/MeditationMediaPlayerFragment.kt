@@ -78,6 +78,7 @@ class MeditationMediaPlayerFragment : Fragment(){
         player.play()
 
         button_return_meditation.setOnClickListener {
+            player.stop()
             val fragment: Fragment = MeditationFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -91,6 +92,7 @@ class MeditationMediaPlayerFragment : Fragment(){
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 // Handle the back button event
+                player.stop()
                 val fragment: Fragment = MeditationFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
