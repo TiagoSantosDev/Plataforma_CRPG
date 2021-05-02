@@ -1,5 +1,7 @@
 package com.plataforma.crpg.ui.meditation
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationBinding
 import com.plataforma.crpg.ui.MainActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 
@@ -26,8 +29,13 @@ class MeditationFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as AppCompatActivity).supportActionBar?.title = "MEDITAÇÃO"
-        (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        val colorDrawable = ColorDrawable(Color.parseColor("#00BBF2"))
+        val actionBar = (activity as MainActivity?)?.supportActionBar
+        actionBar?.title = "MEDITAÇÃO"
+        actionBar?.setDisplayHomeAsUpEnabled(false)
+        //actionBar?.setBackgroundDrawable(colorDrawable)
+        //(activity as MainActivity?)?.nav_view?.setBackgroundDrawable(colorDrawable)
+
     }
 
     override fun onCreateView(
@@ -137,3 +145,10 @@ class MeditationFragment : Fragment() {
         view.findViewById<Button>(R.id.button_mood_loved).setOnClickListener(mListener);
         view.findViewById<Button>(R.id.button_mood_mindful).setOnClickListener(mListener);
         */
+/*
+(activity as AppCompatActivity).supportActionBar?.title = "MEDITAÇÃO"
+(activity as MainActivity?)?.supportActionBar?.
+(activity as MainActivity?)?.supportActionBar?.
+(activity as MainActivity?)?.nav_view?.setBackgroundDrawable(colorDrawable)
+*/
+

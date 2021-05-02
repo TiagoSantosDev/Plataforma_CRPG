@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.common.reflect.Reflection.getPackageName
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationMediaPlayerBinding
 import com.plataforma.crpg.ui.MainActivity
@@ -69,11 +68,11 @@ class MeditationMediaPlayerFragment : Fragment(){
         val uri: Uri = Uri.parse("android.resource://" + context?.packageName.toString()
                 + "/raw/meditation_sound")
         val player = SimpleExoPlayer.Builder(requireContext()).build()
-        //player.setVideoSurface(null)
+
         player_view.player = player
         val mediaItem: MediaItem = MediaItem.fromUri(uri)
         player.setMediaItem(mediaItem)
-        //player.clearVideoSurface()
+
         player.prepare()
         player.play()
 
@@ -116,3 +115,6 @@ class MeditationMediaPlayerFragment : Fragment(){
 //
 // getResources().openRawResource(R.raw.meditation_sound)
 //        //val filePath = "raw/meditation_sound.mp3"
+//
+// player.setVideoSurface(null)
+// player.clearVideoSurface()
