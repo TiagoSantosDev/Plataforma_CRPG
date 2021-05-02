@@ -38,8 +38,9 @@
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="377dp"
-        android:layout_height="215dp"
+        android:id="@+id/frame_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,24 +50,29 @@
         app:layout_constraintTop_toBottomOf="@+id/mood_image_frame"
         tools:layout_editor_absoluteY="342dp">
 
-        <com.google.android.exoplayer2.ui.StyledPlayerView
+        <com.google.android.exoplayer2.ui.PlayerControlView
             android:id="@+id/player_view"
-            android:layout_width="366dp"
-            android:layout_height="match_parent"
+            android:layout_width="346dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="@color/md_blue_100"
+            app:buffered_color="@color/md_blue_100"
+            app:controller_layout_id="@layout/custom_player_control_view"
+            app:hide_on_touch="false"
+            app:scrubber_color="@color/white"
             app:show_buffering="never"
-            app:show_shuffle_button="false"
-            app:show_previous_button="false"
-            app:show_vr_button="false"
             app:show_next_button="false"
+            app:show_previous_button="false"
+            app:show_shuffle_button="false"
             app:show_timeout="0"
-            app:hide_on_touch="false"/>
+            app:show_vr_button="false"
+            app:surface_type="none" />
     </FrameLayout>
 
     <Button
         android:id="@+id/button_return_meditation"
-        android:layout_width="327dp"
-        android:layout_height="63dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         android:backgroundTint="@android:color/transparent"
         android:text="@string/regressar"
@@ -76,6 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_player_view"
         app:rippleColor="@color/md_blue_100"
         app:strokeColor="@color/md_blue_100"
         app:strokeWidth="5dp" />

@@ -2914,6 +2914,7 @@ id frame_opcao_dieta
 id frame_opcao_peixe
 id frame_opcao_vegetariano
 id frame_parent
+id frame_player_view
 id frame_public_transports_timetable
 id frame_titulo
 id frame_titulo_nota
@@ -3452,6 +3453,7 @@ layout color_item
 layout color_preference_widget
 layout content_record_audio
 layout custom_dialog
+layout custom_player_control_view
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
