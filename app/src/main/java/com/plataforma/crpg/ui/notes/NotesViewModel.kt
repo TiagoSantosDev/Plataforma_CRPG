@@ -18,7 +18,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     var mNoteList = ArrayList<Note>()
     var newNote = Note(NoteType.TEXT,"", "","", "", "",
             "")
-    val noteList = listOf(
+    private val noteList = listOf(
             Note(NoteType.TEXT, "16042021","1200", "Nota 1",
                     "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
             Note(NoteType.TEXT, "16042021", "1200","Nota 2",
@@ -28,7 +28,6 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     )
 
     var removedPosition : Int ? = null
-
 
     private fun populateFile() {
         val filename = "notes.json"
@@ -45,7 +44,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         }
         val fileContent = convertNoteListToJSON()
 
-        println("Note file content: $fileContent")
+
 
         File(fullFilename).writeText(fileContent)
     }
@@ -53,6 +52,12 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     private fun convertNoteListToJSON(): String {
         val gson = Gson()
         val noteListJSON = gson.toJson(noteList)
+        return noteListJSON
+    }
+
+    private fun convertAnyNoteListToJSON(list : ArrayList<Note>): String {
+        val gson = Gson()
+        val noteListJSON = gson.toJson(list)
         return noteListJSON
     }
 
@@ -74,7 +79,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
         val type: Type = object : TypeToken<ArrayList<Note>>() {}.type
         mNoteList = gson.fromJson(FileReader(fullFilename), type)
-        println("Private Note List from JSON Without Populate: $mNoteList")
+
     }
 
 
@@ -83,12 +88,31 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
 
     fun addNewTextNote() {
-        mNoteList.add(newNote)
-    }
+        val gson = Gson()
 
+        mNoteList.add(newNote)
+        val filename = "notes.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val newJSONList = convertAnyNoteListToJSON(mNoteList)
+
+        val file = File(fullFilename)
+        val fileExists = file.exists()
+
+        if (fileExists) {
+            File(fullFilename).writeText(newJSONList)
+        }
+
+    }
 
 }
 
+
+//println("Note file content: $fileContent")
+//println("mNoteList criado aqui: $mNoteList")
+//println("Private Note List from JSON Without Populate: $mNoteList")
+//println(">mNoteList a entrada do addNewTextNote: $mNoteList")
+//println("> New file content: " + File(fullFilename).readText())
 /*"""[{"title": "ALMOÇO","info":"test","type": "MEAL",
             |"start_time": "1130","end_time": "1230","date": "2021-03-17"},
             |{"title": "JANTAR","info":"test","type":"MEAL", "start_time": "2000","end_time": "2100","date": "2021-03-17"}]""".trimMargin()*/

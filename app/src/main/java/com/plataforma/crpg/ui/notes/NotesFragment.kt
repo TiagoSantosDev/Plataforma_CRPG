@@ -40,14 +40,13 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
-        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
-        notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
+        //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+        notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
+        notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
 
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
-
-
             adapter = ListAdapter(notesViewModel.mNoteList
             ) { newList -> notesViewModel.mNoteList = newList as ArrayList<Note> }
         }
