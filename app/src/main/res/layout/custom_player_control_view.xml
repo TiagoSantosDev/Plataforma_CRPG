@@ -36,26 +36,30 @@
         <ImageButton
             android:id="@id/exo_rew"
             style="@style/ExoMediaButton.Rewind"
-            android:tint="@color/SecondaryBlue"
-            android:tintMode="src_in" />
+            android:tint="@color/md_blue_100"
+            android:tintMode="src_in"
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@id/exo_play"
             style="@style/ExoMediaButton.Play"
-            android:tint="@color/SecondaryBlue"
-            android:tintMode="src_in" />
+            android:tint="@color/md_blue_100"
+            android:tintMode="src_in"
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@id/exo_pause"
             style="@style/ExoMediaButton.Pause"
-            android:tint="@color/SecondaryBlue"
-            android:tintMode="src_in" />
+            android:tint="@color/md_blue_100"
+            android:tintMode="src_in"
+            android:scaleType="fitXY"/>
 
         <ImageButton
             android:id="@id/exo_ffwd"
             style="@style/ExoMediaButton.FastForward"
-            android:tint="@color/SecondaryBlue"
-            android:tintMode="src_in" />
+            android:tint="@color/md_blue_100"
+            android:tintMode="src_in"
+            android:scaleType="fitXY"/>
 
     </LinearLayout>
 
@@ -73,16 +77,17 @@
             android:includeFontPadding="false"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:textColor="#ff323232"
-            android:textSize="14sp"
+            android:textColor="@color/md_blue_100"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <com.google.android.exoplayer2.ui.DefaultTimeBar
             android:id="@id/exo_progress"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            app:played_color="@color/colorPrimaryDark"
+            app:bar_height="20dp"
+            app:played_color="@color/md_blue_100"
             app:unplayed_color="@color/white_56" />
 
         <TextView
@@ -92,8 +97,8 @@
             android:includeFontPadding="false"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:textColor="#ff323232"
-            android:textSize="14sp"
+            android:textColor="@color/md_blue_100"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
     </LinearLayout>
