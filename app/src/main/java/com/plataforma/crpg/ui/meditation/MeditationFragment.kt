@@ -35,7 +35,6 @@ class MeditationFragment : Fragment() {
         actionBar?.setDisplayHomeAsUpEnabled(false)
         //actionBar?.setBackgroundDrawable(colorDrawable)
         //(activity as MainActivity?)?.nav_view?.setBackgroundDrawable(colorDrawable)
-
     }
 
     override fun onCreateView(

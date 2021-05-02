@@ -34,7 +34,6 @@ class AgendaFragment : Fragment() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "AGENDA"
         (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        //setDataListItems()
 
         setDataListItemsWithoutPopulate()
         val ctx = context
@@ -54,19 +53,12 @@ class AgendaFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
-        //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
-
-        //println("Selected date: " + sharedViewModel.selectedDate)
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
-        //println("Selected date: " + sharedViewModel.selectedDate)
 
-        // default values
         (activity as AppCompatActivity).supportActionBar?.title = "AGENDA"
         mAttributes = TimelineAttributes(
                 markerSize = dpToPx(20f),
@@ -146,6 +138,11 @@ class AgendaFragment : Fragment() {
 
 
 /*
+        //val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+        //println("Selected date: " + sharedViewModel.selectedDate)
+
+        // default values
+//println("Selected date: " + sharedViewModel.selectedDate)
         action_example_activity.setOnClickListener {
             println(">Activity: " + activity)
             val intent = Intent(activity, ExampleActivity::class.java)
@@ -170,3 +167,5 @@ class AgendaFragment : Fragment() {
 ////println("CTX NAO E NULL")
 // println("Activity:" + activity)
 //        //println("Recycler View:" + recyclerView)
+// val sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+//        //val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
