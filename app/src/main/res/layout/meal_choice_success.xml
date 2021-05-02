@@ -16,10 +16,7 @@
         android:id="@+id/view"
         android:layout_width="266dp"
         android:layout_height="441dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="71dp"
+        android:layout_centerInParent="true"
         android:background="@color/white_93"
         android:radius="50dp" />
 
