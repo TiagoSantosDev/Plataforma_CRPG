@@ -58,7 +58,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+        //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+        notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
         val fileName = "one"
         val extensions = ".pcm"

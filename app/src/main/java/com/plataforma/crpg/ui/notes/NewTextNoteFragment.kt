@@ -62,7 +62,10 @@ class NewTextNoteFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+        //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+        notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
+
+        println("Notes view model value : " + notesViewModel.mNoteList)
 
         val titleText = view?.rootView?.findViewById<EditText>(R.id.titulo_edit_text)?.text
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
