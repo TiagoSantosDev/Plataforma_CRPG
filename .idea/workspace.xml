@@ -45,12 +45,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationMediaPlayerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationMediaPlayerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_meditation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_meditation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_choice_success.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_choice_success.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reminder_activity_success.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reminder_activity_success.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,10 +344,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="393" y="230" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1619909871576" />
-    <state x="36" y="170" width="1095" height="495" key="AVDManager" timestamp="1619950478021">
+    <state x="36" y="170" width="1095" height="495" key="AVDManager" timestamp="1619966992308">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="36" y="170" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1619950478021" />
+    <state x="36" y="170" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1619966992308" />
     <state x="224" y="97" key="AndroidCreateResourceDirectoryDialog" timestamp="1619911368982">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -374,26 +373,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="589" y="134" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1619886653782" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619912543227">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom" timestamp="1619971486441">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619912543227" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619912543226">
+    <state width="1236" height="209" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1619971486441" />
+    <state width="1236" height="209" key="GridCell.Tab.0.center" timestamp="1619971486441">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619912543226" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619912543226">
+    <state width="1236" height="209" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1619971486441" />
+    <state width="1236" height="209" key="GridCell.Tab.0.left" timestamp="1619971486441">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619912543226" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619912543226">
+    <state width="1236" height="209" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1619971486441" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right" timestamp="1619971486441">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619912543226" />
+    <state width="1236" height="209" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1619971486441" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1619777140284">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

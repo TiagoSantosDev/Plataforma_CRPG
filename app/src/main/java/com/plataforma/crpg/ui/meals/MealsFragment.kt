@@ -23,8 +23,7 @@ import kotlinx.android.synthetic.main.reminder_activity_success.*
 
 class MealsFragment : Fragment() {
 
-    private var FLAG_MEAL_CHOSEN = false
-    var SELECTED_DATE = ""
+    private var flagMealChosen = false
 
     companion object {
         fun newInstance() = MealsFragment()
@@ -39,7 +38,7 @@ class MealsFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
-        //val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
+
         val binding = MealsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
@@ -67,8 +66,6 @@ class MealsFragment : Fragment() {
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
 
         text_opcao_carne.text = mealsViewModel.retrievedMeal.carne
-        println("Opcao carne text: " + text_opcao_carne.text)
-        text_opcao_carne.bringToFront()
         text_opcao_peixe.text = mealsViewModel.retrievedMeal.peixe
         text_opcao_dieta.text = mealsViewModel.retrievedMeal.dieta
         text_opcao_vegetariano.text = mealsViewModel.retrievedMeal.vegetariano
@@ -80,18 +77,7 @@ class MealsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
-/*
-        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
 
-        println("Opcao carne text: " + view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text)
-
-        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.bringToFront()
-        view?.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
-        view?.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
-        view?.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
-*/
-
-        //mealsViewModel.testDB()
         val cardCarne: MaterialCardView? = view?.findViewById(R.id.frame_opcao_carne)
         val cardPeixe: MaterialCardView? = view?.findViewById(R.id.frame_opcao_peixe)
         val cardDieta: MaterialCardView? = view?.findViewById(R.id.frame_opcao_dieta)
@@ -109,7 +95,7 @@ class MealsFragment : Fragment() {
             cardPeixe?.isChecked = false
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
-            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            flagMealChosen = !flagMealChosen
             true
         }
 
@@ -124,7 +110,7 @@ class MealsFragment : Fragment() {
             cardCarne?.isChecked = false
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
-            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            flagMealChosen = !flagMealChosen
             true
         }
 
@@ -138,7 +124,7 @@ class MealsFragment : Fragment() {
             cardCarne?.isChecked = false
             cardPeixe?.isChecked = false
             cardVeg?.isChecked = false
-            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            flagMealChosen = !flagMealChosen
             true
         }
 
@@ -152,7 +138,7 @@ class MealsFragment : Fragment() {
             cardCarne?.isChecked = false
             cardPeixe?.isChecked = false
             cardDieta?.isChecked = false
-            FLAG_MEAL_CHOSEN = !FLAG_MEAL_CHOSEN
+            flagMealChosen = !flagMealChosen
             true
         }
 
@@ -161,7 +147,7 @@ class MealsFragment : Fragment() {
 
         button_confirm_meal.setOnClickListener {
             if (mealsViewModel.selectedOption != 0) {
-                println("Selected option: " + mealsViewModel.selectedOption)
+
                 mealSuccessView?.visibility = View.VISIBLE
                 mealSuccessView?.bringToFront()
                 nothingCheckedWarning?.visibility = View.GONE
@@ -186,6 +172,22 @@ class MealsFragment : Fragment() {
 
 
 
+/*
+        //println("Opcao carne text: " + text_opcao_carne.text)
+        //text_opcao_carne.bringToFront()
+//println("Selected option: " + mealsViewModel.selectedOption)
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text = mealsViewModel.retrievedMeal.carne
+
+        println("Opcao carne text: " + view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.text)
+
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_carne)?.bringToFront()
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
+        view?.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
+*/
+
+//mealsViewModel.testDB()
+//val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
 //println("Selected option: " + mealsViewModel.selectedOption)
 //println("Selected option: " + mealsViewModel.selectedOption)
 //println("Selected option: " + mealsViewModel.selectedOption)

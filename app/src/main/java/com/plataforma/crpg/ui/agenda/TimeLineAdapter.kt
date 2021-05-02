@@ -93,6 +93,14 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         } else
             holder.start_time.setGone()
 
+        if (timeLineModel.title.isNotEmpty()){
+            holder.title.text = timeLineModel.title
+        }
+
+        if (timeLineModel.info.isNotEmpty()){
+            holder.info.text = timeLineModel.info
+        }
+
         when(timeLineModel.type){
             EventType.ACTIVITY -> {
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.crpg_background)
@@ -103,21 +111,23 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.meal_icon)
 
                 when (timeLineModel.title) {
-                    "ALMOÇO" -> if (timeLineModel.chosen_meal == "") {
+                    "ALMOÇO" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR ALMOÇO"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
 
-                    "JANTAR" -> if (timeLineModel.chosen_meal == "") {
+                    "JANTAR" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
                         holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR JANTAR"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
+
                 }
 
             }
             EventType.TRANSPORTS -> {
+                holder.itemView.text_timeline_info.text = "Clicar para horários dos transportes!"
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.stcp_background)
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.bus_icon)
             }
@@ -171,35 +181,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
+        println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
 
 
-        //se almoço nao estiver escolhido
-        //card informa que pode ser clicado para escolher almoço
-        if (timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito == 0) {
-            when(timeLineModel.title){
-                "ALMOÇO" -> {
-                    holder.title.text = timeLineModel.title
-                    //holder.info.text = "Clicar para selecionar almoço!"
-                }
-                "JANTAR" -> {
-                    holder.title.text = timeLineModel.title
-                    //holder.info.text = "Clicar para selecionar jantar!"
-                }
-                "TRANSPORTE" -> {
-                    holder.title.text = timeLineModel.title
-                    holder.info.text = "Clicar para horários dos transportes!"
-                }
-                else -> {holder.title.text = timeLineModel.title
-                holder.info.text = timeLineModel.info}
-            }
-        }else if(timeLineModel.title.isNotEmpty() && currentDateMealOrder.pedido_feito != 0){
-            when(currentDateMealOrder.pedido_feito){
-                //1-> holder.info.text = currentDateMeal.prato_carne
-                //2-> holder.info.text = currentDateMeal.prato_peixe
-                //3-> holder.info.text = currentDateMeal.prato_dieta
-                //4-> holder.info.text = currentDateMeal.prato_vegetariano
-            }
-        }
     }
 
     override fun getItemCount() = mFeedList.size
@@ -263,4 +247,31 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 //
 // val title: String =  mFeedList[position].title
 //            //println("ID do cartao: $id")
-//            //println("Tipo do cartao: $tipo")
+//            //println("Tipo do cartao: $tipo")//se almoço nao estiver escolhido
+//        //card informa que pode ser clicado para escolher almoço
+//        /*
+//        if (timeLineModel.title.isNotEmpty() && timeLineModel.chosen_meal.isNullOrBlank()) {
+//            when(timeLineModel.title){
+//                "ALMOÇO" -> {
+//                    holder.title.text = timeLineModel.title
+//                    //holder.info.text = "Clicar para selecionar almoço!"
+//                }
+//                "JANTAR" -> {
+//                    holder.title.text = timeLineModel.title
+//                    //holder.info.text = "Clicar para selecionar jantar!"
+//                }
+//                "TRANSPORTE" -> {
+//                    holder.title.text = timeLineModel.title
+//                    holder.info.text = "Clicar para horários dos transportes!"
+//                }
+//                else -> {holder.title.text = timeLineModel.title
+//                holder.info.text = timeLineModel.info}
+//            }
+//        } else if(timeLineModel.title.isNotEmpty() && !timeLineModel.chosen_meal.isNullOrBlank()){
+//            when(currentDateMealOrder.pedido_feito){
+//                //1-> holder.info.text = currentDateMeal.prato_carne
+//                //2-> holder.info.text = currentDateMeal.prato_peixe
+//                //3-> holder.info.text = currentDateMeal.prato_dieta
+//                //4-> holder.info.text = currentDateMeal.prato_vegetariano
+//            }
+//        }*/
