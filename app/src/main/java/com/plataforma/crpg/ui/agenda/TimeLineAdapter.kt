@@ -105,6 +105,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             EventType.ACTIVITY -> {
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.crpg_background)
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.maos)
+                holder.itemView.text_timeline_title.text = "ACTIVIDADE"
+                holder.itemView.text_timeline_info.text = timeLineModel.info.toUpperCase()
             }
             EventType.MEAL -> {
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.background_dieta)
@@ -112,13 +114,13 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
                 when (timeLineModel.title) {
                     "ALMOÇO" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
-                        holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR ALMOÇO"
+                        holder.itemView.text_timeline_info.text = "CLIQUE AQUI PARA SELECIONAR ALMOÇO"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
 
                     "JANTAR" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
-                        holder.itemView.text_timeline_info.text = "CLIQUE PARA SELECIONAR JANTAR"
+                        holder.itemView.text_timeline_info.text = "CLIQUE AQUI PARA SELECIONAR JANTAR"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
@@ -127,7 +129,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             }
             EventType.TRANSPORTS -> {
-                holder.itemView.text_timeline_info.text = "Clicar para horários dos transportes!"
+                holder.itemView.text_timeline_info.text = "CLIQUE AQUI PARA MAIS INFORMAÇÕES"
                 holder.itemView.card_background_image.setBackgroundResource(R.drawable.stcp_background)
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.bus_icon)
             }

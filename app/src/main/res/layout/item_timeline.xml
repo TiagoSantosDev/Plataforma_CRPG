@@ -93,6 +93,8 @@
                         android:id="@+id/text_timeline_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
                         android:gravity="center"
                         android:maxLength="15"
                         android:textColor="@android:color/black"
@@ -102,10 +104,12 @@
                         android:id="@+id/text_timeline_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
                         android:gravity="center"
                         android:maxLength="40"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
 
                 </LinearLayout>
             </FrameLayout>
