@@ -41,12 +41,14 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
         notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
-
+        notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
 
 
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ListAdapter(notesViewModel.noteList
+
+
+            adapter = ListAdapter(notesViewModel.mNoteList
             ) { newList -> notesViewModel.mNoteList = newList as ArrayList<Note> }
         }
     }
@@ -113,3 +115,7 @@ private val noteList = listOf(
             Note(NoteType.TEXT, "16042021", "1200","Nota 3",
                     "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg")
     ) */
+
+//adapter = ListAdapter(notesViewModel.noteList
+//adapter = ListAdapter(notesViewModel.noteList
+//) { newList -> notesViewModel.mNoteList = newList as ArrayList<Note> }

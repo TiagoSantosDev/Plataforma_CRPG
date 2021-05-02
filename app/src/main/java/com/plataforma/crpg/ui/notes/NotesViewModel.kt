@@ -27,6 +27,8 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
                     "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg")
     )
 
+    var removedPosition : Int ? = null
+
 
     private fun populateFile() {
         val filename = "notes.json"
@@ -54,7 +56,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         return noteListJSON
     }
 
-    fun getNotesCollectionFromJSONWithoutPopulate(): ArrayList<Note> {
+    fun getNotesCollectionFromJSONWithoutPopulate() {
         val gson = Gson()
         val privateNoteList: ArrayList<Note>
         val filename = "notes.json"
@@ -71,9 +73,8 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         val type: Type = object : TypeToken<ArrayList<Note>>() {}.type
-        privateNoteList = gson.fromJson(FileReader(fullFilename), type)
-        println("Private Note List from JSON Without Populate: $privateNoteList")
-        return privateNoteList
+        mNoteList = gson.fromJson(FileReader(fullFilename), type)
+        println("Private Note List from JSON Without Populate: $mNoteList")
     }
 
 
