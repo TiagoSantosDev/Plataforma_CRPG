@@ -22,7 +22,6 @@ class ListAdapter(private val list: List<Note>, private val onChange: (List<Note
         return NoteViewHolder(inflater, parent)
     }
 
-    //substitui position por holder.adapterPosition
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note: Note = listData[holder.adapterPosition]
 
