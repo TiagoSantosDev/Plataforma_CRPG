@@ -48,6 +48,7 @@
     <string name="apanhar_bus">Apanhar bus do CRPG</string>
     <string name="escolher_almoco">Escolher almoço</string>
     <string name="personalizado">Personalizado</string>
+    <string name="todos_os_dias">Todos os dias</string>
     <string name="hoje">Hoje</string>
     <string name="amanha">Amanhã</string>
     <string name="green_check">✔</string>
@@ -123,6 +124,9 @@
     <string name="minutos">minutos</string>
     <string name="consultar_horarios">CONSULTAR HORÁRIOS</string>
     <string name="photo_viewer_hint">Um clique para fechar foto, duplo clique para fazer zoom!</string>
+    <string name="som_ou_vibracao">Som e/ou vibração</string>
+    <string name="lembrar_de">Lembrar-me de...</string>
+    <string name="insira_o_nome_do_seu_lembrete">Insira o nome do seu lembrete:</string>
 
     <string-array name="line_type">
         <item>Normal</item>

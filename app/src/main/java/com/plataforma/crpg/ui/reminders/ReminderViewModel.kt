@@ -31,8 +31,9 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             "", AlarmType.SOM, AlarmFrequency.HOJE)
     var startTimeHours : String = ""
     var startTimeMin: String = ""
-    private var reminder: MutableLiveData<String>? = null
+    //private var reminder: MutableLiveData<String>? = null
     lateinit var alarmIntent: Intent
+    var flagReminderAdded = false
 
     fun retrieveListReminders(){
     }
@@ -95,6 +96,7 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             AlarmType.AMBOS -> setAlarmBoth(fullWeekAlarm, customWeekAlarm)
         }
 
+        flagReminderAdded = true
         mReminderList.add(newReminder)
     }
 
@@ -139,7 +141,6 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             }
             AlarmFrequency.PERSONALIZADO -> {
                 println("Custom week alarm: $customWeekAlarm")
-
                 this.alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
                 putExtra(AlarmClock.EXTRA_MESSAGE, newReminder.title)
                 putExtra(AlarmClock.EXTRA_HOUR, startTimeHours.toInt())

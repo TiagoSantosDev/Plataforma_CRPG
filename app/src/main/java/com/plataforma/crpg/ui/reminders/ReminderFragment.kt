@@ -62,18 +62,26 @@ class ReminderFragment : Fragment() {
                     .setOnClickListener {
                         //expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundColor() = "@color/white"
                         lembrarButtonPressed = 1
+                        root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
+                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button1)
                     .setOnClickListener {
                         lembrarButtonPressed = 2
+                        root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
+                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button2)
                     .setOnClickListener {
                         lembrarButtonPressed = 3
+                        root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
+                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button3)
                     .setOnClickListener {
                         lembrarButtonPressed = 4
+                        root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.VISIBLE
+                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.VISIBLE
                     }
 
             expandableHoras.parentLayout.setOnClickListener { expandableHoras.toggleLayout() }
@@ -166,7 +174,7 @@ class ReminderFragment : Fragment() {
                 var minsInt = 1
 
                 if (et.text.toString().length == 2 && et_min.text.toString().length == 2) {
-                    println("Validacao das horas")
+                    println("> Validacao das horas com sucesso")
                     newViewModel.startTimeHours = et.text.toString()
                     newViewModel.startTimeMin = et_min.text.toString()
                     startTimeString = newViewModel.startTimeHours.plus(newViewModel.startTimeMin)
@@ -184,11 +192,14 @@ class ReminderFragment : Fragment() {
                     1 -> newViewModel.newReminder.title = "Tomar medicacao"
                     2 -> newViewModel.newReminder.title = "Apanhar bus do CRPG"
                     3 -> newViewModel.newReminder.title = "Lembrar escolha de almoço"
-                    4 -> newViewModel.newReminder.title = "Personalizado"
+                    //definir titulo personalizado
+                    4 -> newViewModel.newReminder.title = root.findViewById<EditText>(R.id.text_edit_personalizado).text.toString()
                     else -> { // Note the block
                         println("lembrarButtonPressed is neither one of the values")
                     }
                 }
+
+                println(">Titulo personalizado do reminder: " + newViewModel.newReminder.title)
 
                 val materialButtonToggleGroup =
                         expandableDia.secondLayout.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup)
@@ -223,9 +234,9 @@ class ReminderFragment : Fragment() {
 
                 when (alarmFreqButtonPressed) {
                     1 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.HOJE
-                    2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.AMANHA
-                    3 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.TODOS_OS_DIAS
-                    4 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.PERSONALIZADO
+                    2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.TODOS_OS_DIAS
+                    3 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.PERSONALIZADO
+                    //2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.AMANHA
                     else -> { // Note the block
                         println("alarmFreqButtonPressed is neither one of the values")
                     }
@@ -236,18 +247,23 @@ class ReminderFragment : Fragment() {
                         && lembrarButtonPressed != 0 && hoursMinutesFlag) {
                     println("entrou na condicao")
                     newViewModel.addReminder()
-                    avisoCampos.visibility = View.GONE
-                    root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
-                    root.findViewById<Button>(R.id.button_ok).setOnClickListener {
-                        root.findViewById<View>(R.id.successLayout).visibility = View.GONE
+
+                    if (newViewModel.flagReminderAdded) {
+                        println("Entrou aqui")
+                        avisoCampos.visibility = View.GONE
+                        root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
+                        root.findViewById<Button>(R.id.button_ok).setOnClickListener {
+                            root.findViewById<View>(R.id.successLayout).visibility = View.GONE
+                        }
+
+                        if (activity?.packageManager?.let { it1 -> newViewModel.alarmIntent.resolveActivity(it1) } != null) {
+                            startActivity(newViewModel.alarmIntent)
+                        }
                     }
 
                     //println(">chegou aqui")
 
 
-                    if (activity?.packageManager?.let { it1 -> newViewModel.alarmIntent.resolveActivity(it1) } != null) {
-                        startActivity(newViewModel.alarmIntent)
-                    }
 
                 } else if (hoursInt > 23 || minsInt > 59) {
                     avisoCampos.text = getString(R.string.hora_minutos_invalido)

@@ -85,7 +85,8 @@ class MealsFragment : Fragment() {
 
         val isLunch = requireArguments().getBoolean("isLunch")
 
-        cardCarne?.setOnLongClickListener {
+        cardCarne?.setOnClickListener {
+        //cardCarne?.setOnLongClickListener {
             if (!cardCarne.isChecked) {
                 mealsViewModel.selectedOption = 1
             } else {
@@ -99,8 +100,8 @@ class MealsFragment : Fragment() {
             true
         }
 
-
-        cardPeixe?.setOnLongClickListener {
+        cardPeixe?.setOnClickListener {
+        //cardPeixe?.setOnLongClickListener {
             if (!cardPeixe.isChecked) {
                 mealsViewModel.selectedOption = 2
             } else {
@@ -114,7 +115,8 @@ class MealsFragment : Fragment() {
             true
         }
 
-        cardDieta?.setOnLongClickListener {
+        cardDieta?.setOnClickListener {
+        //cardDieta?.setOnLongClickListener {
             if (!cardDieta.isChecked) {
                 mealsViewModel.selectedOption = 3
             } else {
@@ -128,7 +130,8 @@ class MealsFragment : Fragment() {
             true
         }
 
-        cardVeg?.setOnLongClickListener {
+        cardVeg?.setOnClickListener {
+        //cardVeg?.setOnLongClickListener {
             if (!cardVeg.isChecked) {
                 mealsViewModel.selectedOption = 4
             } else {
@@ -147,7 +150,6 @@ class MealsFragment : Fragment() {
 
         button_confirm_meal.setOnClickListener {
             if (mealsViewModel.selectedOption != 0) {
-
                 mealSuccessView?.visibility = View.VISIBLE
                 mealSuccessView?.bringToFront()
                 nothingCheckedWarning?.visibility = View.GONE
