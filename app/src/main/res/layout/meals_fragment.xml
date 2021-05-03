@@ -298,7 +298,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_meals">
 
-
     <TextView
         android:id="@+id/aviso_nenhuma_refeicao_checked"
         android:layout_width="match_parent"
@@ -307,7 +306,7 @@
         android:textColor="@color/design_default_color_error"
         android:text="@string/nenhuma_refeicao_selecionada"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_meals"/>
