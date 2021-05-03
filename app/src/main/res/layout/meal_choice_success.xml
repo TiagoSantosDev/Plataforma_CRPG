@@ -6,7 +6,7 @@
   android:layout_height="match_parent"
   android:paddingStart="50dp"
   android:paddingEnd="50dp"
-  android:paddingTop="100dp"
+  android:paddingTop="50dp"
   android:paddingBottom="200dp"
   android:background="@color/PrimaryGreen"
   android:orientation="vertical">
@@ -28,13 +28,16 @@
         android:id="@+id/check_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/success_text"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:text="@string/green_check"
         android:textAlignment="center"
         android:textColor="@color/PrimaryGreen"
-        android:textSize="100sp" />
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@id/success_text"
+        app:layout_constraintTop_toTopOf="@id/view" />
 
     <TextView
         android:id="@+id/success_text"
@@ -47,13 +50,13 @@
         android:text="@string/meal_criado_c_sucesso"
         android:textAlignment="center"
         android:textColor="@color/PrimaryGreen"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/check_text"/>
 
     <Button
         android:id="@+id/button_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/ok"
         android:textSize="20sp"
         android:layout_below="@id/success_text"
