@@ -20,6 +20,7 @@
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
+        android:backgroundTint="@color/white_93"
         android:src="@drawable/sound_only_unchecked" />
 
     <ImageButton
@@ -30,6 +31,7 @@
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
+        android:backgroundTint="@color/white_93"
         android:src="@drawable/vibrar" />
 
     <ImageButton
@@ -40,6 +42,7 @@
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
+        android:backgroundTint="@color/white_93"
         android:src="@drawable/ambos" />
 
   </LinearLayout>
@@ -51,10 +54,10 @@
 
     <TextView
         android:id="@+id/textView_som"
-        android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.01"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.003"
+        android:gravity="end"
         android:text="@string/som"
         android:textColor="@color/md_blue_100"
         android:textSize="20sp" />
@@ -71,8 +74,8 @@
         android:id="@+id/textView_vibrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:gravity="center"
+        android:layout_weight="0.004"
+        android:gravity="end"
         android:text="@string/vibrar"
         android:textSize="20sp"
         android:textColor="@color/md_blue_100"/>
@@ -89,8 +92,8 @@
         android:id="@+id/textView_ambos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:gravity="center"
+        android:layout_weight="0.003"
+        android:gravity="end"
         android:text="AMBOS"
         android:textSize="20sp"
         android:textColor="@color/md_blue_100"/>

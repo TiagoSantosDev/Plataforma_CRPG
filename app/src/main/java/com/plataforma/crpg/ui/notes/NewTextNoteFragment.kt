@@ -65,7 +65,7 @@ class NewTextNoteFragment : Fragment() {
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
-        println("Notes view model value : " + notesViewModel.mNoteList)
+        //println("Notes view model value : " + notesViewModel.mNoteList)
 
         val titleText = view?.rootView?.findViewById<EditText>(R.id.titulo_edit_text)?.text
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text

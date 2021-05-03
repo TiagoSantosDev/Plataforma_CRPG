@@ -36,7 +36,7 @@ class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        println(">OnSupportNavigate called")
+        //println(">OnSupportNavigate called")
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp() /*|| super.onSupportNavigateUp()*/
     }
@@ -44,7 +44,7 @@ class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home ->{ onBackPressedDispatcher.onBackPressed()
-                println(">Back button pressed")
+                //println(">Back button pressed")
                 onSupportNavigateUp()} // click on 'up' button in the action bar, handle it here
             else -> super.onOptionsItemSelected(item)
         }

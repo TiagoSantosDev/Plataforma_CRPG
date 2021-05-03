@@ -18,7 +18,7 @@
         android:text="@string/nova_nota_de_texto"
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
@@ -30,9 +30,9 @@
 
     <FrameLayout
         android:id="@+id/frame_titulo"
-        android:layout_width="359dp"
-        android:layout_height="435dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="341dp"
+        android:layout_height="359dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,8 +52,7 @@
             <ImageView
                 android:id="@+id/note_image"
                 android:layout_width="match_parent"
-                android:layout_height="150dp" />
-
+                android:layout_height="120dp" />
         </FrameLayout>
 
 
@@ -71,20 +70,20 @@
             <TextView
                 android:id="@+id/titulo_nova_nota"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="sans-serif"
                 android:text="@string/titulo_da_nota"
                 android:textAlignment="center"
                 android:textColor="@color/md_blue_100"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/titulo_edit_text"
-                android:layout_width="224dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
+                android:lines="1"
                 android:maxLength="50"
                 app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
         </FrameLayout>
@@ -93,7 +92,7 @@
             android:id="@+id/frame_conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="210dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -105,20 +104,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="sans-serif"
                 android:text="@string/conteudo"
                 android:textAlignment="center"
                 android:textColor="@color/md_blue_100"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/conteudo_nota"
-                android:layout_width="313dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:inputType="textMultiLine"
-                android:maxLength="300"
+                android:lines="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -140,17 +138,17 @@
 
         <Button
             android:id="@+id/button_save_text_note"
-            android:layout_width="240dp"
-            android:layout_height="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
+            android:layout_marginTop="1dp"
+            android:backgroundTint="@color/md_blue_100"
             android:text="@string/guardar"
             android:textSize="20sp"
-            android:backgroundTint="@color/md_blue_100"
             app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.612"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
     </FrameLayout>
 
 

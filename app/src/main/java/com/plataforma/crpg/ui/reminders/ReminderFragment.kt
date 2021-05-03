@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -36,7 +37,7 @@ class ReminderFragment : Fragment() {
     private var startTimeString = ""
     private var hoursMinutesFlag = false
 
-    private lateinit var newViewModel: ReminderViewModel
+    //private lateinit var newViewModel: ReminderViewModel
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreateView(
@@ -46,7 +47,8 @@ class ReminderFragment : Fragment() {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
 
-        newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
+        //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
+        val newViewModel = ViewModelProvider(activity as AppCompatActivity).get(ReminderViewModel::class.java)
 
         with(binding){
             root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.VISIBLE
@@ -164,6 +166,7 @@ class ReminderFragment : Fragment() {
                 var minsInt = 1
 
                 if (et.text.toString().length == 2 && et_min.text.toString().length == 2) {
+                    println("Validacao das horas")
                     newViewModel.startTimeHours = et.text.toString()
                     newViewModel.startTimeMin = et_min.text.toString()
                     startTimeString = newViewModel.startTimeHours.plus(newViewModel.startTimeMin)
@@ -207,6 +210,8 @@ class ReminderFragment : Fragment() {
                     }
                 }
 
+                println("Dates picked: " + ids.toString())
+
                 when (alarmTypeButtonPressed) {
                     1 -> newViewModel.newReminder.alarm_type = AlarmType.SOM
                     2 -> newViewModel.newReminder.alarm_type = AlarmType.VIBRAR
@@ -229,13 +234,16 @@ class ReminderFragment : Fragment() {
 
                 if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0
                         && lembrarButtonPressed != 0 && hoursMinutesFlag) {
+                    println("entrou na condicao")
+                    newViewModel.addReminder()
                     avisoCampos.visibility = View.GONE
                     root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                     root.findViewById<Button>(R.id.button_ok).setOnClickListener {
                         root.findViewById<View>(R.id.successLayout).visibility = View.GONE
                     }
 
-                    newViewModel.addReminder()
+                    //println(">chegou aqui")
+
 
                     if (activity?.packageManager?.let { it1 -> newViewModel.alarmIntent.resolveActivity(it1) } != null) {
                         startActivity(newViewModel.alarmIntent)

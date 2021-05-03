@@ -183,7 +183,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
-        println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
+        //println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
 
 
     }
