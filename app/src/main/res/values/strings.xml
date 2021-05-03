@@ -53,6 +53,7 @@
     <string name="green_check">✔</string>
     <string name="ok">OK</string>
     <string name="criado_c_sucesso">Lembrete criado com sucesso!</string>
+    <string name="meal_criado_c_sucesso">Refeição criada com sucesso!</string>
     <string name="som">SOM</string>
     <string name="vibrar">VIBRAR</string>
     <string name="aviso_campos_obrigatorios">AVISO: CAMPOS OBRIGATÓRIOS EM FALTA.</string>

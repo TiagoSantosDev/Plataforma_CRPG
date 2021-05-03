@@ -87,7 +87,7 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
 
         val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
         privateList = gson.fromJson(FileReader(fullFilename), type)
-        println("Private List from JSON Without Populate: $privateList")
+        //println("Private List from JSON Without Populate: $privateList")
         return privateList
 
     }
@@ -95,14 +95,14 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
 
 
     private fun addMealsToPrivateEvents(): ArrayList<Event> {
-        println("Size do privateList a entrada do addMeals:" + privateEventList.size)
+        //println("Size do privateList a entrada do addMeals:" + privateEventList.size)
         privateEventList.add(lunchEvent)
         privateEventList.add(dinnerEvent)
         return privateEventList
     }
 
     private fun addMealsToPublicEvents(): ArrayList<Event> {
-        println("Size do privateList a entrada do addMeals:" + privateEventList.size)
+        //println("Size do privateList a entrada do addMeals:" + privateEventList.size)
         publicEventList.add(lunchEvent)
         publicEventList.add(dinnerEvent)
         return publicEventList
@@ -111,8 +111,8 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
     private fun concatenatePublicPrivateEvents(): ArrayList<Event> {
         addMealsToPrivateEvents()
         addMealsToPublicEvents()
-        println(">Private list size: " + privateEventList.size)
-        println("Public list size " + publicEventList.size)
+        //println(">Private list size: " + privateEventList.size)
+        //println("Public list size " + publicEventList.size)
         mDataList.plusAssign((privateEventList + publicEventList) as ArrayList<Event>)
         println("Size mDataList: " + mDataList.size)
         return mDataList

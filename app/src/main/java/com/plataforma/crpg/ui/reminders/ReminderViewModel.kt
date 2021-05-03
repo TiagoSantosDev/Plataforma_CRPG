@@ -44,6 +44,8 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
     @SuppressLint("SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun addReminder(){
+
+        println("entrou no addReminder")
         
         val fullWeekAlarm = ArrayList<Int>()
         fullWeekAlarm.add(Calendar.SUNDAY)
@@ -70,6 +72,8 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
                 }
             }
         }
+
+        println("Custom week alarm mutable: $customWeekAlarmMutable")
 
         val customWeekAlarm = customWeekAlarmMutable.toCollection(ArrayList<Int>())
         for (i in customWeekAlarm) println("> i value: $i")
@@ -106,7 +110,7 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun setAlarmVibrateOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
-
+        println("Custom week alarm: $customWeekAlarm")
         when (newReminder.alarm_freq) {
             //so vibracao
             AlarmFrequency.HOJE -> this.alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
@@ -133,13 +137,16 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
                 putExtra(AlarmClock.VALUE_RINGTONE_SILENT, TRUE)
                 putExtra(AlarmClock.EXTRA_DAYS, fullWeekAlarm)
             }
-            AlarmFrequency.PERSONALIZADO -> this.alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
+            AlarmFrequency.PERSONALIZADO -> {
+                println("Custom week alarm: $customWeekAlarm")
+
+                this.alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
                 putExtra(AlarmClock.EXTRA_MESSAGE, newReminder.title)
                 putExtra(AlarmClock.EXTRA_HOUR, startTimeHours.toInt())
                 putExtra(AlarmClock.EXTRA_MINUTES, startTimeMin.toInt())
                 putExtra(AlarmClock.EXTRA_VIBRATE, TRUE)
                 putExtra(AlarmClock.VALUE_RINGTONE_SILENT, TRUE)
-                putExtra(AlarmClock.EXTRA_DAYS, customWeekAlarm)
+                putExtra(AlarmClock.EXTRA_DAYS, customWeekAlarm)}
             }
             else -> println("Não entrou em nenhuma das opcoes")
         }

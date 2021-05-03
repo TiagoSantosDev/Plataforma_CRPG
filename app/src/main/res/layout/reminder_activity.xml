@@ -129,25 +129,26 @@
   <LinearLayout
       android:id="@+id/parentLayout3"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
       android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:layout_gravity="center_horizontal"
+      android:gravity="center_horizontal"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
       android:background="@color/white"
-      android:layout_gravity="bottom|center_horizontal"
       android:layout_marginBottom="40dp">
 
     <Button
         android:id="@+id/button_cancel"
-        android:layout_width="170dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         android:text="@string/cancelar"
         android:textColor="@color/md_blue_100"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button_cancel"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/md_blue_100"
         app:strokeColor="@color/md_blue_100"
@@ -155,17 +156,13 @@
 
     <Button
         android:id="@+id/button_confirm"
-        android:layout_width="160dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:text="@string/guardar"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:backgroundTint="@color/md_blue_100"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.95"/>
+        app:cornerRadius="8dp" />
 
   </LinearLayout>
 </LinearLayout>
