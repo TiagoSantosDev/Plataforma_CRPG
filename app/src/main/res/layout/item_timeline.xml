@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_height="wrap_content">
 
     <com.plataforma.crpg.TimelineView
         android:id="@+id/timeline"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/md_blue_200"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/text_timeline_end_time"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:textColor="@color/md_blue_200"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
     </RelativeLayout>
 
     <FrameLayout
@@ -54,9 +54,8 @@
             android:layout_width="245dp"
             android:layout_height="205dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="15dp"
             android:clickable="true"
             android:focusable="true"
