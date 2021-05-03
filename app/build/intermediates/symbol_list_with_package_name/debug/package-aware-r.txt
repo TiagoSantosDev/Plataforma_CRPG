@@ -2671,6 +2671,7 @@ id blocking
 id bottom
 id bounce
 id bus_lines_spinner
+id bus_lines_spinner3
 id bus_lines_spinner_2
 id button0
 id button1
@@ -2723,6 +2724,7 @@ id cancel_action
 id cancel_button
 id card
 id card_background_image
+id card_bus_lines_spinner
 id card_center_icon
 id card_transports
 id card_transports_CRPG_to_location
