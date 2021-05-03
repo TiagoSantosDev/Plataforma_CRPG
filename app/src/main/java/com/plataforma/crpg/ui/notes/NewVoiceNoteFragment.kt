@@ -17,6 +17,7 @@ import android.widget.AdapterView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -65,7 +66,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
         val fileName = "one"
-        val extensions = ".pcm"
+        val extensions = ".wav"
         val audioRecorder = NaraeAudioRecorder()
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
         audioRecorder.create {
@@ -104,7 +105,10 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
             button_replay_recording.setOnClickListener {
                 val myUri = Uri.parse(destFile.absolutePath)
-                println("Dest File exists: " + destFile.canRead())
+                val meditationUri = Uri.parse("android.resource://" + context?.packageName.toString()
+                    + "/raw/meditation_sound")
+                println("Dest File exists: " + myUri.path)
+                println("Dest file path: " + destFile.absolutePath)
                 //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
                 val mediaPlayer = MediaPlayer().apply {
                     setAudioAttributes(
@@ -113,6 +117,9 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                                     .setUsage(AudioAttributes.USAGE_MEDIA)
                                     .build()
                     )
+                    //setDataSource(destFile.absolutePath)
+                    //setDataSource(requireContext(), meditationUri)
+                    //setDataSource(requireContext(), destFile.absolutePath.toUri())
                     setDataSource(requireContext(), myUri)
                     prepare()
                     start()
