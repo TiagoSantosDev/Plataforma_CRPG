@@ -64,6 +64,8 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_transport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_custom_transport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transport.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_choice_success.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_choice_success.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reminder_activity_success.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reminder_activity_success.xml" afterDir="false" />
