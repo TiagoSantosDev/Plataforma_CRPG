@@ -1,8 +1,10 @@
 package com.plataforma.crpg.ui.notes
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
@@ -14,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -77,29 +80,44 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             this.audioSource = audioSource
         }
 
-        button_start_recording.setOnClickListener {
-            audioRecorder.startRecording(requireActivity())
-        }
+        val recordAudioCode = 0
 
-        button_stop_recording.setOnClickListener {
-            audioRecorder.stopRecording()
-        }
+        requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE),recordAudioCode)
+
+        if (context?.let {
+                    ContextCompat.checkSelfPermission(it,
+                            arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
+                } != PackageManager.PERMISSION_GRANTED) {
+
+                    println("Entrou aqui")
 
 
-        button_replay_recording.setOnClickListener {
+            button_start_recording.setOnClickListener {
+                audioRecorder.startRecording(requireActivity())
+            }
 
-            val myUri = Uri.parse(destFile.absolutePath)
-            //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
-            val mediaPlayer = MediaPlayer().apply {
-                setAudioAttributes(
-                        AudioAttributes.Builder()
-                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                                .setUsage(AudioAttributes.USAGE_MEDIA)
-                                .build()
-                )
-                setDataSource(activity, myUri)
-                prepare()
-                start()
+            button_stop_recording.setOnClickListener {
+                audioRecorder.stopRecording()
+                println("Dest File exists: " + destFile.exists())
+            }
+
+            button_replay_recording.setOnClickListener {
+                val myUri = Uri.parse(destFile.absolutePath)
+                println("Dest File exists: " + destFile.canRead())
+                //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
+                val mediaPlayer = MediaPlayer().apply {
+                    setAudioAttributes(
+                            AudioAttributes.Builder()
+                                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                                    .build()
+                    )
+                    setDataSource(requireContext(), myUri)
+                    prepare()
+                    start()
+                }
+
             }
 
         }
