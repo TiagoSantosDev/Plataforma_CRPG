@@ -11,6 +11,8 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
     var nome_motorista_para_CRPG = "João"
     var nome_motorista_de_CRPG = "Maria"
+    var horario_ida_CRPG = "11h30"
+    var horario_volta_CRPG = "12h30"
     private val context = getApplication<Application>().applicationContext
     lateinit var custom_transports_text: String
 
@@ -22,7 +24,10 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
     fun getCustomText(selectedDate: String): String {
 
-        val customText: String = "Horários para o dia X:"
+        val customText: String = "Horários para o dia selecionado: \n \n Trindade - 09h30 \n CRPG - 10h30 \n" +
+                " \n" +
+                " Valadares - 10h30 \n" +
+                " CRPG - 11h30 \n"
 
         return customText
     }
@@ -33,22 +38,22 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
         val listaDados = ArrayList<CustomInfoPublicTransport>()
         val placeHolderDataA = CustomInfoPublicTransport("03052021",
-                " A Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
-                " A Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
-                " A Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
-                " A Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
+                " Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
+                " Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
+                " Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
+                " Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
 
         val placeHolderDataB = CustomInfoPublicTransport("06052021",
-                "B Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
-                "B Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
-                "B Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
-                "B Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
+                "Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
 
         val placeHolderDataC = CustomInfoPublicTransport("09052021",
-                "C Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
-                "C Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
-                "C Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
-                "C Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
+                "Horário Linha 901: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário Linha ZF: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
+                "Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
 
 
         listaDados.add(placeHolderDataA)

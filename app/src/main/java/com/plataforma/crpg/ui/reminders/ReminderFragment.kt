@@ -261,10 +261,6 @@ class ReminderFragment : Fragment() {
                         }
                     }
 
-                    //println(">chegou aqui")
-
-
-
                 } else if (hoursInt > 23 || minsInt > 59) {
                     avisoCampos.text = getString(R.string.hora_minutos_invalido)
                     avisoCampos.visibility = View.VISIBLE

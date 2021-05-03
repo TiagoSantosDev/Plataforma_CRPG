@@ -134,6 +134,8 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             "Porto" -> {
                 textFromLocation!!.text = "Do Porto para o CRPG"
                 textToLocation!!.text = "Do CRPG para o Porto"
+                text_time_location_to_CRPG.text = transportsViewModel.horario_ida_CRPG
+                text_time_location_from_CRPG.text = transportsViewModel.horario_volta_CRPG
                 driverFromLocation?.text = transportsViewModel.nome_motorista_de_CRPG
                 driverToLocation?.text = transportsViewModel.nome_motorista_para_CRPG
             }
@@ -141,6 +143,8 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             "Gaia" -> {
                 textFromLocation!!.text = "De Gaia para o CRPG"
                 textToLocation!!.text = "Do CRPG para Gaia"
+                text_time_location_to_CRPG.text = transportsViewModel.horario_ida_CRPG
+                text_time_location_from_CRPG.text = transportsViewModel.horario_volta_CRPG
                 driverFromLocation?.text = transportsViewModel.nome_motorista_de_CRPG
                 driverToLocation?.text = transportsViewModel.nome_motorista_para_CRPG
             }
@@ -148,12 +152,12 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             "Casa" -> {
                 textFromLocation!!.text = "De Casa para o CRPG"
                 textToLocation!!.text = "Do CRPG para Casa"
+                text_time_location_to_CRPG.text = transportsViewModel.horario_ida_CRPG
+                text_time_location_from_CRPG.text = transportsViewModel.horario_volta_CRPG
                 driverFromLocation?.text = transportsViewModel.nome_motorista_de_CRPG
                 driverToLocation?.text = transportsViewModel.nome_motorista_para_CRPG
             }
         }
-
-
 
     }
 
