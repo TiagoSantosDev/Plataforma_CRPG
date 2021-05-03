@@ -27,15 +27,20 @@ import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
 class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 
-    private val trindadeString = "Trindade"
-    private val valadaresString = "Valadares"
-    private val francelosString = "Francelos"
-    private val crpgString = "CRPG"
-    private val miramarString = "Miramar"
-    private val joaoDeDeusString = "João de Deus"
+
     private var opSelected = 0
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var transportsViewModel: TransportsViewModel
+
+    companion object {
+        private const val trindadeString = "Trindade"
+        private const val valadaresString = "Valadares"
+        private const val francelosString = "Francelos"
+        private const val crpgString = "CRPG"
+        private const val miramarString = "Miramar"
+        private const val joaoDeDeusString = "João de Deus"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,14 +145,14 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             fragmentTransaction.commit()
         }
     }
-
+/*
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
                 PublicTransportsTimetableFragment().apply {
                 }
     }
-
+*/
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
 
