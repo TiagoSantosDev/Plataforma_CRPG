@@ -2770,6 +2770,7 @@ id createReminderActionButton
 id custom
 id customPanel
 id custom_transports_text
+id custom_transports_text_card
 id custom_transports_text_frame
 id cut
 id dark
@@ -2892,6 +2893,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id frame_button_replay
+id frame_card_info
 id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_de_para_1
@@ -2989,6 +2991,7 @@ id locations_spinner
 id lytCameraPick
 id lytGalleryPick
 id main_single_row_calendar
+id main_timeline_frame
 id masked
 id material_clock_display
 id material_clock_face
@@ -3109,6 +3112,7 @@ id postLayout
 id progress_circular
 id progress_horizontal
 id public_transports_text
+id public_transports_text_card
 id radio
 id ratio
 id rb_horizontal
@@ -3287,6 +3291,7 @@ id text_orientation_heading
 id text_selected_mood
 id text_start_line_color
 id text_time_CRPG_to_location
+id text_time_location_from_CRPG
 id text_time_location_to_CRPG
 id text_timeline_CRPG_to_location
 id text_timeline_date
@@ -3340,6 +3345,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id transports_button_frame
 id triangle
 id tvDate
 id tvDay
