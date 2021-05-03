@@ -30,7 +30,7 @@
     <FrameLayout
         android:id="@+id/frame_meals"
         android:layout_width="346dp"
-        android:layout_height="426dp"
+        android:layout_height="390dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/escolha_refeicao">
@@ -282,7 +282,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="30dp"
             android:text="@string/guardar"
             android:textSize="30sp"
             android:backgroundTint="@color/md_blue_100"
@@ -295,7 +294,6 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_meals">
@@ -308,8 +306,11 @@
         android:layout_gravity="center_horizontal"
         android:textColor="@color/design_default_color_error"
         android:text="@string/nenhuma_refeicao_selecionada"
-        android:textSize="25sp"
-        android:visibility="gone" />
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_meals"/>
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

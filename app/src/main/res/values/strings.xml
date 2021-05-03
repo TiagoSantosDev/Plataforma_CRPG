@@ -60,7 +60,7 @@
     <string name="aviso_campos_obrigatorios">AVISO: CAMPOS OBRIGATÓRIOS EM FALTA.</string>
     <string name="adicionar_lembrete">Adicione lembretes para não se esquecer do que é realmente importante!</string>
     <string name="clique_icone_lapis">Clique no icone com o lapis para criar um novo lembrete</string>
-    <string name="selecionar_dias">Selecionar dias da semana</string>
+    <string name="selecionar_dias">Selecione dias da semana:</string>
     <string name="escolha_a_sua_refeicao">Escolha a sua refeição:</string>
     <string name="opcao_carne">Opção Carne</string>
     <string name="opcao_peixe">Opção Peixe</string>

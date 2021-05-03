@@ -8,8 +8,6 @@
     android:visibility="visible"
     tools:context="com.plataforma.crpg.ui.notes.NewVoiceNoteFragment">
 
-
-
     <TextView
         android:id="@+id/title_nova_nota_texto"
         android:layout_width="match_parent"
