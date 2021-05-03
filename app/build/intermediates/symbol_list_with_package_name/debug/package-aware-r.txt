@@ -2955,6 +2955,7 @@ id image_view_state_rotate
 id image_view_state_scale
 id incoming
 id info
+id inserir_titulo_lembrete_personalizado
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -3250,6 +3251,7 @@ id text_driver
 id text_driver_CRPG_to_location
 id text_driver_name_CRPG_to_location
 id text_driver_name_location_to_CRPG
+id text_edit_personalizado
 id text_end_line_color
 id text_input_end_icon
 id text_input_start_icon
@@ -3813,8 +3815,10 @@ string horizontal_timeline_w_padding
 string icon_content_description
 string image_picker_provider_authority_suffix
 string informacao
+string insira_o_nome_do_seu_lembrete
 string item_view_role_description
 string left_padding
+string lembrar_de
 string ligar_ao_motorista
 string line
 string line_padding
@@ -3921,6 +3925,7 @@ string selecionar_data_hint
 string selecionar_dias
 string size
 string som
+string som_ou_vibracao
 string start_line_color
 string status_bar_notification_info_overflow
 string style
@@ -3938,6 +3943,7 @@ string title_meditacao
 string title_notas
 string title_notifications
 string titulo_da_nota
+string todos_os_dias
 string tomar_medicacao
 string top_padding
 string transporte_personalizado

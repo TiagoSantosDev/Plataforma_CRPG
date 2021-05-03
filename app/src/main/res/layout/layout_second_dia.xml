@@ -29,7 +29,7 @@
     android:layout_height="wrap_content"
     android:background="@color/md_blue_100"
     android:textColor="@color/white_93"
-    android:text="@string/amanha" />
+    android:text="@string/todos_os_dias" />
 
   <View android:id="@+id/dia_separator2"
       android:background="@color/white_93"
