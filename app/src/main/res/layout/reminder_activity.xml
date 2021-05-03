@@ -145,7 +145,7 @@
         android:layout_marginRight="10dp"
         android:text="@string/cancelar"
         android:textColor="@color/md_blue_100"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:backgroundTint="@android:color/transparent"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,7 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="@string/guardar"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:backgroundTint="@color/md_blue_100"
         app:cornerRadius="8dp" />
 

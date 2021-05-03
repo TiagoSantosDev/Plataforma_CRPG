@@ -2727,6 +2727,7 @@ id cancel_button
 id card
 id card_background_image
 id card_bus_lines_spinner
+id card_bus_lines_spinner_2
 id card_center_icon
 id card_transports
 id card_transports_CRPG_to_location
