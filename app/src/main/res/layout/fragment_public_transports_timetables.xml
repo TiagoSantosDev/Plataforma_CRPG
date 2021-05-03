@@ -7,7 +7,6 @@
     tools:context="com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment"
     android:background="@color/white">
 
-
     <include
         layout="@layout/timetable_layout"
         android:visibility="visible" />
@@ -75,15 +74,15 @@
         android:layout_height="306dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
+        android:paddingStart="44dp"
+        android:paddingEnd="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bus_lines_spinner_2">
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/frame_de_para_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,17 +90,22 @@
 
             <TextView
                 android:id="@+id/text_to_from_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:minEms="15"
                 android:textColor="@color/md_blue_100"
-                android:textSize="20sp" />
+                android:gravity="center_vertical|end"
+                android:textSize="20sp"
+                app:layout_constraintRight_toLeftOf="@id/imageView_BlueArrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView_BlueArrow"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.1"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/blue_right_arrow_icon"
                 app:layout_constraintRight_toLeftOf="@+id/text_to_from_2"
@@ -109,16 +113,14 @@
 
             <TextView
                 android:id="@+id/text_to_from_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:paddingEnd="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:minEms="15"
                 android:gravity="center_vertical"
-                android:textAlignment="gravity"
                 android:textColor="@color/md_blue_100"
                 android:textSize="20sp" />
-
-        </FrameLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/button_view_timetable_1"
@@ -136,26 +138,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_de_para_1" />
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/frame_de_para_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="140dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_de_para_1">
 
             <TextView
                 android:id="@+id/text_to_from_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45"
+                android:minEms="15"
+                android:gravity="end|center_vertical"
                 android:textColor="@color/md_blue_100"
                 android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/imageView_BlueArrow2"
-                android:layout_width="74dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.1"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:src="@drawable/blue_right_arrow_icon"
                 app:layout_constraintRight_toLeftOf="@+id/text_to_from_3"
@@ -163,15 +169,16 @@
 
             <TextView
                 android:id="@+id/text_to_from_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="end|center_vertical"
                 android:gravity="center_vertical"
-                android:paddingEnd="20dp"
+                android:layout_weight="0.45"
+                android:minEms="15"
                 android:textAlignment="gravity"
                 android:textColor="@color/md_blue_100"
                 android:textSize="20sp" />
-        </FrameLayout>
+        </LinearLayout>
 
 
         <Button

@@ -26,6 +26,13 @@ import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
 
 class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
+
+    private val trindadeString = "Trindade"
+    private val valadaresString = "Valadares"
+    private val francelosString = "Francelos"
+    private val crpgString = "CRPG"
+    private val miramarString = "Miramar"
+    private val joaoDeDeusString = "João de Deus"
     private var opSelected = 0
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var transportsViewModel: TransportsViewModel
@@ -143,34 +150,37 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
+
+
+
         println("Item clicked: $p2")
         when(p2){
             0 -> {
-                text_to_from_1.text = "Trindade"
-                text_to_from_2.text = "Valadares"
-                text_to_from_3.text = "Valadares"
-                text_to_from_4.text = "Trindade"
+                text_to_from_1.text = trindadeString
+                text_to_from_2.text = valadaresString
+                text_to_from_3.text = valadaresString
+                text_to_from_4.text = trindadeString
                 opSelected = 1
             }
             1 -> {
-                text_to_from_1.text = "Valadares"
-                text_to_from_2.text = "Francelos"
-                text_to_from_3.text = "Francelos"
-                text_to_from_4.text = "Valadares"
+                text_to_from_1.text = valadaresString
+                text_to_from_2.text = francelosString
+                text_to_from_3.text = francelosString
+                text_to_from_4.text = valadaresString
                 opSelected = 2
             }
             2 -> {
-                text_to_from_1.text = "João de Deus"
-                text_to_from_2.text = "CRPG"
-                text_to_from_3.text = "CRPG"
-                text_to_from_4.text = "João de Deus"
+                text_to_from_1.text = joaoDeDeusString
+                text_to_from_2.text = crpgString
+                text_to_from_3.text = crpgString
+                text_to_from_4.text = joaoDeDeusString
                 opSelected = 3
             }
             3 -> {
-                text_to_from_1.text = "João de Deus"
-                text_to_from_2.text = "Miramar"
-                text_to_from_3.text = "Miaramar"
-                text_to_from_4.text = "João de Deus"
+                text_to_from_1.text = joaoDeDeusString
+                text_to_from_2.text = miramarString
+                text_to_from_3.text = miramarString
+                text_to_from_4.text = joaoDeDeusString
                 opSelected = 4
             }
         }
