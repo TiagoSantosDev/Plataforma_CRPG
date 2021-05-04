@@ -43,11 +43,12 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
+
         notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
 
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ListAdapter(notesViewModel.mNoteList
+            adapter = ListAdapter(notesViewModel.mNoteList, context
             ) { newList -> notesViewModel.mNoteList = newList as ArrayList<Note> }
         }
     }
