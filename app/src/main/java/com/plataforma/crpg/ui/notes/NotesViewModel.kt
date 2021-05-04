@@ -72,7 +72,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
         if (fileExists) {
             print("$fullFilename does exist.")
-            populateFile()
+            //populateFile()
         } else {
             print("$fullFilename does not exist.")
             populateFile()

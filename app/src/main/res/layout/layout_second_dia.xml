@@ -70,7 +70,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonSeg"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="S"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -78,7 +78,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonTer"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="T"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -86,7 +86,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonQua"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="Q"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -94,7 +94,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonQui"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="Q"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -102,7 +102,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonSex"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="S"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -110,7 +110,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonSab"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="S"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
@@ -118,7 +118,7 @@
       <com.google.android.material.button.MaterialButton
           android:id="@+id/buttonDom"
           style="?attr/materialButtonOutlinedStyle"
-          android:layout_width="48dp"
+          android:layout_width="43dp"
           android:layout_height="wrap_content"
           android:text="D"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
