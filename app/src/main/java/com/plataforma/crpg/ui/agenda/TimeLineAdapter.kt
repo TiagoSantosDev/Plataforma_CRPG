@@ -187,8 +187,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
-        //println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
-
 
     }
 
@@ -225,7 +223,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 }
 
 
-
+//println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 // val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
