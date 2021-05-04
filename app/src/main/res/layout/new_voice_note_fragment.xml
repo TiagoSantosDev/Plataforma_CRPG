@@ -69,7 +69,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:lines="1"
+                android:singleLine="true"
                 android:maxLength="50"
                 android:layout_marginTop="20dp" />
         </FrameLayout>

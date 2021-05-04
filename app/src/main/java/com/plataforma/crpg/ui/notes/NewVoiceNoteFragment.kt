@@ -6,8 +6,11 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.AudioAttributes
+import android.media.AudioFormat
 import android.media.MediaPlayer
+import android.media.MediaRecorder
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
@@ -15,6 +18,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
@@ -25,12 +29,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
+import com.github.windsekirun.naraeaudiorecorder.constants.AudioConstants
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
+import kotlin.math.absoluteValue
 
 
 class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -60,12 +66,18 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         (activity as AppCompatActivity).supportActionBar?.title = "NOVA NOTA DE VOZ"
     }
 
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
             //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
             notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
-        val fileName = "one"
+        var contador = getVoiceItemCount()
+        println("Contador: $contador")
+
+        contador += 1
+        val fileName = contador.toString().toLowerCase()
+        println(fileName)
         val extensions = ".wav"
         val audioRecorder = NaraeAudioRecorder()
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
@@ -73,7 +85,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             this.destFile = destFile
         }
 
-        val recordConfig = AudioRecordConfig.defaultConfig()
+        //val recordConfig = AudioRecordConfig.defaultConfig()
+
+        val recordConfig = AudioRecordConfig(MediaRecorder.AudioSource.MIC,
+                AudioFormat.ENCODING_MP3,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioConstants.FREQUENCY_44100)
         val audioSource = NoiseAudioSource(recordConfig)
         audioRecorder.create {
             this.destFile = destFile
@@ -90,9 +107,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                     ContextCompat.checkSelfPermission(it,
                             arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
                 } != PackageManager.PERMISSION_GRANTED) {
-
-                    println("Entrou aqui")
-
 
             button_start_recording.setOnClickListener {
                 audioRecorder.startRecording(requireActivity())
@@ -172,8 +186,19 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             println(">Escolha de foto cancelada")
         }
 
-
     }
+
+    fun getVoiceItemCount(): Int{
+        var voiceItemCount = 0
+
+        for(item in notesViewModel.mNoteList){
+            if (item.tipo == NoteType.VOICE)
+                voiceItemCount++
+        }
+
+        return voiceItemCount
+    }
+
 
     @SuppressLint("SetTextI18n")
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

@@ -81,12 +81,21 @@ class NewTextNoteFragment : Fragment() {
 
 
         button_save_text_note.setOnClickListener {
-            notesViewModel.newNote.tipo = NoteType.TEXT
-            notesViewModel.newNote.titulo = titleText.toString()
-            notesViewModel.newNote.info = contentText.toString()
-            notesViewModel.newNote.imagePath = imageUri
 
-            notesViewModel.addNewTextNote()
+            if(titleText.toString() != "" &&  contentText.toString() != "") {
+
+                notesViewModel.newNote.tipo = NoteType.TEXT
+                notesViewModel.newNote.titulo = titleText.toString()
+                notesViewModel.newNote.info = contentText.toString()
+                notesViewModel.newNote.imagePath = imageUri
+
+                notesViewModel.addNewTextNote()
+
+            }else{
+
+
+            }
+
 
 
             val fragment: Fragment = NotesFragment()
