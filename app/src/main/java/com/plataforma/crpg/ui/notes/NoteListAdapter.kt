@@ -1,19 +1,19 @@
 package com.plataforma.crpg.ui.notes
 
-import android.media.Image
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.note_list_item.view.*
-import javax.security.auth.callback.Callback
 
-class ListAdapter(private val list: List<Note>, private val onChange: (List<Note>) -> Unit) :
+class ListAdapter(private val list: List<Note>, private val ctx: Context, private val onChange: (List<Note>) -> Unit) :
     RecyclerView.Adapter<NoteViewHolder>() {
 
     private var listData: MutableList<Note> = list.toMutableList()
@@ -39,6 +39,18 @@ class ListAdapter(private val list: List<Note>, private val onChange: (List<Note
             notifyDataSetChanged()
             onChange(listData)
         }
+
+        holder.itemView.note_card_main.setOnClickListener{
+            //AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity)
+            println("Titulo: " + listData[position].titulo)
+            println("Content: " + listData[position].info)
+
+            MaterialAlertDialogBuilder(ctx,android.R.style.Theme_Material_Dialog_Alert)
+                    .setTitle(listData[position].titulo)
+                    .setMessage(listData[position].info)
+                    .setNegativeButton("Fechar"){ dialog, which -> }.show()
+        }
+
     }
 
     override fun getItemCount(): Int = listData.size

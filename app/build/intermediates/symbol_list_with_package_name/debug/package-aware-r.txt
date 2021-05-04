@@ -3087,6 +3087,7 @@ id no_date_selected_warning
 id nome_motorista
 id none
 id normal
+id note_card_main
 id note_delete_icon
 id note_image
 id notification_background
