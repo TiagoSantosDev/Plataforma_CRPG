@@ -15,8 +15,11 @@ import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +34,7 @@ import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.constants.AudioConstants
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
+import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
@@ -68,10 +72,11 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-            super.onActivityCreated(savedInstanceState)
-            //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
-            notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
+        super.onActivityCreated(savedInstanceState)
 
+        notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
+
+        val titleText = view?.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
         var contador = getVoiceItemCount()
         println("Contador: $contador")
 
@@ -152,18 +157,26 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-            notesViewModel.newNote.tipo = NoteType.VOICE
-            notesViewModel.newNote.titulo = ""
-            notesViewModel.newNote.voiceNotePath = destFile.absolutePath
-            notesViewModel.newNote.imagePath = imageUri
 
-            val fragment: Fragment = NotesFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-            fragmentManager.popBackStack()
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            if(titleText.toString().isNotBlank() && destFile.exists()) {
+                view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = GONE
+                notesViewModel.newNote.tipo = NoteType.VOICE
+                notesViewModel.newNote.titulo = voice_note_title_edit.text.toString()
+                notesViewModel.newNote.voiceNotePath = destFile.absolutePath
+                notesViewModel.newNote.imagePath = imageUri
+                notesViewModel.addNewVoiceNote()
+
+                val fragment: Fragment = NotesFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }else{
+                view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = VISIBLE
+            }
+
         }
 
     }
@@ -213,6 +226,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 }
 
 /*
+//notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
     fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -16,6 +16,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.Note
@@ -65,7 +66,6 @@ class NewTextNoteFragment : Fragment() {
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
-        //println("Notes view model value : " + notesViewModel.mNoteList)
 
         val titleText = view?.rootView?.findViewById<EditText>(R.id.titulo_edit_text)?.text
         val contentText = view?.rootView?.findViewById<EditText>(R.id.conteudo_nota)?.text
@@ -82,29 +82,29 @@ class NewTextNoteFragment : Fragment() {
 
         button_save_text_note.setOnClickListener {
 
-            if(titleText.toString() != "" &&  contentText.toString() != "") {
-
+            if(titleText.toString().isNotBlank() && contentText.toString().isNotBlank()) {
+                view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_dados_falta_texto)?.visibility = View.GONE
+                println("> Passou a validacao")
+                println("Title text: " + titleText.toString())
+                println("Title text: " + contentText.toString())
                 notesViewModel.newNote.tipo = NoteType.TEXT
                 notesViewModel.newNote.titulo = titleText.toString()
                 notesViewModel.newNote.info = contentText.toString()
                 notesViewModel.newNote.imagePath = imageUri
-
                 notesViewModel.addNewTextNote()
 
+                val fragment: Fragment = NotesFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }else{
-
-
+                view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_dados_falta_texto)?.visibility = View.VISIBLE
             }
 
 
-
-            val fragment: Fragment = NotesFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-            fragmentManager.popBackStack()
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
         }
 
     }
@@ -159,6 +159,7 @@ class NewTextNoteFragment : Fragment() {
 
 
 /*
+        //println("Notes view model value : " + notesViewModel.mNoteList)
 
         when (requestCode) {
             RESULT_GALLERY -> if (null != data) {

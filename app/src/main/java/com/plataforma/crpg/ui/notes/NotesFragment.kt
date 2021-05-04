@@ -43,10 +43,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
-
         notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
-
-
 
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
@@ -59,7 +56,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onActivityCreated(savedInstanceState)
 
         button_new_voice_note.setOnClickListener {
-            //getVoiceItemCount()
             val fragment: Fragment = NewVoiceNoteFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()

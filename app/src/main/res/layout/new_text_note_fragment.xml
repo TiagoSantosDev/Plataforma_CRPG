@@ -150,18 +150,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
 
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_titulo">
+
         <TextView
-            android:id="@+id/aviso_nenhuma_refeicao_checked"
+            android:id="@+id/aviso_dados_falta_texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|bottom"
             android:text="@string/dados_em_falta"
             android:textColor="@color/design_default_color_error"
             android:textSize="15sp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_save_text_note" />
+            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

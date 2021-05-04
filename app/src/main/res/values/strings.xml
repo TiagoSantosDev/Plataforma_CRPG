@@ -128,6 +128,7 @@
     <string name="lembrar_de">Lembrar-me de...</string>
     <string name="insira_o_nome_do_seu_lembrete">Insira o nome do seu lembrete:</string>
     <string name="dados_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E CONTEÚDO</string>
+    <string name="titulo_voz_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E NOTA DE VOZ</string>
 
     <string-array name="line_type">
         <item>Normal</item>
