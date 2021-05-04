@@ -127,6 +127,7 @@
     <string name="som_ou_vibracao">Som e/ou vibração</string>
     <string name="lembrar_de">Lembrar-me de...</string>
     <string name="insira_o_nome_do_seu_lembrete">Insira o nome do seu lembrete:</string>
+    <string name="dados_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E CONTEÚDO</string>
 
     <string-array name="line_type">
         <item>Normal</item>

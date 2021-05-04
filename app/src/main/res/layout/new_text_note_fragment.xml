@@ -31,7 +31,7 @@
     <FrameLayout
         android:id="@+id/frame_titulo"
         android:layout_width="341dp"
-        android:layout_height="359dp"
+        android:layout_height="380dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -47,7 +47,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
 
             <ImageView
                 android:id="@+id/note_image"
@@ -83,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
+                android:maxLines="1"
                 android:lines="1"
+                android:singleLine="true"
                 android:maxLength="50"
                 app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
         </FrameLayout>
@@ -141,7 +142,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginTop="1dp"
             android:backgroundTint="@color/md_blue_100"
             android:text="@string/guardar"
             android:textSize="20sp"
@@ -149,7 +149,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
-    </FrameLayout>
 
+        <TextView
+            android:id="@+id/aviso_nenhuma_refeicao_checked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:text="@string/dados_em_falta"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_save_text_note" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

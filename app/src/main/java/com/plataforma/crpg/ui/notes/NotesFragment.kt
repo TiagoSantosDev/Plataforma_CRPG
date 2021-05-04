@@ -27,6 +27,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private lateinit var notesViewModel: NotesViewModel
+    var voiceItemsCount = 0
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +46,8 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
 
+
+
         list_recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ListAdapter(notesViewModel.mNoteList
@@ -56,6 +59,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onActivityCreated(savedInstanceState)
 
         button_new_voice_note.setOnClickListener {
+            //getVoiceItemCount()
             val fragment: Fragment = NewVoiceNoteFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -75,6 +79,17 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             fragmentTransaction.commit()
         }
 
+    }
+
+    fun getVoiceItemCount(): Int{
+        var voiceItemCount = 0
+
+        for(item in notesViewModel.mNoteList){
+            if (item.tipo == NoteType.VOICE)
+                voiceItemCount++
+        }
+
+        return voiceItemCount
     }
 
     @SuppressLint("SetTextI18n")

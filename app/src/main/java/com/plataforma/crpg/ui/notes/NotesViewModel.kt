@@ -19,12 +19,12 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     var newNote = Note(NoteType.TEXT,"", "","", "", "",
             "")
     private val noteList = listOf(
-            Note(NoteType.TEXT, "16042021","1200", "Nota 1",
-                    "a","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 2",
-                    "b","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg"),
-            Note(NoteType.TEXT, "16042021", "1200","Nota 3",
-                    "c","","file:///storage/emulated/0/DCIM/Camera/IMG_20210417_214302371.jpg")
+            Note(NoteType.TEXT, "16042021","1200", "Consultar e-mail e verificar",
+                    "Tenho que verificar o meu e-mail hoje","",""),
+            Note(NoteType.TEXT, "16042021", "1200","Ir às compras à mercearia",
+                    "Tenho de comprar água, pão, entre outras coisas","",""),
+            Note(NoteType.VOICE, "16042021", "1200","Nota de voz",
+                    "Para me lembrar depois","","")
     )
 
     var removedPosition : Int ? = null
@@ -72,6 +72,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
         if (fileExists) {
             print("$fullFilename does exist.")
+            //populateFile()
         } else {
             print("$fullFilename does not exist.")
             populateFile()

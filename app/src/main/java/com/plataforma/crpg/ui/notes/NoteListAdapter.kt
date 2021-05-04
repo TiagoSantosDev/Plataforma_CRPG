@@ -9,6 +9,7 @@ import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.model.Note
+import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.note_list_item.view.*
 import javax.security.auth.callback.Callback
 
@@ -41,6 +42,18 @@ class ListAdapter(private val list: List<Note>, private val onChange: (List<Note
     }
 
     override fun getItemCount(): Int = listData.size
+
+
+    fun getVoiceItemCount(): Int{
+        var voiceItemCount = 0
+
+        for(item in listData){
+            if (item.tipo == NoteType.VOICE)
+            voiceItemCount++
+        }
+
+        return voiceItemCount
+    }
     /*
     fun deleteSelectedItem() {
         if(selectedList.isNotEmpty()){
@@ -67,7 +80,14 @@ class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(note: Note) {
         mTitleView?.text = note.titulo
         mYearView?.text = note.info
-        mImageView?.setImageURI(note.imagePath.toUri())
+        if (!note.imagePath.isNullOrBlank()){
+            mImageView?.setImageURI(note.imagePath.toUri())
+        }else if(note.imagePath.isNullOrBlank() && note.tipo == NoteType.TEXT){
+            mImageView?.setImageResource(R.drawable.outline_create_black_24dp)
+        }else{
+            mImageView?.setImageResource(R.drawable.outline_record_voice_over_black_24dp)
+        }
+
         //mImageView?.setImageURI(note.imagePath.toUri())
         //val inputStream = getContentResolver().openInputStream(note.imagePath.toUri())
     }
