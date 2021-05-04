@@ -2659,7 +2659,9 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id aviso_campos
+id aviso_dados_falta_texto
 id aviso_nenhuma_refeicao_checked
+id aviso_titulo_voz_em_falta
 id background_image_carne
 id background_image_dieta
 id background_image_peixe
@@ -2901,6 +2903,7 @@ id frame_button_replay
 id frame_card_info
 id frame_card_to_CRPG
 id frame_conteudo_nota
+id frame_conteudo_nota_voz
 id frame_de_para_1
 id frame_de_para_2
 id frame_layout_timetables
@@ -2908,6 +2911,7 @@ id frame_lib_1
 id frame_lib_2
 id frame_lib_3
 id frame_lib_4
+id frame_main_voz
 id frame_meals
 id frame_meditation_1
 id frame_meditation_2
@@ -2926,6 +2930,7 @@ id frame_player_view
 id frame_public_transports_timetable
 id frame_titulo
 id frame_titulo_nota
+id frame_titulo_nota_voz
 id frame_transports_from_crpg
 id ghost_view
 id ghost_view_holder
@@ -3331,11 +3336,13 @@ id timeline_transports_to_location
 id title
 id titleDividerNoCustom
 id title_nova_nota_texto
+id title_nova_nota_voz
 id title_selecionar_data
 id title_template
 id title_used_libs
 id titulo_edit_text
 id titulo_nova_nota
+id titulo_nova_nota_voz
 id toggle
 id toggleButtonGroup
 id toolbar
@@ -3379,6 +3386,7 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id voice_note_image
+id voice_note_title_edit
 id when_playing
 id wide
 id withText
@@ -3956,6 +3964,7 @@ string title_meditacao
 string title_notas
 string title_notifications
 string titulo_da_nota
+string titulo_voz_em_falta
 string todos_os_dias
 string tomar_medicacao
 string top_padding

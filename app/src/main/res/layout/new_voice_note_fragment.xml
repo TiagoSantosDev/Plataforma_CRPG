@@ -9,7 +9,7 @@
     tools:context="com.plataforma.crpg.ui.notes.NewVoiceNoteFragment">
 
     <TextView
-        android:id="@+id/title_nova_nota_texto"
+        android:id="@+id/title_nova_nota_voz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -26,6 +26,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <FrameLayout
+        android:id="@+id/frame_main_voz"
         android:layout_width="362dp"
         android:layout_height="375dp"
         android:layout_marginTop="24dp"
@@ -33,7 +34,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_nova_nota_texto">
+        app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz">
 
         <FrameLayout
             android:id="@+id/frame_note_image"
@@ -52,13 +53,13 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frame_titulo_nota"
+            android:id="@+id/frame_titulo_nota_voz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp">
 
             <TextView
-                android:id="@+id/titulo_nova_nota"
+                android:id="@+id/titulo_nova_nota_voz"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/titulo_da_nota"
@@ -67,6 +68,7 @@
                 android:textSize="20sp" />
 
             <EditText
+                android:id="@+id/voice_note_title_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -77,7 +79,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frame_conteudo_nota"
+            android:id="@+id/frame_conteudo_nota_voz"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="170dp"
@@ -156,6 +158,27 @@
             android:text="@string/guardar"
             android:textSize="20sp"
             app:cornerRadius="8dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_main_voz">
+
+        <TextView
+            android:id="@+id/aviso_titulo_voz_em_falta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:text="@string/titulo_voz_em_falta"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
     </FrameLayout>
 
 

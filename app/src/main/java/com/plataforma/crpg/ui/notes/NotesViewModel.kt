@@ -85,6 +85,20 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
 
     fun addNewVoiceNote() {
+        val gson = Gson()
+
+        mNoteList.add(newNote)
+        val filename = "notes.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val newJSONList = convertAnyNoteListToJSON(mNoteList)
+
+        val file = File(fullFilename)
+        val fileExists = file.exists()
+
+        if (fileExists) {
+            File(fullFilename).writeText(newJSONList)
+        }
     }
 
 
