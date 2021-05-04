@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.extentions.formatDateTime
@@ -144,7 +145,10 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             when(tipo){
                 EventType.ACTIVITY -> {
-
+                    MaterialAlertDialogBuilder(ctx,android.R.style.Theme_Material_Dialog_Alert)
+                            .setTitle(mFeedList[position].title)
+                            .setMessage(mFeedList[position].info)
+                            .setNegativeButton("Fechar"){ dialog, which -> }.show()
                 }
                 EventType.TRANSPORTS -> {
                     val fragment: Fragment = TransportsFragment()
