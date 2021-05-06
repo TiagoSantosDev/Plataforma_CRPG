@@ -29,7 +29,7 @@ class MeditationFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val colorDrawable = ColorDrawable(Color.parseColor("#00BBF2"))
+        //val colorDrawable = ColorDrawable(Color.parseColor("#00BBF2"))
         val actionBar = (activity as MainActivity?)?.supportActionBar
         actionBar?.title = "MEDITAÇÃO"
         actionBar?.setDisplayHomeAsUpEnabled(false)
