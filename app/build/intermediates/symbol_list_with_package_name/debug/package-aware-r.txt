@@ -2694,7 +2694,6 @@ id buttonSab
 id buttonSeg
 id buttonSex
 id buttonTer
-id button_amanha
 id button_apply
 id button_cancel
 id button_confirm
@@ -2724,6 +2723,7 @@ id button_selecionar
 id button_selecionar_dias
 id button_start_recording
 id button_stop_recording
+id button_todos_dias
 id button_view_timetable_1
 id button_view_timetable_2
 id button_view_timetables_layout
