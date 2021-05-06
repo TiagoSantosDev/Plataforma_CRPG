@@ -106,7 +106,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             this.audioSource = audioSource
         }*/
 
-        audioRecorder.create() {
+        audioRecorder.create {
             this.destFile = destFile
             this.recordConfig = recordConfig
             this.audioSource = audioSource

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_cover"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -18,7 +17,8 @@
       android:layout_height="30dp"
       android:layout_gravity="center_vertical"
       android:scaleType="fitXY"
-      android:src="@drawable/notas" />
+      android:src="@drawable/notas"
+      android:contentDescription="@string/bloco_de_notas" />
 
   <TextView
       android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
       android:layout_gravity="center_vertical"
       android:layout_marginLeft="20dp"
       android:layout_marginStart="20dp"
-      android:text="Notas"
+      android:text="@string/notas"
       android:textSize="25sp"
       android:textColor="@color/greyText"
       android:textStyle="bold" />

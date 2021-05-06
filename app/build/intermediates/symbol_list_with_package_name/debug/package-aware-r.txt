@@ -2642,7 +2642,6 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
-id action_example_activity
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -2664,7 +2663,6 @@ id all
 id always
 id animateToEnd
 id animateToStart
-id appbarLayout
 id arrow
 id asConfigured
 id async
@@ -2972,7 +2970,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView1
 id imageView_BlueArrow
 id imageView_BlueArrow2
 id image_end_line_color
@@ -3487,7 +3484,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_date_picker
 layout activity_main
 layout bottom_sheet_options
 layout calendar_item
@@ -3678,6 +3674,7 @@ plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
 plurals mtrl_badge_content_description
 raw meditation_sound
+string a_que_horas
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3711,6 +3708,7 @@ string action_settings
 string activity_example_label
 string adicionar_lembrete
 string amanha
+string ambos
 string apanhar_bus
 string app_name
 string app_uses_libraries
@@ -3758,6 +3756,7 @@ string contacto_b
 string contacto_c
 string conteudo
 string criado_c_sucesso
+string d
 string dados_em_falta
 string dash_gap
 string dash_length
@@ -3765,6 +3764,7 @@ string date_pick
 string default_dialog_title
 string default_web_client_id
 string elevation
+string em_que_dia
 string end_line_color
 string error_camera_app_not_found
 string error_failed_pick_gallery_image
@@ -3955,12 +3955,14 @@ string personalizado
 string photo_viewer_hint
 string previous
 string project_id
+string q
 string querido
 string refeicao_escolhida_com_sucesso
 string regressar
 string regressar_ecra_escolha_transportes
 string relaxado
 string right_padding
+string s
 string search_menu_title
 string second_fragment_label
 string selecionar
@@ -3982,6 +3984,7 @@ string start_line_color
 string status_bar_notification_info_overflow
 string style
 string summary_collapsed_preference_list
+string t
 string timeline_attributes
 string title_activity_main
 string title_activity_record_audio
