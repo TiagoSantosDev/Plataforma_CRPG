@@ -124,7 +124,7 @@
     <string name="consultar_horarios">CONSULTAR HORÁRIOS</string>
     <string name="photo_viewer_hint">Um clique para fechar foto, duplo clique para fazer zoom!</string>
     <string name="som_ou_vibracao">Som e/ou vibração</string>
-    <string name="lembrar_de">Lembrar-me de...</string>
+    <string name="lembrar_de">Lembrar-me de…</string>
     <string name="insira_o_nome_do_seu_lembrete">Insira o nome do seu lembrete:</string>
     <string name="dados_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E CONTEÚDO</string>
     <string name="titulo_voz_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E NOTA DE VOZ</string>
@@ -147,6 +147,20 @@
     <string name="selecionar_relaxado">Selecionar Relaxado</string>
     <string name="regressar_ecra_escolha_transportes">Regressar ao ecrã de escolha dos transportes</string>
     <string name="selecionar_dia">Selecionar dia</string>
+    <string name="em_que_dia">Em que dia?</string>
+    <string name="a_que_horas">A que horas?</string>
+    <string name="ambos">AMBOS</string>
+    <string name="s">S</string>
+    <string name="t">T</string>
+    <string name="q">Q</string>
+    <string name="d">D</string>
+    <string name="imagem_associada_estado_selecionado">Imagem associada ao estado selecionado</string>
+    <string name="retroceder_reproducao">Retroceder na reprodução</string>
+    <string name="reproduzir_faixa">Reproduzir faixa de meditação</string>
+    <string name="pausar_reproducao">Pausar reprodução</string>
+    <string name="avancar_reproducao">Avançar na reprodução</string>
+    <string name="autocarro_stcp">Autocarro STCP</string>
+    <string name="bloco_de_notas">Bloco de notas</string>
 
 
     <string-array name="line_type">

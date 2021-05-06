@@ -63,7 +63,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_carne" />
+                    android:src="@drawable/background_carne"
+                    android:contentDescription="TODO" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -123,7 +124,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_peixe" />
+                    android:src="@drawable/background_peixe"
+                    android:contentDescription="TODO" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -184,7 +186,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_dieta" />
+                    android:src="@drawable/background_dieta"
+                    android:contentDescription="TODO" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -245,7 +248,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_veg" />
+                    android:src="@drawable/background_veg"
+                    android:contentDescription="TODO" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

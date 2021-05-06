@@ -116,7 +116,8 @@
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/blue_right_arrow_icon"
                 app:layout_constraintRight_toLeftOf="@+id/text_to_from_2"
-                app:layout_constraintStart_toStartOf="@+id/text_to_from_1" />
+                app:layout_constraintStart_toStartOf="@+id/text_to_from_1"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_to_from_2"
@@ -172,7 +173,8 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:src="@drawable/blue_right_arrow_icon"
                 app:layout_constraintRight_toLeftOf="@+id/text_to_from_3"
-                app:layout_constraintStart_toStartOf="@+id/text_to_from_4" />
+                app:layout_constraintStart_toStartOf="@+id/text_to_from_4"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/text_to_from_4"

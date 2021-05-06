@@ -6,49 +6,19 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:visibility="visible"
+    android:weightSum="12"
     tools:context="com.plataforma.crpg.ui.notes.NotesFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="453dp"
+        android:layout_height="match_parent"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:layout_weight="9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_new_voice_note"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginRight="50dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/PrimaryGreen"
-            app:fabCustomSize="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.887"
-            app:layout_constraintStart_toStartOf="parent"
-            app:maxImageSize="50dp"
-            app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_new_text_note"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginLeft="50dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/PrimaryGreen"
-            app:fabCustomSize="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.728"
-            app:layout_constraintStart_toStartOf="parent"
-            app:maxImageSize="50dp"
-            app:srcCompat="@drawable/outline_create_black_24dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_recycler_view"
@@ -56,5 +26,48 @@
             android:layout_height="match_parent"
             android:paddingBottom="70dp"/>
     </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_botoes_criar_notas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_new_voice_note"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/PrimaryGreen"
+                android:contentDescription="@string/nova_nota_de_voz"
+                app:fabCustomSize="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.887"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="50dp"
+                app:srcCompat="@drawable/outline_record_voice_over_black_24dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_new_text_note"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/PrimaryGreen"
+                android:contentDescription="@string/nova_nota_de_texto"
+                app:fabCustomSize="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.728"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="50dp"
+                app:srcCompat="@drawable/outline_create_black_24dp" />
+        </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

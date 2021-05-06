@@ -57,11 +57,6 @@
             app:strokeColor="#F9B401"
             app:strokeWidth="3dp">
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </FrameLayout>
-
             <TextView
                 android:id="@+id/text_timeline_CRPG_to_location"
                 android:layout_width="match_parent"

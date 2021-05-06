@@ -3,7 +3,6 @@ package com.plataforma.crpg.ui.agenda
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -20,9 +19,6 @@ import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
-import kotlinx.android.synthetic.main.activity_date_picker.main_single_row_calendar
-import kotlinx.android.synthetic.main.activity_date_picker.tvDate
-import kotlinx.android.synthetic.main.activity_date_picker.tvDay
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import java.util.*
@@ -36,19 +32,6 @@ class DatePickerFragment : Fragment() {
 
     companion object {
         var dLocale: Locale? = null
-    }
-
-    init {
-        //activity?.let { updateConfig(it) }
-        //updateConfig(requireActivity().baseContext)
-    }
-
-     fun updateConfig(wrapper: ContextThemeWrapper) {
-        dLocale = Locale("pt")
-        Locale.setDefault(dLocale)
-        val configuration = Configuration()
-        configuration.setLocale(dLocale)
-        wrapper.applyOverrideConfiguration(configuration)
     }
 
     override fun onAttach(context: Context) {
@@ -221,6 +204,24 @@ class DatePickerFragment : Fragment() {
 }
 
 
+
+
+
+/*
+    init {
+        //activity?.let { updateConfig(it) }
+        //updateConfig(requireActivity().baseContext)
+    }
+*/
+/*
+     fun updateConfig(wrapper: ContextThemeWrapper) {
+        dLocale = Locale("pt")
+        Locale.setDefault(dLocale)
+        val configuration = Configuration()
+        configuration.setLocale(dLocale)
+        wrapper.applyOverrideConfiguration(configuration)
+    }
+*/
 /*
     fun dontShowBackButton() {
         if (activity is MainActivity) {
