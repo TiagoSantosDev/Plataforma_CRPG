@@ -3546,7 +3546,6 @@ layout item_section
 layout item_section_child
 layout item_section_parent
 layout item_timeline
-layout item_timeline_horizontal
 layout item_timeline_transports_from_location
 layout item_timeline_transports_to_location
 layout layout_parent_alerta
