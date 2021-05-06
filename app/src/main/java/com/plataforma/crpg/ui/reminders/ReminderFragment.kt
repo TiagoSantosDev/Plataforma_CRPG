@@ -46,8 +46,6 @@ class ReminderFragment : Fragment() {
     ): View {
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
-
-        //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         val newViewModel = ViewModelProvider(activity as AppCompatActivity).get(ReminderViewModel::class.java)
 
         with(binding){
@@ -56,43 +54,61 @@ class ReminderFragment : Fragment() {
                 root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.GONE
             }
 
+            fun setButtonColorsReminder(pos: Int){
+                expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundResource(R.drawable.layout_button_round_top)
+                expandableLembrar.secondLayout.findViewById<Button>(R.id.button1).setBackgroundResource(R.color.md_blue_100)
+                expandableLembrar.secondLayout.findViewById<Button>(R.id.button2).setBackgroundResource(R.color.md_blue_100)
+                expandableLembrar.secondLayout.findViewById<Button>(R.id.button3).setBackgroundResource(R.drawable.layout_button_round_bottom)
+
+                when(pos){
+                    1 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundResource(R.drawable.layout_button_round_top_selected)
+                    2 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button1).setBackgroundResource(R.color.md_blue_200)
+                    3 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button2).setBackgroundResource(R.color.md_blue_200)
+                    4 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button3).setBackgroundResource(R.drawable.layout_button_round_bottom_selected)
+                }
+
+            }
+
+            val textEditPersonalizado = root.findViewById<EditText>(R.id.text_edit_personalizado)
+
             expandableLembrar.parentLayout.setOnClickListener {
                 expandableLembrar.toggleLayout() }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button0)
                     .setOnClickListener {
-                        //expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundColor() = "@color/white"
                         lembrarButtonPressed = 1
+                        setButtonColorsReminder(lembrarButtonPressed)
                         root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
-                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
+                        textEditPersonalizado.visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button1)
                     .setOnClickListener {
                         lembrarButtonPressed = 2
+                        setButtonColorsReminder(lembrarButtonPressed)
                         root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
-                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
+                        textEditPersonalizado.visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button2)
                     .setOnClickListener {
                         lembrarButtonPressed = 3
+                        setButtonColorsReminder(lembrarButtonPressed)
                         root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.INVISIBLE
-                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.INVISIBLE
+                        textEditPersonalizado.visibility = View.INVISIBLE
                     }
             expandableLembrar.secondLayout.findViewById<Button>(R.id.button3)
                     .setOnClickListener {
                         lembrarButtonPressed = 4
+                        setButtonColorsReminder(lembrarButtonPressed)
                         root.findViewById<TextView>(R.id.inserir_titulo_lembrete_personalizado).visibility = View.VISIBLE
-                        root.findViewById<EditText>(R.id.text_edit_personalizado).visibility = View.VISIBLE
+                        textEditPersonalizado.visibility = View.VISIBLE
                     }
 
             expandableHoras.parentLayout.setOnClickListener { expandableHoras.toggleLayout() }
 
             val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
-            //et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
             et.filters = arrayOf(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
 
-            val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
-            //et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
-            et_min.filters = arrayOf(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2))
+            val etMin = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
+            etMin.filters = arrayOf(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2))
 
             val cbSom = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_som)
             val cbVib = expandableAlerta.secondLayout.findViewById<ImageView>(R.id.checkbox_vibrar)
@@ -173,10 +189,10 @@ class ReminderFragment : Fragment() {
                 var hoursInt = 1
                 var minsInt = 1
 
-                if (et.text.toString().length == 2 && et_min.text.toString().length == 2) {
+                if (et.text.toString().length == 2 && etMin.text.toString().length == 2) {
                     println("> Validacao das horas com sucesso")
                     newViewModel.startTimeHours = et.text.toString()
-                    newViewModel.startTimeMin = et_min.text.toString()
+                    newViewModel.startTimeMin = etMin.text.toString()
                     startTimeString = newViewModel.startTimeHours.plus(newViewModel.startTimeMin)
                     hoursInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
                     minsInt = root.findViewById<EditText>(R.id.edit_minutes).text.toString().toInt()
@@ -193,13 +209,13 @@ class ReminderFragment : Fragment() {
                     2 -> newViewModel.newReminder.title = "Apanhar bus do CRPG"
                     3 -> newViewModel.newReminder.title = "Lembrar escolha de almoço"
                     //definir titulo personalizado
-                    4 -> newViewModel.newReminder.title = root.findViewById<EditText>(R.id.text_edit_personalizado).text.toString()
-                    else -> { // Note the block
+                    4 -> newViewModel.newReminder.title = textEditPersonalizado.text.toString()
+                    else -> {
                         println("lembrarButtonPressed is neither one of the values")
                     }
                 }
 
-                println(">Titulo personalizado do reminder: " + newViewModel.newReminder.title)
+                //println(">Titulo personalizado do reminder: " + newViewModel.newReminder.title)
 
                 val materialButtonToggleGroup =
                         expandableDia.secondLayout.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup)
@@ -209,7 +225,6 @@ class ReminderFragment : Fragment() {
                     val materialButton: MaterialButton = materialButtonToggleGroup.findViewById(id)
                     val resourceName: String =
                             expandableDia.secondLayout.resources.getResourceName(materialButton.id).takeLast(3)
-
                     when (resourceName) {
                         "Seg" -> newViewModel.weekDaysBoolean[0] = true
                         "Ter" -> newViewModel.weekDaysBoolean[1] = true
@@ -220,8 +235,6 @@ class ReminderFragment : Fragment() {
                         "Dom" -> newViewModel.weekDaysBoolean[6] = true
                     }
                 }
-
-                println("Dates picked: " + ids.toString())
 
                 when (alarmTypeButtonPressed) {
                     1 -> newViewModel.newReminder.alarm_type = AlarmType.SOM
@@ -236,31 +249,27 @@ class ReminderFragment : Fragment() {
                     1 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.HOJE
                     2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.TODOS_OS_DIAS
                     3 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.PERSONALIZADO
-                    //2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.AMANHA
+
                     else -> { // Note the block
                         println("alarmFreqButtonPressed is neither one of the values")
                     }
                 }
 
-
                 if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0
                         && lembrarButtonPressed != 0 && hoursMinutesFlag) {
-                    println("entrou na condicao")
-                    newViewModel.addReminder()
 
+                    newViewModel.addReminder()
                     if (newViewModel.flagReminderAdded) {
-                        println("Entrou aqui")
+
                         avisoCampos.visibility = View.GONE
                         root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                         root.findViewById<Button>(R.id.button_ok).setOnClickListener {
                             root.findViewById<View>(R.id.successLayout).visibility = View.GONE
                         }
-
                         if (activity?.packageManager?.let { it1 -> newViewModel.alarmIntent.resolveActivity(it1) } != null) {
                             startActivity(newViewModel.alarmIntent)
                         }
                     }
-
                 } else if (hoursInt > 23 || minsInt > 59) {
                     avisoCampos.text = getString(R.string.hora_minutos_invalido)
                     avisoCampos.visibility = View.VISIBLE
@@ -269,11 +278,8 @@ class ReminderFragment : Fragment() {
                     avisoCampos.visibility = View.VISIBLE
                 }
             }
-
         }
-
         return view
-
     }
 
 
@@ -283,15 +289,31 @@ class ReminderFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         // TODO: Use the ViewModel
-
     }
 
 }
 
 
+/*
+//println("Dates picked: " + ids.toString())
+//et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"), InputFilter.LengthFilter(2))
+//println("entrou na condicao")
+//etMin.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"),InputFilter.LengthFilter(2) )
+//2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.AMANHA
+           //println("Entrou aqui")
+           expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundResource(R.drawable.layout_button_round_top_selected)
+                        expandableLembrar.secondLayout.findViewById<Button>(R.id.button1).setBackgroundResource(R.color.md_blue_100)
+                        expandableLembrar.secondLayout.findViewById<Button>(R.id.button2).setBackgroundResource(R.color.md_blue_100)
+                        expandableLembrar.secondLayout.findViewById<Button>(R.id.button3).setBackgroundResource(R.drawable.layout_button_round_bottom)
+                        */
+
+
 
 
 /*
+
+//expandableLembrar.secondLayout.findViewById<Button>(R.id.button0).setBackgroundColor() = "@color/white"
+//newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
 private var min:Int = 1
 private var max:Int = 24
 constructor(min:Int, max:Int) {
@@ -317,12 +339,12 @@ private fun isInRange(a:Int, b:Int, c:Int):Boolean {
 }
 */
 //et.filters = arrayOf(InputFilter.LengthFilter(2))
-//et_min.filters = arrayOf(InputFilter.LengthFilter(2))
+//etMin.filters = arrayOf(InputFilter.LengthFilter(2))
 // val et = expandableHoras.secondLayout.findViewById(R.id.edit_hours) as EditText
 //                //et.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "23"))
 //
-//                //val et_min = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
-//                //et_min.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
+//                //val etMin = expandableHoras.secondLayout.findViewById(R.id.edit_minutes) as EditText
+//                //etMin.filters = arrayOf<InputFilter>(InputFilterMinMax("00", "59"))
 //
 //                /* if (expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_hours).text.toString().length == 2
 //                       && expandableHoras.secondLayout.findViewById<EditText>(R.id.edit_minutes).text.toString().length == 2) {

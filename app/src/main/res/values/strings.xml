@@ -98,7 +98,6 @@
     <string name="contacto_b">977654321</string>
     <string name="motorista_c">RUI</string>
     <string name="contacto_c">941112223</string>
-    <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
     <string name="selecionar">SELECIONAR</string>
     <string name="selecionar_data">SELECIONE UM DIA:</string>
     <string name="selecionar_data_hint">MOVA OS CARTÕES LARANJA PARA A ESQUERDA/DIREITA PARA VER MAIS DIAS!</string>
@@ -129,6 +128,10 @@
     <string name="insira_o_nome_do_seu_lembrete">Insira o nome do seu lembrete:</string>
     <string name="dados_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E CONTEÚDO</string>
     <string name="titulo_voz_em_falta">DADOS EM FALTA! INTRODUZA TÍTULO E NOTA DE VOZ</string>
+    <string name="selecione_o_tranporte">SELECIONE O TRANPORTE:</string>
+    <string name="camioneta_do_crpg">CAMIONETA DO CRPG</string>
+    <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
+    <string name="transportes_publicos">TRANSPORTES PÚBLICOS</string>
 
     <string-array name="line_type">
         <item>Normal</item>

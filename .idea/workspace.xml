@@ -44,51 +44,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_6_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsSelectionFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_button_round_bottom_selected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_button_round_top_selected.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transport_selection.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_WindSekirun_NaraeAudioRecorder_ffmpeg_recorder_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__nl_bravobit_android_ffmpeg_1_1_5_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_6_0_alpha02_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_6_0_alpha03_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_6_0_alpha02_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/expandablelayout/Plataforma_CRPG.expandablelayout.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/expandablelayout/Plataforma_CRPG.expandablelayout.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debug/out/com.plataforma.crpg-binding_classes.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debug/out/com.plataforma.crpg-binding_classes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-entries.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-entries.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewVoiceNoteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewVoiceNoteFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ExampleTimeLineAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ExampleTimeLineAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_timeline.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -164,7 +160,7 @@
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android.recentlyUsedThemes" value="Base.Theme.AppCompat" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/widget/Toolbar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.13.3/f623c7ae5c7f940bf69c089e733c66fb52f3c1da/exoplayer-ui-2.13.3-sources.jar!/com/google/android/exoplayer2/ui/PlayerControlView.java_selected" value="Custom views" />
@@ -193,9 +189,16 @@
     <key name="android.template.-336156041">
       <recent name="com.plataforma.crpg.ui.notes" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\raw" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\res\layout" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\agenda" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.plataforma.crpg.model" />
       <recent name="com.plataforma.crpg.ui.transports" />
+      <recent name="com.plataforma.crpg.model" />
       <recent name="com.plataforma.crpg.ui.agenda" />
       <recent name="com.plataforma.crpg.ui.meditation" />
       <recent name="com.plataforma.crpg.ui.notes" />
@@ -206,18 +209,11 @@
       <recent name="com.plataforma.crpg.ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\res\drawable" />
+      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\res\layout" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\notes" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\model" />
-      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\transports" />
-      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase\Plataforma_CRPG\app\src\main\res\layout" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\raw" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\res\layout" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\agenda" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
     </key>
   </component>
   <component name="RunManager">
@@ -388,11 +384,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="96" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1619196844052" />
-    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog" timestamp="1620114398637">
+    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog" timestamp="1620298193662">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="463" y="131" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178845156" />
-    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1620114398637" />
+    <state x="875" y="106" width="384" height="450" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1620298193662" />
     <state x="438" y="87" key="AndroidProcessChooserDialog" timestamp="1619191475237">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -469,10 +465,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="427" y="0" key="psd.add.module.dependency.panel.dimension/0.0.1280.680@0.0.1280.680" timestamp="1617198358051" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1618246614512">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1620298812991">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1618246614512" />
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1620298812991" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1620077150798">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
