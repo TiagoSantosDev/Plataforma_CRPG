@@ -37,8 +37,6 @@ class ReminderFragment : Fragment() {
     private var startTimeString = ""
     private var hoursMinutesFlag = false
 
-    //private lateinit var newViewModel: ReminderViewModel
-
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -65,6 +63,19 @@ class ReminderFragment : Fragment() {
                     2 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button1).setBackgroundResource(R.color.md_blue_200)
                     3 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button2).setBackgroundResource(R.color.md_blue_200)
                     4 ->  expandableLembrar.secondLayout.findViewById<Button>(R.id.button3).setBackgroundResource(R.drawable.layout_button_round_bottom_selected)
+                }
+
+            }
+
+            fun setButtonColorsDays(pos: Int){
+                expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje).setBackgroundResource(R.drawable.layout_button_round_top)
+                expandableDia.secondLayout.findViewById<Button>(R.id.button_todos_dias).setBackgroundResource(R.color.md_blue_100)
+                expandableDia.secondLayout.findViewById<Button>(R.id.button_personalizado).setBackgroundResource(R.drawable.layout_button_round_bottom)
+
+                when(pos){
+                    1 ->  expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje).setBackgroundResource(R.drawable.layout_button_round_top_selected)
+                    2 ->  expandableDia.secondLayout.findViewById<Button>(R.id.button_todos_dias).setBackgroundResource(R.color.md_blue_200)
+                    3 ->  expandableDia.secondLayout.findViewById<Button>(R.id.button_personalizado).setBackgroundResource(R.drawable.layout_button_round_bottom_selected)
                 }
 
             }
@@ -118,18 +129,21 @@ class ReminderFragment : Fragment() {
             expandableDia.secondLayout.findViewById<Button>(R.id.button_hoje)
                     .setOnClickListener {
                         alarmFreqButtonPressed = 1
+                        setButtonColorsDays(alarmFreqButtonPressed)
                         root.findViewById<TextView>(R.id.button_selecionar_dias).visibility = View.INVISIBLE
                         root.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup).visibility = View.INVISIBLE
                     }
-            expandableDia.secondLayout.findViewById<Button>(R.id.button_amanha)
+            expandableDia.secondLayout.findViewById<Button>(R.id.button_todos_dias)
                     .setOnClickListener {
                         alarmFreqButtonPressed = 2
+                        setButtonColorsDays(alarmFreqButtonPressed)
                         root.findViewById<TextView>(R.id.button_selecionar_dias).visibility = View.INVISIBLE
                         root.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup).visibility = View.INVISIBLE
                     }
             expandableDia.secondLayout.findViewById<Button>(R.id.button_personalizado)
                     .setOnClickListener {
                         alarmFreqButtonPressed = 3
+                        setButtonColorsDays(alarmFreqButtonPressed)
                         root.findViewById<TextView>(R.id.button_selecionar_dias).visibility = View.VISIBLE
                         root.findViewById<MaterialButtonToggleGroup>(R.id.toggleButtonGroup).visibility = View.VISIBLE
                     }
