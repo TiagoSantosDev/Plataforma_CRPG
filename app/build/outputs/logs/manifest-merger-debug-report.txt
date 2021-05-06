@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.databinding:databinding-adapters:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\efb581d8bb37a0e2fbbdc168f8b2031f\databinding-adapters-3.6.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\11ae98c7bf808573c4a1d4eabafe0f39\databinding-runtime-3.6.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:viewbinding:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d1056957e42a31ce8b2c1f5d49913593\jetified-viewbinding-3.6.1\AndroidManifest.xml:17:1-22:12
@@ -30,7 +30,7 @@ MERGED from [androidx.activity:activity-ktx:1.2.1] C:\Users\ltiag\.gradle\caches
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\aef4a1a174e8b2406a5140cf487f5c6e\jetified-lifecycle-viewmodel-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-ktx:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\86069d29e9212870b680f62f82239dd9\jetified-core-ktx-1.6.0-alpha02\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta7] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\adc1f28c709a984c2f863cc61dd4d149\constraintlayout-2.0.0-beta7\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\cc2a0da8bd0fd36f72ce940e733cfe37\jetified-ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
@@ -40,7 +40,7 @@ MERGED from [com.github.WindSekirun.NaraeAudioRecorder:core:1.3.0] C:\Users\ltia
 MERGED from [com.dmitrymalkovich.android:material-design-dimens:1.4] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6c0b344ff0e482466382eaf302db2371\jetified-material-design-dimens-1.4\AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:17:1-26:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:2:1-9:12
-MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8f9fd02239cb5b75523fbe0734705697\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:15:1-49:12
@@ -77,7 +77,7 @@ MERGED from [androidx.media:media:1.2.1] C:\Users\ltiag\.gradle\caches\transform
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9e70ff09da3912c14d3b2032d726717\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\59737ab5fb86e7510641297e0eea06bd\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\3c5051e95a3747fbdfa5750f7446f3a2\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\84dd4cd31e316eb3e91d42fb24e2a6dc\print-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -92,51 +92,51 @@ MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ltiag\.gradle\caches
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e8928ded7961009200fd65033d3ec21a\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f3a9841a3f00e6e1ae3e4bfc9adbc8c0\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
 	package
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:4:5-34
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:4:5-34
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#com.android.alarm.permission.SET_ALARM
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:5-78
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:5-78
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:22-75
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:22-75
 uses-permission#android.permission.CALL_PHONE
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:5-69
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:5-69
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:22-66
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:22-66
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:5-71
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:22-68
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:22-68
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:5-80
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:5-80
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:11:5-80
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:22-77
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-81
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-81
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:12:5-81
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:22-78
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:22-78
 application
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:5-36:19
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:5-36:19
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:14:5-33:19
 MERGED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:14:5-33:19
 MERGED from [com.google.android.material:material:1.3.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\45e82354422ad3c48ddaf2e32586df60\material-1.3.0-alpha02\AndroidManifest.xml:22:5-20
@@ -165,74 +165,74 @@ MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\ltiag\.
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\93d7dc6883f1912a9f938ba18dbfbdac\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-41
 	tools:ignore
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:19:9-48
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:19:9-48
 	android:icon
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-43
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-40
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:9-54
 activity#com.plataforma.crpg.ui.MainActivity
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-35:20
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-35:20
 	android:label
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-45
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-45
 	android:windowSoftInputMode
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-52
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-52
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:13-44
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:13-44
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.READ_EXTERNAL_STORAGE+action:name:android.intent.action.RECORD_AUDIO+action:name:android.intent.action.SET_ALARM+action:name:android.intent.action.SHOW_ALARMS+action:name:android.intent.action.WRITE_EXTERNAL_STORAGE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:13-34:29
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:13-34:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-66
 action#android.intent.action.SET_ALARM
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-74
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-74
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-71
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-71
 action#android.intent.action.SHOW_ALARMS
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-76
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-76
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-73
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-73
 action#android.intent.action.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:17-87
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:17-87
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:25-84
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:25-84
 action#android.intent.action.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-86
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-86
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:25-83
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:25-83
 action#android.intent.action.RECORD_AUDIO
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:25-74
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:25-74
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:17-76
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:17-76
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:27-73
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:27-73
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:17-77
+ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:27-74
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:27-74
 uses-sdk
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expandablelayout] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\expandablelayout\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.databinding:databinding-adapters:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\efb581d8bb37a0e2fbbdc168f8b2031f\databinding-adapters-3.6.1\AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-adapters:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\efb581d8bb37a0e2fbbdc168f8b2031f\databinding-adapters-3.6.1\AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:3.6.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\11ae98c7bf808573c4a1d4eabafe0f39\databinding-runtime-3.6.1\AndroidManifest.xml:22:5-44
@@ -283,8 +283,8 @@ MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gra
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-ktx:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\86069d29e9212870b680f62f82239dd9\jetified-core-ktx-1.6.0-alpha02\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\86069d29e9212870b680f62f82239dd9\jetified-core-ktx-1.6.0-alpha02\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-beta7] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\adc1f28c709a984c2f863cc61dd4d149\constraintlayout-2.0.0-beta7\AndroidManifest.xml:5:5-7:41
@@ -303,8 +303,8 @@ MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\50ac7591a29549b864deec21bede3ffc\jetified-threetenabp-1.2.1\AndroidManifest.xml:5:5-44
-MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:timelineview] C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\timelineview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\8f9fd02239cb5b75523fbe0734705697\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
@@ -377,8 +377,8 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\lt
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\59737ab5fb86e7510641297e0eea06bd\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\59737ab5fb86e7510641297e0eea06bd\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\3c5051e95a3747fbdfa5750f7446f3a2\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
@@ -407,16 +407,16 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\lt
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f3a9841a3f00e6e1ae3e4bfc9adbc8c0\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f3a9841a3f00e6e1ae3e4bfc9adbc8c0\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 activity#com.github.dhaval2404.imagepicker.ImagePickerActivity
 ADDED from [com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:15:9-18:68
 	android:screenOrientation

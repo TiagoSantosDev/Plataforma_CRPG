@@ -6,25 +6,25 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+8-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml
+9-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-11-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:5-78
-11-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:22-75
+11-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:5-78
+11-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:6:22-75
 12    <uses-permission android:name="android.permission.CALL_PHONE" />
-12-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:5-69
-12-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:22-66
+12-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:5-69
+12-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:7:22-66
 13    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-13-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:5-71
-13-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:22-68
+13-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:5-71
+13-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:8:22-68
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:5-80
-14-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:22-77
+14-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:5-80
+14-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:9:22-77
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-81
-15-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:22-78
+15-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:5-81
+15-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:10:22-78
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 16-->[com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:24:5-79
 16-->[com.google.android.exoplayer:exoplayer-core:2.13.3] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\f6443aa67214f69eaa0bacba46a3dbe9\jetified-exoplayer-core-2.13.3\AndroidManifest.xml:24:22-76
@@ -33,59 +33,59 @@
 17-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:26:22-64
 18
 19    <application
-19-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:5-36:19
+19-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:12:5-36:19
 20        android:name="com.plataforma.crpg.ui.agenda.TimelineApplication"
-20-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:9-54
+20-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:13:9-54
 21        android:allowBackup="true"
-21-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
+21-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:14:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.6.0-alpha02] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\97e9bd3dd3fa6d19c0b94bb57d837aa7\core-1.6.0-alpha02\AndroidManifest.xml:24:18-86
+22-->[androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:18-86
 23        android:debuggable="true"
 24        android:extractNativeLibs="false"
 25        android:icon="@mipmap/ic_launcher"
-25-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-43
+25-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:15:9-43
 26        android:label="@string/app_name"
-26-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-41
+26-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:16:9-41
 27        android:supportsRtl="true"
-27-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-35
+27-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:17:9-35
 28        android:testOnly="true"
 29        android:theme="@style/AppTheme" >
-29-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-40
+29-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:18:9-40
 30        <activity
-30-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-35:20
+30-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:20:9-35:20
 31            android:name="com.plataforma.crpg.ui.MainActivity"
-31-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:13-44
+31-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:21:13-44
 32            android:label="@string/app_name"
-32-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-45
+32-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:22:13-45
 33            android:windowSoftInputMode="adjustPan" >
-33-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-52
+33-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:13-52
 34            <intent-filter>
-34-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:13-34:29
+34-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:24:13-34:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-69
-35-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-66
+35-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:17-69
+35-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:25-66
 36                <action android:name="android.intent.action.SET_ALARM" />
-36-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-74
-36-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-71
+36-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:17-74
+36-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:25-71
 37                <action android:name="android.intent.action.SHOW_ALARMS" />
-37-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-76
-37-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-73
+37-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:17-76
+37-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:25-73
 38                <action android:name="android.intent.action.WRITE_EXTERNAL_STORAGE" />
-38-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:17-87
-38-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:25-84
+38-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:17-87
+38-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:28:25-84
 39                <action android:name="android.intent.action.READ_EXTERNAL_STORAGE" />
-39-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-86
-39-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:25-83
+39-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:17-86
+39-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:25-83
 40                <action android:name="android.intent.action.RECORD_AUDIO" />
-40-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:17-77
-40-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:25-74
+40-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:17-77
+40-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:25-74
 41
 42                <category android:name="android.intent.category.DEFAULT" />
-42-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:17-76
-42-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:27-73
+42-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:17-76
+42-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:27-73
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:17-77
-43-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:27-74
+43-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:17-77
+43-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:27-74
 44            </intent-filter>
 45        </activity>
 46        <activity
