@@ -47,11 +47,12 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             mLayoutInflater = LayoutInflater.from(parent.context)
         }
 
-        val view = if (mAttributes.orientation == Orientation.HORIZONTAL) {
-            mLayoutInflater.inflate(R.layout.item_timeline_horizontal, parent, false)
-        } else {
+        val view = /*if (mAttributes.orientation == Orientation.HORIZONTAL) {
+            //mLayoutInflater.inflate(R.layout.item_timeline_horizontal, parent, false)
+        } else {*/
+        //}
             mLayoutInflater.inflate(R.layout.item_timeline, parent, false)
-        }
+
         return TimeLineViewHolder(view, viewType)
     }
 
