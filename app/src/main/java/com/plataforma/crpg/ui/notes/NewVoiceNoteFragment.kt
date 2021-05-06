@@ -33,9 +33,9 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.constants.AudioConstants
-import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegAudioRecorder
-import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegRecordFinder
-import com.github.windsekirun.naraeaudiorecorder.ffmpeg.config.FFmpegConvertConfig
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegAudioRecorder
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegRecordFinder
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.config.FFmpegConvertConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
@@ -100,15 +100,22 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 AudioFormat.CHANNEL_IN_STEREO,
                 AudioConstants.FREQUENCY_44100)
         val audioSource = NoiseAudioSource(recordConfig)
-        audioRecorder.create(FFmpegRecordFinder::class.java) {
+        /*audioRecorder.create(FFmpegRecordFinder::class.java) {
+            this.destFile = destFile
+            this.recordConfig = recordConfig
+            this.audioSource = audioSource
+        }*/
+
+        audioRecorder.create() {
             this.destFile = destFile
             this.recordConfig = recordConfig
             this.audioSource = audioSource
         }
 
+        /*
         val ffmpegAudioRecorder: FFmpegAudioRecorder = audioRecorder.getAudioRecorder() as? FFmpegAudioRecorder
                 ?: return
-        context?.let { ffmpegAudioRecorder.setContext(it) }
+        context?.let { ffmpegAudioRecorder.setContext(it) }*/
 
         //ffmpegAudioRecorder.setConvertConfig(FFmpegConvertConfig)
 
