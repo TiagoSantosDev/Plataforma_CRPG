@@ -29,7 +29,6 @@
                 <action android:name="android.intent.action.WRITE_EXTERNAL_STORAGE" />
                 <action android:name="android.intent.action.READ_EXTERNAL_STORAGE" />
                 <action android:name="android.intent.action.RECORD_AUDIO" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

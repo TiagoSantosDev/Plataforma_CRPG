@@ -3520,7 +3520,6 @@ layout exo_styled_player_control_ffwd_button
 layout exo_styled_player_control_rewind_button
 layout exo_styled_player_control_view
 layout exo_styled_player_view
-layout exo_styled_player_view_backup
 layout exo_styled_settings_list
 layout exo_styled_settings_list_item
 layout exo_styled_sub_settings_list_item
