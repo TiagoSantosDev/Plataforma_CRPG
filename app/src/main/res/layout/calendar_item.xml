@@ -2,16 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl_calendar_item"
-    android:layout_width="130dp"
-    android:layout_height="145dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
     android:layout_marginEnd="4dp"
     android:background="@drawable/calendar_item_background"
     android:orientation="vertical"
-    android:padding="10dp"
-    app:rippleColor="@color/md_blue_100"
-    app:strokeColor="@color/md_blue_100"
-    app:strokeWidth="20dp">
+    android:padding="26dp">
 
     <TextView
         android:id="@+id/tv_date_calendar_item"

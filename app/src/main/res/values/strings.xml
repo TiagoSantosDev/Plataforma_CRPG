@@ -133,6 +133,22 @@
     <string name="transporte_personalizado">TRANSPORTE PERSONALIZADO</string>
     <string name="transportes_publicos">TRANSPORTES PÚBLICOS</string>
 
+
+
+
+    <!-- Secção de acessibilidade -->
+    <string name="carregar_imagem">Carregar imagem</string>
+    <string name="guardar_nota_de_texto">Guardar nota de texto</string>
+    <string name="selecionar_mente_sa">Selecionar Mente Sã</string>
+    <string name="selecionar_querido">Selecionar Querido</string>
+    <string name="selecionar_confiante">Selecionar Confiante</string>
+    <string name="selecionar_com_sono">Selecionar Com Sono</string>
+    <string name="selecionar_feliz">Selecionar Feliz</string>
+    <string name="selecionar_relaxado">Selecionar Relaxado</string>
+    <string name="regressar_ecra_escolha_transportes">Regressar ao ecrã de escolha dos transportes</string>
+    <string name="selecionar_dia">Selecionar dia</string>
+
+
     <string-array name="line_type">
         <item>Normal</item>
         <item>Dashed</item>
