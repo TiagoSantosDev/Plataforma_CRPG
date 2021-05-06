@@ -52,6 +52,14 @@
                 android:id="@+id/note_image"
                 android:layout_width="match_parent"
                 android:layout_height="120dp" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:text="ola"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_get_image_from_gallery"/>
         </FrameLayout>
 
 
@@ -59,7 +67,8 @@
             android:id="@+id/frame_titulo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -93,7 +102,8 @@
             android:id="@+id/frame_conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="210dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -115,6 +125,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
                 android:layout_marginTop="30dp"
                 android:inputType="textMultiLine"
                 android:lines="2"
@@ -128,10 +140,11 @@
             android:id="@+id/button_get_image_from_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_margin="16dp"
-            android:layout_marginBottom="76dp"
-            app:srcCompat="@drawable/outline_create_black_24dp" />
+            android:contentDescription="@string/carregar_imagem"
+            app:srcCompat="@drawable/outline_photo_camera_24"
+             />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -145,12 +158,11 @@
             android:backgroundTint="@color/md_blue_100"
             android:text="@string/guardar"
             android:textSize="20sp"
+            android:contentDescription="@string/guardar_nota_de_texto"
             app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
-
-
     </FrameLayout>
 
     <FrameLayout
