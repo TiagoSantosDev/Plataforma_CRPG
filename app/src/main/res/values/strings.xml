@@ -163,6 +163,10 @@
     <string name="bloco_de_notas">Bloco de notas</string>
     <string name="fotografia_associada_nota_texto">Fotografia associada a nota de texto</string>
     <string name="criar_lembrete">CRIAR LEMBRETE</string>
+    <string name="iniciar_gravacao">Iniciar Gravação</string>
+    <string name="imagem_associada_a_nota_de_voz">Imagem associada a nota de voz</string>
+    <string name="reproduzir_som">Reproduzir som</string>
+    <string name="parar_gravacao">Parar gravação</string>
 
 
     <string-array name="line_type">

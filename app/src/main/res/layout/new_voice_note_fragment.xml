@@ -19,152 +19,147 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.05"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <FrameLayout
-        android:id="@+id/frame_main_voz"
-        android:layout_width="362dp"
-        android:layout_height="375dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/frame_note_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz">
-
-        <FrameLayout
-            android:id="@+id/frame_note_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/voice_note_image"
-                android:layout_width="match_parent"
-                android:layout_height="106dp"
-                android:contentDescription="TODO" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/frame_titulo_nota_voz"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            android:layout_marginTop="100dp">
-
-            <TextView
-                android:id="@+id/titulo_nova_nota_voz"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/titulo_da_nota"
-                android:textAlignment="center"
-                android:textColor="@color/md_blue_100"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/voice_note_title_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLines="1"
-                android:lines="1"
-                android:singleLine="true"
-                android:maxLength="50"
-                android:layout_marginTop="20dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/frame_conteudo_nota_voz"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frame_titulo_nota">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/button_start_recording"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginRight="80dp"
-                app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
-                app:srcCompat="@drawable/ic_arrow_right_24dp"
-                android:contentDescription="TODO" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/button_stop_recording"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="80dp"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
-                app:srcCompat="@drawable/outline_stop_black_24dp"
-                android:contentDescription="TODO" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_replay_recording"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/outline_replay_black_36"
-                android:contentDescription="TODO" />
-        </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz"
+        app:layout_constraintVertical_bias="0.05">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_new_voice_note_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_margin="16dp"
             android:layout_marginBottom="76dp"
-            app:srcCompat="@drawable/outline_photo_camera_24"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/carregar_imagem"
+            app:srcCompat="@drawable/outline_photo_camera_24" />
 
-
-        <Button
-            android:id="@+id/button_save_voice_note"
-            android:layout_width="240dp"
-            android:layout_height="45dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:backgroundTint="@color/md_blue_100"
-            android:text="@string/guardar"
-            android:textSize="20sp"
-            app:cornerRadius="8dp" />
+        <ImageView
+            android:id="@+id/voice_note_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/imagem_associada_a_nota_de_voz" />
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/frame_titulo_nota_voz"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frame_main_voz">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_note_image">
 
         <TextView
-            android:id="@+id/aviso_titulo_voz_em_falta"
+            android:id="@+id/titulo_nova_nota_voz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/titulo_da_nota"
+            android:textAlignment="center"
+            android:textColor="@color/md_blue_100"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/voice_note_title_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|bottom"
-            android:text="@string/titulo_voz_em_falta"
-            android:textColor="@color/design_default_color_error"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
+            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true" />
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_conteudo_nota_voz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_start_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginRight="80dp"
+            android:contentDescription="@string/iniciar_gravacao"
+            app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
+            app:srcCompat="@drawable/ic_arrow_right_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_stop_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="80dp"
+            android:contentDescription="@string/parar_gravacao"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
+            app:srcCompat="@drawable/outline_stop_black_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_replay_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/reproduzir_som"
+            app:srcCompat="@drawable/outline_replay_black_36" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_save_voice_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="@color/md_blue_100"
+        android:text="@string/guardar"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota_voz"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/aviso_titulo_voz_em_falta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        android:text="@string/titulo_voz_em_falta"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_save_voice_note"
+        app:layout_constraintVertical_bias="0.1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

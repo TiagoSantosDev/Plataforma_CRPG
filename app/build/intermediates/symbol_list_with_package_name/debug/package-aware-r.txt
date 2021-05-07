@@ -2925,7 +2925,6 @@ id frame_lib_1
 id frame_lib_2
 id frame_lib_3
 id frame_lib_4
-id frame_main_voz
 id frame_meals
 id frame_meditation_bottom
 id frame_meditation_center
@@ -3862,8 +3861,10 @@ string horizontal_timeline
 string horizontal_timeline_w_padding
 string icon_content_description
 string image_picker_provider_authority_suffix
+string imagem_associada_a_nota_de_voz
 string imagem_associada_estado_selecionado
 string informacao
+string iniciar_gravacao
 string insira_o_nome_do_seu_lembrete
 string item_view_role_description
 string left_padding
