@@ -21,173 +21,140 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <FrameLayout
-        android:id="@+id/frame_titulo"
-        android:layout_width="341dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/frame_note_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_nova_nota_texto">
 
-        <FrameLayout
-            android:id="@+id/frame_note_image"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageView
-                android:id="@+id/note_image"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:contentDescription="TODO" />
-
-            <TextView
-                android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:text="ola"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_get_image_from_gallery"/>
-        </FrameLayout>
-
-
-        <FrameLayout
-            android:id="@+id/frame_titulo_nota"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frame_note_image">
+            android:text="@string/carregar_imagem"
+            app:layout_constraintStart_toStartOf="@id/frame_note_image"
+            app:layout_constraintEnd_toEndOf="@id/frame_note_image"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/button_get_image_from_gallery"/>
 
-            <TextView
-                android:id="@+id/titulo_nova_nota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/titulo_da_nota"
-                android:textAlignment="center"
-                android:textColor="@color/md_blue_100"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/titulo_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:maxLines="1"
-                android:lines="1"
-                android:singleLine="true"
-                android:maxLength="50"
-                android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/frame_conteudo_nota"
+        <ImageView
+            android:id="@+id/note_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frame_titulo_nota">
-
-            <TextView
-                android:id="@+id/conteudo_nova_nota"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/conteudo"
-                android:textAlignment="center"
-                android:textColor="@color/md_blue_100"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/conteudo_nota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingStart="32dp"
-                android:paddingEnd="32dp"
-                android:layout_marginTop="30dp"
-                android:inputType="textMultiLine"
-                android:lines="2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </FrameLayout>
+            android:layout_height="120dp"
+            android:contentDescription="@string/fotografia_associada_nota_texto" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_get_image_from_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_margin="16dp"
+            android:layout_margin="24dp"
             android:contentDescription="@string/carregar_imagem"
-            app:srcCompat="@drawable/outline_photo_camera_24"
-             />
+            app:srcCompat="@drawable/outline_photo_camera_24" />
+    </FrameLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="TODO" />
 
-        <Button
-            android:id="@+id/button_save_text_note"
-            android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/frame_titulo_nota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_note_image">
+
+        <TextView
+            android:id="@+id/titulo_nova_nota"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:backgroundTint="@color/md_blue_100"
-            android:text="@string/guardar"
-            android:textSize="20sp"
-            android:contentDescription="@string/guardar_nota_de_texto"
-            app:cornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
+            android:layout_gravity="center_horizontal"
+            android:text="@string/titulo_da_nota"
+            android:textAlignment="center"
+            android:textColor="@color/md_blue_100"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/titulo_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota" />
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/frame_conteudo_nota"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frame_titulo">
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota">
 
         <TextView
-            android:id="@+id/aviso_dados_falta_texto"
+            android:id="@+id/conteudo_nova_nota"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/conteudo"
+            android:textAlignment="center"
+            android:textColor="@color/md_blue_100"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/conteudo_nota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|bottom"
-            android:text="@string/dados_em_falta"
-            android:textColor="@color/design_default_color_error"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
-
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp" />
     </FrameLayout>
+
+
+    <Button
+        android:id="@+id/button_save_text_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:backgroundTint="@color/md_blue_100"
+        android:contentDescription="@string/guardar_nota_de_texto"
+        android:text="@string/guardar"
+        android:textSize="30sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota" />
+
+
+    <TextView
+        android:id="@+id/aviso_dados_falta_texto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dados_em_falta"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

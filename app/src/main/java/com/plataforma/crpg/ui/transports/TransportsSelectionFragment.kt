@@ -65,7 +65,7 @@ class TransportsSelectionFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
-
+/*
         button_consult_custom_transport.setOnClickListener {
             val fragment: Fragment = CustomTransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
@@ -85,7 +85,7 @@ class TransportsSelectionFragment : Fragment() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
+*/
     }
 
     private fun showBackButton() {

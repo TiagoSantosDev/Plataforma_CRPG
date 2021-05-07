@@ -98,27 +98,6 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             startActivity(intent)
         }
 
-        button_consult_custom_transport.setOnClickListener {
-            val fragment: Fragment = CustomTransportsFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-            fragmentManager.popBackStack()
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
-
-        button_consult_public_transport.setOnClickListener {
-            val fragment: Fragment = PublicTransportsFragment()
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-            fragmentManager.popBackStack()
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
-
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -172,3 +151,25 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 }
 //println("Item selecionado: $selItem")
+// /*
+//        button_consult_custom_transport.setOnClickListener {
+//            val fragment: Fragment = CustomTransportsFragment()
+//            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+//            fragmentManager.popBackStack()
+//            fragmentTransaction.addToBackStack(null)
+//            fragmentTransaction.commit()
+//        }
+//
+//        button_consult_public_transport.setOnClickListener {
+//            val fragment: Fragment = PublicTransportsFragment()
+//            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+//            fragmentManager.popBackStack()
+//            fragmentTransaction.addToBackStack(null)
+//            fragmentTransaction.commit()
+//        }
+//
+//*/
