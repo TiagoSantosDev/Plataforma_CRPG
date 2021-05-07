@@ -87,7 +87,8 @@
             android:maxLength="50"
             android:maxLines="1"
             android:singleLine="true"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:autofillHints="" />
     </FrameLayout>
 
     <FrameLayout

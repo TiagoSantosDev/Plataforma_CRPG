@@ -86,7 +86,7 @@ class MealsFragment : Fragment() {
         val isLunch = requireArguments().getBoolean("isLunch")
 
         cardCarne?.setOnClickListener {
-        //cardCarne?.setOnLongClickListener {
+
             if (!cardCarne.isChecked) {
                 mealsViewModel.selectedOption = 1
             } else {
@@ -97,11 +97,10 @@ class MealsFragment : Fragment() {
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
             flagMealChosen = !flagMealChosen
-            true
         }
 
         cardPeixe?.setOnClickListener {
-        //cardPeixe?.setOnLongClickListener {
+
             if (!cardPeixe.isChecked) {
                 mealsViewModel.selectedOption = 2
             } else {
@@ -112,11 +111,10 @@ class MealsFragment : Fragment() {
             cardDieta?.isChecked = false
             cardVeg?.isChecked = false
             flagMealChosen = !flagMealChosen
-            true
         }
 
         cardDieta?.setOnClickListener {
-        //cardDieta?.setOnLongClickListener {
+
             if (!cardDieta.isChecked) {
                 mealsViewModel.selectedOption = 3
             } else {
@@ -127,11 +125,10 @@ class MealsFragment : Fragment() {
             cardPeixe?.isChecked = false
             cardVeg?.isChecked = false
             flagMealChosen = !flagMealChosen
-            true
         }
 
         cardVeg?.setOnClickListener {
-        //cardVeg?.setOnLongClickListener {
+
             if (!cardVeg.isChecked) {
                 mealsViewModel.selectedOption = 4
             } else {
@@ -142,7 +139,6 @@ class MealsFragment : Fragment() {
             cardPeixe?.isChecked = false
             cardDieta?.isChecked = false
             flagMealChosen = !flagMealChosen
-            true
         }
 
         val mealSuccessView = view?.findViewById<View>(R.id.meal_choice_success)
@@ -172,9 +168,10 @@ class MealsFragment : Fragment() {
 
 }
 
-
-
 /*
+//cardVeg?.setOnLongClickListener {
+//cardPeixe?.setOnLongClickListener {
+//cardDieta?.setOnLongClickListener {
         //println("Opcao carne text: " + text_opcao_carne.text)
         //text_opcao_carne.bringToFront()
 //println("Selected option: " + mealsViewModel.selectedOption)
@@ -187,7 +184,7 @@ class MealsFragment : Fragment() {
         view?.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
         view?.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
 */
-
+//cardCarne?.setOnLongClickListener {
 //mealsViewModel.testDB()
 //val mealsViewModel = ViewModelProvider(activity as AppCompatActivity).get(MealsViewModel::class.java)
 //println("Selected option: " + mealsViewModel.selectedOption)

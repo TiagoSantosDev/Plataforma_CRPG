@@ -27,8 +27,7 @@
                 android:paddingStart="20dp"
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:contentDescription="TODO" />
-
+                android:contentDescription="@string/imagem_ilustrativa_da_nota" />
         </FrameLayout>
 
         <FrameLayout
@@ -73,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/delete_icon"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/apagar_nota" />
 
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>

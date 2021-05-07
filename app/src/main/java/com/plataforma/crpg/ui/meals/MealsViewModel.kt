@@ -95,7 +95,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
         val fullFilename = context.filesDir.toString() + "/" + filename
 
         val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
-        var eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+        val eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
 
         when (isLunch) {
             true -> {

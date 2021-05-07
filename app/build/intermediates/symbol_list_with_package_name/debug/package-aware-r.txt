@@ -3700,6 +3700,7 @@ string activity_example_label
 string adicionar_lembrete
 string amanha
 string ambos
+string apagar_nota
 string apanhar_bus
 string app_name
 string app_uses_libraries
@@ -3855,6 +3856,12 @@ string icon_content_description
 string image_picker_provider_authority_suffix
 string imagem_associada_a_nota_de_voz
 string imagem_associada_estado_selecionado
+string imagem_ilustrativa_da_nota
+string imagem_ilustrativa_de_prato_de_dieta
+string imagem_ilustrativa_de_prato_de_peixe
+string imagem_ilustrativa_de_prato_vegetariano
+string imagem_ilustrativa_do_item_da_agenda
+string imagem_ilutrativa_de_prato_de_carne
 string informacao
 string iniciar_gravacao
 string insira_o_nome_do_seu_lembrete
@@ -3942,6 +3949,7 @@ string opcao_dieta
 string opcao_peixe
 string opcao_veg
 string orientation
+string para
 string parar_gravacao
 string password_toggle_content_description
 string path_password_eye
