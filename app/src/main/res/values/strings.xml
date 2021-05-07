@@ -162,7 +162,7 @@
     <string name="autocarro_stcp">Autocarro STCP</string>
     <string name="bloco_de_notas">Bloco de notas</string>
     <string name="fotografia_associada_nota_texto">Fotografia associada a nota de texto</string>
-    <string name="carregar_imagem">Carregar imagem</string>
+    <string name="criar_lembrete">CRIAR LEMBRETE</string>
 
 
     <string-array name="line_type">
