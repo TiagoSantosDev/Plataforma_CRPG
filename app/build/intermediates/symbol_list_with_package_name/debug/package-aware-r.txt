@@ -3521,8 +3521,6 @@ layout exo_track_selection_dialog
 layout expand_button
 layout expandable_layout_child
 layout expandable_layout_frame
-layout first_special_calendar_item
-layout first_special_selected_calendar_item
 layout fragment_about
 layout fragment_agenda
 layout fragment_custom_transport
