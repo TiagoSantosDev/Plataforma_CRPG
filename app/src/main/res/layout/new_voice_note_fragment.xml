@@ -86,27 +86,29 @@
             android:lines="1"
             android:maxLength="50"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:importantForAutofill="no" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/frame_conteudo_nota_voz"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1">
+        app:layout_constraintVertical_bias="0.082">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_start_recording"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginRight="80dp"
+            android:layout_marginEnd="80dp"
             android:contentDescription="@string/iniciar_gravacao"
             app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
@@ -117,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:contentDescription="@string/parar_gravacao"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
             app:srcCompat="@drawable/outline_stop_black_24dp" />
@@ -160,6 +162,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_save_voice_note"
         app:layout_constraintVertical_bias="0.1" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

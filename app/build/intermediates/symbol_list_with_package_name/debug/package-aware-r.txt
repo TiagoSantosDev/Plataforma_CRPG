@@ -3488,7 +3488,6 @@ layout bottom_sheet_options
 layout calendar_item
 layout color_item
 layout color_preference_widget
-layout content_record_audio
 layout custom_dialog
 layout custom_player_control_view
 layout design_bottom_navigation_item
@@ -3950,6 +3949,7 @@ string opcao_dieta
 string opcao_peixe
 string opcao_veg
 string orientation
+string parar_gravacao
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -3970,6 +3970,7 @@ string regressar
 string regressar_ecra_escolha_transportes
 string relaxado
 string reproduzir_faixa
+string reproduzir_som
 string retroceder_reproducao
 string right_padding
 string s
