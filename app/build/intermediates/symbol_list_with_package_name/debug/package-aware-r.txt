@@ -2710,8 +2710,6 @@ id button_apply
 id button_cancel
 id button_confirm
 id button_confirm_meal
-id button_consult_custom_transport
-id button_consult_public_transport
 id button_escolher
 id button_get_image_from_gallery
 id button_hoje
@@ -2944,7 +2942,6 @@ id frame_opcao_vegetariano
 id frame_parent
 id frame_player_view
 id frame_public_transports_timetable
-id frame_titulo
 id frame_titulo_nota
 id frame_titulo_nota_voz
 id frame_transportes_personalizados
@@ -3381,7 +3378,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id transports_button_frame
 id triangle
 id tvDate
 id tvDay
@@ -3844,6 +3840,7 @@ string fab_transformation_sheet_behavior
 string feliz
 string firebase_database_url
 string first_fragment_label
+string fotografia_associada_nota_texto
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

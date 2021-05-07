@@ -6,7 +6,7 @@
   android:layout_height="match_parent"
   android:background="@color/white_93"
   android:orientation="vertical"
-  android:weightSum="14">
+  android:weightSum="18">
 
   <include layout="@layout/reminder_activity_intro"
       android:visibility="gone"/>
@@ -17,7 +17,7 @@
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:layout_weight="13"
+      android:layout_weight="18"
       android:fillViewport="true">
 
     <LinearLayout
@@ -123,20 +123,18 @@
             android:visibility="gone" />
       </LinearLayout>
     </LinearLayout>
-
   </ScrollView>
 
   <LinearLayout
       android:id="@+id/parentLayout3"
       android:layout_height="wrap_content"
       android:layout_width="match_parent"
-      android:layout_weight="1"
+      android:layout_weight="0"
       android:layout_gravity="center_horizontal"
       android:gravity="center_horizontal"
       android:paddingStart="16dp"
       android:paddingEnd="16dp"
-      android:background="@color/white"
-      android:layout_marginBottom="40dp">
+      android:background="@color/white">
 
     <Button
         android:id="@+id/button_cancel"

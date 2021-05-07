@@ -16,14 +16,14 @@
         android:text="@string/escolha_local"
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_bus_lines_spinner"
@@ -40,30 +40,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/escolha_paragem">
 
-    <Spinner
-        android:id="@+id/locations_spinner"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/escolha_paragem"
-        app:layout_constraintVertical_bias="0.01" />
-
     </com.google.android.material.card.MaterialCardView>
 
     <FrameLayout
         android:id="@+id/main_timeline_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingStart="32dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_bus_lines_spinner">
+        app:layout_constraintTop_toBottomOf="@id/card_bus_lines_spinner"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -265,49 +254,20 @@
                 </com.google.android.material.card.MaterialCardView>
             </FrameLayout>
         </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/transports_button_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="280dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_timeline_frame">
-
-            <Button
-                android:id="@+id/button_consult_custom_transport"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="40dp"
-                android:backgroundTint="@color/md_blue_100"
-                android:text="@string/transporte_personalizado"
-                android:textSize="18sp"
-                app:cornerRadius="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/button_consult_public_transport"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frame_transports_from_crpg" />
-
-            <Button
-                android:id="@+id/button_consult_public_transport"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center|bottom"
-                android:backgroundTint="@color/md_blue_100"
-                android:text="@string/ver_transportes_publicos"
-                android:textSize="18sp"
-                app:cornerRadius="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consult_custom_transport" />
-        </FrameLayout>
-
     </FrameLayout>
+
+    <Spinner
+        android:id="@+id/locations_spinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:cornerRadius="8dp"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintTop_toBottomOf="@+id/escolha_paragem"
+        app:layout_constraintBottom_toTopOf="@id/main_timeline_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
