@@ -1,5 +1,8 @@
 package com.plataforma.crpg.ui.notes
 
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegAudioRecorder
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegRecordFinder
+//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.config.FFmpegConvertConfig
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -24,7 +27,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -33,9 +35,6 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
 import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
 import com.github.windsekirun.naraeaudiorecorder.constants.AudioConstants
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegAudioRecorder
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegRecordFinder
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.config.FFmpegConvertConfig
 import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
@@ -43,7 +42,6 @@ import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
-import kotlin.math.absoluteValue
 
 
 class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -217,7 +215,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     }
 
-    fun getVoiceItemCount(): Int{
+    private fun getVoiceItemCount(): Int{
         var voiceItemCount = 0
 
         for(item in notesViewModel.mNoteList){

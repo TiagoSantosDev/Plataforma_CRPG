@@ -64,7 +64,7 @@
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/background_carne"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/imagem_ilutrativa_de_prato_de_carne" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/background_peixe"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/imagem_ilustrativa_de_prato_de_peixe" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -187,7 +187,7 @@
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/background_dieta"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/imagem_ilustrativa_de_prato_de_dieta" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -249,7 +249,7 @@
                     android:layout_height="60dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/background_veg"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/imagem_ilustrativa_de_prato_vegetariano" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

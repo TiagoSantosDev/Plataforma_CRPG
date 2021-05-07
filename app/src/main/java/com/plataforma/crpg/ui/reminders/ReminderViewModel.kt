@@ -7,7 +7,6 @@ import android.os.Build
 import android.provider.AlarmClock
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
 import com.plataforma.crpg.model.Reminder
@@ -58,7 +57,7 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         fullWeekAlarm.add(Calendar.SATURDAY)
 
 
-        var customWeekAlarmMutable = mutableListOf<Int>()
+        val customWeekAlarmMutable = mutableListOf<Int>()
 
         for ((idx, value) in weekDaysBoolean.withIndex()) {
             if (value) {

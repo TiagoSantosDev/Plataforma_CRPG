@@ -5,12 +5,11 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.plataforma.crpg.model.*
+import com.plataforma.crpg.model.Event
+import com.plataforma.crpg.model.EventType
 import java.io.File
 import java.io.FileReader
 import java.lang.reflect.Type
-import java.util.*
-import kotlin.collections.ArrayList
 
 class AgendaViewModel(application: Application) : AndroidViewModel(application) {
 

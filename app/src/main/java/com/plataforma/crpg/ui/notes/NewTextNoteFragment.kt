@@ -7,23 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
-import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
-import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
 import kotlin.properties.Delegates
@@ -50,9 +46,6 @@ class NewTextNoteFragment : Fragment() {
     ): View {
         val binding = NewTextNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
-
-        //showBackButton()
-
         return view
     }
 
@@ -103,7 +96,6 @@ class NewTextNoteFragment : Fragment() {
             }else{
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_dados_falta_texto)?.visibility = View.VISIBLE
             }
-
 
         }
 

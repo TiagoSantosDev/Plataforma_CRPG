@@ -29,7 +29,8 @@
         android:textSize="75sp"
         android:textColor="@color/white_93"
         android:layout_marginEnd="8dp"
-        android:inputType = "number"/>
+        android:inputType = "number"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView2"
@@ -52,7 +53,8 @@
         android:background="@drawable/layout_bg"
         android:textSize="75sp"
         android:textColor="@color/white_93"
-        android:inputType = "number"/>
+        android:inputType = "number"
+        android:autofillHints="" />
 
   </LinearLayout>
 

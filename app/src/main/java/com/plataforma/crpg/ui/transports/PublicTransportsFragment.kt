@@ -115,13 +115,12 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-        val pos = p2
         val selectedDate = sharedViewModel.selectedDate
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
         println("Custom text: $publicText")
         println("Item clicked: $p2")
 
-        when(pos){
+        when(p2){
             0 -> public_transports_text.text = publicText["Linha 905"]
             1 -> public_transports_text.text = publicText["Linha ZF"]
             2 -> public_transports_text.text = publicText["Linha 35"]

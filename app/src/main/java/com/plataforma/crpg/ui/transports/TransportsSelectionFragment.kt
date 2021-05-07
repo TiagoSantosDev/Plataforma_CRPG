@@ -1,13 +1,9 @@
 package com.plataforma.crpg.ui.transports
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,7 +15,6 @@ import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
-import kotlinx.android.synthetic.main.transports_fragment.*
 
 
 class TransportsSelectionFragment : Fragment() {
