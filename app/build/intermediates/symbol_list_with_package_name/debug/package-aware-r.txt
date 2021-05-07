@@ -1775,6 +1775,7 @@ dimen action_bar_size
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
+dimen bottom_nav_bar
 dimen bottom_padding_recycler_view
 dimen bottom_sheet_corner_radius
 dimen bottom_sheet_peek_height
@@ -2679,6 +2680,7 @@ id background_image_dieta
 id background_image_peixe
 id background_image_vegetariano
 id barrier
+id barrier2
 id barrier_size
 id baseline
 id beginning
@@ -2899,7 +2901,6 @@ id expandable_horas
 id expandable_lembrar
 id expandable_notas
 id expanded_menu
-id fab_options
 id fade
 id fill
 id fill_horizontal
@@ -2914,6 +2915,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id frame_botoes_criar_notas
 id frame_card_info
 id frame_card_to_CRPG
 id frame_conteudo_nota
@@ -3312,6 +3314,7 @@ id text_motorista_2
 id text_motorista_3
 id text_motorista_a
 id text_motoristas
+id text_motoristas_2
 id text_opcao_carne
 id text_opcao_dieta
 id text_opcao_peixe
@@ -3714,7 +3717,10 @@ string app_name
 string app_uses_libraries
 string appbar_scrolling_view_behavior
 string apply
+string autocarro_stcp
+string avancar_reproducao
 string aviso_campos_obrigatorios
+string bloco_de_notas
 string bottom_padding
 string bottom_sheet_behavior
 string camioneta_do_crpg
@@ -3857,6 +3863,7 @@ string horizontal_timeline
 string horizontal_timeline_w_padding
 string icon_content_description
 string image_picker_provider_authority_suffix
+string imagem_associada_estado_selecionado
 string informacao
 string insira_o_nome_do_seu_lembrete
 string item_view_role_description
@@ -3948,6 +3955,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pausar_reproducao
 string permission_camera_denied
 string permission_camera_extended_denied
 string permission_gallery_denied
@@ -3961,6 +3969,8 @@ string refeicao_escolhida_com_sucesso
 string regressar
 string regressar_ecra_escolha_transportes
 string relaxado
+string reproduzir_faixa
+string retroceder_reproducao
 string right_padding
 string s
 string search_menu_title
