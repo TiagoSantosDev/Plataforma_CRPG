@@ -2749,7 +2749,6 @@ id card_center_icon
 id card_custom_transports_background_image
 id card_transports
 id card_transports_CRPG_to_location
-id card_transports_to
 id center
 id center_horizontal
 id center_vertical
@@ -3319,10 +3318,8 @@ id text_opcao_vegetariano
 id text_orientation_heading
 id text_selected_mood
 id text_start_line_color
-id text_time_CRPG_to_location
 id text_time_location_from_CRPG
 id text_time_location_to_CRPG
-id text_timeline_CRPG_to_location
 id text_timeline_date
 id text_timeline_end_time
 id text_timeline_info
@@ -3537,8 +3534,6 @@ layout item_section
 layout item_section_child
 layout item_section_parent
 layout item_timeline
-layout item_timeline_transports_from_location
-layout item_timeline_transports_to_location
 layout layout_parent_alerta
 layout layout_parent_dia
 layout layout_parent_horas
