@@ -2927,9 +2927,9 @@ id frame_lib_3
 id frame_lib_4
 id frame_main_voz
 id frame_meals
-id frame_meditation_1
-id frame_meditation_2
-id frame_meditation_3
+id frame_meditation_bottom
+id frame_meditation_center
+id frame_meditation_top
 id frame_motorista_1
 id frame_motorista_2
 id frame_motorista_3
@@ -2962,6 +2962,7 @@ id homeAsUp
 id honorRequest
 id horizontal
 id icon
+id iconEnd
 id icon_frame
 id icon_group
 id icon_only
@@ -3758,6 +3759,7 @@ string contacto_b
 string contacto_c
 string conteudo
 string criado_c_sucesso
+string criar_lembrete
 string d
 string dados_em_falta
 string dash_gap
