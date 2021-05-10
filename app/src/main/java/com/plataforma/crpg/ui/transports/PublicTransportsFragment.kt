@@ -95,7 +95,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         }
 
         button_return_transports.setOnClickListener {
-            val fragment: Fragment = TransportsFragment()
+            val fragment: Fragment = TransportsSelectionFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)

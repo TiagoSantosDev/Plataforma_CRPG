@@ -35,15 +35,15 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
+        app:strokeColor="#F9B401"
+        app:strokeWidth="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selecione_transportes"
-        app:layout_constraintVertical_bias="0.05"
-        app:strokeColor="#F9B401"
-        app:strokeWidth="5dp">
+        app:layout_constraintVertical_bias="0.05">
 
         <FrameLayout
             android:id="@+id/frame_card_fixed_transports_background_image"
@@ -106,6 +106,8 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
+        app:strokeColor="@color/md_blue_200"
+        app:strokeWidth="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.25"
@@ -113,8 +115,7 @@
         app:layout_constraintBottom_toTopOf="@+id/botao_escolha_transportes_publicos"
         app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_fixos"
         app:layout_constraintVertical_bias="0.1"
-        app:strokeColor="@color/md_blue_200"
-        app:strokeWidth="3dp">
+     >
 
         <FrameLayout
             android:id="@+id/frame_card_custom_transports_background_image"
@@ -169,6 +170,8 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
+        app:strokeColor="@color/PrimaryGreen"
+        app:strokeWidth="5dp"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.25"
         app:layout_constraintHorizontal_bias="0.0"
@@ -176,8 +179,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_personalizados"
-        app:strokeColor="@color/PrimaryGreen"
-        app:strokeWidth="3dp">
+       >
 
         <FrameLayout
             android:id="@+id/frame_card_public_transports_background_image"

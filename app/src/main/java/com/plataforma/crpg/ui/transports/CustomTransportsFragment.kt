@@ -48,19 +48,13 @@ class CustomTransportsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = "TRANSPORTE PERSONALIZADO"
+        (activity as AppCompatActivity).supportActionBar?.title = "CARRINHA DO CRPG"
 
         transportsViewModel = ViewModelProvider(this).get(TransportsViewModel::class.java)
         sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
         val selectedDate = sharedViewModel.selectedDate
         val customText = transportsViewModel.getCustomText(selectedDate)
-        println("Custom text: $customText")
-
-        //view?.findViewById<TextView>(R.id.custom_transports_text)?.text = customText
-        //println("Custom text view: " + view?.findViewById<TextView>(R.id.custom_transports_text))
-
         custom_transports_text.text = customText
-
     }
 
 
@@ -68,7 +62,7 @@ class CustomTransportsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         button_return_transports.setOnClickListener {
-            val fragment: Fragment = TransportsFragment()
+            val fragment: Fragment = TransportsSelectionFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -89,3 +83,6 @@ class CustomTransportsFragment : Fragment() {
 
 // Handle the back button event
 //println(">HandleonBackButtonPressed")
+// println("Custom text: $customText")
+//        //view?.findViewById<TextView>(R.id.custom_transports_text)?.text = customText
+//        //println("Custom text view: " + view?.findViewById<TextView>(R.id.custom_transports_text))
