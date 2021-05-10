@@ -3012,6 +3012,7 @@ id list_recycler_view
 id list_title
 id location_to_CRPG_title
 id locations_spinner
+id locations_spinner_card
 id lytCameraPick
 id lytGalleryPick
 id main_single_row_calendar

@@ -26,8 +26,6 @@ import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
 
 class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
-
-
     private var opSelected = 0
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var transportsViewModel: TransportsViewModel
