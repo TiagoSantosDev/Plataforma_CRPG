@@ -179,6 +179,7 @@
     <string name="opcao_apenas_vibracao_selecionada">Opção apenas vibração selecionada</string>
     <string name="opcao_som_vibracao_selecionada">Opção som e vibração selecionada</string>
     <string name="clique_mais_info">CLIQUE PARA MAIS INFORMAÇÕES</string>
+    <string name="carrinhas_do_crpg">CARRINHAS DO CRPG</string>
 
 
     <string-array name="line_type">

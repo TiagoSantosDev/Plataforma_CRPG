@@ -2688,7 +2688,7 @@ id bidirectional
 id blocking
 id botao_escolha_transportes_fixos
 id botao_escolha_transportes_personalizados
-id botao_selecionar_transportes_publicos
+id botao_escolha_transportes_publicos
 id bottom
 id bounce
 id bus_lines_spinner
@@ -2748,6 +2748,7 @@ id card_bus_lines_spinner_2
 id card_center_icon
 id card_custom_transports_background_image
 id card_fixed_transports_background_image
+id card_public_transports_background_image
 id card_transports
 id card_transports_CRPG_to_location
 id center
@@ -2917,6 +2918,7 @@ id frame_botoes_criar_notas
 id frame_card_custom_transports_background_image
 id frame_card_fixed_transports_background_image
 id frame_card_info
+id frame_card_public_transports_background_image
 id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_conteudo_nota_voz
@@ -2957,6 +2959,7 @@ id guideline
 id header_title
 id hideable
 id hint_transportes_fixos
+id hint_transportes_personalizados
 id hint_transportes_publicos
 id home
 id homeAsUp
@@ -3280,7 +3283,6 @@ id text_attributes_heading
 id text_contacto_a
 id text_contacto_b
 id text_contacto_c
-id text_custom_transports_frame
 id text_driver
 id text_driver_CRPG_to_location
 id text_driver_name_CRPG_to_location
@@ -3336,7 +3338,7 @@ id text_to_from_1
 id text_to_from_2
 id text_to_from_3
 id text_to_from_4
-id text_transportes_personalizados
+id text_transportes_persoanlizados
 id text_transportes_publicos
 id text_view_crop
 id text_view_rotate
@@ -3359,6 +3361,8 @@ id title_nova_nota_voz
 id title_selecionar_data
 id title_template
 id title_transportes_fixos
+id title_transportes_personalizados
+id title_transportes_publicos
 id title_used_libs
 id titulo_edit_text
 id titulo_nova_nota
@@ -3719,6 +3723,7 @@ string camioneta_do_crpg
 string campos_obrigatorios_falta
 string cancelar
 string carregar_imagem
+string carrinhas_do_crpg
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
