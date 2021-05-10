@@ -33,18 +33,29 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz"
         app:layout_constraintVertical_bias="0.05">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_new_voice_note_image"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/carregar_imagem"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="6dp"
+            android:textSize="14sp"
+            android:textColor="@color/md_blue_200"
+            android:layout_gravity="center_vertical|right"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_new_voice_note_image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_gravity="end"
-            android:layout_margin="16dp"
+            android:layout_margin="32dp"
             android:layout_marginBottom="76dp"
             android:contentDescription="@string/carregar_imagem"
             app:srcCompat="@drawable/outline_photo_camera_24" />

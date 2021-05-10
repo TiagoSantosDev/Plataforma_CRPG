@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintVertical_bias="0.05"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +43,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/carregar_imagem"
-            app:layout_constraintStart_toStartOf="@id/frame_note_image"
-            app:layout_constraintEnd_toEndOf="@id/frame_note_image"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toBottomOf="@+id/button_get_image_from_gallery"/>
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/md_blue_200"
+            android:layout_gravity="center_vertical|right"
+            app:layout_constraintHorizontal_bias="0.5" />
 
         <ImageView
             android:id="@+id/note_image"
@@ -56,14 +57,13 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_get_image_from_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_gravity="end"
             android:layout_margin="24dp"
             android:contentDescription="@string/carregar_imagem"
             app:srcCompat="@drawable/outline_photo_camera_24" />
     </FrameLayout>
-
 
     <FrameLayout
         android:id="@+id/frame_titulo_nota"
@@ -167,5 +167,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_save_text_note"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
