@@ -3052,7 +3052,6 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id mood_color
-id mood_image_frame
 id motion_base
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3404,6 +3403,7 @@ id visible_removing_fragment_view_tag
 id voice_note_image
 id voice_note_title_edit
 id when_playing
+id white_view
 id wide
 id withText
 id withinBounds
@@ -3944,9 +3944,12 @@ string notas
 string nova_nota_de_texto
 string nova_nota_de_voz
 string ok
+string opcao_apenas_som_selecionada
+string opcao_apenas_vibracao_selecionada
 string opcao_carne
 string opcao_dieta
 string opcao_peixe
+string opcao_som_vibracao_selecionada
 string opcao_veg
 string orientation
 string para

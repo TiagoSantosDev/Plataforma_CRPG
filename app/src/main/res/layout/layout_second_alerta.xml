@@ -28,7 +28,7 @@
         android:id="@+id/ImageButtonVibrar"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
@@ -40,7 +40,7 @@
         android:id="@+id/ImageButtonAmbos"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:scaleType="fitCenter"
         android:gravity="center_horizontal"
         android:layout_weight="0.3"
@@ -71,7 +71,7 @@
         android:layout_margin="5dp"
         android:visibility="invisible"
         android:src="@android:drawable/checkbox_on_background"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/opcao_apenas_som_selecionada" />
 
     <TextView
         android:id="@+id/textView_vibrar"
@@ -90,7 +90,7 @@
         android:layout_margin="5dp"
         android:visibility="invisible"
         android:src="@android:drawable/checkbox_on_background"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/opcao_apenas_vibracao_selecionada" />
 
     <TextView
         android:id="@+id/textView_ambos"
@@ -109,7 +109,7 @@
         android:layout_margin="5dp"
         android:visibility="invisible"
         android:src="@android:drawable/checkbox_on_background"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/opcao_som_vibracao_selecionada" />
 
   </LinearLayout>
 
