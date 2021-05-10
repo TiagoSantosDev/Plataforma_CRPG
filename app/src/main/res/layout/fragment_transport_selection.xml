@@ -28,19 +28,22 @@
         android:id="@+id/botao_escolha_transportes_fixos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
         android:importantForAccessibility="no"
         app:cardBackgroundColor="@color/colorGrey50"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
-        app:strokeColor="#F9B401"
-        app:strokeWidth="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/botao_escolha_transportes_personalizados"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selecione_transportes">
+        app:layout_constraintTop_toBottomOf="@+id/selecione_transportes"
+        app:layout_constraintVertical_bias="0.05"
+        app:strokeColor="#F9B401"
+        app:strokeWidth="5dp">
 
         <FrameLayout
             android:id="@+id/frame_card_fixed_transports_background_image"
@@ -48,16 +51,15 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/title_transportes_fixos"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/botao_escolha_transportes_fixos"
-            app:layout_constraintVertical_bias="0.1">
+            app:layout_constraintTop_toTopOf="@+id/botao_escolha_transportes_fixos">
 
             <ImageView
                 android:id="@+id/card_fixed_transports_background_image"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:contentDescription="@string/autocarro_stcp"
                 android:scaleType="fitXY"
                 android:src="@drawable/stcp_background" />
@@ -67,11 +69,12 @@
             android:id="@+id/title_transportes_fixos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="16dp"
             android:text="@string/camioneta_do_crpg"
             android:textAlignment="center"
             android:textColor="@color/md_blue_200"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/botao_escolha_transportes_fixos"
+            android:textSize="16sp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frame_card_fixed_transports_background_image" />
@@ -81,10 +84,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
             android:text="@string/clique_mais_info"
             android:textAlignment="center"
             android:textColor="@color/md_blue_200"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,17 +99,18 @@
         android:id="@+id/botao_escolha_transportes_personalizados"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
         android:importantForAccessibility="no"
         app:cardBackgroundColor="@color/colorGrey50"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/botao_escolha_transportes_publicos"
         app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_fixos"
         app:layout_constraintVertical_bias="0.1"
         app:strokeColor="@color/md_blue_200"
@@ -125,16 +130,28 @@
                 android:src="@drawable/stcp_background" />
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/text_transportes_persoanlizados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/carrinhas_do_crpg"
+            android:textAlignment="center"
+            android:textColor="@color/md_blue_200"
+            android:textSize="16sp" />
+
 
         <TextView
             android:id="@+id/hint_transportes_personalizados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
             android:text="@string/clique_mais_info"
             android:textAlignment="center"
             android:textColor="@color/md_blue_200"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,42 +160,60 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/botao_selecionar_transportes_publicos"
+        android:id="@+id/botao_escolha_transportes_publicos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center_vertical"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
         app:cardBackgroundColor="@color/colorGrey50"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_personalizados"
         app:strokeColor="@color/PrimaryGreen"
         app:strokeWidth="3dp">
+
+        <FrameLayout
+            android:id="@+id/frame_card_public_transports_background_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/card_public_transports_background_image"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:contentDescription="@string/autocarro_stcp"
+                android:scaleType="fitXY"
+                android:src="@drawable/stcp_background" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/text_transportes_publicos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="16dp"
             android:text="@string/transportes_publicos"
             android:textAlignment="center"
-            android:textColor="@color/md_blue_100"
-            android:textSize="22sp" />
+            android:textColor="@color/md_blue_200"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/hint_transportes_publicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
             android:text="@string/clique_mais_info"
             android:textAlignment="center"
             android:textColor="@color/md_blue_200"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

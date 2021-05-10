@@ -81,7 +81,7 @@ class TransportsSelectionFragment : Fragment() {
             fragmentTransaction.commit()
         }
 
-        botao_selecionar_transportes_publicos.setOnClickListener {
+        botao_escolha_transportes_publicos.setOnClickListener {
             val fragment: Fragment = PublicTransportsFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
