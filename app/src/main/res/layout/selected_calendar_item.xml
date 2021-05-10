@@ -7,7 +7,10 @@
     android:layout_marginEnd="4dp"
     android:background="@drawable/selected_calendar_item_background"
     android:orientation="vertical"
-    android:padding="26dp">
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
 
     <TextView
         android:id="@+id/tv_date_calendar_item"
@@ -16,7 +19,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="60sp" />
+        android:textSize="55sp" />
 
     <TextView
         android:id="@+id/tv_day_calendar_item"
@@ -24,6 +27,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
-        android:textSize="55sp" />
-
+        android:textSize="50sp" />
 </LinearLayout>

@@ -16,13 +16,11 @@
         android:text="@string/nova_nota_de_voz"
         android:textAlignment="center"
         android:textColor="@color/md_blue_100"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.05"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
@@ -37,7 +35,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz"
-        app:layout_constraintVertical_bias="0.05">
+        app:layout_constraintVertical_bias="0.1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,7 +54,6 @@
             android:layout_height="56dp"
             android:layout_gravity="end"
             android:layout_margin="32dp"
-            android:layout_marginBottom="76dp"
             android:contentDescription="@string/carregar_imagem"
             app:srcCompat="@drawable/outline_photo_camera_24" />
 
@@ -74,7 +71,7 @@
         android:paddingStart="32dp"
         android:paddingEnd="32dp"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frame_note_image">
@@ -109,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.13"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
@@ -152,7 +149,7 @@
         android:layout_gravity="bottom|center_horizontal"
         android:backgroundTint="@color/md_blue_100"
         android:text="@string/guardar"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
