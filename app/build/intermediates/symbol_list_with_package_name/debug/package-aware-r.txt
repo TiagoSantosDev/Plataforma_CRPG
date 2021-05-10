@@ -2681,6 +2681,7 @@ id background_image_peixe
 id background_image_vegetariano
 id barrier
 id barrier2
+id barrier3
 id barrier_size
 id baseline
 id beginning

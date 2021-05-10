@@ -27,6 +27,8 @@
         android:id="@+id/frame_meditation_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,9 +72,11 @@
         android:id="@+id/frame_meditation_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/frame_meditation_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/frame_meditation_bottom"
         app:layout_constraintTop_toBottomOf="@+id/frame_meditation_top">
 
         <com.google.android.material.button.MaterialButton
@@ -113,6 +117,8 @@
         android:id="@+id/frame_meditation_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,10 +163,17 @@
         android:id="@+id/iconEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierMargin="10dp"
         android:orientation="vertical"
         app:barrierDirection="end"
+        app:barrierMargin="10dp"
         app:constraint_referenced_ids="frame_meditation_center" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="como_gostaria_sentir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
