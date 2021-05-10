@@ -137,7 +137,7 @@
 
 
     <!-- Secção de acessibilidade -->
-    <string name="carregar_imagem">Carregar imagem</string>
+    <string name="carregar_imagem">CARREGAR IMAGEM</string>
     <string name="guardar_nota_de_texto">Guardar nota de texto</string>
     <string name="selecionar_mente_sa">Selecionar Mente Sã</string>
     <string name="selecionar_querido">Selecionar Querido</string>
