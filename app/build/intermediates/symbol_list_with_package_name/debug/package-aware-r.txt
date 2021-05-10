@@ -2747,6 +2747,7 @@ id card_bus_lines_spinner
 id card_bus_lines_spinner_2
 id card_center_icon
 id card_custom_transports_background_image
+id card_fixed_transports_background_image
 id card_transports
 id card_transports_CRPG_to_location
 id center
@@ -2913,6 +2914,8 @@ id floating
 id forever
 id fragment_container_view_tag
 id frame_botoes_criar_notas
+id frame_card_custom_transports_background_image
+id frame_card_fixed_transports_background_image
 id frame_card_info
 id frame_card_to_CRPG
 id frame_conteudo_nota
@@ -2942,8 +2945,6 @@ id frame_player_view
 id frame_public_transports_timetable
 id frame_titulo_nota
 id frame_titulo_nota_voz
-id frame_transportes_personalizados
-id frame_transportes_publicos
 id frame_transports_from_crpg
 id ghost_view
 id ghost_view_holder
@@ -2955,6 +2956,8 @@ id groups
 id guideline
 id header_title
 id hideable
+id hint_transportes_fixos
+id hint_transportes_publicos
 id home
 id homeAsUp
 id honorRequest
@@ -3237,7 +3240,6 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
-id subtext_transportes_personalizados
 id successLayout
 id success_text
 id surface_view
@@ -3278,6 +3280,7 @@ id text_attributes_heading
 id text_contacto_a
 id text_contacto_b
 id text_contacto_c
+id text_custom_transports_frame
 id text_driver
 id text_driver_CRPG_to_location
 id text_driver_name_CRPG_to_location
@@ -3310,7 +3313,6 @@ id text_motorista_2
 id text_motorista_3
 id text_motorista_a
 id text_motoristas
-id text_motoristas_2
 id text_opcao_carne
 id text_opcao_dieta
 id text_opcao_peixe
@@ -3335,6 +3337,7 @@ id text_to_from_2
 id text_to_from_3
 id text_to_from_4
 id text_transportes_personalizados
+id text_transportes_publicos
 id text_view_crop
 id text_view_rotate
 id text_view_scale
@@ -3722,6 +3725,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string clique_icone_lapis
+string clique_mais_info
 string clock_separator
 string color
 string com_sono

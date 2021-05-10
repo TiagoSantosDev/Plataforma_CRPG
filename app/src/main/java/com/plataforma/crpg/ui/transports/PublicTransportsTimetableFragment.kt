@@ -49,6 +49,14 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
+
+                val fragment: Fragment = TransportsSelectionFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+                fragmentManager.popBackStack()
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
