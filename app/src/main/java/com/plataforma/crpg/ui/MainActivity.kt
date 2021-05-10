@@ -12,13 +12,11 @@ import com.plataforma.crpg.R
 import java.util.*
 
 
-class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
-
-    lateinit var dLocale: Locale
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       //setContentViewWithoutInject(R.layout.activity_main)
+
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -36,16 +34,14 @@ class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        //println(">OnSupportNavigate called")
         val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp() /*|| super.onSupportNavigateUp()*/
+        return navController.navigateUp()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home ->{ onBackPressedDispatcher.onBackPressed()
-                //println(">Back button pressed")
-                onSupportNavigateUp()} // click on 'up' button in the action bar, handle it here
+                onSupportNavigateUp()}
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -53,6 +49,13 @@ class MainActivity : /*BaseActivity()*/ AppCompatActivity() {
 }
 
 
+//lateinit var dLocale: Locale
+//setContentViewWithoutInject(R.layout.activity_main)
+/*BaseActivity()*/
+//println(">OnSupportNavigate called")
+// click on 'up' button in the action bar, handle it here
+//println(">Back button pressed")
+/*|| super.onSupportNavigateUp()*/
 /*//supportActionBar?.setDisplayHomeAsUpEnabled(true)
     override fun onStart() {
         super.onStart()
