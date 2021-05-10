@@ -43,7 +43,7 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 // Handle the back button event
-                val fragment: Fragment = AgendaFragment()
+                val fragment: Fragment = TransportsSelectionFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)

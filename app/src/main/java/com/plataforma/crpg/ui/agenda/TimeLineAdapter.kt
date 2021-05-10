@@ -20,6 +20,7 @@ import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.*
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
+import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.item_timeline.view.*
 
 
@@ -152,7 +153,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                             .setNegativeButton("Fechar"){ dialog, which -> }.show()
                 }
                 EventType.TRANSPORTS -> {
-                    val fragment: Fragment = TransportsFragment()
+                    val fragment: Fragment = TransportsSelectionFragment()
                     val fragmentManager: FragmentManager = (ctx as AppCompatActivity).supportFragmentManager
                     val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
