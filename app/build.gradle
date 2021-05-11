@@ -80,6 +80,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.13.3'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.3'
+    implementation 'net.gotev:speech:1.6.2'
+
 
     implementation ('com.thebluealliance:spectrum:0.7.1') {
         exclude group: 'com.android.support'

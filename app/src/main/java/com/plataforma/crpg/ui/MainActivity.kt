@@ -1,15 +1,22 @@
 package com.plataforma.crpg.ui
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
-import java.util.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +38,57 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        Speech.init(this, packageName);
+
+        try {
+
+            val permission = ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.RECORD_AUDIO)
+
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+                Log.i("speech", "Permission to record denied")
+            }
+
+            // you must have android.permission.RECORD_AUDIO granted at this point
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
+                }
+
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    Log.i("speech", "result: $result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+            // You can prompt the user if he wants to install Google App to have
+            // speech recognition, and then you can simply call:
+            //
+            // SpeechUtil.redirectUserToGoogleAppOnPlayStore(this);
+            //
+            // to redirect the user to the Google App page on Play Store
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // prevent memory leaks when activity is destroyed
+        Speech.getInstance().shutdown()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -40,15 +98,40 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            android.R.id.home ->{ onBackPressedDispatcher.onBackPressed()
-                onSupportNavigateUp()}
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                onSupportNavigateUp()
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
 }
 
+/*
+     var dks = Dks(application, supportFragmentManager, object: DksListener {
+         fun onDksLiveSpeechResult(liveSpeechResult: String) {
+             Log.d("DKS", "Speech result - $liveSpeechResult")
+         }
 
+         fun onDksFinalSpeechResult(speechResult: String) {
+             Log.d("DKS", "Final speech result - $speechResult")
+         }
+
+         fun onDksLiveSpeechFrequency(frequency: Float) {
+             Log.d("DKS", "frequency - $frequency")
+         }
+
+         fun onDksLanguagesAvailable(defaultLanguage: String?, supportedLanguages: ArrayList<String>?) {
+             Log.d("DKS", "defaultLanguage - $defaultLanguage")
+             Log.d("DKS", "supportedLanguages - $supportedLanguages")
+         }
+
+         fun onDksSpeechError(errMsg: String) {
+             Log.d("DKS", "errMsg - $errMsg")
+         }
+     })
+     */
 //lateinit var dLocale: Locale
 //setContentViewWithoutInject(R.layout.activity_main)
 /*BaseActivity()*/
