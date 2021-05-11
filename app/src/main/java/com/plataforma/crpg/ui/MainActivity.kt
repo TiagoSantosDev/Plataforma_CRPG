@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,17 +14,22 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.ui.notes.REQUEST_RECORD_AUDIO_PERMISSION
+import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate
 import net.gotev.speech.SpeechRecognitionNotAvailable
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -35,10 +41,14 @@ class MainActivity : AppCompatActivity() {
                         R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        val myLocale = Locale("pt", "PT")
         Speech.init(this, packageName);
+        Speech.getInstance().setLocale(myLocale)
+        //Speech.getInstance().setVoice(voice)
 
         try {
 
@@ -64,11 +74,14 @@ class MainActivity : AppCompatActivity() {
                     for (res in results) {
                         str.append(res).append(" ")
                     }
+                    //performActionWithVoiceCommand(str.toString())
                     Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
                 }
 
                 override fun onSpeechResult(result: String) {
                     Log.i("speech", "result: $result")
+                    //Speech.getInstance().shutdown()
+                    performActionWithVoiceCommand(result)
                 }
             })
         } catch (exc: SpeechRecognitionNotAvailable) {
@@ -82,9 +95,13 @@ class MainActivity : AppCompatActivity() {
         } catch (exc: GoogleVoiceTypingDisabledException) {
             Log.e("speech", "Google voice typing must be enabled!")
         }
-
     }
 
+    override fun onResume() {
+        super.onResume()
+
+
+    }
     override fun onDestroy() {
         super.onDestroy()
         // prevent memory leaks when activity is destroyed
@@ -104,6 +121,15 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun performActionWithVoiceCommand(command: String){
+        if (command.contains("Navegar Meditação")){
+            println("Comando de navegar meditacao reconhecido")
+            nav_view.selectedItemId = R.id.navigation_meditation;
+        }
+        else if(command.contains("Navegar Notas")) nav_view.selectedItemId = R.id.navigation_notes
+        else if(command.contains("Navegar Lembretes")) nav_view.selectedItemId = R.id.navigation_reminders
     }
 
 }

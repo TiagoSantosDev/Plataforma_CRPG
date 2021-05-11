@@ -15,7 +15,7 @@ import androidx.core.app.ActivityCompat
 import java.io.IOException
 
 private const val LOG_TAG = "AudioRecordTest"
-private const val REQUEST_RECORD_AUDIO_PERMISSION = 200
+const val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
 class AudioRecordTest : AppCompatActivity() {
 
