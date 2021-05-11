@@ -1,35 +1,38 @@
 package com.plataforma.crpg.ui
 
 import android.Manifest
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
+import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
-import com.plataforma.crpg.ui.notes.REQUEST_RECORD_AUDIO_PERMISSION
-import kotlinx.android.synthetic.main.activity_main.*
-import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Logger
 import net.gotev.speech.Speech
-import net.gotev.speech.SpeechDelegate
-import net.gotev.speech.SpeechRecognitionNotAvailable
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val LOG_TAG = MainActivity::class.java.simpleName
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
+    val myLocale = Locale("pt", "PT")
+
+    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
+        when (status) {
+            TextToSpeech.SUCCESS -> Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
+            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
+            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
+        //ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -45,20 +48,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val myLocale = Locale("pt", "PT")
-        Speech.init(this, packageName);
-        Speech.getInstance().setLocale(myLocale)
-        //Speech.getInstance().setVoice(voice)
+        //Speech.init(this, packageName, mTttsInitListener);
+        Speech.init(this, packageName)
+        println("Current language: " + Speech.getInstance().speechToTextLanguage)
+        println("Suported languages: " + Speech.getInstance().supportedTextToSpeechVoices.toString())
+        shoutDatePickerHint()
 
+        /*
         try {
-
-            val permission = ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.RECORD_AUDIO)
-
-            if (permission != PackageManager.PERMISSION_GRANTED) {
-                Log.i("speech", "Permission to record denied")
-            }
-
             // you must have android.permission.RECORD_AUDIO granted at this point
             Speech.getInstance().startListening(object : SpeechDelegate {
                 override fun onStartOfSpeech() {
@@ -74,14 +71,11 @@ class MainActivity : AppCompatActivity() {
                     for (res in results) {
                         str.append(res).append(" ")
                     }
-                    //performActionWithVoiceCommand(str.toString())
                     Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
                 }
 
                 override fun onSpeechResult(result: String) {
                     Log.i("speech", "result: $result")
-                    //Speech.getInstance().shutdown()
-                    performActionWithVoiceCommand(result)
                 }
             })
         } catch (exc: SpeechRecognitionNotAvailable) {
@@ -94,14 +88,11 @@ class MainActivity : AppCompatActivity() {
             // to redirect the user to the Google App page on Play Store
         } catch (exc: GoogleVoiceTypingDisabledException) {
             Log.e("speech", "Google voice typing must be enabled!")
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
+        }*/
 
 
     }
+
     override fun onDestroy() {
         super.onDestroy()
         // prevent memory leaks when activity is destroyed
@@ -123,6 +114,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun shoutDatePickerHint() {
+        Speech.getInstance().say("Selecione um dia para ver os seus eventos");
+    }
+
+    /*
     fun performActionWithVoiceCommand(command: String){
         if (command.contains("Navegar Meditação")){
             println("Comando de navegar meditacao reconhecido")
@@ -131,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         else if(command.contains("Navegar Notas")) nav_view.selectedItemId = R.id.navigation_notes
         else if(command.contains("Navegar Lembretes")) nav_view.selectedItemId = R.id.navigation_reminders
     }
-
+    */
 }
 
 /*
@@ -244,3 +240,4 @@ override fun onSupportNavigateUp(): Boolean {
         val configuration = Configuration()
         configuration.setLocale(dLocale)
         this.applyOverrideConfiguration(configuration)*/
+//Speech.getInstance().setLocale(myLocale)
