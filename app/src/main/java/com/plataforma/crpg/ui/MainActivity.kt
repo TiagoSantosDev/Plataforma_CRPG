@@ -3,6 +3,7 @@ package com.plataforma.crpg.ui
 import android.Manifest
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -11,8 +12,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
-import net.gotev.speech.Logger
-import net.gotev.speech.Speech
+import kotlinx.android.synthetic.main.activity_main.*
+import net.gotev.speech.*
 import java.util.*
 
 
@@ -49,12 +50,14 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         //Speech.init(this, packageName, mTttsInitListener);
-        Speech.init(this, packageName)
+        Speech.init(applicationContext)
         println("Current language: " + Speech.getInstance().speechToTextLanguage)
-        println("Suported languages: " + Speech.getInstance().supportedTextToSpeechVoices.toString())
-        shoutDatePickerHint()
+        //println("Suported languages: " + Speech.getInstance().supportedTextToSpeechVoices.size)
+        Speech.getInstance().say("Selecione um dia para ver os seus eventos")
 
-        /*
+    // shoutDatePickerHint()
+
+
         try {
             // you must have android.permission.RECORD_AUDIO granted at this point
             Speech.getInstance().startListening(object : SpeechDelegate {
@@ -75,7 +78,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onSpeechResult(result: String) {
+                    performActionWithVoiceCommand(result)
                     Log.i("speech", "result: $result")
+                    //println("on Speech Result")
                 }
             })
         } catch (exc: SpeechRecognitionNotAvailable) {
@@ -88,10 +93,11 @@ class MainActivity : AppCompatActivity() {
             // to redirect the user to the Google App page on Play Store
         } catch (exc: GoogleVoiceTypingDisabledException) {
             Log.e("speech", "Google voice typing must be enabled!")
-        }*/
+        }
 
 
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -118,16 +124,15 @@ class MainActivity : AppCompatActivity() {
         Speech.getInstance().say("Selecione um dia para ver os seus eventos");
     }
 
-    /*
     fun performActionWithVoiceCommand(command: String){
-        if (command.contains("Navegar Meditação")){
-            println("Comando de navegar meditacao reconhecido")
-            nav_view.selectedItemId = R.id.navigation_meditation;
+        if (command.contains("Navegar Meditação", true)){
+                println("Comando de navegar meditacao reconhecido")
+                nav_view.selectedItemId = R.id.navigation_meditation;
         }
-        else if(command.contains("Navegar Notas")) nav_view.selectedItemId = R.id.navigation_notes
-        else if(command.contains("Navegar Lembretes")) nav_view.selectedItemId = R.id.navigation_reminders
+        else if(command.contains("Navegar Notas", true)) nav_view.selectedItemId = R.id.navigation_notes
+        else if(command.contains("Navegar Lembretes", true)) nav_view.selectedItemId = R.id.navigation_reminders
     }
-    */
+
 }
 
 /*
