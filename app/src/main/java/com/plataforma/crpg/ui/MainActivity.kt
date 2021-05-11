@@ -125,12 +125,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun performActionWithVoiceCommand(command: String){
-        if (command.contains("Navegar Meditação", true)){
-                println("Comando de navegar meditacao reconhecido")
-                nav_view.selectedItemId = R.id.navigation_meditation;
+        when {
+            command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation;
+            command.contains("Navegar Notas", true) -> nav_view.selectedItemId = R.id.navigation_notes
+            command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
         }
-        else if(command.contains("Navegar Notas", true)) nav_view.selectedItemId = R.id.navigation_notes
-        else if(command.contains("Navegar Lembretes", true)) nav_view.selectedItemId = R.id.navigation_reminders
     }
 
 }

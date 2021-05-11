@@ -2,6 +2,7 @@ package com.plataforma.crpg.ui.meals
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +18,13 @@ import com.plataforma.crpg.databinding.MealsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 
 
 class MealsFragment : Fragment() {
@@ -156,6 +162,100 @@ class MealsFragment : Fragment() {
             } else {
                 nothingCheckedWarning?.visibility = View.VISIBLE
             }
+        }
+
+        fun selectMeatOption(){
+            if (cardCarne != null) {
+                if (!cardCarne.isChecked) {
+                    mealsViewModel.selectedOption = 1
+                } else {
+                    mealsViewModel.selectedOption = 0
+                }
+            }
+            cardCarne?.isChecked = !cardCarne?.isChecked!!
+            cardPeixe?.isChecked = false
+            cardDieta?.isChecked = false
+            cardVeg?.isChecked = false
+            flagMealChosen = !flagMealChosen
+        }
+
+        fun selectFishOption(){
+            if (!cardPeixe!!.isChecked) {
+                mealsViewModel.selectedOption = 2
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
+            cardPeixe.isChecked = !cardPeixe.isChecked
+            cardCarne?.isChecked = false
+            cardDieta?.isChecked = false
+            cardVeg?.isChecked = false
+            flagMealChosen = !flagMealChosen
+        }
+
+        fun selectDietOption(){
+            if (!cardDieta!!.isChecked) {
+                mealsViewModel.selectedOption = 3
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
+            cardDieta.isChecked = !cardDieta.isChecked
+            cardCarne?.isChecked = false
+            cardPeixe?.isChecked = false
+            cardVeg?.isChecked = false
+            flagMealChosen = !flagMealChosen
+        }
+
+        fun selectVegOption(){
+            if (!cardVeg?.isChecked!!) {
+                mealsViewModel.selectedOption = 4
+            } else {
+                mealsViewModel.selectedOption = 0
+            }
+            cardVeg.isChecked = !cardVeg.isChecked
+            cardCarne?.isChecked = false
+            cardPeixe?.isChecked = false
+            cardDieta?.isChecked = false
+            flagMealChosen = !flagMealChosen
+        }
+
+
+        fun performActionWithVoiceCommand(command: String){
+            when {
+                command.contains("Carne", true) -> selectMeatOption()
+                command.contains("Peixe", true) -> selectFishOption()
+                command.contains("Dieta", true) -> selectDietOption()
+                command.contains("Vegetariano", true) -> selectVegOption()
+            }
+        }
+
+        Speech.init(context)
+        println("Current language: " + Speech.getInstance().speechToTextLanguage)
+
+        try {
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
+                }
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    performActionWithVoiceCommand(result)
+                    Log.i("speech", "result: $result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
         }
 
     }
