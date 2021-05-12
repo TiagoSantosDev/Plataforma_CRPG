@@ -95,7 +95,6 @@ class MainActivity : AppCompatActivity() {
             Log.e("speech", "Google voice typing must be enabled!")
         }
 
-
     }
 
 

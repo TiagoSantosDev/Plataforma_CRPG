@@ -2,6 +2,7 @@ package com.plataforma.crpg.ui.agenda
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,10 @@ import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 
 
 /**
@@ -139,12 +144,15 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             }
         }
 
+        var id: String
+        var tipo: EventType
 
         //onClick on a card open pop up or go to Meal or Transport Fragment
         holder.itemView.card.setOnClickListener {
-            val id: String = mFeedList[position].title
-            val tipo: EventType = mFeedList[position].type
-
+            //val id: String = mFeedList[position].title
+            //val tipo: EventType = mFeedList[position].type
+            id=mFeedList[position].title
+            tipo= mFeedList[position].type
 
             when(tipo){
                 EventType.ACTIVITY -> {
@@ -188,19 +196,49 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             }
 
-            fun performActionWithVoiceCommand(command: String) {
-                when {
-                    command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
-                    command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
-                    command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
-                }
-            }
-
         }
 
 
+        fun performActionWithVoiceCommand(command: String) {
+            when {
+                command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
+                command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
+                command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
+            }
+        }
 
+        Speech.init(ctx)
 
+        try {
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
+                }
+
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    performActionWithVoiceCommand(result)
+                    Log.i("speech", "result: $result")
+                    //println("on Speech Result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
+        }
 
     }
 
