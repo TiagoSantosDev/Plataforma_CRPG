@@ -20,7 +20,7 @@ import java.util.*
 class ReminderViewModel(application: Application) : AndroidViewModel(application) {
 
     @SuppressLint("StaticFieldLeak")
-    val context = application.applicationContext
+    val context = application.applicationContext!!
     // a lista de Reminders contem todos os reminders criados pelo utilizador que ainda vao acontecer no futuro
     private var mReminderList = ArrayList<Reminder>()
     //for each day of the week, a boolean indicates if the alarm is set for that day

@@ -92,9 +92,9 @@ class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(note: Note) {
         mTitleView?.text = note.titulo
         mYearView?.text = note.info
-        if (!note.imagePath.isNullOrBlank()){
+        if (!note.imagePath.isBlank()){
             mImageView?.setImageURI(note.imagePath.toUri())
-        }else if(note.imagePath.isNullOrBlank() && note.tipo == NoteType.TEXT){
+        }else if(note.imagePath.isBlank() && note.tipo == NoteType.TEXT){
             mImageView?.setImageResource(R.drawable.outline_create_black_24dp)
         }else{
             mImageView?.setImageResource(R.drawable.outline_record_voice_over_black_24dp)

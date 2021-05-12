@@ -18,7 +18,7 @@
       android:layout_gravity="center_vertical"
       android:scaleType="fitXY"
       android:src="@drawable/medicacao"
-      android:contentDescription="Lembrete" />
+      android:contentDescription="@string/lembrete" />
 
   <TextView
     android:layout_width="wrap_content"
