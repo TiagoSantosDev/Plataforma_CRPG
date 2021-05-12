@@ -20,6 +20,8 @@ import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
+import kotlinx.android.synthetic.main.new_voice_note_fragment.*
+import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
 import kotlin.properties.Delegates
@@ -143,6 +145,15 @@ class NewTextNoteFragment : Fragment() {
     fun showBackButton() {
         if (activity is MainActivity) {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Carregar imagem", true) -> button_get_image_from_gallery.performClick()
+            command.contains("Guardar nota", true) -> button_save_text_note.performClick()
+            command.contains("Adicionar título", true) -> titulo_edit_text.requestFocus()
+            command.contains("Adicionar conteúdo", true) -> conteudo_nota.requestFocus()
         }
     }
 

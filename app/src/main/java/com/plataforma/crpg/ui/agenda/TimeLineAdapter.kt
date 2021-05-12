@@ -198,7 +198,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         }
 
-
+/*
         fun performActionWithVoiceCommand(command: String) {
             when {
                 command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
@@ -206,6 +206,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
             }
         }
+
+        */
+
 
         Speech.init(ctx)
 
@@ -228,7 +231,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 }
 
                 override fun onSpeechResult(result: String) {
-                    performActionWithVoiceCommand(result)
+                    //performActionWithVoiceCommand(result)
                     Log.i("speech", "result: $result")
                     //println("on Speech Result")
                 }

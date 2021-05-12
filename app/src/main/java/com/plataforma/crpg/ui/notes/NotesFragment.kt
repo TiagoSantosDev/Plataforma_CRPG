@@ -16,6 +16,7 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 import java.util.ArrayList
 
@@ -97,6 +98,13 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
+    }
+
+    fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Nota Texto", true) -> button_new_text_note.performClick()
+            command.contains("Nota Voz", true) -> button_new_voice_note.performClick()
+        }
     }
 
 }
