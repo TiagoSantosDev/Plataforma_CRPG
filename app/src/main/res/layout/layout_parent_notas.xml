@@ -29,6 +29,7 @@
       android:text="@string/notas"
       android:textSize="25sp"
       android:textColor="@color/greyText"
-      android:textStyle="bold" />
+      android:textStyle="bold"
+      android:labelFor="@id/editTextNotes"/>
 
 </LinearLayout>

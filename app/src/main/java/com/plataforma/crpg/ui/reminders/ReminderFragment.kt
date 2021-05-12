@@ -23,6 +23,7 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class ReminderFragment : Fragment() {
@@ -193,7 +194,7 @@ class ReminderFragment : Fragment() {
                 cbVib.visibility = View.INVISIBLE
                 cbAmbos.visibility = View.INVISIBLE
 
-                expandableNotas.secondLayout.findViewById<EditText>(R.id.editTextTextPersonName).setText("")
+                expandableNotas.secondLayout.findViewById<EditText>(R.id.editTextNotes).setText("")
             }
 
             //------------------------- CONFIRMAR -------------------------------------------------
@@ -292,7 +293,23 @@ class ReminderFragment : Fragment() {
                     avisoCampos.visibility = View.VISIBLE
                 }
             }
+
+
+
+            fun performActionWithVoiceCommand(command: String){
+                when {
+                    command.contains("Abrir secção lembrete", true) -> expandableLembrar.parentLayout.performClick()
+                    command.contains("Abrir secção horas", true) -> expandableHoras.parentLayout.performClick()
+                    command.contains("Abrir secção dia", true) -> expandableDia.parentLayout.performClick()
+                    command.contains("Abrir secção alerta", true) -> expandableAlerta.parentLayout.performClick()
+                    command.contains("Abrir secção notas", true) -> expandableNotas.parentLayout.performClick()
+                }
+            }
+
         }
+
+
+
         return view
     }
 
@@ -304,6 +321,8 @@ class ReminderFragment : Fragment() {
         //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
+
 
 }
 

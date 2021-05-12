@@ -180,6 +180,10 @@
     <string name="opcao_som_vibracao_selecionada">Opção som e vibração selecionada</string>
     <string name="clique_mais_info">CLIQUE PARA MAIS INFORMAÇÕES</string>
     <string name="carrinhas_do_crpg">CARRINHAS DO CRPG</string>
+    <string name="lembrete">Lembrete</string>
+    <string name="relogio">Relógio</string>
+    <string name="telemovel">Telemóvel</string>
+    <string name="agenda">Agenda</string>
 
 
     <string-array name="line_type">

@@ -122,13 +122,13 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 holder.itemView.card_center_icon.setBackgroundResource(R.drawable.meal_icon)
 
                 when (timeLineModel.title) {
-                    "ALMOÇO" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
+                    "ALMOÇO" -> if (timeLineModel.chosen_meal.isBlank()) {
                         holder.itemView.text_timeline_info.text = "CLIQUE AQUI PARA SELECIONAR ALMOÇO"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
                     }
 
-                    "JANTAR" -> if (timeLineModel.chosen_meal.isNullOrBlank()) {
+                    "JANTAR" -> if (timeLineModel.chosen_meal.isBlank()) {
                         holder.itemView.text_timeline_info.text = "CLIQUE AQUI PARA SELECIONAR JANTAR"
                     } else {
                         holder.itemView.text_timeline_info.text = timeLineModel.chosen_meal
