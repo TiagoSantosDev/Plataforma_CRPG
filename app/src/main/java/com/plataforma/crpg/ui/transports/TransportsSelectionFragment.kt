@@ -15,6 +15,7 @@ import com.plataforma.crpg.databinding.FragmentTransportSelectionBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_transport_selection.*
 
 
@@ -89,6 +90,14 @@ class TransportsSelectionFragment : Fragment() {
             fragmentManager.popBackStack()
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
+        }
+
+        fun performActionWithVoiceCommand(command: String){
+            when {
+                command.contains("Camioneta", true) -> botao_escolha_transportes_fixos.performClick()
+                command.contains("Navegar Notas", true) -> botao_escolha_transportes_personalizados.performClick()
+                command.contains("Transportes Públicos", true) -> botao_escolha_transportes_publicos.performClick()
+            }
         }
 
     }
