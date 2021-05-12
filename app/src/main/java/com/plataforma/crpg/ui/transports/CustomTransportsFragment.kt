@@ -42,7 +42,7 @@ class CustomTransportsFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
-        //return inflater.inflate(R.layout.fragment_custom_transport, container, false)
+
         return view
     }
 
@@ -80,7 +80,7 @@ class CustomTransportsFragment : Fragment() {
     }
 }
 
-
+//return inflater.inflate(R.layout.fragment_custom_transport, container, false)
 // Handle the back button event
 //println(">HandleonBackButtonPressed")
 // println("Custom text: $customText")

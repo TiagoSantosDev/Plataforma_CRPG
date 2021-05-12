@@ -164,67 +164,20 @@ class MealsFragment : Fragment() {
             }
         }
 
-        fun selectMeatOption(){
-            if (cardCarne != null) {
-                if (!cardCarne.isChecked) {
-                    mealsViewModel.selectedOption = 1
-                } else {
-                    mealsViewModel.selectedOption = 0
-                }
-            }
-            cardCarne?.isChecked = !cardCarne?.isChecked!!
-            cardPeixe?.isChecked = false
-            cardDieta?.isChecked = false
-            cardVeg?.isChecked = false
-            flagMealChosen = !flagMealChosen
-        }
-
-        fun selectFishOption(){
-            if (!cardPeixe!!.isChecked) {
-                mealsViewModel.selectedOption = 2
-            } else {
-                mealsViewModel.selectedOption = 0
-            }
-            cardPeixe.isChecked = !cardPeixe.isChecked
-            cardCarne?.isChecked = false
-            cardDieta?.isChecked = false
-            cardVeg?.isChecked = false
-            flagMealChosen = !flagMealChosen
-        }
-
-        fun selectDietOption(){
-            if (!cardDieta!!.isChecked) {
-                mealsViewModel.selectedOption = 3
-            } else {
-                mealsViewModel.selectedOption = 0
-            }
-            cardDieta.isChecked = !cardDieta.isChecked
-            cardCarne?.isChecked = false
-            cardPeixe?.isChecked = false
-            cardVeg?.isChecked = false
-            flagMealChosen = !flagMealChosen
-        }
-
-        fun selectVegOption(){
-            if (!cardVeg?.isChecked!!) {
-                mealsViewModel.selectedOption = 4
-            } else {
-                mealsViewModel.selectedOption = 0
-            }
-            cardVeg.isChecked = !cardVeg.isChecked
-            cardCarne?.isChecked = false
-            cardPeixe?.isChecked = false
-            cardDieta?.isChecked = false
-            flagMealChosen = !flagMealChosen
-        }
-
-
         fun performActionWithVoiceCommand(command: String){
             when {
-                command.contains("Carne", true) -> selectMeatOption()
-                command.contains("Peixe", true) -> selectFishOption()
-                command.contains("Dieta", true) -> selectDietOption()
-                command.contains("Vegetariano", true) -> selectVegOption()
+                command.contains("Carne", true)
+                        || (command.contains("Prato", true)
+                        && (command.contains("Carne", true))) -> cardCarne?.performClick()
+                command.contains("Peixe", true)
+                        || (command.contains("Prato", true)
+                        && (command.contains("Peixe", true))) -> cardPeixe?.performClick()
+                command.contains("Dieta", true)
+                        || (command.contains("Prato", true)
+                        && (command.contains("Dieta", true)))-> cardDieta?.performClick()
+                command.contains("Vegetariana", true) || command.contains("Vegetariano", true)
+                        || (command.contains("Prato", true)
+                        && (command.contains("Vegetariano", true))) -> cardVeg?.performClick()
             }
         }
 
@@ -327,4 +280,57 @@ class MealsFragment : Fragment() {
 //
 //       view.findViewById<AppCompatTextView>(R.id.text_opcao_peixe)?.text = mealsViewModel.retrievedMeal.peixe
 //       view.findViewById<AppCompatTextView>(R.id.text_opcao_dieta)?.text = mealsViewModel.retrievedMeal.dieta
-//       view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano
+//       view.findViewById<AppCompatTextView>(R.id.text_opcao_vegetariano)?.text = mealsViewModel.retrievedMeal.vegetariano        fun selectMeatOption(){
+//
+//            if (cardCarne != null) {
+//                if (!cardCarne.isChecked) {
+//                    mealsViewModel.selectedOption = 1
+//                } else {
+//                    mealsViewModel.selectedOption = 0
+//                }
+//            }
+//            cardCarne?.isChecked = !cardCarne?.isChecked!!
+//            cardPeixe?.isChecked = false
+//            cardDieta?.isChecked = false
+//            cardVeg?.isChecked = false
+//            flagMealChosen = !flagMealChosen
+//        }
+//
+//        fun selectFishOption(){
+//            if (!cardPeixe!!.isChecked) {
+//                mealsViewModel.selectedOption = 2
+//            } else {
+//                mealsViewModel.selectedOption = 0
+//            }
+//            cardPeixe.isChecked = !cardPeixe.isChecked
+//            cardCarne?.isChecked = false
+//            cardDieta?.isChecked = false
+//            cardVeg?.isChecked = false
+//            flagMealChosen = !flagMealChosen
+//        }
+//
+//        fun selectDietOption(){
+//            if (!cardDieta!!.isChecked) {
+//                mealsViewModel.selectedOption = 3
+//            } else {
+//                mealsViewModel.selectedOption = 0
+//            }
+//            cardDieta.isChecked = !cardDieta.isChecked
+//            cardCarne?.isChecked = false
+//            cardPeixe?.isChecked = false
+//            cardVeg?.isChecked = false
+//            flagMealChosen = !flagMealChosen
+//        }
+//
+//        fun selectVegOption(){
+//            if (!cardVeg?.isChecked!!) {
+//                mealsViewModel.selectedOption = 4
+//            } else {
+//                mealsViewModel.selectedOption = 0
+//            }
+//            cardVeg.isChecked = !cardVeg.isChecked
+//            cardCarne?.isChecked = false
+//            cardPeixe?.isChecked = false
+//            cardDieta?.isChecked = false
+//            flagMealChosen = !flagMealChosen
+//        }

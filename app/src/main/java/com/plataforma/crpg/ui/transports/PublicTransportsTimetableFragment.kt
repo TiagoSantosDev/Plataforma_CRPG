@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.transports
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.*
@@ -22,6 +23,11 @@ import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_tr
 import kotlinx.android.synthetic.main.timetable_layout.*
 import com.plataforma.crpg.databinding.FragmentPublicTransportsTimetablesBinding
 import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
+import kotlinx.android.synthetic.main.fragment_transport_selection.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 
 
 class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -38,7 +44,6 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         private const val miramarString = "Miramar"
         private const val joaoDeDeusString = "João de Deus"
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,13 +106,11 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         //val binding = FragmentPublicTransportsTimetablesBinding.inflate(layoutInflater)
         val photoView = photo_view as PhotoView
 
-        fun imageViewerController(){
-            println(">Entrou no controller")
+        fun imageViewerController() {
             view?.findViewById<View>(R.id.photo_view_hint)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.photo_view)?.visibility = VISIBLE
             view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = INVISIBLE
             view?.findViewById<View>(R.id.photo_view)?.setOnClickListener {
-                println("> Onclick photo view")
                 view?.findViewById<View>(R.id.photo_view)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
@@ -150,21 +153,56 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-    }
-/*
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                PublicTransportsTimetableFragment().apply {
+
+        fun performActionWithVoiceCommand(command: String){
+            when {
+                command.contains("Linha 901", true) -> bus_lines_spinner_2.setSelection(0)
+                command.contains("Linha ZF", true) -> bus_lines_spinner_2.setSelection(1)
+                command.contains("Linha 35", true) -> bus_lines_spinner_2.setSelection(2)
+                command.contains("Linha 45", true) -> bus_lines_spinner_2.setSelection(3)
+                command.contains("Ver horário de ida", true) -> button_view_timetable_1.performClick()
+                command.contains("Ver horário de chegada", true) -> button_view_timetable_2.performClick()
+                command.contains("Regressar", true) -> button_return_transports.performClick()
+            }
+        }
+
+        Speech.init(context)
+
+        try {
+            // you must have android.permission.RECORD_AUDIO granted at this point
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
                 }
+
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    performActionWithVoiceCommand(result)
+                    Log.i("speech", "result: $result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
+        }
     }
-*/
+
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-
-
-
-        println("Item clicked: $p2")
+        //println("Item clicked: $p2")
         when(p2){
             0 -> {
                 text_to_from_1.text = trindadeString
@@ -210,7 +248,14 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 }
 
 
-
+/*
+    companion object {
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+                PublicTransportsTimetableFragment().apply {
+                }
+    }
+*/
 //val photoView = view?.findViewById(R.id.photo_view) as PhotoView
 //textFromBusLines!!.text = "De Casa para o CRPG"
 //val selItem: String = p0?.getItemAtPosition(p2).toString()
