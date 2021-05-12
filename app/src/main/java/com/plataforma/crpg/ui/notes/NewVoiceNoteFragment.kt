@@ -40,7 +40,9 @@ import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
+import kotlinx.android.synthetic.main.new_text_note_fragment.*
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
+import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
 
 
@@ -235,6 +237,14 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
+    }
+
+    fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Carregar imagem", true) -> button_new_voice_note_image.performClick()
+            command.contains("Guardar nota", true) -> button_save_voice_note.performClick()
+            command.contains("Adicionar título", true) -> voice_note_title_edit.requestFocus()
+        }
     }
 
 }
