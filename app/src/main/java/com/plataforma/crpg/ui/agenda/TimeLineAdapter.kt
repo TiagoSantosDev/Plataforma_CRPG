@@ -21,6 +21,7 @@ import com.plataforma.crpg.model.*
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
+import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
 
 
@@ -168,7 +169,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                         "ALMOÇO" -> {
                             println(">title is lunch")
                             bundle.putBoolean("isLunch", true)
-
                         }
                         "JANTAR" -> {
                             println(">title is dinner")
@@ -187,7 +187,19 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
                 }
 
             }
+
+            fun performActionWithVoiceCommand(command: String) {
+                when {
+                    command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
+                    command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
+                    command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
+                }
+            }
+
         }
+
+
+
 
 
     }
