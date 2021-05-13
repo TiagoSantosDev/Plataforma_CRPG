@@ -38,20 +38,10 @@ class MainActivityTest {
 
     @Test
     fun testBottomNavBar() {
-        //var navView: BottomNavigationView = mainActivity!!.findViewById(R.id.nav_view)
-        //assertNotNull(navView);
     }
 
     @Test
     fun onDestroy() {
-    }
-
-    @Test
-    fun onSupportNavigateUp() {
-    }
-
-    @Test
-    fun onOptionsItemSelected() {
     }
 
     @Test

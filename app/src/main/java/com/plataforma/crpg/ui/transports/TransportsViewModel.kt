@@ -18,7 +18,6 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
 
     fun extractDataFromTransportModel(): ArrayList<String> {
-
         return ArrayList()
     }
 
