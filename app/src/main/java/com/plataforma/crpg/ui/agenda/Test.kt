@@ -8,7 +8,7 @@ import com.plataforma.crpg.model.Meal
 import com.plataforma.crpg.model.Tutorial
 import java.io.File
 import java.io.FileReader
-import java.util.ArrayList
+import java.util.*
 
 @SuppressLint("StaticFieldLeak")
 class Test(application: Application) : AndroidViewModel(application) {

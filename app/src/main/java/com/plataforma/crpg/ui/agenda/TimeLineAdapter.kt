@@ -20,9 +20,7 @@ import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.*
 import com.plataforma.crpg.ui.meals.MealsFragment
-import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
-import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech

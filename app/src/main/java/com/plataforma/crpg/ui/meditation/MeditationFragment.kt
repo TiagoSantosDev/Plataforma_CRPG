@@ -13,9 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationBinding
 import com.plataforma.crpg.ui.MainActivity
-import kotlinx.android.synthetic.main.custom_player_control_view.*
 import kotlinx.android.synthetic.main.fragment_meditation.*
-import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate

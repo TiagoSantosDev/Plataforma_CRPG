@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -17,7 +20,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
-import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.transports_fragment.*
 

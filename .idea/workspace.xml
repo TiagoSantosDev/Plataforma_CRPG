@@ -47,30 +47,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/MainActivityTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/agenda/DatePickerFragmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/meditation/MeditationFragmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/notes/NotesFragmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/reminders/ReminderFragmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui/transports/TransportsSelectionFragmentTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/agenda/AgendaViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/transports/TransportsViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/sample/ExampleUnitTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Plataforma_CRPG.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debug/out/com.plataforma.crpg-binding_classes.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debug/out/com.plataforma.crpg-binding_classes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/example/ViewExtentionsKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plataforma/crpg/example/ViewExtentionsKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ViewExtentionsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plataforma/crpg/example/ViewExtentionsKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/example/ViewExtentions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/example/ViewExtentions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/Test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/TimeLineAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NoteListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NoteListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewTextNoteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewTextNoteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewVoiceNoteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewVoiceNoteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_alerta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_alerta.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_dia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_dia.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_horas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_horas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_lembrar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_lembrar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_notas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_parent_notas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_horas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_horas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_lembrar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_lembrar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_notas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_second_notas.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/new_text_note_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/new_text_note_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/new_voice_note_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/new_voice_note_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsSelectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsSelectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +129,8 @@
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
+        <option value="JUnit3 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -154,7 +183,11 @@
     <property name="android-custom-viewC:/Users/ltiag/Desktop/Timeline_V2/Plataforma_CRPG/timelineview/src/main/java/com/plataforma/crpg/TimelineView.java_SELECTED" value="TimelineView" />
     <property name="android.recentlyUsedThemes" value="Base.Theme.AppCompat" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/test" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/widget/Toolbar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.13.3/f623c7ae5c7f940bf69c089e733c66fb52f3c1da/exoplayer-ui-2.13.3-sources.jar!/com/google/android/exoplayer2/ui/PlayerControlView.java_selected" value="Custom views" />
@@ -181,15 +214,17 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.-336156041">
-      <recent name="com.plataforma.crpg.ui.notes" />
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.plataforma.crpg.ui.meals" />
+      <recent name="com.plataforma.crpg.ui.agenda" />
+      <recent name="com.plataforma.crpg.ui" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\raw" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\res\layout" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\agenda" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
-      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.plataforma.crpg.ui.agenda" />
+      <recent name="com.plataforma.crpg.ui.transports" />
+      <recent name="com.plataforma.crpg.ui.notes" />
+      <recent name="com.plataforma.crpg.ui.reminders" />
+      <recent name="com.plataforma.crpg.ui" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.plataforma.crpg.ui.transports" />
@@ -198,20 +233,29 @@
       <recent name="com.plataforma.crpg.ui.meditation" />
       <recent name="com.plataforma.crpg.ui.notes" />
     </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.plataforma.crpg.ui.meals" />
-      <recent name="com.plataforma.crpg.ui.agenda" />
-      <recent name="com.plataforma.crpg.ui" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\raw" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\res\layout" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline_Fragments\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\agenda" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\font" />
+      <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\test\" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\res\drawable" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\res\layout" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\res\layout" />
       <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\ui\notes" />
-      <recent name="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app\src\main\java\com\plataforma\crpg\model" />
+    </key>
+    <key name="android.template.-336156041">
+      <recent name="com.plataforma.crpg.ui.notes" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android Instrumented Tests.MainActivityTest">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -276,6 +320,62 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainActivityTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Plataforma_CRPG.app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.plataforma.crpg.ui.MainActivityTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android Instrumented Tests.MainActivityTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -363,6 +463,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="358" y="72" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1617809902955" />
+    <state x="351" y="0" key="#testOnResume()" timestamp="1620913581104">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="351" y="0" key="#testOnResume()/0.0.1280.680@0.0.1280.680" timestamp="1620913581104" />
     <state x="393" y="230" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1620836669141">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -396,26 +500,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1620311462655" />
-    <state width="1236" height="142" key="GridCell.Tab.0.bottom" timestamp="1620835887048">
+    <state width="1236" height="180" key="GridCell.Tab.0.bottom" timestamp="1620916108610">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="142" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620835887048" />
-    <state width="1236" height="142" key="GridCell.Tab.0.center" timestamp="1620835887048">
+    <state width="1236" height="180" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620916108610" />
+    <state width="1236" height="180" key="GridCell.Tab.0.center" timestamp="1620916108609">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="142" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620835887048" />
-    <state width="1236" height="142" key="GridCell.Tab.0.left" timestamp="1620835887040">
+    <state width="1236" height="180" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620916108609" />
+    <state width="1236" height="180" key="GridCell.Tab.0.left" timestamp="1620916108609">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="142" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620835887040" />
-    <state width="1236" height="142" key="GridCell.Tab.0.right" timestamp="1620835887048">
+    <state width="1236" height="180" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620916108609" />
+    <state width="1236" height="180" key="GridCell.Tab.0.right" timestamp="1620916108610">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="142" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620835887048" />
+    <state width="1236" height="180" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620916108610" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1620036911795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -444,10 +548,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="498" height="457" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1615909501980" />
-    <state x="452" y="119" key="chooseDestDirectoryDialog" timestamp="1615995687933">
+    <state x="452" y="119" key="chooseDestDirectoryDialog" timestamp="1620916526706">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="452" y="119" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1615995687933" />
+    <state x="452" y="119" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1620916526706" />
     <state x="343" y="150" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1619386329562">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -456,6 +560,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1618246473442" />
+    <state x="463" y="49" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1620916526725">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="463" y="49" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.0.1280.680@0.0.1280.680" timestamp="1620916526725" />
     <state x="427" y="0" key="psd.add.module.dependency.panel.dimension" timestamp="1617198358051">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

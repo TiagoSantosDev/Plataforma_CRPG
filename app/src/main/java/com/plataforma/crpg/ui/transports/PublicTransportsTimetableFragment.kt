@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.*
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,13 +18,12 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.chrisbanes.photoview.PhotoView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.databinding.FragmentPublicTransportsTimetablesBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_transports
-import kotlinx.android.synthetic.main.timetable_layout.*
-import com.plataforma.crpg.databinding.FragmentPublicTransportsTimetablesBinding
 import kotlinx.android.synthetic.main.fragment_public_transports_timetables.*
-import kotlinx.android.synthetic.main.fragment_transport_selection.*
+import kotlinx.android.synthetic.main.timetable_layout.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate

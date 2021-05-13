@@ -23,7 +23,6 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class ReminderFragment : Fragment() {

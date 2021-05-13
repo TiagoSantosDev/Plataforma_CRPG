@@ -18,7 +18,6 @@ import com.plataforma.crpg.databinding.MealsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity_success.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
