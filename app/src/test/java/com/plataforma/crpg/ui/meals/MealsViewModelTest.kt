@@ -3,23 +3,13 @@ package com.plataforma.crpg.ui.meals
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.Before
 
 class MealsViewModelTest {
 
-    @Test
-    fun getSelectedOption() {
-    }
 
-    @Test
-    fun setSelectedOption() {
-    }
-
-    @Test
-    fun getRetrievedMeal() {
-    }
-
-    @Test
-    fun setRetrievedMeal() {
+    @Before
+    fun setUp() {
     }
 
     @Test
