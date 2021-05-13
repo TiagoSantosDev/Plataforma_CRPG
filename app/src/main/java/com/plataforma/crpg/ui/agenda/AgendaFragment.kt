@@ -22,7 +22,7 @@ import com.plataforma.crpg.model.Orientation
 import com.plataforma.crpg.model.TimelineAttributes
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_agenda.*
-import java.util.ArrayList
+import java.util.*
 
 class AgendaFragment : Fragment() {
 

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.plataforma.crpg.model.CustomInfoPublicTransport
-import java.util.ArrayList
+import java.util.*
 
 @SuppressLint("StaticFieldLeak")
 class TransportsViewModel(application: Application) : AndroidViewModel(application) {

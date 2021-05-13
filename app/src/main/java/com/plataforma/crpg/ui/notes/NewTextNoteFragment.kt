@@ -20,8 +20,6 @@ import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
-import kotlinx.android.synthetic.main.new_voice_note_fragment.*
-import kotlinx.android.synthetic.main.notes_fragment.*
 import java.io.File
 import java.lang.Boolean.FALSE
 import kotlin.properties.Delegates

@@ -15,7 +15,6 @@ import com.plataforma.crpg.databinding.FragmentTransportSelectionBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.AgendaFragment
 import com.plataforma.crpg.ui.agenda.SharedViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_transport_selection.*
 
 

@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -16,9 +17,8 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.notes_fragment.*
-import java.util.ArrayList
+import java.util.*
 
 
 class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {

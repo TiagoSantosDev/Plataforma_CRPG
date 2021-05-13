@@ -2865,7 +2865,7 @@ id dropshadow
 id easeIn
 id easeInOut
 id easeOut
-id editTextTextPersonName
+id editTextNotes
 id edit_hours
 id edit_minutes
 id edit_query
@@ -3743,6 +3743,7 @@ string action_cancel
 string action_settings
 string activity_example_label
 string adicionar_lembrete
+string agenda
 string amanha
 string ambos
 string apagar_nota
@@ -3916,6 +3917,7 @@ string insira_o_nome_do_seu_lembrete
 string item_view_role_description
 string left_padding
 string lembrar_de
+string lembrete
 string ligar_ao_motorista
 string line
 string line_padding
@@ -4023,6 +4025,7 @@ string refeicao_escolhida_com_sucesso
 string regressar
 string regressar_ecra_escolha_transportes
 string relaxado
+string relogio
 string reproduzir_faixa
 string reproduzir_som
 string retroceder_reproducao
@@ -4050,6 +4053,7 @@ string status_bar_notification_info_overflow
 string style
 string summary_collapsed_preference_list
 string t
+string telemovel
 string timeline_attributes
 string title_activity_main
 string title_activity_record_audio
