@@ -106,7 +106,6 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             AlarmFrequency.TODOS_OS_DIAS -> newReminder.date = "x"
             AlarmFrequency.PERSONALIZADO -> newReminder.date = "custom"
         }
-
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)

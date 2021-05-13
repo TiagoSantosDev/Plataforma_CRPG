@@ -6,6 +6,8 @@ import org.junit.Assert.*
 
 class TransportsViewModelTest {
 
+
+
     @Test
     fun getNome_motorista_para_CRPG() {
     }
@@ -42,9 +44,6 @@ class TransportsViewModelTest {
     fun getCustom_transports_text() {
     }
 
-    @Test
-    fun setCustom_transports_text() {
-    }
 
     @Test
     fun extractDataFromTransportModel() {

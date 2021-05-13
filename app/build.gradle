@@ -52,6 +52,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    androidTestImplementation 'org.mockito:mockito-android:3.7.7'
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+    testImplementation "junit:junit:4.12"
 
     implementation "androidx.activity:activity-ktx:1.2.1"
 
@@ -98,5 +101,5 @@ dependencies {
     implementation project (':timelineview')
     implementation 'com.github.vipulasri:timelineview:1.1.0'
 
-    testImplementation "junit:junit:4.12"
+
 }

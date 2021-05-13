@@ -9,12 +9,10 @@ import org.junit.Test
 
 class MainActivityTest {
 
-    var mainActivity: MainActivity? = null
-
+    private var mainActivity: MainActivity? = null
 
     @Before
     fun setUp() {
-
     }
 
     @After
