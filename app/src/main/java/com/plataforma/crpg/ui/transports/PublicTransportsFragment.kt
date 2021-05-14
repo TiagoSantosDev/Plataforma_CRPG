@@ -76,8 +76,6 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         val selectedDate = sharedViewModel.selectedDate
         val publicText = transportsViewModel.getPublicTransportText(selectedDate)
         println("Custom text: $publicText")
-
-        //public_transports_text.text= publicText.
     }
 
 

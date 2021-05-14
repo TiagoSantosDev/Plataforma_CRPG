@@ -26,37 +26,25 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
     //for each day of the week, a boolean indicates if the alarm is set for that day
     val weekDaysBoolean: BooleanArray = booleanArrayOf(false, false, false,
             false, false, false, false)
-    var newReminder = Reminder("", "", "", "", "",
-            "", AlarmType.SOM, AlarmFrequency.HOJE)
+    lateinit var alarmIntent: Intent
+
+    var newReminder = Reminder("", "", "", "", "", "", AlarmType.SOM, AlarmFrequency.HOJE)
+
     var startTimeHours : String = ""
     var startTimeMin: String = ""
-    //private var reminder: MutableLiveData<String>? = null
-    lateinit var alarmIntent: Intent
     var flagReminderAdded = false
 
-    fun retrieveListReminders(){
-    }
-
-    //garantir que o lembrete e associado a data certa -> check
-    //garantir que os alarmes no telemovel sao ativados com a frequencia pretendida -> falta ativar alarme para dia seguinte
-    //garantir que o tipo de alarme e adequado ao que foi pedido pelo utilizador -> check
+    private val fullWeekAlarm: IntArray = intArrayOf(Calendar.SUNDAY, Calendar.MONDAY, Calendar.TUESDAY,
+            Calendar.WEDNESDAY, Calendar.THURSDAY,Calendar.FRIDAY,Calendar.SATURDAY)
 
     @SuppressLint("SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun addReminder(){
 
-        println("entrou no addReminder")
-        
-        val fullWeekAlarm = ArrayList<Int>()
-        fullWeekAlarm.add(Calendar.SUNDAY)
-        fullWeekAlarm.add(Calendar.MONDAY)
-        fullWeekAlarm.add(Calendar.TUESDAY)
-        fullWeekAlarm.add(Calendar.WEDNESDAY)
-        fullWeekAlarm.add(Calendar.THURSDAY)
-        fullWeekAlarm.add(Calendar.FRIDAY)
-        fullWeekAlarm.add(Calendar.SATURDAY)
+        println(">add Reminder")
 
-
+        newReminder = Reminder("", "", "", "", "",
+                "", AlarmType.SOM, AlarmFrequency.HOJE)
         val customWeekAlarmMutable = mutableListOf<Int>()
 
         for ((idx, value) in weekDaysBoolean.withIndex()) {
@@ -73,7 +61,9 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             }
         }
 
-        println("Custom week alarm mutable: $customWeekAlarmMutable")
+        //println("Custom week alarm mutable: $customWeekAlarmMutable")
+
+        println("Full week: $fullWeekAlarm")
 
         val customWeekAlarm = customWeekAlarmMutable.toCollection(ArrayList<Int>())
         for (i in customWeekAlarm) println("> i value: $i")
@@ -83,26 +73,33 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         val date = Calendar.getInstance().time
         val formattedDateToday = formatDDMMYYYY.format(date)
 
-        val c = Calendar.getInstance()
-        c.add(Calendar.DATE, 1)
-        val formattedDateTomorrow = formatDDMMYYYY.format(c.time)
+        //data do dia de amanha
+        val formattedDateTomorrow = getTomorrowDate(formatDDMMYYYY)
 
         setDateOnReminder(formattedDateToday, formattedDateTomorrow)
 
         when(newReminder.alarm_type){
-            AlarmType.SOM -> setAlarmSoundOnly(fullWeekAlarm, customWeekAlarm)
-            AlarmType.VIBRAR -> setAlarmVibrateOnly(fullWeekAlarm, customWeekAlarm)
-            AlarmType.AMBOS -> setAlarmBoth(fullWeekAlarm, customWeekAlarm)
+            AlarmType.SOM -> setAlarmSoundOnly(fullWeekAlarm.toCollection(ArrayList()), customWeekAlarm)
+            AlarmType.VIBRAR -> setAlarmVibrateOnly(fullWeekAlarm.toCollection(ArrayList()), customWeekAlarm)
+            AlarmType.AMBOS -> setAlarmBoth(fullWeekAlarm.toCollection(ArrayList()), customWeekAlarm)
         }
 
         flagReminderAdded = true
         mReminderList.add(newReminder)
     }
 
+    //data do dia de amanha
+    private fun getTomorrowDate(formatDDMMYYYY: SimpleDateFormat): String {
+        val c = Calendar.getInstance()
+        c.add(Calendar.DATE, 1)
+        val formattedDateTomorrow = formatDDMMYYYY.format(c.time)
+        return formattedDateTomorrow
+    }
+
     private fun setDateOnReminder(formattedDateToday: String, formattedDateTomorrow: String){
         when(newReminder.alarm_freq){
-            AlarmFrequency.HOJE -> newReminder.date = formattedDateToday.toString()
-            AlarmFrequency.AMANHA -> newReminder.date = formattedDateTomorrow.toString()
+            AlarmFrequency.HOJE -> newReminder.date = formattedDateToday
+            AlarmFrequency.AMANHA -> newReminder.date = formattedDateTomorrow
             AlarmFrequency.TODOS_OS_DIAS -> newReminder.date = "x"
             AlarmFrequency.PERSONALIZADO -> newReminder.date = "custom"
         }
@@ -111,6 +108,8 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun setAlarmVibrateOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
         println("Custom week alarm: $customWeekAlarm")
+        println("Full week alarm: $fullWeekAlarm")
+
         when (newReminder.alarm_freq) {
             //so vibracao
             AlarmFrequency.HOJE -> this.alarmIntent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
@@ -149,14 +148,12 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             }
             else -> println("Não entrou em nenhuma das opcoes")
         }
-
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun setAlarmBoth(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
         lateinit var alarmIntent: Intent
-
-        println("> Entrou em setAlarmBoth")
+        println("Full week alarm: $fullWeekAlarm")
 
         when (newReminder.alarm_freq) {
             //c/ vibracao e som
@@ -187,13 +184,13 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
                 putExtra(AlarmClock.EXTRA_DAYS, customWeekAlarm)
             }
         }
-
-
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun setAlarmSoundOnly(fullWeekAlarm: ArrayList<Int>, customWeekAlarm: ArrayList<Int>) {
         lateinit var alarmIntent: Intent
+
+        println("Full week alarm: $fullWeekAlarm")
 
         when (newReminder.alarm_freq) {
             //sem vibracao
@@ -227,3 +224,30 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         }
     }
 }
+
+
+//private var reminder: MutableLiveData<String>? = null
+// garantir que o lembrete e associado a data certa -> check
+//    //garantir que os alarmes no telemovel sao ativados com a frequencia pretendida -> falta ativar alarme para dia seguinte
+//    //garantir que o tipo de alarme e adequado ao que foi pedido pelo utilizador -> check
+//
+// fun retrieveListReminders(){}
+//
+// println("entrou no addReminder")
+//        /*
+//        val fullWeekAlarm = ArrayList<Int>()
+//        fullWeekAlarm.add(Calendar.SUNDAY)
+//        fullWeekAlarm.add(Calendar.MONDAY)
+//        fullWeekAlarm.add(Calendar.TUESDAY)
+//        fullWeekAlarm.add(Calendar.WEDNESDAY)
+//        fullWeekAlarm.add(Calendar.THURSDAY)
+//        fullWeekAlarm.add(Calendar.FRIDAY)
+//        fullWeekAlarm.add(Calendar.SATURDAY)
+//        */
+
+
+//        /*
+//        val c = Calendar.getInstance()
+//        c.add(Calendar.DATE, 1)
+//        val formattedDateTomorrow = formatDDMMYYYY.format(c.time)
+//        */

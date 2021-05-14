@@ -16,11 +16,6 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
     private val context = getApplication<Application>().applicationContext
     lateinit var custom_transports_text: String
 
-
-    fun extractDataFromTransportModel(): ArrayList<String> {
-        return ArrayList()
-    }
-
     fun getCustomText(selectedDate: String): String {
 
         val customText: String = "Horários para o dia selecionado: \n \n Trindade - 09h30 \n CRPG - 10h30 \n" +
@@ -54,11 +49,9 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
                 "Horário linha 35: \n Trindade - 09h30 \n CRPG - 10h30",
                 "Horário Linha 45: \n Trindade - 09h30 \n CRPG - 10h30")
 
-
         listaDados.add(placeHolderDataA)
         listaDados.add(placeHolderDataB)
         listaDados.add(placeHolderDataC)
-
 
         //primeiro verifica se existe informação para a data selecionada
         var idx = listaDados.indexOfFirst {
@@ -88,3 +81,9 @@ class TransportsViewModel(application: Application) : AndroidViewModel(applicati
 
 
 }
+
+/*
+    fun extractDataFromTransportModel(): ArrayList<String> {
+        return ArrayList()
+    }
+    */

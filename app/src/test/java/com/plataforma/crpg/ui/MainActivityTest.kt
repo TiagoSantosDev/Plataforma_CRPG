@@ -1,50 +1,28 @@
 package com.plataforma.crpg.ui
 
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.plataforma.crpg.R
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mockito.*
 
 class MainActivityTest {
 
-    private var mainActivity: MainActivity? = null
+    private lateinit var main: MainActivity
 
     @Before
     fun setUp() {
-    }
-
-    @After
-    fun tearDown() {
-
-    }
-
-    @Test
-    fun getMyLocale() {
-
-    }
-
-    @Test
-    fun onCreate() {
-        assertNotNull(mainActivity);
+        this.main = spy(MainActivity())
     }
 
     @Test
     fun testMainActivity() {
-        assertNotNull(mainActivity);
-    }
-
-
-    @Test
-    fun testBottomNavBar() {
-    }
-
-    @Test
-    fun onDestroy() {
+        assertNotNull(main);
     }
 
     @Test
     fun performActionWithVoiceCommand() {
+
+
     }
 }

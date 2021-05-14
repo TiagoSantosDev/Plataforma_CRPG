@@ -1,49 +1,27 @@
 package com.plataforma.crpg.ui.transports
 
+import android.app.Application
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
-
-import org.junit.Assert.*
+import org.mockito.Mock
+import org.mockito.Mockito
 
 class TransportsViewModelTest {
 
-    @Test
-    fun getNome_motorista_para_CRPG() {
-    }
+    @Mock @JvmField
+    val application: Application? = null
 
-    @Test
-    fun setNome_motorista_para_CRPG() {
-    }
+    @Rule @JvmField
+    var viewModel: TransportsViewModel? = null
 
-    @Test
-    fun getNome_motorista_de_CRPG() {
-    }
-
-    @Test
-    fun setNome_motorista_de_CRPG() {
-    }
-
-    @Test
-    fun getHorario_ida_CRPG() {
-    }
-
-    @Test
-    fun setHorario_ida_CRPG() {
-    }
-
-    @Test
-    fun getHorario_volta_CRPG() {
-    }
-
-    @Test
-    fun setHorario_volta_CRPG() {
+    @Before
+    fun setup() {
+        viewModel = Mockito.spy(TransportsViewModel(application!!))
     }
 
     @Test
     fun getCustom_transports_text() {
-    }
-
-    @Test
-    fun extractDataFromTransportModel() {
     }
 
     @Test
@@ -52,5 +30,11 @@ class TransportsViewModelTest {
 
     @Test
     fun getPublicTransportText() {
+    }
+
+    @Test(expected = Exception::class)
+    fun test_getPublicTransportInvalidString() {
+        val invalid_date = "23423425345"
+        viewModel?.getPublicTransportText(invalid_date)
     }
 }
