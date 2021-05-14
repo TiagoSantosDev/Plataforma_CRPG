@@ -293,8 +293,6 @@ class ReminderFragment : Fragment() {
                 }
             }
 
-
-
             fun performActionWithVoiceCommand(command: String){
                 when {
                     command.contains("Abrir secção lembrete", true) -> expandableLembrar.parentLayout.performClick()
@@ -304,12 +302,9 @@ class ReminderFragment : Fragment() {
                     command.contains("Abrir secção notas", true) -> expandableNotas.parentLayout.performClick()
                 }
             }
-
         }
-
         return view
     }
-
 
     //binding must be done on onCreateView, not on onActivityCreated
     @RequiresApi(Build.VERSION_CODES.KITKAT)
@@ -318,7 +313,6 @@ class ReminderFragment : Fragment() {
         //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
 
 
