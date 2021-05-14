@@ -7,9 +7,4 @@ import org.junit.Before
 
 class MeditationViewModelTest {
 
-
-    @Test
-    fun getSelectedMood() {
-    }
-
 }
