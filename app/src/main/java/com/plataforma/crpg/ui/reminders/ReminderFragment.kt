@@ -250,6 +250,8 @@ class ReminderFragment : Fragment() {
                     }
                 }
 
+                println(">alarm type:" + alarmTypeButtonPressed)
+                println(">alarm freq:" + alarmFreqButtonPressed)
                 when (alarmTypeButtonPressed) {
                     1 -> newViewModel.newReminder.alarm_type = AlarmType.SOM
                     2 -> newViewModel.newReminder.alarm_type = AlarmType.VIBRAR
@@ -263,7 +265,6 @@ class ReminderFragment : Fragment() {
                     1 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.HOJE
                     2 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.TODOS_OS_DIAS
                     3 -> newViewModel.newReminder.alarm_freq = AlarmFrequency.PERSONALIZADO
-
                     else -> { // Note the block
                         println("alarmFreqButtonPressed is neither one of the values")
                     }
@@ -271,10 +272,9 @@ class ReminderFragment : Fragment() {
 
                 if (alarmFreqButtonPressed != 0 && alarmTypeButtonPressed != 0
                         && lembrarButtonPressed != 0 && hoursMinutesFlag) {
-
+                    println(">chega ao add Reminder")
                     newViewModel.addReminder()
                     if (newViewModel.flagReminderAdded) {
-
                         avisoCampos.visibility = View.GONE
                         root.findViewById<View>(R.id.successLayout).visibility = View.VISIBLE
                         root.findViewById<Button>(R.id.button_ok).setOnClickListener {
@@ -307,8 +307,6 @@ class ReminderFragment : Fragment() {
 
         }
 
-
-
         return view
     }
 
@@ -320,8 +318,6 @@ class ReminderFragment : Fragment() {
         //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
-
 
 }
 

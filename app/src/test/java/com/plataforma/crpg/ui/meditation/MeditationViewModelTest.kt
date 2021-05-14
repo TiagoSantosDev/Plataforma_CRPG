@@ -8,15 +8,8 @@ import org.junit.Before
 class MeditationViewModelTest {
 
 
-
-    @Before
-    fun setUp() {
-    }
-
     @Test
     fun getSelectedMood() {
     }
-
-
 
 }

@@ -47,9 +47,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/MainActivityTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/MainActivityTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/agenda/AgendaViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/agenda/AgendaViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/meals/MealsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/meals/MealsViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/meditation/MeditationViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/meditation/MeditationViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/reminders/ReminderViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/reminders/ReminderViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/transports/TransportsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/plataforma/crpg/ui/transports/TransportsViewModelTest.kt" afterDir="false" />
@@ -59,7 +71,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -210,9 +222,51 @@
       <recent name="C:\Users\ltiag\Desktop\Timeline-View-master\app\src\main\res\values-w820dp" />
     </key>
   </component>
-  <component name="RunManager" selected="Android JUnit.ui in Plataforma_CRPG.app">
-    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+  <component name="RunManager" selected="Android JUnit.TransportsViewModelTest">
+    <configuration name="TransportsViewModelTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Plataforma_CRPG.app" />
+      <shortenClasspath name="MANIFEST" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.plataforma.crpg.ui.transports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.plataforma.crpg.ui.transports" />
+      <option name="MAIN_CLASS_NAME" value="com.plataforma.crpg.ui.transports.TransportsViewModelTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransportsViewModelTest.test_getPublicTransportInvalidString" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Plataforma_CRPG.app" />
+      <shortenClasspath name="MANIFEST" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.plataforma.crpg.ui.transports.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.plataforma.crpg.ui.transports" />
+      <option name="MAIN_CLASS_NAME" value="com.plataforma.crpg.ui.transports.TransportsViewModelTest" />
+      <option name="METHOD_NAME" value="test_getPublicTransportInvalidString" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <shortenClasspath name="MANIFEST" />
+      <useClassPathOnly />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -351,6 +405,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.TransportsViewModelTest" />
+        <item itemvalue="Android JUnit.TransportsViewModelTest.test_getPublicTransportInvalidString" />
         <item itemvalue="Android JUnit.ui in Plataforma_CRPG.app" />
         <item itemvalue="Android JUnit.com in Plataforma_CRPG.app" />
         <item itemvalue="Android Instrumented Tests.MainActivityTest" />
@@ -395,6 +451,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="243" y="0" key="#&lt;template&gt;_of_Android_JUnit" timestamp="1620990849388">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="243" y="0" key="#&lt;template&gt;_of_Android_JUnit/0.0.1280.680@0.0.1280.680" timestamp="1620990849388" />
     <state x="267" y="19" key="#Inspections" timestamp="1619901750188">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -455,10 +515,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="393" y="230" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1620836669141" />
-    <state x="-65" y="252" width="1095" height="495" key="AVDManager" timestamp="1620123325067">
+    <state x="38" y="97" width="1095" height="495" key="AVDManager" timestamp="1620988205293">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="-65" y="252" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1620123325067" />
+    <state x="38" y="97" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1620988205293" />
     <state x="224" y="97" key="AndroidCreateResourceDirectoryDialog" timestamp="1620401578762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -484,26 +544,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1620311462655" />
-    <state width="1236" height="180" key="GridCell.Tab.0.bottom" timestamp="1620921926506">
+    <state width="1236" height="180" key="GridCell.Tab.0.bottom" timestamp="1620991300161">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="180" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620921926506" />
-    <state width="1236" height="180" key="GridCell.Tab.0.center" timestamp="1620921926506">
+    <state width="1236" height="180" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1620991300161" />
+    <state width="1236" height="180" key="GridCell.Tab.0.center" timestamp="1620991300161">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="180" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620921926506" />
-    <state width="1236" height="180" key="GridCell.Tab.0.left" timestamp="1620921926506">
+    <state width="1236" height="180" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1620991300161" />
+    <state width="1236" height="180" key="GridCell.Tab.0.left" timestamp="1620991300161">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="180" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620921926506" />
-    <state width="1236" height="180" key="GridCell.Tab.0.right" timestamp="1620921926506">
+    <state width="1236" height="180" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1620991300161" />
+    <state width="1236" height="180" key="GridCell.Tab.0.right" timestamp="1620991300161">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="180" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620921926506" />
+    <state width="1236" height="180" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1620991300161" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1620036911795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
