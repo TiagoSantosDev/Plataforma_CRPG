@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.transports
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,7 @@ class TransportsSelectionFragment : Fragment() {
         fun newInstance() = TransportsSelectionFragment()
     }
 
+    private var textToSpeech: TextToSpeech? = null
     private lateinit var transportsViewModel: TransportsViewModel
     private lateinit var sharedViewModel: SharedViewModel
 

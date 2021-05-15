@@ -3,11 +3,14 @@ package com.plataforma.crpg.ui.agenda
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -26,6 +29,10 @@ import java.util.*
 
 class DatePickerFragment : Fragment() {
 
+    private var textToSpeech: TextToSpeech? = null
+    val myLocale = Locale("pt_PT", "POR")
+    private var ttsFlag = false
+    private var firstTimeFlag = false
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
     private var selected = false
@@ -55,6 +62,7 @@ class DatePickerFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+        ttsDatePickerHint()
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
         return root
     }
@@ -199,6 +207,37 @@ class DatePickerFragment : Fragment() {
         }
         calendar.add(Calendar.DATE, -1)
         return list
+    }
+
+    fun ttsDatePickerHint() {
+
+        if (!firstTimeFlag) {
+            textToSpeech = TextToSpeech(context) { status ->
+                if (status == TextToSpeech.SUCCESS) {
+                    val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                    if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                            || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "The Language is not supported!")
+                    } else {
+                        Log.i("TTS", "Language Supported.")
+                    }
+                    Log.i("TTS", "Initialization success.")
+
+                    if (textToSpeech!!.isSpeaking) {
+                        ttsFlag = true
+                    }
+
+                    if (!textToSpeech!!.isSpeaking) {
+                        ttsFlag = false
+                    }
+
+                    //val speechStatus = textToSpeech!!.speak("Por favor selecione um dia movendo os quadrados amarelos para a esquerda e direita e premindo aquele que pretender selecionar", TextToSpeech.QUEUE_FLUSH, null)
+                    firstTimeFlag = true
+                } else {
+                    Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
 }

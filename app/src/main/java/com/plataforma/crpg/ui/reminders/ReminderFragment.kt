@@ -3,6 +3,7 @@ package com.plataforma.crpg.ui.reminders
 
 import android.os.Build
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,7 @@ class ReminderFragment : Fragment() {
         fun newInstance() = ReminderFragment()
     }
 
+    private var textToSpeech: TextToSpeech? = null
     private var lembrarButtonPressed = 0
     private var alarmTypeButtonPressed = 0
     private var alarmFreqButtonPressed = 0

@@ -207,7 +207,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         */
 
-
         Speech.init(ctx)
 
         try {

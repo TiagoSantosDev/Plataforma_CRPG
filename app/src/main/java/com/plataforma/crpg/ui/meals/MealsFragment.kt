@@ -2,6 +2,7 @@ package com.plataforma.crpg.ui.meals
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,7 @@ import net.gotev.speech.SpeechRecognitionNotAvailable
 
 class MealsFragment : Fragment() {
 
+    private var textToSpeech: TextToSpeech? = null
     private var flagMealChosen = false
 
     companion object {

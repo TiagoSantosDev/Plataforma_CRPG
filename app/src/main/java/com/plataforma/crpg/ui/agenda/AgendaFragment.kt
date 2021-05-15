@@ -3,9 +3,13 @@ package com.plataforma.crpg.ui.agenda
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +30,10 @@ import java.util.*
 
 class AgendaFragment : Fragment() {
 
+    private var textToSpeech: TextToSpeech? = null
+    val myLocale = Locale("pt_PT", "POR")
+    private var firstTimeFlag = false
+    private var ttsFlag = false
     private var mDataList = ArrayList<Event>()
     private lateinit var mLayoutManager: LinearLayoutManager
     private lateinit var mAttributes: TimelineAttributes
@@ -52,6 +60,7 @@ class AgendaFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        ttsAgendaHint()
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
     }
@@ -134,6 +143,58 @@ class AgendaFragment : Fragment() {
             adapter = TimeLineAdapter(mDataList, mAttributes, ctx)
         }
     }
+
+    fun ttsAgendaHint() {
+
+        println("First Time flag: " + firstTimeFlag)
+        if (!firstTimeFlag) {
+            textToSpeech = TextToSpeech(context) { status ->
+                if (status == TextToSpeech.SUCCESS) {
+                    val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                    if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                            || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "The Language is not supported!")
+                    } else {
+                        Log.i("TTS", "Language Supported.")
+                    }
+                    Log.i("TTS", "Initialization success.")
+
+                    if (textToSpeech!!.isSpeaking) {
+                        ttsFlag = true
+                    }
+
+                    if (!textToSpeech!!.isSpeaking) {
+                        ttsFlag = false
+                    }
+
+                    val speechStatus = textToSpeech!!.speak("Clique num dos eventos ou diga em voz alta o nome para saber mais informações", TextToSpeech.QUEUE_FLUSH, null)
+                    firstTimeFlag = true
+                } else {
+                    Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        val speechListener = object : UtteranceProgressListener() {
+            @Override
+
+            override fun onStart(p0: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDone(p0: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onError(p0: String?) {
+                TODO("Not yet implemented")
+            }
+        }
+        textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+    }
+
+
 }
 
 
