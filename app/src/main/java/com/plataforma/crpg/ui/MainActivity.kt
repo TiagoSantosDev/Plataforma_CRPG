@@ -23,10 +23,11 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private var textToSpeech: TextToSpeech? = null
+    private var ttsFlag = false
 
     private val LOG_TAG = MainActivity::class.java.simpleName
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
-    val myLocale = Locale("en", "UK")
+    val myLocale = Locale("pt_PT", "POR")
 
     /*
     private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
@@ -84,9 +85,15 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        //ttsDatePickerHint()
+
+    }
+
+    fun ttsDatePickerHint(){
+
         textToSpeech = TextToSpeech(applicationContext) { status ->
             if (status == TextToSpeech.SUCCESS) {
-                val ttsLang = textToSpeech!!.setLanguage(Locale.US)
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
                 if (ttsLang == TextToSpeech.LANG_MISSING_DATA
                         || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
                     Log.e("TTS", "The Language is not supported!")
@@ -94,19 +101,23 @@ class MainActivity : AppCompatActivity() {
                     Log.i("TTS", "Language Supported.")
                 }
                 Log.i("TTS", "Initialization success.")
-                textToSpeech!!.speak("Hello", TextToSpeech.QUEUE_FLUSH, null)
-                val speechStatus = textToSpeech!!.speak("Hello", TextToSpeech.QUEUE_FLUSH, null)
+
+                if (textToSpeech!!.isSpeaking) {
+                    ttsFlag = true
+                }
+
+                if (!textToSpeech!!.isSpeaking) {
+                    ttsFlag = false
+                }
+
+                val speechStatus = textToSpeech!!.speak("Por favor selecione um dia movendo os quadrados amarelos para a esquerda e direita e premindo aquele que pretender selecionar", TextToSpeech.QUEUE_FLUSH, null)
             } else {
                 Toast.makeText(applicationContext, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
             }
         }
 
 
-
-
-
     }
-
 
 
 

@@ -1,10 +1,13 @@
 package com.plataforma.crpg.ui.meditation
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -18,8 +21,14 @@ import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate
 import net.gotev.speech.SpeechRecognitionNotAvailable
+import java.util.*
 
 class MeditationFragment : Fragment() {
+
+    private var textToSpeech: TextToSpeech? = null
+    private var firstTimeFlag = false
+    private var ttsFlag = false
+    val myLocale = Locale("pt_PT", "POR")
 
     companion object {
         fun newInstance() = MeditationFragment()
@@ -76,6 +85,8 @@ class MeditationFragment : Fragment() {
             goToMeditationMediaPlayer()
         }
 
+        ttsMeditationHint()
+/*
         Speech.init(context)
         try {
             Speech.getInstance().startListening(object : SpeechDelegate {
@@ -106,9 +117,8 @@ class MeditationFragment : Fragment() {
         } catch (exc: GoogleVoiceTypingDisabledException) {
             Log.e("speech", "Google voice typing must be enabled!")
         }
-
+*/
     }
-
 
     fun performActionWithVoiceCommand(command: String) {
         when {
@@ -121,7 +131,92 @@ class MeditationFragment : Fragment() {
         }
     }
 
+
+    private fun ttsMeditationHint() {
+        Speech.init(context)
+        println("First Time flag: " + firstTimeFlag)
+        if (!firstTimeFlag) {
+            textToSpeech = TextToSpeech(context) { status ->
+                if (status == TextToSpeech.SUCCESS) {
+                    val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                    if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                            || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "The Language is not supported!")
+                    } else {
+                        Log.i("TTS", "Language Supported.")
+                    }
+                    Log.i("TTS", "Initialization success.")
+
+                    val speechListener = object : UtteranceProgressListener() {
+                        @Override
+                        override fun onStart(p0: String?) {
+                            //Speech.getInstance().shutdown()
+                            println("Iniciou TTS")
+                        }
+
+                        override fun onDone(p0: String?) {
+                            //Speech.init(context)
+                            println("Encerrou TTS")
+
+                            try {
+                                Speech.getInstance().startListening(object : SpeechDelegate {
+                                    override fun onStartOfSpeech() {
+                                        Log.i("speech", "speech recognition is now active")
+                                    }
+
+                                    override fun onSpeechRmsChanged(value: Float) {
+                                        Log.d("speech", "rms is now: $value")
+                                    }
+
+                                    override fun onSpeechPartialResults(results: List<String>) {
+                                        val str = StringBuilder()
+                                        for (res in results) {
+                                            str.append(res).append(" ")
+                                        }
+                                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                                    }
+
+                                    override fun onSpeechResult(result: String) {
+                                        performActionWithVoiceCommand(result)
+                                        Log.i("speech", "result: $result")
+                                        //println("on Speech Result")
+                                    }
+                                })
+                            } catch (exc: SpeechRecognitionNotAvailable) {
+                                Log.e("speech", "Speech recognition is not available on this device!")
+                            } catch (exc: GoogleVoiceTypingDisabledException) {
+                                Log.e("speech", "Google voice typing must be enabled!")
+                            }
+
+                        }
+                        override fun onError(p0: String?) {
+                            TODO("Not yet implemented")
+                        }
+                    }
+                    textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                    if (textToSpeech!!.isSpeaking) {
+                        ttsFlag = true
+                    }
+
+                    if (!textToSpeech!!.isSpeaking) {
+                        ttsFlag = false
+                    }
+
+                    val speechStatus = textToSpeech!!.speak("Selecione uma das opções ou diga o estado" +
+                            "em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
+                    firstTimeFlag = true
+                } else {
+                    Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+    }
+
     private fun goToMeditationMediaPlayer(){
+        Speech.getInstance().shutdown()
+        textToSpeech?.shutdown()
         val fragment: Fragment = MeditationMediaPlayerFragment()
         val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()

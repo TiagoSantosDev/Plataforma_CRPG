@@ -2,6 +2,7 @@ package com.plataforma.crpg.ui.notes
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         fun newInstance() = NotesFragment()
     }
 
+    private var textToSpeech: TextToSpeech? = null
     private lateinit var notesViewModel: NotesViewModel
     var voiceItemsCount = 0
 
