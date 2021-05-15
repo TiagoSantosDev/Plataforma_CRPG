@@ -4,15 +4,16 @@ import android.app.Application
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mock
+import org.junit.runner.RunWith
 import org.mockito.Mockito
 
+//@RunWith(AndroidJUnit4::class)
 class TransportsViewModelTest {
 
-    @Mock @JvmField
+    @get:Rule
     val application: Application? = null
 
-    @Rule @JvmField
+    @get:Rule
     var viewModel: TransportsViewModel? = null
 
     @Before
