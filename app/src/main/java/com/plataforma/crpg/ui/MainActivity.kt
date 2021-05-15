@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,22 +14,56 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
 import kotlinx.android.synthetic.main.activity_main.*
-import net.gotev.speech.*
+import net.gotev.speech.Logger
+import net.gotev.speech.Speech
+import net.gotev.speech.TextToSpeechCallback
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    private var textToSpeech: TextToSpeech? = null
+
     private val LOG_TAG = MainActivity::class.java.simpleName
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
-    val myLocale = Locale("pt", "PT")
+    val myLocale = Locale("en", "UK")
 
+    /*
+    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
+        when (status) {
+            TextToSpeech.SUCCESS -> {Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
+            }
+            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
+            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
+        }
+    }*/
+
+    /*
     private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
         when (status) {
             TextToSpeech.SUCCESS -> Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
             TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
             else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
         }
+    }*/
+
+    private fun onSpeakClick() {
+        println("is Speaking: " + Speech.getInstance().isSpeaking)
+        println("text to speech voice: " + Speech.getInstance().textToSpeechVoice)
+
+        Speech.getInstance().say("Hello", object : TextToSpeechCallback {
+            override fun onStart() {
+                Toast.makeText(this@MainActivity, "TTS onStart", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onCompleted() {
+                Toast.makeText(this@MainActivity, "TTS onCompleted", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onError() {
+                Toast.makeText(this@MainActivity, "TTS onError", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,15 +84,81 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //Speech.init(this, packageName, mTttsInitListener);
-        Speech.init(applicationContext)
-        println("Current language: " + Speech.getInstance().speechToTextLanguage)
-        //println("Suported languages: " + Speech.getInstance().supportedTextToSpeechVoices.size)
-        Speech.getInstance().say("Selecione um dia para ver os seus eventos")
+        textToSpeech = TextToSpeech(applicationContext) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(Locale.US)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!")
+                } else {
+                    Log.i("TTS", "Language Supported.")
+                }
+                Log.i("TTS", "Initialization success.")
+                textToSpeech!!.speak("Hello", TextToSpeech.QUEUE_FLUSH, null)
+                val speechStatus = textToSpeech!!.speak("Hello", TextToSpeech.QUEUE_FLUSH, null)
+            } else {
+                Toast.makeText(applicationContext, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
-    // shoutDatePickerHint()
 
 
+
+
+    }
+
+
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // prevent memory leaks when activity is destroyed
+        //Speech.getInstance().shutdown()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                onSupportNavigateUp()
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun shoutDatePickerHint() {
+        Speech.getInstance().say("Selecione um dia para ver os seus eventos");
+    }
+
+    fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation;
+            command.contains("Navegar Notas", true) -> nav_view.selectedItemId = R.id.navigation_notes
+            command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
+        }
+    }
+
+}
+
+
+/*
+        Speech.init(this, packageName, mTttsInitListener);
+        Speech.getInstance().setLocale(myLocale)
+        onSpeakClick()
+        */
+
+
+//Speech.init(applicationContext)
+//println("Current language: " + Speech.getInstance().speechToTextLanguage)
+//Speech.getInstance().say("Hello")
+// shoutDatePickerHint()
+
+/*
         try {
             // you must have android.permission.RECORD_AUDIO granted at this point
             Speech.getInstance().startListening(object : SpeechDelegate {
@@ -93,45 +194,7 @@ class MainActivity : AppCompatActivity() {
             // to redirect the user to the Google App page on Play Store
         } catch (exc: GoogleVoiceTypingDisabledException) {
             Log.e("speech", "Google voice typing must be enabled!")
-        }
-
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        // prevent memory leaks when activity is destroyed
-        Speech.getInstance().shutdown()
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                onSupportNavigateUp()
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    private fun shoutDatePickerHint() {
-        Speech.getInstance().say("Selecione um dia para ver os seus eventos");
-    }
-
-    fun performActionWithVoiceCommand(command: String){
-        when {
-            command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation;
-            command.contains("Navegar Notas", true) -> nav_view.selectedItemId = R.id.navigation_notes
-            command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
-        }
-    }
-
-}
+        }*/
 
 /*
      var dks = Dks(application, supportFragmentManager, object: DksListener {
@@ -157,6 +220,8 @@ class MainActivity : AppCompatActivity() {
          }
      })
      */
+//println("Suported languages: " + Speech.getInstance().supportedTextToSpeechVoices.size)
+//Speech.init(this, packageName, mTttsInitListener);
 //lateinit var dLocale: Locale
 //setContentViewWithoutInject(R.layout.activity_main)
 /*BaseActivity()*/
