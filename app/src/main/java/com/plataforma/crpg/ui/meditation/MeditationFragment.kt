@@ -1,6 +1,8 @@
 package com.plataforma.crpg.ui.meditation
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
@@ -134,7 +136,7 @@ class MeditationFragment : Fragment() {
 
     private fun ttsMeditationHint() {
         Speech.init(context)
-        println("First Time flag: " + firstTimeFlag)
+        println("First Time flag: $firstTimeFlag")
         if (!firstTimeFlag) {
             textToSpeech = TextToSpeech(context) { status ->
                 if (status == TextToSpeech.SUCCESS) {
@@ -147,53 +149,33 @@ class MeditationFragment : Fragment() {
                     }
                     Log.i("TTS", "Initialization success.")
 
-                    val speechListener = object : UtteranceProgressListener() {
-                        @Override
-                        override fun onStart(p0: String?) {
-                            //Speech.getInstance().shutdown()
-                            println("Iniciou TTS")
-                        }
-
-                        override fun onDone(p0: String?) {
-                            //Speech.init(context)
-                            println("Encerrou TTS")
-
-                            try {
-                                Speech.getInstance().startListening(object : SpeechDelegate {
-                                    override fun onStartOfSpeech() {
-                                        Log.i("speech", "speech recognition is now active")
-                                    }
-
-                                    override fun onSpeechRmsChanged(value: Float) {
-                                        Log.d("speech", "rms is now: $value")
-                                    }
-
-                                    override fun onSpeechPartialResults(results: List<String>) {
-                                        val str = StringBuilder()
-                                        for (res in results) {
-                                            str.append(res).append(" ")
-                                        }
-                                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                                    }
-
-                                    override fun onSpeechResult(result: String) {
-                                        performActionWithVoiceCommand(result)
-                                        Log.i("speech", "result: $result")
-                                        //println("on Speech Result")
-                                    }
-                                })
-                            } catch (exc: SpeechRecognitionNotAvailable) {
-                                Log.e("speech", "Speech recognition is not available on this device!")
-                            } catch (exc: GoogleVoiceTypingDisabledException) {
-                                Log.e("speech", "Google voice typing must be enabled!")
+                    var handler = Handler(Looper.getMainLooper())
+                    //
+                    //var runable = Runnable {
+                        val speechListener = object : UtteranceProgressListener() {
+                            @Override
+                            override fun onStart(p0: String?) {
+                                //Speech.getInstance().shutdown()
+                                println("Iniciou TTS")
                             }
 
+                            override fun onDone(p0: String?) {
+                                //Speech.init(context)
+                                println("Encerrou TTS")
+                                //val runable2 = Runnable{
+                                startVoiceRecognition()
+                                //}
+                                //handler.post(runable2)
+                            }
+
+                            override fun onError(p0: String?) {
+                                TODO("Not yet implemented")
+                            }
                         }
-                        override fun onError(p0: String?) {
-                            TODO("Not yet implemented")
-                        }
-                    }
+
                     textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                    //handler.post(runable)
 
                     if (textToSpeech!!.isSpeaking) {
                         ttsFlag = true
@@ -214,6 +196,46 @@ class MeditationFragment : Fragment() {
 
     }
 
+    fun startVoiceRecognition(){
+
+        val handler = Handler(Looper.getMainLooper())
+        val runable = Runnable {
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
+                    }
+
+                    override fun onSpeechRmsChanged(value: Float) {
+                        Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        performActionWithVoiceCommand(result)
+                        Log.i("speech", "result: $result")
+                        println("on Speech Result")
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+
+        }
+
+        handler.post(runable)
+
+    }
+
     private fun goToMeditationMediaPlayer(){
         Speech.getInstance().shutdown()
         textToSpeech?.shutdown()
@@ -228,7 +250,36 @@ class MeditationFragment : Fragment() {
 
 }
 
+/*
+try {
+    Speech.getInstance().startListening(object : SpeechDelegate {
+        override fun onStartOfSpeech() {
+            Log.i("speech", "speech recognition is now active")
+        }
 
+        override fun onSpeechRmsChanged(value: Float) {
+            Log.d("speech", "rms is now: $value")
+        }
+
+        override fun onSpeechPartialResults(results: List<String>) {
+            val str = StringBuilder()
+            for (res in results) {
+                str.append(res).append(" ")
+            }
+            Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+        }
+
+        override fun onSpeechResult(result: String) {
+            performActionWithVoiceCommand(result)
+            Log.i("speech", "result: $result")
+            //println("on Speech Result")
+        }
+    })
+} catch (exc: SpeechRecognitionNotAvailable) {
+    Log.e("speech", "Speech recognition is not available on this device!")
+} catch (exc: GoogleVoiceTypingDisabledException) {
+    Log.e("speech", "Google voice typing must be enabled!")
+}*/
 /*
       button.setOnClickListener {
           val fragment: Fragment = MeditationMediaPlayerFragment()
