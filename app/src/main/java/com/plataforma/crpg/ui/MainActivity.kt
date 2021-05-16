@@ -27,24 +27,6 @@ class MainActivity : AppCompatActivity() {
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
     val myLocale = Locale("pt_PT", "POR")
 
-    /*
-    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
-        when (status) {
-            TextToSpeech.SUCCESS -> {Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
-            }
-            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
-            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
-        }
-    }*/
-
-    /*
-    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
-        when (status) {
-            TextToSpeech.SUCCESS -> Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
-            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
-            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
-        }
-    }*/
 
     private fun onSpeakClick() {
         println("is Speaking: " + Speech.getInstance().isSpeaking)
@@ -83,50 +65,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //ttsDatePickerHint()
-
-        //TER SEMPRE WIFI LIGADO OU A VOICE RECOGNITION NAO FUNCIONA
-
-/*
-        Speech.init(applicationContext)
-
-        try {
-            // you must have android.permission.RECORD_AUDIO granted at this point
-            Speech.getInstance().startListening(object : SpeechDelegate {
-                override fun onStartOfSpeech() {
-                    Log.i("speech", "speech recognition is now active")
-                }
-
-                override fun onSpeechRmsChanged(value: Float) {
-                    Log.d("speech", "rms is now: $value")
-                }
-
-                override fun onSpeechPartialResults(results: List<String>) {
-                    val str = StringBuilder()
-                    for (res in results) {
-                        str.append(res).append(" ")
-                    }
-                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                }
-
-                override fun onSpeechResult(result: String) {
-                    //performActionWithVoiceCommand(result)
-                    Log.i("speech", "result: $result")
-                    //println("on Speech Result")
-                }
-            })
-        } catch (exc: SpeechRecognitionNotAvailable) {
-            Log.e("speech", "Speech recognition is not available on this device!")
-            // You can prompt the user if he wants to install Google App to have
-            // speech recognition, and then you can simply call:
-            //
-            // SpeechUtil.redirectUserToGoogleAppOnPlayStore(this);
-            //
-            // to redirect the user to the Google App page on Play Store
-        } catch (exc: GoogleVoiceTypingDisabledException) {
-            Log.e("speech", "Google voice typing must be enabled!")
-        }
-*/
 
     }
 
@@ -359,4 +297,69 @@ override fun onSupportNavigateUp(): Boolean {
         val configuration = Configuration()
         configuration.setLocale(dLocale)
         this.applyOverrideConfiguration(configuration)*/
+
+
 //Speech.getInstance().setLocale(myLocale)
+//
+//
+// /*
+//    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
+//        when (status) {
+//            TextToSpeech.SUCCESS -> {Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
+//            }
+//            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
+//            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
+//        }
+//    }*/
+//
+//    /*
+//    private val mTttsInitListener = TextToSpeech.OnInitListener { status ->
+//        when (status) {
+//            TextToSpeech.SUCCESS -> Logger.info(LOG_TAG, "TextToSpeech engine successfully started")
+//            TextToSpeech.ERROR -> Logger.error(LOG_TAG, "Error while initializing TextToSpeech engine!")
+//            else -> Logger.error(LOG_TAG, "Unknown TextToSpeech status: $status")
+//        }
+//    }*/    //ttsDatePickerHint()
+//
+//        //TER SEMPRE WIFI LIGADO OU A VOICE RECOGNITION NAO FUNCIONA
+//
+///*
+//        Speech.init(applicationContext)
+//
+//        try {
+//            // you must have android.permission.RECORD_AUDIO granted at this point
+//            Speech.getInstance().startListening(object : SpeechDelegate {
+//                override fun onStartOfSpeech() {
+//                    Log.i("speech", "speech recognition is now active")
+//                }
+//
+//                override fun onSpeechRmsChanged(value: Float) {
+//                    Log.d("speech", "rms is now: $value")
+//                }
+//
+//                override fun onSpeechPartialResults(results: List<String>) {
+//                    val str = StringBuilder()
+//                    for (res in results) {
+//                        str.append(res).append(" ")
+//                    }
+//                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+//                }
+//
+//                override fun onSpeechResult(result: String) {
+//                    //performActionWithVoiceCommand(result)
+//                    Log.i("speech", "result: $result")
+//                    //println("on Speech Result")
+//                }
+//            })
+//        } catch (exc: SpeechRecognitionNotAvailable) {
+//            Log.e("speech", "Speech recognition is not available on this device!")
+//            // You can prompt the user if he wants to install Google App to have
+//            // speech recognition, and then you can simply call:
+//            //
+//            // SpeechUtil.redirectUserToGoogleAppOnPlayStore(this);
+//            //
+//            // to redirect the user to the Google App page on Play Store
+//        } catch (exc: GoogleVoiceTypingDisabledException) {
+//            Log.e("speech", "Google voice typing must be enabled!")
+//        }
+//*/

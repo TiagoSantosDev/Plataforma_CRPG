@@ -28,7 +28,7 @@ import java.util.*
 class MeditationFragment : Fragment() {
 
     private var textToSpeech: TextToSpeech? = null
-    private var firstTimeFlag = false
+    private var onResumeFlag = false
     private var ttsFlag = false
     val myLocale = Locale("pt_PT", "POR")
 
@@ -38,10 +38,18 @@ class MeditationFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //val colorDrawable = ColorDrawable(Color.parseColor("#00BBF2"))
         val actionBar = (activity as MainActivity?)?.supportActionBar
         actionBar?.title = "MEDITAÇÃO"
         actionBar?.setDisplayHomeAsUpEnabled(false)
+        //val colorDrawable = ColorDrawable(Color.parseColor("#00BBF2"))
+        //onResumeFlag = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Speech.getInstance().shutdown()
+        textToSpeech?.shutdown()
+        onResumeFlag = true
     }
 
     override fun onCreateView(
@@ -136,8 +144,8 @@ class MeditationFragment : Fragment() {
 
     private fun ttsMeditationHint() {
         Speech.init(context)
-        println("First Time flag: $firstTimeFlag")
-        if (!firstTimeFlag) {
+        println("First Time flag: $onResumeFlag")
+        if (!onResumeFlag) {
             textToSpeech = TextToSpeech(context) { status ->
                 if (status == TextToSpeech.SUCCESS) {
                     val ttsLang = textToSpeech!!.setLanguage(myLocale)
@@ -188,7 +196,7 @@ class MeditationFragment : Fragment() {
 
                     val speechStatus = textToSpeech!!.speak("Selecione uma das opções ou diga o estado" +
                             "em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
-                    firstTimeFlag = true
+                    //onResumeFlag = true
                 } else {
                     Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
                 }
@@ -238,6 +246,8 @@ class MeditationFragment : Fragment() {
         handler.post(runable)
 
     }
+
+
 
     private fun goToMeditationMediaPlayer(){
         Speech.getInstance().shutdown()
