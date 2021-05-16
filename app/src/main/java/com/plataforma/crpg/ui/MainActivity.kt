@@ -14,9 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataforma.crpg.R
 import kotlinx.android.synthetic.main.activity_main.*
-import net.gotev.speech.Logger
-import net.gotev.speech.Speech
-import net.gotev.speech.TextToSpeechCallback
+import net.gotev.speech.*
 import java.util.*
 
 
@@ -87,6 +85,49 @@ class MainActivity : AppCompatActivity() {
 
         //ttsDatePickerHint()
 
+        //TER SEMPRE WIFI LIGADO OU A VOICE RECOGNITION NAO FUNCIONA
+
+/*
+        Speech.init(applicationContext)
+
+        try {
+            // you must have android.permission.RECORD_AUDIO granted at this point
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
+                }
+
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    //performActionWithVoiceCommand(result)
+                    Log.i("speech", "result: $result")
+                    //println("on Speech Result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+            // You can prompt the user if he wants to install Google App to have
+            // speech recognition, and then you can simply call:
+            //
+            // SpeechUtil.redirectUserToGoogleAppOnPlayStore(this);
+            //
+            // to redirect the user to the Google App page on Play Store
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
+        }
+*/
+
     }
 
     fun ttsDatePickerHint(){
@@ -116,7 +157,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
     }
 
 
@@ -124,7 +164,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // prevent memory leaks when activity is destroyed
-        //Speech.getInstance().shutdown()
+        Speech.getInstance().shutdown()
     }
 
     override fun onSupportNavigateUp(): Boolean {

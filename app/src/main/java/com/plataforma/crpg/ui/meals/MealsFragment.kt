@@ -2,6 +2,8 @@ package com.plataforma.crpg.ui.meals
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.LayoutInflater
@@ -185,32 +187,39 @@ class MealsFragment : Fragment() {
         Speech.init(context)
         println("Current language: " + Speech.getInstance().speechToTextLanguage)
 
-        try {
-            Speech.getInstance().startListening(object : SpeechDelegate {
-                override fun onStartOfSpeech() {
-                    Log.i("speech", "speech recognition is now active")
-                }
-                override fun onSpeechRmsChanged(value: Float) {
-                    Log.d("speech", "rms is now: $value")
-                }
-                override fun onSpeechPartialResults(results: List<String>) {
-                    val str = StringBuilder()
-                    for (res in results) {
-                        str.append(res).append(" ")
+        val handler = Handler(Looper.getMainLooper())
+        val runable = Runnable {
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
                     }
-                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                }
 
-                override fun onSpeechResult(result: String) {
-                    performActionWithVoiceCommand(result)
-                    Log.i("speech", "result: $result")
-                }
-            })
-        } catch (exc: SpeechRecognitionNotAvailable) {
-            Log.e("speech", "Speech recognition is not available on this device!")
-        } catch (exc: GoogleVoiceTypingDisabledException) {
-            Log.e("speech", "Google voice typing must be enabled!")
+                    override fun onSpeechRmsChanged(value: Float) {
+                        Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        performActionWithVoiceCommand(result)
+                        Log.i("speech", "result: $result")
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+
         }
+        handler.post(runable)
 
     }
 
