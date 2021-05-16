@@ -174,6 +174,7 @@ class MeditationFragment : Fragment() {
                         }
 
                     textToSpeech?.setOnUtteranceProgressListener(speechListener)
+                    println("Chegou aqui pos utterance listener")
 
                     //handler.post(runable)
 
@@ -197,6 +198,8 @@ class MeditationFragment : Fragment() {
     }
 
     fun startVoiceRecognition(){
+
+        //MANTER WIFI SEMPRE LIGADO
 
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
