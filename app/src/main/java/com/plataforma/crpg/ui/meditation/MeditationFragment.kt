@@ -48,9 +48,13 @@ class MeditationFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        //da erro quando se sai do fragmento antes da SR ter sido iniciada
-        Speech.getInstance().shutdown()
-        textToSpeech?.shutdown()
+        /*
+        if(Speech.getInstance() != null){
+            Speech.getInstance().stopListening()
+        }
+        if (textToSpeech != null){
+            textToSpeech?.shutdown()
+        }*/
         onResumeFlag = true
     }
 
@@ -107,8 +111,9 @@ class MeditationFragment : Fragment() {
         }
 
         defineModality(ttsFlag, srFlag)
-        //ttsMeditationHint()
 
+        //editor.putBoolean("RanBefore", true);
+        //editor.commit();
     }
 
     private fun defineModality(ttsFlag: Boolean, srFlag: Boolean) {
@@ -147,7 +152,6 @@ class MeditationFragment : Fragment() {
     }
 
     private fun multimodalOption() {
-        Speech.init(context)
         println("First Time flag: $onResumeFlag")
         if (!onResumeFlag) {
             textToSpeech = TextToSpeech(context) { status ->
@@ -162,7 +166,6 @@ class MeditationFragment : Fragment() {
                     Log.i("TTS", "Initialization success.")
 
                     var handler = Handler(Looper.getMainLooper())
-                    //
                     //var runable = Runnable {
                         val speechListener = object : UtteranceProgressListener() {
                             @Override
@@ -183,11 +186,9 @@ class MeditationFragment : Fragment() {
                     textToSpeech?.setOnUtteranceProgressListener(speechListener)
                     println("Chegou aqui pos utterance listener")
 
-                    //handler.post(runable)
-
                     val speechStatus = textToSpeech!!.speak("Selecione uma das opções ou diga o estado" +
                             "em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
-                    //onResumeFlag = true
+
                 } else {
                     Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
                 }
@@ -198,18 +199,14 @@ class MeditationFragment : Fragment() {
 
     fun startVoiceRecognition(){
         //MANTER WIFI SEMPRE LIGADO
-
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
+            Speech.init(context)
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
-                    override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
-                    }
+                    override fun onStartOfSpeech() { Log.i("speech", "speech recognition is now active") }
 
-                    override fun onSpeechRmsChanged(value: Float) {
-                        Log.d("speech", "rms is now: $value")
-                    }
+                    override fun onSpeechRmsChanged(value: Float) { Log.d("speech", "rms is now: $value") }
 
                     override fun onSpeechPartialResults(results: List<String>) {
                         val str = StringBuilder()
@@ -230,15 +227,17 @@ class MeditationFragment : Fragment() {
             } catch (exc: GoogleVoiceTypingDisabledException) {
                 Log.e("speech", "Google voice typing must be enabled!")
             }
-
         }
 
         handler.post(runable)
     }
 
     private fun goToMeditationMediaPlayer(){
-        Speech.getInstance().shutdown()
-        textToSpeech?.shutdown()
+        /*
+        if (Speech.getInstance() != null){
+            Speech.getInstance().shutdown()
+        }
+        if (textToSpeech != null) textToSpeech?.shutdown() */
         val fragment: Fragment = MeditationMediaPlayerFragment()
         val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -250,6 +249,9 @@ class MeditationFragment : Fragment() {
 
 }
 
+//onResumeFlag = true
+//handler.post(runable)
+//ttsMeditationHint()
 //Speech.getInstance().shutdown()
 //val runable2 = Runnable{
 //}
