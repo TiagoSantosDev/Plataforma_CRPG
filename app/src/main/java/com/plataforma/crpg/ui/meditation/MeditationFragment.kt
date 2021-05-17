@@ -30,8 +30,7 @@ class MeditationFragment : Fragment() {
 
     private var textToSpeech: TextToSpeech? = null
     private var onResumeFlag = false
-    //private var ttsFlag = false
-    val myLocale = Locale("pt_PT", "POR")
+    private val myLocale = Locale("pt_PT", "POR")
 
     companion object {
         fun newInstance() = MeditationFragment()
@@ -46,17 +45,6 @@ class MeditationFragment : Fragment() {
         //onResumeFlag = true
     }
 
-    override fun onPause() {
-        super.onPause()
-
-        if(Speech.getInstance() != null){
-            Speech.getInstance().stopListening()
-        }
-        if (textToSpeech != null){
-            textToSpeech?.shutdown()
-        }
-        onResumeFlag = true
-    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +52,24 @@ class MeditationFragment : Fragment() {
     ): View {
         val binding = FragmentMeditationBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        //garante que o TTS so e lancado na primeira vez que um Fragment e aberto
+        editor.putBoolean("meditationHasRun", true).apply()
+
+        /*
+        if(Speech.getInstance() != null){
+            Speech.getInstance().stopListening()
+        }
+        if (textToSpeech != null){
+            textToSpeech?.shutdown()
+        }*/
+        onResumeFlag = true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,6 +84,7 @@ class MeditationFragment : Fragment() {
 
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("meditationHasRun", false)
 
         button_mood_relaxed.setOnClickListener{
             medViewModel.selectedMood = "RELAXADO"
@@ -110,18 +117,31 @@ class MeditationFragment : Fragment() {
             goToMeditationMediaPlayer()
         }
 
-        defineModality(ttsFlag, srFlag)
+        defineModality(ttsFlag, srFlag, hasRun )
 
         //editor.putBoolean("RanBefore", true);
         //editor.commit();
     }
 
-    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean) {
-        when{
-            ttsFlag && !srFlag -> { startTTS() }
-            !ttsFlag && srFlag -> { startVoiceRecognition() }
-            ttsFlag && srFlag ->{ multimodalOption() }
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
+
+        println("Valor de hasRun: $hasRun")
+
+        if (!hasRun){
+            when{
+                ttsFlag && !srFlag -> { startTTS() }
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ multimodalOption() }
+            }
         }
+
+        if(hasRun){
+            when{
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ startVoiceRecognition() }
+            }
+        }
+
     }
 
     private fun startTTS() {
@@ -201,7 +221,7 @@ class MeditationFragment : Fragment() {
         //MANTER WIFI SEMPRE LIGADO
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
-            Speech.init(context)
+            Speech.init(activity?.applicationContext)
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() { Log.i("speech", "speech recognition is now active") }
