@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
     private fun requestMultiModalityOptions() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
+        editor.putBoolean("meditationHasRun", false).apply()
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Sugestões de Áudio")
                 .setMessage("A aplicação possui uma voz virtual que poder dar-lhe indicações de como" +
@@ -147,14 +148,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     override fun onDestroy() {
         super.onDestroy()
+        val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
         // prevent memory leaks when activity is destroyed
-        //deleteSharedPreferences()
+
         Speech.getInstance().shutdown()
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
