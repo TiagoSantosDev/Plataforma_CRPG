@@ -67,10 +67,10 @@ class MainActivity : AppCompatActivity() {
                         R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
                 )
         )
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
 /*
     private fun checkUserPermissions(): Boolean {
         editor.putBoolean("isAdmin", true).apply()
@@ -82,7 +82,8 @@ class MainActivity : AppCompatActivity() {
         //if (isStaff) onCreateOptionsMenu(toolbar)
 
         return isStaff
-    }*/
+    }
+*/
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu, this adds items to the action bar if it is present.
@@ -105,7 +106,6 @@ class MainActivity : AppCompatActivity() {
                     editor.putBoolean("TTS", false).apply()
                 }.show()
 
-
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Comandos de Voz")
                 .setMessage("A aplicação pode ser usada utilizando " +
@@ -116,7 +116,6 @@ class MainActivity : AppCompatActivity() {
                 .setNegativeButton("Recusar"){ dialog, which ->
                     editor.putBoolean("SR", false)
                 }.show()
-
     }
 
     fun ttsDatePickerHint(){
@@ -153,11 +152,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         // prevent memory leaks when activity is destroyed
-
         Speech.getInstance().shutdown()
     }
-
-
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
@@ -185,8 +181,9 @@ class MainActivity : AppCompatActivity() {
             command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
         }
     }
-
 }
+
+
 
 
 /*
