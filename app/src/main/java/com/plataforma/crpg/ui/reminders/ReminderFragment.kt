@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.reminders
 
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -44,6 +45,10 @@ class ReminderFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
         val newViewModel = ViewModelProvider(activity as AppCompatActivity).get(ReminderViewModel::class.java)

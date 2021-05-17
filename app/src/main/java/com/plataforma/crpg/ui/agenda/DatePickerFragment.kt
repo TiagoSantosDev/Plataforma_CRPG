@@ -62,6 +62,11 @@ class DatePickerFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+
+
         ttsDatePickerHint()
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
         return root

@@ -1,17 +1,22 @@
 package com.plataforma.crpg.ui
 
 import android.Manifest
+import android.content.Context
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
@@ -26,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     private val LOG_TAG = MainActivity::class.java.simpleName
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
     val myLocale = Locale("pt_PT", "POR")
-
 
     private fun onSpeakClick() {
         println("is Speaking: " + Speech.getInstance().isSpeaking)
@@ -49,7 +53,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
+
+        requestMultiModalityOptions()
+        //checkUserPermissions()
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -64,7 +70,51 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+/*
+    private fun checkUserPermissions(): Boolean {
+        editor.putBoolean("isAdmin", true).apply()
 
+        val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+        setSupportActionBar(toolbar)
+
+        val isStaff = sharedPreferences.getBoolean("isAdmin", false)
+        //if (isStaff) onCreateOptionsMenu(toolbar)
+
+        return isStaff
+    }*/
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflate the menu, this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    private fun requestMultiModalityOptions() {
+        val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
+                .setTitle("Permitir Sugestões de Áudio")
+                .setMessage("A aplicação possui uma voz virtual que poder dar-lhe indicações de como" +
+                        "utilizar a plataforma. Prima o botão \"Permitir\" para ativar esta funcionalidade.")
+                .setPositiveButton("Permitir") { dialog, which ->
+                    editor.putBoolean("TTS", true).apply()
+                }
+                .setNegativeButton("Recusar"){ dialog, which ->
+                    editor.putBoolean("TTS", false).apply()
+                }.show()
+
+
+        MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
+                .setTitle("Permitir Comandos de Voz")
+                .setMessage("A aplicação pode ser usada utilizando " +
+                        "utilizar a plataforma. Prima o botão \"Permitir\" para ativar esta funcionalidade.")
+                .setPositiveButton("Permitir"){ dialog, which ->
+                    editor.putBoolean("SR", true)
+                }
+                .setNegativeButton("Recusar"){ dialog, which ->
+                    editor.putBoolean("SR", false)
+                }.show()
 
     }
 
@@ -102,6 +152,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         // prevent memory leaks when activity is destroyed
+        //deleteSharedPreferences()
         Speech.getInstance().shutdown()
     }
 
@@ -141,6 +192,7 @@ class MainActivity : AppCompatActivity() {
         onSpeakClick()
         */
 
+//ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION)
 
 //Speech.init(applicationContext)
 //println("Current language: " + Speech.getInstance().speechToTextLanguage)

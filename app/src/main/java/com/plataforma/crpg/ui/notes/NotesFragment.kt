@@ -1,6 +1,7 @@
 package com.plataforma.crpg.ui.notes
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
@@ -36,6 +37,10 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+
         val binding = NotesFragmentBinding.inflate(layoutInflater)
         return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)

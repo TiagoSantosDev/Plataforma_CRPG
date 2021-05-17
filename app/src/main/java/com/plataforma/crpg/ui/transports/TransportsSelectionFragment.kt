@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
+import android.content.Context
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
@@ -33,6 +34,10 @@ class TransportsSelectionFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+
         val binding = FragmentTransportSelectionBinding.inflate(layoutInflater)
         val view = binding.root
 
