@@ -1,8 +1,5 @@
 package com.plataforma.crpg.ui.notes
 
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegAudioRecorder
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.FFmpegRecordFinder
-//import com.github.windsekirun.naraeaudiorecorder.ffmpeg.config.FFmpegConvertConfig
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -60,8 +57,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val binding = NewVoiceNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
-        //showBackButton()
-
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
     }
@@ -84,6 +79,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         contador += 1
         val fileName = contador.toString().toLowerCase()
         println(fileName)
+
         val extensions = ".mp3"
         val audioRecorder = NaraeAudioRecorder()
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
@@ -91,18 +87,11 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             this.destFile = destFile
         }
 
-        //val recordConfig = AudioRecordConfig.defaultConfig()
-
         val recordConfig = AudioRecordConfig(MediaRecorder.AudioSource.MIC,
                 AudioFormat.ENCODING_MP3,
                 AudioFormat.CHANNEL_IN_STEREO,
                 AudioConstants.FREQUENCY_44100)
         val audioSource = NoiseAudioSource(recordConfig)
-        /*audioRecorder.create(FFmpegRecordFinder::class.java) {
-            this.destFile = destFile
-            this.recordConfig = recordConfig
-            this.audioSource = audioSource
-        }*/
 
         audioRecorder.create {
             this.destFile = destFile
@@ -110,17 +99,10 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             this.audioSource = audioSource
         }
 
-        /*
-        val ffmpegAudioRecorder: FFmpegAudioRecorder = audioRecorder.getAudioRecorder() as? FFmpegAudioRecorder
-                ?: return
-        context?.let { ffmpegAudioRecorder.setContext(it) }*/
-
-        //ffmpegAudioRecorder.setConvertConfig(FFmpegConvertConfig)
-
         val recordAudioCode = 0
 
         requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE),recordAudioCode)
+                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), recordAudioCode)
 
         if (context?.let {
                     ContextCompat.checkSelfPermission(it,
@@ -139,7 +121,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             button_replay_recording.setOnClickListener {
                 val myUri = Uri.parse(destFile.absolutePath)
                 val meditationUri = Uri.parse("android.resource://" + context?.packageName.toString()
-                    + "/raw/meditation_sound")
+                        + "/raw/meditation_sound")
                 println("Dest File exists: " + myUri.path)
                 println("Dest file path: " + destFile.absolutePath)
                 //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
@@ -150,16 +132,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                                     .setUsage(AudioAttributes.USAGE_MEDIA)
                                     .build()
                     )
-                    //setDataSource(destFile.absolutePath)
-                    //setDataSource(requireContext(), meditationUri)
-                    //setDataSource(requireContext(), destFile.absolutePath.toUri())
+
                     setDataSource(requireContext(), myUri)
                     prepare()
                     start()
                 }
-
             }
-
         }
 
         button_new_voice_note_image.setOnClickListener{
@@ -247,6 +225,24 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 }
 
+
+
+/*
+//val recordConfig = AudioRecordConfig.defaultConfig()
+//setDataSource(destFile.absolutePath)
+//setDataSource(requireContext(), meditationUri)
+//setDataSource(requireContext(), destFile.absolutePath.toUri())
+val ffmpegAudioRecorder: FFmpegAudioRecorder = audioRecorder.getAudioRecorder() as? FFmpegAudioRecorder
+        ?: return
+context?.let { ffmpegAudioRecorder.setContext(it) }*/
+
+//ffmpegAudioRecorder.setConvertConfig(FFmpegConvertConfig)
+
+/*audioRecorder.create(FFmpegRecordFinder::class.java) {
+    this.destFile = destFile
+    this.recordConfig = recordConfig
+    this.audioSource = audioSource
+}*/
 /*
 //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
     fun showBackButton() {

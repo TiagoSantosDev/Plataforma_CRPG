@@ -105,7 +105,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-core:2.13.3'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.3'
     implementation 'net.gotev:speech:1.6.2'
-
+    implementation 'com.kailashdabhi:om-recorder:1.1.5'
 
     implementation ('com.thebluealliance:spectrum:0.7.1') {
         exclude group: 'com.android.support'
@@ -120,6 +120,4 @@ dependencies {
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
     implementation project (':timelineview')
     implementation 'com.github.vipulasri:timelineview:1.1.0'
-
-
 }
