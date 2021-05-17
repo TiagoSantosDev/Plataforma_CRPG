@@ -60,6 +60,10 @@ class AgendaFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+
         ttsAgendaHint()
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root

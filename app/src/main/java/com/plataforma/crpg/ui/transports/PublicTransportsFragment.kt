@@ -1,5 +1,6 @@
 package com.plataforma.crpg.ui.transports
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,9 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
 
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
