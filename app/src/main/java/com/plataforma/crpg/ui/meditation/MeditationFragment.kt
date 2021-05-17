@@ -48,13 +48,13 @@ class MeditationFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        /*
+
         if(Speech.getInstance() != null){
             Speech.getInstance().stopListening()
         }
         if (textToSpeech != null){
             textToSpeech?.shutdown()
-        }*/
+        }
         onResumeFlag = true
     }
 
