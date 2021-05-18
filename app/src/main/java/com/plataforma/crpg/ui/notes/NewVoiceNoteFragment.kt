@@ -40,7 +40,6 @@ import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
 import java.io.File
 
-
 class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     companion object {
@@ -104,9 +103,9 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), recordAudioCode)
 
-        if (context?.let {
-                    ContextCompat.checkSelfPermission(it,
-                            arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
+        if (context?.let { ContextCompat.checkSelfPermission(it, arrayOf(Manifest.permission.RECORD_AUDIO,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
                 } != PackageManager.PERMISSION_GRANTED) {
 
             button_start_recording.setOnClickListener {
@@ -132,7 +131,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                                     .setUsage(AudioAttributes.USAGE_MEDIA)
                                     .build()
                     )
-
                     setDataSource(requireContext(), myUri)
                     prepare()
                     start()
@@ -149,7 +147,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-
             if(titleText.toString().isNotBlank() && destFile.exists()) {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = GONE
                 notesViewModel.newNote.tipo = NoteType.VOICE
@@ -168,9 +165,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }else{
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = VISIBLE
             }
-
         }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -190,7 +185,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         } else {
             println(">Escolha de foto cancelada")
         }
-
     }
 
     private fun getVoiceItemCount(): Int{
@@ -203,7 +197,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         return voiceItemCount
     }
-
 
     @SuppressLint("SetTextI18n")
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

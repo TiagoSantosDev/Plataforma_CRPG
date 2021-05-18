@@ -221,7 +221,7 @@ class MeditationFragment : Fragment() {
         //MANTER WIFI SEMPRE LIGADO
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
-            Speech.init(activity?.applicationContext)
+            Speech.init(requireActivity())
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() { Log.i("speech", "speech recognition is now active") }
