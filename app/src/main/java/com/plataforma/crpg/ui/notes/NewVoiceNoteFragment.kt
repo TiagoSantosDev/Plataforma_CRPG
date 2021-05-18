@@ -13,6 +13,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -21,20 +22,22 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.TextView
-import androidx.annotation.RequiresApi
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
-import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
-import com.github.windsekirun.naraeaudiorecorder.constants.AudioConstants
-import com.github.windsekirun.naraeaudiorecorder.source.NoiseAudioSource
+import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig import com.github.windsekirun.naraeaudiorecorder.constants.LogConstants
+import com.github.windsekirun.naraeaudiorecorder.extensions.runOnUiThread
+import com.github.windsekirun.naraeaudiorecorder.model.RecordMetadata
+import com.github.windsekirun.naraeaudiorecorder.model.RecordState
+import com.github.windsekirun.naraeaudiorecorder.source.DefaultAudioSource
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView.TAG
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
@@ -44,10 +47,14 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     companion object {
         fun newInstance() = NewVoiceNoteFragment()
+        const val PERMISSIONS_REQUEST_CODE = 1
     }
 
+    //private var destFile: File? = null
     private lateinit var notesViewModel: NotesViewModel
     private var imageUri = ""
+    private val audioRecorder = NaraeAudioRecorder()
+    private var recordMetadata: RecordMetadata? = null
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -56,86 +63,73 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val binding = NewVoiceNoteFragmentBinding.inflate(layoutInflater)
         val view = binding.root
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(
+                    arrayOf(
+                            Manifest.permission.RECORD_AUDIO,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE
+                    ),
+                    PERMISSIONS_REQUEST_CODE
+            )
+        }
+
         return view
         //return inflater.inflate(R.layout.meals_fragment, container, false)
+    }
+
+    override fun onRequestPermissionsResult(
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == PERMISSIONS_REQUEST_CODE) {
+            if (grantResults.any { it != PackageManager.PERMISSION_GRANTED }) {
+                Toast.makeText(
+                        requireContext(),
+                        LogConstants.PERMISSION_DENIED,
+                        Toast.LENGTH_LONG
+                ).show();
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "NOVA NOTA DE VOZ"
-    }
-
-    @RequiresApi(Build.VERSION_CODES.P)
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
-
-        val titleText = view?.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
-        var contador = getVoiceItemCount()
-        println("Contador: $contador")
-
-        contador += 1
-        val fileName = contador.toString().toLowerCase()
-        println(fileName)
-
-        val extensions = ".mp3"
-        val audioRecorder = NaraeAudioRecorder()
+        val titleText = view.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
+        val fileName = System.currentTimeMillis().toString()
+        val extensions = ".wav"
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
-        audioRecorder.create {
-            this.destFile = destFile
+
+
+        button_start_recording.setOnClickListener {
+
+            val recordConfig = AudioRecordConfig.defaultConfig()
+            val audioSource = DefaultAudioSource(recordConfig)
+
+            audioRecorder.create {
+                this.destFile = destFile
+                this.recordConfig = recordConfig
+                this.audioSource = audioSource
+                this.debugMode = true
+            }
+
+            println("start recording check")
+            audioRecorder.setOnRecordStateChangeListener { recordStateChanged(it) }
+            audioRecorder.startRecording(requireContext())
         }
 
-        val recordConfig = AudioRecordConfig(MediaRecorder.AudioSource.MIC,
-                AudioFormat.ENCODING_MP3,
-                AudioFormat.CHANNEL_IN_STEREO,
-                AudioConstants.FREQUENCY_44100)
-        val audioSource = NoiseAudioSource(recordConfig)
 
-        audioRecorder.create {
-            this.destFile = destFile
-            this.recordConfig = recordConfig
-            this.audioSource = audioSource
-        }
-
-        val recordAudioCode = 0
-
-        requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), recordAudioCode)
-
-        if (context?.let { ContextCompat.checkSelfPermission(it, arrayOf(Manifest.permission.RECORD_AUDIO,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
-                } != PackageManager.PERMISSION_GRANTED) {
-
-            button_start_recording.setOnClickListener {
-                audioRecorder.startRecording(requireActivity())
-            }
-
-            button_stop_recording.setOnClickListener {
-                audioRecorder.stopRecording()
-                println("Dest File exists: " + destFile.exists())
-            }
-
-            button_replay_recording.setOnClickListener {
-                val myUri = Uri.parse(destFile.absolutePath)
-                val meditationUri = Uri.parse("android.resource://" + context?.packageName.toString()
-                        + "/raw/meditation_sound")
-                println("Dest File exists: " + myUri.path)
-                println("Dest file path: " + destFile.absolutePath)
-                //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
-                val mediaPlayer = MediaPlayer().apply {
-                    setAudioAttributes(
-                            AudioAttributes.Builder()
-                                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                                    .build()
-                    )
-                    setDataSource(requireContext(), myUri)
-                    prepare()
-                    start()
-                }
-            }
+        button_stop_recording.setOnClickListener {
+            println("stop recording check ")
+            println(audioRecorder.toString())
+            audioRecorder.stopRecording()
+            recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
+            println("Saved on ${destFile?.absolutePath}")
         }
 
         button_new_voice_note_image.setOnClickListener{
@@ -147,11 +141,11 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-            if(titleText.toString().isNotBlank() && destFile.exists()) {
+            if(titleText.toString().isNotBlank()) {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = GONE
                 notesViewModel.newNote.tipo = NoteType.VOICE
                 notesViewModel.newNote.titulo = voice_note_title_edit.text.toString()
-                notesViewModel.newNote.voiceNotePath = destFile.absolutePath
+                //notesViewModel.newNote.voiceNotePath = destFile.absolutePath
                 notesViewModel.newNote.imagePath = imageUri
                 notesViewModel.addNewVoiceNote()
 
@@ -166,6 +160,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = VISIBLE
             }
         }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -216,9 +216,78 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
     }
 
+    private fun recordStateChanged(recordState: RecordState) {
+        Log.d(TAG, "recordStateChanged: ${recordState.name}")
+
+        runOnUiThread { println("RecordState: ${recordState.name}") }
+    }
+
 }
 
 
+/*
+var contador = getVoiceItemCount()
+println("Contador: $contador")
+contador += 1
+//val fileName = contador.toString().toLowerCase()
+*/
+/*
+    val extensions = ".mp3"
+    val audioRecorder = NaraeAudioRecorder()
+    val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
+    audioRecorder.create {
+        this.destFile = destFile
+    }
+
+    val recordConfig = AudioRecordConfig(MediaRecorder.AudioSource.MIC,
+            AudioFormat.ENCODING_MP3,
+            AudioFormat.CHANNEL_IN_STEREO,
+            AudioConstants.FREQUENCY_44100)
+    val audioSource = NoiseAudioSource(recordConfig)
+
+    audioRecorder.create {
+        this.destFile = destFile
+        this.recordConfig = recordConfig
+        this.audioSource = audioSource
+    }
+
+    val recordAudioCode = 0
+
+    requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE), recordAudioCode)
+
+    if (context?.let { ContextCompat.checkSelfPermission(it, arrayOf(Manifest.permission.RECORD_AUDIO,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())
+            } != PackageManager.PERMISSION_GRANTED) {
+*/
+/*
+    button_stop_recording.setOnClickListener {
+        audioRecorder.stopRecording()
+        println("Dest File exists: " + destFile.exists())
+    }
+
+    button_replay_recording.setOnClickListener {
+        val myUri = Uri.parse(destFile.absolutePath)
+        val meditationUri = Uri.parse("android.resource://" + context?.packageName.toString()
+                + "/raw/meditation_sound")
+        println("Dest File exists: " + myUri.path)
+        println("Dest file path: " + destFile.absolutePath)
+        //val myUri: Uri = Environment.getExternalStorageDirectory().absolutePath // initialize Uri here
+        val mediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(
+                    AudioAttributes.Builder()
+                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                            .build()
+            )
+            setDataSource(requireContext(), myUri)
+            prepare()
+            start()
+        }
+    }
+}
+*/
 
 /*
 //val recordConfig = AudioRecordConfig.defaultConfig()
