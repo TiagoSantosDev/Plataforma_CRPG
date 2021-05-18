@@ -108,18 +108,21 @@ class MeditationMediaPlayerFragment : Fragment(){
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
+    }
 
 
-        fun performActionWithVoiceCommand(command: String){
-            when {
-                command.contains("Tocar", true) -> exo_play?.performClick()
-                command.contains("Parar", true) -> exo_pause?.performClick()
-                command.contains("Passar à frente", true) -> exo_ffwd?.performClick()
-                command.contains("Passar a trás", true) -> exo_rew?.performClick()
-                command.contains("Regressar", true) -> button_return_meditation?.performClick()
-            }
+    fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Tocar", true) -> exo_play?.performClick()
+            command.contains("Parar", true) -> exo_pause?.performClick()
+            command.contains("Passar à frente", true) -> exo_ffwd?.performClick()
+            command.contains("Passar a trás", true) -> exo_rew?.performClick()
+            command.contains("Regressar", true) -> button_return_meditation?.performClick()
         }
+    }
 
+
+    private fun startVoiceRecognition(){
         Speech.init(context)
         try {
             // you must have android.permission.RECORD_AUDIO granted at this point
