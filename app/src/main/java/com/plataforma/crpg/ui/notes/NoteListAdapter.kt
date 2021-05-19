@@ -27,9 +27,9 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
         val note: Note = listData[holder.adapterPosition]
 
         holder.bind(note)
-        println("> List Data: $listData")
-        println("> List Data: $position")
-        println("> List Data: " + listData.size)
+        //println("> List Data: $listData")
+        //println("> List Data: $position")
+        //println("> List Data: " + listData.size)
 
         var removedPosition : Int ? = null
 
@@ -42,8 +42,8 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
 
         holder.itemView.note_card_main.setOnClickListener{
             //AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity)
-            println("Titulo: " + listData[position].titulo)
-            println("Content: " + listData[position].info)
+            //println("Titulo: " + listData[position].titulo)
+            //println("Content: " + listData[position].info)
 
             MaterialAlertDialogBuilder(ctx,android.R.style.Theme_Material_Dialog_Alert)
                     .setTitle(listData[position].titulo)

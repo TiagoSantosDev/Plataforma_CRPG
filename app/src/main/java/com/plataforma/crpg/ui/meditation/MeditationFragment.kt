@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import com.github.windsekirun.naraeaudiorecorder.extensions.runOnUiThread
 import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.FragmentMeditationBinding
 import com.plataforma.crpg.ui.MainActivity
@@ -31,6 +32,7 @@ class MeditationFragment : Fragment() {
     private var textToSpeech: TextToSpeech? = null
     private var onResumeFlag = false
     private val myLocale = Locale("pt_PT", "POR")
+    private var hasInitSR = false
 
     companion object {
         fun newInstance() = MeditationFragment()
@@ -61,10 +63,7 @@ class MeditationFragment : Fragment() {
 
         //garante que o TTS so e lancado na primeira vez que um Fragment e aberto
         editor.putBoolean("meditationHasRun", true).apply()
-        /*
-        if(Speech.getInstance() != null){
-            Speech.getInstance().stopListening()
-        }*/
+
         if (textToSpeech != null){
             textToSpeech?.shutdown()
         }
@@ -74,10 +73,14 @@ class MeditationFragment : Fragment() {
     override fun onDestroy() {
         // Don't forget to shutdown!
 
-        if(Speech.getInstance() != null){
-            Speech.getInstance().stopListening()
-            Speech.getInstance().shutdown()
-            println("shutdown Speech")
+        println("Has init SR: $hasInitSR")
+
+        if (hasInitSR){
+            if (Speech.getInstance() != null) {
+                Speech.getInstance().stopListening()
+                Speech.getInstance().shutdown()
+                println("shutdown Speech")
+            }
         }
 
         if (textToSpeech != null) {
@@ -135,13 +138,10 @@ class MeditationFragment : Fragment() {
 
         defineModality(ttsFlag, srFlag, hasRun)
 
-        //editor.putBoolean("RanBefore", true);
-        //editor.commit();
+
     }
 
     private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
-
-        println("Valor de hasRun: $hasRun")
 
         if (!hasRun){
             when{
@@ -240,6 +240,7 @@ class MeditationFragment : Fragment() {
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
             Speech.init(requireActivity())
+            hasInitSR = true
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() {
@@ -262,6 +263,7 @@ class MeditationFragment : Fragment() {
                         performActionWithVoiceCommand(result)
                         Log.i("speech", "result: $result")
                         println("on Speech Result")
+                        hasInitSR = false
                     }
                 })
             } catch (exc: SpeechRecognitionNotAvailable) {
@@ -275,11 +277,6 @@ class MeditationFragment : Fragment() {
     }
 
     private fun goToMeditationMediaPlayer(){
-        /*
-        if (Speech.getInstance() != null){
-            Speech.getInstance().shutdown()
-        }
-        if (textToSpeech != null) textToSpeech?.shutdown() */
         val fragment: Fragment = MeditationMediaPlayerFragment()
         val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -291,6 +288,19 @@ class MeditationFragment : Fragment() {
 
 }
 
+
+
+//editor.putBoolean("RanBefore", true);
+//editor.commit();
+/*
+        if (Speech.getInstance() != null){
+            Speech.getInstance().shutdown()
+        }
+        if (textToSpeech != null) textToSpeech?.shutdown() */
+/*
+if(Speech.getInstance() != null){
+    Speech.getInstance().stopListening()
+}*/
 //onResumeFlag = true
 //handler.post(runable)
 //ttsMeditationHint()
