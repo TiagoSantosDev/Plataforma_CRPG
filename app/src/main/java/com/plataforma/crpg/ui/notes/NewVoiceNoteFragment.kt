@@ -129,7 +129,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             println(audioRecorder.toString())
             audioRecorder.stopRecording()
             recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
-            println("Saved on ${destFile?.absolutePath}")
+            println("Saved on ${destFile.absolutePath}")
         }
 
         button_new_voice_note_image.setOnClickListener{

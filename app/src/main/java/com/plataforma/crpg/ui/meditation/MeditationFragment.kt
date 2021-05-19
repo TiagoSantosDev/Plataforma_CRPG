@@ -61,15 +61,31 @@ class MeditationFragment : Fragment() {
 
         //garante que o TTS so e lancado na primeira vez que um Fragment e aberto
         editor.putBoolean("meditationHasRun", true).apply()
-
         /*
         if(Speech.getInstance() != null){
             Speech.getInstance().stopListening()
-        }
+        }*/
         if (textToSpeech != null){
             textToSpeech?.shutdown()
-        }*/
+        }
         onResumeFlag = true
+    }
+
+    override fun onDestroy() {
+        // Don't forget to shutdown!
+
+        if(Speech.getInstance() != null){
+            Speech.getInstance().stopListening()
+            Speech.getInstance().shutdown()
+            println("shutdown Speech")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+        super.onDestroy()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -117,7 +133,7 @@ class MeditationFragment : Fragment() {
             goToMeditationMediaPlayer()
         }
 
-        defineModality(ttsFlag, srFlag, hasRun )
+        defineModality(ttsFlag, srFlag, hasRun)
 
         //editor.putBoolean("RanBefore", true);
         //editor.commit();
@@ -195,7 +211,9 @@ class MeditationFragment : Fragment() {
 
                             override fun onDone(p0: String?) {
                                 println("Encerrou TTS")
-                                startVoiceRecognition()
+                                if(activity != null && isAdded) {
+                                    startVoiceRecognition()
+                                }
                             }
 
                             override fun onError(p0: String?) {
@@ -224,9 +242,13 @@ class MeditationFragment : Fragment() {
             Speech.init(requireActivity())
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
-                    override fun onStartOfSpeech() { Log.i("speech", "speech recognition is now active") }
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
+                    }
 
-                    override fun onSpeechRmsChanged(value: Float) { Log.d("speech", "rms is now: $value") }
+                    override fun onSpeechRmsChanged(value: Float) {
+                        Log.d("speech", "rms is now: $value")
+                    }
 
                     override fun onSpeechPartialResults(results: List<String>) {
                         val str = StringBuilder()
