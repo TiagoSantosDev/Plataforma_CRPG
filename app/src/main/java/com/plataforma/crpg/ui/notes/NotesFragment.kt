@@ -24,7 +24,6 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
-import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.notes_fragment.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
@@ -43,6 +42,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var notesViewModel: NotesViewModel
     var voiceItemsCount = 0
     private val myLocale = Locale("pt_PT", "POR")
+    private var hasInitSR = false
 
 
     override fun onPause() {
@@ -55,11 +55,13 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onDestroy() {
         // Don't forget to shutdown!
-        /*
-        if(Speech.getInstance() != null){
-            Speech.getInstance().stopListening()
-            Speech.getInstance().shutdown()
-            println("shutdown Speech")
+
+        if (hasInitSR) {
+            if (Speech.getInstance() != null) {
+                Speech.getInstance().stopListening()
+                Speech.getInstance().shutdown()
+                println("shutdown Speech")
+            }
         }
 
         if (textToSpeech != null) {
@@ -67,7 +69,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             textToSpeech!!.shutdown()
             println("shutdown TTS")
         }
-        */
+
 
         super.onDestroy()
     }
@@ -89,6 +91,14 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "NOTAS"
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("notesHasRun", false)
+
+        defineModality(ttsFlag, srFlag, hasRun)
+
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
 
         notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
@@ -193,7 +203,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
                     }
                     Log.i("TTS", "Initialization success.")
 
-
                     val speechListener = object : UtteranceProgressListener() {
                         @Override
                         override fun onStart(p0: String?) {
@@ -228,6 +237,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         val handler = Handler(Looper.getMainLooper())
         val runable = Runnable {
             Speech.init(requireActivity())
+            hasInitSR = true
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() {
@@ -250,6 +260,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
                         performActionWithVoiceCommand(result)
                         Log.i("speech", "result: $result")
                         println("on Speech Result")
+                        hasInitSR = false
                     }
                 })
             } catch (exc: SpeechRecognitionNotAvailable) {
