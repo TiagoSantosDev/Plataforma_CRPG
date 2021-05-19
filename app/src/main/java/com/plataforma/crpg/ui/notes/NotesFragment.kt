@@ -70,7 +70,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             println("shutdown TTS")
         }
 
-
         super.onDestroy()
     }
 
@@ -78,10 +77,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
-        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
-        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
-        val srFlag = modalityPreferences.getBoolean("SR", false)
-
         val binding = NotesFragmentBinding.inflate(layoutInflater)
         return binding.root
         //return inflater.inflate(R.layout.meals_fragment, container, false)
@@ -158,6 +153,10 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
 
+        println("ttsFlag:  " + ttsFlag)
+        println("srFlag: " + srFlag)
+        println("hasRun: " + hasRun)
+
         if (!hasRun){
             when{
                 ttsFlag && !srFlag -> { startTTS() }
@@ -183,8 +182,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
                         || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
                     Log.e("TTS", "Linguagem não suportada!")
                 }
-                val speechStatus = textToSpeech!!.speak("Selecione uma das opções ou diga o estado" +
-                        "em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
+                val speechStatus = textToSpeech!!.speak("Diga Nota Voz ou Nota Texto em voz alta para criar uma nova nota", TextToSpeech.QUEUE_FLUSH, null, "ID")
             } else {
                 Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
             }

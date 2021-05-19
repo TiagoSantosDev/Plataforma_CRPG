@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putBoolean("meditationHasRun", false).apply()
+        editor.putBoolean("notesHasRun", false).apply()
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Sugestões de Áudio")
                 .setMessage("A aplicação possui uma voz virtual que poder dar-lhe indicações de como" +
