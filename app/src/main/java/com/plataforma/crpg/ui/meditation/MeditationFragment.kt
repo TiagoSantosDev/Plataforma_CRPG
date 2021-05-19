@@ -1,6 +1,8 @@
 package com.plataforma.crpg.ui.meditation
 
 import android.content.Context
+import android.media.AudioManager
+import android.nfc.Tag
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,8 +18,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import com.github.windsekirun.naraeaudiorecorder.extensions.runOnUiThread
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView.TAG
 import com.plataforma.crpg.databinding.FragmentMeditationBinding
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.fragment_meditation.*
@@ -256,15 +258,26 @@ class MeditationFragment : Fragment() {
                         for (res in results) {
                             str.append(res).append(" ")
                         }
+                        performActionWithVoiceCommand(results.toString())
                         Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
                     }
 
                     override fun onSpeechResult(result: String) {
-                        performActionWithVoiceCommand(result)
-                        Log.i("speech", "result: $result")
-                        println("on Speech Result")
-                        hasInitSR = false
+                        Log.d(TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        handler.postDelayed({
+                            try {
+                                Speech.getInstance().startListening(this)
+                                hasInitSR = true
+                            } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                speechRecognitionNotAvailable.printStackTrace()
+                            } catch (e: GoogleVoiceTypingDisabledException) {
+                                e.printStackTrace()
+                            }
+                        }, 100)
                     }
+
                 })
             } catch (exc: SpeechRecognitionNotAvailable) {
                 Log.e("speech", "Speech recognition is not available on this device!")
@@ -288,7 +301,13 @@ class MeditationFragment : Fragment() {
 
 }
 
-
+/*
+override fun onSpeechResult(result: String) {
+    performActionWithVoiceCommand(result)
+    Log.i("speech", "result: $result")
+    println("on Speech Result")
+    hasInitSR = false
+}*/
 
 //editor.putBoolean("RanBefore", true);
 //editor.commit();
