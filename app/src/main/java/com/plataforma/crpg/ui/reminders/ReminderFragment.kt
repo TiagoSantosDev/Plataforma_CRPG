@@ -364,7 +364,8 @@ class ReminderFragment : Fragment() {
     }
 
     private fun performActionWithVoiceCommand(command: String){
-        checkTimeCommand(command)
+        checkHoursCommand(command)
+        checkMinutesCommand(command)
         when {
             command.contains("Lembrete", true) -> expandable_lembrar.performClick()
             command.contains("Horas", true) -> expandable_horas.performClick()
@@ -391,8 +392,7 @@ class ReminderFragment : Fragment() {
         }
     }
 
-    private fun checkTimeCommand(command: String) {
-
+    private fun checkHoursCommand(command: String) {
         when {
             (command.contains("oito", true) || command.contains("8", true)) && command.contains("da manhã", true) ->edit_hours.setText("08")
             (command.contains("oito", true) || command.contains("8", true))  && command.contains("da noite", true) ->edit_hours.setText("20")
@@ -407,24 +407,28 @@ class ReminderFragment : Fragment() {
             (command.contains("uma", true)  || command.contains("1", true))&& command.contains("da manhã", true) ->edit_hours.setText("01")
             (command.contains("uma", true)  || command.contains("1", true))&& command.contains("da tarde", true) ->edit_hours.setText("13")
             (command.contains("duas", true) || command.contains("2", true)) && command.contains("da manhã", true) ->edit_hours.setText("02")
-            (command.contains("duas", true)  || command.contains("2", true))&& command.contains("da noite", true) ->edit_hours.setText("14")
+            (command.contains("duas", true)  || command.contains("2", true))&& command.contains("da tarde", true) ->edit_hours.setText("14")
             (command.contains("três", true)  || command.contains("3", true))&& command.contains("da manhã", true) ->edit_hours.setText("03")
-            (command.contains("três", true)  || command.contains("3", true))&& command.contains("da noite", true) ->edit_hours.setText("15")
+            (command.contains("três", true)  || command.contains("3", true))&& command.contains("da tarde", true) ->edit_hours.setText("15")
             (command.contains("quatro", true)  || command.contains("4", true))&& command.contains("da manhã", true) ->edit_hours.setText("04")
-            (command.contains("quatro", true)  || command.contains("4", true))&& command.contains("da noite", true) ->edit_hours.setText("16")
+            (command.contains("quatro", true)  || command.contains("4", true))&& command.contains("da tarde", true) ->edit_hours.setText("16")
             (command.contains("cinco", true)  || command.contains("5", true))&& command.contains("da manhã", true) ->edit_hours.setText("05")
-            (command.contains("cinco", true)  || command.contains("5", true))&& command.contains("da noite", true) ->edit_hours.setText("17")
+            (command.contains("cinco", true)  || command.contains("5", true))&& command.contains("da tarde", true) ->edit_hours.setText("17")
             (command.contains("seis", true)  || command.contains("6", true))&& command.contains("da manhã", true) ->edit_hours.setText("06")
-            (command.contains("seis", true)  || command.contains("6", true))&& command.contains("da noite", true) ->edit_hours.setText("18")
+            (command.contains("seis", true)  || command.contains("6", true))&& command.contains("da tarde", true) ->edit_hours.setText("18")
             (command.contains("sete", true)  || command.contains("7", true))&& command.contains("da manhã", true) ->edit_hours.setText("07")
-            (command.contains("sete", true)  || command.contains("7", true))&& command.contains("da noite", true) ->edit_hours.setText("19")
+            (command.contains("sete", true)  || command.contains("7", true))&& command.contains("da tarde", true) ->edit_hours.setText("19")
         }
 
+    }
+
+    private fun checkMinutesCommand(command: String) {
         when {
-            command.contains("e cinco", true) ->edit_minutes.setText("05")
-            command.contains("e um quarto", true) ->edit_minutes.setText("15")
-            command.contains("e meia", true) ->edit_minutes.setText("30")
+            command.contains("e cinco", true) || command.contains(":05", true) ->edit_minutes.setText("05")
+            command.contains("e um quarto", true) || command.contains(":15", true) ->edit_minutes.setText("15")
+            command.contains("e meia", true) || command.contains(":30", true) ->edit_minutes.setText("30")
         }
+
     }
 
     private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
@@ -521,7 +525,7 @@ class ReminderFragment : Fragment() {
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {
-                        Log.d("speech", "rms is now: $value")
+                        //Log.d("speech", "rms is now: $value")
                     }
 
                     override fun onSpeechPartialResults(results: List<String>) {

@@ -196,49 +196,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         }
 
-/*
-        fun performActionWithVoiceCommand(command: String) {
-            when {
-                command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
-                command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
-                command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
-            }
-        }
-
-        */
-
-        Speech.init(ctx)
-
-        try {
-            Speech.getInstance().startListening(object : SpeechDelegate {
-                override fun onStartOfSpeech() {
-                    Log.i("speech", "speech recognition is now active")
-                }
-
-                override fun onSpeechRmsChanged(value: Float) {
-                    Log.d("speech", "rms is now: $value")
-                }
-
-                override fun onSpeechPartialResults(results: List<String>) {
-                    val str = StringBuilder()
-                    for (res in results) {
-                        str.append(res).append(" ")
-                    }
-                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                }
-
-                override fun onSpeechResult(result: String) {
-                    //performActionWithVoiceCommand(result)
-                    Log.i("speech", "result: $result")
-                    //println("on Speech Result")
-                }
-            })
-        } catch (exc: SpeechRecognitionNotAvailable) {
-            Log.e("speech", "Speech recognition is not available on this device!")
-
-        } catch (exc: GoogleVoiceTypingDisabledException) {
-            Log.e("speech", "Google voice typing must be enabled!")
-        }
 
     }
 
@@ -274,7 +231,48 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
     }
 }
 
+/*
+        fun performActionWithVoiceCommand(command: String) {
+            when {
+                command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
+                command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
+                command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
+            }
+        }
 
+        Speech.init(ctx)
+
+        try {
+            Speech.getInstance().startListening(object : SpeechDelegate {
+                override fun onStartOfSpeech() {
+                    Log.i("speech", "speech recognition is now active")
+                }
+
+                override fun onSpeechRmsChanged(value: Float) {
+                    Log.d("speech", "rms is now: $value")
+                }
+
+                override fun onSpeechPartialResults(results: List<String>) {
+                    val str = StringBuilder()
+                    for (res in results) {
+                        str.append(res).append(" ")
+                    }
+                    Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                }
+
+                override fun onSpeechResult(result: String) {
+                    //performActionWithVoiceCommand(result)
+                    Log.i("speech", "result: $result")
+                    //println("on Speech Result")
+                }
+            })
+        } catch (exc: SpeechRecognitionNotAvailable) {
+            Log.e("speech", "Speech recognition is not available on this device!")
+
+        } catch (exc: GoogleVoiceTypingDisabledException) {
+            Log.e("speech", "Google voice typing must be enabled!")
+        }
+        */
 //println("Valor de chosen meal:" +  timeLineModel.chosen_meal)
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager
 //val fragmentManager: FragmentManager? = (context as MainActivity?)?.supportFragmentManager

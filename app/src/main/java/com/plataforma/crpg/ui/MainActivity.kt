@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        resetSharedPreferences()
+
         requestMultiModalityOptions()
         //checkUserPermissions()
         setContentView(R.layout.activity_main)
@@ -69,6 +71,17 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    private fun resetSharedPreferences() {
+        val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("meditationHasRun", false).apply()
+        editor.putBoolean("notesHasRun", false).apply()
+        editor.putBoolean("selectionHasRun", false).apply()
+        editor.putBoolean("transportsHasRun", false).apply()
+        editor.putBoolean("remindersHasRun", false).apply()
+        editor.putBoolean("agendaHasRun", false).apply()
     }
 
 /*
@@ -94,8 +107,8 @@ class MainActivity : AppCompatActivity() {
     private fun requestMultiModalityOptions() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.putBoolean("meditationHasRun", false).apply()
-        editor.putBoolean("notesHasRun", false).apply()
+        //editor.putBoolean("meditationHasRun", false).apply()
+        //editor.putBoolean("notesHasRun", false).apply()
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Sugestões de Áudio")
                 .setMessage("A aplicação possui uma voz virtual que poder dar-lhe indicações de como" +
@@ -150,8 +163,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
         // prevent memory leaks when activity is destroyed
         Speech.getInstance().shutdown()
     }
