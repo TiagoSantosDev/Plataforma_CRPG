@@ -58,7 +58,9 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onDestroy() {
         // Don't forget to shutdown!
-        handler.removeCallbacks(runnable);
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+        }
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
@@ -277,6 +279,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
         //val handler = Handler(Looper.getMainLooper())
         runnable = Runnable {
             Speech.init(requireActivity())
+            handler.sendEmptyMessage(0)
             hasInitSR = true
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
