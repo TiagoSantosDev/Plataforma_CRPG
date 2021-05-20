@@ -39,8 +39,8 @@ class MealsFragment : Fragment() {
 
     private var textToSpeech: TextToSpeech? = null
     private var flagMealChosen = false
-    private val myLocale = Locale("pt_PT", "POR")
 
+    private val myLocale = Locale("pt_PT", "POR")
     private val handler = Handler(Looper.getMainLooper())
     private var runnable: Runnable by Delegates.notNull()
 

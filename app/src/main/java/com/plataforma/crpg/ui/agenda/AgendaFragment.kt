@@ -64,7 +64,7 @@ class AgendaFragment : Fragment() {
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
 
-        ttsAgendaHint()
+        //ttsAgendaHint()
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
     }

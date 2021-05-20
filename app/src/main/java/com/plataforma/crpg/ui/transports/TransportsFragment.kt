@@ -1,16 +1,19 @@
 package com.plataforma.crpg.ui.transports
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -18,10 +21,19 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.databinding.TransportsFragmentBinding
 import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
+import kotlinx.android.synthetic.main.meals_fragment.*
+import kotlinx.android.synthetic.main.notes_fragment.*
 import kotlinx.android.synthetic.main.transports_fragment.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
+import java.util.*
+import kotlin.properties.Delegates
 
 
 class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -34,12 +46,47 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var sharedViewModel: SharedViewModel
     private var phone = "00351912193034"
 
+    private var textToSpeech: TextToSpeech? = null
+    private val myLocale = Locale("pt_PT", "POR")
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putBoolean("transportsHasRun", true).apply()
+    }
+
+    override fun onDestroy() {
+        // Don't forget to shutdown!
+
+        handler.removeCallbacks(runnable)
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+        super.onDestroy ();
+    }
+
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View {
         val binding = TransportsFragmentBinding.inflate(layoutInflater)
         val view = binding.root
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("transportsHasRun", false)
+
+        defineModality(ttsFlag, srFlag, hasRun)
 
         showBackButton()
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
@@ -151,7 +198,156 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
             (activity as MainActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
     }
+
+    private fun performActionWithVoiceCommand(command: String){
+        when {
+            command.contains("Porto", true) -> locations_spinner.setSelection(0)
+            command.contains("Casa", true) -> locations_spinner.setSelection(1)
+            command.contains("Gaia", true) -> locations_spinner.setSelection(2)
+            command.contains("ligar ida", true) -> call_button_1.performClick()
+            command.contains("ligar volta", true) -> call_button_2.performClick()
+        }
+    }
+
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
+
+        println("ttsFlag:  " + ttsFlag)
+        println("srFlag: " + srFlag)
+        println("hasRun: " + hasRun)
+
+        if (!hasRun){
+            when{
+                ttsFlag && !srFlag -> { startTTS() }
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ multimodalOption() }
+            }
+        }
+
+        if(hasRun){
+            when{
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ startVoiceRecognition() }
+            }
+        }
+
+    }
+
+    private fun startTTS() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Linguagem não suportada!")
+                }
+                val speechStatus = textToSpeech!!.speak("Diga a paragem que pretende para selecionar",
+                        TextToSpeech.QUEUE_FLUSH, null, "ID")
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun multimodalOption() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!")
+                } else {
+                    Log.i("TTS", "Language Supported.")
+                }
+                Log.i("TTS", "Initialization success.")
+
+                val speechListener = object : UtteranceProgressListener() {
+                    @Override
+                    override fun onStart(p0: String?) {
+                        println("Iniciou TTS")
+                    }
+
+                    override fun onDone(p0: String?) {
+                        println("Encerrou TTS")
+                        if(activity != null && isAdded) {
+                            startVoiceRecognition()
+                        }
+                    }
+
+                    override fun onError(p0: String?) {
+                        TODO("Not yet implemented")
+                    }
+                }
+
+                textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                val speechStatus = textToSpeech!!.speak("Diga a paragem que pretende para selecionar", TextToSpeech.QUEUE_FLUSH, null, "ID")
+
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    fun startVoiceRecognition(){
+        //MANTER WIFI SEMPRE LIGADO
+        //val handler = Handler(Looper.getMainLooper())
+        runnable = Runnable {
+            Speech.init(requireActivity())
+            //hasInitSR = true
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
+                    }
+
+                    override fun onSpeechRmsChanged(value: Float) {
+                        Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        performActionWithVoiceCommand(results.toString())
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    //hasInitSR = true
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+        }
+
+        handler.post(runnable)
+    }
+
 }
+
+
+
+
 //println("Item selecionado: $selItem")
 // /*
 //        button_consult_custom_transport.setOnClickListener {
