@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.databinding.NotesFragmentBinding
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
@@ -60,7 +61,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onDestroy() {
         // Don't forget to shutdown!
 
-        //if (this::runnable.isInitialized)
+
         handler.removeCallbacks(runnable);
 
         if (textToSpeech != null) {
@@ -70,8 +71,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         super.onDestroy ();
-
-
     }
 
     override fun onCreateView(
@@ -251,14 +250,27 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
                         for (res in results) {
                             str.append(res).append(" ")
                         }
+                        performActionWithVoiceCommand(results.toString())
                         Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
                     }
 
                     override fun onSpeechResult(result: String) {
-                        performActionWithVoiceCommand(result)
-                        Log.i("speech", "result: $result")
-                        println("on Speech Result")
-                        hasInitSR = false
+                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    hasInitSR = true
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
                     }
                 })
             } catch (exc: SpeechRecognitionNotAvailable) {
@@ -280,7 +292,13 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 }
 
-
+//if (this::runnable.isInitialized)
+/*
+                        performActionWithVoiceCommand(result)
+                        Log.i("speech", "result: $result")
+                        println("on Speech Result")
+                        hasInitSR = false
+                        */
 /*
 if (hasInitSR) {
     if (Speech.getInstance() != null) {
