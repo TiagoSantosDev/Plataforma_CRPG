@@ -13,7 +13,7 @@
       android:orientation="horizontal" >
 
     <ImageButton
-        android:id="@+id/ImageButtonSom"
+        android:id="@+id/imageButtonSom"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginRight="8dp"
@@ -25,7 +25,7 @@
         android:contentDescription="@string/som" />
 
     <ImageButton
-        android:id="@+id/ImageButtonVibrar"
+        android:id="@+id/imageButtonVibrar"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
         android:contentDescription="@string/vibrar" />
 
     <ImageButton
-        android:id="@+id/ImageButtonAmbos"
+        android:id="@+id/imageButtonAmbos"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"

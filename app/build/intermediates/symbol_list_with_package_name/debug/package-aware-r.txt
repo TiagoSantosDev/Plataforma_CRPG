@@ -2618,9 +2618,6 @@ id BOTTOM_START
 id CRPG_to_location_title
 id CTRL
 id FUNCTION
-id ImageButtonAmbos
-id ImageButtonSom
-id ImageButtonVibrar
 id META
 id NO_DEBUG
 id SHIFT
@@ -3009,6 +3006,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButtonAmbos
+id imageButtonSom
+id imageButtonVibrar
 id imageView_BlueArrow
 id imageView_BlueArrow2
 id image_end_line_color
