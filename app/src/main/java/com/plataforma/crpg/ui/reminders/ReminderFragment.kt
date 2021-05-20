@@ -4,15 +4,16 @@ package com.plataforma.crpg.ui.reminders
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
 import android.text.InputFilter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
@@ -22,9 +23,22 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
+import kotlinx.android.synthetic.main.layout_second_alerta.*
+import kotlinx.android.synthetic.main.layout_second_dia.*
+import kotlinx.android.synthetic.main.layout_second_horas.*
+import kotlinx.android.synthetic.main.layout_second_lembrar.*
+import kotlinx.android.synthetic.main.meals_fragment.*
+import kotlinx.android.synthetic.main.reminder_activity.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
+import java.util.*
+import kotlin.properties.Delegates
 
 
 class ReminderFragment : Fragment() {
@@ -33,12 +47,37 @@ class ReminderFragment : Fragment() {
         fun newInstance() = ReminderFragment()
     }
 
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
+    private val myLocale = Locale("pt_PT", "POR")
+
     private var textToSpeech: TextToSpeech? = null
     private var lembrarButtonPressed = 0
     private var alarmTypeButtonPressed = 0
     private var alarmFreqButtonPressed = 0
     private var startTimeString = ""
     private var hoursMinutesFlag = false
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putBoolean("remindersHasRun", true).apply()
+    }
+
+    override fun onDestroy() {
+        // Don't forget to shutdown!
+        handler.removeCallbacks(runnable)
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+        super.onDestroy ();
+    }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreateView(
@@ -48,6 +87,9 @@ class ReminderFragment : Fragment() {
         val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("mealsHasRun", false)
+
+        defineModality(ttsFlag, srFlag, hasRun)
 
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
@@ -156,21 +198,21 @@ class ReminderFragment : Fragment() {
                     }
 
             expandableAlerta.parentLayout.setOnClickListener { expandableAlerta.toggleLayout() }
-            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonSom)
+            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.imageButtonSom)
                     .setOnClickListener {
                         cbSom.visibility = View.VISIBLE
                         cbVib.visibility = View.INVISIBLE
                         cbAmbos.visibility = View.INVISIBLE
                         alarmTypeButtonPressed = 1
                     }
-            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonVibrar)
+            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.imageButtonVibrar)
                     .setOnClickListener {
                         cbSom.visibility = View.INVISIBLE
                         cbVib.visibility = View.VISIBLE
                         cbAmbos.visibility = View.INVISIBLE
                         alarmTypeButtonPressed = 2
                     }
-            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.ImageButtonAmbos)
+            expandableAlerta.secondLayout.findViewById<AppCompatImageButton>(R.id.imageButtonAmbos)
                     .setOnClickListener {
                         cbSom.visibility = View.INVISIBLE
                         cbVib.visibility = View.INVISIBLE
@@ -320,7 +362,212 @@ class ReminderFragment : Fragment() {
         //newViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
+    private fun performActionWithVoiceCommand(command: String){
+        checkTimeCommand(command)
+        when {
+            command.contains("Lembrete", true) -> expandable_lembrar.performClick()
+            command.contains("Horas", true) -> expandable_horas.performClick()
+            command.contains("Dia", true) -> expandable_dia.performClick()
+            command.contains("Alerta", true) -> expandable_alerta.performClick()
+            command.contains("Cancelar", true) -> button_confirm.performClick()
+            command.contains("Confirmar", true) -> button_confirm.performClick()
+            command.contains("Todos", true) -> {
+                expandable_lembrar.performClick()
+                expandable_horas.performClick()
+                expandable_dia.performClick()
+                expandable_alerta.performClick()
+            }
+            command.contains("Medicamento", true) -> button0.performClick()
+            command.contains("Transporte", true) -> button1.performClick()
+            command.contains("Almoço", true)-> button2.performClick()
+            command.contains("Lembrete Personalizado", true)-> button3.performClick()
+            command.contains("Som", true)-> imageButtonSom.performClick()
+            command.contains("Vibração", true) -> imageButtonVibrar.performClick()
+            command.contains("Ambos", true) -> imageButtonAmbos.performClick()
+            command.contains("Hoje", true) -> button_hoje.performClick()
+            command.contains("Sempre", true) -> button_todos_dias.performClick()
+            command.contains("Dia Personalizado", true) -> button_personalizado.performClick()
+        }
+    }
+
+    private fun checkTimeCommand(command: String) {
+
+        when {
+            (command.contains("oito", true) || command.contains("8", true)) && command.contains("da manhã", true) ->edit_hours.setText("08")
+            (command.contains("oito", true) || command.contains("8", true))  && command.contains("da noite", true) ->edit_hours.setText("20")
+            (command.contains("nove", true)  || command.contains("9", true))&& command.contains("da manhã", true) ->edit_hours.setText("09")
+            (command.contains("nove", true)  || command.contains("9", true))&& command.contains("da noite", true) ->edit_hours.setText("21")
+            (command.contains("dez", true)  || command.contains("10", true))&& command.contains("da manhã", true) ->edit_hours.setText("10")
+            (command.contains("dez", true)  || command.contains("10", true))&& command.contains("da noite", true) ->edit_hours.setText("22")
+            (command.contains("onze", true)  || command.contains("11", true))&& command.contains("da manhã", true) ->edit_hours.setText("11")
+            (command.contains("onze", true)  || command.contains("11", true))&& command.contains("da noite", true) ->edit_hours.setText("23")
+            (command.contains("meio-dia", true)  || command.contains("12", true)) ->edit_hours.setText("12")
+            (command.contains("meia-noite", true)  || command.contains("0", true)) ->edit_hours.setText("00")
+            (command.contains("uma", true)  || command.contains("1", true))&& command.contains("da manhã", true) ->edit_hours.setText("01")
+            (command.contains("uma", true)  || command.contains("1", true))&& command.contains("da tarde", true) ->edit_hours.setText("13")
+            (command.contains("duas", true) || command.contains("2", true)) && command.contains("da manhã", true) ->edit_hours.setText("02")
+            (command.contains("duas", true)  || command.contains("2", true))&& command.contains("da noite", true) ->edit_hours.setText("14")
+            (command.contains("três", true)  || command.contains("3", true))&& command.contains("da manhã", true) ->edit_hours.setText("03")
+            (command.contains("três", true)  || command.contains("3", true))&& command.contains("da noite", true) ->edit_hours.setText("15")
+            (command.contains("quatro", true)  || command.contains("4", true))&& command.contains("da manhã", true) ->edit_hours.setText("04")
+            (command.contains("quatro", true)  || command.contains("4", true))&& command.contains("da noite", true) ->edit_hours.setText("16")
+            (command.contains("cinco", true)  || command.contains("5", true))&& command.contains("da manhã", true) ->edit_hours.setText("05")
+            (command.contains("cinco", true)  || command.contains("5", true))&& command.contains("da noite", true) ->edit_hours.setText("17")
+            (command.contains("seis", true)  || command.contains("6", true))&& command.contains("da manhã", true) ->edit_hours.setText("06")
+            (command.contains("seis", true)  || command.contains("6", true))&& command.contains("da noite", true) ->edit_hours.setText("18")
+            (command.contains("sete", true)  || command.contains("7", true))&& command.contains("da manhã", true) ->edit_hours.setText("07")
+            (command.contains("sete", true)  || command.contains("7", true))&& command.contains("da noite", true) ->edit_hours.setText("19")
+        }
+
+        when {
+            command.contains("e cinco", true) ->edit_minutes.setText("05")
+            command.contains("e um quarto", true) ->edit_minutes.setText("15")
+            command.contains("e meia", true) ->edit_minutes.setText("30")
+        }
+    }
+
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
+
+        println("ttsFlag:  " + ttsFlag)
+        println("srFlag: " + srFlag)
+        println("hasRun: " + hasRun)
+
+        if (!hasRun){
+            when{
+                ttsFlag && !srFlag -> { startTTS() }
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ multimodalOption() }
+            }
+        }
+
+        if(hasRun){
+            when{
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ startVoiceRecognition() }
+            }
+        }
+
+    }
+
+    private fun startTTS() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Linguagem não suportada!")
+                }
+                val speechStatus = textToSpeech!!.speak("Diga o nome da secção para abrir/fechar essa secção" +
+                        "e depois diga o nome da opção que quer escolher ou da hora para fazer a seleção", TextToSpeech.QUEUE_FLUSH, null, "ID")
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun multimodalOption() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!")
+                } else {
+                    Log.i("TTS", "Language Supported.")
+                }
+                Log.i("TTS", "Initialization success.")
+
+                val speechListener = object : UtteranceProgressListener() {
+                    @Override
+                    override fun onStart(p0: String?) {
+                        println("Iniciou TTS")
+                    }
+
+                    override fun onDone(p0: String?) {
+                        println("Encerrou TTS")
+                        if(activity != null && isAdded) {
+                            startVoiceRecognition()
+                        }
+                    }
+
+                    override fun onError(p0: String?) {
+                        TODO("Not yet implemented")
+                    }
+                }
+
+                textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                val speechStatus = textToSpeech!!.speak("Diga o nome da secção para abrir/fechar essa secção" +
+                        "e depois diga o nome da opção que quer escolher ou da hora para fazer a seleção  ", TextToSpeech.QUEUE_FLUSH, null, "ID")
+
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    fun startVoiceRecognition(){
+        //MANTER WIFI SEMPRE LIGADO
+        //val handler = Handler(Looper.getMainLooper())
+        runnable = Runnable {
+            Speech.init(requireActivity())
+            //hasInitSR = true
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
+                    }
+
+                    override fun onSpeechRmsChanged(value: Float) {
+                        Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        performActionWithVoiceCommand(results.toString())
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    //hasInitSR = true
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+        }
+
+        handler.post(runnable)
+    }
+
+
 }
+
+
+
+
 
 
 /*

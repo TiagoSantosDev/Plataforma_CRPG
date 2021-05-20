@@ -112,7 +112,7 @@ class MealsFragment : Fragment() {
         val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
-        val hasRun = modalityPreferences.getBoolean("notesHasRun", false)
+        val hasRun = modalityPreferences.getBoolean("mealsHasRun", false)
 
         defineModality(ttsFlag, srFlag, hasRun)
 
