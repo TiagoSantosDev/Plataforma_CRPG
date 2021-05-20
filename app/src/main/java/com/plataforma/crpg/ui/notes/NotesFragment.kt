@@ -244,7 +244,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {
-                        Log.d("speech", "rms is now: $value")
+                        //Log.d("speech", "rms is now: $value")
                     }
 
                     override fun onSpeechPartialResults(results: List<String>) {
