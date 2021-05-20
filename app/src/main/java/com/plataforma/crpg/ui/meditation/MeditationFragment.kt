@@ -28,6 +28,7 @@ import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate
 import net.gotev.speech.SpeechRecognitionNotAvailable
 import java.util.*
+import kotlin.properties.Delegates
 
 class MeditationFragment : Fragment() {
 
@@ -35,6 +36,11 @@ class MeditationFragment : Fragment() {
     private var onResumeFlag = false
     private val myLocale = Locale("pt_PT", "POR")
     private var hasInitSR = false
+
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
+
+    private lateinit var speech: Speech
 
     companion object {
         fun newInstance() = MeditationFragment()
@@ -72,26 +78,7 @@ class MeditationFragment : Fragment() {
         onResumeFlag = true
     }
 
-    override fun onDestroy() {
-        // Don't forget to shutdown!
 
-        println("Has init SR: $hasInitSR")
-
-        if (hasInitSR){
-            if (Speech.getInstance() != null) {
-                Speech.getInstance().stopListening()
-                Speech.getInstance().shutdown()
-                println("shutdown Speech")
-            }
-        }
-
-        if (textToSpeech != null) {
-            textToSpeech!!.stop()
-            textToSpeech!!.shutdown()
-            println("shutdown TTS")
-        }
-        super.onDestroy()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -238,9 +225,10 @@ class MeditationFragment : Fragment() {
     }
 
     fun startVoiceRecognition(){
-        //MANTER WIFI SEMPRE LIGADO
-        val handler = Handler(Looper.getMainLooper())
-        val runable = Runnable {
+       //MANTER WIFI SEMPRE LIGADO
+       // val handler = Handler(Looper.getMainLooper())
+       // val runable = Runnable {
+        runnable = Runnable {
             Speech.init(requireActivity())
             hasInitSR = true
             try {
@@ -266,16 +254,20 @@ class MeditationFragment : Fragment() {
                         Log.d(TAG, "onSpeechResult: " + result.toLowerCase())
                         //Speech.getInstance().stopTextToSpeech()
                         val handler = Handler()
-                        handler.postDelayed({
-                            try {
-                                Speech.getInstance().startListening(this)
-                                hasInitSR = true
-                            } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
-                                speechRecognitionNotAvailable.printStackTrace()
-                            } catch (e: GoogleVoiceTypingDisabledException) {
-                                e.printStackTrace()
-                            }
-                        }, 100)
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    //speech.init(requireActivity())
+                                    hasInitSR = true
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
                     }
 
                 })
@@ -286,8 +278,33 @@ class MeditationFragment : Fragment() {
             }
         }
 
-        handler.post(runable)
+        handler.post(runnable)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        // Don't forget to shutdown!
+        println("Has init SR: $hasInitSR")
+
+        handler.removeCallbacks(runnable);
+
+        /*
+        if (hasInitSR){
+            if (Speech.getInstance() != null) {
+                Speech.getInstance().shutdown()
+                println("shutdown Speech")
+            }
+        }*/
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+    }
+
 
     private fun goToMeditationMediaPlayer(){
         val fragment: Fragment = MeditationMediaPlayerFragment()

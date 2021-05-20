@@ -185,8 +185,6 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-
-
 /*
         Speech.init(this, packageName, mTttsInitListener);
         Speech.getInstance().setLocale(myLocale)

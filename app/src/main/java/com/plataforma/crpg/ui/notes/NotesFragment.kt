@@ -30,6 +30,7 @@ import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate
 import net.gotev.speech.SpeechRecognitionNotAvailable
 import java.util.*
+import kotlin.properties.Delegates
 
 
 class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
@@ -37,6 +38,9 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     companion object {
         fun newInstance() = NotesFragment()
     }
+
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
 
     private var textToSpeech: TextToSpeech? = null
     private lateinit var notesViewModel: NotesViewModel
@@ -56,13 +60,8 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onDestroy() {
         // Don't forget to shutdown!
 
-        if (hasInitSR) {
-            if (Speech.getInstance() != null) {
-                Speech.getInstance().stopListening()
-                Speech.getInstance().shutdown()
-                println("shutdown Speech")
-            }
-        }
+        //if (this::runnable.isInitialized)
+        handler.removeCallbacks(runnable);
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
@@ -70,7 +69,9 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             println("shutdown TTS")
         }
 
-        super.onDestroy()
+        super.onDestroy ();
+
+
     }
 
     override fun onCreateView(
@@ -95,7 +96,6 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
         defineModality(ttsFlag, srFlag, hasRun)
 
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
-
         notesViewModel.getNotesCollectionFromJSONWithoutPopulate()
 
         list_recycler_view.apply {
@@ -232,8 +232,8 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     fun startVoiceRecognition(){
         //MANTER WIFI SEMPRE LIGADO
-        val handler = Handler(Looper.getMainLooper())
-        val runable = Runnable {
+        //val handler = Handler(Looper.getMainLooper())
+        runnable = Runnable {
             Speech.init(requireActivity())
             hasInitSR = true
             try {
@@ -268,7 +268,7 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }
         }
 
-        handler.post(runable)
+        handler.post(runnable)
     }
 
     fun performActionWithVoiceCommand(command: String){
@@ -279,6 +279,16 @@ class NotesFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
 }
+
+
+/*
+if (hasInitSR) {
+    if (Speech.getInstance() != null) {
+        Speech.getInstance().stopListening()
+        Speech.getInstance().shutdown()
+        println("shutdown Speech")
+    }
+}*/
 
 /*
                     var handler = Handler(Looper.getMainLooper())
