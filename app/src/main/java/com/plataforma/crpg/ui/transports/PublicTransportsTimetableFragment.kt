@@ -394,6 +394,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
         runnable = Runnable {
+            handler.sendEmptyMessage(0);
             Speech.init(requireActivity())
             hasInitSR = true
             try {

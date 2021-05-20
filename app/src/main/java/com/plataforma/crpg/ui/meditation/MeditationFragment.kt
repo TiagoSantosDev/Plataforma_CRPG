@@ -229,6 +229,7 @@ class MeditationFragment : Fragment() {
        // val handler = Handler(Looper.getMainLooper())
        // val runable = Runnable {
         runnable = Runnable {
+            handler.sendEmptyMessage(0);
             Speech.init(requireActivity())
             hasInitSR = true
             try {
@@ -238,7 +239,7 @@ class MeditationFragment : Fragment() {
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {
-                        Log.d("speech", "rms is now: $value")
+                        //Log.d("speech", "rms is now: $value")
                     }
 
                     override fun onSpeechPartialResults(results: List<String>) {
@@ -287,7 +288,9 @@ class MeditationFragment : Fragment() {
         // Don't forget to shutdown!
         println("Has init SR: $hasInitSR")
 
-        handler.removeCallbacks(runnable);
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+        }
 
         /*
         if (hasInitSR){

@@ -68,7 +68,10 @@ class ReminderFragment : Fragment() {
 
     override fun onDestroy() {
         // Don't forget to shutdown!
-        handler.removeCallbacks(runnable)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+        }
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
@@ -516,6 +519,7 @@ class ReminderFragment : Fragment() {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
         runnable = Runnable {
+            handler.sendEmptyMessage(0);
             Speech.init(requireActivity())
             //hasInitSR = true
             try {
