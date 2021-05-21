@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:padding="16dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/note_card_main"
@@ -34,10 +34,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/list_title"
+                android:id="@+id/item_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:lines="1"
@@ -49,7 +49,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/list_description"
+                android:id="@+id/item_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -58,7 +58,19 @@
                 android:lines="1"
                 android:singleLine="true"
                 android:paddingStart="8dp"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:visibility="invisible"/>
+
+            <com.google.android.exoplayer2.ui.PlayerControlView
+                android:id="@+id/note_item_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:paddingEnd="32dp"
+                android:visibility="invisible"
+                app:controller_layout_id="@layout/custom_note_player_control_view"
+                app:show_timeout="0"
+                app:hide_on_touch="false" />
         </FrameLayout>
 
         <FrameLayout

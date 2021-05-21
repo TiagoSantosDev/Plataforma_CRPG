@@ -3025,6 +3025,8 @@ id info
 id inserir_titulo_lembrete_personalizado
 id invisible
 id italic
+id item_description
+id item_title
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -3048,10 +3050,8 @@ id line1
 id line3
 id linear
 id listMode
-id list_description
 id list_item
 id list_recycler_view
-id list_title
 id location_to_CRPG_title
 id locations_spinner
 id locations_spinner_card
@@ -3146,6 +3146,7 @@ id normal
 id note_card_main
 id note_delete_icon
 id note_image
+id note_item_player_view
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -3531,6 +3532,7 @@ layout calendar_item
 layout color_item
 layout color_preference_widget
 layout custom_dialog
+layout custom_note_player_control_view
 layout custom_player_control_view
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

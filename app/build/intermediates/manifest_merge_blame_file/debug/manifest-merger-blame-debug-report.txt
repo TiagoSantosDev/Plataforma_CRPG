@@ -67,7 +67,7 @@
 38        android:allowBackup="true"
 38-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:23:9-35
 39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:18-86
+39-->[androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:24:18-86
 40        android:debuggable="true"
 41        android:extractNativeLibs="false"
 42        android:icon="@mipmap/ic_launcher"

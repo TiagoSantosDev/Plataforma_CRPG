@@ -5,10 +5,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.media.AudioAttributes
-import android.media.AudioFormat
-import android.media.MediaPlayer
-import android.media.MediaRecorder
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -19,18 +15,21 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.webkit.MimeTypeMap
 import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.windsekirun.naraeaudiorecorder.NaraeAudioRecorder
-import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig import com.github.windsekirun.naraeaudiorecorder.constants.LogConstants
+import com.github.windsekirun.naraeaudiorecorder.config.AudioRecordConfig
+import com.github.windsekirun.naraeaudiorecorder.constants.LogConstants
 import com.github.windsekirun.naraeaudiorecorder.extensions.runOnUiThread
 import com.github.windsekirun.naraeaudiorecorder.model.RecordMetadata
 import com.github.windsekirun.naraeaudiorecorder.model.RecordState
@@ -102,6 +101,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
         val titleText = view.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
         val fileName = System.currentTimeMillis().toString()
+        //val fileName = System.currentTimeMillis().asDateString()
         val extensions = ".wav"
         val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
 
@@ -115,6 +115,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 this.destFile = destFile
                 this.recordConfig = recordConfig
                 this.audioSource = audioSource
+                this.timerCountCallback = { current, max -> timerChanged(current, max) }
                 this.debugMode = true
             }
 
@@ -130,6 +131,28 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             audioRecorder.stopRecording()
             recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
             println("Saved on ${destFile.absolutePath}")
+        }
+
+        button_replay_recording.setOnClickListener{
+            /*
+            val uri = if (Build.VERSION.SDK_INT >= 24) {
+                val authority = "$packageName.fileprovider"
+                FileProvider.getUriForFile(requireContext(), authority, destFile ?: File(""))
+            } else {
+                Uri.fromFile(destFile)
+            }
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(destFile?.extension)
+            intent.apply {
+                setDataAndType(uri, mimeType)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+
+            val chooser = Intent.createChooser(intent, "Open with...")
+            startActivity(chooser)
+            */
         }
 
         button_new_voice_note_image.setOnClickListener{
@@ -196,6 +219,10 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         return voiceItemCount
+    }
+
+    private fun timerChanged(currentTime: Long, maxTime: Long) {
+        Log.d(TAG, "timerChanged: current: $currentTime max: $maxTime")
     }
 
     @SuppressLint("SetTextI18n")
