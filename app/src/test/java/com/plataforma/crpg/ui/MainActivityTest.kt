@@ -1,10 +1,9 @@
 package com.plataforma.crpg.ui
 
-import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.*
+import org.mockito.Mockito.spy
 
 class MainActivityTest {
 

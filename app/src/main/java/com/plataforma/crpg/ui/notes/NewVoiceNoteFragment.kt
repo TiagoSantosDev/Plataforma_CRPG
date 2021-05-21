@@ -7,10 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.os.Environment
-import android.os.Handler
+import android.os.*
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +32,7 @@ import com.github.windsekirun.naraeaudiorecorder.model.RecordMetadata
 import com.github.windsekirun.naraeaudiorecorder.model.RecordState
 import com.github.windsekirun.naraeaudiorecorder.source.DefaultAudioSource
 import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
@@ -47,7 +45,7 @@ import java.io.File
 
 class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
-    var myHandler: Handler? = null
+    //var myHandler: Handler? = null
 
     companion object {
         fun newInstance() = NewVoiceNoteFragment()
@@ -140,27 +138,40 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
                 button_start_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
                 button_stop_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
-                myHandler?.postDelayed(Runnable {
-                    button_stop_recording.setBackgroundColor(resources.getColor(R.color.PrimaryGreen))
-                }, 500)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    button_stop_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+                }, 1000)
             }
         }
 
         button_replay_recording.setOnClickListener{
             if (!destFile?.absolutePath.isNullOrBlank()) {
+                button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
                 val uri: Uri = Uri.parse(destFile?.absolutePath)
                 val player = SimpleExoPlayer.Builder(requireContext()).build()
+                val listener: Player.EventListener
+                //player.addListener(listener);
 
                 val mediaItem: MediaItem = MediaItem.fromUri(uri)
                 player.setMediaItem(mediaItem)
                 player.prepare()
                 player.play()
-                button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
-                if(!player.isPlaying){
-                    button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+
+                @Override
+                fun onIsPlayingChanged(isPlaying: Boolean) {
+                    if (isPlaying) {
+                        //nao chega a entrar aqui
+                        println("reproducao")
+                        button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
+                    }else{
+                        println("parou")
+                        button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+                    }
                 }
+                onIsPlayingChanged(player.isPlaying)
             }
         }
+
 
         button_new_voice_note_image.setOnClickListener{
             ImagePicker.with(this)
@@ -192,10 +203,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = VISIBLE
             }
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -258,7 +265,21 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 }
 
+/*
+               player.addListener(ExoPlayer.Listener() {
+                   @Override
+                   public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+                       if (playbackState == ExoPlayer.STATE_READY && !durationSet) {
+                           long realDurationMillis = audioPlayer.getDuration();
+                           durationSet = true;
+                       }
 
+                   }
+               }*/
+/*
+if(!player.isPlaying){
+    button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+}*/
 /*
 //println(audioRecorder.toString())
 //println("stop recording check ")

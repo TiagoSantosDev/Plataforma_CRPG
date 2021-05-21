@@ -7,13 +7,11 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.rule.ActivityTestRule
+import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
-import kotlinx.android.synthetic.main.reminder_activity_intro.view.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import com.plataforma.crpg.R
 
 
 @RunWith(AndroidJUnit4ClassRunner::class)

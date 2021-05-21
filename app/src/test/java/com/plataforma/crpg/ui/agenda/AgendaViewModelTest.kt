@@ -1,12 +1,9 @@
 package com.plataforma.crpg.ui.agenda
 
 import android.app.Application
-import com.plataforma.crpg.ui.reminders.ReminderViewModel
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 

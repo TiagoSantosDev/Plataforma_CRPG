@@ -23,10 +23,11 @@ import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.extentions.formatDateTime
 import com.plataforma.crpg.extentions.setGone
 import com.plataforma.crpg.extentions.setVisible
-import com.plataforma.crpg.model.*
+import com.plataforma.crpg.model.Event
+import com.plataforma.crpg.model.EventType
+import com.plataforma.crpg.model.TimelineAttributes
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
-import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
@@ -80,23 +81,22 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         //holder.bind(timeLineModel)
         if (timeLineModel.type == EventType.ACTIVITY) {
             holder.itemView.contentDescription = "Actividade" +
-                    "com o título ${timeLineModel.title} e o conteúdo ${timeLineModel.info}, que irá" +
-                    " começar às ${timeLineModel.start_time}"
+                    "com o título ${timeLineModel.title} e tendo como descrição ${timeLineModel.info}, que irá" +
+                    " começar às ${timeLineModel.start_time}. Clique para obter mais informações"
         }
 
         if (timeLineModel.type == EventType.MEAL && timeLineModel.chosen_meal.isNullOrBlank()) {
-            holder.itemView.contentDescription = " Nenhuma refeição selecionada, clique para selecionar" +
+            holder.itemView.contentDescription = "Nenhuma refeição selecionada, clique para selecionar" +
                      "a sua refeição"
         }
 
         if (timeLineModel.type == EventType.MEAL && !timeLineModel.chosen_meal.isNullOrBlank()) {
-            holder.itemView.contentDescription = "Refeição selecionada, o prato escolhido foi "
+            holder.itemView.contentDescription = "Refeição selecionada, o prato escolhido foi ${timeLineModel.chosen_meal}"
         }
 
         if (timeLineModel.type == EventType.TRANSPORTS) {
             holder.itemView.contentDescription = "Aceder à secção de transportes"
         }
-
 
         concatTime = timeLineModel.start_time + timeLineModel.end_time
 
@@ -177,7 +177,6 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         //onClick on a card open pop up or go to Meal or Transport Fragment
         holder.itemView.card.setOnClickListener {
-
             id=mFeedList[position].title
             tipo= mFeedList[position].type
 

@@ -1,8 +1,6 @@
 package com.plataforma.crpg.ui.meditation
 
 import android.content.Context
-import android.media.AudioManager
-import android.nfc.Tag
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper

@@ -1,11 +1,7 @@
 package com.plataforma.crpg.ui.transports
 
-import androidx.appcompat.app.AppCompatActivity
-import com.plataforma.crpg.model.Transport
-import kotlinx.android.synthetic.main.fragment_transport_selection.view.*
+import org.junit.Assert.assertNotNull
 import org.junit.Test
-
-import org.junit.Assert.*
 
 class TransportsSelectionFragmentTest {
 

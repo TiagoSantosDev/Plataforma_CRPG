@@ -76,152 +76,151 @@
 43-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:25:9-41
 44        android:supportsRtl="true"
 44-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:9-35
-45        android:testOnly="true"
-46        android:theme="@style/AppTheme" >
-46-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:9-40
-47        <activity
-47-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:9-44:20
-48            android:name="com.plataforma.crpg.ui.MainActivity"
-48-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:13-44
-49            android:configChanges="orientation|keyboardHidden|screenSize"
-49-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:13-74
-50            android:label="@string/app_name"
-50-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:31:13-45
-51            android:windowSoftInputMode="adjustPan" >
-51-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:13-52
-52            <intent-filter>
-52-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:34:13-43:29
-53                <action android:name="android.intent.action.MAIN" />
-53-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:17-69
-53-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:25-66
-54                <action android:name="android.intent.action.SET_ALARM" />
-54-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:36:17-74
-54-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:36:25-71
-55                <action android:name="android.intent.action.SHOW_ALARMS" />
-55-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:37:17-76
-55-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:37:25-73
-56                <action android:name="android.intent.action.WRITE_EXTERNAL_STORAGE" />
-56-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:38:17-87
-56-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:38:25-84
-57                <action android:name="android.intent.action.READ_EXTERNAL_STORAGE" />
-57-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:39:17-86
-57-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:39:25-83
-58                <action android:name="android.intent.action.RECORD_AUDIO" />
-58-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:40:17-77
-58-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:40:25-74
-59
-60                <category android:name="android.intent.category.DEFAULT" />
-60-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:41:17-76
-60-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:41:27-73
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:42:17-77
-61-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:42:27-74
-62            </intent-filter>
-63        </activity>
-64        <activity android:name="androidx.fragment.app.FragmentActivity" />
-64-->[com.21buttons:fragment-test-rule-extras:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\bad0befef1bb103f41358b326d9a231f\jetified-fragment-test-rule-extras-2.0.1\AndroidManifest.xml:12:9-75
-64-->[com.21buttons:fragment-test-rule-extras:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\bad0befef1bb103f41358b326d9a231f\jetified-fragment-test-rule-extras-2.0.1\AndroidManifest.xml:12:19-72
-65        <activity
-65-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:15:9-18:68
-66            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
-66-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:16:13-81
-67            android:screenOrientation="unspecified"
-67-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:17:13-52
-68            android:theme="@style/Theme.Transparent.ImagePicker" />
-68-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:18:13-65
-69        <activity
-69-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:19:9-22:72
-70            android:name="com.yalantis.ucrop.UCropActivity"
-70-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:20:13-60
-71            android:screenOrientation="portrait"
-71-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:21:13-49
-72            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-72-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:22:13-69
-73
-74        <provider
-74-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:24:9-32:20
-75            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
-75-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:25:13-85
-76            android:authorities="com.platform.crpg.imagepicker.provider"
-76-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:26:13-72
-77            android:exported="false"
-77-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:27:13-37
-78            android:grantUriPermissions="true" >
-78-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:28:13-47
-79            <meta-data
-79-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:29:13-31:71
-80                android:name="android.support.FILE_PROVIDER_PATHS"
-80-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:30:17-67
-81                android:resource="@xml/image_picker_provider_paths" />
-81-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:31:17-68
-82        </provider>
-83
-84        <service
-84-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
-85            android:name="com.google.firebase.components.ComponentDiscoveryService"
-85-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:13:13-84
-86            android:directBootAware="true"
-86-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
-87            android:exported="false" >
-87-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:14:13-37
-88            <meta-data
-88-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
-89                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
-89-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:16:17-124
-90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:17:17-82
-91            <meta-data
-91-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
-92                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-92-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:16:17-113
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:17:17-82
-94            <meta-data
-94-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
-95                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-95-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:33:17-109
-96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:34:17-82
-97            <!--
-98                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-99                clients to use it as well, by defining this registrar in their own core/common library.
-100            -->
-101            <meta-data
-101-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
-102                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-102-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
-103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
-104        </service>
-105
-106        <provider
-106-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
-107            android:name="com.google.firebase.provider.FirebaseInitProvider"
-107-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
-108            android:authorities="com.platform.crpg.firebaseinitprovider"
-108-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
-109            android:directBootAware="true"
-109-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
-110            android:exported="false"
-110-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
-111            android:initOrder="100" />
-111-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
-112
-113        <activity
-113-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-114            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-114-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-115            android:exported="false"
-115-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-116            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-116-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-117
-118        <meta-data
-118-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-119            android:name="com.google.android.gms.version"
-119-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-120            android:value="@integer/google_play_services_version" />
-120-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-121    </application>
-122
-123</manifest>
+45        android:theme="@style/AppTheme" >
+45-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:27:9-40
+46        <activity
+46-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:29:9-44:20
+47            android:name="com.plataforma.crpg.ui.MainActivity"
+47-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:30:13-44
+48            android:configChanges="orientation|keyboardHidden|screenSize"
+48-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:32:13-74
+49            android:label="@string/app_name"
+49-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:31:13-45
+50            android:windowSoftInputMode="adjustPan" >
+50-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:33:13-52
+51            <intent-filter>
+51-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:34:13-43:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:17-69
+52-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:35:25-66
+53                <action android:name="android.intent.action.SET_ALARM" />
+53-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:36:17-74
+53-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:36:25-71
+54                <action android:name="android.intent.action.SHOW_ALARMS" />
+54-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:37:17-76
+54-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:37:25-73
+55                <action android:name="android.intent.action.WRITE_EXTERNAL_STORAGE" />
+55-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:38:17-87
+55-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:38:25-84
+56                <action android:name="android.intent.action.READ_EXTERNAL_STORAGE" />
+56-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:39:17-86
+56-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:39:25-83
+57                <action android:name="android.intent.action.RECORD_AUDIO" />
+57-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:40:17-77
+57-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:40:25-74
+58
+59                <category android:name="android.intent.category.DEFAULT" />
+59-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:41:17-76
+59-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:41:27-73
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:42:17-77
+60-->C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:42:27-74
+61            </intent-filter>
+62        </activity>
+63        <activity android:name="androidx.fragment.app.FragmentActivity" />
+63-->[com.21buttons:fragment-test-rule-extras:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\bad0befef1bb103f41358b326d9a231f\jetified-fragment-test-rule-extras-2.0.1\AndroidManifest.xml:12:9-75
+63-->[com.21buttons:fragment-test-rule-extras:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\bad0befef1bb103f41358b326d9a231f\jetified-fragment-test-rule-extras-2.0.1\AndroidManifest.xml:12:19-72
+64        <activity
+64-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:15:9-18:68
+65            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+65-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:16:13-81
+66            android:screenOrientation="unspecified"
+66-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:17:13-52
+67            android:theme="@style/Theme.Transparent.ImagePicker" />
+67-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:18:13-65
+68        <activity
+68-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:19:9-22:72
+69            android:name="com.yalantis.ucrop.UCropActivity"
+69-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:20:13-60
+70            android:screenOrientation="portrait"
+70-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:21:13-49
+71            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+71-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:22:13-69
+72
+73        <provider
+73-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:24:9-32:20
+74            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+74-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:25:13-85
+75            android:authorities="com.platform.crpg.imagepicker.provider"
+75-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:26:13-72
+76            android:exported="false"
+76-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:27:13-37
+77            android:grantUriPermissions="true" >
+77-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:28:13-47
+78            <meta-data
+78-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:29:13-31:71
+79                android:name="android.support.FILE_PROVIDER_PATHS"
+79-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:30:17-67
+80                android:resource="@xml/image_picker_provider_paths" />
+80-->[com.github.dhaval2404:imagepicker:1.8] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\09f34c217c77c6079d6b01dcb65f63ff\jetified-imagepicker-1.8\AndroidManifest.xml:31:17-68
+81        </provider>
+82
+83        <service
+83-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:12:9-18:19
+84            android:name="com.google.firebase.components.ComponentDiscoveryService"
+84-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:13:13-84
+85            android:directBootAware="true"
+85-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+86            android:exported="false" >
+86-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:14:13-37
+87            <meta-data
+87-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:15:13-17:85
+88                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+88-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:16:17-124
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-database-ktx:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\34d8d48a2a82acc18ab5cd0d73122502\jetified-firebase-database-ktx-19.7.0\AndroidManifest.xml:17:17-82
+90            <meta-data
+90-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:15:13-17:85
+91                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+91-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:16:17-113
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:17:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
+94                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+94-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:33:17-109
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-database:19.7.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\94c21d803f530d9c96960f8b5aa25ae9\jetified-firebase-database-19.7.0\AndroidManifest.xml:34:17-82
+96            <!--
+97                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+98                clients to use it as well, by defining this registrar in their own core/common library.
+99            -->
+100            <meta-data
+100-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+101                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+101-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+103        </service>
+104
+105        <provider
+105-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+106            android:name="com.google.firebase.provider.FirebaseInitProvider"
+106-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+107            android:authorities="com.platform.crpg.firebaseinitprovider"
+107-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+108            android:directBootAware="true"
+108-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+109            android:exported="false"
+109-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+110            android:initOrder="100" />
+110-->[com.google.firebase:firebase-common:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5de0c24719f67bcbc143e27995919f2\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+111
+112        <activity
+112-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+113            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+113-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+114            android:exported="false"
+114-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a5e9374429c38ea16a36aebbb2fc6663\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+116
+117        <meta-data
+117-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+118            android:name="com.google.android.gms.version"
+118-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+119            android:value="@integer/google_play_services_version" />
+119-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+120    </application>
+121
+122</manifest>
