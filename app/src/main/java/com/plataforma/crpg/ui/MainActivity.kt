@@ -7,10 +7,8 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -183,12 +181,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shoutDatePickerHint() {
-        Speech.getInstance().say("Selecione um dia para ver os seus eventos");
+        Speech.getInstance().say("Selecione um dia para ver os seus eventos")
     }
 
     fun performActionWithVoiceCommand(command: String){
         when {
-            command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation;
+            command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation
             command.contains("Navegar Notas", true) -> nav_view.selectedItemId = R.id.navigation_notes
             command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
         }

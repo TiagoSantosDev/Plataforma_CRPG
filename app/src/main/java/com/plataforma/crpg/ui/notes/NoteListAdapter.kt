@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.exoplayer2.MediaItem
@@ -17,9 +16,7 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
-import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
 import kotlinx.android.synthetic.main.note_list_item.view.*
-import kotlin.concurrent.fixedRateTimer
 
 class ListAdapter(private val list: List<Note>, private val ctx: Context, private val onChange: (List<Note>) -> Unit) :
     RecyclerView.Adapter<NoteViewHolder>() {

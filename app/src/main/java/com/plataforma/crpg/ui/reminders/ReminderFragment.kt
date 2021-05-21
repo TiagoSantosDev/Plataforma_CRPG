@@ -31,7 +31,6 @@ import kotlinx.android.synthetic.main.layout_second_alerta.*
 import kotlinx.android.synthetic.main.layout_second_dia.*
 import kotlinx.android.synthetic.main.layout_second_horas.*
 import kotlinx.android.synthetic.main.layout_second_lembrar.*
-import kotlinx.android.synthetic.main.meals_fragment.*
 import kotlinx.android.synthetic.main.reminder_activity.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech

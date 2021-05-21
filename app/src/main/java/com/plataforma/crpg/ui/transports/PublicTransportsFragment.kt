@@ -27,7 +27,6 @@ import com.plataforma.crpg.ui.MainActivity
 import com.plataforma.crpg.ui.agenda.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_custom_transport.button_return_transports
 import kotlinx.android.synthetic.main.fragment_public_transport.*
-import kotlinx.android.synthetic.main.transports_fragment.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate

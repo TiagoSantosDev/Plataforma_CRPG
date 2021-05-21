@@ -1,21 +1,11 @@
 package com.plataforma.crpg.ui.reminders
 
 import android.app.Application
-import android.content.Intent
-import android.provider.AlarmClock
-import com.plataforma.crpg.ui.transports.TransportsViewModel
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
-import org.junit.runner.RunWith
+import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.verify
-import org.mockito.junit.MockitoJUnitRunner
-import java.lang.Boolean
-import java.util.*
 
 
 class ReminderViewModelTest {

@@ -66,7 +66,7 @@ class TransportsSelectionFragment : Fragment() {
             println("shutdown TTS")
         }
 
-        super.onDestroy ();
+        super.onDestroy ()
     }
 
     override fun onCreateView(
@@ -231,7 +231,7 @@ class TransportsSelectionFragment : Fragment() {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
         runnable = Runnable {
-            handler.sendEmptyMessage(0);
+            handler.sendEmptyMessage(0)
             Speech.init(requireActivity())
             //hasInitSR = true
             try {
