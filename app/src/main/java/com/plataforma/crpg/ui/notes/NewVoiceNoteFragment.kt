@@ -171,7 +171,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-            if(titleText.toString().isNotBlank() && destFile?.absolutePath.toString().isNotBlank()) {
+            println("Dest File path: " + destFile?.absolutePath.toString())
+            if(titleText.toString().isNotBlank() && !destFile?.absolutePath.isNullOrEmpty()) {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = GONE
                 notesViewModel.newNote.tipo = NoteType.VOICE
                 notesViewModel.newNote.titulo = voice_note_title_edit.text.toString()
