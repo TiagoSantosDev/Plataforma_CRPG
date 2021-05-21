@@ -19,6 +19,7 @@ import com.plataforma.crpg.model.Note
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.fragment_meditation_media_player.*
 import kotlinx.android.synthetic.main.note_list_item.view.*
+import kotlin.concurrent.fixedRateTimer
 
 class ListAdapter(private val list: List<Note>, private val ctx: Context, private val onChange: (List<Note>) -> Unit) :
     RecyclerView.Adapter<NoteViewHolder>() {
@@ -34,23 +35,25 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
         val note: Note = listData[holder.adapterPosition]
 
         holder.bind(note)
+        if (note.tipo == NoteType.TEXT) {
+            holder.itemView.contentDescription = "Nota de texto nº ${position}: " +
+                    "com o título ${note.titulo} e o conteúdo ${note.info}"
+        }
+
+        if (note.tipo == NoteType.VOICE) {
+            holder.itemView.contentDescription = "Nota de voz nº ${position}: " +
+                    "com o título ${note.titulo}, para ouvir pressione o botão de play"
+        }
 
         var removedPosition : Int ? = null
 
         if (listData[position].tipo == NoteType.VOICE) {
-            //val uri: Uri = Uri.parse("android.resource://" + ctx.packageName.toString()
-            //        + "/raw/meditation_sound")
-
-            //val uri: Uri = Uri.parse("storage/emulated/0/VoiceNotes/1621590354570.wav")
             val uri: Uri = Uri.parse(listData[position].voiceNotePath)
             val player = SimpleExoPlayer.Builder(ctx).build()
 
             holder.itemView.note_item_player_view.player = player
             val mediaItem: MediaItem = MediaItem.fromUri(uri)
             player.setMediaItem(mediaItem)
-
-            player.prepare()
-            player.play()
         }
 
 
@@ -62,7 +65,6 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
         }
 
         holder.itemView.note_card_main.setOnClickListener {
-
             if (listData[position].tipo == NoteType.TEXT) {
                 MaterialAlertDialogBuilder(ctx, android.R.style.Theme_Material_Dialog_Alert)
                         .setTitle(listData[position].titulo)
@@ -108,20 +110,32 @@ class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(note: Note) {
         mTitleView?.text = note.titulo
         mContentView?.text = note.info
+
         if (!note.imagePath.isBlank()) {
             mImageView?.setImageURI(note.imagePath.toUri())
-            //mContentView?.setVisible()
         } else if (note.imagePath.isBlank() && note.tipo == NoteType.TEXT) {
             mImageView?.setImageResource(R.drawable.outline_create_black_24dp)
-            mContentView?.setVisible()
-        }else{
+        }else if (note.imagePath.isBlank() && note.tipo == NoteType.VOICE) {
             mImageView?.setImageResource(R.drawable.outline_record_voice_over_black_24dp)
+        }
+
+        if(note.tipo == NoteType.TEXT){
+            mContentView?.setVisible()
+        }else if(note.tipo == NoteType.VOICE){
             mPlayerView?.setVisible()
         }
 
     }
 
 }
+
+
+//player.prepare()
+//player.play()
+//val uri: Uri = Uri.parse("android.resource://" + ctx.packageName.toString()
+//        + "/raw/meditation_sound")
+
+//val uri: Uri = Uri.parse("storage/emulated/0/VoiceNotes/1621590354570.wav")
 //mImageView?.setImageURI(note.imagePath.toUri())
 //val inputStream = getContentResolver().openInputStream(note.imagePath.toUri())
 //AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity)

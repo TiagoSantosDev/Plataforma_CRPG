@@ -77,9 +77,28 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
         val timeLineModel = mFeedList[position]
         //holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
 
-        concatTime = timeLineModel.start_time + timeLineModel.end_time
+        //holder.bind(timeLineModel)
+        if (timeLineModel.type == EventType.ACTIVITY) {
+            holder.itemView.contentDescription = "Actividade" +
+                    "com o título ${timeLineModel.title} e o conteúdo ${timeLineModel.info}, que irá" +
+                    " começar às ${timeLineModel.start_time}"
+        }
 
-        println()
+        if (timeLineModel.type == EventType.MEAL && timeLineModel.chosen_meal.isNullOrBlank()) {
+            holder.itemView.contentDescription = " Nenhuma refeição selecionada, clique para selecionar" +
+                     "a sua refeição"
+        }
+
+        if (timeLineModel.type == EventType.MEAL && !timeLineModel.chosen_meal.isNullOrBlank()) {
+            holder.itemView.contentDescription = "Refeição selecionada, o prato escolhido foi "
+        }
+
+        if (timeLineModel.type == EventType.TRANSPORTS) {
+            holder.itemView.contentDescription = "Aceder à secção de transportes"
+        }
+
+
+        concatTime = timeLineModel.start_time + timeLineModel.end_time
 
         if (overlapArray.contains(concatTime)){
             holder.timeline.marker.setVisible(false, false)
