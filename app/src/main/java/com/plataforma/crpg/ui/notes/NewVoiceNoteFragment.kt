@@ -54,6 +54,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private var imageUri = ""
     private val audioRecorder = NaraeAudioRecorder()
     private var recordMetadata: RecordMetadata? = null
+    private var destFile: File? = null
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -100,19 +101,22 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
         val titleText = view.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
-        val fileName = System.currentTimeMillis().toString()
+
         //val fileName = System.currentTimeMillis().asDateString()
-        val extensions = ".wav"
-        val destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
+
 
 
         button_start_recording.setOnClickListener {
+
+            val fileName = System.currentTimeMillis().toString()
+            val extensions = ".wav"
+            destFile = File(Environment.getExternalStorageDirectory(), "/VoiceNotes/$fileName$extensions")
 
             val recordConfig = AudioRecordConfig.defaultConfig()
             val audioSource = DefaultAudioSource(recordConfig)
 
             audioRecorder.create {
-                this.destFile = destFile
+                this.destFile = this@NewVoiceNoteFragment.destFile
                 this.recordConfig = recordConfig
                 this.audioSource = audioSource
                 this.timerCountCallback = { current, max -> timerChanged(current, max) }
@@ -130,7 +134,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
             println(audioRecorder.toString())
             audioRecorder.stopRecording()
             recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
-            println("Saved on ${destFile.absolutePath}")
+            println("Saved on ${destFile?.absolutePath}")
         }
 
         button_replay_recording.setOnClickListener{
@@ -164,11 +168,12 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         }
 
         button_save_voice_note.setOnClickListener{
-            if(titleText.toString().isNotBlank()) {
+            if(titleText.toString().isNotBlank() && destFile?.absolutePath.toString().isNotBlank()) {
                 view?.rootView?.findViewById<MaterialTextView>(R.id.aviso_titulo_voz_em_falta)?.visibility = GONE
                 notesViewModel.newNote.tipo = NoteType.VOICE
                 notesViewModel.newNote.titulo = voice_note_title_edit.text.toString()
-                //notesViewModel.newNote.voiceNotePath = destFile.absolutePath
+                println("Absolute path voice note: " + destFile?.absolutePath.toString())
+                notesViewModel.newNote.voiceNotePath = destFile?.absolutePath.toString()
                 notesViewModel.newNote.imagePath = imageUri
                 notesViewModel.addNewVoiceNote()
 

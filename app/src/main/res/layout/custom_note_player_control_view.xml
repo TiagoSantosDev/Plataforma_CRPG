@@ -36,8 +36,8 @@
         <ImageButton
             android:id="@id/exo_rew"
             style="@style/ExoMediaButton.Rewind"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:contentDescription="@string/retroceder_reproducao"
             android:scaleType="fitXY"
             android:tint="@color/md_blue_100"
@@ -46,8 +46,8 @@
         <ImageButton
             android:id="@id/exo_play"
             style="@style/ExoMediaButton.Play"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:scaleType="fitXY"
             android:tint="@color/md_blue_100"
             android:tintMode="src_in"
@@ -56,8 +56,8 @@
         <ImageButton
             android:id="@id/exo_pause"
             style="@style/ExoMediaButton.Pause"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:scaleType="fitXY"
             android:tint="@color/md_blue_100"
             android:tintMode="src_in"
@@ -66,8 +66,8 @@
         <ImageButton
             android:id="@id/exo_ffwd"
             style="@style/ExoMediaButton.FastForward"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:scaleType="fitXY"
             android:tint="@color/md_blue_100"
             android:tintMode="src_in"

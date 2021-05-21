@@ -34,23 +34,25 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
         val note: Note = listData[holder.adapterPosition]
 
         holder.bind(note)
-        //println("> List Data: $listData")
-        //println("> List Data: $position")
-        //println("> List Data: " + listData.size)
 
         var removedPosition : Int ? = null
-        /*
-        val uri: Uri = Uri.parse("android.resource://" + context?.packageName.toString()
-                + "/raw/meditation_sound")
-        val player = SimpleExoPlayer.Builder(ctx).build()
 
-        mPlayerView.player = player
-        val mediaItem: MediaItem = MediaItem.fromUri(uri)
-        player.setMediaItem(mediaItem)
+        if (listData[position].tipo == NoteType.VOICE) {
+            //val uri: Uri = Uri.parse("android.resource://" + ctx.packageName.toString()
+            //        + "/raw/meditation_sound")
 
-        player.prepare()
-        player.play()
-        */
+            //val uri: Uri = Uri.parse("storage/emulated/0/VoiceNotes/1621590354570.wav")
+            val uri: Uri = Uri.parse(listData[position].voiceNotePath)
+            val player = SimpleExoPlayer.Builder(ctx).build()
+
+            holder.itemView.note_item_player_view.player = player
+            val mediaItem: MediaItem = MediaItem.fromUri(uri)
+            player.setMediaItem(mediaItem)
+
+            player.prepare()
+            player.play()
+        }
+
 
         holder.itemView.note_delete_icon.setOnClickListener{
             listData.removeAt(holder.adapterPosition)
@@ -84,13 +86,7 @@ class ListAdapter(private val list: List<Note>, private val ctx: Context, privat
 
         return voiceItemCount
     }
-    /*
-    fun deleteSelectedItem() {
-        if(selectedList.isNotEmpty()){
-            listData.removeAll{item -> item.selected == true}
-        }
-        notifyDataSetChanged()
-    }*/
+
 }
 
 class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
@@ -131,3 +127,14 @@ class NoteViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 //AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity)
 //println("Titulo: " + listData[position].titulo)
 //println("Content: " + listData[position].info)
+/*
+fun deleteSelectedItem() {
+    if(selectedList.isNotEmpty()){
+        listData.removeAll{item -> item.selected == true}
+    }
+    notifyDataSetChanged()
+}*/
+
+//println("> List Data: $listData")
+//println("> List Data: $position")
+//println("> List Data: " + listData.size)
