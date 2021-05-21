@@ -25,7 +25,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
             Note(NoteType.TEXT, "16042021", "1200","Ir às compras à mercearia",
                     "Tenho de comprar água, pão, entre outras coisas","",""),
             Note(NoteType.VOICE, "16042021", "1200","Nota de voz",
-                    "Para me lembrar depois","","")
+                    "Para me lembrar depois","\"storage/emulated/0/VoiceNotes/1621590354570.wav\"","")
     )
 
     var removedPosition : Int ? = null
