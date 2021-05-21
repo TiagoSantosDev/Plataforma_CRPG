@@ -184,6 +184,8 @@
     <string name="relogio">Relógio</string>
     <string name="telemovel">Telemóvel</string>
     <string name="agenda">Agenda</string>
+    <string name="criar_nota_de_texto">CRIAR NOTA DE TEXTO</string>
+    <string name="criar_nota_de_voz">CRIAR NOTA DE VOZ</string>
 
 
     <string-array name="line_type">

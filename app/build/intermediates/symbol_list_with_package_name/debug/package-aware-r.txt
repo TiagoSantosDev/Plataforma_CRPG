@@ -2954,6 +2954,7 @@ id frame_card_public_transports_background_image
 id frame_card_to_CRPG
 id frame_conteudo_nota
 id frame_conteudo_nota_voz
+id frame_conteudo_nota_voz_description
 id frame_de_para_1
 id frame_de_para_2
 id frame_layout_timetables
@@ -3803,6 +3804,8 @@ string contacto_c
 string conteudo
 string criado_c_sucesso
 string criar_lembrete
+string criar_nota_de_texto
+string criar_nota_de_voz
 string d
 string dados_em_falta
 string dash_gap
