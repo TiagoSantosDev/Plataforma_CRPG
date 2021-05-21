@@ -23,7 +23,7 @@
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <FrameLayout
         android:id="@+id/frame_note_image"
@@ -35,7 +35,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_nova_nota_voz"
-        app:layout_constraintVertical_bias="0.1">
+        app:layout_constraintVertical_bias="0.05">
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,45 +108,47 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintHeight_percent="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
-        app:layout_constraintVertical_bias="0.082">
+        app:layout_constraintVertical_bias="0.05">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_start_recording"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:fabCustomSize="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:fabCustomSize="60dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginEnd="90dp"
             app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/iniciar_gravacao"
             app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
-            app:srcCompat="@drawable/ic_arrow_right_24dp" />
+            app:srcCompat="@drawable/outline_mic_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_replay_recording"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:fabCustomSize="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            app:backgroundTint="@color/PrimaryGreen"
+            android:contentDescription="@string/reproduzir_som"
+            app:srcCompat="@drawable/outline_replay_black_36" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_stop_recording"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:fabCustomSize="70dp"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginStart="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:fabCustomSize="60dp"
+            android:layout_gravity="center"
             app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/parar_gravacao"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
             app:srcCompat="@drawable/outline_stop_black_24dp" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_replay_recording"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:fabCustomSize="70dp"
-            android:layout_gravity="center"
-            app:backgroundTint="@color/PrimaryGreen"
-            android:contentDescription="@string/reproduzir_som"
-            app:srcCompat="@drawable/outline_replay_black_36" />
+
 
     </FrameLayout>
 
@@ -166,9 +168,9 @@
             android:id="@+id/textView_som"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:layout_weight="0.33"
+            android:layout_weight="0.45"
             android:gravity="end"
-            android:text="@string/som"
+            android:text="GRAVAR"
             android:textColor="@color/md_blue_100"
             android:textSize="20sp" />
 
@@ -177,9 +179,9 @@
             android:id="@+id/textView_vibrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.33"
+            android:layout_weight="0.4"
             android:gravity="center"
-            android:text="@string/vibrar"
+            android:text="PARAR"
             android:textSize="20sp"
             android:textColor="@color/md_blue_100"/>
 
@@ -188,9 +190,9 @@
             android:id="@+id/textView_ambos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.33"
+            android:layout_weight="0.40"
             android:gravity="start"
-            android:text="@string/ambos"
+            android:text="REPRODUZIR"
             android:textColor="@color/md_blue_100"
             android:textSize="20sp" />
     </LinearLayout>
@@ -208,7 +210,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota_voz_description"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintHeight_percent="0.05"/>
 
     <TextView
         android:id="@+id/aviso_titulo_voz_em_falta"
