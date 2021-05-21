@@ -2,10 +2,15 @@ package com.plataforma.crpg.ui.agenda
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -21,11 +26,14 @@ import com.plataforma.crpg.extentions.setVisible
 import com.plataforma.crpg.model.*
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
+import kotlinx.android.synthetic.main.fragment_meditation.*
 import kotlinx.android.synthetic.main.item_timeline.view.*
 import net.gotev.speech.GoogleVoiceTypingDisabledException
 import net.gotev.speech.Speech
 import net.gotev.speech.SpeechDelegate
 import net.gotev.speech.SpeechRecognitionNotAvailable
+import java.util.*
+import kotlin.properties.Delegates
 
 
 /**
@@ -34,10 +42,15 @@ import net.gotev.speech.SpeechRecognitionNotAvailable
 
 class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttributes: TimelineAttributes, private val ctx: Context) : RecyclerView.Adapter<TimeLineAdapter.TimeLineViewHolder>() {
 
-    private var currentDateMealOrder = MealOrder("14042021", 0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
-    lateinit var currentDateMeal: Meal
+
     private var overlapArray = mutableListOf("")
     private var concatTime = ""
+
+    private var textToSpeech: TextToSpeech? = null
+    private var onResumeFlag = false
+    private val myLocale = Locale("pt_PT", "POR")
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
 
     private lateinit var mLayoutInflater: LayoutInflater
     //val Context mContext = getActivity();
@@ -52,11 +65,9 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
             mLayoutInflater = LayoutInflater.from(parent.context)
         }
 
-        val view = /*if (mAttributes.orientation == Orientation.HORIZONTAL) {
-            //mLayoutInflater.inflate(R.layout.item_timeline_horizontal, parent, false)
-        } else {*/
-        //}
-            mLayoutInflater.inflate(R.layout.item_timeline, parent, false)
+        val view = mLayoutInflater.inflate(R.layout.item_timeline, parent, false)
+
+
 
         return TimeLineViewHolder(view, viewType)
     }
@@ -147,8 +158,7 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         //onClick on a card open pop up or go to Meal or Transport Fragment
         holder.itemView.card.setOnClickListener {
-            //val id: String = mFeedList[position].title
-            //val tipo: EventType = mFeedList[position].type
+
             id=mFeedList[position].title
             tipo= mFeedList[position].type
 
@@ -194,8 +204,125 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
             }
 
-        }
+            fun performActionWithVoiceCommand(command: String) {
+                when {
+                    command.contains("Escolher Almoço", true)  && id=="Almoço" -> holder.itemView.card.performClick()
+                    command.contains("Escolher Jantar", true)  && id=="Jantar"-> holder.itemView.card.performClick()
+                    command.contains(id, true) && tipo == EventType.ACTIVITY-> holder.itemView.card.performClick()
+                }
+            }
 
+
+            fun multimodalOption() {
+                println("First Time flag: $onResumeFlag")
+                if (!onResumeFlag) {
+                    textToSpeech = TextToSpeech(ctx) { status ->
+                        if (status == TextToSpeech.SUCCESS) {
+                            val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                            if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                                    || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                                Log.e("TTS", "The Language is not supported!")
+                            } else {
+                                Log.i("TTS", "Language Supported.")
+                            }
+                            Log.i("TTS", "Initialization success.")
+
+                            var handler = Handler(Looper.getMainLooper())
+                            //var runable = Runnable {
+                            val speechListener = object : UtteranceProgressListener() {
+                                @Override
+                                override fun onStart(p0: String?) {
+                                    println("Iniciou TTS")
+                                }
+
+                                override fun onDone(p0: String?) {
+                                    println("Encerrou TTS")
+                                    //startVoiceRecognition()
+                                }
+
+                                override fun onError(p0: String?) {
+                                    TODO("Not yet implemented")
+                                }
+                            }
+
+                            textToSpeech?.setOnUtteranceProgressListener(speechListener)
+                            println("Chegou aqui pos utterance listener")
+
+                            val speechStatus = textToSpeech!!.speak("Selecione uma das opções ou diga o estado" +
+                                    "em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
+
+                        } else {
+                            Toast.makeText(ctx, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+
+            }
+
+            fun startVoiceRecognition(){
+                runnable = Runnable {
+                    handler.sendEmptyMessage(0);
+                    Speech.init(ctx)
+                    try {
+                        Speech.getInstance().startListening(object : SpeechDelegate {
+                            override fun onStartOfSpeech() {
+                                Log.i("speech", "speech recognition is now active")
+                            }
+
+                            override fun onSpeechRmsChanged(value: Float) {
+                                //Log.d("speech", "rms is now: $value")
+                            }
+
+                            override fun onSpeechPartialResults(results: List<String>) {
+                                val str = StringBuilder()
+                                for (res in results) {
+                                    str.append(res).append(" ")
+                                }
+                                performActionWithVoiceCommand(results.toString())
+                                Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                            }
+
+                            override fun onSpeechResult(result: String) {
+                                Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                                //Speech.getInstance().stopTextToSpeech()
+                                val handler = Handler()
+                                handler.postDelayed({
+                                    try {
+                                        Speech.init(ctx)
+                                        Speech.getInstance().startListening(this)
+                                    } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                        speechRecognitionNotAvailable.printStackTrace()
+                                    } catch (e: GoogleVoiceTypingDisabledException) {
+                                        e.printStackTrace()
+                                    }
+                                }, 100)
+
+                            }
+
+                        })
+                    } catch (exc: SpeechRecognitionNotAvailable) {
+                        Log.e("speech", "Speech recognition is not available on this device!")
+                    } catch (exc: GoogleVoiceTypingDisabledException) {
+                        Log.e("speech", "Google voice typing must be enabled!")
+                    }
+                }
+
+                handler.post(runnable)
+            }
+
+            fun onDestroy() {
+                if(handler.hasMessages(0)) {
+                    handler.removeCallbacks(runnable)
+                }
+
+                if (textToSpeech != null) {
+                    textToSpeech!!.stop()
+                    textToSpeech!!.shutdown()
+                    println("shutdown TTS")
+                }
+            }
+
+        }
 
     }
 
@@ -231,6 +358,18 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
     }
 }
 
+
+/*if (mAttributes.orientation == Orientation.HORIZONTAL) {
+//mLayoutInflater.inflate(R.layout.item_timeline_horizontal, parent, false)
+} else {*/
+//}
+//private var currentDateMealOrder = MealOrder("14042021", 0, pedido_carne = false, pedido_peixe = false, pedido_dieta = false, pedido_vegetariano = false)
+//lateinit var currentDateMeal: Meal
+//val id: String = mFeedList[position].title
+//val tipo: EventType = mFeedList[position].type
+//MANTER WIFI SEMPRE LIGADO
+// val handler = Handler(Looper.getMainLooper())
+// val runable = Runnable {
 /*
         fun performActionWithVoiceCommand(command: String) {
             when {

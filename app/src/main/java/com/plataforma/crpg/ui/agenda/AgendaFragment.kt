@@ -64,9 +64,27 @@ class AgendaFragment : Fragment() {
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
 
+        if(srFlag){
+
+
+        }
+
         //ttsAgendaHint()
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         return root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        //adapter.onDestroy()
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

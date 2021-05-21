@@ -31,7 +31,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] C:\Users\ltiag\.gr
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\aef4a1a174e8b2406a5140cf487f5c6e\jetified-lifecycle-viewmodel-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core-ktx:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7332eaae2edab3dfaff8f78696ae088a\jetified-core-ktx-1.6.0-beta01\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\0af87d4cd34291c93a300f183f134f75\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\cc2a0da8bd0fd36f72ce940e733cfe37\jetified-ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
@@ -80,7 +80,7 @@ MERGED from [androidx.media:media:1.2.1] C:\Users\ltiag\.gradle\caches\transform
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\e9e70ff09da3912c14d3b2032d726717\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\4f661b07e9ffa394722c3cf31e9f3b5d\lifecycle-runtime-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\9c672d01a7747dcd7e17ec045e5c4de1\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\3e232e64db001a504c808f851740d94b\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -188,12 +188,12 @@ MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\ltiag\.
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\93d7dc6883f1912a9f938ba18dbfbdac\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\b1d19f0d4b1d5ba146b89fc6cd5703b0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d6d86b4e0427abab04b10da10282584e\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from C:\Users\ltiag\Desktop\Plataforma_CRPG_Second_Phase\Plataforma_CRPG\app\src\main\AndroidManifest.xml:26:9-35
 	android:label
@@ -310,8 +310,8 @@ MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gra
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\2a4c05552d259fd35025444c4f0d17ed\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\fe6af96b2b1e004cceac224db61deb57\navigation-common-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d9f78b510196dd7510bafc62db79aa67\jetified-core-ktx-1.6.0-alpha03\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7332eaae2edab3dfaff8f78696ae088a\jetified-core-ktx-1.6.0-beta01\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\7332eaae2edab3dfaff8f78696ae088a\jetified-core-ktx-1.6.0-beta01\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.chrisbanes:PhotoView:2.2.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\6fff40daaf7fb2e54584cce2f2f8ea83\jetified-PhotoView-2.2.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\0af87d4cd34291c93a300f183f134f75\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
@@ -408,8 +408,8 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\lt
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\74d0d92dd83ba5f9955f89708d88ffd9\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common:2.3.1] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\a79e5fab3e2e7c491cdf9714541a6ac3\navigation-common-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.6.0-alpha03] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\d162fc701317d8dbc674ad90363a7947\core-1.6.0-alpha03\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-beta01] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\80c700a73af641699c0dc37f7a2e458f\core-1.6.0-beta01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\4f661b07e9ffa394722c3cf31e9f3b5d\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\4f661b07e9ffa394722c3cf31e9f3b5d\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate-ktx:1.1.0] C:\Users\ltiag\.gradle\caches\transforms-2\files-2.1\9c672d01a7747dcd7e17ec045e5c4de1\jetified-savedstate-ktx-1.1.0\AndroidManifest.xml:20:5-22:41
