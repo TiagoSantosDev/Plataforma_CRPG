@@ -54,6 +54,7 @@
             android:layout_height="56dp"
             android:layout_gravity="end"
             android:layout_margin="32dp"
+            app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/carregar_imagem"
             app:srcCompat="@drawable/outline_photo_camera_24" />
 
@@ -107,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
         app:layout_constraintVertical_bias="0.082">
@@ -119,6 +120,7 @@
             app:fabCustomSize="70dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginEnd="90dp"
+            app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/iniciar_gravacao"
             app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
@@ -131,6 +133,7 @@
             app:fabCustomSize="70dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginStart="80dp"
+            app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/parar_gravacao"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
             app:srcCompat="@drawable/outline_stop_black_24dp" />
@@ -141,9 +144,9 @@
             android:layout_height="70dp"
             app:fabCustomSize="70dp"
             android:layout_gravity="center"
+            app:backgroundTint="@color/PrimaryGreen"
             android:contentDescription="@string/reproduzir_som"
             app:srcCompat="@drawable/outline_replay_black_36" />
-
 
     </FrameLayout>
 
