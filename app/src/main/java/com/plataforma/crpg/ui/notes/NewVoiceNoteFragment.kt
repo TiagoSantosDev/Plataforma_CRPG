@@ -5,23 +5,23 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.webkit.MimeTypeMap
 import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -34,15 +34,20 @@ import com.github.windsekirun.naraeaudiorecorder.extensions.runOnUiThread
 import com.github.windsekirun.naraeaudiorecorder.model.RecordMetadata
 import com.github.windsekirun.naraeaudiorecorder.model.RecordState
 import com.github.windsekirun.naraeaudiorecorder.source.DefaultAudioSource
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
 import com.plataforma.crpg.TimelineView.TAG
 import com.plataforma.crpg.databinding.NewVoiceNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import kotlinx.android.synthetic.main.new_voice_note_fragment.*
+import kotlinx.android.synthetic.main.note_list_item.view.*
 import java.io.File
 
 class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
+
+    var myHandler: Handler? = null
 
     companion object {
         fun newInstance() = NewVoiceNoteFragment()
@@ -55,6 +60,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private val audioRecorder = NaraeAudioRecorder()
     private var recordMetadata: RecordMetadata? = null
     private var destFile: File? = null
+    private var isRecording: Boolean = false
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -81,7 +87,7 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onRequestPermissionsResult(
             requestCode: Int,
             permissions: Array<out String>,
-            grantResults: IntArray
+            grantResults: IntArray,
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == PERMISSIONS_REQUEST_CODE) {
@@ -102,10 +108,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
         val titleText = view.rootView?.findViewById<EditText>(R.id.voice_note_title_edit)?.text
 
-        //val fileName = System.currentTimeMillis().asDateString()
-
-
-
         button_start_recording.setOnClickListener {
 
             val fileName = System.currentTimeMillis().toString()
@@ -123,40 +125,41 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 this.debugMode = true
             }
 
-            println("start recording check")
+            //println("start recording check")
             audioRecorder.setOnRecordStateChangeListener { recordStateChanged(it) }
             audioRecorder.startRecording(requireContext())
+            isRecording = true
+            button_start_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
         }
 
-
         button_stop_recording.setOnClickListener {
-            println("stop recording check ")
-            println(audioRecorder.toString())
-            audioRecorder.stopRecording()
-            recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
-            println("Saved on ${destFile?.absolutePath}")
+            if (isRecording) {
+                audioRecorder.stopRecording()
+                recordMetadata = audioRecorder.retrieveMetadata(destFile ?: File(""))
+                println("Saved on ${destFile?.absolutePath}")
+
+                button_start_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+                button_stop_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
+                myHandler?.postDelayed(Runnable {
+                    button_stop_recording.setBackgroundColor(resources.getColor(R.color.PrimaryGreen))
+                }, 500)
+            }
         }
 
         button_replay_recording.setOnClickListener{
-            /*
-            val uri = if (Build.VERSION.SDK_INT >= 24) {
-                val authority = "$packageName.fileprovider"
-                FileProvider.getUriForFile(requireContext(), authority, destFile ?: File(""))
-            } else {
-                Uri.fromFile(destFile)
-            }
+            if (!destFile?.absolutePath.isNullOrBlank()) {
+                val uri: Uri = Uri.parse(destFile?.absolutePath)
+                val player = SimpleExoPlayer.Builder(requireContext()).build()
 
-            val intent = Intent(Intent.ACTION_VIEW)
-            val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(destFile?.extension)
-            intent.apply {
-                setDataAndType(uri, mimeType)
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                val mediaItem: MediaItem = MediaItem.fromUri(uri)
+                player.setMediaItem(mediaItem)
+                player.prepare()
+                player.play()
+                button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.md_blue_200))
+                if(!player.isPlaying){
+                    button_replay_recording.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.PrimaryGreen))
+                }
             }
-
-            val chooser = Intent.createChooser(intent, "Open with...")
-            startActivity(chooser)
-            */
         }
 
         button_new_voice_note_image.setOnClickListener{
@@ -192,8 +195,6 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -258,6 +259,8 @@ class NewVoiceNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 
 /*
+//println(audioRecorder.toString())
+//println("stop recording check ")
 var contador = getVoiceItemCount()
 println("Contador: $contador")
 contador += 1
@@ -319,6 +322,10 @@ contador += 1
         }
     }
 }
+
+
+        //val fileName = System.currentTimeMillis().asDateString()
+
 */
 
 /*
@@ -345,3 +352,23 @@ context?.let { ffmpegAudioRecorder.setContext(it) }*/
         }
     }
 */
+
+/*
+            val uri = if (Build.VERSION.SDK_INT >= 24) {
+                val authority = "$packageName.fileprovider"
+                FileProvider.getUriForFile(requireContext(), authority, destFile ?: File(""))
+            } else {
+                Uri.fromFile(destFile)
+            }
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(destFile?.extension)
+            intent.apply {
+                setDataAndType(uri, mimeType)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+
+            val chooser = Intent.createChooser(intent, "Open with...")
+            startActivity(chooser)
+            */
