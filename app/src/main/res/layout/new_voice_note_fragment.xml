@@ -108,17 +108,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.13"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame_titulo_nota_voz"
         app:layout_constraintVertical_bias="0.082">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_start_recording"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:fabCustomSize="70dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="90dp"
             android:contentDescription="@string/iniciar_gravacao"
             app:layout_constraintRight_toLeftOf="@+id/button_stop_recording"
             app:layout_constraintTop_toBottomOf="@+id/titulo_nova_nota"
@@ -126,8 +126,9 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_stop_recording"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:fabCustomSize="70dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginStart="80dp"
             android:contentDescription="@string/parar_gravacao"
@@ -136,12 +137,60 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_replay_recording"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:fabCustomSize="70dp"
             android:layout_gravity="center"
             android:contentDescription="@string/reproduzir_som"
             app:srcCompat="@drawable/outline_replay_black_36" />
+
+
     </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_conteudo_nota_voz_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota_voz"
+        app:layout_constraintHeight_percent="0.1">
+
+        <TextView
+            android:id="@+id/textView_som"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="end"
+            android:text="@string/som"
+            android:textColor="@color/md_blue_100"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/textView_vibrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:text="@string/vibrar"
+            android:textSize="20sp"
+            android:textColor="@color/md_blue_100"/>
+
+
+        <TextView
+            android:id="@+id/textView_ambos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="start"
+            android:text="@string/ambos"
+            android:textColor="@color/md_blue_100"
+            android:textSize="20sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_save_voice_note"
@@ -155,7 +204,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota_voz"
+        app:layout_constraintTop_toBottomOf="@id/frame_conteudo_nota_voz_description"
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
