@@ -6,18 +6,21 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -27,10 +30,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.services.Notifier
+import com.plataforma.crpg.ui.meals.MealsViewModel
 import com.plataforma.crpg.ui.meditation.MeditationMediaPlayerFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -114,6 +120,18 @@ class MainActivity : AppCompatActivity() {
             notify(1, builder.build())
         }
     }
+
+    private fun fetchMealDataForCurrentDate() {
+
+        val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
+        //val currentDateTime = LocalDateTime.now()
+        //val currentDate = currentDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+
+        val selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(true, "","")
+
+    }
+
+
 
     private fun resetSharedPreferences() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)

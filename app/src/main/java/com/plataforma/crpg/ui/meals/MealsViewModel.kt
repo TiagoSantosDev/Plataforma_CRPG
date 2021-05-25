@@ -88,6 +88,35 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
+    fun verifyMealChoiceOnLocalStorage(selectedDate: String): Int {
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
+        val eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+
+        when (isLunch) {
+            true -> {
+                val idx = eventsList.indexOfFirst {
+                    it.title == "ALMOÇO"
+                    it.chosen_meal
+                }
+                return if(it < 1 || selectedOption > 4) 0 else selectedOption
+
+            }
+
+            false -> {
+                val idx = eventsList.indexOfFirst {
+                    it.title == "JANTAR"
+                }
+
+                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
+            }
+        }
+
+    }
+
     fun updateMealChoiceOnLocalStorage(selectedDate: String, selectedOption: Int, isLunch: Boolean) {
 
         val gson = Gson()
@@ -103,6 +132,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     it.title == "ALMOÇO"
                 }
 
+                eventsList[idx].meal_int = selectedOption
+
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
                     2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
@@ -116,6 +147,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 val idx = eventsList.indexOfFirst {
                     it.title == "JANTAR"
                 }
+
+                eventsList[idx].meal_int = selectedOption
 
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
@@ -131,8 +164,20 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 }
-
-
+/*
+when (selectedOption) {
+    1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
+    2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
+    3 -> eventsList[idx].chosen_meal = retrievedMeal.dieta
+    4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
+}*/
+/*
+when (selectedOption) {
+    1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
+    2 -> eventsList[idx].chosen_meal = retrievedMeal.peixe
+    3 -> eventsList[idx].chosen_meal = retrievedMeal.dieta
+    4 -> eventsList[idx].chosen_meal = retrievedMeal.vegetariano
+}*/
 //println(">isLunch idx:$idx")
 //println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
 //println(">Set chosen Meal: " + eventsList[idx].chosen_meal)
