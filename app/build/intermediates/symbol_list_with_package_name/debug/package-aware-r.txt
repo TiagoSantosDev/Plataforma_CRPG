@@ -2497,6 +2497,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification_bus
 drawable ic_notification_clock
+drawable ic_notification_meal
 drawable ic_photo_black_48dp
 drawable ic_photo_camera_black_48dp
 drawable ic_settings
