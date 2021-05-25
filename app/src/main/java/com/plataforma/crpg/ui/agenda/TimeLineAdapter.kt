@@ -9,6 +9,7 @@ import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -102,6 +103,8 @@ class TimeLineAdapter(private val mFeedList: List<Event>, private var mAttribute
 
         if (overlapArray.contains(concatTime)){
             holder.timeline.marker.setVisible(false, false)
+            holder.itemView.text_timeline_start_time.visibility = INVISIBLE
+            holder.itemView.text_timeline_end_time.visibility = INVISIBLE
         }else{
             overlapArray.add(concatTime)
             holder.timeline.setMarker(ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_marker_active), mAttributes.markerColor)
