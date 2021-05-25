@@ -11,13 +11,13 @@ import androidx.core.app.NotificationManagerCompat
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
 
-class NotificationsHandler(name: String?) : IntentService(name) {
+class NotificationsHandler: IntentService("NotificationsHandler") {
 
     val ACTION1 = "ACTION1"
     val ACTION2 = "ACTION2"
 
     override fun onHandleIntent(p0: Intent?) {
-        val action = p0?.action;
+        val action = p0?.getAction();
         if (ACTION1 == action) {
             val intent = Intent(this, MainActivity::class.java).apply {
                 println("Entrou no intent")
