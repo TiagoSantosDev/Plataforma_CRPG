@@ -88,34 +88,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    fun verifyMealChoiceOnLocalStorage(selectedDate: String): Int {
-        val gson = Gson()
-        val filename = "event.json"
-        val fullFilename = context.filesDir.toString() + "/" + filename
 
-        val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
-        val eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
-
-        when (isLunch) {
-            true -> {
-                val idx = eventsList.indexOfFirst {
-                    it.title == "ALMOÇO"
-                    it.chosen_meal
-                }
-                return if(it < 1 || selectedOption > 4) 0 else selectedOption
-
-            }
-
-            false -> {
-                val idx = eventsList.indexOfFirst {
-                    it.title == "JANTAR"
-                }
-
-                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
-            }
-        }
-
-    }
 
     fun updateMealChoiceOnLocalStorage(selectedDate: String, selectedOption: Int, isLunch: Boolean) {
 
@@ -133,6 +106,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 }
 
                 eventsList[idx].meal_int = selectedOption
+                eventsList[idx].isLunch = true
 
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
@@ -149,6 +123,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 }
 
                 eventsList[idx].meal_int = selectedOption
+                eventsList[idx].isLunch = false
 
                 when (selectedOption) {
                     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
@@ -163,6 +138,35 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
         File(fullFilename).writeText(newMealJSON)
     }
 
+
+    fun verifyMealChoiceOnLocalStorage(selectedDate: String, isLunch: Boolean): Int {
+        val gson = Gson()
+        val filename = "event.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
+        val eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+
+        when (isLunch) {
+            true -> {
+                val idx = eventsList.indexOfFirst {
+                    it.title == "ALMOÇO"
+
+                }
+                return if(it < 1 || selectedOption > 4) 0 else selectedOption
+
+            }
+
+            false -> {
+                val idx = eventsList.indexOfFirst {
+                    it.title == "JANTAR"
+                }
+
+                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
+            }
+        }
+
+    }
 }
 /*
 when (selectedOption) {
