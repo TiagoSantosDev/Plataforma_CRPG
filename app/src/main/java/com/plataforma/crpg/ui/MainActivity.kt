@@ -87,17 +87,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun launchNotification() {
         // Create an explicit intent for an Activity in your app
+        //Esta a ser corrido mesmo quando o utilizador nao clicou na notificacao
         val intent = Intent(this, MainActivity::class.java).apply {
             println("Entrou no intent")
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            /*
+
             val fragment: Fragment = TransportsSelectionFragment()
             val fragmentManager: FragmentManager = supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
             fragmentManager.popBackStack()
             fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()*/
+            fragmentTransaction.commit()
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
 
@@ -115,10 +116,8 @@ class MainActivity : AppCompatActivity() {
                 .setContentTitle("Não se esqueça de apanhar o transporte!")
                 .setContentText("Clique aqui para abrir a aplicação e ver os horários!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                // Set the intent that will fire when the user taps the notification
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
-
 
         with(NotificationManagerCompat.from(this)) {
             println("Entrou no Notification Manager Compat")
