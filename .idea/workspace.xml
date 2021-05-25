@@ -48,7 +48,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Event.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/model/Event.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +58,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -107,8 +109,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ApkExportedModule" value="Plataforma_CRPG.app" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ZY222VJ89R" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-25T10:26:15.488Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-25T16:24:24.669Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\ltiag\Desktop\Plataforma_CRPG_Update_Firebase_Git\Plataforma_CRPG\app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="ExportApk.SignV1" value="true" />
@@ -141,7 +143,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../kotlin-android-notifications-started-services-master/kotlin-android-notifications-started-services-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/widget/Toolbar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.13.3/f623c7ae5c7f940bf69c089e733c66fb52f3c1da/exoplayer-ui-2.13.3-sources.jar!/com/google/android/exoplayer2/ui/PlayerControlView.java_selected" value="Custom views" />
@@ -576,10 +578,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="393" y="230" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1621613031797" />
-    <state x="133" y="101" width="1095" height="495" key="AVDManager" timestamp="1621250219496">
+    <state x="57" y="116" width="1095" height="495" key="AVDManager" timestamp="1621960381948">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="133" y="101" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1621250219496" />
+    <state x="57" y="116" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1621960381948" />
     <state x="224" y="97" key="AndroidCreateResourceDirectoryDialog" timestamp="1620401578762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -605,26 +607,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1621950509117" />
-    <state width="1220" height="222" key="GridCell.Tab.0.bottom" timestamp="1621938493457">
+    <state width="1236" height="225" key="GridCell.Tab.0.bottom" timestamp="1621960814206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="222" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1621938493457" />
-    <state width="1220" height="222" key="GridCell.Tab.0.center" timestamp="1621938493457">
+    <state width="1236" height="225" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1621960814206" />
+    <state width="1236" height="225" key="GridCell.Tab.0.center" timestamp="1621960814205">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="222" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1621938493457" />
-    <state width="1220" height="222" key="GridCell.Tab.0.left" timestamp="1621938493456">
+    <state width="1236" height="225" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1621960814205" />
+    <state width="1236" height="225" key="GridCell.Tab.0.left" timestamp="1621960814204">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1220" height="222" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1621938493456" />
-    <state width="1220" height="222" key="GridCell.Tab.0.right" timestamp="1621938493457">
+    <state width="1236" height="225" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1621960814204" />
+    <state width="1236" height="225" key="GridCell.Tab.0.right" timestamp="1621960814205">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="222" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1621938493457" />
+    <state width="1236" height="225" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1621960814205" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1620036911795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

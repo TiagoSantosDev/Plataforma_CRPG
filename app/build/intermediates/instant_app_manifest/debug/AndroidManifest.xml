@@ -45,6 +45,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <service
+            android:name="com.plataforma.crpg.services.NotificationsHandler"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name="com.plataforma.crpg.ui.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

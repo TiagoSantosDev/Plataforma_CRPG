@@ -153,7 +153,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     it.title == "ALMOÇO"
 
                 }
-                return if(it < 1 || selectedOption > 4) 0 else selectedOption
+                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
 
             }
 
