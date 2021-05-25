@@ -11,6 +11,7 @@ data class Event(
         var date: String,
         val notes: String,
         var chosen_meal: String,
+        var isLunch: Boolean,
         var meal_int: Int
 ){
     override fun toString(): String {
