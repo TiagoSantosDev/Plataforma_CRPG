@@ -35,6 +35,7 @@ import com.plataforma.crpg.ui.meditation.MeditationMediaPlayerFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -53,6 +54,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         resetSharedPreferences()
+
+        fetchMealDataForCurrentDate()
 
         requestMultiModalityOptions()
         //checkUserPermissions()
@@ -123,14 +126,44 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchMealDataForCurrentDate() {
 
+        var isLunch  = false
         val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
-        //val currentDateTime = LocalDateTime.now()
-        //val currentDate = currentDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+        val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
+        val currentDate = sdf.format(Date())
+        val sdfh = SimpleDateFormat("HH", myLocale)
+        val currentHour = sdfh.format(Date())
+        var selOption = 0
+        System.out.println(" C DATE is  $currentDate")
+        System.out.println(" C HOUR is  $currentHour")
 
-        val selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(true, "","")
+        //verificar se esta na hora de mostrar notificacao ao utilizador
+        if (currentHour.toString().toInt() in 9..12){
+            println("entre 9 e 12")
+            selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, true)
+            isLunch = true
+        }else if(currentHour.toString().toInt() in 14..20){
+            println("entre 14 e 20")
+            selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, false)
+        }
+
+        println("Selected option: $selOption")
+
+
+        if(){
+            startMealSelectNotification(carne, peixe, dieta, veg)
+        }else{
+            startMealRemindNotification()
+        }
 
     }
 
+    private fun startMealRemindNotification() {
+
+    }
+
+    private fun startMealSelectNotification(carne: String, peixe: String, dieta: String, veg: String) {
+
+    }
 
 
     private fun resetSharedPreferences() {
@@ -259,7 +292,9 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-
+//val currentDateTime = LocalDateTime.now()
+//val currentDate = currentDateTime.format(DateTimeFormatter.ofPattern("ddMMyyyy"))
+//val currentHour = currentDateTime.format(DateTimeFormatter.ofPattern("HH"))
 //editor.putBoolean("meditationHasRun", false).apply()
 //editor.putBoolean("notesHasRun", false).apply()
 /*

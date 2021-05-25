@@ -21,9 +21,9 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
 
     //create 2 fixed events for lunch and dinner
     private var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
-            "","","")
+            "","","", false, 0)
     private var dinnerEvent = Event("Jantar", "Clicar para escolher refeição", EventType.MEAL, "2000", "2100",
-            "","","")
+            "","","", false, 0)
 
 
     private fun populateFile() {
