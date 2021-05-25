@@ -28,7 +28,8 @@
         tools:ignore="GoogleAppIndexingWarning">
         <service
             android:name=".services.NotificationsHandler"
-            android:exported="false" />
+            android:exported="false"
+            android:enabled="true"/>
         <activity
             android:name=".ui.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

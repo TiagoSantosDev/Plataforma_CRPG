@@ -25,6 +25,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
+import com.plataforma.crpg.services.NotificationsHandler
+import com.plataforma.crpg.services.Notifier
 import com.plataforma.crpg.ui.meditation.MeditationMediaPlayerFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,25 +42,6 @@ class MainActivity : AppCompatActivity() {
     private val LOG_TAG = MainActivity::class.java.simpleName
     private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
     val myLocale = Locale("pt_PT", "POR")
-
-    private fun onSpeakClick() {
-        println("is Speaking: " + Speech.getInstance().isSpeaking)
-        println("text to speech voice: " + Speech.getInstance().textToSpeechVoice)
-
-        Speech.getInstance().say("Hello", object : TextToSpeechCallback {
-            override fun onStart() {
-                Toast.makeText(this@MainActivity, "TTS onStart", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onCompleted() {
-                Toast.makeText(this@MainActivity, "TTS onCompleted", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onError() {
-                Toast.makeText(this@MainActivity, "TTS onError", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +64,13 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        launchNotification()
+        val notifier = Notifier(this)
+        notifier.sendNotification("ola", "")
+        startService(intent)
+
+        val intent = Intent(this, NotificationsHandler::class.java)
+
+        //launchNotification()
 
     }
 
@@ -146,8 +135,7 @@ class MainActivity : AppCompatActivity() {
     private fun requestMultiModalityOptions() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        //editor.putBoolean("meditationHasRun", false).apply()
-        //editor.putBoolean("notesHasRun", false).apply()
+
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Sugestões de Áudio")
                 .setMessage("A aplicação possui uma voz virtual que poder dar-lhe indicações de como" +
@@ -225,15 +213,37 @@ class MainActivity : AppCompatActivity() {
         Speech.getInstance().say("Selecione um dia para ver os seus eventos")
     }
 
-    fun performActionWithVoiceCommand(command: String){
+    fun performActionWithVoiceCommand(command: String) {
         when {
             command.contains("Navegar Meditação", true) -> nav_view.selectedItemId = R.id.navigation_meditation
             command.contains("Navegar Notas", true) -> nav_view.selectedItemId = R.id.navigation_notes
             command.contains("Navegar Lembretes", true) -> nav_view.selectedItemId = R.id.navigation_reminders
         }
     }
+
+    private fun onSpeakClick() {
+        println("is Speaking: " + Speech.getInstance().isSpeaking)
+        println("text to speech voice: " + Speech.getInstance().textToSpeechVoice)
+
+        Speech.getInstance().say("Hello", object : TextToSpeechCallback {
+            override fun onStart() {
+                Toast.makeText(this@MainActivity, "TTS onStart", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onCompleted() {
+                Toast.makeText(this@MainActivity, "TTS onCompleted", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onError() {
+                Toast.makeText(this@MainActivity, "TTS onError", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
 }
 
+
+//editor.putBoolean("meditationHasRun", false).apply()
+//editor.putBoolean("notesHasRun", false).apply()
 /*
     private fun checkUserPermissions(): Boolean {
         editor.putBoolean("isAdmin", true).apply()

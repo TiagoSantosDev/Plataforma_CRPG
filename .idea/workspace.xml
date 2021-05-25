@@ -48,10 +48,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfe0d7e6-6b09-4ea9-8406-c9dc894f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/MyIntentService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/services/Notifier.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/services/NotificationsHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/services/NotificationsHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +143,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java/com/plataforma/crpg/ui" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../kotlin-android-notifications-started-services-master/kotlin-android-notifications-started-services-master" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/widget/Toolbar.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/ltiag/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.13.3/f623c7ae5c7f940bf69c089e733c66fb52f3c1da/exoplayer-ui-2.13.3-sources.jar!/com/google/android/exoplayer2/ui/PlayerControlView.java_selected" value="Custom views" />
@@ -184,11 +184,11 @@
       <recent name="com.plataforma.crpg.ui.meals" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.plataforma.crpg.services" />
       <recent name="com.plataforma.crpg.ui.transports" />
       <recent name="com.plataforma.crpg.model" />
       <recent name="com.plataforma.crpg.ui.agenda" />
       <recent name="com.plataforma.crpg.ui.meditation" />
-      <recent name="com.plataforma.crpg.ui.notes" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -603,10 +603,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="46" key="AndroidThemeDialog/0.0.1280.680@0.0.1280.680" timestamp="1618838148189" />
-    <state x="508" y="133" key="FileChooserDialogImpl" timestamp="1621936552191">
+    <state x="508" y="133" key="FileChooserDialogImpl" timestamp="1621950509117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1621936552191" />
+    <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1621950509117" />
     <state width="1220" height="222" key="GridCell.Tab.0.bottom" timestamp="1621938493457">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
