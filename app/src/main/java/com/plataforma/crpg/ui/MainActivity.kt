@@ -23,7 +23,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.work.OneTimeWorkRequest
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -68,9 +68,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val mWorkManager = WorkManager.getInstance()
-        val mRequest = OneTimeWorkRequest.Builder(NotificationTest::class.java).build()
-        mWorkManager.enqueue(mRequest);
+        val request = OneTimeWorkRequestBuilder<NotificationTest>().build()
+        WorkManager.getInstance(this).enqueue(request)
+
+        WorkManager.getInstance(this).getWorkInfoByIdLiveData(request.id)
+                .observe(this, Observer {
+                    val status: String = it.state.name
+                    Toast.makeText(this,status, Toast.LENGTH_SHORT).show()
+                })
 
     }
 
