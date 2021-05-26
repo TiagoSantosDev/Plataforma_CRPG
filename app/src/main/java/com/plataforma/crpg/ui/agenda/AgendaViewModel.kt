@@ -19,6 +19,8 @@ class AgendaViewModel(application: Application) : AndroidViewModel(application) 
     private var privateEventList = ArrayList<Event>()
     private var mDataList = ArrayList<Event>()
 
+
+
     //create 2 fixed events for lunch and dinner
     private var lunchEvent = Event("Almoço", "Clicar para escolher refeição", EventType.MEAL, "1200", "1300",
             "","","", false, 0)

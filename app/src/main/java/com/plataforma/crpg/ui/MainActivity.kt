@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         resetSharedPreferences()
 
-        fetchMealDataForCurrentDate()
+        requestMealDataForNotification()
 
         requestMultiModalityOptions()
         //checkUserPermissions()
@@ -124,44 +124,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchMealDataForCurrentDate() {
-
-        var isLunch  = false
+    private fun requestMealDataForNotification() {
         val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
-        val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
-        val currentDate = sdf.format(Date())
-        val sdfh = SimpleDateFormat("HH", myLocale)
-        val currentHour = sdfh.format(Date())
-        var selOption = 0
-        System.out.println(" C DATE is  $currentDate")
-        System.out.println(" C HOUR is  $currentHour")
 
-        //verificar se esta na hora de mostrar notificacao ao utilizador
-        if (currentHour.toString().toInt() in 9..12){
-            println("entre 9 e 12")
-            selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, true)
-            isLunch = true
-        }else if(currentHour.toString().toInt() in 14..20){
-            println("entre 14 e 20")
-            selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, false)
-        }
+        val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
 
-        println("Selected option: $selOption")
-
-
-        if(){
-            startMealSelectNotification(carne, peixe, dieta, veg)
+        if(dish.isNullOrEmpty()){
+            startMealSelectNotification()
         }else{
-            startMealRemindNotification()
+            startMealRemindNotification(dish)
         }
 
     }
 
-    private fun startMealRemindNotification() {
+    private fun startMealRemindNotification(dish: String) {
 
     }
 
-    private fun startMealSelectNotification(carne: String, peixe: String, dieta: String, veg: String) {
+    private fun startMealSelectNotification() {
 
     }
 
@@ -292,6 +272,30 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+
+/*
+var isLunch  = false
+val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
+val currentDate = sdf.format(Date())
+val sdfh = SimpleDateFormat("HH", myLocale)
+val currentHour = sdfh.format(Date())
+var selOption = 0
+System.out.println(" C DATE is  $currentDate")
+System.out.println(" C HOUR is  $currentHour")
+
+//verificar se esta na hora de mostrar notificacao ao utilizador
+if (currentHour.toString().toInt() in 9..12){
+    println("entre 9 e 12")
+    selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, true)
+    isLunch = true
+}else if(currentHour.toString().toInt() in 14..20){
+    println("entre 14 e 20")
+    selOption = mealsViewModel.verifyMealChoiceOnLocalStorage(currentDate, false)
+}
+
+println("Selected option: $selOption")
+
+*/
 //val currentDateTime = LocalDateTime.now()
 //val currentDate = currentDateTime.format(DateTimeFormatter.ofPattern("ddMMyyyy"))
 //val currentHour = currentDateTime.format(DateTimeFormatter.ofPattern("HH"))
