@@ -16,7 +16,7 @@ import com.plataforma.crpg.ui.MainActivity
 class UploadWorker(appContext: Context, workerParams: WorkerParameters):
         Worker(appContext, workerParams) {
     override fun doWork(): Result {
-
+/*
         val intent = Intent(this, MainActivity::class.java).apply {
             println("Entrou no intent")
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -46,7 +46,10 @@ class UploadWorker(appContext: Context, workerParams: WorkerParameters):
             notify(1, builder.build())
         }
 
-        // Indicate whether the work finished successfully with the Result
+        // Indicate whether the work finished successfully with the Result */
         return Result.success()
+
     }
+
+
 }
