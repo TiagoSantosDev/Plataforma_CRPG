@@ -1,12 +1,11 @@
 package com.plataforma.crpg.ui
 
 import android.Manifest
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings.Global.getString
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.Menu
@@ -23,15 +22,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
+import com.google.android.exoplayer2.util.NotificationUtil.createNotificationChannel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
+import com.plataforma.crpg.notifications.NotificationsManager
 import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.ui.meals.MealsViewModel
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
-import com.plataforma.crpg.worker.NotificationTest
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
 import java.util.*
@@ -68,8 +66,19 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        NotificationsManager.createNewNotificationChannel(this,
+                NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
+                getString(R.string.app_name), "App notification channel.")
 
+    }
 
+    private fun displayDataDeletedNotification() {
+        NotificationsManager.createNewNotification(
+                this@MainActivity,
+                "ola",
+                "conteudo",
+                "teste", true
+        )
     }
 
     private fun requestMealDataForNotification() {
@@ -239,7 +248,7 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.commit()
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
-
+/*
         val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             val channel = NotificationChannel("YOUR_CHANNEL_ID",
@@ -262,7 +271,10 @@ class MainActivity : AppCompatActivity() {
             // notificationId is a unique int for each notification that you must define
             notify(1, builder.build())
         }
+       */
     }
+
+
 }
 
 
