@@ -6,14 +6,12 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -31,13 +29,9 @@ import com.plataforma.crpg.R
 import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.services.Notifier
 import com.plataforma.crpg.ui.meals.MealsViewModel
-import com.plataforma.crpg.ui.meditation.MeditationMediaPlayerFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -75,10 +69,9 @@ class MainActivity : AppCompatActivity() {
 
         val notifier = Notifier(this)
         notifier.sendNotification("ola", "")
-        startService(intent)
 
-        val intent = Intent(this, NotificationsHandler::class.java)
-
+        //val intent = Intent(this, NotificationsHandler::class.java)
+        //startService(intent)
         //launchNotification()
 
     }
@@ -126,7 +119,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun requestMealDataForNotification() {
         val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
-
         val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
 
         if(dish.isNullOrEmpty()){
@@ -134,15 +126,20 @@ class MainActivity : AppCompatActivity() {
         }else{
             startMealRemindNotification(dish)
         }
-
     }
 
     private fun startMealRemindNotification(dish: String) {
-
+        val mealIntent = Intent()
+        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
+        mealIntent.putExtra("input", dish)
+        startService(mealIntent)
     }
 
     private fun startMealSelectNotification() {
-
+        val mealIntent = Intent()
+        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
+        mealIntent.putExtra("input", "remind")
+        startService(mealIntent)
     }
 
 

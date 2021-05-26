@@ -13,12 +13,14 @@ import com.plataforma.crpg.ui.MainActivity
 
 class NotificationsHandler: IntentService("NotificationsHandler") {
 
-    val ACTION1 = "ACTION1"
-    val ACTION2 = "ACTION2"
+    val ACTION1 = "reminder"
+    val ACTION2 = ""
 
     override fun onHandleIntent(p0: Intent?) {
-        val action = p0?.getAction();
+        val action = p0?.action;
+        println("Action onHandleIntent" + action)
         if (ACTION1 == action) {
+            println("Entrou aqui")
             val intent = Intent(this, MainActivity::class.java).apply {
                 println("Entrou no intent")
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
