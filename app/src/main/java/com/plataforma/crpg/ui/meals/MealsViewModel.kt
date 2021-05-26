@@ -13,14 +13,18 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.FileReader
 import java.lang.reflect.Type
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 @SuppressLint("StaticFieldLeak")
 class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val m = Meal("01042021", "a", "b", "c", "d")
     var selectedOption = 0
-    var retrievedMeal = Meal("01042021", "Lasanha", "Sardinhas", "Massa", "Tofu")
+    var retrievedMeal = Meal("26052021", "Lasanha", "Sardinhas", "Massa", "Tofu")
     private val context = getApplication<Application>().applicationContext
+    val myLocale = Locale("pt_PT", "POR")
 
 
     fun testDB() {
@@ -88,7 +92,41 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
+    fun fetchMealChoiceOnLocalStorage(): String {
 
+        var isLunch = false
+        val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
+        val currentDate = sdf.format(Date())
+        val sdfh = SimpleDateFormat("HH", myLocale)
+        val currentHour = sdfh.format(Date())
+        var selOption = 0
+        var dish = ""
+        System.out.println(" C DATE is  $currentDate")
+        System.out.println(" C HOUR is  $currentHour")
+
+        //verificar se esta na hora de mostrar notificacao ao utilizador
+        if (currentHour.toString().toInt() in 8..12){
+            println("entre 8 e 12")
+            selOption = verifyMealChoiceOnLocalStorage(currentDate, true)
+            println("selected option: $selectedOption")
+            isLunch = true
+        }else if(currentHour.toString().toInt() in 14..20){
+            println("entre 14 e 20")
+            selOption = verifyMealChoiceOnLocalStorage(currentDate, false)
+            println("selected option: $selectedOption")
+        }
+
+        dish = when(selOption){
+            1 -> retrievedMeal.carne
+            2 -> retrievedMeal.peixe
+            3 -> retrievedMeal.dieta
+            4 -> retrievedMeal.vegetariano
+            else -> ""
+        }
+
+        return dish
+
+    }
 
     fun updateMealChoiceOnLocalStorage(selectedDate: String, selectedOption: Int, isLunch: Boolean) {
 
@@ -136,6 +174,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
         val newMealJSON = gson.toJson(eventsList)
         File(fullFilename).writeText(newMealJSON)
+
+        fetchMealChoiceOnLocalStorage()
     }
 
 
@@ -146,6 +186,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
         val type: Type = object : TypeToken<ArrayList<Event>>() {}.type
         val eventsList: ArrayList<Event> = gson.fromJson(FileReader(fullFilename), type)
+
+        println("Events list: $eventsList")
 
         when (isLunch) {
             true -> {

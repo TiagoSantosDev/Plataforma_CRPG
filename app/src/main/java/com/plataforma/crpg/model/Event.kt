@@ -15,8 +15,8 @@ data class Event(
         var meal_int: Int
 ){
     override fun toString(): String {
-        return "title: ${this.title}, info: ${this.info}, type: ${this.type},  start_time: ${this.start_time}, " +
-                "end_time: ${this.end_time}, date: ${this.date}"
+        return "EVENT: title: ${this.title}, info: ${this.info}, type: ${this.type},  start_time: ${this.start_time}, " +
+                "end_time: ${this.end_time}, date: ${this.date}, chosen_meal: ${this.chosen_meal}, isLunch: ${this.isLunch}, meal_Int: ${this.meal_int} \\n "
     }
 }
 
