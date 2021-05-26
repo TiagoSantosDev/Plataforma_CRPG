@@ -78,10 +78,9 @@ dependencies {
     testImplementation 'com.21buttons:fragment-test-rule:2.0.1'
     debugImplementation 'com.21buttons:fragment-test-rule-extras:2.0.1'
 
-
-
     //kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin.stdlib}"
+    implementation("androidx.work:work-runtime-ktx:2.5.0")
 
     //androidx
     implementation "androidx.core:core-ktx:${versions.androidx.ktx.core}"
