@@ -1,4 +1,4 @@
-package com.plataforma.crpg
+package com.plataforma.crpg.services
 
 import android.app.IntentService
 import android.content.Intent

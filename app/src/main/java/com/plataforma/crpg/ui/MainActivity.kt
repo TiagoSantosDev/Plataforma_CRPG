@@ -68,14 +68,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val request = OneTimeWorkRequestBuilder<NotificationTest>().build()
-        WorkManager.getInstance(this).enqueue(request)
 
-        WorkManager.getInstance(this).getWorkInfoByIdLiveData(request.id)
-                .observe(this, Observer {
-                    val status: String = it.state.name
-                    Toast.makeText(this,status, Toast.LENGTH_SHORT).show()
-                })
 
     }
 
@@ -274,7 +267,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
+/*
+    val request = OneTimeWorkRequestBuilder<NotificationTest>().build()
+    WorkManager.getInstance(this).enqueue(request)
 
+    WorkManager.getInstance(this).getWorkInfoByIdLiveData(request.id)
+            .observe(this, Observer {
+                val status: String = it.state.name
+                Toast.makeText(this,status, Toast.LENGTH_SHORT).show()
+            })
+ */
 //val notifier = Notifier(this)
 //notifier.sendNotification("ola", "")
 //val intent = Intent(this, NotificationsHandler::class.java)
