@@ -81,7 +81,10 @@ class MainActivity : AppCompatActivity() {
 
         //displayTransportsReminderNotification()
 
-        displayMealReminderNotification()
+        //displayMealSelectionNotification()
+
+        requestMealDataForNotification()
+        //println("Dish: $result")
         handleMealsReminderNotificationClick()
 
     }
@@ -94,7 +97,10 @@ class MainActivity : AppCompatActivity() {
         if (current != null && name == "meal") {
             println("recebeu meal!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
+            val bundle = Bundle()
+            bundle.putBoolean("isLunch", true)
             val fragment: Fragment = MealsFragment()
+            fragment.arguments = bundle
             val fragmentManager: FragmentManager = this.supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -106,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleTransportsReminderNotificationClick() {
         val current = intent
-        var name = current.getStringExtra("id")
+        val name = current.getStringExtra("id")
         println("Nome$name")
 
         if (current != null && current.getStringExtra("id") == "transport") {
@@ -144,11 +150,21 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun displayMealReminderNotification() {
+    private fun displayMealSelectionNotification() {
         NotificationsManager.createNewMealNotification(
                 this@MainActivity,
                 "Não se esqueça de selecionar a sua refeição!",
                 "Clique aqui para selecionar uma das opções disponíveis!",
+                true
+        )
+    }
+
+    private fun displayMealReminderNotification(dish: String) {
+        println("Dish: $dish")
+        NotificationsManager.createNewMealNotification(
+                this@MainActivity,
+                "Hoje escolheu $dish para o almoço!",
+                "Clique aqui para escolher outra refeição!",
                 true
         )
     }
@@ -167,24 +183,12 @@ class MainActivity : AppCompatActivity() {
         val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
 
         if(dish.isNullOrEmpty()){
-            startMealSelectNotification()
+            println("dish e null")
+            displayMealSelectionNotification()
         }else{
-            startMealRemindNotification(dish)
+            println("dish e $dish")
+            displayMealReminderNotification(dish)
         }
-    }
-
-    private fun startMealRemindNotification(dish: String) {
-        val mealIntent = Intent()
-        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
-        mealIntent.putExtra("input", dish)
-        startService(mealIntent)
-    }
-
-    private fun startMealSelectNotification() {
-        val mealIntent = Intent()
-        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
-        mealIntent.putExtra("input", "remind")
-        startService(mealIntent)
     }
 
 
@@ -330,6 +334,13 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.commit()
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+
+    }
+
+}
+
+
+
 /*
         val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -354,12 +365,21 @@ class MainActivity : AppCompatActivity() {
             notify(1, builder.build())
         }
        */
+/*
+    private fun startMealRemindNotification(dish: String) {
+        val mealIntent = Intent()
+        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
+        mealIntent.putExtra("input", dish)
+        startService(mealIntent)
     }
 
-
-}
-
-
+    private fun startMealSelectNotification() {
+        val mealIntent = Intent()
+        mealIntent.setClass(this@MainActivity, NotificationsHandler::class.java)
+        mealIntent.putExtra("input", "remind")
+        startService(mealIntent)
+    }
+*/
 
 /*
     val request = OneTimeWorkRequestBuilder<NotificationTest>().build()

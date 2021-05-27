@@ -22,7 +22,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val m = Meal("01042021", "a", "b", "c", "d")
     var selectedOption = 0
-    var retrievedMeal = Meal("26052021", "Lasanha", "Sardinhas", "Massa", "Tofu")
+    var retrievedMeal = Meal("27052021", "Lasanha", "Sardinhas", "Massa", "Tofu")
     private val context = getApplication<Application>().applicationContext
     val myLocale = Locale("pt_PT", "POR")
 
@@ -110,7 +110,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
             selOption = verifyMealChoiceOnLocalStorage(currentDate, true)
             println("selected option: $selectedOption")
             isLunch = true
-        }else if(currentHour.toString().toInt() in 14..20){
+        }else if(currentHour.toString().toInt() in 13..20){
             println("entre 14 e 20")
             selOption = verifyMealChoiceOnLocalStorage(currentDate, false)
             println("selected option: $selectedOption")
@@ -193,7 +193,6 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
             true -> {
                 val idx = eventsList.indexOfFirst {
                     it.title == "ALMOÇO"
-
                 }
                 return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
 

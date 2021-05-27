@@ -25,8 +25,12 @@ object NotificationsManager {
         }
     }
 
-    fun createNewTransportsNotification(context: Context, title: String, message:
-            String, autoCancel: Boolean ){
+    fun createNewTransportsNotification(
+            context: Context, title: String,
+            message:
+            String,
+            autoCancel: Boolean,
+    ){
         val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
         lateinit var openTransportsFragmentIntent: PendingIntent
         lateinit var dismissNotificationIntent: PendingIntent
@@ -50,7 +54,8 @@ object NotificationsManager {
                 //putExtra("fragment", "transports")
             //}
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+            val uniqueID = System.currentTimeMillis().toInt()
+            val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
             setContentIntent(pendingIntent)
 
         }
@@ -60,8 +65,12 @@ object NotificationsManager {
 
     }
 
-    fun createNewTestNotification(context: Context, title: String, message:
-        String, autoCancel: Boolean ){
+    fun createNewTestNotification(
+            context: Context, title: String,
+            message:
+            String,
+            autoCancel: Boolean,
+    ){
         val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
@@ -75,7 +84,9 @@ object NotificationsManager {
             intent.putExtra("id", "transport")
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+
+            val uniqueID = System.currentTimeMillis().toInt()
+            val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
             setContentIntent(pendingIntent)
         }
 
@@ -84,8 +95,12 @@ object NotificationsManager {
 
     }
 
-    fun createNewMealNotification(context: Context, title: String, message:
-    String, autoCancel: Boolean ){
+    fun createNewMealNotification(
+            context: Context, title: String,
+            message:
+            String,
+            autoCancel: Boolean,
+    ){
         val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
@@ -99,7 +114,8 @@ object NotificationsManager {
             intent.putExtra("id", "meal")
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
-            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+            val uniqueID = System.currentTimeMillis().toInt()
+            val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
             setContentIntent(pendingIntent)
         }
 

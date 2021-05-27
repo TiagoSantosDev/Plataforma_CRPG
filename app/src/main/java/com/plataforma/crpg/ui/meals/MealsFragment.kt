@@ -58,7 +58,8 @@ class MealsFragment : Fragment() {
 
     override fun onDestroy() {
         // Don't forget to shutdown!
-        handler.removeCallbacks(runnable)
+        //DEPOIS DE TESTAR NOTIFICACOES TIRAR OS COMENTARIOS DAQUI
+        //handler.removeCallbacks(runnable)
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
