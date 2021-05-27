@@ -27,6 +27,7 @@ import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
+import com.plataforma.crpg.model.ReminderType
 import kotlinx.android.synthetic.main.layout_second_alerta.*
 import kotlinx.android.synthetic.main.layout_second_dia.*
 import kotlinx.android.synthetic.main.layout_second_horas.*
@@ -270,11 +271,15 @@ class ReminderFragment : Fragment() {
                 newViewModel.newReminder.start_time = startTimeString
 
                 when (lembrarButtonPressed) {
-                    1 -> newViewModel.newReminder.title = "Tomar medicacao"
-                    2 -> newViewModel.newReminder.title = "Apanhar bus do CRPG"
-                    3 -> newViewModel.newReminder.title = "Lembrar escolha de almoço"
+                    1 -> {newViewModel.newReminder.title = "Tomar medicacao"
+                        newViewModel.newReminder.reminder_type = ReminderType.MEDICACAO }
+                    2 -> {newViewModel.newReminder.title = "Apanhar bus do CRPG"
+                        newViewModel.newReminder.reminder_type = ReminderType.TRANSPORTE }
+                    3 -> {newViewModel.newReminder.title = "Lembrar escolha de almoço"
+                        newViewModel.newReminder.reminder_type = ReminderType.REFEICAO }
                     //definir titulo personalizado
-                    4 -> newViewModel.newReminder.title = textEditPersonalizado.text.toString()
+                    4 -> {newViewModel.newReminder.title = textEditPersonalizado.text.toString()
+                        newViewModel.newReminder.reminder_type = ReminderType.PERSONALIZADO }
                     else -> {
                         println("lembrarButtonPressed is neither one of the values")
                     }

@@ -9,6 +9,7 @@ data class Reminder(
         val end_time: String,
         var date: String,
         val notas: String,
+        var reminder_type: ReminderType,
         var alarm_type: AlarmType,
         var alarm_freq: AlarmFrequency
 ){
@@ -16,6 +17,17 @@ data class Reminder(
         return "title: ${this.title}, info: ${this.info}, start_time: ${this.start_time}, " +
                 "end_time: ${this.end_time}, date: ${this.date}"
     }
+}
+
+enum class ReminderType {
+    @SerializedName("MEDICACAO")
+    MEDICACAO,
+    @SerializedName("TRANSPORTE")
+    TRANSPORTE,
+    @SerializedName("REFEICAO")
+    REFEICAO,
+    @SerializedName("PERSONALIZADO")
+    PERSONALIZADO
 }
 
 enum class AlarmType {

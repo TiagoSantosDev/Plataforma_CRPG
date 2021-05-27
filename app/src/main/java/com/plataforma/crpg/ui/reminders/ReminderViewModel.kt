@@ -7,9 +7,12 @@ import android.os.Build
 import android.provider.AlarmClock
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
+import com.google.gson.Gson
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
 import com.plataforma.crpg.model.Reminder
+import com.plataforma.crpg.model.ReminderType
+import java.io.File
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 import java.sql.DriverManager.println
@@ -28,7 +31,8 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             false, false, false, false)
     lateinit var alarmIntent: Intent
 
-    var newReminder = Reminder("", "", "", "", "", "", AlarmType.SOM, AlarmFrequency.HOJE)
+    var newReminder = Reminder("", "", "", "", "", "",
+            ReminderType.MEDICACAO, AlarmType.SOM, AlarmFrequency.HOJE)
 
     var startTimeHours : String = ""
     var startTimeMin: String = ""
@@ -44,7 +48,7 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         println(">add Reminder")
 
         newReminder = Reminder("", "", "", "", "",
-                "", AlarmType.SOM, AlarmFrequency.HOJE)
+                "", ReminderType.MEDICACAO, AlarmType.SOM, AlarmFrequency.HOJE)
         val customWeekAlarmMutable = mutableListOf<Int>()
 
         for ((idx, value) in weekDaysBoolean.withIndex()) {
@@ -86,6 +90,25 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
 
         flagReminderAdded = true
         mReminderList.add(newReminder)
+        updateFileWithReminders(mReminderList)
+    }
+
+    private fun updateFileWithReminders(mReminderList: ArrayList<Reminder>) {
+
+        println("Reminder list: $mReminderList")
+
+        val gson = Gson()
+        val filename = "reminders.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val newJSONList = gson.toJson(mReminderList)
+
+        val file = File(fullFilename)
+        val fileExists = file.exists()
+
+        if (fileExists) {
+            File(fullFilename).writeText(newJSONList)
+        }
     }
 
     //data do dia de amanha

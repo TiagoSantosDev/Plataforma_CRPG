@@ -26,6 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <receiver android:name=".notifications.AlarmReceiver" />
         <service
             android:name=".services.NotificationsHandler"
             android:exported="false"

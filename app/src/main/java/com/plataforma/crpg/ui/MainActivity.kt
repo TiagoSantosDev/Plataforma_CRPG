@@ -5,14 +5,14 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings.Global.getString
+import android.os.Handler
+import android.os.HandlerThread
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -22,13 +22,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.exoplayer2.util.NotificationUtil.createNotificationChannel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.notifications.NotificationsManager
 import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.ui.meals.MealsViewModel
+import com.plataforma.crpg.ui.notes.NewVoiceNoteFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
@@ -37,7 +37,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val MESSAGE_STATUS = "message_status"
+    private lateinit var handlerThread: HandlerThread
+    private lateinit var backgroundHandler: Handler
+
     private var textToSpeech: TextToSpeech? = null
     private var ttsFlag = false
 
@@ -49,10 +51,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         resetSharedPreferences()
-        requestMealDataForNotification()
-        requestMultiModalityOptions()
+        //requestMealDataForNotification()
+        //requestMultiModalityOptions()
         //checkUserPermissions()
         setContentView(R.layout.activity_main)
+
+        handlerThread = HandlerThread("BackgroundWorker")
+        handlerThread.start()
+        backgroundHandler = Handler(handlerThread.looper)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -70,14 +76,43 @@ class MainActivity : AppCompatActivity() {
                 NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
                 getString(R.string.app_name), "App notification channel.")
 
+        //displayTransportsReminderNotification()
+
+        displayTestReminderNotification()
+
+        val current = intent
+        var name = current.getStringExtra("trans")
+        println("Nome" + name)
+
+        if (current != null && current.getStringExtra("id") == "trans") {
+            println("recebeu!")
+            Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
+            val fragment: Fragment = TransportsSelectionFragment()
+            val fragmentManager: FragmentManager = this.supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+            fragmentManager.popBackStack()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
+
     }
 
-    private fun displayDataDeletedNotification() {
-        NotificationsManager.createNewNotification(
+    private fun displayTransportsReminderNotification() {
+        NotificationsManager.createNewTransportsNotification(
                 this@MainActivity,
-                "ola",
-                "conteudo",
-                "teste", true
+                "Não se esqueça de apanhar o seu transporte!",
+                "Clique aqui para ver mais informações",
+                true
+        )
+    }
+
+    private fun displayTestReminderNotification() {
+        NotificationsManager.createNewTestNotification(
+                this@MainActivity,
+                "Teste!",
+                "Clique aqui para ver mais informações",
+                true
         )
     }
 
@@ -182,6 +217,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        println("Atividade destruida")
         // prevent memory leaks when activity is destroyed
         //Speech.getInstance().shutdown()
     }
