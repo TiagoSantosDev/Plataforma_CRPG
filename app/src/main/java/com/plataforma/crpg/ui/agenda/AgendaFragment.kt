@@ -104,8 +104,9 @@ class AgendaFragment : Fragment() {
         )
         val ctx = context
 
-        //ir buscar os dados para um determinado dia
+        //reset aos dados do ficheiro
         //setDataListItems()
+        //apenas vai buscar os dados ja existentes
         setDataListItemsWithoutPopulate()
         if (ctx != null) {
             initRecyclerView(ctx)

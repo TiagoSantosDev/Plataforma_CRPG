@@ -32,6 +32,7 @@ import com.plataforma.crpg.ui.transports.CustomTransportsFragment
 import com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
+import com.plataforma.crpg.utils.CustomDateUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
 import java.util.*
@@ -91,10 +92,9 @@ class MainActivity : AppCompatActivity() {
     private fun handleMealsReminderNotificationClick() {
         val current = intent
         val name = current.getStringExtra("id")
-        println("Nome:$name")
+        //println("Nome:$name")
 
         if (current != null && name == "meal") {
-            println("recebeu meal!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
             val bundle = Bundle()
             bundle.putBoolean("isLunch", true)
@@ -117,11 +117,9 @@ class MainActivity : AppCompatActivity() {
         println("Acao: $acao")
 
         if (current != null && current.getStringExtra("id") == "transport") {
-            println("recebeu!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
             val fragment: Fragment = when(current.getStringExtra("acao")){
                 "publico" -> {
-                    println("entrou when trasnportes publicos")
                     PublicTransportsTimetableFragment()
                 }
                 "fixo" -> {
@@ -164,24 +162,38 @@ class MainActivity : AppCompatActivity() {
     private fun requestMealDataForNotification() {
         val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
         val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
+        val isLunch = CustomDateUtils.getIsLunchOrDinner()
 
         if(dish.isNullOrEmpty()){
-            println("dish e null")
+            //println("dish e null")
             displayMealSelectionNotification()
         }else{
-            println("dish e $dish")
-            displayMealReminderNotification(dish)
+            //println("dish e $dish")
+            displayMealReminderNotification(dish,isLunch)
         }
     }
 
-    private fun displayMealReminderNotification(dish: String) {
-        println("Dish: $dish")
-        NotificationsManager.createNewMealNotification(
-                this@MainActivity,
-                "Hoje escolheu $dish para o almoço!",
-                "Clique aqui para escolher outra refeição!",
-                true
-        )
+    private fun displayMealReminderNotification(dish: String, isLunch: Boolean) {
+        //println("Dish: $dish")
+        when(isLunch){
+            true ->{
+                NotificationsManager.createNewMealNotification(
+                        this@MainActivity,
+                        "Hoje escolheu $dish para o almoço!",
+                        "Clique aqui para escolher outra refeição!",
+                        true
+                )
+            }
+            false -> {
+                NotificationsManager.createNewMealNotification(
+                        this@MainActivity,
+                        "Hoje escolheu $dish para o jantar!",
+                        "Clique aqui para escolher outra refeição!",
+                        true
+                )
+            }
+        }
+
     }
 
     private fun displayTestReminderNotification() {
