@@ -30,6 +30,8 @@ import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.meals.MealsViewModel
 import com.plataforma.crpg.ui.notes.NewVoiceNoteFragment
+import com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment
+import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import net.gotev.speech.*
@@ -110,7 +112,20 @@ class MainActivity : AppCompatActivity() {
         if (current != null && current.getStringExtra("id") == "transport") {
             println("recebeu!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
-            val fragment: Fragment = TransportsSelectionFragment()
+            val fragment: Fragment = when(current.getStringExtra("acao")){
+                "publico" -> {
+                    PublicTransportsTimetableFragment()
+                }
+                "fixo" -> {
+                    TransportsFragment()
+                }
+                "custom" -> {
+                    TransportsSelectionFragment()
+                }
+                else -> {
+                    TransportsSelectionFragment()
+                }
+            }
             val fragmentManager: FragmentManager = this.supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
