@@ -26,10 +26,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.notifications.NotificationsManager
-import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.meals.MealsViewModel
-import com.plataforma.crpg.ui.notes.NewVoiceNoteFragment
 import com.plataforma.crpg.ui.transports.CustomTransportsFragment
 import com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment

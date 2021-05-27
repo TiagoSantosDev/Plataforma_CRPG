@@ -1,17 +1,8 @@
 package com.plataforma.crpg.worker
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
 import android.content.Context
-import android.content.Intent
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import com.plataforma.crpg.R
-import com.plataforma.crpg.ui.MainActivity
 
 class UploadWorker(appContext: Context, workerParams: WorkerParameters):
         Worker(appContext, workerParams) {

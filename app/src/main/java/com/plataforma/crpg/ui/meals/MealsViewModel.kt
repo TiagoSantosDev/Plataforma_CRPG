@@ -14,9 +14,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.FileReader
 import java.lang.reflect.Type
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 @SuppressLint("StaticFieldLeak")
 class MealsViewModel(application: Application) : AndroidViewModel(application) {

@@ -33,7 +33,6 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import com.plataforma.crpg.R
 import com.plataforma.crpg.model.Reminder
 import java.util.*
 import java.util.Calendar.*

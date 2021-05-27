@@ -1,8 +1,8 @@
 package com.plataforma.crpg.services
 
 import android.app.IntentService
-import android.content.Intent
 import android.content.Context
+import android.content.Intent
 
 // TODO: Rename actions, choose action names that describe tasks that this
 // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
