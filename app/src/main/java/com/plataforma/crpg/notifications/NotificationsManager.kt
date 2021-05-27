@@ -39,20 +39,41 @@ object NotificationsManager {
         intent.putExtra("id", "transport")
         val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
 
-        val newUniqueID = System.currentTimeMillis().toInt() + 1
+        val publicUniqueID = System.currentTimeMillis().toInt() + 1
         val publicTransportsIntent = Intent(context, MainActivity::class.java)
         publicTransportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         publicTransportsIntent.putExtra("id","transport")
         publicTransportsIntent.putExtra("acao","publico")
-        val openTransportsFragmentIntent = PendingIntent.getActivity(context, newUniqueID, publicTransportsIntent, 0)
+        val publicTransportsFragmentIntent = PendingIntent.getActivity(context, publicUniqueID,
+                publicTransportsIntent, 0)
+
+        val customUniqueID = System.currentTimeMillis().toInt() + 1
+        val customTransportsIntent = Intent(context, MainActivity::class.java)
+        customTransportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        customTransportsIntent.putExtra("id","transport")
+        customTransportsIntent.putExtra("acao","custom")
+        val customTransportsFragmentIntent = PendingIntent.getActivity(context, customUniqueID,
+                customTransportsIntent, 0)
+
+        val mainUniqueID = System.currentTimeMillis().toInt() + 1
+        val transportsIntent = Intent(context, MainActivity::class.java)
+        transportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        transportsIntent.putExtra("id","transport")
+        transportsIntent.putExtra("acao","fixo")
+        val transportsFragmentIntent = PendingIntent.getActivity(context, mainUniqueID,
+                transportsIntent, 0)
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.ic_notification_bus)
             setContentTitle(title)
             setContentText(message)
             setStyle(NotificationCompat.BigTextStyle().bigText("Teste"))
-            .addAction(R.drawable.ic_notification_bus, "Abrir Transportes Públicos",
-                    openTransportsFragmentIntent)
+            .addAction(R.drawable.ic_notification_bus, "Transportes Públicos",
+                    publicTransportsFragmentIntent)
+                    .addAction(R.drawable.ic_notification_bus, "Camioneta CRPG",
+                            transportsFragmentIntent)
+                    .addAction(R.drawable.ic_notification_bus, "Os meus horários",
+                            customTransportsFragmentIntent)
             priority = NotificationCompat.PRIORITY_HIGH
             setAutoCancel(autoCancel)
             setContentIntent(pendingIntent)
