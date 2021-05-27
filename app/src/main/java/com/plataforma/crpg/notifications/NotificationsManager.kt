@@ -72,7 +72,7 @@ object NotificationsManager {
             setAutoCancel(autoCancel)
 
             val intent = Intent(context, MainActivity::class.java)
-            intent.putExtra("id", "trans")
+            intent.putExtra("id", "transport")
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
             val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
@@ -80,7 +80,31 @@ object NotificationsManager {
         }
 
         val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(1001, notificationBuilder.build())
+        notificationManager.notify(1002, notificationBuilder.build())
+
+    }
+
+    fun createNewMealNotification(context: Context, title: String, message:
+    String, autoCancel: Boolean ){
+        val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
+
+        val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
+            setSmallIcon(R.drawable.ic_notification_meal)
+            setContentTitle(title)
+            setContentText(message)
+            priority = NotificationCompat.PRIORITY_HIGH
+            setAutoCancel(autoCancel)
+
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("id", "meal")
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+            setContentIntent(pendingIntent)
+        }
+
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(1003, notificationBuilder.build())
 
     }
 

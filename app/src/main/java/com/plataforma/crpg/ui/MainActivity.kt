@@ -27,6 +27,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
 import com.plataforma.crpg.notifications.NotificationsManager
 import com.plataforma.crpg.services.NotificationsHandler
+import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.meals.MealsViewModel
 import com.plataforma.crpg.ui.notes.NewVoiceNoteFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
@@ -78,13 +79,35 @@ class MainActivity : AppCompatActivity() {
 
         //displayTransportsReminderNotification()
 
-        displayTestReminderNotification()
+        displayMealReminderNotification()
+        handleMealsReminderNotificationClick()
 
+    }
+
+    private fun handleMealsReminderNotificationClick() {
         val current = intent
-        var name = current.getStringExtra("trans")
-        println("Nome" + name)
+        val name = current.getStringExtra("id")
+        println("Nome:$name")
 
-        if (current != null && current.getStringExtra("id") == "trans") {
+        if (current != null && name == "meal") {
+            println("recebeu meal!")
+            Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
+            val fragment: Fragment = MealsFragment()
+            val fragmentManager: FragmentManager = this.supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
+            fragmentManager.popBackStack()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
+    }
+
+    private fun handleTransportsReminderNotificationClick() {
+        val current = intent
+        var name = current.getStringExtra("id")
+        println("Nome$name")
+
+        if (current != null && current.getStringExtra("id") == "transport") {
             println("recebeu!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
             val fragment: Fragment = TransportsSelectionFragment()
@@ -95,7 +118,6 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-
     }
 
     private fun displayTransportsReminderNotification() {
@@ -103,6 +125,15 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity,
                 "Não se esqueça de apanhar o seu transporte!",
                 "Clique aqui para ver mais informações",
+                true
+        )
+    }
+
+    private fun displayMealReminderNotification() {
+        NotificationsManager.createNewMealNotification(
+                this@MainActivity,
+                "Não se esqueça de selecionar a sua refeição!",
+                "Clique aqui para selecionar uma das opções disponíveis!",
                 true
         )
     }
