@@ -80,14 +80,13 @@ class MainActivity : AppCompatActivity() {
                 NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
                 getString(R.string.app_name), "App notification channel.")
 
-        displayTransportsReminderNotification()
-        handleTransportsReminderNotificationClick()
+        //displayTransportsReminderNotification()
+        //handleTransportsReminderNotificationClick()
 
         //displayMealSelectionNotification()
-
-        //requestMealDataForNotification()
+        requestMealDataForNotification()
         //println("Dish: $result")
-        //handleMealsReminderNotificationClick()
+        handleMealsReminderNotificationClick()
 
     }
 

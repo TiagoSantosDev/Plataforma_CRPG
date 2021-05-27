@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.plataforma.crpg.model.Event
 import com.plataforma.crpg.model.Meal
+import com.plataforma.crpg.utils.CustomDateUtils
 import java.io.File
 import java.io.FileOutputStream
 import java.io.FileReader
@@ -94,27 +95,15 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
 
     fun fetchMealChoiceOnLocalStorage(): String {
 
-        var isLunch = false
-        val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
-        val currentDate = sdf.format(Date())
-        val sdfh = SimpleDateFormat("HH", myLocale)
-        val currentHour = sdfh.format(Date())
         var selOption = 0
         var dish = ""
-        System.out.println(" C DATE is  $currentDate")
-        System.out.println(" C HOUR is  $currentHour")
+        val isLunch = CustomDateUtils.getIsLunchOrDinner()
+        val currentDate = CustomDateUtils.getCurrentDay()
 
-        //verificar se esta na hora de mostrar notificacao ao utilizador
-        if (currentHour.toString().toInt() in 8..12){
-            println("entre 8 e 12")
-            selOption = verifyMealChoiceOnLocalStorage(currentDate, true)
-            println("selected option: $selectedOption")
-            isLunch = true
-        }else if(currentHour.toString().toInt() in 13..20){
-            println("entre 14 e 20")
-            selOption = verifyMealChoiceOnLocalStorage(currentDate, false)
-            println("selected option: $selectedOption")
-        }
+        println("isLunch: $isLunch")
+        println("Current date: $currentDate")
+
+        selOption = verifyMealChoiceOnLocalStorage(currentDate, isLunch)
 
         dish = when(selOption){
             1 -> retrievedMeal.carne
@@ -123,6 +112,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
             4 -> retrievedMeal.vegetariano
             else -> ""
         }
+
+        println("Retrieved dish:$dish")
 
         return dish
 
@@ -179,7 +170,7 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun verifyMealChoiceOnLocalStorage(selectedDate: String, isLunch: Boolean): Int {
+    private fun verifyMealChoiceOnLocalStorage(selectedDate: String, isLunch: Boolean): Int {
         val gson = Gson()
         val filename = "event.json"
         val fullFilename = context.filesDir.toString() + "/" + filename
@@ -194,7 +185,8 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                 val idx = eventsList.indexOfFirst {
                     it.title == "ALMOÇO"
                 }
-                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
+                return if(eventsList[idx].meal_int < 1 || eventsList[idx].meal_int > 4) 0
+                    else eventsList[idx].meal_int
 
             }
 
@@ -203,12 +195,17 @@ class MealsViewModel(application: Application) : AndroidViewModel(application) {
                     it.title == "JANTAR"
                 }
 
-                return if(selectedOption < 1 || selectedOption > 4) 0 else selectedOption
+                return if(eventsList[idx].meal_int < 1 || eventsList[idx].meal_int > 4) 0
+                    else eventsList[idx].meal_int
             }
         }
 
     }
 }
+
+
+
+
 /*
 when (selectedOption) {
     1 -> eventsList[idx].chosen_meal = retrievedMeal.carne
@@ -271,3 +268,27 @@ when (selectedOption) {
 //        if(eventsList.any { it.date == selectedDate }){
 //            indexOf.
 //        }*/
+//
+//
+//        /*
+//        var isLunch = false
+//        val sdf = SimpleDateFormat("ddMMyyyy", myLocale)
+//        val currentDate = sdf.format(Date())
+//        val sdfh = SimpleDateFormat("HH", myLocale)
+//        val currentHour = sdfh.format(Date())
+//
+//        System.out.println(" C DATE is  $currentDate")
+//        System.out.println(" C HOUR is  $currentHour")
+//
+//        //verificar se esta na hora de mostrar notificacao ao utilizador
+//        if (currentHour.toString().toInt() in 8..12){
+//            println("entre 8 e 12")
+//            selOption = verifyMealChoiceOnLocalStorage(currentDate, true)
+//            println("selected option: $selOption")
+//            isLunch = true
+//        }else if(currentHour.toString().toInt() in 13..20){
+//            println("entre 14 e 20")
+//            selOption = verifyMealChoiceOnLocalStorage(currentDate, false)
+//            println("selected option: $selOption")
+//        }
+//        */

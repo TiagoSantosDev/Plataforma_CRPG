@@ -61,6 +61,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
         private const val joaoDeDeusString = "João de Deus"
     }
 
+
     override fun onPause() {
         super.onPause()
         val sharedPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
@@ -71,7 +72,9 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onDestroy() {
         // Don't forget to shutdown!
-        handler.removeCallbacks(runnable);
+        if (hasInitSR) {
+            handler.removeCallbacks(runnable);
+        }
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
@@ -393,6 +396,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     fun startVoiceRecognition() {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
+
         runnable = Runnable {
             handler.sendEmptyMessage(0);
             Speech.init(requireActivity())
