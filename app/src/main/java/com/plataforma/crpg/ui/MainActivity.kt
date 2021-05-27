@@ -30,6 +30,7 @@ import com.plataforma.crpg.services.NotificationsHandler
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.meals.MealsViewModel
 import com.plataforma.crpg.ui.notes.NewVoiceNoteFragment
+import com.plataforma.crpg.ui.transports.CustomTransportsFragment
 import com.plataforma.crpg.ui.transports.PublicTransportsTimetableFragment
 import com.plataforma.crpg.ui.transports.TransportsFragment
 import com.plataforma.crpg.ui.transports.TransportsSelectionFragment
@@ -79,13 +80,14 @@ class MainActivity : AppCompatActivity() {
                 NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
                 getString(R.string.app_name), "App notification channel.")
 
-        //displayTransportsReminderNotification()
+        displayTransportsReminderNotification()
+        handleTransportsReminderNotificationClick()
 
         //displayMealSelectionNotification()
 
-        requestMealDataForNotification()
+        //requestMealDataForNotification()
         //println("Dish: $result")
-        handleMealsReminderNotificationClick()
+        //handleMealsReminderNotificationClick()
 
     }
 
@@ -113,20 +115,23 @@ class MainActivity : AppCompatActivity() {
     private fun handleTransportsReminderNotificationClick() {
         val current = intent
         val name = current.getStringExtra("id")
-        println("Nome$name")
+        val acao = current.getStringExtra("acao")
+        println("Nome: $name")
+        println("Acao: $acao")
 
         if (current != null && current.getStringExtra("id") == "transport") {
             println("recebeu!")
             Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
             val fragment: Fragment = when(current.getStringExtra("acao")){
                 "publico" -> {
+                    println("entrou when trasnportes publicos")
                     PublicTransportsTimetableFragment()
                 }
                 "fixo" -> {
                     TransportsFragment()
                 }
                 "custom" -> {
-                    TransportsSelectionFragment()
+                    CustomTransportsFragment()
                 }
                 else -> {
                     TransportsSelectionFragment()
@@ -159,6 +164,19 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun requestMealDataForNotification() {
+        val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
+        val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
+
+        if(dish.isNullOrEmpty()){
+            println("dish e null")
+            displayMealSelectionNotification()
+        }else{
+            println("dish e $dish")
+            displayMealReminderNotification(dish)
+        }
+    }
+
     private fun displayMealReminderNotification(dish: String) {
         println("Dish: $dish")
         NotificationsManager.createNewMealNotification(
@@ -176,19 +194,6 @@ class MainActivity : AppCompatActivity() {
                 "Clique aqui para ver mais informações",
                 true
         )
-    }
-
-    private fun requestMealDataForNotification() {
-        val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
-        val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
-
-        if(dish.isNullOrEmpty()){
-            println("dish e null")
-            displayMealSelectionNotification()
-        }else{
-            println("dish e $dish")
-            displayMealReminderNotification(dish)
-        }
     }
 
 

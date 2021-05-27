@@ -32,8 +32,20 @@ object NotificationsManager {
             autoCancel: Boolean,
     ){
         val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
-        lateinit var openTransportsFragmentIntent: PendingIntent
-        lateinit var dismissNotificationIntent: PendingIntent
+        val uniqueID = System.currentTimeMillis().toInt()
+
+        val intent = Intent(context, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.putExtra("id", "transport")
+        val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
+
+        val newUniqueID = System.currentTimeMillis().toInt() + 1
+        val publicTransportsIntent = Intent(context, MainActivity::class.java)
+        publicTransportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        publicTransportsIntent.putExtra("id","transport")
+        publicTransportsIntent.putExtra("acao","publico")
+        val openTransportsFragmentIntent = PendingIntent.getActivity(context, newUniqueID, publicTransportsIntent, 0)
+
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.ic_notification_bus)
             setContentTitle(title)
@@ -41,28 +53,13 @@ object NotificationsManager {
             setStyle(NotificationCompat.BigTextStyle().bigText("Teste"))
             .addAction(R.drawable.ic_notification_bus, "Abrir Transportes Públicos",
                     openTransportsFragmentIntent)
-            .addAction(R.drawable.ic_arrow_down, "Fechar",
-                    dismissNotificationIntent)
             priority = NotificationCompat.PRIORITY_HIGH
             setAutoCancel(autoCancel)
-
-            val intent = Intent(context, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-            //val intent = Intent(context, MainActivity::class.java).apply {
-                //flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                //putExtra("fragment", "transports")
-            //}
-
-            val uniqueID = System.currentTimeMillis().toInt()
-            val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
             setContentIntent(pendingIntent)
-
         }
 
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(1001, notificationBuilder.build())
-
     }
 
     fun createNewTestNotification(
@@ -149,3 +146,8 @@ object NotificationsManager {
                 fragmentManager.popBackStack()
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()*/
+
+//val intent = Intent(context, MainActivity::class.java).apply {
+//flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//putExtra("fragment", "transports")
+//}
