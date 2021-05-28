@@ -1,5 +1,6 @@
 package com.plataforma.crpg.notifications
 
+import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -10,6 +11,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.plataforma.crpg.R
 import com.plataforma.crpg.ui.MainActivity
+import com.plataforma.crpg.utils.CustomDateUtils
+import java.util.*
 
 object NotificationsManager {
 
@@ -42,24 +45,24 @@ object NotificationsManager {
         val publicUniqueID = System.currentTimeMillis().toInt() + 1
         val publicTransportsIntent = Intent(context, MainActivity::class.java)
         publicTransportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        publicTransportsIntent.putExtra("id","transport")
-        publicTransportsIntent.putExtra("acao","publico")
+        publicTransportsIntent.putExtra("id", "transport")
+        publicTransportsIntent.putExtra("acao", "publico")
         val publicTransportsFragmentIntent = PendingIntent.getActivity(context, publicUniqueID,
                 publicTransportsIntent, 0)
 
         val customUniqueID = System.currentTimeMillis().toInt() + 1
         val customTransportsIntent = Intent(context, MainActivity::class.java)
         customTransportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        customTransportsIntent.putExtra("id","transport")
-        customTransportsIntent.putExtra("acao","custom")
+        customTransportsIntent.putExtra("id", "transport")
+        customTransportsIntent.putExtra("acao", "custom")
         val customTransportsFragmentIntent = PendingIntent.getActivity(context, customUniqueID,
                 customTransportsIntent, 0)
 
         val mainUniqueID = System.currentTimeMillis().toInt() + 1
         val transportsIntent = Intent(context, MainActivity::class.java)
         transportsIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        transportsIntent.putExtra("id","transport")
-        transportsIntent.putExtra("acao","fixo")
+        transportsIntent.putExtra("id", "transport")
+        transportsIntent.putExtra("acao", "fixo")
         val transportsFragmentIntent = PendingIntent.getActivity(context, mainUniqueID,
                 transportsIntent, 0)
 
@@ -67,13 +70,12 @@ object NotificationsManager {
             setSmallIcon(R.drawable.ic_notification_bus)
             setContentTitle(title)
             setContentText(message)
-            setStyle(NotificationCompat.BigTextStyle().bigText("Teste"))
             .addAction(R.drawable.ic_notification_bus, "Transportes Públicos",
                     publicTransportsFragmentIntent)
-                    .addAction(R.drawable.ic_notification_bus, "Camioneta CRPG",
-                            transportsFragmentIntent)
-                    .addAction(R.drawable.ic_notification_bus, "Os meus horários",
-                            customTransportsFragmentIntent)
+            .addAction(R.drawable.ic_notification_bus, "Camioneta CRPG",
+                    transportsFragmentIntent)
+            .addAction(R.drawable.ic_notification_bus, "Os meus horários",
+                    customTransportsFragmentIntent)
             priority = NotificationCompat.PRIORITY_HIGH
             setAutoCancel(autoCancel)
             setContentIntent(pendingIntent)
@@ -81,6 +83,53 @@ object NotificationsManager {
 
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.notify(1001, notificationBuilder.build())
+    }
+
+    fun createNewMedicationNotification(
+            context: Context, title: String,
+            message:
+            String,
+            autoCancel: Boolean,
+    ){
+        val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
+        val uniqueID = System.currentTimeMillis().toInt()
+
+        val intent = Intent(context, MainActivity::class.java)
+        //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.putExtra("id", "meds")
+        val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
+
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val reminderID = System.currentTimeMillis().toInt() + 1
+        val remindIntent = Intent(context, MainActivity::class.java)
+        //remindIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        remindIntent.putExtra("id", "meds")
+        val remindPendingIntent = PendingIntent.getActivity(context, reminderID,
+                remindIntent, 0)
+
+        val calendar: Calendar = Calendar.getInstance()
+        calendar.timeInMillis = System.currentTimeMillis()
+        //calendar.set(Calendar.HOUR_OF_DAY, CustomDateUtils.getCurrentHourInt())
+        //calendar.set(Calendar.MINUTE, minute)
+
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, (
+                1000 * 60 * 5).toLong(), remindPendingIntent)
+
+        val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
+            setSmallIcon(R.drawable.medicacao)
+            setContentTitle(title)
+            setContentText(message)
+                    .addAction(R.drawable.medicacao, "Sim",
+                           pendingIntent)
+                    .addAction(R.drawable.medicacao, "Relembrar",
+                            remindPendingIntent)
+            priority = NotificationCompat.PRIORITY_HIGH
+            setAutoCancel(autoCancel)
+            setContentIntent(pendingIntent)
+        }
+
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(1005, notificationBuilder.build())
     }
 
     fun createNewTestNotification(

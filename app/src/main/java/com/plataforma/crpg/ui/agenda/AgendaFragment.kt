@@ -106,6 +106,7 @@ class AgendaFragment : Fragment() {
 
         //reset aos dados do ficheiro
         //setDataListItems()
+
         //apenas vai buscar os dados ja existentes
         setDataListItemsWithoutPopulate()
         if (ctx != null) {

@@ -34,4 +34,12 @@ object CustomDateUtils {
         return sdf.format(Date())
     }
 
+    fun getCurrentHourInt(): Int {
+        val hourString = SimpleDateFormat("HH", myLocale)
+        val hourInt = hourString.toString().toInt()
+
+        println("Hour int: $hourInt")
+        return hourInt
+    }
+
 }

@@ -83,10 +83,20 @@ class MainActivity : AppCompatActivity() {
         //handleTransportsReminderNotificationClick()
 
         //displayMealSelectionNotification()
-        requestMealDataForNotification()
-        //println("Dish: $result")
-        handleMealsReminderNotificationClick()
+        //requestMealDataForNotification()
+        //handleMealsReminderNotificationClick()
 
+        displayMedicationAdministrationNotification()
+        handleMedicationReminderNotificationClick()
+    }
+
+    private fun handleMedicationReminderNotificationClick() {
+        val current = intent
+        val name = current.getStringExtra("id")
+
+        if (current != null && name == "meds") {
+            Toast.makeText(this, "exiting", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun handleMealsReminderNotificationClick() {
@@ -159,6 +169,15 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun displayMedicationAdministrationNotification() {
+        NotificationsManager.createNewMedicationNotification(
+                this@MainActivity,
+                "Não se esqueça de tomar a medicação!",
+                "Já tomou a sua medicação? Selecione sim ou peça para ser relembrado em 5 minutos!",
+                true
+        )
+    }
+
     private fun requestMealDataForNotification() {
         val mealsViewModel = ViewModelProvider(this).get(MealsViewModel::class.java)
         val dish = mealsViewModel.fetchMealChoiceOnLocalStorage()
@@ -194,15 +213,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    private fun displayTestReminderNotification() {
-        NotificationsManager.createNewTestNotification(
-                this@MainActivity,
-                "Teste!",
-                "Clique aqui para ver mais informações",
-                true
-        )
     }
 
 
@@ -354,7 +364,16 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-
+/*
+    private fun displayTestReminderNotification() {
+        NotificationsManager.createNewTestNotification(
+                this@MainActivity,
+                "Teste!",
+                "Clique aqui para ver mais informações",
+                true
+        )
+    }
+*/
 /*
         val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
