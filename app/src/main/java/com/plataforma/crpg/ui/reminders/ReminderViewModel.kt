@@ -93,6 +93,15 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         updateFileWithReminders(mReminderList)
     }
 
+    /*
+    private fun getAllRemindersList(): ArrayList<Reminder> {
+
+        val reminderList : ArrayList<Reminder>
+
+        return reminderList
+
+    }
+*/
     private fun updateFileWithReminders(mReminderList: ArrayList<Reminder>) {
 
         println("Reminder list: $mReminderList")

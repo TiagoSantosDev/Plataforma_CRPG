@@ -33,7 +33,10 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import com.plataforma.crpg.model.AlarmFrequency
+import com.plataforma.crpg.model.AlarmType
 import com.plataforma.crpg.model.Reminder
+import com.plataforma.crpg.model.ReminderType
 import java.util.*
 import java.util.Calendar.*
 
@@ -48,27 +51,44 @@ object AlarmScheduler {
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         // get the PendingIntent for the alarm
-        val alarmIntent = createPendingIntent(context, "Cenas")
-        println("Chega aqui")
+        val alarmIntent = createPendingIntent(context, "Sexta")
 
-        scheduleAlarm(1, alarmIntent, alarmMgr)
+        var reminder = Reminder("","","","","","",ReminderType.REFEICAO,AlarmType.AMBOS,AlarmFrequency.AMANHA,)
+
+        scheduleAlarm(1, true, reminder, alarmIntent, alarmMgr)
+
+    }
+
+    fun scheduleAlarmsForAllReminder(context: Context) {
+
+        val reminderList : ArrayList<Reminder>
+
+        // get the AlarmManager reference
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+        // get the PendingIntent for the alarm
+        val alarmIntent = createPendingIntent(context, "Sexta")
+
+/*
+        for (i in reminderList){
+            scheduleAlarm(1, true, reminderList.get(i), alarmIntent, alarmMgr)
+        }
+*/
 
     }
 
     private fun createPendingIntent(context: Context, day: String?): PendingIntent? {
         // create the intent using a unique type
         val intent = Intent(context.applicationContext, AlarmReceiver::class.java).apply {
-            //action = context.getString(R.string.action_notify_administer_medication)
             type = "$day- teste funcionou"
-            //putExtra(ReminderDialog.KEY_ID, reminderData.id)
         }
-
         val broadcastID = (System.currentTimeMillis() * 2).toInt()
         return PendingIntent.getBroadcast(context, broadcastID, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
 
-    private fun scheduleAlarm(dayOfWeek: Int, alarmIntent: PendingIntent?, alarmMgr: AlarmManager) {
+    private fun scheduleAlarm(dayOfWeek: Int, repeats: Boolean, reminder: Reminder,
+                                    alarmIntent: PendingIntent?, alarmMgr: AlarmManager) {
 
         println("Entra no schedule alarm")
 
@@ -81,24 +101,29 @@ object AlarmScheduler {
 
         datetimeToAlarm.timeInMillis = System.currentTimeMillis()
         datetimeToAlarm.set(DAY_OF_WEEK, 6)
-        datetimeToAlarm.set(HOUR_OF_DAY, 14)
-        datetimeToAlarm.set(MINUTE, 45)
+        //datetimeToAlarm.set(HOUR_OF_DAY, reminder.start_time.take(2).toInt())
+        //datetimeToAlarm.set(MINUTE, reminder.start_time.takeLast(2).toInt())
+        datetimeToAlarm.set(HOUR_OF_DAY, 15)
+        datetimeToAlarm.set(MINUTE, 23)
         datetimeToAlarm.set(SECOND, 0)
         datetimeToAlarm.set(MILLISECOND, 0)
 
         // Compare the datetimeToAlarm to today
         val today = Calendar.getInstance(Locale.getDefault())
 
-        // schedule for today
-        /*
-        alarmMgr.setRepeating(
-                AlarmManager.RTC_WAKEUP,
-                datetimeToAlarm.timeInMillis, (1000 * 60 * 60 * 24 * 7).toLong(), alarmIntent
-        )*/
-
-        alarmMgr.set(AlarmManager.RTC_WAKEUP,datetimeToAlarm.timeInMillis,alarmIntent);
-
+        if (repeats) {
+            // schedule for every single day starting from today
+            alarmMgr.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    datetimeToAlarm.timeInMillis, (1000 * 60 * 60 * 24 * 7).toLong(), alarmIntent
+            )
+        }else {
+            //Single time alarm
+            alarmMgr.set(AlarmManager.RTC_WAKEUP, datetimeToAlarm.timeInMillis, alarmIntent);
+        }
     }
 
 
 }
+//putExtra(ReminderDialog.KEY_ID, reminderData.id)
+// action = context.getString(R.string.action_notify_administer_medication)
