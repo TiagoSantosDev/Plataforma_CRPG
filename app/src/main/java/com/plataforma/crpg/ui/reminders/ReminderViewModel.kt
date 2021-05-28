@@ -8,13 +8,13 @@ import android.provider.AlarmClock
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import com.google.gson.Gson
-import com.plataforma.crpg.model.AlarmFrequency
-import com.plataforma.crpg.model.AlarmType
-import com.plataforma.crpg.model.Reminder
-import com.plataforma.crpg.model.ReminderType
+import com.google.gson.reflect.TypeToken
+import com.plataforma.crpg.model.*
 import java.io.File
+import java.io.FileReader
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
+import java.lang.reflect.Type
 import java.sql.DriverManager.println
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,7 +31,7 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
             false, false, false, false)
     lateinit var alarmIntent: Intent
 
-    var newReminder = Reminder("", "", "", "", "", "",
+    var newReminder = Reminder("", "", "", 0, 0, "","",
             ReminderType.MEDICACAO, AlarmType.SOM, AlarmFrequency.HOJE)
 
     var startTimeHours : String = ""
@@ -47,8 +47,8 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
 
         println(">add Reminder")
 
-        newReminder = Reminder("", "", "", "", "",
-                "", ReminderType.MEDICACAO, AlarmType.SOM, AlarmFrequency.HOJE)
+        newReminder = Reminder("", "", "", 11, 0,
+                "", "", ReminderType.MEDICACAO, AlarmType.SOM, AlarmFrequency.HOJE)
         val customWeekAlarmMutable = mutableListOf<Int>()
 
         for ((idx, value) in weekDaysBoolean.withIndex()) {
@@ -93,15 +93,55 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
         updateFileWithReminders(mReminderList)
     }
 
-    /*
-    private fun getAllRemindersList(): ArrayList<Reminder> {
 
-        val reminderList : ArrayList<Reminder>
+    private fun populateFile() {
+        val filename = "reminder.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+        val file = File(fullFilename)
+
+        // create a new file
+        val isNewFileCreated : Boolean = file.createNewFile()
+
+//        var title: String,
+//        val info: String,
+//        var start_time: String,
+//        var date: String,
+//        val notas: String,
+//        var reminder_type: ReminderType,
+//        var alarm_type: AlarmType,
+//        var alarm_freq: AlarmFrequency
+
+        if(isNewFileCreated){
+            kotlin.io.println("$fullFilename is created successfully.")
+        } else{
+            kotlin.io.println("$fullFilename already exists.")
+        }
+        val fileContent = """[{"title": "Tomar Medicação","info":"benuron","start_time": "1130","hours":11,"minutes":30,"notas":""}]""".trimMargin()
+
+        File(fullFilename).writeText(fileContent)
+    }
+
+    fun startNewFileAndPopulate(){
+        populateFile()
+        getAllRemindersList()
+    }
+
+
+    fun getAllRemindersList(): ArrayList<Reminder> {
+
+        val gson = Gson()
+        val filename = "reminder.json"
+        val fullFilename = context.filesDir.toString() + "/" + filename
+
+        val type: Type = object : TypeToken<ArrayList<Reminder>>() {}.type
+        val reminderList: ArrayList<Reminder> = gson.fromJson(FileReader(fullFilename), type)
+
+        println("> From JSON Meal String Reminder Collection:" + reminderList.toString())
 
         return reminderList
 
     }
-*/
+
     private fun updateFileWithReminders(mReminderList: ArrayList<Reminder>) {
 
         println("Reminder list: $mReminderList")

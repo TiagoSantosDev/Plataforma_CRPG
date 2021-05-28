@@ -98,6 +98,8 @@ class ReminderFragment : Fragment() {
         val view = binding.root
         val newViewModel = ViewModelProvider(activity as AppCompatActivity).get(ReminderViewModel::class.java)
 
+        newViewModel.startNewFileAndPopulate()
+
         with(binding){
             root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.VISIBLE
             root.findViewById<FloatingActionButton>(R.id.createReminderActionButton).setOnClickListener{
@@ -269,6 +271,8 @@ class ReminderFragment : Fragment() {
                 }
 
                 newViewModel.newReminder.start_time = startTimeString
+                newViewModel.newReminder.hours = hoursInt
+                newViewModel.newReminder.mins = minsInt
 
                 when (lembrarButtonPressed) {
                     1 -> {newViewModel.newReminder.title = "Tomar medicacao"

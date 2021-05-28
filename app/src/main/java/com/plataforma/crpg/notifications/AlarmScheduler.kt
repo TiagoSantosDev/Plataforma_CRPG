@@ -53,7 +53,8 @@ object AlarmScheduler {
         // get the PendingIntent for the alarm
         val alarmIntent = createPendingIntent(context, "Sexta")
 
-        var reminder = Reminder("","","","","","",ReminderType.REFEICAO,AlarmType.AMBOS,AlarmFrequency.AMANHA,)
+        var reminder = Reminder("","","",
+                0,0,"", "",ReminderType.REFEICAO,AlarmType.AMBOS,AlarmFrequency.AMANHA,)
 
         scheduleAlarm(1, true, reminder, alarmIntent, alarmMgr)
 
@@ -111,13 +112,13 @@ object AlarmScheduler {
         // Compare the datetimeToAlarm to today
         val today = Calendar.getInstance(Locale.getDefault())
 
-        if (repeats) {
+        if (reminder.alarm_freq == AlarmFrequency.TODOS_OS_DIAS) {
             // schedule for every single day starting from today
             alarmMgr.setRepeating(
                     AlarmManager.RTC_WAKEUP,
                     datetimeToAlarm.timeInMillis, (1000 * 60 * 60 * 24 * 7).toLong(), alarmIntent
             )
-        }else {
+        }else if(reminder.alarm_freq == AlarmFrequency.HOJE){
             //Single time alarm
             alarmMgr.set(AlarmManager.RTC_WAKEUP, datetimeToAlarm.timeInMillis, alarmIntent);
         }
