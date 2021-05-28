@@ -25,6 +25,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.plataforma.crpg.R
+import com.plataforma.crpg.notifications.AlarmScheduler
 import com.plataforma.crpg.notifications.NotificationsManager
 import com.plataforma.crpg.ui.meals.MealsFragment
 import com.plataforma.crpg.ui.meals.MealsViewModel
@@ -54,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         resetSharedPreferences()
-        //requestMealDataForNotification()
         //requestMultiModalityOptions()
         //checkUserPermissions()
         setContentView(R.layout.activity_main)
@@ -79,15 +79,12 @@ class MainActivity : AppCompatActivity() {
                 NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
                 getString(R.string.app_name), "App notification channel.")
 
+        AlarmScheduler.scheduleAlarmsForReminder(this@MainActivity)
+
         //displayTransportsReminderNotification()
         //handleTransportsReminderNotificationClick()
 
-        //displayMealSelectionNotification()
-        //requestMealDataForNotification()
-        //handleMealsReminderNotificationClick()
 
-        displayMedicationAdministrationNotification()
-        handleMedicationReminderNotificationClick()
     }
 
     private fun handleMedicationReminderNotificationClick() {
@@ -363,7 +360,12 @@ class MainActivity : AppCompatActivity() {
 
 }
 
+//displayMealSelectionNotification()
+//requestMealDataForNotification()
+//handleMealsReminderNotificationClick()
 
+//displayMedicationAdministrationNotification()
+//handleMedicationReminderNotificationClick()
 /*
     private fun displayTestReminderNotification() {
         NotificationsManager.createNewTestNotification(

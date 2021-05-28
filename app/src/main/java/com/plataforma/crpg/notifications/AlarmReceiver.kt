@@ -42,7 +42,7 @@ class AlarmReceiver : BroadcastReceiver() {
         Log.d(TAG, "onReceive() called with: context = [$context], intent = [$intent]")
         if (context != null && intent != null) {
             println("Entrou nos extras")
-            NotificationsManager.createNewTransportsNotification(context, "Transportes", "ola", true)
+            NotificationsManager.createAlarmNotification(context, "Alarme", "ola", true)
         }
     }
 }

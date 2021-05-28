@@ -57,10 +57,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/AlarmReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/AlarmReceiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/AlarmScheduler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/AlarmScheduler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/NotificationsManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/notifications/NotificationsManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/AgendaFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/utils/CustomDateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/utils/CustomDateUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -617,26 +617,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="508" y="133" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1622035754317" />
-    <state width="1236" height="291" key="GridCell.Tab.0.bottom" timestamp="1622133326188">
+    <state width="1236" height="192" key="GridCell.Tab.0.bottom" timestamp="1622209209638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="291" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1622133326188" />
-    <state width="1236" height="291" key="GridCell.Tab.0.center" timestamp="1622133326188">
+    <state width="1236" height="192" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1622209209638" />
+    <state width="1236" height="192" key="GridCell.Tab.0.center" timestamp="1622209209638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="291" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1622133326188" />
-    <state width="1236" height="291" key="GridCell.Tab.0.left" timestamp="1622133326188">
+    <state width="1236" height="192" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1622209209638" />
+    <state width="1236" height="192" key="GridCell.Tab.0.left" timestamp="1622209209638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1236" height="291" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1622133326188" />
-    <state width="1236" height="291" key="GridCell.Tab.0.right" timestamp="1622133326188">
+    <state width="1236" height="192" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1622209209638" />
+    <state width="1236" height="192" key="GridCell.Tab.0.right" timestamp="1622209209638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1236" height="291" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1622133326188" />
+    <state width="1236" height="192" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1622209209638" />
     <state width="1236" height="194" key="GridCell.Tab.1.bottom" timestamp="1620036911795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -689,10 +689,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="547" y="144" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1622031358817" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1621505196261">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1622197291689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1621505196261" />
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1622197291689" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1622119959950">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

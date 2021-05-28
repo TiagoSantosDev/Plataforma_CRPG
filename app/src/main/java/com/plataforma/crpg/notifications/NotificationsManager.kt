@@ -28,6 +28,34 @@ object NotificationsManager {
         }
     }
 
+    fun createAlarmNotification(
+            context: Context, title: String,
+            message:
+            String,
+            autoCancel: Boolean,
+    ){
+
+        val channelId = "${context.packageName}-${context.getString(R.string.app_name)}"
+        val uniqueID = System.currentTimeMillis().toInt()
+
+        val intent = Intent(context, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.putExtra("id", "transport")
+        val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
+
+        val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
+            setSmallIcon(R.drawable.ic_notification_bus)
+            setContentTitle(title)
+            setContentText(message)
+            priority = NotificationCompat.PRIORITY_HIGH
+            setAutoCancel(autoCancel)
+            setContentIntent(pendingIntent)
+        }
+
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(1001, notificationBuilder.build())
+    }
+
     fun createNewTransportsNotification(
             context: Context, title: String,
             message:
@@ -111,9 +139,9 @@ object NotificationsManager {
         calendar.timeInMillis = System.currentTimeMillis()
         //calendar.set(Calendar.HOUR_OF_DAY, CustomDateUtils.getCurrentHourInt())
         //calendar.set(Calendar.MINUTE, minute)
+        //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, (1000 * 60 * 5).toLong(), remindPendingIntent)
 
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, (
-                1000 * 60 * 5).toLong(), remindPendingIntent)
+        alarmMgr.set(AlarmManager.RTC_WAKEUP, (1000 * 60 * 2).toLong(), remindPendingIntent)
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.medicacao)
@@ -150,7 +178,6 @@ object NotificationsManager {
             val intent = Intent(context, MainActivity::class.java)
             intent.putExtra("id", "transport")
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
 
             val uniqueID = System.currentTimeMillis().toInt()
             val pendingIntent = PendingIntent.getActivity(context, uniqueID, intent, 0)
