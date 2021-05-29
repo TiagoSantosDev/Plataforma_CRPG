@@ -140,8 +140,7 @@ object NotificationsManager {
         //calendar.set(Calendar.HOUR_OF_DAY, CustomDateUtils.getCurrentHourInt())
         //calendar.set(Calendar.MINUTE, minute)
         //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, (1000 * 60 * 5).toLong(), remindPendingIntent)
-
-        alarmMgr.set(AlarmManager.RTC_WAKEUP, (1000 * 60 * 2).toLong(), remindPendingIntent)
+        //alarmMgr.set(AlarmManager.RTC_WAKEUP, (1000 * 60 * 2).toLong(), remindPendingIntent)
 
         val notificationBuilder = NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.medicacao)

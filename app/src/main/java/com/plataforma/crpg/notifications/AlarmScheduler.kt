@@ -54,7 +54,7 @@ object AlarmScheduler {
         val alarmIntent = createPendingIntent(context, "Sexta")
 
         var reminder = Reminder("","","",
-                0,0,"", "",ReminderType.REFEICAO,AlarmType.AMBOS,AlarmFrequency.AMANHA,)
+                0,0,"", "",ReminderType.REFEICAO,AlarmType.AMBOS,AlarmFrequency.AMANHA)
 
         scheduleAlarm(1, true, reminder, alarmIntent, alarmMgr)
 
@@ -104,6 +104,8 @@ object AlarmScheduler {
         datetimeToAlarm.set(DAY_OF_WEEK, 6)
         //datetimeToAlarm.set(HOUR_OF_DAY, reminder.start_time.take(2).toInt())
         //datetimeToAlarm.set(MINUTE, reminder.start_time.takeLast(2).toInt())
+        //datetimeToAlarm.set(HOUR_OF_DAY, reminder.hours)
+        //datetimeToAlarm.set(MINUTE, reminder.mins)
         datetimeToAlarm.set(HOUR_OF_DAY, 15)
         datetimeToAlarm.set(MINUTE, 23)
         datetimeToAlarm.set(SECOND, 0)

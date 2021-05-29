@@ -41,22 +41,18 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var ttsFlag = false
+    private var textToSpeech: TextToSpeech? = null
     private lateinit var handlerThread: HandlerThread
     private lateinit var backgroundHandler: Handler
 
-    private var textToSpeech: TextToSpeech? = null
-    private var ttsFlag = false
-
-    private val LOG_TAG = MainActivity::class.java.simpleName
-    private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
     val myLocale = Locale("pt_PT", "POR")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         resetSharedPreferences()
-        //requestMultiModalityOptions()
-        //checkUserPermissions()
+        requestMultiModalityOptions()
         setContentView(R.layout.activity_main)
 
         handlerThread = HandlerThread("BackgroundWorker")
@@ -75,15 +71,46 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        val current = intent
+        val name = current.getStringExtra("id")
+
+
+        checkRequestTestNotifications()
+
+        /*
         NotificationsManager.createNewNotificationChannel(this,
                 NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
                 getString(R.string.app_name), "App notification channel.")
 
         AlarmScheduler.scheduleAlarmsForReminder(this@MainActivity)
+        */
+
 
         //displayTransportsReminderNotification()
         //handleTransportsReminderNotificationClick()
 
+
+    }
+
+    private fun checkRequestTestNotifications() {
+        val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        val testFlag = sharedPreferences.getBoolean("test", false)
+
+        println("check request test")
+
+        //if(testFlag){
+            println("> teste flag entro")
+
+            displayMedicationAdministrationNotification()
+            displayMealSelectionNotification()
+            displayTransportsReminderNotification()
+
+            //handleMedicationReminderNotificationClick()
+            handleMealsReminderNotificationClick()
+            handleTransportsReminderNotificationClick()
+        //}
 
     }
 
@@ -222,6 +249,7 @@ class MainActivity : AppCompatActivity() {
         editor.putBoolean("transportsHasRun", false).apply()
         editor.putBoolean("remindersHasRun", false).apply()
         editor.putBoolean("agendaHasRun", false).apply()
+        editor.putBoolean("test", false).apply()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -233,6 +261,16 @@ class MainActivity : AppCompatActivity() {
     private fun requestMultiModalityOptions() {
         val sharedPreferences = getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
+
+        MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
+                .setTitle("Lançar notificações para teste")
+                .setMessage("Para teste de usabilidade apenas")
+                .setPositiveButton("Permitir") { dialog, which ->
+                    editor.putBoolean("test", true).apply()
+                }
+                .setNegativeButton("Recusar"){ dialog, which ->
+                    editor.putBoolean("test", false).apply()
+                }.show()
 
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
                 .setTitle("Permitir Sugestões de Áudio")
@@ -360,6 +398,9 @@ class MainActivity : AppCompatActivity() {
 
 }
 
+//private val LOG_TAG = MainActivity::class.java.simpleName
+//private var permissions: Array<String> = arrayOf(Manifest.permission.RECORD_AUDIO)
+//checkUserPermissions()
 //displayMealSelectionNotification()
 //requestMealDataForNotification()
 //handleMealsReminderNotificationClick()
