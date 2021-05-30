@@ -379,8 +379,6 @@ class DatePickerFragment : Fragment() {
 
         defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
 
-        singleRowCalendar.select(9)
-
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
@@ -638,13 +636,6 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
-        /*
-        if (command.contains("10")) {
-            singleRowCalendar.select(9)
-            println("Contains True")
-        }*/
-
-        //singleRowCalendar.select(9)
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
@@ -667,8 +658,7 @@ class DatePickerFragment : Fragment() {
             (command.contains("nove", true)|| command.contentEquals("9")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(8) }
             (command.contains("dez", true)|| command.contains("10", true)) ->  { singleRowCalendar.clearSelection()
-                singleRowCalendar.select(9)
-                }
+                singleRowCalendar.select(9) }
             (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(10) }
             (command.contains("doze", true)|| command.contains("12", true)) ->  {singleRowCalendar.clearSelection()
@@ -805,6 +795,13 @@ class DatePickerFragment : Fragment() {
 
 }
 
+/*
+if (command.contains("10")) {
+    singleRowCalendar.select(9)
+    println("Contains True")
+}*/
+
+//singleRowCalendar.select(9)
 
 /*if(singleRowCalendar.select(9)){
     println("Conseguiu selecionar, deu true")
