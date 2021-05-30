@@ -3,7 +3,10 @@ package com.plataforma.crpg.ui.agenda
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,24 +21,36 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import com.michalsvec.singlerowcalendar.calendar.CalendarChangesObserver
 import com.michalsvec.singlerowcalendar.calendar.CalendarViewManager
+import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
 import com.michalsvec.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.michalsvec.singlerowcalendar.selection.CalendarSelectionManager
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import kotlinx.android.synthetic.main.fragment_date_picker.*
+import kotlinx.android.synthetic.main.reminder_activity.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 import java.util.*
+import kotlin.properties.Delegates
 
 
 class DatePickerFragment : Fragment() {
 
-    private var textToSpeech: TextToSpeech? = null
-    val myLocale = Locale("pt_PT", "POR")
+    private var currentMonth = 0
+    private var selected = false
     private var ttsFlag = false
     private var firstTimeFlag = false
     private val calendar = Calendar.getInstance()
-    private var currentMonth = 0
-    private var selected = false
+    private var textToSpeech: TextToSpeech? = null
+
+    val myLocale = Locale("pt_PT", "POR")
+
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
 
     companion object {
         var dLocale: Locale? = null
@@ -62,12 +77,7 @@ class DatePickerFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
-        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
-        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
-        val srFlag = modalityPreferences.getBoolean("SR", false)
-
-
-        ttsDatePickerHint()
+        //ttsDatePickerHint()
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
         return root
     }
@@ -76,6 +86,11 @@ class DatePickerFragment : Fragment() {
         super.onActivityCreated(savedInstanceType)
         //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("meditationHasRun", false)
 
         calendar.time = Date()
 
@@ -126,6 +141,8 @@ class DatePickerFragment : Fragment() {
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
+                println("Position:$position")
+                println("Date: $date")
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
@@ -172,6 +189,8 @@ class DatePickerFragment : Fragment() {
                 no_date_selected_warning.visibility = VISIBLE
             }
         }
+
+        defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
     }
 
     private fun getDatesOfNextMonth(): List<Date> {
@@ -212,6 +231,211 @@ class DatePickerFragment : Fragment() {
         }
         calendar.add(Calendar.DATE, -1)
         return list
+    }
+
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean, singleRowCalendar: SingleRowCalendar) {
+
+        if (!hasRun){
+            when{
+                ttsFlag && !srFlag -> { startTTS() }
+                !ttsFlag && srFlag -> { startVoiceRecognition(singleRowCalendar) }
+                ttsFlag && srFlag ->{ multimodalOption(singleRowCalendar) }
+            }
+        }
+
+        if(hasRun){
+            when{
+                !ttsFlag && srFlag -> { startVoiceRecognition(singleRowCalendar) }
+                ttsFlag && srFlag ->{ startVoiceRecognition(singleRowCalendar) }
+            }
+        }
+
+    }
+
+    private fun startTTS() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Linguagem não suportada!")
+                }
+                val speechStatus = textToSpeech!!.speak("Diga o dia", TextToSpeech.QUEUE_FLUSH, null, "ID")
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+
+    private fun multimodalOption(singleRowCalendar: SingleRowCalendar) {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!")
+                } else {
+                    Log.i("TTS", "Language Supported.")
+                }
+                Log.i("TTS", "Initialization success.")
+
+                val speechListener = object : UtteranceProgressListener() {
+                    @Override
+                    override fun onStart(p0: String?) {
+                        println("Iniciou TTS")
+                    }
+
+                    override fun onDone(p0: String?) {
+                        println("Encerrou TTS")
+                        if(activity != null && isAdded) {
+                            startVoiceRecognition(singleRowCalendar)
+                        }
+                    }
+
+                    override fun onError(p0: String?) {
+                        TODO("Not yet implemented")
+                    }
+                }
+
+                textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                val speechStatus = textToSpeech!!.speak("Diga o dia ", TextToSpeech.QUEUE_FLUSH, null, "ID")
+
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
+
+        //singleRowCalendar.setItemsSelected(listOf(5),true)
+        //println("Int: " + command.toInt().toString())
+        //singleRowCalendar.select(command.toInt() - 1)
+
+
+        when {
+            command.contains("Selecionar", true) -> button_selecionar.performClick()
+            (command.contains("um", true) || command.contains("1", true)) -> {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(0) }
+            (command.contains("dois", true) || command.contains("2", true)) -> {singleRowCalendar.clearSelection()
+                    singleRowCalendar.select(1) }
+            (command.contains("três", true) || command.contains("3", true))->  {singleRowCalendar.clearSelection()
+                    singleRowCalendar.select(2) }
+            (command.contains("quatro", true)|| command.contains("4", true)) ->  {singleRowCalendar.clearSelection()
+                    singleRowCalendar.select(3) }
+            (command.contains("cinco", true)|| command.contains("5", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(4) }
+            (command.contains("seis", true)|| command.contains("6", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(5) }
+            (command.contains("sete", true)|| command.contains("7", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(6) }
+            (command.contains("oito", true)|| command.contains("8", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(7) }
+            (command.contains("nove", true)|| command.contains("9", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(8) }
+            (command.contains("dez", true)|| command.contains("10", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(9) }
+            (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(10) }
+            (command.contains("doze", true)|| command.contains("12", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(11) }
+            (command.contains("treze", true)|| command.contains("13", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(12) }
+            (command.contains("catorze", true)|| command.contains("14", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(13) }
+            (command.contains("quinze", true)|| command.contains("15", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(14) }
+            (command.contains("dezasseis", true)|| command.contains("16", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(15) }
+            (command.contains("dezassete", true)|| command.contains("17", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(16) }
+            (command.contains("dezoito", true)|| command.contains("18", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(17) }
+            (command.contains("dezanove", true)|| command.contains("19", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(18) }
+            (command.contains("vinte", true)|| command.contains("20", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(19) }
+            (command.contains("vinte e um", true)|| command.contains("21", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(20) }
+            (command.contains("vinte e dois", true)|| command.contains("22", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(21) }
+            (command.contains("vinte e três", true)|| command.contains("23", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(22) }
+            (command.contains("vinte e quatro", true)|| command.contains("24", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(23) }
+            (command.contains("vinte e cinco", true)|| command.contains("25", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(24) }
+            (command.contains("vinte e seis", true)|| command.contains("26", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(25) }
+            (command.contains("vinte e sete", true)|| command.contains("27", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(26) }
+            (command.contains("vinte e oito", true)|| command.contains("28", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(27) }
+            (command.contains("vinte e nove", true)|| command.contains("29", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(28) }
+            (command.contains("trinta", true)|| command.contains("30", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(29) }
+
+        }
+    }
+
+    fun startVoiceRecognition(singleRowCalendar: SingleRowCalendar){
+        //MANTER WIFI SEMPRE LIGADO
+        //val handler = Handler(Looper.getMainLooper())
+        runnable = Runnable {
+            handler.sendEmptyMessage(0);
+            Speech.init(requireActivity())
+            //hasInitSR = true
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "speech recognition is now active")
+                    }
+
+                    override fun onSpeechRmsChanged(value: Float) {
+                        //Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        performActionWithVoiceCommand(results.toString(), singleRowCalendar)
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    //hasInitSR = true
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+        }
+
+        handler.post(runnable)
     }
 
     fun ttsDatePickerHint() {

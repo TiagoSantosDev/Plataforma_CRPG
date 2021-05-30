@@ -3,6 +3,7 @@ package com.plataforma.crpg.ui
 import android.Manifest
 import android.app.PendingIntent
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -48,11 +49,55 @@ class MainActivity : AppCompatActivity() {
 
     val myLocale = Locale("pt_PT", "POR")
 
+    override fun onStart() {
+        super.onStart()
+        resetSharedPreferences()
+        requestMultiModalityOptions()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        resetSharedPreferences()
-        requestMultiModalityOptions()
+
+        /*
+        setContentView(R.layout.activity_main)
+
+        handlerThread = HandlerThread("BackgroundWorker")
+        handlerThread.start()
+        backgroundHandler = Handler(handlerThread.looper)
+
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                        R.id.navigation_escolha_data, R.id.navigation_agenda, R.id.navigation_reminders,
+                        R.id.navigation_transports, R.id.navigation_meals, R.id.navigation_notes
+                )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+*/
+        val current = intent
+        val name = current.getStringExtra("id")
+
+
+        //checkRequestTestNotifications()
+
+        /*
+        NotificationsManager.createNewNotificationChannel(this,
+                NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
+                getString(R.string.app_name), "App notification channel.")
+
+        AlarmScheduler.scheduleAlarmsForReminder(this@MainActivity)
+        */
+
+        //displayTransportsReminderNotification()
+        //handleTransportsReminderNotificationClick()
+
+    }
+
+    private fun drawLayoutAndNavigation() {
         setContentView(R.layout.activity_main)
 
         handlerThread = HandlerThread("BackgroundWorker")
@@ -71,25 +116,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val current = intent
-        val name = current.getStringExtra("id")
-
-
         checkRequestTestNotifications()
-
-        /*
-        NotificationsManager.createNewNotificationChannel(this,
-                NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
-                getString(R.string.app_name), "App notification channel.")
-
-        AlarmScheduler.scheduleAlarmsForReminder(this@MainActivity)
-        */
-
-
-        //displayTransportsReminderNotification()
-        //handleTransportsReminderNotificationClick()
-
-
     }
 
     private fun checkRequestTestNotifications() {
@@ -100,17 +127,17 @@ class MainActivity : AppCompatActivity() {
 
         println("check request test")
 
-        //if(testFlag){
+        if(testFlag){
             println("> teste flag entro")
 
-            displayMedicationAdministrationNotification()
+            //displayMedicationAdministrationNotification()
             displayMealSelectionNotification()
             displayTransportsReminderNotification()
 
             //handleMedicationReminderNotificationClick()
             handleMealsReminderNotificationClick()
             handleTransportsReminderNotificationClick()
-        //}
+        }
 
     }
 
@@ -267,9 +294,11 @@ class MainActivity : AppCompatActivity() {
                 .setMessage("Para teste de usabilidade apenas")
                 .setPositiveButton("Permitir") { dialog, which ->
                     editor.putBoolean("test", true).apply()
+                    drawLayoutAndNavigation()
                 }
                 .setNegativeButton("Recusar"){ dialog, which ->
                     editor.putBoolean("test", false).apply()
+                    drawLayoutAndNavigation()
                 }.show()
 
         MaterialAlertDialogBuilder(this, android.R.style.Theme_Material_Dialog_Alert)
