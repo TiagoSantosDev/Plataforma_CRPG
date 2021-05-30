@@ -72,6 +72,45 @@ class DatePickerFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
+    override fun onPause() {
+        super.onPause()
+
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("Shutdown Date Picker SR")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("Shutdown Date Picker SR")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+        fragmentManager?.beginTransaction()?.remove(this@DatePickerFragment)?.commit()
+
+    }
+
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -79,12 +118,273 @@ class DatePickerFragment : Fragment() {
     ): View? {
         //ttsDatePickerHint()
         val root = inflater.inflate(R.layout.fragment_date_picker, container, false)
+        /*
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("meditationHasRun", false)
+
+        calendar.time = Date()
+
+        // calendar view manager is responsible for our displaying logic
+        val myCalendarViewManager = object :
+                CalendarViewManager {
+            override fun setCalendarViewResourceId(
+                    position: Int,
+                    date: Date,
+                    isSelected: Boolean,
+            ): Int {
+                // set date to calendar according to position where we are
+                val cal = Calendar.getInstance()
+                cal.time = date
+                if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
+
+                println("Position: $position")
+                println("Is selected:$isSelected")
+
+                // if item is selected we return this layout items
+                // in this example. monday, wednesday and friday will have special item views and other days
+                // will be using basic item view
+
+                /*
+                if (isSelected){
+                    R.layout.selected_calendar_item
+                }else{
+                    R.layout.calendar_item
+                }*/
+
+
+                return if (isSelected)
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        else -> { println(">Item selecionado")
+                            R.layout.selected_calendar_item}
+                    }
+                else
+                // here we return items which are not selected
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        else -> {
+                            //println(">item nao selecionado")
+                            R.layout.calendar_item
+                        }
+                    }
+
+                // NOTE: if we don't want to do it this way, we can simply change color of background
+                // in bindDataToCalendarView method
+            }
+
+            override fun bindDataToCalendarView(
+                    holder: SingleRowCalendarAdapter.CalendarViewHolder,
+                    date: Date,
+                    position: Int,
+                    isSelected: Boolean,
+            ) {
+                // using this method we can bind data to calendar view
+                // good practice is if all views in layout have same IDs in all item views
+                holder.itemView.tv_date_calendar_item.text = DateUtils.getDayNumber(date)
+                holder.itemView.tv_day_calendar_item.text = DateUtils.getDay3LettersName(date)
+            }
+        }
+
+
+        // using calendar changes observer we can track changes in calendar
+        val myCalendarChangesObserver = object :
+                CalendarChangesObserver {
+            override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
+                //("Position:$position")
+                //println("Date: $date")
+                tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
+                tvDay.text = DateUtils.getDayName(date)
+                sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
+                //println("Selected date: " + sharedViewModel.selectedDate)
+                super.whenSelectionChanged(isSelected, position, date)
+                selected = isSelected
+            }
+        }
+
+        // selection manager is responsible for managing selection
+        val mySelectionManager = object : CalendarSelectionManager {
+            override fun canBeItemSelected(position: Int, date: Date): Boolean {
+                // set date to calendar according to position
+                val cal = Calendar.getInstance()
+                cal.time = date
+                // saturday and sunday are disabled as CRPG is not open on these days
+                return when (cal[Calendar.DAY_OF_WEEK]) {
+                    // Calendar.SATURDAY -> false
+                    //Calendar.SUNDAY -> false
+                    else -> true
+                }
+            }
+
+        }
+
+        val singleRowCalendar = main_single_row_calendar.apply {
+            calendarViewManager = myCalendarViewManager
+            calendarChangesObserver = myCalendarChangesObserver
+            calendarSelectionManager = mySelectionManager
+            setDates(getFutureDatesOfCurrentMonth())
+            init()
+        }
+
+        button_selecionar.setOnClickListener {
+            if(selected) {
+                no_date_selected_warning.visibility = GONE
+                val fragment: Fragment = AgendaFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment,"Agenda")
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+                onPause()
+            }else{
+                no_date_selected_warning.visibility = VISIBLE
+            }
+        }
+
+        defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
+        */
+
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("meditationHasRun", false)
+
+        calendar.time = Date()
+
+        // calendar view manager is responsible for our displaying logic
+        val myCalendarViewManager = object :
+                CalendarViewManager {
+            override fun setCalendarViewResourceId(
+                    position: Int,
+                    date: Date,
+                    isSelected: Boolean,
+            ): Int {
+                // set date to calendar according to position where we are
+                val cal = Calendar.getInstance()
+                cal.time = date
+                if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
+
+                println("Position: $position")
+                println("Is selected:$isSelected")
+
+                // if item is selected we return this layout items
+                // in this example. monday, wednesday and friday will have special item views and other days
+                // will be using basic item view
+
+                /*
+                if (isSelected){
+                    R.layout.selected_calendar_item
+                }else{
+                    R.layout.calendar_item
+                }*/
+
+
+                return if (isSelected)
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        else -> { println(">Item selecionado")
+                            R.layout.selected_calendar_item}
+                    }
+                else
+                // here we return items which are not selected
+                    when (cal[Calendar.DAY_OF_WEEK]) {
+                        else -> {
+                            //println(">item nao selecionado")
+                            R.layout.calendar_item
+                        }
+                    }
+
+                // NOTE: if we don't want to do it this way, we can simply change color of background
+                // in bindDataToCalendarView method
+            }
+
+            override fun bindDataToCalendarView(
+                    holder: SingleRowCalendarAdapter.CalendarViewHolder,
+                    date: Date,
+                    position: Int,
+                    isSelected: Boolean,
+            ) {
+                // using this method we can bind data to calendar view
+                // good practice is if all views in layout have same IDs in all item views
+                holder.itemView.tv_date_calendar_item.text = DateUtils.getDayNumber(date)
+                holder.itemView.tv_day_calendar_item.text = DateUtils.getDay3LettersName(date)
+            }
+        }
+
+
+        // using calendar changes observer we can track changes in calendar
+        val myCalendarChangesObserver = object :
+                CalendarChangesObserver {
+            override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
+                //("Position:$position")
+                //println("Date: $date")
+                tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
+                tvDay.text = DateUtils.getDayName(date)
+                sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
+                //println("Selected date: " + sharedViewModel.selectedDate)
+                super.whenSelectionChanged(isSelected, position, date)
+                selected = isSelected
+            }
+        }
+
+        // selection manager is responsible for managing selection
+        val mySelectionManager = object : CalendarSelectionManager {
+            override fun canBeItemSelected(position: Int, date: Date): Boolean {
+                // set date to calendar according to position
+                val cal = Calendar.getInstance()
+                cal.time = date
+                // saturday and sunday are disabled as CRPG is not open on these days
+                return when (cal[Calendar.DAY_OF_WEEK]) {
+                    // Calendar.SATURDAY -> false
+                    //Calendar.SUNDAY -> false
+                    else -> true
+                }
+            }
+
+        }
+
+        val singleRowCalendar = main_single_row_calendar.apply {
+            calendarViewManager = myCalendarViewManager
+            calendarChangesObserver = myCalendarChangesObserver
+            calendarSelectionManager = mySelectionManager
+            setDates(getFutureDatesOfCurrentMonth())
+            init()
+        }
+
+        button_selecionar.setOnClickListener {
+            if(selected) {
+                no_date_selected_warning.visibility = GONE
+                val fragment: Fragment = AgendaFragment()
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment,"Agenda")
+                fragmentTransaction.addToBackStack(null)
+                //fragmentTransaction.remove(this@DatePickerFragment)
+                fragmentTransaction.commit()
+                onDestroy()
+            }else{
+                no_date_selected_warning.visibility = VISIBLE
+            }
+        }
+
+        defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
+
     }
 
     override fun onActivityCreated(savedInstanceType: Bundle?) {
         super.onActivityCreated(savedInstanceType)
         //(activity as AppCompatActivity).supportActionBar?.title = "ESCOLHER DATA"
+        /*
+        println("On Activity Created")
+
         val sharedViewModel = ViewModelProvider(activity as AppCompatActivity).get(SharedViewModel::class.java)
 
         val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
@@ -209,6 +509,7 @@ class DatePickerFragment : Fragment() {
         }
 
         defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
+        */
     }
 
     private fun getDatesOfNextMonth(): List<Date> {
@@ -253,6 +554,8 @@ class DatePickerFragment : Fragment() {
 
     private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean, singleRowCalendar: SingleRowCalendar) {
 
+        println("Entrou na define Modality")
+
         if (!hasRun){
             when{
                 ttsFlag && !srFlag -> { startTTS() }
@@ -288,6 +591,7 @@ class DatePickerFragment : Fragment() {
 
 
     private fun multimodalOption(singleRowCalendar: SingleRowCalendar) {
+        println("Entrou na multimodal option")
         textToSpeech = TextToSpeech(context) { status ->
             if (status == TextToSpeech.SUCCESS) {
                 val ttsLang = textToSpeech!!.setLanguage(myLocale)
@@ -330,21 +634,10 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
-        //println("Entrou aqui")
-        //println("Comparacao:$command" == "10")
-        //singleRowCalendar.select(9)
-        //singleRowCalendar.select(10)
-/*
-        if (command == "10") {
-            println("equals True")
-        }*/
-
         if (command.contains("10")) {
             singleRowCalendar.select(9)
             println("Contains True")
         }
-
-
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
@@ -367,7 +660,12 @@ class DatePickerFragment : Fragment() {
             (command.contains("nove", true)|| command.contains("9", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(8) }
             (command.contains("dez", true)|| command.contains("10", true)) ->  { singleRowCalendar.clearSelection()
-                singleRowCalendar.select(9) }
+                /*if(singleRowCalendar.select(9)){
+                    println("Conseguiu selecionar, deu true")
+                }*/
+
+                //singleRowCalendar.setItemsSelected(listOf(9), true)
+                }
             (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(10) }
             (command.contains("doze", true)|| command.contains("12", true)) ->  {singleRowCalendar.clearSelection()
@@ -416,6 +714,7 @@ class DatePickerFragment : Fragment() {
     fun startVoiceRecognition(singleRowCalendar: SingleRowCalendar){
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
+        println("Entrou na SR")
         runnable = Runnable {
             handler.sendEmptyMessage(0);
             Speech.init(requireActivity())
@@ -499,45 +798,20 @@ class DatePickerFragment : Fragment() {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
 
-        handler.removeCallbacksAndMessages(null)
-
-        if(handler.hasMessages(0)) {
-            handler.removeCallbacks(runnable)
-            println("Shutdown Date Picker SR")
-        }
-
-        if (textToSpeech != null) {
-            textToSpeech!!.stop()
-            textToSpeech!!.shutdown()
-            println("shutdown TTS")
-        }
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        if(handler.hasMessages(0)) {
-            handler.removeCallbacks(runnable)
-            println("Shutdown Date Picker SR")
-        }
-
-        if (textToSpeech != null) {
-            textToSpeech!!.stop()
-            textToSpeech!!.shutdown()
-            println("shutdown TTS")
-        }
-
-    }
 
 }
 
 
 
-
+//println("Entrou aqui")
+//println("Comparacao:$command" == "10")
+//singleRowCalendar.select(9)
+//singleRowCalendar.select(10)
+/*
+        if (command == "10") {
+            println("equals True")
+        }*/
 //singleRowCalendar.setItemsSelected(listOf(5),true)
 //println("Int: " + command.toInt().toString())
 //singleRowCalendar.select(command.toInt() - 1)

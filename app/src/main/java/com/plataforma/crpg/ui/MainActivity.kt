@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     private var ttsFlag = false
     private var textToSpeech: TextToSpeech? = null
-    private lateinit var handlerThread: HandlerThread
-    private lateinit var backgroundHandler: Handler
+    //private lateinit var handlerThread: HandlerThread
+    //private lateinit var backgroundHandler: Handler
 
     val myLocale = Locale("pt_PT", "POR")
 
@@ -100,9 +100,9 @@ class MainActivity : AppCompatActivity() {
     private fun drawLayoutAndNavigation() {
         setContentView(R.layout.activity_main)
 
-        handlerThread = HandlerThread("BackgroundWorker")
-        handlerThread.start()
-        backgroundHandler = Handler(handlerThread.looper)
+        //handlerThread = HandlerThread("BackgroundWorker")
+        //handlerThread.start()
+        //backgroundHandler = Handler(handlerThread.looper)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
