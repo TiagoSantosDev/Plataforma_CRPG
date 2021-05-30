@@ -312,10 +312,21 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
-        //singleRowCalendar.setItemsSelected(listOf(5),true)
-        //println("Int: " + command.toInt().toString())
-        //singleRowCalendar.select(command.toInt() - 1)
+        //println("Entrou aqui")
+        val comparison = false
 
+        //singleRowCalendar.select(10)
+
+        if (command == "10") {
+            println("equals True")
+        }
+
+        if (command.contains("10")) {
+            singleRowCalendar.select(9)
+            println("Contains True")
+        }
+
+        //println("Comparacao:$command" == "10")
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
@@ -337,7 +348,7 @@ class DatePickerFragment : Fragment() {
                 singleRowCalendar.select(7) }
             (command.contains("nove", true)|| command.contains("9", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(8) }
-            (command.contains("dez", true)|| command.contains("10", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("dez", true)|| command.contains("10", true)) ->  { singleRowCalendar.clearSelection()
                 singleRowCalendar.select(9) }
             (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(10) }
@@ -379,7 +390,8 @@ class DatePickerFragment : Fragment() {
                 singleRowCalendar.select(28) }
             (command.contains("trinta", true)|| command.contains("30", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(29) }
-
+            (command.contains("trinta e um", true)|| command.contains("3q", true)) ->  {singleRowCalendar.clearSelection()
+                singleRowCalendar.select(30) }
         }
     }
 
@@ -474,7 +486,9 @@ class DatePickerFragment : Fragment() {
 
 
 
-
+//singleRowCalendar.setItemsSelected(listOf(5),true)
+//println("Int: " + command.toInt().toString())
+//singleRowCalendar.select(command.toInt() - 1)
 /*
     init {
         //activity?.let { updateConfig(it) }
