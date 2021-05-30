@@ -60,6 +60,8 @@ class TransportsFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onDestroy() {
         // Don't forget to shutdown!
 
+        handler.removeCallbacksAndMessages(null)
+
         if(handler.hasMessages(0)) {
             handler.removeCallbacks(runnable)
         }

@@ -69,8 +69,11 @@ class ReminderFragment : Fragment() {
     override fun onDestroy() {
         // Don't forget to shutdown!
 
+        handler.removeCallbacksAndMessages(null)
+
         if(handler.hasMessages(0)) {
             handler.removeCallbacks(runnable)
+            println("Destroyed reminder SR")
         }
 
         if (textToSpeech != null) {

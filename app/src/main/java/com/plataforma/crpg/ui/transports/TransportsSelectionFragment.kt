@@ -56,8 +56,12 @@ class TransportsSelectionFragment : Fragment() {
 
     override fun onDestroy() {
         // Don't forget to shutdown!
+
+        handler.removeCallbacksAndMessages(null)
+
         if(handler.hasMessages(0)) {
             handler.removeCallbacks(runnable)
+            println("Killed Selection SR")
         }
 
         if (textToSpeech != null) {

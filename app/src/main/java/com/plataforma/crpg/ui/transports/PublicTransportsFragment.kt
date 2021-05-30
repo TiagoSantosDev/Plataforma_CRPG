@@ -57,6 +57,9 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
     override fun onDestroy() {
         // Don't forget to shutdown!
+
+        handler.removeCallbacksAndMessages(null)
+
         if(handler.hasMessages(0)) {
             handler.removeCallbacks(runnable)
         }
@@ -264,7 +267,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
                 textToSpeech?.setOnUtteranceProgressListener(speechListener)
 
-                val speechStatus = textToSpeech!!.speak("Diga Nota Voz ou Nota Texto em voz alta para criar uma nova nota", TextToSpeech.QUEUE_FLUSH, null, "ID")
+                val speechStatus = textToSpeech!!.speak("Diga o nome da linha ou do botão em voz alta", TextToSpeech.QUEUE_FLUSH, null, "ID")
 
             } else {
                 Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
@@ -283,7 +286,7 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
+                        Log.i("speech", "public transport speech recognition is now active")
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {

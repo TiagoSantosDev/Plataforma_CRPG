@@ -202,6 +202,7 @@ class DatePickerFragment : Fragment() {
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment,"Agenda")
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
+                onPause()
             }else{
                 no_date_selected_warning.visibility = VISIBLE
             }
@@ -422,7 +423,7 @@ class DatePickerFragment : Fragment() {
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
+                        Log.i("speech", "date picker speech recognition is now active")
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {
@@ -496,6 +497,40 @@ class DatePickerFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("Shutdown Date Picker SR")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("Shutdown Date Picker SR")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
     }
 
 }

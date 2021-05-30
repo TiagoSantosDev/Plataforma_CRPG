@@ -72,6 +72,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     override fun onDestroy() {
         // Don't forget to shutdown!
+        handler.removeCallbacksAndMessages(null)
+
         if (hasInitSR) {
             handler.removeCallbacks(runnable);
         }
@@ -95,7 +97,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 view?.findViewById<View>(R.id.photo_view_hint)?.visibility = INVISIBLE
                 view?.findViewById<View>(R.id.frame_layout_timetables)?.visibility = VISIBLE
 
-                val fragment: Fragment = TransportsSelectionFragment()
+                val fragment: Fragment = PublicTransportsFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
                 fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
@@ -219,7 +221,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             // you must have android.permission.RECORD_AUDIO granted at this point
             Speech.getInstance().startListening(object : SpeechDelegate {
                 override fun onStartOfSpeech() {
-                    Log.i("speech", "speech recognition is now active")
+                    Log.i("speech", "timetable speech recognition is now active")
                 }
 
                 override fun onSpeechRmsChanged(value: Float) {
@@ -295,10 +297,10 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
     private fun performActionWithVoiceCommand(command: String) {
         when {
-            command.contains("901", true) || command.contains("novecentos e um", true) -> bus_lines_spinner.setSelection(0)
-            command.contains("ZF", true) -> bus_lines_spinner.setSelection(1)
-            command.contains("35", true) || command.contains("trinta e cinco", true) -> bus_lines_spinner.setSelection(2)
-            command.contains("45", true) || command.contains("quarenta e cinco", true)-> bus_lines_spinner.setSelection(3)
+            command.contains("901", true) || command.contains("novecentos e um", true) -> bus_lines_spinner_2.setSelection(0)
+            command.contains("ZF", true) -> bus_lines_spinner_2.setSelection(1)
+            command.contains("35", true) || command.contains("trinta e cinco", true) -> bus_lines_spinner_2.setSelection(2)
+            command.contains("45", true) || command.contains("quarenta e cinco", true)-> bus_lines_spinner_2.setSelection(3)
             command.contains("ir", true) -> button_view_timetable_1.performClick()
             command.contains("voltar", true) -> button_view_timetable_2.performClick()
         }

@@ -233,7 +233,7 @@ class MeditationFragment : Fragment() {
             try {
                 Speech.getInstance().startListening(object : SpeechDelegate {
                     override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
+                        Log.i("speech", "meditation speech recognition is now active")
                     }
 
                     override fun onSpeechRmsChanged(value: Float) {
@@ -286,8 +286,11 @@ class MeditationFragment : Fragment() {
         // Don't forget to shutdown!
         println("Has init SR: $hasInitSR")
 
+        handler.removeCallbacksAndMessages(null)
+
         if(handler.hasMessages(0)) {
             handler.removeCallbacks(runnable)
+            println("meditation SR shutdown")
         }
 
         /*
