@@ -273,8 +273,8 @@ class DatePickerFragment : Fragment() {
                 cal.time = date
                 if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
 
-                println("Position: $position")
-                println("Is selected:$isSelected")
+                //println("Position: $position")
+                //println("Is selected:$isSelected")
 
                 // if item is selected we return this layout items
                 // in this example. monday, wednesday and friday will have special item views and other days
@@ -341,6 +341,8 @@ class DatePickerFragment : Fragment() {
                 // set date to calendar according to position
                 val cal = Calendar.getInstance()
                 cal.time = date
+
+                println("Position: $position")
                 // saturday and sunday are disabled as CRPG is not open on these days
                 return when (cal[Calendar.DAY_OF_WEEK]) {
                     // Calendar.SATURDAY -> false
@@ -376,6 +378,8 @@ class DatePickerFragment : Fragment() {
         }
 
         defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
+
+        singleRowCalendar.select(9)
 
     }
 
@@ -634,37 +638,36 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
+        /*
         if (command.contains("10")) {
             singleRowCalendar.select(9)
             println("Contains True")
-        }
+        }*/
+
+        //singleRowCalendar.select(9)
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
-            (command.contains("um", true) || command.contains("1", true)) -> {singleRowCalendar.clearSelection()
+            (command.contains("um", true) || command.contentEquals("1")) -> {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(0) }
-            (command.contains("dois", true) || command.contains("2", true)) -> {singleRowCalendar.clearSelection()
+            (command.contains("dois", true) || command.contentEquals("2")) -> {singleRowCalendar.clearSelection()
                     singleRowCalendar.select(1) }
-            (command.contains("três", true) || command.contains("3", true))->  {singleRowCalendar.clearSelection()
+            (command.contains("três", true) || command.contentEquals("3"))->  {singleRowCalendar.clearSelection()
                     singleRowCalendar.select(2) }
-            (command.contains("quatro", true)|| command.contains("4", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("quatro", true)|| command.contentEquals("4")) ->  {singleRowCalendar.clearSelection()
                     singleRowCalendar.select(3) }
-            (command.contains("cinco", true)|| command.contains("5", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("cinco", true)|| command.contentEquals("5")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(4) }
-            (command.contains("seis", true)|| command.contains("6", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("seis", true)|| command.contentEquals("6")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(5) }
-            (command.contains("sete", true)|| command.contains("7", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("sete", true)|| command.contentEquals("7")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(6) }
-            (command.contains("oito", true)|| command.contains("8", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("oito", true)|| command.contentEquals("8")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(7) }
-            (command.contains("nove", true)|| command.contains("9", true)) ->  {singleRowCalendar.clearSelection()
+            (command.contains("nove", true)|| command.contentEquals("9")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(8) }
             (command.contains("dez", true)|| command.contains("10", true)) ->  { singleRowCalendar.clearSelection()
-                /*if(singleRowCalendar.select(9)){
-                    println("Conseguiu selecionar, deu true")
-                }*/
-
-                //singleRowCalendar.setItemsSelected(listOf(9), true)
+                singleRowCalendar.select(9)
                 }
             (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(10) }
@@ -803,6 +806,11 @@ class DatePickerFragment : Fragment() {
 }
 
 
+/*if(singleRowCalendar.select(9)){
+    println("Conseguiu selecionar, deu true")
+}*/
+
+//singleRowCalendar.setItemsSelected(listOf(9), true)
 
 //println("Entrou aqui")
 //println("Comparacao:$command" == "10")
