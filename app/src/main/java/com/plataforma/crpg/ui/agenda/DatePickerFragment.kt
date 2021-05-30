@@ -272,25 +272,10 @@ class DatePickerFragment : Fragment() {
                 val cal = Calendar.getInstance()
                 cal.time = date
                 if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
-
-                //println("Position: $position")
-                //println("Is selected:$isSelected")
-
-                // if item is selected we return this layout items
-                // in this example. monday, wednesday and friday will have special item views and other days
-                // will be using basic item view
-
-                /*
-                if (isSelected){
-                    R.layout.selected_calendar_item
-                }else{
-                    R.layout.calendar_item
-                }*/
-
-
+                
                 return if (isSelected)
                     when (cal[Calendar.DAY_OF_WEEK]) {
-                        else -> { println(">Item selecionado")
+                        else -> {
                             R.layout.selected_calendar_item}
                     }
                 else
@@ -324,8 +309,7 @@ class DatePickerFragment : Fragment() {
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-                //("Position:$position")
-                //println("Date: $date")
+
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
@@ -636,7 +620,6 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
-
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
             (command.contains("um", true) || command.contentEquals("1")) -> {singleRowCalendar.clearSelection()
@@ -795,6 +778,22 @@ class DatePickerFragment : Fragment() {
 
 }
 
+//println("Position: $position")
+//println("Is selected:$isSelected")
+
+// if item is selected we return this layout items
+// in this example. monday, wednesday and friday will have special item views and other days
+// will be using basic item view
+
+/*
+if (isSelected){
+    R.layout.selected_calendar_item
+}else{
+    R.layout.calendar_item
+}*/
+//("Position:$position")
+//println("Date: $date")
+//println(">Item selecionado")
 /*
 if (command.contains("10")) {
     singleRowCalendar.select(9)
