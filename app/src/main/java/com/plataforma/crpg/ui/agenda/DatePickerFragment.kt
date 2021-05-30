@@ -106,17 +106,34 @@ class DatePickerFragment : Fragment() {
                 val cal = Calendar.getInstance()
                 cal.time = date
                 if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
+
+                println("Position: $position")
+                println("Is selected:$isSelected")
+
                 // if item is selected we return this layout items
                 // in this example. monday, wednesday and friday will have special item views and other days
                 // will be using basic item view
+
+                /*
+                if (isSelected){
+                    R.layout.selected_calendar_item
+                }else{
+                    R.layout.calendar_item
+                }*/
+
+
                 return if (isSelected)
                     when (cal[Calendar.DAY_OF_WEEK]) {
-                        else -> R.layout.selected_calendar_item
+                        else -> { println(">Item selecionado")
+                            R.layout.selected_calendar_item}
                     }
                 else
                 // here we return items which are not selected
                     when (cal[Calendar.DAY_OF_WEEK]) {
-                        else -> R.layout.calendar_item
+                        else -> {
+                            //println(">item nao selecionado")
+                            R.layout.calendar_item
+                        }
                     }
 
                 // NOTE: if we don't want to do it this way, we can simply change color of background
@@ -141,8 +158,8 @@ class DatePickerFragment : Fragment() {
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-                println("Position:$position")
-                println("Date: $date")
+                //("Position:$position")
+                //println("Date: $date")
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
@@ -160,8 +177,8 @@ class DatePickerFragment : Fragment() {
                 cal.time = date
                 // saturday and sunday are disabled as CRPG is not open on these days
                 return when (cal[Calendar.DAY_OF_WEEK]) {
-                    Calendar.SATURDAY -> false
-                    Calendar.SUNDAY -> false
+                   // Calendar.SATURDAY -> false
+                    //Calendar.SUNDAY -> false
                     else -> true
                 }
             }
@@ -284,11 +301,11 @@ class DatePickerFragment : Fragment() {
                 val speechListener = object : UtteranceProgressListener() {
                     @Override
                     override fun onStart(p0: String?) {
-                        println("Iniciou TTS")
+                        //println("Iniciou TTS")
                     }
 
                     override fun onDone(p0: String?) {
-                        println("Encerrou TTS")
+                        //("Encerrou TTS")
                         if(activity != null && isAdded) {
                             startVoiceRecognition(singleRowCalendar)
                         }
@@ -313,20 +330,20 @@ class DatePickerFragment : Fragment() {
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
         //println("Entrou aqui")
-        val comparison = false
-
+        //println("Comparacao:$command" == "10")
+        //singleRowCalendar.select(9)
         //singleRowCalendar.select(10)
-
+/*
         if (command == "10") {
             println("equals True")
-        }
+        }*/
 
         if (command.contains("10")) {
             singleRowCalendar.select(9)
             println("Contains True")
         }
 
-        //println("Comparacao:$command" == "10")
+
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
