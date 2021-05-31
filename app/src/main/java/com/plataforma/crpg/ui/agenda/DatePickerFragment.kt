@@ -244,7 +244,6 @@ class DatePickerFragment : Fragment() {
 
         defineModality(ttsFlag, srFlag, hasRun, singleRowCalendar)
         */
-
         return root
     }
 
@@ -272,7 +271,7 @@ class DatePickerFragment : Fragment() {
                 val cal = Calendar.getInstance()
                 cal.time = date
                 if (!isSelected) tvDate.text = getString(R.string.nenhum_dia_selecionado_msg)
-                
+
                 return if (isSelected)
                     when (cal[Calendar.DAY_OF_WEEK]) {
                         else -> {
@@ -309,7 +308,6 @@ class DatePickerFragment : Fragment() {
         val myCalendarChangesObserver = object :
                 CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-
                 tvDate.text = "${DateUtils.getDayName(date).capitalize()}, ${DateUtils.getDayNumber(date)} de ${DateUtils.getMonthName(date).capitalize()}"
                 tvDay.text = DateUtils.getDayName(date)
                 sharedViewModel.selectedDate = DateUtils.getDayNumber(date) + DateUtils.getMonthNumber(date) + DateUtils.getYear(date)
@@ -342,6 +340,7 @@ class DatePickerFragment : Fragment() {
             calendarChangesObserver = myCalendarChangesObserver
             calendarSelectionManager = mySelectionManager
             setDates(getFutureDatesOfCurrentMonth())
+            //initialPositionIndex = 10
             init()
         }
 
@@ -542,6 +541,8 @@ class DatePickerFragment : Fragment() {
 
         println("Entrou na define Modality")
 
+        singleRowCalendar.initialPositionIndex = 10
+
         if (!hasRun){
             when{
                 ttsFlag && !srFlag -> { startTTS() }
@@ -620,6 +621,8 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
+        singleRowCalendar.initialPositionIndex = 10
+
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
             (command.contains("um", true) || command.contentEquals("1")) -> {singleRowCalendar.clearSelection()
@@ -629,61 +632,88 @@ class DatePickerFragment : Fragment() {
             (command.contains("três", true) || command.contentEquals("3"))->  {singleRowCalendar.clearSelection()
                     singleRowCalendar.select(2) }
             (command.contains("quatro", true)|| command.contentEquals("4")) ->  {singleRowCalendar.clearSelection()
-                    singleRowCalendar.select(3) }
+                singleRowCalendar.scrollToPosition(4)
+                singleRowCalendar.select(3) }
             (command.contains("cinco", true)|| command.contentEquals("5")) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(4) }
+                singleRowCalendar.select(4)
+                singleRowCalendar.scrollToPosition(5)}
             (command.contains("seis", true)|| command.contentEquals("6")) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(5) }
+                singleRowCalendar.select(7)
+                singleRowCalendar.scrollToPosition(7)}
             (command.contains("sete", true)|| command.contentEquals("7")) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(6) }
+                singleRowCalendar.select(7)
+                singleRowCalendar.scrollToPosition(7)}
             (command.contains("oito", true)|| command.contentEquals("8")) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(7) }
             (command.contains("nove", true)|| command.contentEquals("9")) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(8) }
+                singleRowCalendar.select(8)
+                singleRowCalendar.scrollToPosition(9)}
             (command.contains("dez", true)|| command.contains("10", true)) ->  { singleRowCalendar.clearSelection()
-                singleRowCalendar.select(9) }
+                singleRowCalendar.select(9)
+                singleRowCalendar.scrollToPosition(10)}
             (command.contains("onze", true)|| command.contains("11", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(10) }
+                singleRowCalendar.select(10)
+                singleRowCalendar.scrollToPosition(12) }
             (command.contains("doze", true)|| command.contains("12", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(11) }
+                singleRowCalendar.select(11)
+                singleRowCalendar.scrollToPosition(12)}
             (command.contains("treze", true)|| command.contains("13", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(12) }
+                singleRowCalendar.select(12)
+                singleRowCalendar.scrollToPosition(14)}
             (command.contains("catorze", true)|| command.contains("14", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(13) }
+                singleRowCalendar.select(13)
+                singleRowCalendar.scrollToPosition(14)}
             (command.contains("quinze", true)|| command.contains("15", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(14) }
+                singleRowCalendar.select(14)
+                singleRowCalendar.scrollToPosition(16)}
             (command.contains("dezasseis", true)|| command.contains("16", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(15) }
+                singleRowCalendar.select(15)
+                singleRowCalendar.scrollToPosition(16)}
             (command.contains("dezassete", true)|| command.contains("17", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(16) }
+                singleRowCalendar.select(16)
+                singleRowCalendar.scrollToPosition(18)}
             (command.contains("dezoito", true)|| command.contains("18", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(17) }
+                singleRowCalendar.select(17)
+                singleRowCalendar.scrollToPosition(18)}
             (command.contains("dezanove", true)|| command.contains("19", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(18) }
+                singleRowCalendar.select(18)
+                singleRowCalendar.scrollToPosition(20)}
             (command.contains("vinte", true)|| command.contains("20", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(19) }
+                singleRowCalendar.select(19)
+                singleRowCalendar.scrollToPosition(20)}
             (command.contains("vinte e um", true)|| command.contains("21", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(20) }
+                singleRowCalendar.select(20)
+                singleRowCalendar.scrollToPosition(22)}
             (command.contains("vinte e dois", true)|| command.contains("22", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(21) }
+                singleRowCalendar.select(21)
+                singleRowCalendar.scrollToPosition(22)}
             (command.contains("vinte e três", true)|| command.contains("23", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(22) }
+                singleRowCalendar.select(22)
+                singleRowCalendar.scrollToPosition(24)}
             (command.contains("vinte e quatro", true)|| command.contains("24", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(23) }
+                singleRowCalendar.select(23)
+                singleRowCalendar.scrollToPosition(24)}
             (command.contains("vinte e cinco", true)|| command.contains("25", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(24) }
+                singleRowCalendar.select(24)
+                singleRowCalendar.scrollToPosition(26) }
             (command.contains("vinte e seis", true)|| command.contains("26", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(25) }
+                singleRowCalendar.select(25)
+                singleRowCalendar.scrollToPosition(26)}
             (command.contains("vinte e sete", true)|| command.contains("27", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(26) }
+                singleRowCalendar.select(26)
+                singleRowCalendar.scrollToPosition(28)}
             (command.contains("vinte e oito", true)|| command.contains("28", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(27) }
+                singleRowCalendar.select(27)
+                singleRowCalendar.scrollToPosition(28)}
             (command.contains("vinte e nove", true)|| command.contains("29", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(28) }
+                singleRowCalendar.select(28)
+                singleRowCalendar.scrollToPosition(30)}
             (command.contains("trinta", true)|| command.contains("30", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(29) }
+                singleRowCalendar.select(29)
+                singleRowCalendar.scrollToPosition(30)}
             (command.contains("trinta e um", true)|| command.contains("3q", true)) ->  {singleRowCalendar.clearSelection()
-                singleRowCalendar.select(30) }
+                singleRowCalendar.select(30)
+                singleRowCalendar.scrollToPosition(12)}
         }
     }
 
@@ -774,10 +804,11 @@ class DatePickerFragment : Fragment() {
         }
     }
 
-
-
 }
 
+
+
+//singleRowCalendar.calendarChangesObserver.whenCalendarScrolled(50,50)
 //println("Position: $position")
 //println("Is selected:$isSelected")
 
