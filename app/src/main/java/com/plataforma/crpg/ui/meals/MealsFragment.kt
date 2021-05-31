@@ -54,12 +54,14 @@ class MealsFragment : Fragment() {
         val editor = sharedPreferences.edit()
 
         editor.putBoolean("mealsHasRun", true).apply()
-    }
 
-    override fun onDestroy() {
-        // Don't forget to shutdown!
-        //DEPOIS DE TESTAR NOTIFICACOES TIRAR OS COMENTARIOS DAQUI
-        //handler.removeCallbacks(runnable)
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("meditation SR shutdown")
+        }
+
 
         if (textToSpeech != null) {
             textToSpeech!!.stop()
@@ -67,8 +69,31 @@ class MealsFragment : Fragment() {
             println("shutdown TTS")
         }
 
-        super.onDestroy ();
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Don't forget to shutdown!
+        //DEPOIS DE TESTAR NOTIFICACOES TIRAR OS COMENTARIOS DAQUI
+        //handler.removeCallbacks(runnable)
+
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("meditation SR shutdown")
+        }
+
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+    }
+
+
 
     override fun onResume() {
         super.onResume()
@@ -204,6 +229,11 @@ class MealsFragment : Fragment() {
                 mealsViewModel.updateMealChoiceOnLocalStorage(sharedViewModel.selectedDate, mealsViewModel.selectedOption, isLunch)
                 button_ok.setOnClickListener {
                     mealSuccessView?.visibility = View.GONE
+                    handler.removeCallbacksAndMessages(null)
+                    if(handler.hasMessages(0)) {
+                        handler.removeCallbacks(runnable)
+                        println("meditation SR shutdown")
+                    }
                 }
             } else {
                 nothingCheckedWarning?.visibility = View.VISIBLE
@@ -321,12 +351,13 @@ class MealsFragment : Fragment() {
         //val handler = Handler(Looper.getMainLooper())
         if(isAdded && isVisible && getUserVisibleHint()) {
             runnable = Runnable {
+                handler.sendEmptyMessage(0);
                 Speech.init(requireActivity())
                 //hasInitSR = true
                 try {
                     Speech.getInstance().startListening(object : SpeechDelegate {
                         override fun onStartOfSpeech() {
-                            Log.i("speech", "speech recognition is now active")
+                            Log.i("speech", "meal speech recognition is now active")
                         }
 
                         override fun onSpeechRmsChanged(value: Float) {

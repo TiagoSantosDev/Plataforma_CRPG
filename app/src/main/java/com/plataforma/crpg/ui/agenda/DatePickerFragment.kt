@@ -549,20 +549,31 @@ class DatePickerFragment : Fragment() {
 
         //singleRowCalendar.initialPositionIndex = 10
 
-        if (!hasRun){
-            when{
-                ttsFlag && !srFlag -> { startTTS() }
-                !ttsFlag && srFlag -> { startVoiceRecognition(singleRowCalendar) }
-                ttsFlag && srFlag ->{ multimodalOption(singleRowCalendar) }
+            if (!hasRun) {
+                when {
+                    ttsFlag && !srFlag -> {
+                        startTTS()
+                    }
+                    !ttsFlag && srFlag -> {
+                        startVoiceRecognition(singleRowCalendar)
+                    }
+                    ttsFlag && srFlag -> {
+                        multimodalOption(singleRowCalendar)
+                    }
+                }
             }
-        }
 
-        if(hasRun){
-            when{
-                !ttsFlag && srFlag -> { startVoiceRecognition(singleRowCalendar) }
-                ttsFlag && srFlag ->{ startVoiceRecognition(singleRowCalendar) }
+            if (hasRun) {
+                when {
+                    !ttsFlag && srFlag -> {
+                        startVoiceRecognition(singleRowCalendar)
+                    }
+                    ttsFlag && srFlag -> {
+                        startVoiceRecognition(singleRowCalendar)
+                    }
+                }
             }
-        }
+
 
     }
 
@@ -726,7 +737,7 @@ class DatePickerFragment : Fragment() {
     fun startVoiceRecognition(singleRowCalendar: SingleRowCalendar){
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
-        println("Entrou na SR")
+        //println("Entrou na SR")
 
         if(isAdded && isVisible && getUserVisibleHint()) {
             runnable = Runnable {
@@ -761,7 +772,6 @@ class DatePickerFragment : Fragment() {
                                     try {
                                         if(isAdded && isVisible && getUserVisibleHint()) {
                                             Speech.init(requireActivity())
-
                                             //hasInitSR = true
                                             Speech.getInstance().startListening(this)
                                         }

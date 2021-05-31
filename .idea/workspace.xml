@@ -55,21 +55,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/DatePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/agenda/DatePickerFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meals/MealsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/meditation/MeditationFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewTextNoteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NewTextNoteFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/notes/NotesFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/reminders/ReminderFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/PublicTransportsTimetableFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataforma/crpg/ui/transports/TransportsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transports_timetables.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_public_transports_timetables.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -626,26 +615,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="512" y="125" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1622453448818" />
-    <state width="1220" height="245" key="GridCell.Tab.0.bottom" timestamp="1622471204842">
+    <state width="1220" height="244" key="GridCell.Tab.0.bottom" timestamp="1622473018350">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="245" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1622471204842" />
-    <state width="1220" height="245" key="GridCell.Tab.0.center" timestamp="1622471204842">
+    <state width="1220" height="244" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1622473018350" />
+    <state width="1220" height="244" key="GridCell.Tab.0.center" timestamp="1622473018350">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="245" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1622471204842" />
-    <state width="1220" height="245" key="GridCell.Tab.0.left" timestamp="1622471204842">
+    <state width="1220" height="244" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1622473018350" />
+    <state width="1220" height="244" key="GridCell.Tab.0.left" timestamp="1622473018350">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674651" />
-    <state width="1220" height="245" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1622471204842" />
-    <state width="1220" height="245" key="GridCell.Tab.0.right" timestamp="1622471204842">
+    <state width="1220" height="244" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1622473018350" />
+    <state width="1220" height="244" key="GridCell.Tab.0.right" timestamp="1622473018350">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1236" height="170" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1618178674652" />
-    <state width="1220" height="245" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1622471204842" />
+    <state width="1220" height="244" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1622473018350" />
     <state width="1236" height="498" key="GridCell.Tab.1.bottom" timestamp="1622394704322">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
