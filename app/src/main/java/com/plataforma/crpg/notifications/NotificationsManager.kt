@@ -98,11 +98,11 @@ object NotificationsManager {
             setSmallIcon(R.drawable.ic_notification_bus)
             setContentTitle(title)
             setContentText(message)
-            .addAction(R.drawable.ic_notification_bus, "Transportes Públicos",
+            .addAction(R.drawable.ic_notification_bus, "PÙBLICOS",
                     publicTransportsFragmentIntent)
-            .addAction(R.drawable.ic_notification_bus, "Camioneta CRPG",
+            .addAction(R.drawable.ic_notification_bus, "CAMIONETA",
                     transportsFragmentIntent)
-            .addAction(R.drawable.ic_notification_bus, "Os meus horários",
+            .addAction(R.drawable.ic_notification_bus, "MEU HORÁRIO",
                     customTransportsFragmentIntent)
             priority = NotificationCompat.PRIORITY_HIGH
             setAutoCancel(autoCancel)

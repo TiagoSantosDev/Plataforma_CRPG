@@ -206,7 +206,8 @@ class MainActivity : AppCompatActivity() {
         NotificationsManager.createNewTransportsNotification(
                 this@MainActivity,
                 "Não se esqueça de apanhar o seu transporte!",
-                "Clique aqui para ver mais informações",
+                "Clique num dos botões abaixo, para ver mais informações sobre transportes públicos," +
+                        "sobre a camioneta do CRPG ou dos horários personalizados para si!",
                 true
         )
     }

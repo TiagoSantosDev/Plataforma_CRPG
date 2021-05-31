@@ -106,9 +106,15 @@ class DatePickerFragment : Fragment() {
             println("shutdown TTS")
         }
 
-        fragmentManager?.beginTransaction()?.remove(this@DatePickerFragment)?.commit()
+        fragmentManager?.beginTransaction()?.remove(this@DatePickerFragment)?.commitAllowingStateLoss()
 
     }
+
+    /*
+    @Override
+    protected fun onSaveInstanceState(outState: Bundle?) {
+        //No call for super(). Bug on API Level > 11.
+    }*/
 
 
     override fun onCreateView(
@@ -350,7 +356,7 @@ class DatePickerFragment : Fragment() {
                 val fragment: Fragment = AgendaFragment()
                 val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
                 val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment,"Agenda")
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment, "Agenda")
                 fragmentTransaction.addToBackStack(null)
                 //fragmentTransaction.remove(this@DatePickerFragment)
                 fragmentTransaction.commit()
@@ -621,7 +627,7 @@ class DatePickerFragment : Fragment() {
 
     private fun performActionWithVoiceCommand(command: String, singleRowCalendar: SingleRowCalendar){
 
-        singleRowCalendar.initialPositionIndex = 10
+        //singleRowCalendar.initialPositionIndex = 10
 
         when {
             command.contains("Selecionar", true) -> button_selecionar.performClick()
@@ -713,7 +719,7 @@ class DatePickerFragment : Fragment() {
                 singleRowCalendar.scrollToPosition(30)}
             (command.contains("trinta e um", true)|| command.contains("3q", true)) ->  {singleRowCalendar.clearSelection()
                 singleRowCalendar.select(30)
-                singleRowCalendar.scrollToPosition(12)}
+                singleRowCalendar.scrollToPosition(30)}
         }
     }
 
@@ -748,7 +754,7 @@ class DatePickerFragment : Fragment() {
                         Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
                         //Speech.getInstance().stopTextToSpeech()
                         val handler = Handler()
-                        if(activity != null && isAdded) {
+                        if (activity != null && isAdded) {
                             handler.postDelayed({
                                 try {
                                     Speech.init(requireActivity())

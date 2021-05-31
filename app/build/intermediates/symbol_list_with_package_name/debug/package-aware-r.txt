@@ -2385,7 +2385,9 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable crpg_background
+drawable crpg_fachada
 drawable crpg_launcher_v2
+drawable custom_clock
 drawable delete_icon
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -3769,6 +3771,7 @@ string bloco_de_notas
 string bottom_padding
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string camioneta_crpg
 string camioneta_do_crpg
 string campos_obrigatorios_falta
 string cancelar
@@ -3957,6 +3960,7 @@ string meditacao
 string mente_s
 string message_camera_permission_denied
 string message_gallery_permission_denied
+string meu_horario
 string minutos
 string motorista
 string motorista_a
@@ -4028,6 +4032,7 @@ string permission_camera_denied
 string permission_camera_extended_denied
 string permission_gallery_denied
 string personalizado
+string personalizado_para_mim
 string photo_viewer_hint
 string previous
 string project_id

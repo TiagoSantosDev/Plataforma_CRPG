@@ -60,9 +60,9 @@
                 android:id="@+id/card_fixed_transports_background_image"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:contentDescription="@string/autocarro_stcp"
+                android:contentDescription="@string/camioneta_crpg"
                 android:scaleType="fitXY"
-                android:src="@drawable/stcp_background" />
+                android:src="@drawable/crpg_fachada" />
         </FrameLayout>
 
         <TextView
@@ -114,8 +114,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/botao_escolha_transportes_publicos"
         app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_fixos"
-        app:layout_constraintVertical_bias="0.1"
-     >
+        app:layout_constraintVertical_bias="0.1">
 
         <FrameLayout
             android:id="@+id/frame_card_custom_transports_background_image"
@@ -126,9 +125,9 @@
                 android:id="@+id/card_custom_transports_background_image"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:contentDescription="@string/autocarro_stcp"
+                android:contentDescription="@string/meu_horario"
                 android:scaleType="fitXY"
-                android:src="@drawable/stcp_background" />
+                android:src="@drawable/custom_clock" />
         </FrameLayout>
 
         <TextView
@@ -137,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="@string/carrinhas_do_crpg"
+            android:text="@string/personalizado_para_mim"
             android:textAlignment="center"
             android:textColor="@color/md_blue_200"
             android:textSize="16sp" />
@@ -178,8 +177,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_personalizados"
-       >
+        app:layout_constraintTop_toBottomOf="@+id/botao_escolha_transportes_personalizados">
 
         <FrameLayout
             android:id="@+id/frame_card_public_transports_background_image"

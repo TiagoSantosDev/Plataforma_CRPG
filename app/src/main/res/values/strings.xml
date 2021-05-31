@@ -159,7 +159,9 @@
     <string name="reproduzir_faixa">Reproduzir faixa de meditação</string>
     <string name="pausar_reproducao">Pausar reprodução</string>
     <string name="avancar_reproducao">Avançar na reprodução</string>
-    <string name="autocarro_stcp">Autocarro STCP</string>
+    <string name="autocarro_stcp">Foto Autocarro STCP</string>
+    <string name="camioneta_crpg">Camioneta CRPG</string>
+    <string name="meu_horario">O meu horário</string>
     <string name="bloco_de_notas">Bloco de notas</string>
     <string name="fotografia_associada_nota_texto">Fotografia associada a nota de texto</string>
     <string name="criar_lembrete">CRIAR LEMBRETE</string>
@@ -186,6 +188,7 @@
     <string name="agenda">Agenda</string>
     <string name="criar_nota_de_texto">CRIAR NOTA DE TEXTO</string>
     <string name="criar_nota_de_voz">CRIAR NOTA DE VOZ</string>
+    <string name="personalizado_para_mim">O MEU HORÁRIO</string>
 
 
     <string-array name="line_type">
