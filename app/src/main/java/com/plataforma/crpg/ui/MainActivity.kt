@@ -273,6 +273,7 @@ class MainActivity : AppCompatActivity() {
         val editor = sharedPreferences.edit()
         editor.putBoolean("meditationHasRun", false).apply()
         editor.putBoolean("notesHasRun", false).apply()
+        editor.putBoolean("notesTextHasRun", false).apply()
         editor.putBoolean("selectionHasRun", false).apply()
         editor.putBoolean("transportsHasRun", false).apply()
         editor.putBoolean("remindersHasRun", false).apply()

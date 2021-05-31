@@ -3760,6 +3760,7 @@ string amanha
 string ambos
 string apagar_nota
 string apanhar_bus
+string apanhar_transporte
 string app_name
 string app_uses_libraries
 string appbar_scrolling_view_behavior
@@ -3839,6 +3840,7 @@ string escolha_local
 string escolher
 string escolher_almoco
 string escolher_data
+string escolher_dias
 string example
 string exo_controls_cc_disabled_description
 string exo_controls_cc_enabled_description
@@ -3961,6 +3963,7 @@ string mente_s
 string message_camera_permission_denied
 string message_gallery_permission_denied
 string meu_horario
+string meu_lembrete
 string minutos
 string motorista
 string motorista_a
@@ -4009,6 +4012,7 @@ string nenhum_dia_selecionado_warning
 string nenhuma_refeicao_selecionada
 string next
 string notas
+string notas_minusculo
 string nova_nota_de_texto
 string nova_nota_de_voz
 string ok

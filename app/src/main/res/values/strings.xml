@@ -189,6 +189,10 @@
     <string name="criar_nota_de_texto">CRIAR NOTA DE TEXTO</string>
     <string name="criar_nota_de_voz">CRIAR NOTA DE VOZ</string>
     <string name="personalizado_para_mim">O MEU HORÁRIO</string>
+    <string name="notas_minusculo">Notas</string>
+    <string name="meu_lembrete">O MEU LEMBRETE</string>
+    <string name="apanhar_transporte">APANHAR TRANSPORTE</string>
+    <string name="escolher_dias">ESCOLHER DIAS</string>
 
 
     <string-array name="line_type">

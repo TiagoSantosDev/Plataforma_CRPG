@@ -1,12 +1,19 @@
 package com.plataforma.crpg.ui.notes
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -16,12 +23,18 @@ import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.textview.MaterialTextView
 import com.plataforma.crpg.R
+import com.plataforma.crpg.TimelineView
 import com.plataforma.crpg.databinding.NewTextNoteFragmentBinding
 import com.plataforma.crpg.model.NoteType
 import com.plataforma.crpg.ui.MainActivity
 import kotlinx.android.synthetic.main.new_text_note_fragment.*
+import net.gotev.speech.GoogleVoiceTypingDisabledException
+import net.gotev.speech.Speech
+import net.gotev.speech.SpeechDelegate
+import net.gotev.speech.SpeechRecognitionNotAvailable
 import java.io.File
 import java.lang.Boolean.FALSE
+import java.util.*
 import kotlin.properties.Delegates
 
 class NewTextNoteFragment : Fragment() {
@@ -35,10 +48,35 @@ class NewTextNoteFragment : Fragment() {
         const val PERMISSION_CODE = 1001
     }
 
+    private val handler = Handler(Looper.getMainLooper())
+    private var runnable: Runnable by Delegates.notNull()
+
+    private var textToSpeech: TextToSpeech? = null
+
     val RESULT_GALLERY = 0
     private var imageUri = ""
     val listen : MutableLiveData<Boolean> =  MutableLiveData<Boolean>()
     private lateinit var notesViewModel: NotesViewModel
+    private val myLocale = Locale("pt_PT", "POR")
+
+    override fun onDestroy() {
+        // Don't forget to shutdown!
+
+        handler.removeCallbacksAndMessages(null)
+
+        if(handler.hasMessages(0)) {
+            handler.removeCallbacks(runnable)
+            println("removed callbacks")
+        }
+
+        if (textToSpeech != null) {
+            textToSpeech!!.stop()
+            textToSpeech!!.shutdown()
+            println("shutdown TTS")
+        }
+
+        super.onDestroy ();
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +96,13 @@ class NewTextNoteFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         notesViewModel = ViewModelProvider(activity as AppCompatActivity).get(NotesViewModel::class.java)
+
+        val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
+        val ttsFlag = modalityPreferences.getBoolean("TTS", false)
+        val srFlag = modalityPreferences.getBoolean("SR", false)
+        val hasRun = modalityPreferences.getBoolean("notesTextHasRun", false)
+
+        defineModality(ttsFlag, srFlag, hasRun)
 
 
         val titleText = view?.rootView?.findViewById<EditText>(R.id.titulo_edit_text)?.text
@@ -99,6 +144,140 @@ class NewTextNoteFragment : Fragment() {
 
         }
 
+    }
+
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
+
+        println("ttsFlag:  " + ttsFlag)
+        println("srFlag: " + srFlag)
+        println("hasRun: " + hasRun)
+
+        //conteudo_nota.requestFocus()
+
+        if (!hasRun){
+            when{
+                ttsFlag && !srFlag -> { startTTS() }
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ multimodalOption() }
+            }
+        }
+
+        if(hasRun){
+            when{
+                !ttsFlag && srFlag -> { startVoiceRecognition() }
+                ttsFlag && srFlag ->{ startVoiceRecognition() }
+            }
+        }
+
+    }
+
+    private fun startTTS() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Linguagem não suportada!")
+                }
+                val speechStatus = textToSpeech!!.speak("Diga Título ou Conteudo em voz alta para iniciar escrita", TextToSpeech.QUEUE_FLUSH, null, "ID")
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun multimodalOption() {
+        textToSpeech = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val ttsLang = textToSpeech!!.setLanguage(myLocale)
+                if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                        || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "The Language is not supported!")
+                } else {
+                    Log.i("TTS", "Language Supported.")
+                }
+                Log.i("TTS", "Initialization success.")
+
+                val speechListener = object : UtteranceProgressListener() {
+                    @Override
+                    override fun onStart(p0: String?) {
+                        println("Iniciou TTS")
+                    }
+
+                    override fun onDone(p0: String?) {
+                        println("Encerrou TTS")
+                        if(activity != null && isAdded) {
+                            startVoiceRecognition()
+                        }
+                    }
+
+                    override fun onError(p0: String?) {
+                        TODO("Not yet implemented")
+                    }
+                }
+
+                textToSpeech?.setOnUtteranceProgressListener(speechListener)
+
+                val speechStatus = textToSpeech!!.speak("Diga Título ou Conteudo em voz alta para iniciar escrita", TextToSpeech.QUEUE_FLUSH, null, "ID")
+
+            } else {
+                Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    fun startVoiceRecognition(){
+        //MANTER WIFI SEMPRE LIGADO
+        //val handler = Handler(Looper.getMainLooper())
+        runnable = Runnable {
+            handler.sendEmptyMessage(0);
+            Speech.init(requireActivity())
+            try {
+                Speech.getInstance().startListening(object : SpeechDelegate {
+                    override fun onStartOfSpeech() {
+                        Log.i("speech", "new text note speech recognition is now active")
+                    }
+
+                    override fun onSpeechRmsChanged(value: Float) {
+                        //Log.d("speech", "rms is now: $value")
+                    }
+
+                    override fun onSpeechPartialResults(results: List<String>) {
+                        val str = StringBuilder()
+                        for (res in results) {
+                            str.append(res).append(" ")
+                        }
+                        performActionWithVoiceCommand(results.toString())
+                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                    }
+
+                    override fun onSpeechResult(result: String) {
+                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                        //Speech.getInstance().stopTextToSpeech()
+                        val handler = Handler()
+                        if(activity != null && isAdded) {
+                            handler.postDelayed({
+                                try {
+                                    Speech.init(requireActivity())
+                                    Speech.getInstance().startListening(this)
+                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                    speechRecognitionNotAvailable.printStackTrace()
+                                } catch (e: GoogleVoiceTypingDisabledException) {
+                                    e.printStackTrace()
+                                }
+                            }, 100)
+                        }
+                    }
+                })
+            } catch (exc: SpeechRecognitionNotAvailable) {
+                Log.e("speech", "Speech recognition is not available on this device!")
+            } catch (exc: GoogleVoiceTypingDisabledException) {
+                Log.e("speech", "Google voice typing must be enabled!")
+            }
+        }
+
+        handler.post(runnable)
     }
 
     private fun pickImageFromGallery() {
@@ -149,9 +328,9 @@ class NewTextNoteFragment : Fragment() {
     fun performActionWithVoiceCommand(command: String){
         when {
             command.contains("Carregar imagem", true) -> button_get_image_from_gallery.performClick()
-            command.contains("Guardar nota", true) -> button_save_text_note.performClick()
-            command.contains("Adicionar título", true) -> titulo_edit_text.requestFocus()
-            command.contains("Adicionar conteúdo", true) -> conteudo_nota.requestFocus()
+            command.contains("Guardar", true) -> button_save_text_note.performClick()
+            command.contains("Título", true) -> titulo_edit_text.requestFocus()
+            command.contains("Conteúdo", true) -> conteudo_nota.requestFocus()
         }
     }
 

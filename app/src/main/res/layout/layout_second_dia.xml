@@ -45,7 +45,7 @@
     android:background="@drawable/layout_button_round_bottom"
     android:textColor="@color/white_93"
     android:textSize="22sp"
-    android:text="@string/personalizado" />
+    android:text="@string/escolher_dias" />
   
   <TextView
       android:id="@+id/button_selecionar_dias"
@@ -61,8 +61,7 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_gravity="center_horizontal"
-      android:paddingStart="7dp">
+      android:layout_gravity="center_horizontal">
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButtonGroup"

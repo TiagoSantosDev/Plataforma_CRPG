@@ -28,6 +28,7 @@ import com.plataforma.crpg.databinding.ReminderActivityBinding
 import com.plataforma.crpg.model.AlarmFrequency
 import com.plataforma.crpg.model.AlarmType
 import com.plataforma.crpg.model.ReminderType
+import com.skydoves.expandablelayout.ExpandableLayout
 import kotlinx.android.synthetic.main.layout_second_alerta.*
 import kotlinx.android.synthetic.main.layout_second_dia.*
 import kotlinx.android.synthetic.main.layout_second_horas.*
@@ -93,9 +94,7 @@ class ReminderFragment : Fragment() {
         val modalityPreferences = this.requireActivity().getSharedPreferences("MODALITY", Context.MODE_PRIVATE)
         val ttsFlag = modalityPreferences.getBoolean("TTS", false)
         val srFlag = modalityPreferences.getBoolean("SR", false)
-        val hasRun = modalityPreferences.getBoolean("mealsHasRun", false)
-
-        defineModality(ttsFlag, srFlag, hasRun)
+        val hasRun = modalityPreferences.getBoolean("remindersHasRun", false)
 
         val binding = ReminderActivityBinding.inflate(layoutInflater)
         val view = binding.root
@@ -103,10 +102,13 @@ class ReminderFragment : Fragment() {
 
         newViewModel.startNewFileAndPopulate()
 
+        defineModality(ttsFlag, srFlag, hasRun, view)
+
         with(binding){
             root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.VISIBLE
             root.findViewById<FloatingActionButton>(R.id.createReminderActionButton).setOnClickListener{
                 root.findViewById<View>(R.id.reminderIntroHintLayout).visibility = View.GONE
+
             }
 
             fun setButtonColorsReminder(pos: Int){
@@ -234,6 +236,8 @@ class ReminderFragment : Fragment() {
             val avisoCampos = root.findViewById<TextView>(R.id.aviso_campos)
 
             root.findViewById<Button>(R.id.button_cancel).setOnClickListener {
+
+                //expandableLembrar.parentLayout.performClick()
 
                 avisoCampos.visibility = View.GONE
 
@@ -366,6 +370,11 @@ class ReminderFragment : Fragment() {
                 }
             }
         }
+
+        //expandable_lembrar.performClick()
+
+
+
         return view
     }
 
@@ -377,11 +386,12 @@ class ReminderFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
-    private fun performActionWithVoiceCommand(command: String){
+    private fun performActionWithVoiceCommand(command: String, view: LinearLayout){
         checkHoursCommand(command)
         checkMinutesCommand(command)
+
         when {
-            command.contains("Lembrete", true) -> expandable_lembrar.performClick()
+            command.contains("Lembrete", true) -> view.findViewById<ExpandableLayout>(R.id.expandable_lembrar).parentLayout.performClick()
             command.contains("Horas", true) -> expandable_horas.performClick()
             command.contains("Dia", true) -> expandable_dia.performClick()
             command.contains("Alerta", true) -> expandable_alerta.performClick()
@@ -393,16 +403,16 @@ class ReminderFragment : Fragment() {
                 expandable_dia.performClick()
                 expandable_alerta.performClick()
             }
-            command.contains("Medicamento", true) -> button0.performClick()
-            command.contains("Transporte", true) -> button1.performClick()
-            command.contains("Almoço", true)-> button2.performClick()
-            command.contains("Lembrete Personalizado", true)-> button3.performClick()
+            command.contains("Tomar Medicação", true) -> button0.performClick()
+            command.contains("Apanhar Transporte", true) -> button1.performClick()
+            command.contains("Escolher Almoço", true)-> button2.performClick()
+            command.contains("O Meu Lembrete", true)-> button3.performClick()
             command.contains("Som", true)-> imageButtonSom.performClick()
-            command.contains("Vibração", true) -> imageButtonVibrar.performClick()
+            command.contains("Vibrar", true) -> imageButtonVibrar.performClick()
             command.contains("Ambos", true) -> imageButtonAmbos.performClick()
             command.contains("Hoje", true) -> button_hoje.performClick()
             command.contains("Sempre", true) -> button_todos_dias.performClick()
-            command.contains("Dia Personalizado", true) -> button_personalizado.performClick()
+            command.contains("Escolher Dias", true) -> button_personalizado.performClick()
         }
     }
 
@@ -445,24 +455,26 @@ class ReminderFragment : Fragment() {
 
     }
 
-    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean) {
+    private fun defineModality(ttsFlag: Boolean, srFlag: Boolean, hasRun: Boolean, view: LinearLayout) {
 
         println("ttsFlag:  " + ttsFlag)
         println("srFlag: " + srFlag)
         println("hasRun: " + hasRun)
 
+        view.findViewById<ExpandableLayout>(R.id.expandable_lembrar).parentLayout.performClick()
+
         if (!hasRun){
             when{
                 ttsFlag && !srFlag -> { startTTS() }
-                !ttsFlag && srFlag -> { startVoiceRecognition() }
-                ttsFlag && srFlag ->{ multimodalOption() }
+                !ttsFlag && srFlag -> { startVoiceRecognition(view) }
+                ttsFlag && srFlag ->{ multimodalOption(view) }
             }
         }
 
         if(hasRun){
             when{
-                !ttsFlag && srFlag -> { startVoiceRecognition() }
-                ttsFlag && srFlag ->{ startVoiceRecognition() }
+                !ttsFlag && srFlag -> { startVoiceRecognition(view) }
+                ttsFlag && srFlag ->{ startVoiceRecognition(view) }
             }
         }
 
@@ -484,7 +496,7 @@ class ReminderFragment : Fragment() {
         }
     }
 
-    private fun multimodalOption() {
+    private fun multimodalOption(view: LinearLayout) {
         textToSpeech = TextToSpeech(context) { status ->
             if (status == TextToSpeech.SUCCESS) {
                 val ttsLang = textToSpeech!!.setLanguage(myLocale)
@@ -505,7 +517,7 @@ class ReminderFragment : Fragment() {
                     override fun onDone(p0: String?) {
                         println("Encerrou TTS")
                         if(activity != null && isAdded) {
-                            startVoiceRecognition()
+                            startVoiceRecognition(view)
                         }
                     }
 
@@ -526,7 +538,7 @@ class ReminderFragment : Fragment() {
 
     }
 
-    fun startVoiceRecognition(){
+    fun startVoiceRecognition(view: LinearLayout) {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
         runnable = Runnable {
@@ -548,7 +560,7 @@ class ReminderFragment : Fragment() {
                         for (res in results) {
                             str.append(res).append(" ")
                         }
-                        performActionWithVoiceCommand(results.toString())
+                        performActionWithVoiceCommand(results.toString(), view)
                         Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
                     }
 
