@@ -279,56 +279,63 @@ class PublicTransportsFragment : Fragment(), AdapterView.OnItemSelectedListener 
     fun startVoiceRecognition(){
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
-        runnable = Runnable {
-            Speech.init(requireActivity())
-            handler.sendEmptyMessage(0)
-            hasInitSR = true
-            try {
-                Speech.getInstance().startListening(object : SpeechDelegate {
-                    override fun onStartOfSpeech() {
-                        Log.i("speech", "public transport speech recognition is now active")
-                    }
-
-                    override fun onSpeechRmsChanged(value: Float) {
-                        //Log.d("speech", "rms is now: $value")
-                    }
-
-                    override fun onSpeechPartialResults(results: List<String>) {
-                        val str = StringBuilder()
-                        for (res in results) {
-                            str.append(res).append(" ")
+        if(isAdded && isVisible && getUserVisibleHint()) {
+            runnable = Runnable {
+                Speech.init(requireActivity())
+                handler.sendEmptyMessage(0)
+                hasInitSR = true
+                try {
+                    Speech.getInstance().startListening(object : SpeechDelegate {
+                        override fun onStartOfSpeech() {
+                            Log.i("speech", "public transport speech recognition is now active")
                         }
-                        performActionWithVoiceCommand(results.toString())
-                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                    }
 
-                    override fun onSpeechResult(result: String) {
-                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
-                        //Speech.getInstance().stopTextToSpeech()
-                        val handler = Handler()
-                        if(activity != null && isAdded) {
-                            handler.postDelayed({
-                                try {
-                                    Speech.init(requireActivity())
-                                    hasInitSR = true
-                                    Speech.getInstance().startListening(this)
-                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
-                                    speechRecognitionNotAvailable.printStackTrace()
-                                } catch (e: GoogleVoiceTypingDisabledException) {
-                                    e.printStackTrace()
-                                }
-                            }, 100)
+                        override fun onSpeechRmsChanged(value: Float) {
+                            //Log.d("speech", "rms is now: $value")
                         }
-                    }
-                })
-            } catch (exc: SpeechRecognitionNotAvailable) {
-                Log.e("speech", "Speech recognition is not available on this device!")
-            } catch (exc: GoogleVoiceTypingDisabledException) {
-                Log.e("speech", "Google voice typing must be enabled!")
+
+                        override fun onSpeechPartialResults(results: List<String>) {
+                            val str = StringBuilder()
+                            for (res in results) {
+                                str.append(res).append(" ")
+                            }
+                            performActionWithVoiceCommand(results.toString())
+                            Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                        }
+
+                        override fun onSpeechResult(result: String) {
+                            Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                            //Speech.getInstance().stopTextToSpeech()
+                            val handler = Handler()
+                            if (activity != null && isAdded) {
+                                handler.postDelayed({
+                                    try {
+                                        if (isAdded && isVisible && getUserVisibleHint()) {
+                                            Speech.init(requireActivity())
+                                            hasInitSR = true
+                                            Speech.getInstance().startListening(this)
+                                        }
+                                    } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                        speechRecognitionNotAvailable.printStackTrace()
+                                    } catch (e: GoogleVoiceTypingDisabledException) {
+                                        e.printStackTrace()
+                                    }
+                                }, 100)
+                            }
+                        }
+                    })
+                } catch (exc: SpeechRecognitionNotAvailable) {
+                    Log.e("speech", "Speech recognition is not available on this device!")
+                } catch (exc: GoogleVoiceTypingDisabledException) {
+                    Log.e("speech", "Google voice typing must be enabled!")
+                }
             }
+
+            handler.post(runnable)
+
         }
 
-        handler.post(runnable)
+
     }
 
 }

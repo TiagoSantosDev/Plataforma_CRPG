@@ -392,16 +392,31 @@ class ReminderFragment : Fragment() {
 
         when {
             command.contains("Lembrete", true) -> view.findViewById<ExpandableLayout>(R.id.expandable_lembrar).parentLayout.performClick()
-            command.contains("Horas", true) -> expandable_horas.performClick()
-            command.contains("Dia", true) -> expandable_dia.performClick()
-            command.contains("Alerta", true) -> expandable_alerta.performClick()
-            command.contains("Cancelar", true) -> button_confirm.performClick()
-            command.contains("Confirmar", true) -> button_confirm.performClick()
+            command.contains("Horas", true) -> {
+                view.findViewById<ExpandableLayout>(R.id.expandable_horas).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_horas).parentLayout.requestFocus()
+            }
+            command.contains("Dia", true) -> {
+                view.findViewById<ExpandableLayout>(R.id.expandable_dia).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_dia).parentLayout.requestFocus()
+            }
+
+            command.contains("Alerta", true) -> {
+                view.findViewById<ExpandableLayout>(R.id.expandable_alerta).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_alerta).parentLayout.requestFocus()
+            }
+            command.contains("Notas", true) -> {
+                view.findViewById<ExpandableLayout>(R.id.expandable_notas).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_notas).parentLayout.requestFocus()
+            }
+            command.contains("Cancelar", true) -> button_cancel.performClick()
+            command.contains("Guardar", true) -> button_confirm.performClick()
             command.contains("Todos", true) -> {
-                expandable_lembrar.performClick()
-                expandable_horas.performClick()
-                expandable_dia.performClick()
-                expandable_alerta.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_lembrar).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_horas).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_dia).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_alerta).parentLayout.performClick()
+                view.findViewById<ExpandableLayout>(R.id.expandable_notas).parentLayout.performClick()
             }
             command.contains("Tomar Medicação", true) -> button0.performClick()
             command.contains("Apanhar Transporte", true) -> button1.performClick()
@@ -541,56 +556,61 @@ class ReminderFragment : Fragment() {
     fun startVoiceRecognition(view: LinearLayout) {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
-        runnable = Runnable {
-            handler.sendEmptyMessage(0);
-            Speech.init(requireActivity())
-            //hasInitSR = true
-            try {
-                Speech.getInstance().startListening(object : SpeechDelegate {
-                    override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
-                    }
-
-                    override fun onSpeechRmsChanged(value: Float) {
-                        //Log.d("speech", "rms is now: $value")
-                    }
-
-                    override fun onSpeechPartialResults(results: List<String>) {
-                        val str = StringBuilder()
-                        for (res in results) {
-                            str.append(res).append(" ")
+        if(isAdded && isVisible && getUserVisibleHint()) {
+            runnable = Runnable {
+                handler.sendEmptyMessage(0);
+                Speech.init(requireActivity())
+                //hasInitSR = true
+                try {
+                    Speech.getInstance().startListening(object : SpeechDelegate {
+                        override fun onStartOfSpeech() {
+                            Log.i("speech", "speech recognition is now active")
                         }
-                        performActionWithVoiceCommand(results.toString(), view)
-                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                    }
 
-                    override fun onSpeechResult(result: String) {
-                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
-                        //Speech.getInstance().stopTextToSpeech()
-                        val handler = Handler()
-                        if(activity != null && isAdded) {
-                            handler.postDelayed({
-                                try {
-                                    Speech.init(requireActivity())
-                                    //hasInitSR = true
-                                    Speech.getInstance().startListening(this)
-                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
-                                    speechRecognitionNotAvailable.printStackTrace()
-                                } catch (e: GoogleVoiceTypingDisabledException) {
-                                    e.printStackTrace()
-                                }
-                            }, 100)
+                        override fun onSpeechRmsChanged(value: Float) {
+                            //Log.d("speech", "rms is now: $value")
                         }
-                    }
-                })
-            } catch (exc: SpeechRecognitionNotAvailable) {
-                Log.e("speech", "Speech recognition is not available on this device!")
-            } catch (exc: GoogleVoiceTypingDisabledException) {
-                Log.e("speech", "Google voice typing must be enabled!")
+
+                        override fun onSpeechPartialResults(results: List<String>) {
+                            val str = StringBuilder()
+                            for (res in results) {
+                                str.append(res).append(" ")
+                            }
+                            performActionWithVoiceCommand(results.toString(), view)
+                            Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                        }
+
+                        override fun onSpeechResult(result: String) {
+                            Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                            //Speech.getInstance().stopTextToSpeech()
+                            val handler = Handler()
+                            if (activity != null && isAdded) {
+                                handler.postDelayed({
+                                    try {
+                                        if (isAdded && isVisible && getUserVisibleHint()) {
+                                            Speech.init(requireActivity())
+                                            //hasInitSR = true
+                                            Speech.getInstance().startListening(this)
+                                        }
+                                    } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                        speechRecognitionNotAvailable.printStackTrace()
+                                    } catch (e: GoogleVoiceTypingDisabledException) {
+                                        e.printStackTrace()
+                                    }
+                                }, 100)
+                            }
+                        }
+                    })
+                } catch (exc: SpeechRecognitionNotAvailable) {
+                    Log.e("speech", "Speech recognition is not available on this device!")
+                } catch (exc: GoogleVoiceTypingDisabledException) {
+                    Log.e("speech", "Google voice typing must be enabled!")
+                }
             }
+
+            handler.post(runnable)
         }
 
-        handler.post(runnable)
     }
 
 

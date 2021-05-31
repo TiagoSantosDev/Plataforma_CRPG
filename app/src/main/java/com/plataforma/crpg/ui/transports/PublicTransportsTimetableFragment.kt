@@ -209,8 +209,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 command.contains("Linha ZF", true) -> bus_lines_spinner_2.setSelection(1)
                 command.contains("Linha 35", true) -> bus_lines_spinner_2.setSelection(2)
                 command.contains("Linha 45", true) -> bus_lines_spinner_2.setSelection(3)
-                command.contains("Consultar ida", true) -> button_view_timetable_1.performClick()
-                command.contains("Consultar volta", true) -> button_view_timetable_2.performClick()
+                command.contains("Para lá", true) -> button_view_timetable_1.performClick()
+                command.contains("Para cá", true) -> button_view_timetable_2.performClick()
                 command.contains("Regressar", true) -> button_return_transports.performClick()
             }
         }
@@ -301,10 +301,11 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             command.contains("ZF", true) -> bus_lines_spinner_2.setSelection(1)
             command.contains("35", true) || command.contains("trinta e cinco", true) -> bus_lines_spinner_2.setSelection(2)
             command.contains("45", true) || command.contains("quarenta e cinco", true)-> bus_lines_spinner_2.setSelection(3)
-            command.contains("ir", true) -> button_view_timetable_1.performClick()
-            command.contains("voltar", true) -> button_view_timetable_2.performClick()
+            command.contains("para lá", true) -> button_view_timetable_1.performClick()
+            command.contains("para cá", true) -> button_view_timetable_2.performClick()
             command.contains("fechar ", true) -> {
                 if( view?.findViewById<View>(R.id.photo_view)?.visibility == VISIBLE){
+                    println("photo visible")
                     view?.findViewById<View>(R.id.photo_view)?.performClick()
                 }
             }
@@ -391,7 +392,7 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
 
                 textToSpeech?.setOnUtteranceProgressListener(speechListener)
 
-                val speechStatus = textToSpeech!!.speak("Diga o nome da linha e depois diga ida ou volta para ver o horário correspondente", TextToSpeech.QUEUE_FLUSH, null, "ID")
+                val speechStatus = textToSpeech!!.speak("Diga o nome da linha ou o nome do botão para ver o horário correspondente", TextToSpeech.QUEUE_FLUSH, null, "ID")
 
             } else {
                 Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show()
@@ -403,57 +404,63 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
     fun startVoiceRecognition() {
         //MANTER WIFI SEMPRE LIGADO
         //val handler = Handler(Looper.getMainLooper())
-
-        runnable = Runnable {
-            handler.sendEmptyMessage(0);
-            Speech.init(requireActivity())
-            hasInitSR = true
-            try {
-                Speech.getInstance().startListening(object : SpeechDelegate {
-                    override fun onStartOfSpeech() {
-                        Log.i("speech", "speech recognition is now active")
-                    }
-
-                    override fun onSpeechRmsChanged(value: Float) {
-                        //Log.d("speech", "rms is now: $value")
-                    }
-
-                    override fun onSpeechPartialResults(results: List<String>) {
-                        val str = StringBuilder()
-                        for (res in results) {
-                            str.append(res).append(" ")
+        if(isAdded && isVisible && getUserVisibleHint()) {
+            runnable = Runnable {
+                handler.sendEmptyMessage(0);
+                Speech.init(requireActivity())
+                hasInitSR = true
+                try {
+                    Speech.getInstance().startListening(object : SpeechDelegate {
+                        override fun onStartOfSpeech() {
+                            Log.i("speech", "timetable speech recognition is now active")
                         }
-                        performActionWithVoiceCommand(results.toString())
-                        Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
-                    }
 
-                    override fun onSpeechResult(result: String) {
-                        Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
-                        //Speech.getInstance().stopTextToSpeech()
-                        val handler = Handler()
-                        if (activity != null && isAdded) {
-                            handler.postDelayed({
-                                try {
-                                    Speech.init(requireActivity())
-                                    hasInitSR = true
-                                    Speech.getInstance().startListening(this)
-                                } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
-                                    speechRecognitionNotAvailable.printStackTrace()
-                                } catch (e: GoogleVoiceTypingDisabledException) {
-                                    e.printStackTrace()
-                                }
-                            }, 100)
+                        override fun onSpeechRmsChanged(value: Float) {
+                            //Log.d("speech", "rms is now: $value")
                         }
-                    }
-                })
-            } catch (exc: SpeechRecognitionNotAvailable) {
-                Log.e("speech", "Speech recognition is not available on this device!")
-            } catch (exc: GoogleVoiceTypingDisabledException) {
-                Log.e("speech", "Google voice typing must be enabled!")
+
+                        override fun onSpeechPartialResults(results: List<String>) {
+                            val str = StringBuilder()
+                            for (res in results) {
+                                str.append(res).append(" ")
+                            }
+                            performActionWithVoiceCommand(results.toString())
+                            Log.i("speech", "partial result: " + str.toString().trim { it <= ' ' })
+                        }
+
+                        override fun onSpeechResult(result: String) {
+                            Log.d(TimelineView.TAG, "onSpeechResult: " + result.toLowerCase())
+                            //Speech.getInstance().stopTextToSpeech()
+                            val handler = Handler()
+                            if (activity != null && isAdded) {
+                                handler.postDelayed({
+                                    try {
+                                        if (isAdded && isVisible && getUserVisibleHint()) {
+                                            Speech.init(requireActivity())
+                                            hasInitSR = true
+                                            Speech.getInstance().startListening(this)
+                                        }
+
+                                    } catch (speechRecognitionNotAvailable: SpeechRecognitionNotAvailable) {
+                                        speechRecognitionNotAvailable.printStackTrace()
+                                    } catch (e: GoogleVoiceTypingDisabledException) {
+                                        e.printStackTrace()
+                                    }
+                                }, 100)
+                            }
+                        }
+                    })
+                } catch (exc: SpeechRecognitionNotAvailable) {
+                    Log.e("speech", "Speech recognition is not available on this device!")
+                } catch (exc: GoogleVoiceTypingDisabledException) {
+                    Log.e("speech", "Google voice typing must be enabled!")
+                }
             }
+
+            handler.post(runnable)
         }
 
-        handler.post(runnable)
+
     }
 
 }
