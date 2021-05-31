@@ -209,8 +209,8 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
                 command.contains("Linha ZF", true) -> bus_lines_spinner_2.setSelection(1)
                 command.contains("Linha 35", true) -> bus_lines_spinner_2.setSelection(2)
                 command.contains("Linha 45", true) -> bus_lines_spinner_2.setSelection(3)
-                command.contains("Ver horário de ida", true) -> button_view_timetable_1.performClick()
-                command.contains("Ver horário de chegada", true) -> button_view_timetable_2.performClick()
+                command.contains("Consultar ida", true) -> button_view_timetable_1.performClick()
+                command.contains("Consultar volta", true) -> button_view_timetable_2.performClick()
                 command.contains("Regressar", true) -> button_return_transports.performClick()
             }
         }
@@ -303,6 +303,11 @@ class PublicTransportsTimetableFragment : Fragment(), AdapterView.OnItemSelected
             command.contains("45", true) || command.contains("quarenta e cinco", true)-> bus_lines_spinner_2.setSelection(3)
             command.contains("ir", true) -> button_view_timetable_1.performClick()
             command.contains("voltar", true) -> button_view_timetable_2.performClick()
+            command.contains("fechar ", true) -> {
+                if( view?.findViewById<View>(R.id.photo_view)?.visibility == VISIBLE){
+                    view?.findViewById<View>(R.id.photo_view)?.performClick()
+                }
+            }
         }
     }
 

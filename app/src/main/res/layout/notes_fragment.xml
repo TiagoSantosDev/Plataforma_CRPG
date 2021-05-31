@@ -43,7 +43,7 @@
             android:layout_marginBottom="16dp"
             android:layout_gravity="bottom|start"
             android:textColor="@color/md_blue_200"
-            android:text="CRIAR NOTA \n DE TEXTO"
+            android:text="CRIAR NOTA \n DE VOZ"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/button_new_voice_note"
             app:layout_constraintHorizontal_bias="0.887" />
@@ -56,7 +56,7 @@
             android:layout_marginBottom="16dp"
             android:layout_gravity="bottom|end"
             android:textColor="@color/md_blue_200"
-            android:text="CRIAR NOTA \n DE VOZ"/>
+            android:text="CRIAR NOTA \n DE TEXTO"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_new_voice_note"
