@@ -1,4 +1,4 @@
-# Plataforma de Gestão para Clientes do CRPG
+# Plataforma de Gestão da Reabilitação para Clientes do CRPG
 
 Aplicação para Android criada no âmbito da tese de Mestrado de Tiago Santos. Tecnologias usadas: Kotlin e Firebase (Realtime Database e Authentication). Foi usado o padrão Model-view-viewmodel, bem como as recomendações no uso de Activities e Fragments da documentação da Google. O design da aplicação foi feito por um grupo de estudantes da Faculdade de belas Artes de Universidade do Porto. A aplicação possui as seguintes funcionalidades/destaques:
 
