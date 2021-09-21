@@ -14,4 +14,5 @@ Exemplos de alguns dos ecrãs da aplicação:
 
 ![Alt text](https://user-images.githubusercontent.com/43898814/134161904-cc90321d-0b32-4bd7-bab9-3b4e88389c98.PNG "Ecrãs da aplicação")
 
- 
+Ktlint was used for linting of the code. The project's timeline is based on vipulasri's Timeline-View project, as well as  skydoves's 
+ExpandableLayout project. Other dependencies are also used, all based on the Apache v2.0 or MIT licenses.
