@@ -12,6 +12,6 @@ Aplicação para Android criada no âmbito da tese de Mestrado de Tiago Santos. 
 
 Exemplos de alguns dos ecrãs da aplicação:
 
-![Alt text](https://drive.google.com/file/d/1c3XnpEzSUZbXP-_P_immTEa7ARe_q7pp/view?usp=sharing "Ecrãs da aplicação")
+![Alt text](https://user-images.githubusercontent.com/43898814/134161904-cc90321d-0b32-4bd7-bab9-3b4e88389c98.PNG "Ecrãs da aplicação")
 
  
